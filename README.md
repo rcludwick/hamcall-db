@@ -29,15 +29,16 @@ state          TEXT     -- state / province / region (source-specific)
 postal_code    TEXT
 country        TEXT     -- DXCC entity name (resolved via cty.dat at build time)
 dxcc           INTEGER  -- DXCC entity number
-grid           TEXT     -- 4 or 6 char; derived from postal_code / city when source doesn't provide it
+grid           TEXT     -- 4-char Maidenhead (field+square, e.g. "DN13"); see notes
 license_class  TEXT     -- source-specific; nullable
 source         TEXT     -- 'fcc' | 'ised' | 'acma'
 synced_at      TEXT     -- ISO date of the upstream source file
 ```
 
 **Notes**
-- Street address (line 1/2) is intentionally NOT included. City/county/state/postal_code is sufficient for the planned consumer use cases (QSO enrichment, grid inference, QSL routing hints) and matches what most ham apps already display.
-- `grid` is rarely present in regulator data. Build pipeline derives it from `postal_code` (best) or `city` (fallback) using offline lookup tables; NULL when neither resolves.
+- Street address (line 1/2) is intentionally NOT included in the published artifact. City/county/state/postal_code is sufficient for the planned consumer use cases (QSO enrichment, grid inference, QSL routing hints).
+- `grid` is the 4-character Maidenhead **field+square** only (e.g. `DN13`), never the 6-character subsquare. The build pipeline MAY use street address (when an upstream source provides it, e.g. FCC ULS) to geocode a precise location, but the result is always truncated to 4 chars before publication. A 4-char grid is ~140 km × 70 km — coarse enough that it doesn't identify an individual, but precise enough for DXCC/zone inference and POTA/SOTA neighborhood hints.
+- Derivation priority at build time: street address geocode → postal_code centroid → city centroid → NULL. Always truncated to 4 chars regardless of source.
 - `first_name` / `last_name` are best-effort splits of the licensee/trustee field. Club/trustee/business holders may put the entity name in `last_name` and leave `first_name` NULL.
 
 Published as `hamcall-db-YYYY-MM-DD.parquet` on the Releases page, with a `latest` tag that always points at the most recent build.
