@@ -78,13 +78,23 @@ The merge stage is the only place where source ordering matters (callsign collis
 
 ## Build & Test
 
+This repo uses [uv](https://docs.astral.sh/uv/) for env + dependency management (Python >=3.14).
+
 ```bash
-# (Placeholders — au-9f06 will land the real commands)
-# python -m hamcall_db.build --source fcc --out data/work/
-# python -m hamcall_db.build --all --out dist/hamcall-db-$(date -I).parquet
-# pytest -q
-# ruff check .
+uv sync --dev                  # create .venv and install runtime + dev deps
+
+# Build a single source (download → parse → write):
+uv run python -m hamcall_db.build --source fcc --out data/work/
+# Build + merge every registered source into a dated artifact:
+uv run python -m hamcall_db.build --all --out dist/
+
+uv run pytest                  # tests
+uv run ruff check .            # lint
 ```
+
+Note: importers and the merge stage are still skeletons (they raise
+`NotImplementedError`); real logic lands in au-039b/f694/2fba/9ed1 (sources) and
+au-0d18 (merge). The CLI, schema (`Record`), and Parquet writer are wired and tested.
 
 ## Conventions
 

@@ -1,0 +1,2 @@
+# Small, checked-in slices of real source data go here, under tests/fixtures/<source>/.
+# NEVER check in full source dumps (they're big and redistribution terms vary).
