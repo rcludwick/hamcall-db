@@ -15,12 +15,19 @@ import polars as pl
 from hamcall_db.history import HISTORY_SCHEMA_COLUMNS, HistoryRow
 from hamcall_db.models import SCHEMA_COLUMNS, Record
 
+
 # Explicit schema keeps column order and dtypes stable even when a batch is all-null
 # for some column (polars would otherwise infer Null dtype). String for everything
-# except the integer DXCC entity number.
-_SCHEMA: dict[str, pl.DataType] = {
-    col: (pl.Int64 if col == "dxcc" else pl.Utf8) for col in SCHEMA_COLUMNS
-}
+# except the integer DXCC entity number and the AllStarLink node list.
+def _current_dtype(col: str) -> pl.DataType:
+    if col == "dxcc":
+        return pl.Int64
+    if col == "allstar_nodes":
+        return pl.List(pl.Int64)  # one callsign -> MANY nodes (hdb-8803)
+    return pl.Utf8
+
+
+_SCHEMA: dict[str, pl.DataType] = {col: _current_dtype(col) for col in SCHEMA_COLUMNS}
 
 # History artifact schema: same string/Int64 rules; the interval bounds are ISO date
 # strings (NULL valid_to = open interval).

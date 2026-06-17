@@ -11,7 +11,7 @@ dataclasses (not raw dicts) so schema drift is caught at type-check time.
 
 from __future__ import annotations
 
-from dataclasses import dataclass, fields
+from dataclasses import dataclass, field, fields
 
 
 @dataclass(slots=True)
@@ -36,6 +36,12 @@ class Record:
     license_class: str | None = None  # source-specific; nullable
     source: str | None = None  # 'fcc' | 'ised' | 'acma'
     synced_at: str | None = None  # ISO date of the upstream source file
+    # AllStarLink node numbers held by this callsign (one callsign -> MANY nodes),
+    # sorted ascending. Empty list when the callsign has no registered nodes. Added as
+    # a Parquet list column (additive minor bump, mem-c6e0); enriched from
+    # allmondb.allstarlink.org via hamcall_db.enrich_allstar. NOT holder identity, so it
+    # is excluded from history tracking (mem / history._TRACKED_FIELDS).
+    allstar_nodes: list[int] = field(default_factory=list)
 
 
 SCHEMA_COLUMNS: tuple[str, ...] = tuple(f.name for f in fields(Record))

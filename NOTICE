@@ -66,6 +66,23 @@ Upstream sources and their licenses
    combined dataset requires separate arrangements with the respective rights
    holders.
 
+5. AllStarLink (node-number directory)
+   Coverage: AllStarLink node numbers registered to amateur callsigns
+             (one callsign may hold many nodes), from the AllMon node
+             database at http://allmondb.allstarlink.org/.
+   Source:   AllStarLink, Inc. (https://www.allstarlink.org/).
+   Required attribution statement:
+
+       AllStarLink node data courtesy of AllStarLink, Inc.
+       (https://www.allstarlink.org/).
+
+   NOTE: AllStarLink does not publish an explicit redistribution license for
+   the node directory. PROJECT DECISION (2026-06-16): this data is used on an
+   ASSUMED NON-COMMERCIAL basis, consistent with the published dataset's
+   CC BY-NC 4.0 terms (and AD1C cty.dat's non-commercial restriction above).
+   The node-number column is supplementary; if AllStarLink objects, it can be
+   dropped without affecting the rest of the dataset.
+
 
 Combined dataset terms
 -----------------------
@@ -77,6 +94,8 @@ who redistributes it must comply with the union of these terms, which means:
   * Reproduce the ACMA / CC BY 4.0 attribution statement (source 3).
   * Reproduce the AD1C / cty.dat attribution statement (source 4).
   * Observe the cty.dat non-commercial restriction (source 4).
+  * Reproduce the AllStarLink attribution statement (source 5) and observe its
+    assumed non-commercial basis.
 
 PROJECT DECISION (2026-06-16): the published hamcall-db dataset artifacts (the
 Parquet files and the SQLite .db) are licensed under Creative Commons

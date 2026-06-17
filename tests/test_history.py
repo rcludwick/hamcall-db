@@ -182,3 +182,34 @@ def test_history_parquet_read_roundtrip_feeds_next_diff(tmp_path) -> None:
     )
     assert len(week2) == 2  # Bob closed, Alan open
     assert {r.valid_to for r in week2} == {DAY2, None}
+
+
+# --- allstar_nodes is NOT holder identity (hdb-8803) ---------------------------
+
+
+def test_allstar_node_change_does_not_open_new_interval() -> None:
+    # Same holder/location, only the AllStarLink node list changed. Node churn is NOT
+    # identity, so the open interval must carry forward unchanged (no new interval).
+    prior = diff_history(
+        [],
+        [Record(callsign="WB6NIL", last_name="Smith", allstar_nodes=[2000], source="fcc")],
+        as_of=DAY1,
+    )
+    out = diff_history(
+        prior,
+        [
+            Record(
+                callsign="WB6NIL",
+                last_name="Smith",
+                allstar_nodes=[2000, 2001, 2002],
+                source="fcc",
+            )
+        ],
+        as_of=DAY2,
+    )
+    assert len(out) == 1  # no new interval spawned
+    assert out[0].valid_from == DAY1
+    assert out[0].valid_to is None
+    # HistoryRow carries no allstar_nodes attribute (kept off the history schema).
+    assert not hasattr(out[0], "allstar_nodes")
+    assert "allstar_nodes" not in HISTORY_SCHEMA_COLUMNS

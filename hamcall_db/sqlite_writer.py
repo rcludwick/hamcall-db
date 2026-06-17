@@ -32,7 +32,6 @@ from __future__ import annotations
 
 import sqlite3
 from collections.abc import Iterable
-from dataclasses import astuple
 from pathlib import Path
 
 from hamcall_db.history import HISTORY_SCHEMA_COLUMNS, HistoryRow, _identity
@@ -41,6 +40,13 @@ from hamcall_db.models import SCHEMA_COLUMNS, Record
 # Columns whose SQLite affinity should be INTEGER rather than TEXT. ``dxcc`` mirrors the
 # Parquet writer's Int64 treatment; ``id`` is the surrogate key.
 _INT_COLUMNS: frozenset[str] = frozenset({"dxcc"})
+
+# ``allstar_nodes`` is a list[int] (one callsign -> MANY nodes). SQLite has no list type,
+# so it is EXCLUDED from the scalar ``current`` table and instead normalized into a child
+# table keyed by the stable id (see _ALLSTAR_DDL below). hdb-8803.
+_SCALAR_COLUMNS: tuple[str, ...] = tuple(
+    c for c in SCHEMA_COLUMNS if c != "allstar_nodes"
+)
 
 
 def _col_def(name: str) -> str:
@@ -55,10 +61,19 @@ _CURRENT_DDL = (
     "  id INTEGER PRIMARY KEY,\n"
     "  callsign TEXT UNIQUE NOT NULL,\n"
     + ",\n".join(
-        f"  {_col_def(c)}" for c in SCHEMA_COLUMNS if c != "callsign"
+        f"  {_col_def(c)}" for c in _SCALAR_COLUMNS if c != "callsign"
     )
     + "\n)"
 )
+
+# allstar_nodes: child table normalizing the one-callsign -> MANY-nodes list out of the
+# scalar ``current`` table, keyed by the stable id. Only CURRENT holders carry node
+# associations (closed/retired history rows do not). Indexed on id for the join back to
+# current. hdb-8803.
+_ALLSTAR_DDL = (
+    "CREATE TABLE allstar_nodes (\n  id INTEGER,\n  node INTEGER\n)"
+)
+_ALLSTAR_INDEX_DDL = "CREATE INDEX idx_allstar_id ON allstar_nodes (id)"
 
 # history: the HistoryRow payload columns PLUS the stable id carried from current, so a
 # holding instance is traceable across both tables and the id high-water survives even when
@@ -72,8 +87,9 @@ _HISTORY_DDL = (
 
 _HISTORY_INDEX_DDL = "CREATE INDEX idx_history_callsign ON history (callsign)"
 
-# Insert column orders (id first, then the dataclass field order).
-_CURRENT_COLUMNS: tuple[str, ...] = ("id", *SCHEMA_COLUMNS)
+# Insert column orders (id first, then the scalar field order; allstar_nodes is a child
+# table, not a current column).
+_CURRENT_COLUMNS: tuple[str, ...] = ("id", *_SCALAR_COLUMNS)
 _HISTORY_COLUMNS: tuple[str, ...] = ("id", *HISTORY_SCHEMA_COLUMNS)
 
 
@@ -141,8 +157,11 @@ def read_prior(
 
         prior_current: dict[str, tuple[int, Record]] = {}
         if "current" in tables:
+            # allstar_nodes is not stored on ``current`` (it's the child table); the
+            # reconstructed Record's allstar_nodes stays [], which is irrelevant to the id
+            # ledger (it's excluded from holder identity / _TRACKED_FIELDS). hdb-8803.
             for row in con.execute("SELECT * FROM current"):
-                rec = Record(**{c: row[c] for c in SCHEMA_COLUMNS})
+                rec = Record(**{c: row[c] for c in _SCALAR_COLUMNS})
                 prior_current[rec.callsign] = (row["id"], rec)
 
         prior_history: list[tuple[int | None, HistoryRow]] = []
@@ -202,12 +221,24 @@ def write_sqlite(
         con.execute(_CURRENT_DDL)
         con.execute(_HISTORY_DDL)
         con.execute(_HISTORY_INDEX_DDL)
+        con.execute(_ALLSTAR_DDL)
+        con.execute(_ALLSTAR_INDEX_DDL)
 
         current_placeholders = ", ".join("?" for _ in _CURRENT_COLUMNS)
         con.executemany(
             f"INSERT INTO current ({', '.join(_CURRENT_COLUMNS)}) "
             f"VALUES ({current_placeholders})",
-            [(rid, *astuple(rec)) for rid, rec in assigned],
+            [(rid, *_current_payload(rec)) for rid, rec in assigned],
+        )
+
+        # Child table: one row per (id, node). Only current holders carry nodes.
+        con.executemany(
+            "INSERT INTO allstar_nodes (id, node) VALUES (?, ?)",
+            [
+                (rid, node)
+                for rid, rec in assigned
+                for node in rec.allstar_nodes
+            ],
         )
 
         history_placeholders = ", ".join("?" for _ in _HISTORY_COLUMNS)
@@ -255,6 +286,12 @@ def _resolve_history_id(
         if prior_id is not None:
             return prior_id
     return id_by_callsign.get(row.callsign)
+
+
+def _current_payload(rec: Record) -> tuple:
+    """The Record values in _SCALAR_COLUMNS order (id added separately; allstar_nodes is
+    the child table, not a current column)."""
+    return tuple(getattr(rec, name) for name in _SCALAR_COLUMNS)
 
 
 def _history_payload(row: HistoryRow) -> tuple:

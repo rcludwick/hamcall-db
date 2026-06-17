@@ -1,0 +1,7 @@
+2000|WB6NIL|ASL Public Hub|Los Angeles, CA
+2002|WB6NIL|AllStarLink Parrot|AWS US-EAST-1
+2001|WB6NIL|ASL Public Hub|Los Angeles, CA
+40000|W1AW|ARRL HQ||
+40001|w1aw||Newington, CT
+
+51234|N0CALL|Empty description|

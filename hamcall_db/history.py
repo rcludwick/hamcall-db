@@ -40,9 +40,14 @@ _TRACKED_FIELDS: tuple[str, ...] = (
     "license_class",
 )
 
-# All Record payload fields carried into a history row (everything except the interval
-# bounds, which history adds).
-_PAYLOAD_FIELDS: tuple[str, ...] = tuple(f.name for f in fields(Record))
+# Record payload fields carried into a history row (everything except the interval
+# bounds, which history adds). ``allstar_nodes`` is deliberately EXCLUDED: AllStarLink
+# node lists are NOT holder identity (excluded from _TRACKED_FIELDS too), and keeping the
+# list off HistoryRow entirely means the history Parquet/SQLite writers need no list
+# support and node churn never spawns a history interval (hdb-8803).
+_PAYLOAD_FIELDS: tuple[str, ...] = tuple(
+    f.name for f in fields(Record) if f.name != "allstar_nodes"
+)
 
 
 @dataclass(slots=True)

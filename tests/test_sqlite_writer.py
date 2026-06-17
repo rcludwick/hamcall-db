@@ -17,8 +17,9 @@ import sqlite3
 import pytest
 
 from hamcall_db.history import HistoryRow
-from hamcall_db.models import SCHEMA_COLUMNS, Record
+from hamcall_db.models import Record
 from hamcall_db.sqlite_writer import (
+    _SCALAR_COLUMNS,
     assign_ids,
     read_prior,
     write_sqlite,
@@ -69,9 +70,11 @@ def test_current_id_is_integer_primary_key(tmp_path) -> None:
         by_name = {c[1]: c for c in cols}
         assert by_name["id"][5] == 1  # id is the PK
         assert by_name["id"][2] == "INTEGER"
-        # every Record column is present on current
-        for col in SCHEMA_COLUMNS:
+        # every scalar Record column is present on current
+        for col in _SCALAR_COLUMNS:
             assert col in by_name
+        # allstar_nodes is a list -> child table, NOT a scalar current column (hdb-8803)
+        assert "allstar_nodes" not in by_name
     finally:
         con.close()
 
@@ -136,7 +139,7 @@ def test_round_trip_values(tmp_path) -> None:
     con.row_factory = sqlite3.Row
     try:
         row = con.execute("SELECT * FROM current WHERE callsign='K1ABC'").fetchone()
-        for col in SCHEMA_COLUMNS:
+        for col in _SCALAR_COLUMNS:
             assert row[col] == getattr(rec, col)
         assert isinstance(row["id"], int)
     finally:
@@ -456,6 +459,73 @@ def test_overwrite_safe(tmp_path) -> None:
     calls = {r[0] for r in con.execute("SELECT callsign FROM current").fetchall()}
     con.close()
     assert calls == {"K1ABC"}
+
+
+# --- allstar_nodes child table (hdb-8803) --------------------------------------
+
+
+def test_allstar_child_table_and_index_exist(tmp_path) -> None:
+    db = tmp_path / "out.db"
+    write_sqlite([Record(callsign="WB6NIL", allstar_nodes=[2000, 2001])], [], db)
+    con = sqlite3.connect(db)
+    try:
+        tables = {
+            r[0]
+            for r in con.execute(
+                "SELECT name FROM sqlite_master WHERE type='table'"
+            ).fetchall()
+        }
+        assert "allstar_nodes" in tables
+        cols = {c[1] for c in con.execute("PRAGMA table_info(allstar_nodes)").fetchall()}
+        assert cols == {"id", "node"}
+        indexes = {
+            r[0]
+            for r in con.execute(
+                "SELECT name FROM sqlite_master WHERE type='index'"
+            ).fetchall()
+        }
+        assert "idx_allstar_id" in indexes
+    finally:
+        con.close()
+
+
+def test_allstar_child_rows_keyed_by_stable_id(tmp_path) -> None:
+    db = tmp_path / "out.db"
+    write_sqlite(
+        [
+            Record(callsign="WB6NIL", allstar_nodes=[2001, 2000]),
+            Record(callsign="N0CALL", allstar_nodes=[51234]),
+        ],
+        [],
+        db,
+    )
+    con = sqlite3.connect(db)
+    try:
+        wb_id = con.execute(
+            "SELECT id FROM current WHERE callsign='WB6NIL'"
+        ).fetchone()[0]
+        nodes = [
+            r[0]
+            for r in con.execute(
+                "SELECT node FROM allstar_nodes WHERE id=? ORDER BY node", (wb_id,)
+            ).fetchall()
+        ]
+        assert nodes == [2000, 2001]
+        # Two records -> three node rows total.
+        total = con.execute("SELECT COUNT(*) FROM allstar_nodes").fetchone()[0]
+        assert total == 3
+    finally:
+        con.close()
+
+
+def test_callsign_with_no_nodes_has_no_child_rows(tmp_path) -> None:
+    db = tmp_path / "out.db"
+    write_sqlite([Record(callsign="W1AW")], [], db)
+    con = sqlite3.connect(db)
+    try:
+        assert con.execute("SELECT COUNT(*) FROM allstar_nodes").fetchone()[0] == 0
+    finally:
+        con.close()
 
 
 def test_write_sqlite_returns_counts(tmp_path) -> None:

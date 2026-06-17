@@ -42,3 +42,18 @@ def test_writer_roundtrip(tmp_path) -> None:
     assert tuple(frame.columns) == SCHEMA_COLUMNS
     assert frame["callsign"].to_list() == ["N0CALL", "W1AW"]
     assert frame["dxcc"].dtype == pl.Int64
+
+
+def test_writer_roundtrips_allstar_node_list(tmp_path) -> None:
+    # allstar_nodes is a list[int] column (one callsign -> MANY nodes); it must serialize
+    # as pl.List(pl.Int64) and round-trip, including the empty-list default (hdb-8803).
+    out = tmp_path / "out.parquet"
+    records = [
+        Record(callsign="WB6NIL", allstar_nodes=[2000, 2001, 2002], source="fcc"),
+        Record(callsign="W1AW", source="fcc"),  # no nodes -> []
+    ]
+    write_parquet(records, out)
+    frame = pl.read_parquet(out)
+    assert tuple(frame.columns) == SCHEMA_COLUMNS  # contract intact
+    assert frame["allstar_nodes"].dtype == pl.List(pl.Int64)
+    assert frame["allstar_nodes"].to_list() == [[2000, 2001, 2002], []]

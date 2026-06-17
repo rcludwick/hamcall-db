@@ -14,6 +14,7 @@ from typing import Annotated
 
 import typer
 
+from hamcall_db import enrich_allstar
 from hamcall_db.enrich import enrich, load_cty
 from hamcall_db.geocode import LookupGeocoder
 from hamcall_db.history import diff_history
@@ -144,6 +145,22 @@ def build(
         csv_sibling = cty_path.with_name("cty.csv")
         csv_path = csv_sibling if csv_sibling.exists() else None
         records = list(enrich(records, load_cty(cty_path, csv_path=csv_path)))
+
+    # AllStarLink node enrichment: one callsign -> MANY node numbers (hdb-8803). An --all
+    # concern (it's a network-bound build that already downloads every source); single-
+    # source dev builds skip it. RESILIENT: a transient AllStarLink outage must not abort
+    # the build — log a warning and continue with empty node lists.
+    if all_sources:
+        try:
+            allstar_path = enrich_allstar.download_allstar(work_dir)
+            lookup = enrich_allstar.load_allstar(allstar_path)
+            records = list(enrich_allstar.enrich(records, lookup))
+        except Exception as exc:  # download/parse failure is non-fatal
+            typer.echo(
+                f"WARNING: AllStarLink enrichment skipped ({exc}); "
+                "allstar_nodes left empty",
+                err=True,
+            )
 
     out_dir = out.is_dir()
     out_path = out / _default_filename() if out_dir else out
