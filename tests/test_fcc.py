@@ -69,3 +69,21 @@ def test_source_parse_method_delegates_to_parse_dir() -> None:
     out = _by_call(FccUlsSource().parse(FIXTURES, synced_at="2026-06-16"))
     assert out["W1AW"].callsign == "W1AW"
     assert FccUlsSource().name == "fcc"
+
+
+def test_synced_at_defaults_to_none_before_download() -> None:
+    assert FccUlsSource().synced_at is None
+
+
+def test_parse_uses_explicit_synced_at_over_self() -> None:
+    src = FccUlsSource()
+    src.synced_at = "2026-01-01"
+    out = _by_call(src.parse(FIXTURES, synced_at="2026-06-16"))
+    assert out["W1AW"].synced_at == "2026-06-16"
+
+
+def test_parse_falls_back_to_self_synced_at() -> None:
+    src = FccUlsSource()
+    src.synced_at = "2026-06-10"  # as download() would have set it
+    out = _by_call(src.parse(FIXTURES))
+    assert out["W1AW"].synced_at == "2026-06-10"

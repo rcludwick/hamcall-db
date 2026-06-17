@@ -83,3 +83,21 @@ def test_source_parse_method_delegates_to_parse_dir() -> None:
     out = _by_call(IsedSource().parse(FIXTURES, synced_at="2026-06-16"))
     assert out["VA3ABC"].callsign == "VA3ABC"
     assert IsedSource().name == "ised"
+
+
+def test_synced_at_defaults_to_none_before_download() -> None:
+    assert IsedSource().synced_at is None
+
+
+def test_parse_uses_explicit_synced_at_over_self() -> None:
+    src = IsedSource()
+    src.synced_at = "2026-01-01"
+    out = _by_call(src.parse(FIXTURES, synced_at="2026-06-16"))
+    assert out["VA3ABC"].synced_at == "2026-06-16"
+
+
+def test_parse_falls_back_to_self_synced_at() -> None:
+    src = IsedSource()
+    src.synced_at = "2026-06-10"  # as download() would have set it
+    out = _by_call(src.parse(FIXTURES))
+    assert out["VA3ABC"].synced_at == "2026-06-10"

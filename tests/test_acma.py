@@ -124,6 +124,24 @@ def test_source_parse_method_delegates_to_parse_dir() -> None:
     assert AcmaSource().name == "acma"
 
 
+def test_synced_at_defaults_to_none_before_download() -> None:
+    assert AcmaSource().synced_at is None
+
+
+def test_parse_uses_explicit_synced_at_over_self() -> None:
+    src = AcmaSource()
+    src.synced_at = "2026-01-01"
+    out = _by_call(src.parse(FIXTURES, synced_at="2026-06-16"))
+    assert out["VK4ABC"].synced_at == "2026-06-16"
+
+
+def test_parse_falls_back_to_self_synced_at() -> None:
+    src = AcmaSource()
+    src.synced_at = "2026-06-10"  # as download() would have set it
+    out = _by_call(src.parse(FIXTURES))
+    assert out["VK4ABC"].synced_at == "2026-06-10"
+
+
 def test_split_name_variants() -> None:
     assert _split_name("Smith, John") == ("John", "Smith")
     assert _split_name("Jane Doe") == ("Jane", "Doe")

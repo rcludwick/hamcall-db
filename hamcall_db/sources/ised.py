@@ -34,6 +34,7 @@ from collections.abc import Iterable, Iterator
 from pathlib import Path
 
 from hamcall_db.models import Record
+from hamcall_db.sources.base import synced_at_from
 
 # Upstream delimited amateur extract (zip containing amateur.txt).
 DOWNLOAD_URL = "http://apc-cap.ic.gc.ca/datafiles/amateur.zip"
@@ -158,11 +159,16 @@ class IsedSource:
 
     name = "ised"
 
+    def __init__(self) -> None:
+        # ISO date of the upstream extract; set during download(), stamped onto Records.
+        self.synced_at: str | None = None
+
     def download(self, work_dir: Path) -> Path:
         """Fetch + unzip amateur.zip into work_dir, returning the extract directory.
 
         Caches the raw zip; honors If-Modified-Since when a cached copy exists so we
-        don't re-pull an unchanged extract. Be polite to upstream.
+        don't re-pull an unchanged extract. Be polite to upstream. Records the upstream
+        file date (Last-Modified header, else the zip's mtime) in `synced_at`.
         """
         import zipfile
         from email.utils import formatdate
@@ -176,12 +182,16 @@ class IsedSource:
             request.add_header(
                 "If-Modified-Since", formatdate(raw_zip.stat().st_mtime, usegmt=True)
             )
+        last_modified: str | None = None
         try:
             with urllib.request.urlopen(request) as response:  # noqa: S310
+                last_modified = response.headers.get("Last-Modified")
                 raw_zip.write_bytes(response.read())
         except urllib.error.HTTPError as exc:
             if exc.code != 304 or not raw_zip.exists():  # 304 = unchanged, use cache
                 raise
+
+        self.synced_at = synced_at_from(last_modified, raw_zip)
 
         extract_dir.mkdir(exist_ok=True)
         with zipfile.ZipFile(raw_zip) as zf:
@@ -189,4 +199,4 @@ class IsedSource:
         return extract_dir
 
     def parse(self, path: Path, *, synced_at: str | None = None) -> Iterable[Record]:
-        return parse_dir(path, synced_at=synced_at)
+        return parse_dir(path, synced_at=synced_at if synced_at is not None else self.synced_at)
