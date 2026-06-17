@@ -13,6 +13,9 @@ dependencies = [
 
 [project.scripts]
 hamcall-db = "hamcall_db.build:app"
+# Serve the latest generated SQLite .db with Datasette (needs the `serve` group):
+#   uv run --group serve hamcall-db-serve dist/
+hamcall-db-serve = "hamcall_db.serve:main"
 
 [project.urls]
 Homepage = "https://github.com/rcludwick/hamcall-db"
@@ -21,6 +24,10 @@ Homepage = "https://github.com/rcludwick/hamcall-db"
 dev = [
     "pytest>=8.0",
     "ruff>=0.6",
+]
+# Optional: only needed to browse the SQLite artifact locally with Datasette.
+serve = [
+    "datasette>=0.64",
 ]
 
 [build-system]

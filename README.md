@@ -63,6 +63,13 @@ datasette hamcall-db-2026-06-16.db
 # open http://localhost:8001 — browse tables, facet by state/country/license_class, run SQL
 ```
 
+If you built the data locally, there's a shortcut that finds the newest `hamcall-db-*.db` and serves it (Datasette ships in the optional `serve` dependency group):
+
+```bash
+uv run --group serve hamcall-db-serve dist/      # serves the latest .db in dist/
+# pass through datasette args after the dir, e.g.:  uv run --group serve hamcall-db-serve dist/ -p 9000
+```
+
 The `.db` holds two tables:
 
 - **`current`** — one row per callsign (surrogate `id` PRIMARY KEY that is stable and never reused; `callsign` is UNIQUE). The current licensee snapshot.
