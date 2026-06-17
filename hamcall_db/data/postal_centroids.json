@@ -1,0 +1,9 @@
+[
+  { "country": "United States", "postal_code": "06111", "lat": 41.69, "lon": -72.73, "place": "Newington, CT" },
+  { "country": "United States", "postal_code": "98101", "lat": 47.61, "lon": -122.33, "place": "Seattle, WA" },
+  { "country": "United States", "postal_code": "10001", "lat": 40.75, "lon": -73.99, "place": "New York, NY" },
+  { "country": "Canada", "postal_code": "K1A 0A6", "lat": 45.42, "lon": -75.70, "place": "Ottawa, ON" },
+  { "country": "Canada", "postal_code": "B3J", "lat": 44.65, "lon": -63.58, "place": "Halifax, NS" },
+  { "country": "Australia", "postal_code": "2000", "lat": -33.87, "lon": 151.21, "place": "Sydney, NSW" },
+  { "country": "United Kingdom", "postal_code": "SW1A 1AA", "lat": 51.50, "lon": -0.14, "place": "London" }
+]
