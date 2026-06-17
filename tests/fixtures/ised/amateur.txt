@@ -1,0 +1,4 @@
+VA3ABC;;A;;;A;John;Smith;;123 Maple Ave;Toronto;ON;M5V 2T6;Canada;
+VE7XYZ;B;;;;;Jane;Doe;;456 Pine St;Vancouver;BC;V6B 1A1;Canada;
+VE3RAC;B;;;;;;;Radio Amateurs of Canada Inc;720 Belfast Rd;Ottawa;ON;K1G 0Z5;Canada;
+VA1NB;;;;;;Robert;Tremblay;;789 Elm Rd;Halifax;NS;B3J 1P3;Canada;
