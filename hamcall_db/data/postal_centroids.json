@@ -1,9 +1,387 @@
 [
-  { "country": "United States", "postal_code": "06111", "lat": 41.69, "lon": -72.73, "place": "Newington, CT" },
-  { "country": "United States", "postal_code": "98101", "lat": 47.61, "lon": -122.33, "place": "Seattle, WA" },
-  { "country": "United States", "postal_code": "10001", "lat": 40.75, "lon": -73.99, "place": "New York, NY" },
-  { "country": "Canada", "postal_code": "K1A 0A6", "lat": 45.42, "lon": -75.70, "place": "Ottawa, ON" },
-  { "country": "Canada", "postal_code": "B3J", "lat": 44.65, "lon": -63.58, "place": "Halifax, NS" },
-  { "country": "Australia", "postal_code": "2000", "lat": -33.87, "lon": 151.21, "place": "Sydney, NSW" },
-  { "country": "United Kingdom", "postal_code": "SW1A 1AA", "lat": 51.50, "lon": -0.14, "place": "London" }
+  {
+    "country": "United States",
+    "postal_code": "06111",
+    "lat": 41.6976,
+    "lon": -72.7237,
+    "place": "Newington, CT"
+  },
+  {
+    "country": "United States",
+    "postal_code": "02108",
+    "lat": 42.3578,
+    "lon": -71.0631,
+    "place": "Boston, MA"
+  },
+  {
+    "country": "United States",
+    "postal_code": "10001",
+    "lat": 40.7506,
+    "lon": -73.9971,
+    "place": "New York, NY"
+  },
+  {
+    "country": "United States",
+    "postal_code": "19103",
+    "lat": 39.9526,
+    "lon": -75.1652,
+    "place": "Philadelphia, PA"
+  },
+  {
+    "country": "United States",
+    "postal_code": "20500",
+    "lat": 38.8977,
+    "lon": -77.0365,
+    "place": "Washington, DC"
+  },
+  {
+    "country": "United States",
+    "postal_code": "30301",
+    "lat": 33.749,
+    "lon": -84.388,
+    "place": "Atlanta, GA"
+  },
+  {
+    "country": "United States",
+    "postal_code": "33101",
+    "lat": 25.7617,
+    "lon": -80.1918,
+    "place": "Miami, FL"
+  },
+  {
+    "country": "United States",
+    "postal_code": "37201",
+    "lat": 36.1627,
+    "lon": -86.7816,
+    "place": "Nashville, TN"
+  },
+  {
+    "country": "United States",
+    "postal_code": "44101",
+    "lat": 41.4993,
+    "lon": -81.6944,
+    "place": "Cleveland, OH"
+  },
+  {
+    "country": "United States",
+    "postal_code": "48201",
+    "lat": 42.3314,
+    "lon": -83.0458,
+    "place": "Detroit, MI"
+  },
+  {
+    "country": "United States",
+    "postal_code": "53201",
+    "lat": 43.0389,
+    "lon": -87.9065,
+    "place": "Milwaukee, WI"
+  },
+  {
+    "country": "United States",
+    "postal_code": "60601",
+    "lat": 41.8781,
+    "lon": -87.6298,
+    "place": "Chicago, IL"
+  },
+  {
+    "country": "United States",
+    "postal_code": "63101",
+    "lat": 38.627,
+    "lon": -90.1994,
+    "place": "St. Louis, MO"
+  },
+  {
+    "country": "United States",
+    "postal_code": "70112",
+    "lat": 29.9511,
+    "lon": -90.0715,
+    "place": "New Orleans, LA"
+  },
+  {
+    "country": "United States",
+    "postal_code": "73101",
+    "lat": 35.4676,
+    "lon": -97.5164,
+    "place": "Oklahoma City, OK"
+  },
+  {
+    "country": "United States",
+    "postal_code": "75201",
+    "lat": 32.7767,
+    "lon": -96.797,
+    "place": "Dallas, TX"
+  },
+  {
+    "country": "United States",
+    "postal_code": "77001",
+    "lat": 29.7604,
+    "lon": -95.3698,
+    "place": "Houston, TX"
+  },
+  {
+    "country": "United States",
+    "postal_code": "80201",
+    "lat": 39.7392,
+    "lon": -104.9903,
+    "place": "Denver, CO"
+  },
+  {
+    "country": "United States",
+    "postal_code": "85001",
+    "lat": 33.4484,
+    "lon": -112.074,
+    "place": "Phoenix, AZ"
+  },
+  {
+    "country": "United States",
+    "postal_code": "87101",
+    "lat": 35.0844,
+    "lon": -106.6504,
+    "place": "Albuquerque, NM"
+  },
+  {
+    "country": "United States",
+    "postal_code": "89101",
+    "lat": 36.1699,
+    "lon": -115.1398,
+    "place": "Las Vegas, NV"
+  },
+  {
+    "country": "United States",
+    "postal_code": "90001",
+    "lat": 34.0522,
+    "lon": -118.2437,
+    "place": "Los Angeles, CA"
+  },
+  {
+    "country": "United States",
+    "postal_code": "94101",
+    "lat": 37.7749,
+    "lon": -122.4194,
+    "place": "San Francisco, CA"
+  },
+  {
+    "country": "United States",
+    "postal_code": "97201",
+    "lat": 45.5152,
+    "lon": -122.6784,
+    "place": "Portland, OR"
+  },
+  {
+    "country": "United States",
+    "postal_code": "98101",
+    "lat": 47.6062,
+    "lon": -122.3321,
+    "place": "Seattle, WA"
+  },
+  {
+    "country": "United States",
+    "postal_code": "99501",
+    "lat": 61.2181,
+    "lon": -149.9003,
+    "place": "Anchorage, AK"
+  },
+  {
+    "country": "United States",
+    "postal_code": "96801",
+    "lat": 21.3069,
+    "lon": -157.8583,
+    "place": "Honolulu, HI"
+  },
+  {
+    "country": "United States",
+    "postal_code": "00901",
+    "lat": 18.4655,
+    "lon": -66.1057,
+    "place": "San Juan, PR"
+  },
+  {
+    "country": "Canada",
+    "postal_code": "K1A",
+    "lat": 45.4215,
+    "lon": -75.6972,
+    "place": "Ottawa, ON"
+  },
+  {
+    "country": "Canada",
+    "postal_code": "M5H",
+    "lat": 43.6532,
+    "lon": -79.3832,
+    "place": "Toronto, ON"
+  },
+  {
+    "country": "Canada",
+    "postal_code": "H2Y",
+    "lat": 45.5019,
+    "lon": -73.5674,
+    "place": "Montreal, QC"
+  },
+  {
+    "country": "Canada",
+    "postal_code": "G1R",
+    "lat": 46.8139,
+    "lon": -71.208,
+    "place": "Quebec City, QC"
+  },
+  {
+    "country": "Canada",
+    "postal_code": "V6B",
+    "lat": 49.2827,
+    "lon": -123.1207,
+    "place": "Vancouver, BC"
+  },
+  {
+    "country": "Canada",
+    "postal_code": "V8W",
+    "lat": 48.4284,
+    "lon": -123.3656,
+    "place": "Victoria, BC"
+  },
+  {
+    "country": "Canada",
+    "postal_code": "T5J",
+    "lat": 53.5461,
+    "lon": -113.4938,
+    "place": "Edmonton, AB"
+  },
+  {
+    "country": "Canada",
+    "postal_code": "T2P",
+    "lat": 51.0447,
+    "lon": -114.0719,
+    "place": "Calgary, AB"
+  },
+  {
+    "country": "Canada",
+    "postal_code": "R3C",
+    "lat": 49.8951,
+    "lon": -97.1384,
+    "place": "Winnipeg, MB"
+  },
+  {
+    "country": "Canada",
+    "postal_code": "S4P",
+    "lat": 50.4452,
+    "lon": -104.6189,
+    "place": "Regina, SK"
+  },
+  {
+    "country": "Canada",
+    "postal_code": "B3J",
+    "lat": 44.6488,
+    "lon": -63.5752,
+    "place": "Halifax, NS"
+  },
+  {
+    "country": "Canada",
+    "postal_code": "E3B",
+    "lat": 45.9636,
+    "lon": -66.6431,
+    "place": "Fredericton, NB"
+  },
+  {
+    "country": "Canada",
+    "postal_code": "A1C",
+    "lat": 47.5615,
+    "lon": -52.7126,
+    "place": "St. John's, NL"
+  },
+  {
+    "country": "Canada",
+    "postal_code": "C1A",
+    "lat": 46.2382,
+    "lon": -63.1311,
+    "place": "Charlottetown, PE"
+  },
+  {
+    "country": "Canada",
+    "postal_code": "X1A",
+    "lat": 62.454,
+    "lon": -114.3718,
+    "place": "Yellowknife, NT"
+  },
+  {
+    "country": "Canada",
+    "postal_code": "Y1A",
+    "lat": 60.7212,
+    "lon": -135.0568,
+    "place": "Whitehorse, YT"
+  },
+  {
+    "country": "Canada",
+    "postal_code": "X0A",
+    "lat": 63.7467,
+    "lon": -68.517,
+    "place": "Iqaluit, NU"
+  },
+  {
+    "country": "Australia",
+    "postal_code": "2000",
+    "lat": -33.8688,
+    "lon": 151.2093,
+    "place": "Sydney, NSW"
+  },
+  {
+    "country": "Australia",
+    "postal_code": "2300",
+    "lat": -32.9283,
+    "lon": 151.7817,
+    "place": "Newcastle, NSW"
+  },
+  {
+    "country": "Australia",
+    "postal_code": "2600",
+    "lat": -35.2809,
+    "lon": 149.13,
+    "place": "Canberra, ACT"
+  },
+  {
+    "country": "Australia",
+    "postal_code": "3000",
+    "lat": -37.8136,
+    "lon": 144.9631,
+    "place": "Melbourne, VIC"
+  },
+  {
+    "country": "Australia",
+    "postal_code": "4000",
+    "lat": -27.4698,
+    "lon": 153.0251,
+    "place": "Brisbane, QLD"
+  },
+  {
+    "country": "Australia",
+    "postal_code": "4870",
+    "lat": -16.9186,
+    "lon": 145.7781,
+    "place": "Cairns, QLD"
+  },
+  {
+    "country": "Australia",
+    "postal_code": "5000",
+    "lat": -34.9285,
+    "lon": 138.6007,
+    "place": "Adelaide, SA"
+  },
+  {
+    "country": "Australia",
+    "postal_code": "6000",
+    "lat": -31.9523,
+    "lon": 115.8613,
+    "place": "Perth, WA"
+  },
+  {
+    "country": "Australia",
+    "postal_code": "7000",
+    "lat": -42.8821,
+    "lon": 147.3272,
+    "place": "Hobart, TAS"
+  },
+  {
+    "country": "Australia",
+    "postal_code": "0800",
+    "lat": -12.4634,
+    "lon": 130.8456,
+    "place": "Darwin, NT"
+  }
 ]
