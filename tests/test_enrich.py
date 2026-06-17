@@ -27,11 +27,21 @@ from hamcall_db.enrich import (
 from hamcall_db.models import Record
 
 FIXTURE = Path(__file__).parent / "fixtures" / "cty" / "cty.dat"
+CSV_FIXTURE = Path(__file__).parent / "fixtures" / "cty" / "cty.csv"
+# A cty.dat that includes England (primary prefix "G"), an entity intentionally
+# absent from the bundled dxcc_entity_numbers.json seed, so the number can only come
+# from cty.csv.
+DAT_WITH_ENGLAND = Path(__file__).parent / "fixtures" / "cty" / "cty_with_england.dat"
 
 
 @pytest.fixture(scope="module")
 def lookup() -> CtyLookup:
     return load_cty(FIXTURE)
+
+
+@pytest.fixture(scope="module")
+def csv_lookup() -> CtyLookup:
+    return load_cty(FIXTURE, csv_path=CSV_FIXTURE)
 
 
 # --- loader --------------------------------------------------------------------
@@ -179,3 +189,57 @@ def test_enrich_stream(lookup: CtyLookup) -> None:
 def test_lookup_is_callable_as_enricher(lookup: CtyLookup) -> None:
     out = lookup(Record(callsign="LU1AA"))
     assert (out.country, out.dxcc) == ("Argentina", 100)
+
+
+# --- DXCC numbers sourced from cty.csv (au-37af) -------------------------------
+#
+# When ``csv_path`` is supplied, the ADIF DXCC number comes from AD1C's cty.csv
+# (column index 2, keyed by the primary prefix in column 0) instead of the small
+# bundled seed json. The entity NAME still always comes from cty.dat. Passing no
+# csv_path keeps the legacy seed-json behavior, so the existing tests above (which
+# use the seed-backed ``lookup`` fixture) still pass unchanged.
+
+
+def test_csv_returns_lookup(csv_lookup: CtyLookup) -> None:
+    assert isinstance(csv_lookup, CtyLookup)
+
+
+def test_csv_dxcc_number_for_known_entities(csv_lookup: CtyLookup) -> None:
+    # Numbers come from cty.csv; names still come from cty.dat.
+    assert csv_lookup.resolve("W1AW") == ("United States", 291)
+    assert csv_lookup.resolve("KH6AA") == ("Hawaii", 110)
+    assert csv_lookup.resolve("KL7XYZ") == ("Alaska", 6)
+    assert csv_lookup.resolve("VE3ABC") == ("Canada", 1)
+    assert csv_lookup.resolve("LU1AA") == ("Argentina", 100)
+
+
+def test_csv_country_name_still_from_cty_dat(csv_lookup: CtyLookup) -> None:
+    # Entity name is sourced from cty.dat, never the csv.
+    name, _ = csv_lookup.resolve("KH6AA")
+    assert name == "Hawaii"
+
+
+def test_no_csv_path_keeps_seed_json_behavior() -> None:
+    # Backward compatible: load_cty(path) with no csv_path uses the seed json.
+    seed_lookup = load_cty(FIXTURE)
+    assert seed_lookup.resolve("W1AW") == ("United States", 291)
+    assert seed_lookup.resolve("VE3ABC") == ("Canada", 1)
+
+
+def test_csv_supplies_number_absent_from_seed() -> None:
+    # England (primary prefix "G", ADIF 223) is NOT in the bundled seed json.
+    # Without a csv it resolves name-only (dxcc=None); with the csv the number fills.
+    seed_lookup = load_cty(DAT_WITH_ENGLAND)
+    assert seed_lookup.resolve("G3ABC") == ("England", None)
+
+    csv_lookup = load_cty(DAT_WITH_ENGLAND, csv_path=CSV_FIXTURE)
+    assert csv_lookup.resolve("G3ABC") == ("England", 223)
+
+
+def test_csv_unknown_callsign_still_none(csv_lookup: CtyLookup) -> None:
+    assert csv_lookup.resolve("3Y0XX") == (None, None)
+
+
+def test_csv_enrich_record_sets_number(csv_lookup: CtyLookup) -> None:
+    out = enrich_record(Record(callsign="VE3ABC"), csv_lookup)
+    assert (out.country, out.dxcc) == ("Canada", 1)

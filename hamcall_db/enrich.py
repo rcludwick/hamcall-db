@@ -34,19 +34,26 @@ For a callsign:
 2. Otherwise the LONGEST matching prefix wins (e.g. "KH6AA" -> "KH6" over "K").
 3. No match -> ``(None, None)``; `country`/`dxcc` are left untouched.
 
-DXCC NUMBER caveat
-------------------
+DXCC NUMBER (cty.csv vs. seed json)
+-----------------------------------
 Standard cty.dat does NOT carry the numeric ADIF DXCC code — only the entity name
-and a textual "Primary DXCC Prefix". We chose option (b): bundle a small
-``hamcall_db/data/dxcc_entity_numbers.json`` mapping primary-prefix -> ADIF number.
-`country` is therefore always reliable (straight from cty.dat); `dxcc` is
-best-effort and is ``None`` for any entity whose primary prefix is absent from the
-seed table. Filling that table out (e.g. by generating it from AD1C's ``cty.csv``
-variant, which carries the number directly) is a recommended follow-up.
+and a textual "Primary DXCC Prefix". Two sources fill `dxcc`, selected by
+``load_cty``'s ``csv_path`` argument:
+
+* ``load_cty(path, csv_path=<cty.csv>)`` — parse AD1C's ``cty.csv`` variant, which
+  carries the ADIF number directly (column index 2, keyed by primary prefix in
+  column 0). Full coverage; preferred for real builds. The build wires the
+  downloaded csv path here.
+* ``load_cty(path)`` — legacy fallback: the small bundled
+  ``hamcall_db/data/dxcc_entity_numbers.json`` seed (primary-prefix -> ADIF number).
+  `dxcc` is ``None`` for any entity whose primary prefix is absent from the seed.
+
+`country` is always reliable (straight from cty.dat) regardless of the number source.
 """
 
 from __future__ import annotations
 
+import csv
 import json
 from collections.abc import Iterable, Iterator
 from dataclasses import replace
@@ -59,14 +66,18 @@ from hamcall_db.models import Record
 __all__ = [
     "CtyLookup",
     "load_cty",
+    "load_cty_csv_numbers",
     "enrich_record",
     "enrich",
     "DEFAULT_CTY_FILENAME",
+    "DEFAULT_CTY_CSV_FILENAME",
 ]
 
 # Conventional on-disk name of a downloaded AD1C country file. The importer that
 # downloads it (a follow-up) should hand the path to `load_cty`.
 DEFAULT_CTY_FILENAME = "cty.dat"
+# The AD1C CSV variant of the country file, carrying the numeric ADIF DXCC code.
+DEFAULT_CTY_CSV_FILENAME = "cty.csv"
 
 
 def _strip_token(token: str) -> str:
@@ -161,15 +172,65 @@ class CtyLookup:
         return enrich_record(record, self)
 
 
-def load_cty(path: str | Path) -> CtyLookup:
+# cty.csv column layout (AD1C / country-files.com "Big CTY" CSV variant).
+# Header-less, comma-separated, double-quoted. One row per entity. Confirmed against
+# the published format and independent parsers (e.g. tzneal/ham-go, flwyd/adif-multitool)
+# on 2026-06-16; country-files.com's own format page was unreachable (HTTP 403) at the
+# time, so this layout is pinned here so a future drift is a one-line fix:
+#
+#   [0] Primary DXCC Prefix      [5] ITU Zone
+#   [1] Entity Name              [6] Latitude
+#   [2] ADIF DXCC entity number  [7] Longitude (+ = West)
+#   [3] Continent                [8] GMT offset
+#   [4] CQ Zone                  [9] space-separated prefix/callsign list (ends ';')
+#
+# We only need columns [0] (the join key, matching cty.dat's primary prefix) and [2]
+# (the ADIF number). Everything else is ignored — country/name still comes from cty.dat.
+_CSV_PRIMARY_PREFIX_COL = 0
+_CSV_DXCC_NUMBER_COL = 2
+_CSV_MIN_COLS = 3
+
+
+def load_cty_csv_numbers(path: str | Path) -> dict[str, int]:
+    """Parse an AD1C cty.csv into ``primary-prefix (UPPER) -> ADIF DXCC number``.
+
+    The csv is the authoritative, full-coverage source of the numeric ADIF code that
+    standard cty.dat lacks. Keyed by primary prefix so it can be joined onto cty.dat
+    entities exactly the way the bundled seed json is. Header-less; see the column
+    layout note above. Rows with a blank/non-numeric prefix or number are skipped.
+    """
+    numbers: dict[str, int] = {}
+    with Path(path).open(encoding="utf-8", errors="replace", newline="") as handle:
+        for row in csv.reader(handle):
+            if len(row) < _CSV_MIN_COLS:
+                continue
+            prefix = row[_CSV_PRIMARY_PREFIX_COL].strip().upper()
+            if not prefix:
+                continue
+            try:
+                numbers[prefix] = int(row[_CSV_DXCC_NUMBER_COL].strip())
+            except ValueError:
+                continue
+    return numbers
+
+
+def load_cty(path: str | Path, *, csv_path: str | Path | None = None) -> CtyLookup:
     """Parse an AD1C cty.dat file at ``path`` into a `CtyLookup`.
 
     The only I/O in this module. Entity records are ``;``-terminated; the first
     colon-separated line is the header (entity name + primary DXCC prefix in field 8)
     and the remainder is the comma-separated prefix/callsign list.
+
+    The entity NAME (`country`) always comes from cty.dat. The numeric ADIF DXCC code
+    (`dxcc`) comes from:
+
+    * ``csv_path`` (an AD1C ``cty.csv``) when given — full-coverage, authoritative;
+    * otherwise the small bundled ``dxcc_entity_numbers.json`` seed (legacy behavior).
+
+    Backward compatible: ``load_cty(path)`` with no ``csv_path`` is unchanged.
     """
     text = Path(path).read_text(encoding="utf-8", errors="replace")
-    numbers = _dxcc_numbers()
+    numbers = load_cty_csv_numbers(csv_path) if csv_path is not None else _dxcc_numbers()
 
     exact: dict[str, tuple[str, int | None]] = {}
     prefix: dict[str, tuple[str, int | None]] = {}
