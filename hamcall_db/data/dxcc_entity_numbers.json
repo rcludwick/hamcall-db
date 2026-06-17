@@ -1,0 +1,8 @@
+{
+  "_comment": "Maps an AD1C cty.dat 'Primary DXCC Prefix' (the 8th colon-field of each entity header) to its numeric ADIF DXCC entity code. Standard cty.dat does NOT carry the ADIF number; this small bundled table supplies it so Record.dxcc can be populated. This is a SEED, not exhaustive: prefixes absent here resolve country (entity name) only and leave dxcc=None. Full coverage is a follow-up (consider generating from AD1C's cty.csv variant, which carries the number directly). Source/attribution: ADIF DXCC entity list / AD1C. Keys are uppercased primary prefixes.",
+  "K": 291,
+  "KH6": 110,
+  "KL": 6,
+  "VE": 1,
+  "LU": 100
+}
