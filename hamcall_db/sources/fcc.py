@@ -1,14 +1,123 @@
-"""FCC ULS importer (US).
+"""FCC ULS amateur importer (US).
 
-Skeleton only. The real download + EN/AM/HD .dat parsing lands in nugget au-039b.
+Parses the FCC Universal Licensing System amateur bulk extract (``l_amat.zip``), a set
+of pipe-delimited ``.dat`` files joined on the unique-system-identifier (USI):
+
+- HD.dat — license header: call sign, license status (filter to active).
+- EN.dat — entity: licensee name + mailing address (we keep city/state/zip; the street
+  address is read past but NEVER stored — redistribution contract).
+- AM.dat — amateur: operator class (mapped to a human-readable license class).
+
+Column positions are stable in the ULS public format; they live in named constants
+below so a future format revision is a one-line change. See FCC "Public Access Database
+Definitions". Output leaves county/country/dxcc/grid for downstream stages (cty.dat
+enrichment in au-9ed1, geocoding in au-76be).
 """
 
 from __future__ import annotations
 
-from collections.abc import Iterable
+import urllib.error
+import urllib.request
+from collections.abc import Iterable, Iterator
 from pathlib import Path
 
 from hamcall_db.models import Record
+
+# Upstream amateur bulk extract.
+DOWNLOAD_URL = "https://data.fcc.gov/download/pub/uls/complete/l_amat.zip"
+
+# 0-based column indices within each pipe-delimited record type.
+_HD_CALLSIGN = 4
+_HD_LICENSE_STATUS = 5
+_EN_CALLSIGN = 4
+_EN_FIRST_NAME = 8
+_EN_LAST_NAME = 10
+_EN_CITY = 16
+_EN_STATE = 17
+_EN_ZIP = 18
+_AM_CALLSIGN = 4
+_AM_OPERATOR_CLASS = 5
+
+_HD_USI = _EN_USI = _AM_USI = 1  # unique system identifier (join key)
+
+# 'A' = active. Other values (E=expired, C=cancelled, T=terminated, ...) are non-active.
+_ACTIVE_STATUS = "A"
+
+# FCC operator class single-letter codes -> human-readable license class.
+OPERATOR_CLASS = {
+    "E": "Amateur Extra",
+    "A": "Advanced",
+    "G": "General",
+    "T": "Technician",
+    "P": "Technician Plus",
+    "N": "Novice",
+}
+
+
+def _read_dat(path: Path) -> Iterator[list[str]]:
+    """Yield pipe-split fields for each non-empty line of a ULS .dat file."""
+    with path.open(encoding="latin-1") as fh:
+        for line in fh:
+            line = line.rstrip("\n")
+            if line:
+                yield line.split("|")
+
+
+def _field(row: list[str], idx: int) -> str | None:
+    """Return column `idx` of `row`, or None if absent/blank."""
+    if idx < len(row):
+        value = row[idx].strip()
+        return value or None
+    return None
+
+
+def parse_dir(
+    path: Path,
+    *,
+    active_only: bool = True,
+    synced_at: str | None = None,
+) -> Iterator[Record]:
+    """Parse an unzipped FCC ULS amateur extract directory into `Record`s.
+
+    Joins HD/EN/AM on the unique system identifier. By default only active licenses
+    (HD license_status == 'A') are emitted. `synced_at` stamps the upstream file date.
+    """
+    # HD gives the authoritative set of licenses + their status.
+    statuses: dict[str, str | None] = {}
+    for row in _read_dat(path / "HD.dat"):
+        usi = _field(row, _HD_USI)
+        if usi is not None:
+            statuses[usi] = _field(row, _HD_LICENSE_STATUS)
+
+    # AM gives operator class per USI.
+    operator_classes: dict[str, str | None] = {}
+    for row in _read_dat(path / "AM.dat"):
+        usi = _field(row, _AM_USI)
+        if usi is not None:
+            operator_classes[usi] = _field(row, _AM_OPERATOR_CLASS)
+
+    # EN carries the licensee identity + location; it drives record emission.
+    for row in _read_dat(path / "EN.dat"):
+        usi = _field(row, _EN_USI)
+        if usi is None or usi not in statuses:
+            continue
+        if active_only and statuses[usi] != _ACTIVE_STATUS:
+            continue
+        callsign = _field(row, _EN_CALLSIGN)
+        if callsign is None:
+            continue
+        op_class = operator_classes.get(usi)
+        yield Record(
+            callsign=callsign,
+            first_name=_field(row, _EN_FIRST_NAME),
+            last_name=_field(row, _EN_LAST_NAME),
+            city=_field(row, _EN_CITY),
+            state=_field(row, _EN_STATE),
+            postal_code=_field(row, _EN_ZIP),
+            license_class=OPERATOR_CLASS.get(op_class, op_class) if op_class else None,
+            source="fcc",
+            synced_at=synced_at,
+        )
 
 
 class FccUlsSource:
@@ -17,7 +126,34 @@ class FccUlsSource:
     name = "fcc"
 
     def download(self, work_dir: Path) -> Path:
-        raise NotImplementedError("FCC ULS download lands in au-039b")
+        """Fetch + unzip l_amat.zip into work_dir, returning the extract directory.
 
-    def parse(self, path: Path) -> Iterable[Record]:
-        raise NotImplementedError("FCC ULS parse lands in au-039b")
+        Caches the raw zip; honors If-Modified-Since when a cached copy exists so we
+        don't re-pull an unchanged weekly extract. Be polite to upstream.
+        """
+        import zipfile
+        from email.utils import formatdate
+
+        raw_zip = work_dir / "l_amat.zip"
+        extract_dir = work_dir / "l_amat"
+        work_dir.mkdir(parents=True, exist_ok=True)
+
+        request = urllib.request.Request(DOWNLOAD_URL)
+        if raw_zip.exists():
+            request.add_header(
+                "If-Modified-Since", formatdate(raw_zip.stat().st_mtime, usegmt=True)
+            )
+        try:
+            with urllib.request.urlopen(request) as response:  # noqa: S310 (https URL)
+                raw_zip.write_bytes(response.read())
+        except urllib.error.HTTPError as exc:
+            if exc.code != 304 or not raw_zip.exists():  # 304 = unchanged, use cache
+                raise
+
+        extract_dir.mkdir(exist_ok=True)
+        with zipfile.ZipFile(raw_zip) as zf:
+            zf.extractall(extract_dir)
+        return extract_dir
+
+    def parse(self, path: Path, *, synced_at: str | None = None) -> Iterable[Record]:
+        return parse_dir(path, synced_at=synced_at)
