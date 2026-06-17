@@ -82,7 +82,9 @@ Prefer Parquet? Those stay the canonical, storage-neutral output. Datasette itse
 
 ## License
 
-Build code: MIT. Published dataset: distributed under the combined terms of each upstream source (see [`NOTICE`](NOTICE)). Because one upstream source (AD1C cty.dat) is free for non-commercial use only, **the published dataset is offered for non-commercial use only**; commercial use requires separate arrangements with the upstream rights holders. The MIT build code is unaffected.
+**Build code:** MIT — see [`LICENSE`](LICENSE).
+
+**Published dataset** (the Parquet files and the SQLite `.db`): [Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/). When you redistribute the data you must also satisfy the upstream source attribution terms in [`NOTICE`](NOTICE). Commercial use requires separate arrangements with the upstream rights holders (principally AD1C for cty.dat).
 
 ## Status
 

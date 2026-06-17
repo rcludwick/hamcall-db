@@ -78,11 +78,16 @@ who redistributes it must comply with the union of these terms, which means:
   * Reproduce the AD1C / cty.dat attribution statement (source 4).
   * Observe the cty.dat non-commercial restriction (source 4).
 
-PROJECT DECISION (2026-06-16): the maintainers accept the non-commercial
-restriction. The published hamcall-db dataset is therefore offered for
-NON-COMMERCIAL USE ONLY. Commercial use or redistribution requires separate
-arrangements with the upstream rights holders (principally AD1C for cty.dat).
-The MIT-licensed build code is unaffected by this restriction.
+PROJECT DECISION (2026-06-16): the published hamcall-db dataset artifacts (the
+Parquet files and the SQLite .db) are licensed under Creative Commons
+Attribution-NonCommercial 4.0 International (CC BY-NC 4.0):
+https://creativecommons.org/licenses/by-nc/4.0/
+This is compatible with AD1C cty.dat's non-commercial restriction. When you
+redistribute the dataset you must ALSO satisfy the upstream attribution terms
+listed above. Commercial use requires separate arrangements with the upstream
+rights holders (principally AD1C for cty.dat). The build CODE in this
+repository is licensed separately under the MIT License (see LICENSE) and is
+unaffected by the dataset's non-commercial terms.
 
 The simplest way to comply is to redistribute this NOTICE file unmodified
 alongside the dataset.
