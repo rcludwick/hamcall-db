@@ -104,6 +104,30 @@ def test_all_build_enriches_allstar_nodes(tmp_path, monkeypatch):
     assert nodes == [2000, 2001, 2002]
 
 
+def test_all_build_treats_suffixless_out_as_directory(tmp_path, monkeypatch):
+    """`--out dist` (no suffix, not yet existing) means a directory: create it and
+    write all three dated artifacts inside it (regression for the CI release where
+    `out.is_dir()` was False for a non-existent dir, so the parquet landed in a file
+    literally named `dist` and history/sqlite scattered into the cwd)."""
+    _stub_all_sources(monkeypatch)
+    monkeypatch.setattr("hamcall_db.build.ad1c.download_cty", lambda *a, **k: None)
+    monkeypatch.setattr(enrich_allstar, "download_allstar", lambda *a, **k: FIXTURE)
+
+    out = tmp_path / "dist"  # does NOT exist yet, no file suffix
+    result = CliRunner().invoke(
+        app, ["--all", "--out", str(out), "--work-dir", str(tmp_path)]
+    )
+    assert result.exit_code == 0, result.output
+    assert out.is_dir(), "out should have been created as a directory"
+    dated = sorted(p.name for p in out.glob("hamcall-db-*"))
+    # current parquet + history parquet + sqlite .db, all inside dist/
+    assert any(n.endswith(".parquet") and "history" not in n for n in dated)
+    assert any("history" in n and n.endswith(".parquet") for n in dated)
+    assert any(n.endswith(".db") for n in dated)
+    # nothing scattered into the working dir
+    assert not list(tmp_path.glob("hamcall-db-*"))
+
+
 def test_all_build_resilient_when_allstar_download_fails(tmp_path, monkeypatch):
     _stub_all_sources(monkeypatch)
     monkeypatch.setattr("hamcall_db.build.ad1c.download_cty", lambda *a, **k: None)

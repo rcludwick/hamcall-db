@@ -162,7 +162,14 @@ def build(
                 err=True,
             )
 
-    out_dir = out.is_dir()
+    # Treat --out as a directory when it already is one OR has no file suffix
+    # (e.g. `--out dist/`); only an explicit file extension means a single file path.
+    # A directory that doesn't exist yet is created, so CI need not pre-mkdir it — the
+    # cause of the failed first release, where a non-existent `dist/` made out.is_dir()
+    # False and the parquet landed in a file literally named `dist`.
+    out_dir = out.is_dir() or out.suffix == ""
+    if out_dir:
+        out.mkdir(parents=True, exist_ok=True)
     out_path = out / _default_filename() if out_dir else out
     count = write_parquet(records, out_path)
     typer.echo(f"Wrote {count} records to {out_path}")
