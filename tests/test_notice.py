@@ -39,3 +39,9 @@ def test_notice_states_combined_terms() -> None:
 def test_notice_separates_build_code_license() -> None:
     # Build code is MIT; dataset is the combined upstream terms.
     assert "MIT" in NOTICE
+
+
+def test_notice_mentions_pota() -> None:
+    # POTA park data is a published source (hdb-9640) — must be attributed.
+    assert "POTA" in NOTICE or "Parks On The Air" in NOTICE
+    assert "pota.app" in NOTICE

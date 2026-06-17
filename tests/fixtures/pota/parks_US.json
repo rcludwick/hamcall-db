@@ -1,0 +1,36 @@
+[
+  {
+    "reference": "US-0001",
+    "name": "Acadia National Park",
+    "latitude": 44.31,
+    "longitude": -68.2034,
+    "grid": "FN54vh",
+    "locationDesc": "US-ME",
+    "attempts": 602,
+    "activations": 536,
+    "qsos": 18109
+  },
+  {
+    "reference": "US-4567",
+    "name": "Boise National Forest",
+    "latitude": 44.0,
+    "longitude": -115.5,
+    "grid": "DN14",
+    "locationDesc": "US-ID",
+    "attempts": 12,
+    "activations": 8,
+    "qsos": 410
+  },
+  {
+    "reference": "US-9999",
+    "name": "Inactive Test Park",
+    "latitude": null,
+    "longitude": null,
+    "grid": null,
+    "locationDesc": "US-CA",
+    "active": 0,
+    "attempts": 0,
+    "activations": 0,
+    "qsos": 0
+  }
+]

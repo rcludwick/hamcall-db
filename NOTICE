@@ -83,6 +83,27 @@ Upstream sources and their licenses
    The node-number column is supplementary; if AllStarLink objects, it can be
    dropped without affecting the rest of the dataset.
 
+6. POTA (Parks On The Air) — park directory
+   Coverage: POTA park references (e.g. US-0001), names, region/location
+             descriptors, and an INDICATIVE representative point/grid, pulled
+             per program from the unofficial public API at
+             https://api.pota.app/program/parks/<PREFIX>.
+   Source:   Parks On The Air (POTA), https://pota.app/.
+   Required attribution statement:
+
+       Park data courtesy of Parks On The Air (POTA), https://pota.app/.
+
+   NOTE: POTA publishes no explicit redistribution license for the park
+   directory, and its API is unofficial/undocumented and subject to change.
+   PROJECT DECISION (2026-06-17): this data is used on an ASSUMED NON-COMMERCIAL
+   basis, consistent with the published dataset's CC BY-NC 4.0 terms — the same
+   posture as AllStarLink (source 5). The POTA parks dataset is a SEPARATE,
+   supplementary reference table (hamcall-db-pota-parks-YYYY-MM-DD.parquet and a
+   pota_parks table in the SQLite .db); if POTA objects, it can be dropped
+   without affecting the rest of the dataset. The single representative
+   coordinate/grid per park is INDICATIVE ONLY (large parks span many grid
+   squares) and is display-only, never a join key.
+
 
 Combined dataset terms
 -----------------------
@@ -96,6 +117,8 @@ who redistributes it must comply with the union of these terms, which means:
   * Observe the cty.dat non-commercial restriction (source 4).
   * Reproduce the AllStarLink attribution statement (source 5) and observe its
     assumed non-commercial basis.
+  * Reproduce the POTA attribution statement (source 6) and observe its assumed
+    non-commercial basis.
 
 PROJECT DECISION (2026-06-16): the published hamcall-db dataset artifacts (the
 Parquet files and the SQLite .db) are licensed under Creative Commons

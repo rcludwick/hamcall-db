@@ -15,8 +15,13 @@ A Python build pipeline that aggregates free, openly-licensed amateur radio lice
 | ACMA RRL | Australia (~80k amateur records, filtered from full radiocomms set) | CC-BY 4.0 AU | Daily extract |
 | AD1C cty.dat | Worldwide DXCC prefix → entity mapping | Free for non-commercial use, attribution required | cty.dat |
 | AllStarLink | Node numbers per callsign (one-to-many) | Used on an assumed non-commercial basis (see NOTICE) | Pipe-delimited node directory |
+| POTA | Parks On The Air park directory (places, not licensees) | Used on an assumed non-commercial basis (see NOTICE) | Per-program JSON from `api.pota.app` |
 
 The on-demand long tail (UK, EU, JA, etc.) is intentionally out of scope here — consumer tools should fall through to per-callsign APIs like QRZ or HamQTH for those.
+
+### POTA parks reference dataset
+
+POTA park data is published as a SEPARATE, additive reference dataset (parks are places, not licensees, so it does not touch the callsign schema above): `hamcall-db-pota-parks-YYYY-MM-DD.parquet` plus a `pota_parks` table in the SQLite `.db`. Columns: `reference` (PK, e.g. `US-0001`), `name`, `location_desc`, `region`, `country`, `dxcc`, `grid`, `lat`, `lon`, `active`, `source`, `synced_at`. The single representative `grid`/`lat`/`lon` per park is **indicative only** (large parks span many grid squares), is display-only and never a join key, and is stored **verbatim** from POTA — the 4-char person-grid privacy truncation does not apply to public landmarks.
 
 ## Output schema
 

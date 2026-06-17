@@ -24,8 +24,14 @@ from hamcall_db.sources.acma import AcmaSource
 from hamcall_db.sources.base import Source
 from hamcall_db.sources.fcc import FccUlsSource
 from hamcall_db.sources.ised import IsedSource
-from hamcall_db.sqlite_writer import write_sqlite
-from hamcall_db.writer import read_history_parquet, write_history_parquet, write_parquet
+from hamcall_db.sources.pota import PotaSource
+from hamcall_db.sqlite_writer import write_pota_parks_sqlite, write_sqlite
+from hamcall_db.writer import (
+    read_history_parquet,
+    write_history_parquet,
+    write_parquet,
+    write_pota_parks_parquet,
+)
 
 # Registry of available source importers, keyed by their short tag.
 SOURCES: dict[str, Source] = {
@@ -197,6 +203,30 @@ def build(
             f"rows to {db_path}"
         )
 
+        # POTA parks: a SEPARATE additive reference dataset (places, not licensees,
+        # hdb-9640). Written as its own Parquet file AND a pota_parks table appended to
+        # the SAME .db — it NEVER touches the callsign current/history schema (the
+        # redistribution contract). RESILIENT: a POTA outage must not abort the build —
+        # log a warning and skip the parks artifacts, exactly like AllStarLink above.
+        try:
+            pota = PotaSource()
+            parks_dir = pota.download(work_dir)
+            parks = list(pota.parse(parks_dir))
+            parks_dir_out = out if out_dir else out.parent
+            parks_path = parks_dir_out / _pota_parks_filename()
+            parks_count = write_pota_parks_parquet(parks, parks_path)
+            write_pota_parks_sqlite(parks, db_path)
+            typer.echo(
+                f"Wrote {parks_count} POTA parks to {parks_path} "
+                f"(+ pota_parks table in {db_path})"
+            )
+        except Exception as exc:  # download/parse/write failure is non-fatal
+            typer.echo(
+                f"WARNING: POTA parks dataset skipped ({exc}); "
+                "parks artifacts not written",
+                err=True,
+            )
+
 
 def _default_filename() -> str:
     """Dated artifact name: hamcall-db-YYYY-MM-DD.parquet."""
@@ -214,6 +244,12 @@ def _history_filename() -> str:
     """Dated history artifact name: hamcall-db-history-YYYY-MM-DD.parquet."""
     today = dt.date.today().isoformat()
     return f"hamcall-db-history-{today}.parquet"
+
+
+def _pota_parks_filename() -> str:
+    """Dated POTA parks artifact name: hamcall-db-pota-parks-YYYY-MM-DD.parquet."""
+    today = dt.date.today().isoformat()
+    return f"hamcall-db-pota-parks-{today}.parquet"
 
 
 if __name__ == "__main__":

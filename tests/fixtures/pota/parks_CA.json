@@ -1,0 +1,13 @@
+[
+  {
+    "reference": "CA-0001",
+    "name": "Banff National Park",
+    "latitude": 51.4968,
+    "longitude": -115.9281,
+    "grid": "DO31",
+    "locationDesc": "CA-AB",
+    "attempts": 120,
+    "activations": 95,
+    "qsos": 3400
+  }
+]

@@ -14,6 +14,7 @@ import polars as pl
 
 from hamcall_db.history import HISTORY_SCHEMA_COLUMNS, HistoryRow
 from hamcall_db.models import SCHEMA_COLUMNS, Record
+from hamcall_db.sources.pota import PARK_SCHEMA_COLUMNS, ParkRecord
 
 
 # Explicit schema keeps column order and dtypes stable even when a batch is all-null
@@ -53,6 +54,38 @@ def write_history_parquet(rows: Iterable[HistoryRow], out_path: Path) -> int:
     """
     records = [asdict(r) for r in rows]
     frame = pl.DataFrame(records, schema=_HISTORY_SCHEMA)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    frame.write_parquet(out_path)
+    return frame.height
+
+
+# POTA parks artifact schema (hdb-9640): a SEPARATE dataset from the callsign contract.
+# ``dxcc`` is Int64, ``active`` is Boolean, ``lat``/``lon`` are Float64 (verbatim,
+# indicative-only coords); everything else is string. Grid is stored VERBATIM (no person-
+# grid 4-char truncation — parks are public landmarks).
+def _park_dtype(col: str) -> pl.DataType:
+    if col == "dxcc":
+        return pl.Int64
+    if col in ("lat", "lon"):
+        return pl.Float64
+    if col == "active":
+        return pl.Boolean
+    return pl.Utf8
+
+
+_PARK_SCHEMA: dict[str, pl.DataType] = {
+    col: _park_dtype(col) for col in PARK_SCHEMA_COLUMNS
+}
+
+
+def write_pota_parks_parquet(parks: Iterable[ParkRecord], out_path: Path) -> int:
+    """Write POTA `ParkRecord`s to `out_path` as Parquet. Returns the row count written.
+
+    Additive artifact (hamcall-db-pota-parks-YYYY-MM-DD.parquet); separate schema from the
+    callsign current/history files so neither can drift (the redistribution contract).
+    """
+    rows = [asdict(p) for p in parks]
+    frame = pl.DataFrame(rows, schema=_PARK_SCHEMA)
     out_path.parent.mkdir(parents=True, exist_ok=True)
     frame.write_parquet(out_path)
     return frame.height

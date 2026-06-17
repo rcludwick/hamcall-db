@@ -36,6 +36,7 @@ from pathlib import Path
 
 from hamcall_db.history import HISTORY_SCHEMA_COLUMNS, HistoryRow, _identity
 from hamcall_db.models import SCHEMA_COLUMNS, Record
+from hamcall_db.sources.pota import PARK_SCHEMA_COLUMNS, ParkRecord
 
 # Columns whose SQLite affinity should be INTEGER rather than TEXT. ``dxcc`` mirrors the
 # Parquet writer's Int64 treatment; ``id`` is the surrogate key.
@@ -297,3 +298,78 @@ def _current_payload(rec: Record) -> tuple:
 def _history_payload(row: HistoryRow) -> tuple:
     """The HistoryRow values in HISTORY_SCHEMA_COLUMNS order (id is added separately)."""
     return tuple(getattr(row, name) for name in HISTORY_SCHEMA_COLUMNS)
+
+
+# --- POTA parks table (hdb-9640) ----------------------------------------------
+#
+# A SEPARATE reference dataset (parks are places, not licensees). Written ADDITIVELY:
+# the table is (re)built without touching the callsign current/history tables, so the
+# parks dataset can ship into the SAME .db without breaking the contract. ``reference``
+# (e.g. "US-0001") is the natural primary key. ``lat``/``lon`` get REAL affinity;
+# ``active`` is stored as 0/1 INTEGER; ``dxcc`` INTEGER; everything else TEXT. Grid is
+# stored VERBATIM (no person-grid 4-char truncation — parks are public landmarks).
+_PARK_INT_COLUMNS: frozenset[str] = frozenset({"dxcc"})
+_PARK_REAL_COLUMNS: frozenset[str] = frozenset({"lat", "lon"})
+
+
+def _park_col_def(name: str) -> str:
+    if name == "reference":
+        return "reference TEXT PRIMARY KEY"
+    if name == "active":
+        return "active INTEGER"
+    if name in _PARK_INT_COLUMNS:
+        return f"{name} INTEGER"
+    if name in _PARK_REAL_COLUMNS:
+        return f"{name} REAL"
+    return f"{name} TEXT"
+
+
+_POTA_PARKS_DDL = (
+    "CREATE TABLE IF NOT EXISTS pota_parks (\n"
+    + ",\n".join(f"  {_park_col_def(c)}" for c in PARK_SCHEMA_COLUMNS)
+    + "\n)"
+)
+_POTA_PARKS_REGION_INDEX_DDL = (
+    "CREATE INDEX IF NOT EXISTS idx_pota_parks_region ON pota_parks (region)"
+)
+
+
+def _park_payload(park: ParkRecord) -> tuple:
+    """ParkRecord values in PARK_SCHEMA_COLUMNS order; ``active`` bool -> 0/1 INTEGER."""
+    values = []
+    for name in PARK_SCHEMA_COLUMNS:
+        value = getattr(park, name)
+        if name == "active":
+            value = int(bool(value))
+        values.append(value)
+    return tuple(values)
+
+
+def write_pota_parks_sqlite(parks: Iterable[ParkRecord], out_path: Path) -> int:
+    """Write/refresh the ``pota_parks`` table in a SQLite file. Returns the row count.
+
+    ADDITIVE: creates the table if missing and replaces only the parks rows; any existing
+    ``current``/``history``/``allstar_nodes`` tables in the same file are untouched (the
+    parks dataset rides alongside the callsign artifact without breaking its contract).
+    Idempotent — re-running replaces the parks rows.
+    """
+    parks = list(parks)
+    out = Path(out_path)
+    out.parent.mkdir(parents=True, exist_ok=True)
+
+    con = sqlite3.connect(out)
+    try:
+        con.execute(_POTA_PARKS_DDL)
+        con.execute(_POTA_PARKS_REGION_INDEX_DDL)
+        con.execute("DELETE FROM pota_parks")  # refresh: idempotent rebuild
+        placeholders = ", ".join("?" for _ in PARK_SCHEMA_COLUMNS)
+        con.executemany(
+            f"INSERT INTO pota_parks ({', '.join(PARK_SCHEMA_COLUMNS)}) "
+            f"VALUES ({placeholders})",
+            [_park_payload(p) for p in parks],
+        )
+        con.commit()
+    finally:
+        con.close()
+
+    return len(parks)
