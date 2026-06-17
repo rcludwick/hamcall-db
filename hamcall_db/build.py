@@ -40,9 +40,13 @@ app = typer.Typer(
 
 
 def _run_source(source: Source, work_dir: Path) -> list:
-    """Download + parse a single source into a list of Records."""
+    """Download + parse a single source into a list of Records.
+
+    download() captures the upstream file date as source.synced_at (au-23bc); pass it
+    through so every Record is stamped with the source's published date.
+    """
     path = source.download(work_dir)
-    return list(source.parse(path))
+    return list(source.parse(path, synced_at=source.synced_at))
 
 
 @app.command()
@@ -104,9 +108,13 @@ def build(
     # single-source dev builds enrich only when --cty points at a local file.
     cty_path = cty
     if cty_path is None and all_sources:
-        cty_path = ad1c.download_cty(work_dir)
+        # with_csv also caches cty.csv (sibling), which carries the numeric ADIF DXCC
+        # code for accurate `dxcc` (au-37af); cty.dat alone gives the country name.
+        cty_path = ad1c.download_cty(work_dir, with_csv=True)
     if cty_path is not None:
-        records = list(enrich(records, load_cty(cty_path)))
+        csv_sibling = cty_path.with_name("cty.csv")
+        csv_path = csv_sibling if csv_sibling.exists() else None
+        records = list(enrich(records, load_cty(cty_path, csv_path=csv_path)))
 
     out_dir = out.is_dir()
     out_path = out / _default_filename() if out_dir else out
