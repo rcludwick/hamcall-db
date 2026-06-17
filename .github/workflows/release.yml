@@ -38,11 +38,32 @@ jobs:
         id: date
         run: echo "date=$(date -u +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
 
-      # The real work: this downloads the live upstream sources (FCC ULS, ISED
-      # Canada, ACMA, AD1C cty.dat), normalizes/joins/geocodes, and writes the
-      # dated current-state Parquet plus the dated history Parquet into dist/.
+      # Carry the previous build forward: the history diff extends the prior
+      # history, and the SQLite stable-id ledger requires the prior .db so ids
+      # are never reused across weekly rebuilds (au-80c0, au-d824). Tolerant of
+      # the first-ever run, when no 'latest' release exists yet.
+      - name: Fetch prior 'latest' artifacts
+        id: prior
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          mkdir -p prior
+          gh release download latest --dir prior --pattern '*.db' || echo "no prior .db (first run?)"
+          gh release download latest --dir prior --pattern '*-history-*.parquet' || echo "no prior history"
+          echo "db=$(ls prior/*.db 2>/dev/null | head -1 || true)" >> "$GITHUB_OUTPUT"
+          echo "history=$(ls prior/*-history-*.parquet 2>/dev/null | head -1 || true)" >> "$GITHUB_OUTPUT"
+
+      # The real work: downloads the live upstream sources (FCC ULS, ISED Canada,
+      # ACMA, AD1C cty.dat), normalizes/joins/geocodes/enriches, and writes the
+      # dated current-state Parquet, history Parquet, and SQLite .db into dist/.
       - name: Build artifacts
-        run: uv run python -m hamcall_db.build --all --out dist/
+        run: |
+          set -euo pipefail
+          ARGS="--all --out dist/"
+          [ -n "${{ steps.prior.outputs.db }}" ] && ARGS="$ARGS --db-in ${{ steps.prior.outputs.db }}"
+          [ -n "${{ steps.prior.outputs.history }}" ] && ARGS="$ARGS --history-in ${{ steps.prior.outputs.history }}"
+          uv run python -m hamcall_db.build $ARGS
 
       # Resolve the exact asset paths and confirm the current-state file exists.
       # The history file (au-80c0) is included only if the build produced it.
@@ -53,6 +74,7 @@ jobs:
           DATE="${{ steps.date.outputs.date }}"
           CURRENT="dist/hamcall-db-${DATE}.parquet"
           HISTORY="dist/hamcall-db-history-${DATE}.parquet"
+          SQLITE="dist/hamcall-db-${DATE}.db"
 
           if [ ! -f "$CURRENT" ]; then
             echo "::error::Expected current-state artifact not found: $CURRENT"
@@ -67,6 +89,11 @@ jobs:
               echo "$HISTORY"
             else
               echo "::warning::History artifact not found: $HISTORY (skipping)"
+            fi
+            if [ -f "$SQLITE" ]; then
+              echo "$SQLITE"
+            else
+              echo "::warning::SQLite artifact not found: $SQLITE (skipping)"
             fi
             echo "EOF"
           } >> "$GITHUB_OUTPUT"
@@ -84,8 +111,9 @@ jobs:
             Assets:
             - `hamcall-db-${{ steps.date.outputs.date }}.parquet` — current-state dataset (schema is the redistribution contract).
             - `hamcall-db-history-${{ steps.date.outputs.date }}.parquet` — SCD2 change history (if present).
+            - `hamcall-db-${{ steps.date.outputs.date }}.db` — SQLite convenience copy: `current` + `history` in one file (stable, never-reused `id`).
 
-            See the `latest` release for the most recent build.
+            Dataset is for **non-commercial use** (see NOTICE). See the `latest` release for the most recent build.
           files: ${{ steps.assets.outputs.files }}
           fail_on_unmatched_files: true
 

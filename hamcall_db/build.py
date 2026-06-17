@@ -18,10 +18,12 @@ from hamcall_db.enrich import enrich, load_cty
 from hamcall_db.geocode import LookupGeocoder
 from hamcall_db.history import diff_history
 from hamcall_db.merge import merge
+from hamcall_db.sources import ad1c
 from hamcall_db.sources.acma import AcmaSource
 from hamcall_db.sources.base import Source
 from hamcall_db.sources.fcc import FccUlsSource
 from hamcall_db.sources.ised import IsedSource
+from hamcall_db.sqlite_writer import write_sqlite
 from hamcall_db.writer import read_history_parquet, write_history_parquet, write_parquet
 
 # Registry of available source importers, keyed by their short tag.
@@ -68,6 +70,13 @@ def build(
             help="Prior history artifact to extend (--all only). Omit for the first build.",
         ),
     ] = None,
+    db_in: Annotated[
+        Path | None,
+        typer.Option(
+            help="Prior SQLite .db (e.g. last 'latest' build); supplies the stable-id "
+            "ledger so ids are never reused (--all only). Omit for the first build.",
+        ),
+    ] = None,
 ) -> None:
     """Download, parse, merge, and write the Parquet artifact."""
     if source is None and not all_sources:
@@ -90,10 +99,14 @@ def build(
     records = list(merge(streams, geocode=LookupGeocoder()))
 
     # cty.dat enrichment runs once over the deduped set (order-independent): resolve
-    # country (DXCC entity name) + dxcc number from the callsign prefix. Skipped when no
-    # cty.dat is supplied; the downloader for it is a follow-up (see au-9ed1).
-    if cty is not None:
-        records = list(enrich(records, load_cty(cty)))
+    # country (DXCC entity name) + dxcc number from the callsign prefix. On --all (a
+    # network-bound build that already downloads every source) we auto-fetch cty.dat;
+    # single-source dev builds enrich only when --cty points at a local file.
+    cty_path = cty
+    if cty_path is None and all_sources:
+        cty_path = ad1c.download_cty(work_dir)
+    if cty_path is not None:
+        records = list(enrich(records, load_cty(cty_path)))
 
     out_dir = out.is_dir()
     out_path = out / _default_filename() if out_dir else out
@@ -112,11 +125,28 @@ def build(
         hist_count = write_history_parquet(history, hist_path)
         typer.echo(f"Wrote {hist_count} history intervals to {hist_path}")
 
+        # Optional convenience artifact: one SQLite .db holding current + history in a
+        # single multi-table file. Parquet stays the canonical, storage-neutral output.
+        # The surrogate `id` is a stable, never-reused public identifier; --db-in carries
+        # the prior build's ledger forward so ids persist across rebuilds (au-d824, mem).
+        db_path = (out if out_dir else out.parent) / _sqlite_filename()
+        db_counts = write_sqlite(records, history, db_path, prior_db=db_in)
+        typer.echo(
+            f"Wrote {db_counts['current']} current + {db_counts['history']} history "
+            f"rows to {db_path}"
+        )
+
 
 def _default_filename() -> str:
     """Dated artifact name: hamcall-db-YYYY-MM-DD.parquet."""
     today = dt.date.today().isoformat()
     return f"hamcall-db-{today}.parquet"
+
+
+def _sqlite_filename() -> str:
+    """Dated SQLite artifact name: hamcall-db-YYYY-MM-DD.db."""
+    today = dt.date.today().isoformat()
+    return f"hamcall-db-{today}.db"
 
 
 def _history_filename() -> str:
