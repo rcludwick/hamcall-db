@@ -92,9 +92,10 @@ uv run pytest                  # tests
 uv run ruff check .            # lint
 ```
 
-Note: importers and the merge stage are still skeletons (they raise
-`NotImplementedError`); real logic lands in au-039b/f694/2fba/9ed1 (sources) and
-au-0d18 (merge). The CLI, schema (`Record`), and Parquet writer are wired and tested.
+Note: the importers are still skeletons (they raise `NotImplementedError`); real
+logic lands in au-039b/f694/2fba/9ed1 (sources). The CLI, schema (`Record`),
+merge/normalize stage, and Parquet writer are wired and tested. Grid geocoding is a
+pluggable hook in `merge()` awaiting the lookup tables in au-76be.
 
 ## Conventions
 
