@@ -15,6 +15,7 @@ from typing import Annotated
 
 import typer
 
+from hamcall_db.geocode import LookupGeocoder
 from hamcall_db.merge import merge
 from hamcall_db.sources.base import Source
 from hamcall_db.sources.fcc import FccUlsSource
@@ -67,8 +68,9 @@ def build(
     streams = [_run_source(SOURCES[s], work_dir) for s in selected]
     # Always route through merge(): it normalizes, dedups, and sorts deterministically,
     # which a single-source build wants too. Collision resolution is a no-op for one
-    # source. Grid geocoding (the `geocode` hook) is wired once au-76be lands.
-    records = merge(streams)
+    # source. The offline LookupGeocoder fills `grid` (4-char Maidenhead) only where a
+    # source didn't already supply one; see hamcall_db/geocode.py and mem-e3fd.
+    records = merge(streams, geocode=LookupGeocoder())
 
     out_path = out / _default_filename() if out.is_dir() else out
     count = write_parquet(records, out_path)

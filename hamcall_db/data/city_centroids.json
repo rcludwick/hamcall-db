@@ -1,0 +1,8 @@
+[
+  { "country": "United States", "state": "CT", "city": "Newington", "lat": 41.69, "lon": -72.73 },
+  { "country": "United States", "state": "WA", "city": "Seattle", "lat": 47.61, "lon": -122.33 },
+  { "country": "Canada", "state": "ON", "city": "Ottawa", "lat": 45.42, "lon": -75.70 },
+  { "country": "Canada", "state": "NS", "city": "Halifax", "lat": 44.65, "lon": -63.58 },
+  { "country": "Australia", "state": "NSW", "city": "Sydney", "lat": -33.87, "lon": 151.21 },
+  { "country": "United Kingdom", "state": "", "city": "London", "lat": 51.50, "lon": -0.14 }
+]
