@@ -16,10 +16,11 @@ from typing import Annotated
 import typer
 
 from hamcall_db.geocode import LookupGeocoder
+from hamcall_db.history import diff_history
 from hamcall_db.merge import merge
 from hamcall_db.sources.base import Source
 from hamcall_db.sources.fcc import FccUlsSource
-from hamcall_db.writer import write_parquet
+from hamcall_db.writer import read_history_parquet, write_history_parquet, write_parquet
 
 # Registry of available source importers, keyed by their short tag.
 SOURCES: dict[str, Source] = {
@@ -53,6 +54,12 @@ def build(
         Path,
         typer.Option(help="Scratch dir for downloads/intermediates."),
     ] = Path("data/work"),
+    history_in: Annotated[
+        Path | None,
+        typer.Option(
+            help="Prior history artifact to extend (--all only). Omit for the first build.",
+        ),
+    ] = None,
 ) -> None:
     """Download, parse, merge, and write the Parquet artifact."""
     if source is None and not all_sources:
@@ -70,17 +77,38 @@ def build(
     # which a single-source build wants too. Collision resolution is a no-op for one
     # source. The offline LookupGeocoder fills `grid` (4-char Maidenhead) only where a
     # source didn't already supply one; see hamcall_db/geocode.py and mem-e3fd.
-    records = merge(streams, geocode=LookupGeocoder())
+    # merge() yields lazily and geocoding fills grid; materialize so we can both write the
+    # current-state artifact AND diff it into history without re-running the pipeline.
+    records = list(merge(streams, geocode=LookupGeocoder()))
 
-    out_path = out / _default_filename() if out.is_dir() else out
+    out_dir = out.is_dir()
+    out_path = out / _default_filename() if out_dir else out
     count = write_parquet(records, out_path)
     typer.echo(f"Wrote {count} records to {out_path}")
+
+    # History is an --all concern: it tracks the union of all sources over time. The
+    # current-state artifact above is byte-for-byte unchanged regardless (mem-4784).
+    if all_sources:
+        as_of = dt.date.today().isoformat()
+        prior = read_history_parquet(history_in) if history_in is not None else []
+        history = diff_history(prior, records, as_of=as_of)
+        hist_path = (
+            (out.parent if not out_dir else out) / _history_filename()
+        )
+        hist_count = write_history_parquet(history, hist_path)
+        typer.echo(f"Wrote {hist_count} history intervals to {hist_path}")
 
 
 def _default_filename() -> str:
     """Dated artifact name: hamcall-db-YYYY-MM-DD.parquet."""
     today = dt.date.today().isoformat()
     return f"hamcall-db-{today}.parquet"
+
+
+def _history_filename() -> str:
+    """Dated history artifact name: hamcall-db-history-YYYY-MM-DD.parquet."""
+    today = dt.date.today().isoformat()
+    return f"hamcall-db-history-{today}.parquet"
 
 
 if __name__ == "__main__":
