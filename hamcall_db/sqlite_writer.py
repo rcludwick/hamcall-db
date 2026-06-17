@@ -1,0 +1,224 @@
+"""SQLite writer: an OPTIONAL convenience artifact (au-d824).
+
+The published contract is, and stays, the two Parquet files (mem-c6e0, mem-4784). This
+module emits an ADDITIONAL single ``.db`` file that bundles current-state AND forward-only
+history in ONE file (Parquet cannot) and is directly serveable (e.g. Datasette). It is a
+convenience, not the contract — the current-state Parquet is never touched here.
+
+THE STABLE-ID CONTRACT (the core requirement)
+---------------------------------------------
+``current`` uses a SURROGATE primary key ``id`` that is STABLE and NEVER REUSED across
+weekly rebuilds. Consumers may persist this id as a stable "original id" / foreign key, so:
+
+  * the SAME holder of a callsign keeps the SAME id forever;
+  * a REASSIGNED callsign (the holder changed) gets a brand-NEW id, and the old id is
+    retired forever — it is never reissued to anyone.
+
+"Same holder vs reassigned" reuses the history module's identity rule verbatim
+(``hamcall_db.history._identity`` over ``_TRACKED_FIELDS``): a delta in the tracked
+identity tuple = a new holding instance = a new id.
+
+NEVER-REUSE MECHANISM: each build carries an id ledger forward. The high-water mark is the
+max id ever seen across the prior ``current`` AND prior ``history`` tables. Drawing new ids
+strictly above that mark guarantees non-reuse even for ids whose callsign has left
+``current`` entirely (the id survives on the retired/closed history rows). First-ever build
+starts the high-water at 0.
+
+All I/O is confined to this module (the assignment algorithm itself is a pure function).
+Uses stdlib ``sqlite3`` — no third-party dependency.
+"""
+
+from __future__ import annotations
+
+import sqlite3
+from collections.abc import Iterable
+from dataclasses import astuple
+from pathlib import Path
+
+from hamcall_db.history import HISTORY_SCHEMA_COLUMNS, HistoryRow, _identity
+from hamcall_db.models import SCHEMA_COLUMNS, Record
+
+# Columns whose SQLite affinity should be INTEGER rather than TEXT. ``dxcc`` mirrors the
+# Parquet writer's Int64 treatment; ``id`` is the surrogate key.
+_INT_COLUMNS: frozenset[str] = frozenset({"dxcc"})
+
+
+def _col_def(name: str) -> str:
+    return f"{name} INTEGER" if name in _INT_COLUMNS else f"{name} TEXT"
+
+
+# current: surrogate id PK (NOT autoincrement — ids come from the carried-forward ledger),
+# callsign UNIQUE NOT NULL (one current holder; the UNIQUE gives us the callsign index for
+# free), plus every Record column.
+_CURRENT_DDL = (
+    "CREATE TABLE current (\n"
+    "  id INTEGER PRIMARY KEY,\n"
+    "  callsign TEXT UNIQUE NOT NULL,\n"
+    + ",\n".join(
+        f"  {_col_def(c)}" for c in SCHEMA_COLUMNS if c != "callsign"
+    )
+    + "\n)"
+)
+
+# history: the HistoryRow payload columns PLUS the stable id carried from current, so a
+# holding instance is traceable across both tables and the id high-water survives even when
+# a callsign leaves current. Non-unique callsign index added separately.
+_HISTORY_DDL = (
+    "CREATE TABLE history (\n"
+    "  id INTEGER,\n"
+    + ",\n".join(f"  {_col_def(c)}" for c in HISTORY_SCHEMA_COLUMNS)
+    + "\n)"
+)
+
+_HISTORY_INDEX_DDL = "CREATE INDEX idx_history_callsign ON history (callsign)"
+
+# Insert column orders (id first, then the dataclass field order).
+_CURRENT_COLUMNS: tuple[str, ...] = ("id", *SCHEMA_COLUMNS)
+_HISTORY_COLUMNS: tuple[str, ...] = ("id", *HISTORY_SCHEMA_COLUMNS)
+
+
+def assign_ids(
+    records: Iterable[Record],
+    *,
+    prior_current: dict[str, tuple[int, Record]],
+    prior_history: Iterable[tuple[int | None, HistoryRow]],
+) -> list[tuple[int, Record]]:
+    """Assign a stable, never-reused surrogate id to each current record.
+
+    ``prior_current`` maps callsign -> (id, Record) from the previous build's ``current``
+    table. ``prior_history`` is the previous build's history rows as ``(id, HistoryRow)``
+    pairs (used only to raise the high-water mark so retired ids are never reissued).
+
+    Algorithm:
+      * ``high_water`` = max id ever seen across ``prior_current`` AND ``prior_history``
+        (0 if none). This is what guarantees non-reuse even for callsigns that have left
+        ``current``.
+      * For each current record: if its callsign existed in ``prior_current`` with the
+        SAME holder identity (history's identity rule), REUSE the prior id. Otherwise
+        allocate ``++high_water`` — covering brand-new callsigns AND reassignments.
+
+    Pure function: no I/O, deterministic in input order.
+    """
+    prior_ids = [pid for pid, _ in prior_current.values()]
+    prior_ids += [hid for hid, _ in prior_history if hid is not None]
+    high_water = max(prior_ids) if prior_ids else 0
+
+    assigned: list[tuple[int, Record]] = []
+    for record in records:
+        prior = prior_current.get(record.callsign)
+        if prior is not None and _identity(prior[1]) == _identity(record):
+            assigned.append((prior[0], record))
+        else:
+            high_water += 1
+            assigned.append((high_water, record))
+    return assigned
+
+
+def read_prior(
+    db_path: Path,
+) -> tuple[dict[str, tuple[int, Record]], list[tuple[int | None, HistoryRow]]]:
+    """Read the id ledger from an existing ``.db``.
+
+    Returns ``(prior_current, prior_history)`` where ``prior_current`` maps callsign ->
+    (id, Record) and ``prior_history`` is a list of ``(id, HistoryRow)`` pairs (the id is
+    carried alongside, not on the slotted dataclass, so the high-water mark survives even
+    after a callsign leaves ``current``). Returns empties when the file or tables are
+    absent (the first-ever build path).
+    """
+    path = Path(db_path)
+    if not path.exists():
+        return {}, []
+
+    con = sqlite3.connect(path)
+    con.row_factory = sqlite3.Row
+    try:
+        tables = {
+            r[0]
+            for r in con.execute(
+                "SELECT name FROM sqlite_master WHERE type='table'"
+            ).fetchall()
+        }
+
+        prior_current: dict[str, tuple[int, Record]] = {}
+        if "current" in tables:
+            for row in con.execute("SELECT * FROM current"):
+                rec = Record(**{c: row[c] for c in SCHEMA_COLUMNS})
+                prior_current[rec.callsign] = (row["id"], rec)
+
+        prior_history: list[tuple[int | None, HistoryRow]] = []
+        if "history" in tables:
+            for row in con.execute("SELECT * FROM history"):
+                hist = HistoryRow(**{c: row[c] for c in HISTORY_SCHEMA_COLUMNS})
+                # Carry the stored id alongside the row (HistoryRow is slotted, so the id
+                # can't live on it) so the high-water mark survives.
+                prior_history.append((row["id"], hist))
+
+        return prior_current, prior_history
+    finally:
+        con.close()
+
+
+def write_sqlite(
+    records: Iterable[Record],
+    history: Iterable[HistoryRow],
+    out_path: Path,
+    *,
+    prior_db: Path | None = None,
+) -> dict[str, int]:
+    """Write the ``current`` + ``history`` tables to a single SQLite file.
+
+    Reads the prior id ledger from ``prior_db`` (if given), assigns stable/never-reused
+    ids, (re)creates the schema, and writes both tables. Overwrite-safe for ``out_path``
+    (an existing file at the path is replaced). Returns row counts keyed by table name.
+    """
+    records = list(records)
+    history = list(history)
+
+    if prior_db is not None:
+        prior_current, prior_history = read_prior(prior_db)
+    else:
+        prior_current, prior_history = {}, []
+
+    assigned = assign_ids(
+        records, prior_current=prior_current, prior_history=prior_history
+    )
+    id_by_callsign = {rec.callsign: rid for rid, rec in assigned}
+
+    out = Path(out_path)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    # Overwrite-safe: drop any existing file so a stale schema can't linger.
+    out.unlink(missing_ok=True)
+
+    con = sqlite3.connect(out)
+    try:
+        con.execute(_CURRENT_DDL)
+        con.execute(_HISTORY_DDL)
+        con.execute(_HISTORY_INDEX_DDL)
+
+        current_placeholders = ", ".join("?" for _ in _CURRENT_COLUMNS)
+        con.executemany(
+            f"INSERT INTO current ({', '.join(_CURRENT_COLUMNS)}) "
+            f"VALUES ({current_placeholders})",
+            [(rid, *astuple(rec)) for rid, rec in assigned],
+        )
+
+        history_placeholders = ", ".join("?" for _ in _HISTORY_COLUMNS)
+        con.executemany(
+            f"INSERT INTO history ({', '.join(_HISTORY_COLUMNS)}) "
+            f"VALUES ({history_placeholders})",
+            [
+                (id_by_callsign.get(row.callsign), *_history_payload(row))
+                for row in history
+            ],
+        )
+
+        con.commit()
+    finally:
+        con.close()
+
+    return {"current": len(assigned), "history": len(history)}
+
+
+def _history_payload(row: HistoryRow) -> tuple:
+    """The HistoryRow values in HISTORY_SCHEMA_COLUMNS order (id is added separately)."""
+    return tuple(getattr(row, name) for name in HISTORY_SCHEMA_COLUMNS)
