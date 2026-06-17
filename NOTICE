@@ -78,6 +78,12 @@ who redistributes it must comply with the union of these terms, which means:
   * Reproduce the AD1C / cty.dat attribution statement (source 4).
   * Observe the cty.dat non-commercial restriction (source 4).
 
+PROJECT DECISION (2026-06-16): the maintainers accept the non-commercial
+restriction. The published hamcall-db dataset is therefore offered for
+NON-COMMERCIAL USE ONLY. Commercial use or redistribution requires separate
+arrangements with the upstream rights holders (principally AD1C for cty.dat).
+The MIT-licensed build code is unaffected by this restriction.
+
 The simplest way to comply is to redistribute this NOTICE file unmodified
 alongside the dataset.
 

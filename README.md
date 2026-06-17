@@ -49,7 +49,7 @@ This artifact has no opinion about your storage. Download the Parquet file and l
 
 ## License
 
-Build code: MIT. Published dataset: distributed under the combined terms of each upstream source (see `NOTICE` once it lands).
+Build code: MIT. Published dataset: distributed under the combined terms of each upstream source (see [`NOTICE`](NOTICE)). Because one upstream source (AD1C cty.dat) is free for non-commercial use only, **the published dataset is offered for non-commercial use only**; commercial use requires separate arrangements with the upstream rights holders. The MIT build code is unaffected.
 
 ## Status
 
