@@ -1,0 +1,85 @@
+hamcall-db — NOTICE
+===================
+
+This project (hamcall-db) builds a single, normalized amateur-radio callsign
+dataset by aggregating data from several upstream sources, each published under
+its own license. This NOTICE lists every upstream source, its license, and the
+attribution it requires.
+
+Two licenses are in play and they cover different things:
+
+  * BUILD CODE — the Python build pipeline in this repository — is licensed
+    under the MIT License.
+
+  * PUBLISHED DATASET — the Parquet artifacts released from this project
+    (hamcall-db-YYYY-MM-DD.parquet and hamcall-db-history-YYYY-MM-DD.parquet) —
+    is a combined/derived work of the upstream sources below. It is distributed
+    under the UNION of all upstream source terms. To redistribute the dataset
+    you must satisfy every attribution-required license listed here
+    simultaneously.
+
+
+Upstream sources and their licenses
+-----------------------------------
+
+1. FCC ULS (United States)
+   Coverage: US amateur licensee records.
+   License:  Public domain.
+   U.S. Government works are not subject to copyright protection in the United
+   States (17 U.S.C. § 105). No attribution is legally required. The source is
+   credited here as a courtesy.
+
+2. ISED Canada (Innovation, Science and Economic Development Canada)
+   Coverage: Canadian amateur licensee records.
+   License:  Open Government Licence – Canada (OGL-Canada 2.0).
+             https://open.canada.ca/en/open-government-licence-canada
+   Attribution is REQUIRED. Required attribution statement:
+
+       Contains information licensed under the Open Government Licence – Canada.
+       Source: Innovation, Science and Economic Development Canada (ISED).
+
+3. ACMA (Australian Communications and Media Authority) — RRL extract
+   Coverage: Australian amateur licensee records (filtered from the full
+             Radiocommunications Licences dataset).
+   License:  Creative Commons Attribution 4.0 International (CC BY 4.0).
+             https://creativecommons.org/licenses/by/4.0/
+   Attribution is REQUIRED. Required attribution statement:
+
+       Contains data sourced from the Australian Communications and Media
+       Authority (ACMA), Register of Radiocommunications Licences, licensed
+       under CC BY 4.0.
+
+4. AD1C cty.dat (DXCC prefix → entity mapping)
+   Coverage: Worldwide DXCC prefix-to-entity reference data.
+   Author:   Jim Reisert, AD1C.
+   License:  Free for non-commercial use; attribution REQUIRED.
+             https://www.country-files.com/
+   Required attribution statement:
+
+       DXCC entity data derived from cty.dat by Jim Reisert, AD1C
+       (https://www.country-files.com/), used by permission for
+       non-commercial use.
+
+   NOTE: cty.dat is free for NON-COMMERCIAL use only. Because the published
+   dataset incorporates cty.dat-derived DXCC mappings, the combined dataset
+   inherits this non-commercial restriction. Commercial redistribution of the
+   combined dataset requires separate arrangements with the respective rights
+   holders.
+
+
+Combined dataset terms
+-----------------------
+
+The published dataset is a derived work that combines all of the above. Anyone
+who redistributes it must comply with the union of these terms, which means:
+
+  * Reproduce the ISED / OGL-Canada attribution statement (source 2).
+  * Reproduce the ACMA / CC BY 4.0 attribution statement (source 3).
+  * Reproduce the AD1C / cty.dat attribution statement (source 4).
+  * Observe the cty.dat non-commercial restriction (source 4).
+
+The simplest way to comply is to redistribute this NOTICE file unmodified
+alongside the dataset.
+
+Before adding any new upstream source, re-check its license terms and update
+this NOTICE accordingly.

@@ -1,0 +1,41 @@
+"""The NOTICE file must surface every upstream source and its required attribution.
+
+The published dataset is distributed under the union of all upstream license
+terms (see project memory mem-371f), so each source and each attribution-required
+license must be present in NOTICE for redistribution to be lawful.
+"""
+
+from __future__ import annotations
+
+from pathlib import Path
+
+NOTICE = (Path(__file__).resolve().parents[1] / "NOTICE").read_text(encoding="utf-8")
+
+
+def test_notice_exists_and_nonempty() -> None:
+    assert NOTICE.strip(), "NOTICE file must not be empty"
+
+
+def test_notice_names_every_source() -> None:
+    for source in ("FCC ULS", "ISED", "ACMA", "cty.dat", "AD1C"):
+        assert source in NOTICE, f"NOTICE must mention {source}"
+
+
+def test_notice_states_each_license() -> None:
+    for license_term in (
+        "Public domain",
+        "Open Government Licence",
+        "CC BY 4.0",
+        "non-commercial",
+    ):
+        assert license_term in NOTICE, f"NOTICE must state license: {license_term}"
+
+
+def test_notice_states_combined_terms() -> None:
+    # The combined dataset must be described as the union of upstream terms.
+    assert "union" in NOTICE.lower()
+
+
+def test_notice_separates_build_code_license() -> None:
+    # Build code is MIT; dataset is the combined upstream terms.
+    assert "MIT" in NOTICE
