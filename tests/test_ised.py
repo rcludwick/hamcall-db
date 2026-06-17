@@ -101,3 +101,11 @@ def test_parse_falls_back_to_self_synced_at() -> None:
     src.synced_at = "2026-06-10"  # as download() would have set it
     out = _by_call(src.parse(FIXTURES))
     assert out["VA3ABC"].synced_at == "2026-06-10"
+
+
+def test_download_url_is_https_hdb_f363():
+    # Root cause of the 2026-06-16 CI failure: http:// port 80 timed out from the
+    # GitHub runner; https works. Guard against regressing to plaintext http.
+    from hamcall_db.sources.ised import DOWNLOAD_URL
+
+    assert DOWNLOAD_URL.startswith("https://")

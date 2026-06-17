@@ -37,7 +37,12 @@ from hamcall_db.models import Record
 from hamcall_db.sources.base import synced_at_from
 
 # Upstream delimited amateur extract (zip containing amateur.txt).
-DOWNLOAD_URL = "http://apc-cap.ic.gc.ca/datafiles/amateur.zip"
+# https, not http: the http endpoint 301-redirects to https and its port 80 is
+# unreachable from some networks (GitHub Actions runners timed out — hdb-f363).
+DOWNLOAD_URL = "https://apc-cap.ic.gc.ca/datafiles/amateur.zip"
+
+# Connect/read timeout (seconds) so a hung upstream fails fast instead of stalling.
+DOWNLOAD_TIMEOUT = 60
 
 # Field within the zip we parse.
 AMATEUR_FILENAME = "amateur.txt"
@@ -184,7 +189,7 @@ class IsedSource:
             )
         last_modified: str | None = None
         try:
-            with urllib.request.urlopen(request) as response:  # noqa: S310
+            with urllib.request.urlopen(request, timeout=DOWNLOAD_TIMEOUT) as response:  # noqa: S310
                 last_modified = response.headers.get("Last-Modified")
                 raw_zip.write_bytes(response.read())
         except urllib.error.HTTPError as exc:

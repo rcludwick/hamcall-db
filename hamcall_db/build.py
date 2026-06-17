@@ -49,6 +49,30 @@ def _run_source(source: Source, work_dir: Path) -> list:
     return list(source.parse(path, synced_at=source.synced_at))
 
 
+def _collect_streams(
+    selected: list[str],
+    work_dir: Path,
+    *,
+    sources: dict[str, Source] = SOURCES,
+) -> tuple[list[list], list[str]]:
+    """Run each selected source, returning (successful streams, skipped tags).
+
+    A single source's download/parse failure is logged and skipped rather than
+    aborting the whole build (hdb-6f3b): a transient upstream outage shouldn't block
+    the weekly release of the sources that did succeed. The caller decides what to do
+    when nothing succeeds.
+    """
+    streams: list[list] = []
+    skipped: list[str] = []
+    for tag in selected:
+        try:
+            streams.append(_run_source(sources[tag], work_dir))
+        except Exception as exc:  # any download/parse failure is non-fatal here
+            typer.echo(f"WARNING: source '{tag}' failed ({exc}); skipping", err=True)
+            skipped.append(tag)
+    return streams, skipped
+
+
 @app.command()
 def build(
     out: Annotated[Path, typer.Option(help="Output path or directory for the artifact.")],
@@ -93,7 +117,12 @@ def build(
     if unknown:
         raise typer.BadParameter(f"Unknown source(s): {', '.join(unknown)}")
 
-    streams = [_run_source(SOURCES[s], work_dir) for s in selected]
+    streams, skipped = _collect_streams(selected, work_dir)
+    if skipped:
+        typer.echo(f"Skipped {len(skipped)} source(s): {', '.join(skipped)}", err=True)
+    if not streams:
+        typer.echo("ERROR: no sources succeeded; nothing to write.", err=True)
+        raise typer.Exit(code=1)
     # Always route through merge(): it normalizes, dedups, and sorts deterministically,
     # which a single-source build wants too. Collision resolution is a no-op for one
     # source. The offline LookupGeocoder fills `grid` (4-char Maidenhead) only where a
