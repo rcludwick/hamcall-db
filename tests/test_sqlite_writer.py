@@ -277,6 +277,145 @@ def test_high_water_uses_history_after_callsign_leaves_current(tmp_path) -> None
     assert new_id > high
 
 
+# --- closed-interval id retention (au-6934) ------------------------------------
+
+
+def test_closed_interval_for_absent_callsign_keeps_original_id(tmp_path) -> None:
+    # Build 1: K1OLD is current and held by Gone; its open interval gets an id.
+    db = tmp_path / "b1.db"
+    write_sqlite(
+        [
+            Record(callsign="W1AW", last_name="Maxim"),
+            Record(callsign="K1OLD", last_name="Gone"),
+        ],
+        [
+            _open("W1AW", DAY1, last_name="Maxim"),
+            _open("K1OLD", DAY1, last_name="Gone"),
+        ],
+        db,
+    )
+    con = sqlite3.connect(db)
+    old_id = con.execute(
+        "SELECT id FROM history WHERE callsign='K1OLD' AND valid_from=?", (DAY1,)
+    ).fetchone()[0]
+    con.close()
+    assert isinstance(old_id, int)
+
+    # Build 2: K1OLD expired -> ABSENT from current. Its now-closed interval must retain
+    # the original id (not become NULL), preserving the stable-id linkage.
+    db2 = tmp_path / "b2.db"
+    history2 = [
+        _open("W1AW", DAY1, last_name="Maxim"),
+        HistoryRow(callsign="K1OLD", valid_from=DAY1, valid_to=DAY2, last_name="Gone"),
+    ]
+    write_sqlite(
+        [Record(callsign="W1AW", last_name="Maxim")],
+        history2,
+        db2,
+        prior_db=db,
+    )
+    con = sqlite3.connect(db2)
+    row = con.execute(
+        "SELECT id FROM history WHERE callsign='K1OLD' AND valid_from=?", (DAY1,)
+    ).fetchone()
+    con.close()
+    assert row[0] is not None
+    assert row[0] == old_id
+
+
+def test_open_interval_for_current_callsign_uses_current_id(tmp_path) -> None:
+    # Build 1.
+    db = tmp_path / "b1.db"
+    write_sqlite(
+        [Record(callsign="W1AW", last_name="Maxim")],
+        [_open("W1AW", DAY1, last_name="Maxim")],
+        db,
+    )
+
+    # Build 2: W1AW still current and open -> id resolves from the CURRENT build, equal to
+    # the current row's id.
+    db2 = tmp_path / "b2.db"
+    write_sqlite(
+        [Record(callsign="W1AW", last_name="Maxim")],
+        [_open("W1AW", DAY1, last_name="Maxim")],
+        db2,
+        prior_db=db,
+    )
+    con = sqlite3.connect(db2)
+    cur_id = con.execute("SELECT id FROM current WHERE callsign='W1AW'").fetchone()[0]
+    hist_id = con.execute(
+        "SELECT id FROM history WHERE callsign='W1AW' AND valid_to IS NULL"
+    ).fetchone()[0]
+    con.close()
+    assert hist_id == cur_id
+
+
+def test_reassigned_callsign_old_closed_interval_keeps_old_id(tmp_path) -> None:
+    # Build 1: W1AW held by Maxim.
+    db = tmp_path / "b1.db"
+    write_sqlite(
+        [Record(callsign="W1AW", last_name="Maxim")],
+        [_open("W1AW", DAY1, last_name="Maxim")],
+        db,
+    )
+    con = sqlite3.connect(db)
+    old_id = con.execute("SELECT id FROM current WHERE callsign='W1AW'").fetchone()[0]
+    con.close()
+
+    # Build 2: W1AW reassigned to a new holder. The old (now-closed) interval is still
+    # keyed by the SAME callsign that is in current, but it must keep the OLD id while the
+    # new open interval gets the NEW id.
+    db2 = tmp_path / "b2.db"
+    history2 = [
+        HistoryRow(
+            callsign="W1AW", valid_from=DAY1, valid_to=DAY2, last_name="Maxim"
+        ),
+        _open("W1AW", DAY2, last_name="Newholder"),
+    ]
+    write_sqlite(
+        [Record(callsign="W1AW", last_name="Newholder")],
+        history2,
+        db2,
+        prior_db=db,
+    )
+    con = sqlite3.connect(db2)
+    new_id = con.execute("SELECT id FROM current WHERE callsign='W1AW'").fetchone()[0]
+    closed_id = con.execute(
+        "SELECT id FROM history WHERE callsign='W1AW' AND valid_from=? AND valid_to=?",
+        (DAY1, DAY2),
+    ).fetchone()[0]
+    open_id = con.execute(
+        "SELECT id FROM history WHERE callsign='W1AW' AND valid_from=? AND valid_to IS NULL",
+        (DAY2,),
+    ).fetchone()[0]
+    con.close()
+    assert new_id != old_id
+    assert closed_id == old_id  # old closed interval keeps its original id
+    assert open_id == new_id  # new holding uses the new current id
+
+
+def test_unknown_closed_interval_id_falls_back_to_null(tmp_path) -> None:
+    # A closed interval that is neither in current nor in prior history (e.g. injected
+    # history with no provenance) genuinely has no resolvable id -> NULL.
+    db = tmp_path / "out.db"
+    write_sqlite(
+        [Record(callsign="W1AW", last_name="Maxim")],
+        [
+            _open("W1AW", DAY1, last_name="Maxim"),
+            HistoryRow(
+                callsign="X9ORPHAN", valid_from=DAY1, valid_to=DAY2, last_name="Ghost"
+            ),
+        ],
+        db,
+    )
+    con = sqlite3.connect(db)
+    orphan_id = con.execute(
+        "SELECT id FROM history WHERE callsign='X9ORPHAN'"
+    ).fetchone()[0]
+    con.close()
+    assert orphan_id is None
+
+
 # --- read_prior ----------------------------------------------------------------
 
 

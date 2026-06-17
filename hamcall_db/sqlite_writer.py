@@ -183,6 +183,14 @@ def write_sqlite(
         records, prior_current=prior_current, prior_history=prior_history
     )
     id_by_callsign = {rec.callsign: rid for rid, rec in assigned}
+    # Ids of prior history intervals, keyed by their stable interval key (callsign,
+    # valid_from). Lets a CLOSED interval whose callsign has left ``current`` (or been
+    # reassigned) keep the id it was written with last build.
+    prior_history_ids = {
+        (hist.callsign, hist.valid_from): hid
+        for hid, hist in prior_history
+        if hid is not None
+    }
 
     out = Path(out_path)
     out.parent.mkdir(parents=True, exist_ok=True)
@@ -207,7 +215,8 @@ def write_sqlite(
             f"INSERT INTO history ({', '.join(_HISTORY_COLUMNS)}) "
             f"VALUES ({history_placeholders})",
             [
-                (id_by_callsign.get(row.callsign), *_history_payload(row))
+                (_resolve_history_id(row, id_by_callsign, prior_history_ids),
+                 *_history_payload(row))
                 for row in history
             ],
         )
@@ -217,6 +226,35 @@ def write_sqlite(
         con.close()
 
     return {"current": len(assigned), "history": len(history)}
+
+
+def _resolve_history_id(
+    row: HistoryRow,
+    id_by_callsign: dict[str, int],
+    prior_history_ids: dict[tuple[str, str], int],
+) -> int | None:
+    """Resolve the stable id for one history row being written.
+
+    Resolution order (see au-6934):
+      1. CLOSED interval (``valid_to is not None``): prefer the id of the matching prior
+         history interval (keyed on callsign AND valid_from, the interval's stable key).
+         This preserves the id for a fully-expired holder's closed interval AND for the
+         old, now-closed interval of a REASSIGNED callsign (whose callsign is still in
+         ``current`` but under a NEW holder/id).
+      2. Otherwise fall back to the CURRENT build's id for the callsign — covering the
+         OPEN interval of a callsign still in ``current`` (the currently-held holding,
+         including a brand-new or reassigned holding) and any prior closed interval that
+         was never recorded in history (so its id matches today's holder).
+      3. NULL only when genuinely unknown: a closed interval whose callsign is absent
+         from ``current`` AND has no matching prior-history interval (e.g. injected
+         history with no provenance, or a first-ever build that is handed closed
+         intervals with no prior ledger).
+    """
+    if row.valid_to is not None:
+        prior_id = prior_history_ids.get((row.callsign, row.valid_from))
+        if prior_id is not None:
+            return prior_id
+    return id_by_callsign.get(row.callsign)
 
 
 def _history_payload(row: HistoryRow) -> tuple:
