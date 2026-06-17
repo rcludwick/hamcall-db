@@ -41,11 +41,44 @@ synced_at      TEXT     -- ISO date of the upstream source file
 - Derivation priority at build time: street address geocode → postal_code centroid → city centroid → NULL. Always truncated to 4 chars regardless of source.
 - `first_name` / `last_name` are best-effort splits of the licensee/trustee field. Club/trustee/business holders may put the entity name in `last_name` and leave `first_name` NULL.
 
-Published as `hamcall-db-YYYY-MM-DD.parquet` on the Releases page, with a `latest` tag that always points at the most recent build.
+Each weekly build publishes three assets on the Releases page, with a `latest` tag that always points at the most recent build:
+- `hamcall-db-YYYY-MM-DD.parquet` — current-state dataset (the schema above; the redistribution contract).
+- `hamcall-db-history-YYYY-MM-DD.parquet` — SCD2 change history (callsign holder/location changes over time).
+- `hamcall-db-YYYY-MM-DD.db` — SQLite convenience copy with both tables in one file (see [Exploring the data with Datasette](#exploring-the-data-with-datasette)).
 
 ## Consumers
 
-This artifact has no opinion about your storage. Download the Parquet file and load it into whatever your tool prefers — SQLite + FTS5 for prefix autocomplete, DuckDB for analytics, pandas/Polars for one-off scripts.
+The Parquet files have no opinion about your storage — download and load them into whatever your tool prefers: DuckDB for analytics, pandas/Polars for one-off scripts, or SQLite + FTS5 if you want prefix autocomplete. Each weekly release also ships a ready-to-use SQLite `.db` (see below) for zero-setup browsing.
+
+## Exploring the data with Datasette
+
+The SQLite artifact (`hamcall-db-YYYY-MM-DD.db`) is the quickest way to browse and query the data interactively. It bundles both tables in one file, and [Datasette](https://datasette.io/) reads SQLite natively — no conversion needed.
+
+```bash
+# install Datasette (pick one)
+uv tool install datasette        # or: pipx install datasette  /  pip install datasette
+
+# download the latest .db asset from the Releases page, then serve it:
+datasette hamcall-db-2026-06-16.db
+# open http://localhost:8001 — browse tables, facet by state/country/license_class, run SQL
+```
+
+The `.db` holds two tables:
+
+- **`current`** — one row per callsign (surrogate `id` PRIMARY KEY that is stable and never reused; `callsign` is UNIQUE). The current licensee snapshot.
+- **`history`** — SCD2 change intervals (`callsign`, `valid_from`, `valid_to`, NULL = still open), so you can see how a callsign's holder changed over time. Each row carries the `id`, so you can join back to `current`.
+
+Example query (paste into Datasette's SQL view):
+
+```sql
+-- every holder a callsign has had, oldest first
+select callsign, valid_from, valid_to, first_name, last_name, state, grid
+from history
+where callsign = 'W1AW'
+order by valid_from;
+```
+
+Prefer Parquet? Those stay the canonical, storage-neutral output. Datasette itself only reads SQLite directly; for the Parquet files use the [`datasette-parquet`](https://github.com/simonw/datasette-parquet) plugin (DuckDB-backed) or convert first.
 
 ## License
 
