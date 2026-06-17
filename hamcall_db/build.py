@@ -2,9 +2,8 @@
 
 Run via ``python -m hamcall_db.build`` or the ``hamcall-db`` console script.
 
-This is a skeleton: it wires up source selection, output paths, and the writer. The
-download/parse/merge/geocode stages raise NotImplementedError until their own nuggets
-land (importers: au-039b/f694/2fba/9ed1; merge: au-0d18).
+Pipeline: download → parse (per source) → merge/normalize/geocode → optional cty.dat
+DXCC enrichment → write current-state Parquet (+ history on --all).
 """
 
 from __future__ import annotations
@@ -15,16 +14,21 @@ from typing import Annotated
 
 import typer
 
+from hamcall_db.enrich import enrich, load_cty
 from hamcall_db.geocode import LookupGeocoder
 from hamcall_db.history import diff_history
 from hamcall_db.merge import merge
+from hamcall_db.sources.acma import AcmaSource
 from hamcall_db.sources.base import Source
 from hamcall_db.sources.fcc import FccUlsSource
+from hamcall_db.sources.ised import IsedSource
 from hamcall_db.writer import read_history_parquet, write_history_parquet, write_parquet
 
 # Registry of available source importers, keyed by their short tag.
 SOURCES: dict[str, Source] = {
     "fcc": FccUlsSource(),
+    "ised": IsedSource(),
+    "acma": AcmaSource(),
 }
 
 app = typer.Typer(
@@ -54,6 +58,10 @@ def build(
         Path,
         typer.Option(help="Scratch dir for downloads/intermediates."),
     ] = Path("data/work"),
+    cty: Annotated[
+        Path | None,
+        typer.Option(help="AD1C cty.dat path; enriches country/dxcc from callsign prefix."),
+    ] = None,
     history_in: Annotated[
         Path | None,
         typer.Option(
@@ -80,6 +88,12 @@ def build(
     # merge() yields lazily and geocoding fills grid; materialize so we can both write the
     # current-state artifact AND diff it into history without re-running the pipeline.
     records = list(merge(streams, geocode=LookupGeocoder()))
+
+    # cty.dat enrichment runs once over the deduped set (order-independent): resolve
+    # country (DXCC entity name) + dxcc number from the callsign prefix. Skipped when no
+    # cty.dat is supplied; the downloader for it is a follow-up (see au-9ed1).
+    if cty is not None:
+        records = list(enrich(records, load_cty(cty)))
 
     out_dir = out.is_dir()
     out_path = out / _default_filename() if out_dir else out
