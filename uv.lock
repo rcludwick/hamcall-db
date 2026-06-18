@@ -176,6 +176,9 @@ dev = [
     { name = "pytest" },
     { name = "ruff" },
 ]
+osm = [
+    { name = "pyogrio" },
+]
 padus = [
     { name = "pyogrio" },
 ]
@@ -196,6 +199,7 @@ dev = [
     { name = "pytest", specifier = ">=8.0" },
     { name = "ruff", specifier = ">=0.6" },
 ]
+osm = [{ name = "pyogrio", specifier = ">=0.7" }]
 padus = [{ name = "pyogrio", specifier = ">=0.7" }]
 serve = [{ name = "datasette", specifier = ">=0.64" }]
 

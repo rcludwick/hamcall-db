@@ -53,3 +53,19 @@ def test_notice_mentions_padus() -> None:
     assert "PAD-US" in NOTICE
     assert "USGS" in NOTICE
     assert "OpenStreetMap" in NOTICE or "ODbL" in NOTICE  # exclusion rationale
+
+
+def test_notice_documents_osm_odbl_separate_file() -> None:
+    # The international (non-US) OSM park-grids are a SEPARATE ODbL artifact (hdb-438b).
+    # NOTICE must attribute OSM, name ODbL, and record the license-segregation + the
+    # share-alike inheritance warning for a consumer who joins the two sets.
+    assert "OpenStreetMap" in NOTICE
+    assert "ODbL" in NOTICE
+    assert "Open Database License" in NOTICE
+    assert "pota_park_grids_osm" in NOTICE  # the dedicated, segregated table name
+    assert "share-alike" in NOTICE.lower()
+
+
+def test_notice_has_odbl_attribution_statement() -> None:
+    # The exact "© OpenStreetMap contributors" attribution must be reproducible from NOTICE.
+    assert "OpenStreetMap contributors" in NOTICE

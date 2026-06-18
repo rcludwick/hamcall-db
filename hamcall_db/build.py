@@ -24,9 +24,11 @@ from hamcall_db.sources.acma import AcmaSource
 from hamcall_db.sources.base import Source
 from hamcall_db.sources.fcc import FccUlsSource
 from hamcall_db.sources.ised import IsedSource
+from hamcall_db.sources.osm import OsmSource, compute_osm_park_grids
 from hamcall_db.sources.padus import PadusSource, compute_park_grids
 from hamcall_db.sources.pota import PotaSource
 from hamcall_db.sqlite_writer import (
+    write_pota_park_grids_osm_sqlite,
     write_pota_park_grids_sqlite,
     write_pota_parks_sqlite,
     write_sqlite,
@@ -35,6 +37,7 @@ from hamcall_db.writer import (
     read_history_parquet,
     write_history_parquet,
     write_parquet,
+    write_pota_park_grids_osm_parquet,
     write_pota_park_grids_parquet,
     write_pota_parks_parquet,
 )
@@ -251,6 +254,35 @@ def build(
                 f"Wrote {grids_count} POTA park-grid rows to {grids_path} "
                 f"(+ pota_park_grids table in {db_path})"
             )
+
+            # OSM/international park -> Maidenhead grid SETS (hdb-438b, PHASE 2). LICENSE
+            # SEGREGATION: OSM-derived grids are an ODbL DERIVATIVE database, incompatible
+            # with the CC BY-NC artifact's terms — so they ship in their OWN files: a
+            # SEPARATE ODbL Parquet AND a SEPARATE ODbL .db (table pota_park_grids_osm).
+            # They are NEVER written into the CC-BY-NC db_path or the PAD-US parquet above.
+            # Independently guarded and resilient: reading OSM extracts needs the build-time
+            # `osm` dependency group (GDAL via pyogrio) and large regional downloads — if
+            # absent or the download fails, every non-US park degrades to its point grid via
+            # compute_osm_park_grids([]). US parks are excluded (PAD-US owns them). The build
+            # never blocks on it.
+            try:
+                osm_features = _load_osm_features(work_dir)
+            except Exception as exc:  # GDAL/group missing or download failed
+                typer.echo(
+                    f"WARNING: OSM boundaries unavailable ({exc}); non-US park grids "
+                    "fall back to point grids",
+                    err=True,
+                )
+                osm_features = []
+            osm_grid_rows = compute_osm_park_grids(parks, osm_features)
+            osm_grids_path = parks_dir_out / _pota_park_grids_osm_filename()
+            osm_db_path = parks_dir_out / _pota_park_grids_osm_db_filename()
+            osm_count = write_pota_park_grids_osm_parquet(osm_grid_rows, osm_grids_path)
+            write_pota_park_grids_osm_sqlite(osm_grid_rows, osm_db_path)
+            typer.echo(
+                f"Wrote {osm_count} OSM (ODbL) park-grid rows to {osm_grids_path} "
+                f"(+ pota_park_grids_osm table in {osm_db_path})"
+            )
         except Exception as exc:  # download/parse/write failure is non-fatal
             typer.echo(
                 f"WARNING: POTA parks dataset skipped ({exc}); "
@@ -287,6 +319,34 @@ def _pota_park_grids_filename() -> str:
     """Dated park-grids artifact name: hamcall-db-pota-park-grids-YYYY-MM-DD.parquet."""
     today = dt.date.today().isoformat()
     return f"hamcall-db-pota-park-grids-{today}.parquet"
+
+
+def _pota_park_grids_osm_filename() -> str:
+    """Dated OSM (ODbL) park-grids Parquet name: hamcall-db-pota-park-grids-osm-*.parquet."""
+    today = dt.date.today().isoformat()
+    return f"hamcall-db-pota-park-grids-osm-{today}.parquet"
+
+
+def _pota_park_grids_osm_db_filename() -> str:
+    """Dated OSM (ODbL) park-grids SQLite name: hamcall-db-pota-park-grids-osm-*.db.
+
+    A SEPARATE .db from the CC-BY-NC artifact so ODbL share-alike never taints it.
+    """
+    today = dt.date.today().isoformat()
+    return f"hamcall-db-pota-park-grids-osm-{today}.db"
+
+
+def _load_osm_features(work_dir: Path) -> list:
+    """Download + read OSM boundary features (build-time, GIS reader via the `osm` group).
+
+    Isolated so the caller can guard it: any failure here (missing GIS reader, download
+    error) degrades non-US park grids to point grids without blocking the build. Geofabrik
+    publishes daily extracts; the cached files are reused within a build day. The region
+    list is a pin-at-build-time decision (OsmSource defaults to a conservative non-US set).
+    """
+    osm = OsmSource()
+    osm_paths = osm.download(work_dir)
+    return osm.read_features(osm_paths)
 
 
 def _load_padus_features(work_dir: Path) -> list:

@@ -40,6 +40,15 @@ dev = [
 padus = [
     "pyogrio>=0.7",
 ]
+# Build-time ONLY: reading real OpenStreetMap regional extracts (Geofabrik .osm.pbf) for
+# the SEPARATE ODbL international park-grids (hdb-438b) needs a GDAL-backed reader. This is
+# the THIN adapter seam (hamcall_db.sources.osm._read_osm_features) — the matching core in
+# osm_grids.py reuses the pure-shapely geometry core and is unit-tested without GDAL or any
+# OSM download. Install with `uv sync --group osm` for a real build. (Same reader as the
+# `padus` group; kept a separate group so the ODbL-derived path is opted into explicitly.)
+osm = [
+    "pyogrio>=0.7",
+]
 # Optional: only needed to browse the SQLite artifact locally with Datasette.
 serve = [
     "datasette>=0.64",

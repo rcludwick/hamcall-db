@@ -121,19 +121,54 @@ Upstream sources and their licenses
    imposes no additional redistribution restriction on the combined dataset.
 
    SCOPE NOTE: PAD-US is US-only and was chosen because it is the only
-   license-clean (public-domain) national boundary set. OpenStreetMap boundaries
-   (ODbL, share-alike) and WDPA / Protected Planet (no redistribution) are
-   EXCLUDED — ODbL's share-alike is incompatible with this dataset's CC BY-NC
-   terms, and WDPA prohibits redistribution. Any future international park-grid
-   coverage built from OSM must ship in a SEPARATE ODbL-licensed file, never
-   mixed into this artifact.
+   license-clean (public-domain) national boundary set for the CC BY-NC dataset.
+   WDPA / Protected Planet (no redistribution) is EXCLUDED entirely. OpenStreetMap
+   boundaries (ODbL, share-alike) are NOT mixed into this CC BY-NC artifact —
+   ODbL's share-alike is incompatible with CC BY-NC — but the NON-US (international)
+   park-grid coverage built from OSM IS published, in a SEPARATE ODbL-licensed file
+   (source 8 below), never co-located with this artifact.
+
+
+8. OpenStreetMap (OSM) — international park boundaries (SEPARATE ODbL file)
+   Coverage: NON-US protected-area / park boundaries, used at BUILD TIME to
+             compute the set of 4-char Maidenhead grid squares each non-US POTA
+             park boundary intersects. Only the derived grid SETS are published
+             — the source polygons are NEVER redistributed.
+   Source:   © OpenStreetMap contributors.
+   License:  Open Database License (ODbL) v1.0.
+             https://opendatacommons.org/licenses/odbl/1-0/
+   Attribution is REQUIRED. Required attribution statement:
+
+       © OpenStreetMap contributors. Data available under the Open Database
+       License (ODbL), https://opendatacommons.org/licenses/odbl/1-0/.
+
+   LICENSE SEGREGATION (non-negotiable): grids derived from OSM boundaries form
+   an ODbL DERIVATIVE DATABASE. ODbL's share-alike is INCOMPATIBLE with the rest
+   of the hamcall-db dataset's CC BY-NC 4.0 terms, so the OSM-derived grids are
+   shipped in their OWN files and under their OWN license, NEVER mixed into the
+   CC BY-NC artifacts:
+
+       hamcall-db-pota-park-grids-osm-YYYY-MM-DD.parquet
+       hamcall-db-pota-park-grids-osm-YYYY-MM-DD.db   (table pota_park_grids_osm)
+
+   These files are governed by the LICENSE-ODbL file in this repository, NOT by
+   the CC BY-NC terms below. CONSUMER WARNING: a consumer who JOINS these ODbL
+   grids with the CC BY-NC hamcall-db artifacts and distributes the combined
+   result as a database inherits ODbL's share-alike obligation on that combined
+   database. Keep them separate to keep the CC BY-NC dataset free of share-alike.
+   US parks are covered by the public-domain PAD-US set (source 7) and are
+   EXCLUDED from the OSM set, so the two never overlap. WDPA / Protected Planet
+   remains excluded (redistribution prohibited).
 
 
 Combined dataset terms
 -----------------------
 
-The published dataset is a derived work that combines all of the above. Anyone
-who redistributes it must comply with the union of these terms, which means:
+The CC BY-NC published dataset (the callsign current/history Parquet + SQLite,
+the POTA parks table, and the US PAD-US pota_park_grids set — i.e. everything
+EXCEPT the separate OSM file, source 8) is a derived work that combines sources
+1-7. Anyone who redistributes it must comply with the union of these terms,
+which means:
 
   * Reproduce the ISED / OGL-Canada attribution statement (source 2).
   * Reproduce the ACMA / CC BY 4.0 attribution statement (source 3).
@@ -143,6 +178,11 @@ who redistributes it must comply with the union of these terms, which means:
     assumed non-commercial basis.
   * Reproduce the POTA attribution statement (source 6) and observe its assumed
     non-commercial basis.
+
+The SEPARATE OSM park-grids file (source 8) is NOT part of this combined
+CC BY-NC dataset: it is licensed under ODbL (see the LICENSE-ODbL file and
+source 8 above) and must be redistributed under its own terms. Do not co-locate
+or merge it into the CC BY-NC artifacts.
 
 PROJECT DECISION (2026-06-16): the published hamcall-db dataset artifacts (the
 Parquet files and the SQLite .db) are licensed under Creative Commons

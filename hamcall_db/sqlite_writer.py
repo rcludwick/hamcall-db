@@ -428,3 +428,56 @@ def write_pota_park_grids_sqlite(
         con.close()
 
     return len(grids)
+
+
+# --- OSM/international park-grids table (hdb-438b, PHASE 2) ---------------------
+#
+# LICENSE SEGREGATION: OSM-derived grids form an ODbL DERIVATIVE DATABASE, incompatible with
+# the CC BY-NC artifact's share-alike-free terms. They live in their OWN SQLite file
+# (hamcall-db-pota-park-grids-osm-YYYY-MM-DD.db) in a DEDICATED table, ``pota_park_grids_osm``
+# — DELIBERATELY a different table name from the CC-BY-NC ``pota_park_grids`` so the two can
+# never be confused or accidentally co-located. Same four-string schema as PAD-US (reference
+# FK, 4-char grid, source ('osm'/'osm-point'), confidence). Indexed on ``reference``.
+# (c) OpenStreetMap contributors, ODbL.
+_POTA_PARK_GRIDS_OSM_DDL = (
+    "CREATE TABLE IF NOT EXISTS pota_park_grids_osm (\n"
+    + ",\n".join(f"  {c} TEXT" for c in PARK_GRID_SCHEMA_COLUMNS)
+    + "\n)"
+)
+_POTA_PARK_GRIDS_OSM_INDEX_DDL = (
+    "CREATE INDEX IF NOT EXISTS idx_pota_park_grids_osm_reference "
+    "ON pota_park_grids_osm (reference)"
+)
+
+
+def write_pota_park_grids_osm_sqlite(
+    grids: Iterable[ParkGridRecord], out_path: Path
+) -> int:
+    """Write/refresh the ``pota_park_grids_osm`` table in a SEPARATE ODbL SQLite file.
+
+    Returns the row count. This writer targets the OSM artifact's OWN ``.db`` and creates
+    ONLY the ``pota_park_grids_osm`` table — it NEVER creates or touches the CC-BY-NC tables
+    (current/history/pota_parks/pota_park_grids). The OSM .db must not be the same file as
+    the CC-BY-NC .db (the build wires them to different paths) so ODbL share-alike never
+    taints the CC BY-NC artifact. Idempotent — re-running replaces the rows.
+    """
+    grids = list(grids)
+    out = Path(out_path)
+    out.parent.mkdir(parents=True, exist_ok=True)
+
+    con = sqlite3.connect(out)
+    try:
+        con.execute(_POTA_PARK_GRIDS_OSM_DDL)
+        con.execute(_POTA_PARK_GRIDS_OSM_INDEX_DDL)
+        con.execute("DELETE FROM pota_park_grids_osm")  # refresh: idempotent rebuild
+        placeholders = ", ".join("?" for _ in PARK_GRID_SCHEMA_COLUMNS)
+        con.executemany(
+            f"INSERT INTO pota_park_grids_osm ({', '.join(PARK_GRID_SCHEMA_COLUMNS)}) "
+            f"VALUES ({placeholders})",
+            [_park_grid_payload(g) for g in grids],
+        )
+        con.commit()
+    finally:
+        con.close()
+
+    return len(grids)

@@ -116,6 +116,28 @@ def write_pota_park_grids_parquet(
     return frame.height
 
 
+# OSM/international park-grids artifact (hdb-438b, PHASE 2). SAME four-string schema as the
+# PAD-US set, but written to a SEPARATE ODbL-licensed file —
+# hamcall-db-pota-park-grids-osm-YYYY-MM-DD.parquet — NEVER mixed into the CC BY-NC artifact.
+# OSM-derived grids form an ODbL derivative database; share-alike is incompatible with the
+# main artifact's CC BY-NC terms, so they ship segregated (source='osm'/'osm-point').
+def write_pota_park_grids_osm_parquet(
+    grids: Iterable[ParkGridRecord], out_path: Path
+) -> int:
+    """Write OSM-derived `ParkGridRecord`s to `out_path` as Parquet. Returns the row count.
+
+    SEPARATE ODbL artifact (hamcall-db-pota-park-grids-osm-YYYY-MM-DD.parquet): one row per
+    (non-US park reference, 4-char grid) intersected from OpenStreetMap boundaries. License
+    segregation: this is an ODbL derivative database and is NEVER written into the CC BY-NC
+    callsign/parks/PAD-US files. (c) OpenStreetMap contributors, ODbL.
+    """
+    rows = [asdict(g) for g in grids]
+    frame = pl.DataFrame(rows, schema=_PARK_GRID_SCHEMA)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    frame.write_parquet(out_path)
+    return frame.height
+
+
 def read_history_parquet(in_path: Path) -> list[HistoryRow]:
     """Read a prior history artifact back into `HistoryRow`s (the diff's prior state)."""
     frame = pl.read_parquet(in_path)

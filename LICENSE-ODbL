@@ -1,0 +1,52 @@
+hamcall-db — OSM park-grids dataset: LICENSE (ODbL)
+===================================================
+
+THIS LICENSE APPLIES ONLY to the SEPARATE OpenStreetMap-derived park-grid
+artifacts:
+
+  * hamcall-db-pota-park-grids-osm-YYYY-MM-DD.parquet
+  * hamcall-db-pota-park-grids-osm-YYYY-MM-DD.db   (table: pota_park_grids_osm)
+
+These files map each NON-US POTA park reference to the SET of 4-character
+Maidenhead grid squares its OpenStreetMap boundary intersects. They are a
+DERIVATIVE DATABASE of OpenStreetMap data and are therefore distributed under
+the Open Database License (ODbL) v1.0, NOT under the CC BY-NC 4.0 terms that
+cover the rest of the hamcall-db project.
+
+  © OpenStreetMap contributors.
+  Data available under the Open Database License (ODbL) v1.0:
+  https://opendatacommons.org/licenses/odbl/1-0/
+  Any rights in individual contents of the database are licensed under the
+  Database Contents License: https://opendatacommons.org/licenses/dbcl/1-0/
+
+What ODbL requires of you when you redistribute these files (summary — the
+full text at the URL above governs):
+
+  * ATTRIBUTE: keep the "© OpenStreetMap contributors" attribution and this
+    notice with any redistribution.
+  * SHARE-ALIKE: if you publicly use these grids to produce a derived database
+    and distribute that derived database, you must offer it under ODbL too.
+  * KEEP OPEN: if you redistribute the database (or a works produced from it)
+    in a technically restricted form, you must also provide an unrestricted
+    version.
+
+LICENSE SEGREGATION (why these files are separate)
+--------------------------------------------------
+The rest of the hamcall-db published dataset (the callsign current/history
+Parquet + SQLite, the POTA parks table, and the US PAD-US pota_park_grids set)
+is licensed CC BY-NC 4.0 (see LICENSE for the build CODE / MIT and NOTICE for
+the dataset terms). ODbL's share-alike is INCOMPATIBLE with that CC BY-NC
+dataset, so the OpenStreetMap-derived grids are shipped in their OWN files
+under ODbL and are NEVER mixed into the CC BY-NC artifacts.
+
+CONSUMER WARNING: if you JOIN these ODbL grids with the CC BY-NC hamcall-db
+artifacts and distribute the combined result as a database, the combined
+derived database inherits ODbL's share-alike obligation. Keep them separate to
+keep the CC BY-NC dataset free of share-alike.
+
+The underlying OpenStreetMap boundary polygons themselves are used only at
+build time and are NEVER redistributed — only the derived 4-character grid
+sets are published.
+
+The full Open Database License v1.0 text is available at:
+https://opendatacommons.org/licenses/odbl/1-0/
