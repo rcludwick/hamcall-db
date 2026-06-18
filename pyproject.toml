@@ -39,6 +39,9 @@ dev = [
 # multi-GB national download. Install with `uv sync --group padus` for a real build.
 padus = [
     "pyogrio>=0.7",
+    # _read_padus_features uses pyogrio.read_dataframe + GeoDataFrame.to_crs (the EPSG:5070
+    # -> WGS84 reproject), both of which require geopandas — pyogrio alone is not enough.
+    "geopandas>=1.0",
 ]
 # Build-time ONLY: reading real OpenStreetMap regional extracts (Geofabrik .osm.pbf) for
 # the SEPARATE ODbL international park-grids (hdb-438b) needs a GDAL-backed reader. This is
@@ -48,6 +51,8 @@ padus = [
 # `padus` group; kept a separate group so the ODbL-derived path is opted into explicitly.)
 osm = [
     "pyogrio>=0.7",
+    # _read_osm_features uses pyogrio.read_dataframe (needs geopandas), same as the padus seam.
+    "geopandas>=1.0",
 ]
 # Optional: only needed to browse the SQLite artifact locally with Datasette.
 serve = [
