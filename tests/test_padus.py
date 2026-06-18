@@ -144,3 +144,61 @@ def test_read_features_seam_is_present_but_gdal_gated() -> None:
     # should raise a clear, actionable error rather than a bare ImportError. (We do not
     # install GDAL in CI, so we only assert the seam exists and is documented.)
     assert hasattr(padus, "_read_padus_features")
+
+
+# --- hdb-b6a7: real PAD-US national download pinned (zipped File Geodatabase) ---
+
+
+def test_padus_download_url_is_pinned_not_placeholder() -> None:
+    # The default must be a real USGS ScienceBase download, not the scaffolding
+    # placeholder. PAD-US 4.0's national distribution is a File Geodatabase ZIP.
+    url = padus.PADUS_DOWNLOAD_URL
+    assert url.startswith("https://")
+    assert "placeholder" not in url.lower()
+    assert "sciencebase" in url
+    # The national distribution is a File Geodatabase, not a GeoPackage; the scaffolding
+    # placeholder pointed at a fictional "padus_national_geopackage.zip".
+    assert "geopackage" not in url.lower()
+
+
+def test_download_caches_zipped_geodatabase_extension(tmp_path: Path) -> None:
+    # PAD-US national ships as a zipped File Geodatabase (.gdb.zip), NOT a .gpkg —
+    # GDAL reads the .gdb inside the zip via /vsizip/. The cached file name must
+    # reflect that so the reader opens it correctly.
+    def fetcher(url: str, since: float | None) -> bytes | None:
+        return b"PK\x03\x04FAKE-PADUS-GDB-ZIP"
+
+    path = padus.PadusSource().download(
+        tmp_path, on=dt.date(2026, 6, 17), fetcher=fetcher
+    )
+    assert path.name.endswith(".gdb.zip")
+
+
+def test_select_combined_layer_picks_integrated_feature_class() -> None:
+    # The GDB has 6 feature classes; the Combined layer integrates them all, so the
+    # reader must select it (by its PADUS*Combined* prefix) regardless of the exact,
+    # version-suffixed name.
+    names = [
+        "Fee",
+        "Designation",
+        "Easement",
+        "Proclamation",
+        "Marine",
+        "PADUS4_0Combined_Proclamation_Marine_Fee_Designation_Easement",
+    ]
+    assert (
+        padus._select_combined_layer(names)
+        == "PADUS4_0Combined_Proclamation_Marine_Fee_Designation_Easement"
+    )
+
+
+def test_select_combined_layer_raises_clearly_when_absent() -> None:
+    import pytest
+
+    with pytest.raises(RuntimeError, match="Combined"):
+        padus._select_combined_layer(["Fee", "Designation"])
+
+
+def test_vsizip_path_wraps_zip_for_gdal() -> None:
+    p = Path("/data/raw/padus/2026-06-17/padus_national.gdb.zip")
+    assert padus._vsizip_path(p) == f"/vsizip/{p}"

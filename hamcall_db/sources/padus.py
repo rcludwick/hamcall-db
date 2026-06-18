@@ -40,19 +40,28 @@ from hamcall_db.sources.pota import ParkRecord
 
 __all__ = [
     "PADUS_DOWNLOAD_URL",
+    "PADUS_ITEM_URL",
+    "PADUS_COMBINED_LAYER_PREFIX",
     "DOWNLOAD_TIMEOUT",
     "PadusSource",
     "compute_park_grids",
 ]
 
-# PAD-US national download. The USGS ScienceBase release URL changes per PAD-US version;
-# this default points at the national GeoPackage. Override via PadusSource(url=...). The
-# file is hundreds of MB to a few GB (EPSG:5070), so it is cached and almost never refetched
-# (PAD-US updates ~annually).
-PADUS_DOWNLOAD_URL = (
-    "https://www.sciencebase.gov/catalog/file/get/"
-    "padus_national_geopackage.zip"  # placeholder; pin the real version URL at build time
-)
+# PAD-US national download (hdb-b6a7). PAD-US ships its NATIONAL inventory as a zipped File
+# Geodatabase (~1.7 GB, EPSG:5070) — there is NO national GeoPackage (GeoPackage exists only
+# as per-state extracts). The URL is a USGS ScienceBase per-file download link and is
+# VERSION-SPECIFIC: it changes with every PAD-US release, so re-pin it on each major version
+# bump. Human-readable landing page (where the next version's file link lives):
+#   PADUS_ITEM_URL below. Override at build time via PadusSource(url=...).
+# Pinned: PAD-US 4.0 Full Inventory Database (PADUS4_0Geodatabase.zip), released 2023.
+PADUS_ITEM_URL = "https://www.sciencebase.gov/catalog/item/652ef930d34edd15305a9b03"
+PADUS_DOWNLOAD_URL = "https://sciencebase.usgs.gov/manager/download/clvbj5bbs007715ms6e886v58"
+
+# The GDB integrates six feature classes (Fee/Designation/Easement/Proclamation/Marine and
+# the Combined layer that unions them all). We read the Combined layer; its exact name is
+# version-suffixed (e.g. PADUS4_0Combined_Proclamation_Marine_Fee_Designation_Easement), so
+# we select it by this prefix rather than hard-coding the full name.
+PADUS_COMBINED_LAYER_PREFIX = "Combined"
 
 DOWNLOAD_TIMEOUT = 600  # the file is large; allow a generous read timeout
 
@@ -125,7 +134,8 @@ class PadusSource:
         day = (on or date.today()).isoformat()
         cache_dir = work_dir / "data" / "raw" / "padus" / day
         cache_dir.mkdir(parents=True, exist_ok=True)
-        dest = cache_dir / "padus_national.gpkg"
+        # Zipped File Geodatabase, not a GeoPackage — GDAL reads the inner .gdb via /vsizip/.
+        dest = cache_dir / "padus_national.gdb.zip"
 
         since = dest.stat().st_mtime if dest.exists() else None
         data = fetcher(self.url, since)
@@ -144,11 +154,38 @@ class PadusSource:
         return list(_read_padus_features(path))
 
 
+def _vsizip_path(path: Path) -> str:
+    """GDAL virtual-filesystem path for reading a layer out of a ``.zip`` in place.
+
+    PAD-US ships the national inventory as a zipped File Geodatabase; GDAL opens the inner
+    ``.gdb`` directly through the ``/vsizip/`` handler, so we never unzip 1.7 GB to disk.
+    """
+    return f"/vsizip/{path}"
+
+
+def _select_combined_layer(layer_names: Iterable[str]) -> str:
+    """Pick the integrated 'Combined' feature class from the GDB's layer list.
+
+    The Combined layer unions Fee/Designation/Easement/Proclamation/Marine, so reading it
+    alone gives every protected unit once. Its full name is version-suffixed
+    (``PADUS4_0Combined_...``), hence prefix matching rather than a hard-coded name.
+    """
+    for name in layer_names:
+        if PADUS_COMBINED_LAYER_PREFIX.lower() in name.lower():
+            return name
+    raise RuntimeError(
+        "No 'Combined' feature class found in the PAD-US geodatabase "
+        f"(layers: {sorted(layer_names)}). The national GDB layout may have changed; "
+        "re-pin PADUS_COMBINED_LAYER_PREFIX / PADUS_DOWNLOAD_URL (hdb-b6a7)."
+    )
+
+
 def _read_padus_features(path: Path) -> Iterator[PadusFeature]:
-    """GDAL seam: read PAD-US features from ``path``, reprojected to WGS84.
+    """GDAL seam: read PAD-US features from the zipped GDB at ``path``, reprojected to WGS84.
 
     Uses pyogrio (GDAL-backed) — imported LAZILY so this module and all of its tests run
-    without GDAL installed. Install the reader with ``uv sync --group padus``. Yields
+    without GDAL installed. Install the reader with ``uv sync --group padus``. Opens the
+    Combined feature class inside the ``.gdb.zip`` via ``/vsizip/`` (no unzip), yields
     ``PadusFeature``s carrying the Unit_Nm / Loc_Nm name columns and a WGS84 shapely
     geometry. This is the ONLY place GDAL is touched; the geometry core never sees a file.
     """
@@ -161,10 +198,15 @@ def _read_padus_features(path: Path) -> Iterator[PadusFeature]:
             "do not need it.)"
         ) from exc
 
-    # Read PAD-US, reprojecting from its source CRS to WGS84 so the lon/lat lattice math is
-    # valid. PAD-US ships several layers (Fee/Designation/Easement); the caller's matching
-    # tolerates overlapping units, so we read the combined geometries with their names.
-    geo = pyogrio.read_dataframe(path, columns=["Unit_Nm", "Loc_Nm"])
+    # pragma: no cover below — exercised only in a real build with GDAL + the 1.7 GB GDB.
+    src = _vsizip_path(path)  # /vsizip/.../padus_national.gdb.zip
+    layers = [row[0] for row in pyogrio.list_layers(src)]
+    layer = _select_combined_layer(layers)
+
+    # Read the Combined layer, reprojecting from PAD-US's source CRS (EPSG:5070 Albers) to
+    # WGS84 so the geometry core's lon/lat lattice math is valid. Unit_Nm is the
+    # standardized protected-area name; Loc_Nm is the source's local name (fallback).
+    geo = pyogrio.read_dataframe(src, layer=layer, columns=["Unit_Nm", "Loc_Nm"])
     geo = geo.to_crs(WGS84_CRS)
     for row in geo.itertuples(index=False):
         geometry = getattr(row, "geometry", None)
