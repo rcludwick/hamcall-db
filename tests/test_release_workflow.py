@@ -43,6 +43,19 @@ def test_release_workflow_publishes_separate_odbl_release() -> None:
     assert "LICENSE-ODbL" in text, "ODbL release must ship the ODbL license"
 
 
+def test_exactly_one_release_claims_the_latest_badge() -> None:
+    text = _workflow_text()
+    # softprops/action-gh-release defaults make_latest:true, so EVERY release we publish must
+    # explicitly set make_latest — otherwise a later step steals the repo's "Latest" badge
+    # (regression: the dated ODbL release grabbed it from the CC-BY-NC `latest` alias). Exactly
+    # one `make_latest: true` is allowed, and it must be the CC-BY-NC `latest` alias.
+    trues = text.count("make_latest: true")
+    falses = text.count("make_latest: false")
+    assert trues == 1, f"expected exactly one make_latest:true, found {trues}"
+    # All four releases set make_latest explicitly (1 true + 3 false: two dated + latest-osm).
+    assert falses == 3, f"expected three make_latest:false, found {falses}"
+
+
 def test_odbl_and_ccbync_assets_are_collected_into_separate_lists() -> None:
     text = _workflow_text()
     # The collect step must expose two DISTINCT asset-list outputs so the two releases never

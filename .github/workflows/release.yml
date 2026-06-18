@@ -128,10 +128,14 @@ jobs:
             echo "has_odbl=false" >> "$GITHUB_OUTPUT"
           fi
 
-      # ---- CC BY-NC release (callsign dataset + POTA parks/grids) ----------------
+      # The repo's single "Latest" badge belongs to the CC-BY-NC `latest` alias. The action
+      # defaults make_latest:true, so EVERY other release sets make_latest:false and the
+      # `latest` alias is published LAST — otherwise a later release would steal the badge
+      # (regression: the dated ODbL release grabbed it). Order: dated CC-BY-NC → dated ODbL →
+      # latest-osm → latest (CC-BY-NC).
 
-      # Dated, immutable release: hamcall-db-YYYY-MM-DD. Consumers pin to this
-      # tag when they need reproducibility.
+      # ---- CC BY-NC dated release (callsign dataset + POTA parks/grids) -----------
+      # Dated, immutable: hamcall-db-YYYY-MM-DD. Consumers pin to this for reproducibility.
       - name: Publish dated release (CC BY-NC)
         uses: softprops/action-gh-release@v2
         with:
@@ -149,28 +153,8 @@ jobs:
 
             OpenStreetMap-derived park grids are **ODbL** (share-alike) and are published SEPARATELY at the `hamcall-db-osm-${{ steps.date.outputs.date }}` / `latest-osm` release — never fold them into this CC BY-NC set.
           files: ${{ steps.assets.outputs.cc_files }}
+          make_latest: false
           fail_on_unmatched_files: true
-
-      # Moving alias: the `latest` tag/release always points at the most recent
-      # build. The action updates the existing `latest` release in place and
-      # re-points its tag at this commit; the same assets are re-uploaded so
-      # `latest` always resolves to a complete, current release.
-      - name: Update 'latest' release alias (CC BY-NC)
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: "latest"
-          name: "Latest (hamcall-db ${{ steps.date.outputs.date }})"
-          body: |
-            Rolling alias for the most recent weekly hamcall-db build (**CC BY-NC 4.0**).
-            Currently pointing at the ${{ steps.date.outputs.date }} build.
-
-            Pull this by default; pin to a dated `hamcall-db-YYYY-MM-DD` release when reproducibility matters.
-            OpenStreetMap-derived (ODbL) grids live at the separate `latest-osm` release.
-          files: ${{ steps.assets.outputs.cc_files }}
-          make_latest: true
-          fail_on_unmatched_files: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # ---- ODbL release (OpenStreetMap-derived grids) ----------------------------
       # SEPARATE release so the share-alike ODbL data is never distributed as part of the
@@ -197,6 +181,7 @@ jobs:
 
             **Indicative point grids in this build** (OSM polygon boundaries need the build-time `osm` group); polygon coverage ships later.
           files: ${{ steps.assets.outputs.odbl_files }}
+          make_latest: false
           fail_on_unmatched_files: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -215,6 +200,25 @@ jobs:
             do not combine with the CC BY-NC data without honoring ODbL share-alike.
           files: ${{ steps.assets.outputs.odbl_files }}
           make_latest: false
+          fail_on_unmatched_files: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Moving alias, published LAST so it owns the repo's "Latest" badge: the `latest`
+      # tag/release always points at the most recent CC-BY-NC build.
+      - name: Update 'latest' release alias (CC BY-NC)
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: "latest"
+          name: "Latest (hamcall-db ${{ steps.date.outputs.date }})"
+          body: |
+            Rolling alias for the most recent weekly hamcall-db build (**CC BY-NC 4.0**).
+            Currently pointing at the ${{ steps.date.outputs.date }} build.
+
+            Pull this by default; pin to a dated `hamcall-db-YYYY-MM-DD` release when reproducibility matters.
+            OpenStreetMap-derived (ODbL) grids live at the separate `latest-osm` release.
+          files: ${{ steps.assets.outputs.cc_files }}
+          make_latest: true
           fail_on_unmatched_files: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
