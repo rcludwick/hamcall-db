@@ -61,10 +61,20 @@ allstar_nodes  LIST<INT> -- AllStarLink node numbers held by the callsign (may b
 - `first_name` / `last_name` are best-effort splits of the licensee/trustee field. Club/trustee/business holders may put the entity name in `last_name` and leave `first_name` NULL.
 - `allstar_nodes` is a list of [AllStarLink](https://www.allstarlink.org/) node numbers registered to the callsign (one callsign may hold many nodes; sorted ascending, empty when none). In the SQLite convenience copy it is normalized into a child table `allstar_nodes(id, node)` keyed by the stable `id` (SQLite has no list type), not a column on `current`. It does not participate in history (a node change is not a holder/location change, so it never opens a new SCD2 interval).
 
-Each weekly build publishes three assets on the Releases page, with a `latest` tag that always points at the most recent build:
+Each weekly build publishes two releases, each with a rolling alias that always points at the most recent build.
+
+**CC BY-NC release** — tag `hamcall-db-YYYY-MM-DD`, alias `latest`:
 - `hamcall-db-YYYY-MM-DD.parquet` — current-state dataset (the schema above; the redistribution contract).
 - `hamcall-db-history-YYYY-MM-DD.parquet` — SCD2 change history (callsign holder/location changes over time).
-- `hamcall-db-YYYY-MM-DD.db` — SQLite convenience copy with both tables in one file (see [Exploring the data with Datasette](#exploring-the-data-with-datasette)).
+- `hamcall-db-YYYY-MM-DD.db` — SQLite convenience copy with the callsign tables plus the `pota_parks` / `pota_park_grids` tables in one file (see [Exploring the data with Datasette](#exploring-the-data-with-datasette)).
+- `hamcall-db-pota-parks-YYYY-MM-DD.parquet` — POTA park directory ([above](#pota-parks-reference-dataset)).
+- `hamcall-db-pota-park-grids-YYYY-MM-DD.parquet` — POTA park → 4-char grid sets (PAD-US/point, [above](#pota-park-grid-sets-pad-us)).
+
+**ODbL release** (OpenStreetMap-derived grids — kept separate so its share-alike terms never touch the CC BY-NC set) — tag `hamcall-db-osm-YYYY-MM-DD`, alias `latest-osm`:
+- `hamcall-db-pota-park-grids-osm-YYYY-MM-DD.parquet` + `…-osm-YYYY-MM-DD.db` — OSM-derived park grid sets ([above](#pota-park-grid-sets--international-openstreetmap-odbl--separate-file)).
+- `LICENSE-ODbL` — the governing license + © OpenStreetMap contributors attribution.
+
+> The POTA park-grid sets currently published are **indicative point grids**: the public weekly build runs without the build-time `padus`/`osm` GIS groups, so real polygon→grid coverage is not yet in the released artifacts. Treat the grids as approximate until polygon coverage ships.
 
 ## Consumers
 
