@@ -92,6 +92,24 @@ def _stub_all_sources(monkeypatch):
     for tag in list(SOURCES):
         monkeypatch.setitem(SOURCES, tag, _Stub(tag))
 
+    # The POTA park block instantiates PotaSource() directly (not via SOURCES), so the
+    # loop above does NOT cover it. Without this stub an --all build hits api.pota.app
+    # live (slow, fragile in CI, impolite to upstream). Default it to an offline no-op
+    # that yields no parks; tests that need real parks (_stub_parks_and_boundaries)
+    # re-override it afterward. The PAD-US/OSM boundary loaders are already guarded in
+    # build.py (degrade to [] on failure), but stub them too so no test depends on a
+    # placeholder-URL failing fast.
+    class _StubPotaOffline:
+        def download(self, work_dir):
+            return work_dir
+
+        def parse(self, path):
+            return []
+
+    monkeypatch.setattr("hamcall_db.build.PotaSource", _StubPotaOffline)
+    monkeypatch.setattr("hamcall_db.build._load_padus_features", lambda wd: [])
+    monkeypatch.setattr("hamcall_db.build._load_osm_features", lambda wd: [])
+
 
 def test_all_build_enriches_allstar_nodes(tmp_path, monkeypatch):
     _stub_all_sources(monkeypatch)
