@@ -44,6 +44,7 @@ from datetime import date
 from email.utils import formatdate
 from pathlib import Path
 
+from hamcall_db.sources._gis import require_pyogrio
 from hamcall_db.sources.osm_grids import OsmFeature, ParkGridRecord, osm_park_grids
 from hamcall_db.sources.pota import ParkRecord
 
@@ -137,6 +138,16 @@ class OsmSource:
         self.extract_suffix = extract_suffix or _EXTRACT_SUFFIX
         self.synced_at: str | None = None
 
+    def require_reader(self) -> None:
+        """Probe for the GIS reader (pyogrio) WITHOUT downloading anything.
+
+        Call this BEFORE :meth:`download`: the configured Geofabrik extracts are multi-GB, so
+        a build without the ``osm`` group must skip the download and degrade to point grids
+        rather than pull gigabytes only to fail on the read (hdb-66be). Raises the actionable
+        ``RuntimeError`` when pyogrio is absent.
+        """
+        require_pyogrio("osm")
+
     def _region_url(self, region: str) -> str:
         return f"{self.base_url.rstrip('/')}/{region}{self.extract_suffix}"
 
@@ -196,14 +207,8 @@ def _read_osm_features(path: Path) -> Iterator[OsmFeature]:
     shapely geometry (OSM is natively EPSG:4326, so no reprojection). This is the ONLY place
     the GIS reader is touched; the matching core never sees a file.
     """
-    try:
-        import pyogrio
-    except ModuleNotFoundError as exc:  # pragma: no cover - exercised only in a real build
-        raise RuntimeError(
-            "Reading an OpenStreetMap extract requires the GIS reader 'pyogrio'. "
-            "Install it with `uv sync --group osm`. (The matching core and its tests do "
-            "not need it.)"
-        ) from exc
+    require_pyogrio("osm")
+    import pyogrio
 
     # OSM extracts expose a 'multipolygons' layer carrying boundary/leisure relations. Read
     # the boundary-bearing rows; the geometries are already WGS84. We keep features tagged

@@ -345,6 +345,7 @@ def _load_osm_features(work_dir: Path) -> list:
     list is a pin-at-build-time decision (OsmSource defaults to a conservative non-US set).
     """
     osm = OsmSource()
+    osm.require_reader()  # cheap pyogrio probe BEFORE the multi-GB Geofabrik download (hdb-66be)
     osm_paths = osm.download(work_dir)
     return osm.read_features(osm_paths)
 
@@ -357,6 +358,7 @@ def _load_padus_features(work_dir: Path) -> list:
     ~annually, so the cached file is reused across weekly builds.
     """
     padus = PadusSource()
+    padus.require_reader()  # cheap pyogrio probe BEFORE the ~1.7 GB GDB download (hdb-66be)
     padus_path = padus.download(work_dir)
     return padus.read_features(padus_path)
 

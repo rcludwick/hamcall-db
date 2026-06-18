@@ -305,3 +305,69 @@ def test_all_build_resilient_when_osm_reader_missing(tmp_path, monkeypatch):
     # The non-US park still appears, via the point fallback in the ODbL file.
     assert set(osm_frame["reference"].to_list()) == {"DE-0001"}
     assert set(osm_frame["source"].to_list()) == {"osm-point"}
+
+
+# --- hdb-66be: boundary readers must probe pyogrio BEFORE the large download ----
+#
+# Regression: a release build (uv sync, no `osm`/`padus` group) hung ~13 min pulling the
+# multi-GB Geofabrik OSM extracts (Germany+GB+Canada ≈ 10 GB read into memory) before the
+# read failed on the missing GIS reader. The cheap reader probe must run FIRST so the build
+# skips the download entirely and degrades to point grids.
+
+import pytest  # noqa: E402
+
+from hamcall_db import build as build_mod  # noqa: E402
+
+
+def test_load_osm_features_probes_reader_before_downloading(tmp_path, monkeypatch):
+    def _no_reader(self):
+        raise RuntimeError("requires the GIS reader 'pyogrio'; `uv sync --group osm`")
+
+    def _must_not_download(self, *a, **k):
+        raise AssertionError("download must NOT be attempted without the GIS reader")
+
+    monkeypatch.setattr(
+        "hamcall_db.sources.osm.OsmSource.require_reader", _no_reader, raising=False
+    )
+    monkeypatch.setattr("hamcall_db.sources.osm.OsmSource.download", _must_not_download)
+    with pytest.raises(RuntimeError, match="pyogrio"):
+        build_mod._load_osm_features(tmp_path)
+
+
+def test_load_padus_features_probes_reader_before_downloading(tmp_path, monkeypatch):
+    def _no_reader(self):
+        raise RuntimeError("requires the GIS reader 'pyogrio'; `uv sync --group padus`")
+
+    def _must_not_download(self, *a, **k):
+        raise AssertionError("download must NOT be attempted without the GIS reader")
+
+    monkeypatch.setattr(
+        "hamcall_db.sources.padus.PadusSource.require_reader", _no_reader, raising=False
+    )
+    monkeypatch.setattr("hamcall_db.sources.padus.PadusSource.download", _must_not_download)
+    with pytest.raises(RuntimeError, match="pyogrio"):
+        build_mod._load_padus_features(tmp_path)
+
+
+def test_load_osm_features_downloads_when_reader_present(tmp_path, monkeypatch):
+    # When the reader probe passes, the normal download -> read path runs.
+    calls = {"download": False, "read": False}
+
+    def _ok_reader(self):
+        return None
+
+    def _download(self, work_dir, **k):
+        calls["download"] = True
+        return [tmp_path / "europe_germany-latest.osm.pbf"]
+
+    def _read(self, paths):
+        calls["read"] = True
+        return []
+
+    monkeypatch.setattr(
+        "hamcall_db.sources.osm.OsmSource.require_reader", _ok_reader, raising=False
+    )
+    monkeypatch.setattr("hamcall_db.sources.osm.OsmSource.download", _download)
+    monkeypatch.setattr("hamcall_db.sources.osm.OsmSource.read_features", _read)
+    assert build_mod._load_osm_features(tmp_path) == []
+    assert calls == {"download": True, "read": True}

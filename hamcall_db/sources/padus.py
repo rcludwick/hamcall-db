@@ -35,6 +35,7 @@ from datetime import date
 from email.utils import formatdate
 from pathlib import Path
 
+from hamcall_db.sources._gis import require_pyogrio
 from hamcall_db.sources.padus_grids import PadusFeature, ParkGridRecord, park_grids
 from hamcall_db.sources.pota import ParkRecord
 
@@ -149,6 +150,16 @@ class PadusSource:
         self.synced_at = day
         return dest
 
+    def require_reader(self) -> None:
+        """Probe for the GDAL reader (pyogrio) WITHOUT downloading anything.
+
+        Call this BEFORE :meth:`download`: the PAD-US national file is ~1.7 GB, so a build
+        without the ``padus`` group must skip the download and degrade to point grids rather
+        than fetch it only to fail on the read (hdb-66be). Raises the actionable
+        ``RuntimeError`` when pyogrio is absent.
+        """
+        require_pyogrio("padus")
+
     def read_features(self, path: Path) -> list[PadusFeature]:
         """Read PAD-US features from the cached file (delegates to the GDAL seam)."""
         return list(_read_padus_features(path))
@@ -189,14 +200,8 @@ def _read_padus_features(path: Path) -> Iterator[PadusFeature]:
     ``PadusFeature``s carrying the Unit_Nm / Loc_Nm name columns and a WGS84 shapely
     geometry. This is the ONLY place GDAL is touched; the geometry core never sees a file.
     """
-    try:
-        import pyogrio
-    except ModuleNotFoundError as exc:  # pragma: no cover - exercised only in a real build
-        raise RuntimeError(
-            "Reading the PAD-US file requires the GDAL-backed reader 'pyogrio'. "
-            "Install it with `uv sync --group padus`. (The geometry core and its tests "
-            "do not need it.)"
-        ) from exc
+    require_pyogrio("padus")
+    import pyogrio
 
     # pragma: no cover below — exercised only in a real build with GDAL + the 1.7 GB GDB.
     src = _vsizip_path(path)  # /vsizip/.../padus_national.gdb.zip
