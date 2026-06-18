@@ -14,6 +14,7 @@ import polars as pl
 
 from hamcall_db.history import HISTORY_SCHEMA_COLUMNS, HistoryRow
 from hamcall_db.models import SCHEMA_COLUMNS, Record
+from hamcall_db.sources.padus_grids import PARK_GRID_SCHEMA_COLUMNS, ParkGridRecord
 from hamcall_db.sources.pota import PARK_SCHEMA_COLUMNS, ParkRecord
 
 
@@ -86,6 +87,30 @@ def write_pota_parks_parquet(parks: Iterable[ParkRecord], out_path: Path) -> int
     """
     rows = [asdict(p) for p in parks]
     frame = pl.DataFrame(rows, schema=_PARK_SCHEMA)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    frame.write_parquet(out_path)
+    return frame.height
+
+
+# POTA park-grids child table (hdb-f53c): all four columns are strings (reference FK,
+# 4-char grid, source tag, confidence flag). Additive to the MAIN CC BY-NC artifact;
+# separate file so neither the callsign nor the parks schema can drift.
+_PARK_GRID_SCHEMA: dict[str, pl.DataType] = {
+    col: pl.Utf8 for col in PARK_GRID_SCHEMA_COLUMNS
+}
+
+
+def write_pota_park_grids_parquet(
+    grids: Iterable[ParkGridRecord], out_path: Path
+) -> int:
+    """Write POTA `ParkGridRecord`s to `out_path` as Parquet. Returns the row count.
+
+    Additive artifact (hamcall-db-pota-park-grids-YYYY-MM-DD.parquet): one row per
+    (park reference, 4-char grid). Separate schema from the callsign and parks files so
+    none can drift (the redistribution contract).
+    """
+    rows = [asdict(g) for g in grids]
+    frame = pl.DataFrame(rows, schema=_PARK_GRID_SCHEMA)
     out_path.parent.mkdir(parents=True, exist_ok=True)
     frame.write_parquet(out_path)
     return frame.height

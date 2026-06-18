@@ -45,3 +45,11 @@ def test_notice_mentions_pota() -> None:
     # POTA park data is a published source (hdb-9640) — must be attributed.
     assert "POTA" in NOTICE or "Parks On The Air" in NOTICE
     assert "pota.app" in NOTICE
+
+
+def test_notice_mentions_padus() -> None:
+    # PAD-US boundaries source the pota_park_grids child table (hdb-f53c). Public domain,
+    # credited as a courtesy; the OSM/WDPA exclusion rationale must be on record.
+    assert "PAD-US" in NOTICE
+    assert "USGS" in NOTICE
+    assert "OpenStreetMap" in NOTICE or "ODbL" in NOTICE  # exclusion rationale

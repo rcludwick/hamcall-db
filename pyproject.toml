@@ -9,6 +9,14 @@ authors = [{ name = "Rob Ludwick" }]
 dependencies = [
     "typer>=0.12",
     "polars>=1.0",
+    # Geometry core for POTA park -> Maidenhead grid-set intersection (hdb-f53c).
+    # shapely does TRUE polygon intersection (interior rings / multipolygons handled
+    # natively — no bbox/convex-hull/hole-fill shortcuts); pyproj reprojects PAD-US's
+    # EPSG:5070 boundaries to WGS84 before the grid math. Both are pure-Python-callable
+    # (no GDAL); reading the actual PAD-US GeoPackage/GDB needs the build-time `padus`
+    # group below.
+    "shapely>=2.0",
+    "pyproj>=3.6",
 ]
 
 [project.scripts]
@@ -24,6 +32,13 @@ Homepage = "https://github.com/rcludwick/hamcall-db"
 dev = [
     "pytest>=8.0",
     "ruff>=0.6",
+]
+# Build-time ONLY: reading the real PAD-US GeoPackage/GDB needs a GDAL-backed reader.
+# This is the THIN adapter seam (hamcall_db.sources.padus._read_padus_features) — the
+# geometry CORE in padus_grids.py is pure shapely and unit-tested without GDAL or the
+# multi-GB national download. Install with `uv sync --group padus` for a real build.
+padus = [
+    "pyogrio>=0.7",
 ]
 # Optional: only needed to browse the SQLite artifact locally with Datasette.
 serve = [

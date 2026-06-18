@@ -16,12 +16,17 @@ A Python build pipeline that aggregates free, openly-licensed amateur radio lice
 | AD1C cty.dat | Worldwide DXCC prefix → entity mapping | Free for non-commercial use, attribution required | cty.dat |
 | AllStarLink | Node numbers per callsign (one-to-many) | Used on an assumed non-commercial basis (see NOTICE) | Pipe-delimited node directory |
 | POTA | Parks On The Air park directory (places, not licensees) | Used on an assumed non-commercial basis (see NOTICE) | Per-program JSON from `api.pota.app` |
+| PAD-US | US protected-area boundaries → POTA park grid sets (build-time only) | Public domain (USGS) | National GeoPackage/GDB |
 
 The on-demand long tail (UK, EU, JA, etc.) is intentionally out of scope here — consumer tools should fall through to per-callsign APIs like QRZ or HamQTH for those.
 
 ### POTA parks reference dataset
 
 POTA park data is published as a SEPARATE, additive reference dataset (parks are places, not licensees, so it does not touch the callsign schema above): `hamcall-db-pota-parks-YYYY-MM-DD.parquet` plus a `pota_parks` table in the SQLite `.db`. Columns: `reference` (PK, e.g. `US-0001`), `name`, `location_desc`, `region`, `country`, `dxcc`, `grid`, `lat`, `lon`, `active`, `source`, `synced_at`. The single representative `grid`/`lat`/`lon` per park is **indicative only** (large parks span many grid squares), is display-only and never a join key, and is stored **verbatim** from POTA — the 4-char person-grid privacy truncation does not apply to public landmarks.
+
+### POTA park grid sets (PAD-US)
+
+Because a large park spans many grid squares, a companion child table gives the **set** of 4-char Maidenhead grids each park's boundary actually intersects: `hamcall-db-pota-park-grids-YYYY-MM-DD.parquet` plus a `pota_park_grids` table in the SQLite `.db`. Columns: `reference` (FK to `pota_parks`), `grid` (4-char, e.g. `DN13`), `source`, `confidence`. For **US** parks the boundaries come from [PAD-US](https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-download) (USGS, public domain): each park is matched to its PAD-US boundary by point-in-polygon plus fuzzy name disambiguation, split units are unioned, and the (possibly multi-part, possibly holed) polygon is intersected with the Maidenhead lattice using true geometric intersection — interior rings/inholdings are honored, never filled. `source` is `padus` for a polygon match (`confidence` `high` when the name also matched, `medium` when only the point matched) or `pota-point` for the single-point fallback (`confidence` `low`), which also covers every non-US park in this phase. The PAD-US polygons themselves are used only at build time and are **never** redistributed. International (OSM-based) coverage is intentionally deferred to a separate ODbL-licensed file (ODbL share-alike is incompatible with this artifact's CC BY-NC terms).
 
 ## Output schema
 

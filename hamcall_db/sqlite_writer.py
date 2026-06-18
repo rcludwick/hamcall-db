@@ -36,6 +36,7 @@ from pathlib import Path
 
 from hamcall_db.history import HISTORY_SCHEMA_COLUMNS, HistoryRow, _identity
 from hamcall_db.models import SCHEMA_COLUMNS, Record
+from hamcall_db.sources.padus_grids import PARK_GRID_SCHEMA_COLUMNS, ParkGridRecord
 from hamcall_db.sources.pota import PARK_SCHEMA_COLUMNS, ParkRecord
 
 # Columns whose SQLite affinity should be INTEGER rather than TEXT. ``dxcc`` mirrors the
@@ -373,3 +374,57 @@ def write_pota_parks_sqlite(parks: Iterable[ParkRecord], out_path: Path) -> int:
         con.close()
 
     return len(parks)
+
+
+# --- POTA park-grids child table (hdb-f53c) ------------------------------------
+#
+# The pota_park_grids child table maps each POTA park (by ``reference``, the FK back to
+# pota_parks) to the SET of 4-char Maidenhead grids its boundary intersects. Written
+# ADDITIVELY alongside the callsign + parks tables; all four columns are TEXT. Indexed on
+# ``reference`` for the join back to pota_parks. NOT a 1:1 table (a big park spans many
+# grids), so ``reference`` is NOT a primary key here.
+_POTA_PARK_GRIDS_DDL = (
+    "CREATE TABLE IF NOT EXISTS pota_park_grids (\n"
+    + ",\n".join(f"  {c} TEXT" for c in PARK_GRID_SCHEMA_COLUMNS)
+    + "\n)"
+)
+_POTA_PARK_GRIDS_INDEX_DDL = (
+    "CREATE INDEX IF NOT EXISTS idx_pota_park_grids_reference "
+    "ON pota_park_grids (reference)"
+)
+
+
+def _park_grid_payload(grid: ParkGridRecord) -> tuple:
+    """ParkGridRecord values in PARK_GRID_SCHEMA_COLUMNS order."""
+    return tuple(getattr(grid, name) for name in PARK_GRID_SCHEMA_COLUMNS)
+
+
+def write_pota_park_grids_sqlite(
+    grids: Iterable[ParkGridRecord], out_path: Path
+) -> int:
+    """Write/refresh the ``pota_park_grids`` table in a SQLite file. Returns the row count.
+
+    ADDITIVE: creates the table if missing and replaces only the grid rows; any existing
+    ``current``/``history``/``allstar_nodes``/``pota_parks`` tables in the same file are
+    untouched (the redistribution contract). Idempotent — re-running replaces the rows.
+    """
+    grids = list(grids)
+    out = Path(out_path)
+    out.parent.mkdir(parents=True, exist_ok=True)
+
+    con = sqlite3.connect(out)
+    try:
+        con.execute(_POTA_PARK_GRIDS_DDL)
+        con.execute(_POTA_PARK_GRIDS_INDEX_DDL)
+        con.execute("DELETE FROM pota_park_grids")  # refresh: idempotent rebuild
+        placeholders = ", ".join("?" for _ in PARK_GRID_SCHEMA_COLUMNS)
+        con.executemany(
+            f"INSERT INTO pota_park_grids ({', '.join(PARK_GRID_SCHEMA_COLUMNS)}) "
+            f"VALUES ({placeholders})",
+            [_park_grid_payload(g) for g in grids],
+        )
+        con.commit()
+    finally:
+        con.close()
+
+    return len(grids)

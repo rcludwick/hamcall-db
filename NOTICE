@@ -105,6 +105,30 @@ Upstream sources and their licenses
    squares) and is display-only, never a join key.
 
 
+7. PAD-US (Protected Areas Database of the United States) — USGS
+   Coverage: US protected-area boundaries (national/state/local parks, forests,
+             wilderness, etc.), used at BUILD TIME to compute the set of 4-char
+             Maidenhead grid squares each US POTA park boundary intersects
+             (the pota_park_grids child table). Only the derived grid SETS are
+             published — the source polygons are NEVER redistributed.
+   Source:   U.S. Geological Survey (USGS) Gap Analysis Project,
+             Protected Areas Database of the United States (PAD-US),
+             https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-download
+   License:  Public domain.
+   PAD-US is a U.S. Government work and is not subject to copyright protection in
+   the United States (17 U.S.C. § 105). No attribution is legally required; USGS
+   PAD-US is credited here as a courtesy. Because the data is public domain it
+   imposes no additional redistribution restriction on the combined dataset.
+
+   SCOPE NOTE: PAD-US is US-only and was chosen because it is the only
+   license-clean (public-domain) national boundary set. OpenStreetMap boundaries
+   (ODbL, share-alike) and WDPA / Protected Planet (no redistribution) are
+   EXCLUDED — ODbL's share-alike is incompatible with this dataset's CC BY-NC
+   terms, and WDPA prohibits redistribution. Any future international park-grid
+   coverage built from OSM must ship in a SEPARATE ODbL-licensed file, never
+   mixed into this artifact.
+
+
 Combined dataset terms
 -----------------------
 

@@ -24,12 +24,18 @@ from hamcall_db.sources.acma import AcmaSource
 from hamcall_db.sources.base import Source
 from hamcall_db.sources.fcc import FccUlsSource
 from hamcall_db.sources.ised import IsedSource
+from hamcall_db.sources.padus import PadusSource, compute_park_grids
 from hamcall_db.sources.pota import PotaSource
-from hamcall_db.sqlite_writer import write_pota_parks_sqlite, write_sqlite
+from hamcall_db.sqlite_writer import (
+    write_pota_park_grids_sqlite,
+    write_pota_parks_sqlite,
+    write_sqlite,
+)
 from hamcall_db.writer import (
     read_history_parquet,
     write_history_parquet,
     write_parquet,
+    write_pota_park_grids_parquet,
     write_pota_parks_parquet,
 )
 
@@ -220,6 +226,31 @@ def build(
                 f"Wrote {parks_count} POTA parks to {parks_path} "
                 f"(+ pota_parks table in {db_path})"
             )
+
+            # POTA park -> Maidenhead grid SETS (hdb-f53c, PHASE 1: US/PAD-US only). A
+            # SEPARATE additive child table keyed to the parks dataset by ``reference``;
+            # never touches the callsign or parks schema. RESILIENT and independently
+            # guarded: PAD-US is a separate large download, and reading it needs the
+            # build-time `padus` dependency group (GDAL via pyogrio) — if it's absent or
+            # the download fails, every park degrades to its point grid via
+            # compute_park_grids([]). The build never blocks on it.
+            try:
+                features = _load_padus_features(work_dir)
+            except Exception as exc:  # GDAL/group missing or download failed
+                typer.echo(
+                    f"WARNING: PAD-US boundaries unavailable ({exc}); "
+                    "park grids fall back to point grids",
+                    err=True,
+                )
+                features = []
+            park_grid_rows = compute_park_grids(parks, features)
+            grids_path = parks_dir_out / _pota_park_grids_filename()
+            grids_count = write_pota_park_grids_parquet(park_grid_rows, grids_path)
+            write_pota_park_grids_sqlite(park_grid_rows, db_path)
+            typer.echo(
+                f"Wrote {grids_count} POTA park-grid rows to {grids_path} "
+                f"(+ pota_park_grids table in {db_path})"
+            )
         except Exception as exc:  # download/parse/write failure is non-fatal
             typer.echo(
                 f"WARNING: POTA parks dataset skipped ({exc}); "
@@ -250,6 +281,24 @@ def _pota_parks_filename() -> str:
     """Dated POTA parks artifact name: hamcall-db-pota-parks-YYYY-MM-DD.parquet."""
     today = dt.date.today().isoformat()
     return f"hamcall-db-pota-parks-{today}.parquet"
+
+
+def _pota_park_grids_filename() -> str:
+    """Dated park-grids artifact name: hamcall-db-pota-park-grids-YYYY-MM-DD.parquet."""
+    today = dt.date.today().isoformat()
+    return f"hamcall-db-pota-park-grids-{today}.parquet"
+
+
+def _load_padus_features(work_dir: Path) -> list:
+    """Download + read PAD-US boundary features (build-time, GDAL via the padus group).
+
+    Isolated so the caller can guard it: any failure here (missing GDAL reader, download
+    error) degrades park grids to point grids without blocking the build. PAD-US updates
+    ~annually, so the cached file is reused across weekly builds.
+    """
+    padus = PadusSource()
+    padus_path = padus.download(work_dir)
+    return padus.read_features(padus_path)
 
 
 if __name__ == "__main__":
