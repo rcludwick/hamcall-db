@@ -161,6 +161,7 @@ Upstream sources and their licenses
    remains excluded (redistribution prohibited).
 
 
+<<<<<<< HEAD
 9. ARRL Logbook of the World (LoTW) — user-activity list
    Coverage: Each LoTW user's callsign and the date of their last LoTW upload,
              from ARRL's public list at
@@ -189,6 +190,42 @@ Upstream sources and their licenses
    permission or a clarifying reply from ARRL). If ARRL objects or declines, the
    uses_lotw / lotw_last_activity columns can be dropped without affecting the
    rest of the dataset — the importer is gated so the build degrades gracefully.
+   *** DISABLED BY DEFAULT (2026-06-19): this enrichment is OFF in the published
+   build; it only runs in opt-in local builds via --include-restricted. The
+   official release never contains LoTW data. ***
+
+10. SOTA (Summits on the Air) — summit directory
+   Coverage: SOTA summit references (e.g. G/LD-001), names, association/region
+             descriptors, altitude, points, validity dates, and an INDICATIVE
+             representative point/grid, pulled from the STATIC bulk summit list
+             at https://storage.sota.org.uk/summitslist.csv.
+   Source:   Summits on the Air (SOTA), https://www.sota.org.uk/.
+   Required attribution statement:
+
+       Summit data courtesy of Summits on the Air (SOTA),
+       https://www.sota.org.uk/.
+
+   NOTE (LICENSE — FLAGGED FOR HUMAN SIGN-OFF before first public release):
+   SOTA's *API* terms of service are explicit — NON-COMMERCIAL use only,
+   registration required, and "no AI-generated software may connect to the SOTA
+   API without prior approval". To stay clear of those API terms this project
+   consumes the STATIC summitslist.csv bulk file, NOT the api2.sota.org.uk JSON
+   API. The static bulk file carries no explicit machine-readable license, and no
+   SHARE-ALIKE term (CC BY-SA / ODbL) was found for it — so, UNLIKE OpenStreetMap
+   (source 8), the SOTA data does NOT require separate-file segregation and rides
+   under the CC BY-NC umbrella. PROJECT POSTURE (2026-06-18): SOTA summit data is
+   used on an ASSUMED NON-COMMERCIAL basis, attributed and droppable — the same
+   posture as POTA (source 6) and AllStarLink (source 5). Given SOTA's explicit
+   non-commercial stance this is conservative, but it is NOT a confirmed license
+   and MUST be confirmed with the SOTA Management Team before the first public
+   release. The SOTA summits dataset is a SEPARATE, supplementary reference table
+   (hamcall-db-sota-summits-YYYY-MM-DD.parquet and a sota_summits table in the
+   SQLite .db); if SOTA objects, it can be dropped without affecting the rest of
+   the dataset. The single representative coordinate/grid per summit is INDICATIVE
+   ONLY and is display-only, never a join key.
+   *** DISABLED BY DEFAULT (2026-06-19): the SOTA dataset is OFF in the published
+   build; it is only produced by opt-in local builds via --include-restricted. The
+   official release never contains the SOTA summits artifact. ***
 
 
 Combined dataset terms
@@ -212,7 +249,10 @@ terms, which means:
     assumed non-commercial basis — AND note source 9's UNRESOLVED license
     uncertainty: that source needs human sign-off before public/commercial
     release, and its columns may be dropped if ARRL does not permit
-    redistribution.
+    redistribution. (Source 9 is DISABLED BY DEFAULT — opt-in only.)
+  * Reproduce the SOTA attribution statement (source 10) and observe its assumed
+    non-commercial basis (pending human sign-off — see source 10). (Source 10 is
+    DISABLED BY DEFAULT — opt-in only.)
 
 The SEPARATE OSM park-grids file (source 8) is NOT part of this combined
 CC BY-NC dataset: it is licensed under ODbL (see the LICENSE-ODbL file and

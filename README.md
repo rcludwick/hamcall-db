@@ -17,6 +17,7 @@ A Python build pipeline that aggregates free, openly-licensed amateur radio lice
 | AllStarLink | Node numbers per callsign (one-to-many) | Used on an assumed non-commercial basis (see NOTICE) | Pipe-delimited node directory |
 | ARRL LoTW | LoTW user activity per callsign (`uses_lotw`, last upload date) | **License unclear — needs human sign-off** (see NOTICE); used on an assumed non-commercial basis | Public CSV `lotw-user-activity.csv` |
 | POTA | Parks On The Air park directory (places, not licensees) | Used on an assumed non-commercial basis (see NOTICE) | Per-program JSON from `api.pota.app` |
+| SOTA | Summits on the Air summit directory (places, not licensees) | Used on an assumed non-commercial basis, **pending human sign-off** (see NOTICE) | Static `summitslist.csv` from `storage.sota.org.uk` |
 | PAD-US | US protected-area boundaries → POTA park grid sets (build-time only) | Public domain (USGS) | National GeoPackage/GDB |
 | OpenStreetMap | Non-US protected-area/park boundaries → **separate ODbL** POTA park grid sets (build-time only) | ODbL — shipped in its own file, never mixed into the CC BY-NC dataset (see NOTICE / LICENSE-ODbL) | Geofabrik regional extracts |
 
@@ -25,6 +26,12 @@ The on-demand long tail (UK, EU, JA, etc.) is intentionally out of scope here �
 ### POTA parks reference dataset
 
 POTA park data is published as a SEPARATE, additive reference dataset (parks are places, not licensees, so it does not touch the callsign schema above): `hamcall-db-pota-parks-YYYY-MM-DD.parquet` plus a `pota_parks` table in the SQLite `.db`. Columns: `reference` (PK, e.g. `US-0001`), `name`, `location_desc`, `region`, `country`, `dxcc`, `grid`, `lat`, `lon`, `active`, `source`, `synced_at`. The single representative `grid`/`lat`/`lon` per park is **indicative only** (large parks span many grid squares), is display-only and never a join key, and is stored **verbatim** from POTA — the 4-char person-grid privacy truncation does not apply to public landmarks.
+
+### SOTA summits reference dataset
+
+SOTA summit data is published as a SEPARATE, additive reference dataset — a sibling of the POTA parks set (summits are places, not licensees, so it does not touch the callsign schema): `hamcall-db-sota-summits-YYYY-MM-DD.parquet` plus a `sota_summits` table in the SQLite `.db`. Columns: `reference` (PK, SOTA SummitCode e.g. `G/LD-001`), `name`, `association`, `region`, `alt_m`, `alt_ft`, `grid`, `lat`, `lon`, `points`, `bonus_points`, `valid_from`, `valid_to`, `active`, `source`, `synced_at`. The `grid`/`lat`/`lon` per summit is **indicative only**, is display-only and never a join key, and is stored **verbatim** at 6-char precision — the 4-char person-grid privacy truncation does not apply to public landmarks (mountain summits). The `grid` is derived from the summit's `Longitude`/`Latitude` (SOTA's own OSGB grid columns are not used). `active` is `False` when `valid_to` is in the past (retired summit).
+
+Data comes from SOTA's **static** bulk [`summitslist.csv`](https://storage.sota.org.uk/summitslist.csv) — deliberately *not* the gated `api2.sota.org.uk` JSON API, whose terms of service are explicitly non-commercial, registration-gated, and prohibit AI-generated software from connecting. The static file carries no explicit machine-readable license and no share-alike term was found, so SOTA rides under the CC BY-NC umbrella (assumed non-commercial + attributed + droppable, the same posture as POTA) — **but this is not a confirmed license and is flagged in NOTICE for human sign-off with the SOTA Management Team before the first public release.** WWFF and IOTA references are deliberately out of scope for this dataset (future follow-ups).
 
 ### POTA park grid sets (PAD-US)
 
@@ -78,8 +85,9 @@ Each weekly build publishes two releases, each with a rolling alias that always 
 **CC BY-NC release** — tag `hamcall-db-YYYY-MM-DD`, alias `latest`:
 - `hamcall-db-YYYY-MM-DD.parquet` — current-state dataset (the schema above; the redistribution contract).
 - `hamcall-db-history-YYYY-MM-DD.parquet` — SCD2 change history (callsign holder/location changes over time).
-- `hamcall-db-YYYY-MM-DD.db` — SQLite convenience copy with the callsign tables plus the `pota_parks` / `pota_park_grids` tables in one file (see [Exploring the data with Datasette](#exploring-the-data-with-datasette)).
+- `hamcall-db-YYYY-MM-DD.db` — SQLite convenience copy with the callsign tables plus the `pota_parks` / `pota_park_grids` / `sota_summits` tables in one file (see [Exploring the data with Datasette](#exploring-the-data-with-datasette)).
 - `hamcall-db-pota-parks-YYYY-MM-DD.parquet` — POTA park directory ([above](#pota-parks-reference-dataset)).
+- `hamcall-db-sota-summits-YYYY-MM-DD.parquet` — SOTA summit directory ([above](#sota-summits-reference-dataset)).
 - `hamcall-db-pota-park-grids-YYYY-MM-DD.parquet` — POTA park → 4-char grid sets (PAD-US/point, [above](#pota-park-grid-sets-pad-us)).
 
 **ODbL release** (OpenStreetMap-derived grids — kept separate so its share-alike terms never touch the CC BY-NC set) — tag `hamcall-db-osm-YYYY-MM-DD`, alias `latest-osm`:
