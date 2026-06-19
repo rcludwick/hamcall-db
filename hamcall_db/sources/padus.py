@@ -56,7 +56,13 @@ __all__ = [
 #   PADUS_ITEM_URL below. Override at build time via PadusSource(url=...).
 # Pinned: PAD-US 4.0 Full Inventory Database (PADUS4_0Geodatabase.zip), released 2023.
 PADUS_ITEM_URL = "https://www.sciencebase.gov/catalog/item/652ef930d34edd15305a9b03"
-PADUS_DOWNLOAD_URL = "https://sciencebase.usgs.gov/manager/download/clvbj5bbs007715ms6e886v58"
+# Direct-download form: catalog/file/get/<itemId>?name=<file>. The item's `downloadUri`
+# (sciencebase.usgs.gov/manager/download/...) only loads the ScienceBase web app, NOT the
+# binary (verified hdb-d90d) — use this `file/get?name=` endpoint, which streams the S3 file.
+PADUS_DOWNLOAD_URL = (
+    "https://www.sciencebase.gov/catalog/file/get/"
+    "652ef930d34edd15305a9b03?name=PADUS4_0Geodatabase.zip"
+)
 
 # The GDB integrates six feature classes (Fee/Designation/Easement/Proclamation/Marine and
 # the Combined layer that unions them all). We read the Combined layer; its exact name is
@@ -165,13 +171,32 @@ class PadusSource:
         return list(_read_padus_features(path))
 
 
-def _vsizip_path(path: Path) -> str:
+def _vsizip_path(path: Path, inner: str | None = None) -> str:
     """GDAL virtual-filesystem path for reading a layer out of a ``.zip`` in place.
 
-    PAD-US ships the national inventory as a zipped File Geodatabase; GDAL opens the inner
-    ``.gdb`` directly through the ``/vsizip/`` handler, so we never unzip 1.7 GB to disk.
+    PAD-US ships the national inventory as a zipped File Geodatabase; GDAL reads the inner
+    ``.gdb`` through the ``/vsizip/`` handler, so we never unzip 1.7 GB to disk. ``inner`` is
+    the dataset path INSIDE the zip (e.g. the ``.gdb`` directory) — required because the real
+    zip holds the ``.gdb`` alongside other files, so GDAL will not auto-descend (hdb-d90d).
     """
-    return f"/vsizip/{path}"
+    base = f"/vsizip/{path}"
+    return f"{base}/{inner}" if inner else base
+
+
+def _inner_gdb(path: Path) -> str | None:
+    """Return the top-level ``*.gdb`` directory name inside the zip, or ``None`` if none.
+
+    The PAD-US national zip contains the ``.gdb`` next to metadata XML and ``.lyrx`` sidecars,
+    so GDAL opening ``/vsizip/<zip>`` (the root) picks a stray dataset instead of the GDB
+    (hdb-d90d). We find the ``.gdb`` and target it explicitly. ``None`` means the archive has
+    no ``.gdb`` (e.g. a future single-file ``.gpkg``), so the caller opens the zip root.
+    """
+    import zipfile
+
+    with zipfile.ZipFile(path) as archive:
+        tops = {name.split("/")[0] for name in archive.namelist()}
+    gdbs = sorted(top for top in tops if top.lower().endswith(".gdb"))
+    return gdbs[0] if gdbs else None
 
 
 def _select_combined_layer(layer_names: Iterable[str]) -> str:
@@ -203,8 +228,8 @@ def _read_padus_features(path: Path) -> Iterator[PadusFeature]:
     require_pyogrio("padus")
     import pyogrio
 
-    # pragma: no cover below — exercised only in a real build with GDAL + the 1.7 GB GDB.
-    src = _vsizip_path(path)  # /vsizip/.../padus_national.gdb.zip
+    # Target the inner .gdb explicitly — GDAL won't auto-descend past the zip's sibling files.
+    src = _vsizip_path(path, _inner_gdb(path))  # /vsizip/<zip>/PADUS4_0_Geodatabase.gdb
     layers = [row[0] for row in pyogrio.list_layers(src)]
     layer = _select_combined_layer(layers)
 

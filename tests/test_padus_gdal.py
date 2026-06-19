@@ -61,9 +61,26 @@ def _synthetic_padus_zip(tmp_path: Path) -> Path:
     _write_layer("Fee", "Decoy Fee Unit", "decoy", append=False)
     _write_layer(_COMBINED_LAYER, "Boise National Forest", "Boise NF", append=True)
 
+    # The REAL PAD-US zip holds the .gdb ALONGSIDE metadata + a stray sibling dataset, so
+    # GDAL won't auto-descend into the .gdb from the zip root (it picked the wrong layer in
+    # hdb-d90d). Reproduce that layout with a decoy top-level GeoPackage so the reader is
+    # forced to target the inner .gdb explicitly.
+    decoy = tmp_path / "tl_2022_us_state.gpkg"
+    pyogrio.raw.write(
+        str(decoy),
+        geometry=np.array([to_wkb(_BOX_WGS)], dtype=object),
+        field_data=[np.array(["decoy"], dtype=object)],
+        fields=["NAME"],
+        layer="tl_2022_us_state",
+        driver="GPKG",
+        geometry_type="Polygon",
+        crs="EPSG:4326",
+    )
+    (tmp_path / "PADUS40_MetadataXML_FGDC.xml").write_text("<metadata/>", encoding="utf-8")
+
     zip_path = tmp_path / "padus_national.gdb.zip"
     with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as z:
-        for f in gdb.rglob("*"):
+        for f in (*gdb.rglob("*"), decoy, tmp_path / "PADUS40_MetadataXML_FGDC.xml"):
             z.write(f, f.relative_to(tmp_path))
     return zip_path
 

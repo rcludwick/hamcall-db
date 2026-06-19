@@ -202,3 +202,35 @@ def test_select_combined_layer_raises_clearly_when_absent() -> None:
 def test_vsizip_path_wraps_zip_for_gdal() -> None:
     p = Path("/data/raw/padus/2026-06-17/padus_national.gdb.zip")
     assert padus._vsizip_path(p) == f"/vsizip/{p}"
+
+
+def test_vsizip_path_targets_inner_gdb_when_given() -> None:
+    p = Path("/data/raw/padus/2026-06-17/padus_national.gdb.zip")
+    assert padus._vsizip_path(p, "PADUS4_0_Geodatabase.gdb") == (
+        f"/vsizip/{p}/PADUS4_0_Geodatabase.gdb"
+    )
+
+
+def test_inner_gdb_finds_gdb_dir_among_siblings(tmp_path: Path) -> None:
+    # The real PAD-US zip holds the .gdb ALONGSIDE metadata XML + .lyrx siblings, so GDAL
+    # won't auto-descend into it from the zip root (hdb-d90d: it picked a stray layer). The
+    # reader must locate the .gdb directory among the siblings and target it explicitly.
+    import zipfile
+
+    zp = tmp_path / "padus_national.gdb.zip"
+    with zipfile.ZipFile(zp, "w") as z:
+        z.writestr("PADUS40_MetadataXML_FGDC.xml", "<metadata/>")
+        z.writestr("PADUS4_0_GAPStatusCode.lyrx", "{}")
+        z.writestr("PADUS4_0_Geodatabase.gdb/a00000001.gdbtable", b"\x00")
+        z.writestr("PADUS4_0_Geodatabase.gdb/gdb", b"\x00")
+    assert padus._inner_gdb(zp) == "PADUS4_0_Geodatabase.gdb"
+
+
+def test_inner_gdb_none_when_no_gdb(tmp_path: Path) -> None:
+    # A bare zipped single-file dataset (no .gdb dir) -> None; the reader opens the zip root.
+    import zipfile
+
+    zp = tmp_path / "x.zip"
+    with zipfile.ZipFile(zp, "w") as z:
+        z.writestr("data.gpkg", b"\x00")
+    assert padus._inner_gdb(zp) is None
