@@ -3,10 +3,16 @@
 Parses the FCC Universal Licensing System amateur bulk extract (``l_amat.zip``), a set
 of pipe-delimited ``.dat`` files joined on the unique-system-identifier (USI):
 
-- HD.dat — license header: call sign, license status (filter to active).
+- HD.dat — license header: call sign, license status (filter to active), and the
+  grant / effective / expired dates (normalized to ISO).
 - EN.dat — entity: licensee name + mailing address (we keep city/state/zip; the street
-  address is read past but NEVER stored — redistribution contract).
-- AM.dat — amateur: operator class (mapped to a human-readable license class).
+  address is read past but NEVER stored — redistribution contract), plus the FRN,
+  entity-type code, and applicant-type code (mapped to a readable value).
+- AM.dat — amateur: operator class (mapped to a human-readable license class) and the
+  previous call sign held.
+
+The expired date is surfaced as a plain field; active/expired STATUS derivation is a
+separate concern and is intentionally NOT done here.
 
 Column positions are stable in the ULS public format; they live in named constants
 below so a future format revision is a one-line change. See FCC "Public Access Database
@@ -27,17 +33,26 @@ from hamcall_db.sources.base import synced_at_from
 # Upstream amateur bulk extract.
 DOWNLOAD_URL = "https://data.fcc.gov/download/pub/uls/complete/l_amat.zip"
 
-# 0-based column indices within each pipe-delimited record type.
+# 0-based column indices within each pipe-delimited record type. Positions are 1 less
+# than the (1-based) FCC "Public Access Database Definitions" field numbers.
 _HD_CALLSIGN = 4
 _HD_LICENSE_STATUS = 5
+_HD_GRANT_DATE = 7  # FCC HD position 8
+_HD_EXPIRED_DATE = 8  # FCC HD position 9
+_HD_EFFECTIVE_DATE = 42  # FCC HD position 43
 _EN_CALLSIGN = 4
+_EN_ENTITY_TYPE = 5  # FCC EN position 6
 _EN_FIRST_NAME = 8
 _EN_LAST_NAME = 10
 _EN_CITY = 16
 _EN_STATE = 17
 _EN_ZIP = 18
+_EN_FRN = 22  # FCC EN position 23 (FCC Registration Number)
+_EN_APPLICANT_TYPE = 23  # FCC EN position 24 (applicant_type_code)
 _AM_CALLSIGN = 4
 _AM_OPERATOR_CLASS = 5
+# previous_callsign lives on the amateur-specific AM record (FCC AM position 16), NOT HD.
+_AM_PREVIOUS_CALLSIGN = 15
 
 _HD_USI = _EN_USI = _AM_USI = 1  # unique system identifier (join key)
 
@@ -53,6 +68,39 @@ OPERATOR_CLASS = {
     "P": "Technician Plus",
     "N": "Novice",
 }
+
+# FCC EN applicant_type_code -> readable value. Small/stable set per the FCC code tables.
+# Unmapped codes pass through verbatim (forward-compatible with new FCC additions).
+APPLICANT_TYPE = {
+    "I": "Individual",
+    "B": "Amateur Club",
+    "M": "Military Recreation",
+    "R": "RACES",
+    "C": "Corporation",
+    "G": "Governmental Entity",
+    "E": "Limited Liability Company",
+    "J": "Joint Venture",
+    "L": "Limited Liability Corporation",
+    "O": "Consortium",
+    "P": "Partnership",
+    "T": "Trust",
+    "U": "Unincorporated Association",
+}
+
+
+def _iso_date(value: str | None) -> str | None:
+    """Normalize a ULS ``mm/dd/yyyy`` date to ISO ``YYYY-MM-DD``.
+
+    Returns None for a blank/absent value, and passes an unrecognized format through
+    unchanged rather than dropping data.
+    """
+    if value is None:
+        return None
+    parts = value.split("/")
+    if len(parts) == 3 and all(parts):
+        month, day, year = parts
+        return f"{year}-{month.zfill(2)}-{day.zfill(2)}"
+    return value
 
 
 def _read_dat(path: Path) -> Iterator[list[str]]:
@@ -83,19 +131,28 @@ def parse_dir(
     Joins HD/EN/AM on the unique system identifier. By default only active licenses
     (HD license_status == 'A') are emitted. `synced_at` stamps the upstream file date.
     """
-    # HD gives the authoritative set of licenses + their status.
+    # HD gives the authoritative set of licenses + their status and grant/effective/
+    # expired dates (normalized to ISO at emit time).
     statuses: dict[str, str | None] = {}
+    hd_dates: dict[str, tuple[str | None, str | None, str | None]] = {}
     for row in _read_dat(path / "HD.dat"):
         usi = _field(row, _HD_USI)
         if usi is not None:
             statuses[usi] = _field(row, _HD_LICENSE_STATUS)
+            hd_dates[usi] = (
+                _field(row, _HD_GRANT_DATE),
+                _field(row, _HD_EFFECTIVE_DATE),
+                _field(row, _HD_EXPIRED_DATE),
+            )
 
-    # AM gives operator class per USI.
+    # AM gives operator class + previous callsign per USI.
     operator_classes: dict[str, str | None] = {}
+    previous_callsigns: dict[str, str | None] = {}
     for row in _read_dat(path / "AM.dat"):
         usi = _field(row, _AM_USI)
         if usi is not None:
             operator_classes[usi] = _field(row, _AM_OPERATOR_CLASS)
+            previous_callsigns[usi] = _field(row, _AM_PREVIOUS_CALLSIGN)
 
     # EN carries the licensee identity + location; it drives record emission.
     for row in _read_dat(path / "EN.dat"):
@@ -108,6 +165,8 @@ def parse_dir(
         if callsign is None:
             continue
         op_class = operator_classes.get(usi)
+        grant_date, effective_date, expired_date = hd_dates.get(usi, (None, None, None))
+        applicant_code = _field(row, _EN_APPLICANT_TYPE)
         yield Record(
             callsign=callsign,
             first_name=_field(row, _EN_FIRST_NAME),
@@ -118,6 +177,17 @@ def parse_dir(
             license_class=OPERATOR_CLASS.get(op_class, op_class) if op_class else None,
             source="fcc",
             synced_at=synced_at,
+            grant_date=_iso_date(grant_date),
+            effective_date=_iso_date(effective_date),
+            expired_date=_iso_date(expired_date),
+            frn=_field(row, _EN_FRN),
+            entity_type=_field(row, _EN_ENTITY_TYPE),
+            applicant_type=(
+                APPLICANT_TYPE.get(applicant_code, applicant_code)
+                if applicant_code
+                else None
+            ),
+            previous_callsign=previous_callsigns.get(usi),
         )
 
 

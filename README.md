@@ -52,6 +52,13 @@ license_class  TEXT     -- source-specific; nullable
 source         TEXT     -- 'fcc' | 'ised' | 'acma'
 synced_at      TEXT     -- ISO date of the upstream source file
 allstar_nodes  LIST<INT> -- AllStarLink node numbers held by the callsign (may be empty)
+grant_date     TEXT     -- ISO date the license was granted; FCC-only, nullable
+effective_date TEXT     -- ISO date the license became effective; FCC-only, nullable
+expired_date   TEXT     -- ISO date the license expires; FCC-only, nullable
+frn            TEXT     -- FCC Registration Number; FCC-only, nullable
+entity_type    TEXT     -- raw FCC entity-type code (e.g. "L"); FCC-only, nullable
+applicant_type TEXT     -- readable applicant type (e.g. "Individual", "Amateur Club"); FCC-only
+previous_callsign TEXT  -- prior call sign held; FCC-only, nullable
 ```
 
 **Notes**
@@ -60,6 +67,7 @@ allstar_nodes  LIST<INT> -- AllStarLink node numbers held by the callsign (may b
 - Derivation priority at build time: street address geocode → postal_code centroid → city centroid → NULL. Always truncated to 4 chars regardless of source.
 - `first_name` / `last_name` are best-effort splits of the licensee/trustee field. Club/trustee/business holders may put the entity name in `last_name` and leave `first_name` NULL.
 - `allstar_nodes` is a list of [AllStarLink](https://www.allstarlink.org/) node numbers registered to the callsign (one callsign may hold many nodes; sorted ascending, empty when none). In the SQLite convenience copy it is normalized into a child table `allstar_nodes(id, node)` keyed by the stable `id` (SQLite has no list type), not a column on `current`. It does not participate in history (a node change is not a holder/location change, so it never opens a new SCD2 interval).
+- `grant_date` / `effective_date` / `expired_date` / `frn` / `entity_type` / `applicant_type` / `previous_callsign` are sourced from the FCC ULS amateur bulk extract (HD/EN/AM `.dat` files) and are NULL for non-FCC sources. Dates are normalized to ISO `YYYY-MM-DD` from the source `mm/dd/yyyy`. `entity_type` is the raw FCC entity-type code; `applicant_type` maps the FCC `applicant_type_code` to a readable value (e.g. `I` → `Individual`, `B` → `Amateur Club`, `M` → `Military Recreation`, `R` → `RACES`), passing unmapped codes through verbatim. `previous_callsign` comes from the amateur-specific AM record. These fields are exposed for downstream use only; the published artifact does **not** derive active/expired status from them (that is a separate concern). They are NOT holder/location identity, so they do not participate in SCD2 history.
 
 Each weekly build publishes two releases, each with a rolling alias that always points at the most recent build.
 

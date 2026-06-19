@@ -40,13 +40,31 @@ _TRACKED_FIELDS: tuple[str, ...] = (
     "license_class",
 )
 
+# Record fields NOT carried into a history row. ``allstar_nodes`` is excluded because the
+# node list is not holder identity and keeps list support out of the history writers
+# (hdb-8803). The FCC-specific date/identity fields added in hdb-f865 (grant/effective/
+# expired dates, frn, entity_type, applicant_type, previous_callsign) are likewise NOT
+# holder-location identity and are deliberately kept OFF HistoryRow: history tracks where
+# AND who a station was, and the expired/status logic is a separate concern (hdb-6e95).
+# Excluding them here keeps the history artifact schema unchanged (additive bump touches
+# the current-state contract only).
+_NON_PAYLOAD_FIELDS: frozenset[str] = frozenset(
+    {
+        "allstar_nodes",
+        "grant_date",
+        "effective_date",
+        "expired_date",
+        "frn",
+        "entity_type",
+        "applicant_type",
+        "previous_callsign",
+    }
+)
+
 # Record payload fields carried into a history row (everything except the interval
-# bounds, which history adds). ``allstar_nodes`` is deliberately EXCLUDED: AllStarLink
-# node lists are NOT holder identity (excluded from _TRACKED_FIELDS too), and keeping the
-# list off HistoryRow entirely means the history Parquet/SQLite writers need no list
-# support and node churn never spawns a history interval (hdb-8803).
+# bounds, which history adds, and the non-payload fields above).
 _PAYLOAD_FIELDS: tuple[str, ...] = tuple(
-    f.name for f in fields(Record) if f.name != "allstar_nodes"
+    f.name for f in fields(Record) if f.name not in _NON_PAYLOAD_FIELDS
 )
 
 

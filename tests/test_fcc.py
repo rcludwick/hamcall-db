@@ -65,6 +65,48 @@ def test_county_country_dxcc_grid_left_for_downstream() -> None:
     assert w1aw.grid is None  # au-76be geocodes downstream
 
 
+def test_grant_effective_expired_dates_iso_normalized() -> None:
+    # HD.dat carries mm/dd/yyyy dates; we publish ISO YYYY-MM-DD.
+    w1aw = _by_call(parse_dir(FIXTURES))["W1AW"]
+    assert w1aw.grant_date == "2015-01-01"  # HD grant_date 01/01/2015
+    assert w1aw.expired_date == "2025-01-01"  # HD expired_date 01/01/2025
+    assert w1aw.effective_date == "2024-06-01"  # HD effective_date 06/01/2024
+
+
+def test_frn_captured_from_en() -> None:
+    out = _by_call(parse_dir(FIXTURES))
+    assert out["W1AW"].frn == "0001234560"
+    assert out["K1ABC"].frn == "0009876543"
+
+
+def test_entity_type_raw_code_preserved() -> None:
+    # EN entity_type is a small stable code; we keep the raw value.
+    assert _by_call(parse_dir(FIXTURES))["W1AW"].entity_type == "L"
+
+
+def test_applicant_type_mapped_to_readable() -> None:
+    out = _by_call(parse_dir(FIXTURES))
+    assert out["W1AW"].applicant_type == "Individual"  # EN applicant_type_code 'I'
+    assert out["K1ABC"].applicant_type == "Amateur Club"  # 'B'
+
+
+def test_applicant_type_unknown_code_passes_through() -> None:
+    # An unmapped code is kept verbatim rather than dropped.
+    out = _by_call(parse_dir(FIXTURES, active_only=False))
+    assert out["N0EXP"].applicant_type == "X"  # 'X' is not in the map
+
+
+def test_previous_callsign_from_am() -> None:
+    out = _by_call(parse_dir(FIXTURES))
+    assert out["W1AW"].previous_callsign == "W1OLD"
+    assert out["K1ABC"].previous_callsign is None  # blank in AM.dat
+
+
+def test_new_fields_default_none_when_absent() -> None:
+    # K1ABC has no effective_date in its HD row -> None, not a crash.
+    assert _by_call(parse_dir(FIXTURES))["K1ABC"].effective_date is None
+
+
 def test_source_parse_method_delegates_to_parse_dir() -> None:
     out = _by_call(FccUlsSource().parse(FIXTURES, synced_at="2026-06-16"))
     assert out["W1AW"].callsign == "W1AW"

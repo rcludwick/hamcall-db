@@ -42,6 +42,19 @@ class Record:
     # allmondb.allstarlink.org via hamcall_db.enrich_allstar. NOT holder identity, so it
     # is excluded from history tracking (mem / history._TRACKED_FIELDS).
     allstar_nodes: list[int] = field(default_factory=list)
+    # FCC ULS additive identity/date fields (hdb-f865). Already on disk in the bulk
+    # extract; surfaced here as a MINOR (non-breaking) schema bump. Dates are ISO
+    # YYYY-MM-DD strings (normalized from the source mm/dd/yyyy). All source-specific
+    # and nullable — only the FCC importer populates them; other sources leave them None.
+    # NOTE: expired_date is exposed here for downstream use but the active/expired STATUS
+    # logic is a separate concern (hdb-6e95); this nugget only surfaces the raw value.
+    grant_date: str | None = None  # license grant date (FCC HD.dat)
+    effective_date: str | None = None  # license effective date (FCC HD.dat)
+    expired_date: str | None = None  # license expiration date (FCC HD.dat)
+    frn: str | None = None  # FCC Registration Number (FCC EN.dat)
+    entity_type: str | None = None  # raw FCC entity-type code, e.g. "L" (FCC EN.dat)
+    applicant_type: str | None = None  # readable applicant type, e.g. "Individual"
+    previous_callsign: str | None = None  # prior call sign held (FCC AM.dat)
 
 
 SCHEMA_COLUMNS: tuple[str, ...] = tuple(f.name for f in fields(Record))
