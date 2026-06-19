@@ -14,7 +14,7 @@ from typing import Annotated
 
 import typer
 
-from hamcall_db import enrich_allstar
+from hamcall_db import enrich_allstar, enrich_lotw
 from hamcall_db.enrich import enrich, load_cty
 from hamcall_db.geocode import LookupGeocoder
 from hamcall_db.history import diff_history
@@ -174,6 +174,23 @@ def build(
             typer.echo(
                 f"WARNING: AllStarLink enrichment skipped ({exc}); "
                 "allstar_nodes left empty",
+                err=True,
+            )
+
+    # LoTW (ARRL Logbook of the World) user-activity enrichment (hdb-fccf): stamp each
+    # callsign with uses_lotw + lotw_last_activity from ARRL's public list. An --all
+    # concern like AllStarLink (network-bound build); single-source dev builds skip it.
+    # RESILIENT: a transient ARRL outage must not abort the build — log a warning and
+    # continue with uses_lotw=False / lotw_last_activity=None.
+    if all_sources:
+        try:
+            lotw_path = enrich_lotw.download_lotw(work_dir)
+            lotw_lookup = enrich_lotw.load_lotw(lotw_path)
+            records = list(enrich_lotw.enrich(records, lotw_lookup))
+        except Exception as exc:  # download/parse failure is non-fatal
+            typer.echo(
+                f"WARNING: LoTW enrichment skipped ({exc}); "
+                "uses_lotw/lotw_last_activity left empty",
                 err=True,
             )
 

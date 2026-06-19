@@ -161,14 +161,44 @@ Upstream sources and their licenses
    remains excluded (redistribution prohibited).
 
 
+9. ARRL Logbook of the World (LoTW) — user-activity list
+   Coverage: Each LoTW user's callsign and the date of their last LoTW upload,
+             from ARRL's public list at
+             https://lotw.arrl.org/lotw-user-activity.csv (one line per user,
+             CALLSIGN,YYYY-MM-DD,HH:MM:SS; regenerated ~weekly). Surfaced as the
+             supplementary uses_lotw / lotw_last_activity columns on the callsign
+             current-state artifact. This is activity metadata, not holder PII.
+   Source:   American Radio Relay League, Inc. (ARRL), https://www.arrl.org/.
+   Required attribution statement:
+
+       LoTW user-activity data courtesy of the American Radio Relay League
+       (ARRL), Logbook of the World (https://lotw.arrl.org/).
+
+   *** LICENSE UNCERTAIN — NEEDS HUMAN SIGN-OFF (hdb-fccf, 2026-06-18) ***
+   ARRL publishes this file as a public developer web service (documented at
+   https://lotw.arrl.org/lotw-help/developer-query-lotw-users/) but states NO
+   explicit redistribution license, terms of use, or grant for the data — only
+   a generic site copyright: "© American Radio Relay League, Inc. All Rights
+   Reserved". Unlike AllStarLink/POTA (sources 5-6), that explicit "All Rights
+   Reserved" makes redistribution permission GENUINELY UNCLEAR rather than
+   merely unstated. PROVISIONAL PROJECT POSTURE: used on an ASSUMED
+   NON-COMMERCIAL basis, consistent with the dataset's CC BY-NC 4.0 terms — the
+   SAME unverified posture as AllStarLink/POTA. THIS IS NOT A CLEARED LICENSE.
+   Before the dataset is published (made public or distributed commercially), a
+   human MUST confirm ARRL permits redistribution of this list (e.g. written
+   permission or a clarifying reply from ARRL). If ARRL objects or declines, the
+   uses_lotw / lotw_last_activity columns can be dropped without affecting the
+   rest of the dataset — the importer is gated so the build degrades gracefully.
+
+
 Combined dataset terms
 -----------------------
 
 The CC BY-NC published dataset (the callsign current/history Parquet + SQLite,
 the POTA parks table, and the US PAD-US pota_park_grids set — i.e. everything
 EXCEPT the separate OSM file, source 8) is a derived work that combines sources
-1-7. Anyone who redistributes it must comply with the union of these terms,
-which means:
+1-7 and 9. Anyone who redistributes it must comply with the union of these
+terms, which means:
 
   * Reproduce the ISED / OGL-Canada attribution statement (source 2).
   * Reproduce the ACMA / CC BY 4.0 attribution statement (source 3).
@@ -178,6 +208,11 @@ which means:
     assumed non-commercial basis.
   * Reproduce the POTA attribution statement (source 6) and observe its assumed
     non-commercial basis.
+  * Reproduce the ARRL / LoTW attribution statement (source 9) and observe its
+    assumed non-commercial basis — AND note source 9's UNRESOLVED license
+    uncertainty: that source needs human sign-off before public/commercial
+    release, and its columns may be dropped if ARRL does not permit
+    redistribution.
 
 The SEPARATE OSM park-grids file (source 8) is NOT part of this combined
 CC BY-NC dataset: it is licensed under ODbL (see the LICENSE-ODbL file and

@@ -46,8 +46,9 @@ _TRACKED_FIELDS: tuple[str, ...] = (
 # expired dates, frn, entity_type, applicant_type, previous_callsign) are likewise NOT
 # holder-location identity and are deliberately kept OFF HistoryRow: history tracks where
 # AND who a station was, and the expired/status logic is a separate concern (hdb-6e95).
-# Excluding them here keeps the history artifact schema unchanged (additive bump touches
-# the current-state contract only).
+# The LoTW activity columns (uses_lotw, lotw_last_activity, hdb-fccf) are activity metadata,
+# not holder identity, so a LoTW upload never opens a new SCD2 interval. Excluding all of
+# these keeps the history artifact schema unchanged (additive bump touches current-state only).
 _NON_PAYLOAD_FIELDS: frozenset[str] = frozenset(
     {
         "allstar_nodes",
@@ -58,6 +59,8 @@ _NON_PAYLOAD_FIELDS: frozenset[str] = frozenset(
         "entity_type",
         "applicant_type",
         "previous_callsign",
+        "uses_lotw",
+        "lotw_last_activity",
     }
 )
 

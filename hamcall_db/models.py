@@ -55,6 +55,15 @@ class Record:
     entity_type: str | None = None  # raw FCC entity-type code, e.g. "L" (FCC EN.dat)
     applicant_type: str | None = None  # readable applicant type, e.g. "Individual"
     previous_callsign: str | None = None  # prior call sign held (FCC AM.dat)
+    # LoTW (ARRL Logbook of the World) user activity (hdb-fccf). `uses_lotw` is True when
+    # the callsign appears in ARRL's public user-activity list; `lotw_last_activity` is
+    # that user's last upload date (ISO YYYY-MM-DD), or None. Additive minor bump
+    # (mem-c6e0); enriched from lotw.arrl.org via hamcall_db.enrich_lotw. Activity
+    # metadata, NOT holder identity, so it is excluded from history tracking
+    # (history._TRACKED_FIELDS). OFF BY DEFAULT — only populated in opt-in local builds
+    # (--include-restricted); ARRL's redistribution terms are unconfirmed (NOTICE).
+    uses_lotw: bool = False
+    lotw_last_activity: str | None = None
 
 
 SCHEMA_COLUMNS: tuple[str, ...] = tuple(f.name for f in fields(Record))

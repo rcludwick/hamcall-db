@@ -15,6 +15,7 @@ A Python build pipeline that aggregates free, openly-licensed amateur radio lice
 | ACMA RRL | Australia (~80k amateur records, filtered from full radiocomms set) | CC-BY 4.0 AU | Daily extract |
 | AD1C cty.dat | Worldwide DXCC prefix → entity mapping | Free for non-commercial use, attribution required | cty.dat |
 | AllStarLink | Node numbers per callsign (one-to-many) | Used on an assumed non-commercial basis (see NOTICE) | Pipe-delimited node directory |
+| ARRL LoTW | LoTW user activity per callsign (`uses_lotw`, last upload date) | **License unclear — needs human sign-off** (see NOTICE); used on an assumed non-commercial basis | Public CSV `lotw-user-activity.csv` |
 | POTA | Parks On The Air park directory (places, not licensees) | Used on an assumed non-commercial basis (see NOTICE) | Per-program JSON from `api.pota.app` |
 | PAD-US | US protected-area boundaries → POTA park grid sets (build-time only) | Public domain (USGS) | National GeoPackage/GDB |
 | OpenStreetMap | Non-US protected-area/park boundaries → **separate ODbL** POTA park grid sets (build-time only) | ODbL — shipped in its own file, never mixed into the CC BY-NC dataset (see NOTICE / LICENSE-ODbL) | Geofabrik regional extracts |
@@ -59,6 +60,8 @@ frn            TEXT     -- FCC Registration Number; FCC-only, nullable
 entity_type    TEXT     -- raw FCC entity-type code (e.g. "L"); FCC-only, nullable
 applicant_type TEXT     -- readable applicant type (e.g. "Individual", "Amateur Club"); FCC-only
 previous_callsign TEXT  -- prior call sign held; FCC-only, nullable
+uses_lotw      BOOLEAN  -- LoTW user? OFF by default (opt-in local builds only); see note
+lotw_last_activity TEXT -- ISO date of last LoTW upload; OFF by default (opt-in only); see note
 ```
 
 **Notes**
@@ -68,6 +71,7 @@ previous_callsign TEXT  -- prior call sign held; FCC-only, nullable
 - `first_name` / `last_name` are best-effort splits of the licensee/trustee field. Club/trustee/business holders may put the entity name in `last_name` and leave `first_name` NULL.
 - `allstar_nodes` is a list of [AllStarLink](https://www.allstarlink.org/) node numbers registered to the callsign (one callsign may hold many nodes; sorted ascending, empty when none). In the SQLite convenience copy it is normalized into a child table `allstar_nodes(id, node)` keyed by the stable `id` (SQLite has no list type), not a column on `current`. It does not participate in history (a node change is not a holder/location change, so it never opens a new SCD2 interval).
 - `grant_date` / `effective_date` / `expired_date` / `frn` / `entity_type` / `applicant_type` / `previous_callsign` are sourced from the FCC ULS amateur bulk extract (HD/EN/AM `.dat` files) and are NULL for non-FCC sources. Dates are normalized to ISO `YYYY-MM-DD` from the source `mm/dd/yyyy`. `entity_type` is the raw FCC entity-type code; `applicant_type` maps the FCC `applicant_type_code` to a readable value (e.g. `I` → `Individual`, `B` → `Amateur Club`, `M` → `Military Recreation`, `R` → `RACES`), passing unmapped codes through verbatim. `previous_callsign` comes from the amateur-specific AM record. These fields are exposed for downstream use only; the published artifact does **not** derive active/expired status from them (that is a separate concern). They are NOT holder/location identity, so they do not participate in SCD2 history.
+- `uses_lotw` / `lotw_last_activity` flag whether the callsign appears in [ARRL](https://www.arrl.org/)'s public [Logbook of the World](https://lotw.arrl.org/) user-activity list and, if so, the ISO date (`YYYY-MM-DD`) of that user's last LoTW upload. **This enrichment is OFF by default and is NEVER part of the published release:** ARRL states no explicit redistribution license (only "All Rights Reserved"), so the columns ship empty in the official artifact. You can populate them in a *personal/local* build by passing `--include-restricted` (see [Optional / restricted sources](#optional--restricted-sources)). The data is activity metadata, not holder identity, so it never opens a history interval; in SQLite `uses_lotw` is a `0`/`1` INTEGER. See [`NOTICE`](NOTICE).
 
 Each weekly build publishes two releases, each with a rolling alias that always points at the most recent build.
 
