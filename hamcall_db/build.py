@@ -124,6 +124,16 @@ def build(
             "ledger so ids are never reused (--all only). Omit for the first build.",
         ),
     ] = None,
+    include_restricted: Annotated[
+        bool,
+        typer.Option(
+            "--include-restricted",
+            help="Include sources whose redistribution license is UNCONFIRMED (LoTW "
+            "enrichment, SOTA summits). OFF by default — the published release NEVER sets "
+            "this. For personal/local builds only; do not redistribute the result without "
+            "confirming each source's terms (see NOTICE).",
+        ),
+    ] = False,
 ) -> None:
     """Download, parse, merge, and write the Parquet artifact."""
     if source is None and not all_sources:
@@ -183,9 +193,11 @@ def build(
     # LoTW (ARRL Logbook of the World) user-activity enrichment (hdb-fccf): stamp each
     # callsign with uses_lotw + lotw_last_activity from ARRL's public list. An --all
     # concern like AllStarLink (network-bound build); single-source dev builds skip it.
-    # RESILIENT: a transient ARRL outage must not abort the build — log a warning and
-    # continue with uses_lotw=False / lotw_last_activity=None.
-    if all_sources:
+    # RESTRICTED: ARRL states no redistribution license ("All Rights Reserved"), so this is
+    # OFF unless --include-restricted is passed; the published release never sets it, so the
+    # columns ship empty there (hdb-fccf). RESILIENT: a transient ARRL outage must not abort
+    # the build — log a warning and continue with uses_lotw=False / lotw_last_activity=None.
+    if all_sources and include_restricted:
         try:
             lotw_path = enrich_lotw.download_lotw(work_dir)
             lotw_lookup = enrich_lotw.load_lotw(lotw_path)
@@ -313,29 +325,30 @@ def build(
         # SOTA summits: a SEPARATE additive reference dataset (places, not licensees,
         # hdb-ca00), a sibling of POTA parks. Written as its own Parquet file AND a
         # sota_summits table appended to the SAME CC-BY-NC .db — it NEVER touches the
-        # callsign schema. License: assumed non-commercial + attributed + droppable, same
-        # posture as POTA (NOTICE source 9); no confirmed share-alike, so no OSM-style
-        # segregation. RESILIENT: a SOTA outage must not abort the build — log a warning
-        # and skip, exactly like POTA above. INDEPENDENTLY guarded so a SOTA failure does
-        # not take down the POTA artifacts (or vice versa).
-        try:
-            sota = SotaSource()
-            summits_path_in = sota.download(work_dir)
-            summits = list(sota.parse(summits_path_in))
-            summits_dir_out = out if out_dir else out.parent
-            summits_path = summits_dir_out / _sota_summits_filename()
-            summits_count = write_sota_summits_parquet(summits, summits_path)
-            write_sota_summits_sqlite(summits, db_path)
-            typer.echo(
-                f"Wrote {summits_count} SOTA summits to {summits_path} "
-                f"(+ sota_summits table in {db_path})"
-            )
-        except Exception as exc:  # download/parse/write failure is non-fatal
-            typer.echo(
-                f"WARNING: SOTA summits dataset skipped ({exc}); "
-                "summits artifacts not written",
-                err=True,
-            )
+        # callsign schema. RESTRICTED: SOTA's terms are unconfirmed (NOTICE source 10), so
+        # this is OFF unless --include-restricted is passed; the published release never
+        # sets it, so the SOTA artifacts are NOT produced there. RESILIENT + INDEPENDENTLY
+        # guarded: a SOTA outage logs a warning and skips, never taking down the POTA
+        # artifacts (or the build).
+        if include_restricted:
+            try:
+                sota = SotaSource()
+                summits_path_in = sota.download(work_dir)
+                summits = list(sota.parse(summits_path_in))
+                summits_dir_out = out if out_dir else out.parent
+                summits_path = summits_dir_out / _sota_summits_filename()
+                summits_count = write_sota_summits_parquet(summits, summits_path)
+                write_sota_summits_sqlite(summits, db_path)
+                typer.echo(
+                    f"Wrote {summits_count} SOTA summits to {summits_path} "
+                    f"(+ sota_summits table in {db_path})"
+                )
+            except Exception as exc:  # download/parse/write failure is non-fatal
+                typer.echo(
+                    f"WARNING: SOTA summits dataset skipped ({exc}); "
+                    "summits artifacts not written",
+                    err=True,
+                )
 
 
 def _default_filename() -> str:

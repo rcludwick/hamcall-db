@@ -83,7 +83,6 @@ jobs:
           HISTORY="dist/hamcall-db-history-${DATE}.parquet"
           SQLITE="dist/hamcall-db-${DATE}.db"
           PARKS="dist/hamcall-db-pota-parks-${DATE}.parquet"
-          SUMMITS="dist/hamcall-db-sota-summits-${DATE}.parquet"
           PARKGRIDS="dist/hamcall-db-pota-park-grids-${DATE}.parquet"
 
           # ODbL set (OpenStreetMap-derived). LICENSE-ODbL is at the repo root and travels
@@ -110,7 +109,6 @@ jobs:
             emit "History" "$HISTORY"
             emit "SQLite" "$SQLITE"
             emit "POTA parks" "$PARKS"
-            emit "SOTA summits" "$SUMMITS"
             emit "POTA park-grids" "$PARKGRIDS"
             echo "EOF"
           } >> "$GITHUB_OUTPUT"
@@ -149,9 +147,8 @@ jobs:
             Assets:
             - `hamcall-db-${{ steps.date.outputs.date }}.parquet` — current-state callsign dataset (schema is the redistribution contract).
             - `hamcall-db-history-${{ steps.date.outputs.date }}.parquet` — SCD2 change history (if present).
-            - `hamcall-db-${{ steps.date.outputs.date }}.db` — SQLite convenience copy: `current` + `history` (+ `pota_parks`, `pota_park_grids`, `sota_summits`) in one file (stable, never-reused `id`).
+            - `hamcall-db-${{ steps.date.outputs.date }}.db` — SQLite convenience copy: `current` + `history` (+ `pota_parks`, `pota_park_grids`) in one file (stable, never-reused `id`).
             - `hamcall-db-pota-parks-${{ steps.date.outputs.date }}.parquet` — POTA park directory (places, not licensees).
-            - `hamcall-db-sota-summits-${{ steps.date.outputs.date }}.parquet` — SOTA summit directory (places, not licensees; assumed non-commercial pending sign-off — see NOTICE).
             - `hamcall-db-pota-park-grids-${{ steps.date.outputs.date }}.parquet` — POTA park → 4-char Maidenhead grid sets. **Indicative point grids in this build** (PAD-US polygon boundaries need the build-time `padus` group); treat as approximate until polygon coverage ships.
 
             OpenStreetMap-derived park grids are **ODbL** (share-alike) and are published SEPARATELY at the `hamcall-db-osm-${{ steps.date.outputs.date }}` / `latest-osm` release — never fold them into this CC BY-NC set.

@@ -27,11 +27,19 @@ def test_release_workflow_references_every_build_artifact() -> None:
         "hamcall-db-",  # current-state parquet + sqlite
         "hamcall-db-history-",
         "hamcall-db-pota-parks-",
-        "hamcall-db-sota-summits-",
         "hamcall-db-pota-park-grids-",
         "hamcall-db-pota-park-grids-osm-",
     ):
         assert stem in text, f"release workflow never references {stem!r} artifacts"
+
+
+def test_release_workflow_excludes_restricted_sources() -> None:
+    text = _workflow_text()
+    # The published release must NOT set --include-restricted, and must NOT publish the
+    # restricted SOTA artifact (license unconfirmed; opt-in local builds only). LoTW columns
+    # ride the callsign artifact but ship empty because the build never opts in.
+    assert "--include-restricted" not in text, "release must not opt into restricted sources"
+    assert "sota-summits" not in text, "SOTA artifact must not be a published release asset"
 
 
 def test_release_workflow_publishes_separate_odbl_release() -> None:

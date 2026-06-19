@@ -96,6 +96,23 @@ Each weekly build publishes two releases, each with a rolling alias that always 
 
 > The POTA park-grid sets currently published are **indicative point grids**: the public weekly build runs without the build-time `padus`/`osm` GIS groups, so real polygon→grid coverage is not yet in the released artifacts. Treat the grids as approximate until polygon coverage ships.
 
+### Optional / restricted sources
+
+Some sources are implemented but **disabled by default** because their redistribution terms are not confirmed. The published release **never** includes them; their importers run only when you pass `--include-restricted`, for **personal/local builds**:
+
+| Source | What it adds | Why gated |
+|---|---|---|
+| ARRL LoTW | `uses_lotw` / `lotw_last_activity` columns on the callsign artifact | ARRL states "All Rights Reserved" on the user-activity CSV — no redistribution grant (see [`NOTICE`](NOTICE) source 9). |
+| SOTA summits | `hamcall-db-sota-summits-*.parquet` + a `sota_summits` table | SOTA's API terms are non-commercial and bar non-approved automated access; the static bulk file has no explicit license (see [`NOTICE`](NOTICE) source 10). |
+
+```bash
+# Personal build INCLUDING the restricted sources — do not redistribute the result
+# without confirming each source's terms:
+uv run python -m hamcall_db.build --all --include-restricted --out dist/
+```
+
+In the official release the LoTW columns are present but empty, and the SOTA artifact is not produced at all. If a source's terms get confirmed, flipping it into the default build is a one-line change. Do **not** redistribute a `--include-restricted` build's output without satisfying those sources' terms.
+
 ## Consumers
 
 The Parquet files have no opinion about your storage — download and load them into whatever your tool prefers: DuckDB for analytics, pandas/Polars for one-off scripts, or SQLite + FTS5 if you want prefix autocomplete. Each weekly release also ships a ready-to-use SQLite `.db` (see below) for zero-setup browsing.

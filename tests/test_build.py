@@ -426,8 +426,10 @@ def test_all_build_writes_sota_summits_artifacts(tmp_path, monkeypatch):
     _stub_summits(tmp_path, monkeypatch)
 
     out = tmp_path / "dist"
+    # SOTA is a RESTRICTED source (license unconfirmed) — only produced with the opt-in flag.
     result = CliRunner().invoke(
-        app, ["--all", "--out", str(out), "--work-dir", str(tmp_path)]
+        app,
+        ["--all", "--include-restricted", "--out", str(out), "--work-dir", str(tmp_path)],
     )
     assert result.exit_code == 0, result.output
 
@@ -477,8 +479,47 @@ def test_all_build_resilient_when_sota_fails(tmp_path, monkeypatch):
 
     out = tmp_path / "dist"
     result = CliRunner().invoke(
-        app, ["--all", "--out", str(out), "--work-dir", str(tmp_path)]
+        app,
+        ["--all", "--include-restricted", "--out", str(out), "--work-dir", str(tmp_path)],
     )
     # Build still succeeds; the summits artifacts are simply not written.
     assert result.exit_code == 0, result.output
     assert not list(out.glob("hamcall-db-sota-summits-*.parquet"))
+
+
+def test_all_build_omits_restricted_sources_by_default(tmp_path, monkeypatch):
+    """The published build (no --include-restricted) must NOT produce the SOTA artifact and
+    must leave LoTW columns empty — those sources have unconfirmed redistribution licenses
+    (hdb-fccf / hdb-ca00). A SotaSource/enrich_lotw that raises if called proves they are
+    never even invoked by default."""
+    _stub_all_sources(monkeypatch)
+    monkeypatch.setattr("hamcall_db.build.ad1c.download_cty", lambda *a, **k: None)
+    monkeypatch.setattr(enrich_allstar, "download_allstar", lambda *a, **k: FIXTURE)
+
+    def _must_not_run(*a, **k):
+        raise AssertionError("restricted source ran without --include-restricted")
+
+    monkeypatch.setattr("hamcall_db.build.enrich_lotw.download_lotw", _must_not_run)
+
+    class _BoomSota:
+        def download(self, work_dir):
+            raise AssertionError("SOTA ran without --include-restricted")
+
+        def parse(self, path):
+            return []
+
+    monkeypatch.setattr("hamcall_db.build.SotaSource", _BoomSota)
+
+    out = tmp_path / "dist"
+    result = CliRunner().invoke(
+        app, ["--all", "--out", str(out), "--work-dir", str(tmp_path)]
+    )
+    assert result.exit_code == 0, result.output
+    assert not list(out.glob("hamcall-db-sota-summits-*.parquet"))
+    current = next(
+        p
+        for p in out.glob("hamcall-db-*.parquet")
+        if not any(tag in p.name for tag in ("history", "pota", "sota"))
+    )
+    frame = pl.read_parquet(current)
+    assert not frame["uses_lotw"].any()  # LoTW never populated by default
