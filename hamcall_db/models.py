@@ -42,6 +42,14 @@ class Record:
     # allmondb.allstarlink.org via hamcall_db.enrich_allstar. NOT holder identity, so it
     # is excluded from history tracking (mem / history._TRACKED_FIELDS).
     allstar_nodes: list[int] = field(default_factory=list)
+    # LoTW (ARRL Logbook of the World) user activity (hdb-fccf). `uses_lotw` is True when
+    # the callsign appears in ARRL's public user-activity list; `lotw_last_activity` is
+    # that user's last upload date (ISO YYYY-MM-DD), or None. Additive minor bump
+    # (mem-c6e0); enriched from lotw.arrl.org via hamcall_db.enrich_lotw. Activity
+    # metadata, NOT holder identity, so it is excluded from history tracking
+    # (history._TRACKED_FIELDS).
+    uses_lotw: bool = False
+    lotw_last_activity: str | None = None
 
 
 SCHEMA_COLUMNS: tuple[str, ...] = tuple(f.name for f in fields(Record))

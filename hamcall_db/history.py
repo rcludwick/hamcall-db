@@ -41,12 +41,19 @@ _TRACKED_FIELDS: tuple[str, ...] = (
 )
 
 # Record payload fields carried into a history row (everything except the interval
-# bounds, which history adds). ``allstar_nodes`` is deliberately EXCLUDED: AllStarLink
-# node lists are NOT holder identity (excluded from _TRACKED_FIELDS too), and keeping the
-# list off HistoryRow entirely means the history Parquet/SQLite writers need no list
-# support and node churn never spawns a history interval (hdb-8803).
+# bounds, which history adds). Supplementary activity columns are deliberately EXCLUDED
+# because they are NOT holder identity (and are absent from _TRACKED_FIELDS too):
+#   * ``allstar_nodes`` — AllStarLink node lists (hdb-8803); keeping the list off
+#     HistoryRow means the history writers need no list support and node churn never
+#     spawns a history interval.
+#   * ``uses_lotw`` / ``lotw_last_activity`` — LoTW user activity (hdb-fccf); a LoTW
+#     upload is not a holder/location change, so it never opens a new SCD2 interval and
+#     stays off HistoryRow entirely.
+_NON_PAYLOAD_FIELDS: frozenset[str] = frozenset(
+    {"allstar_nodes", "uses_lotw", "lotw_last_activity"}
+)
 _PAYLOAD_FIELDS: tuple[str, ...] = tuple(
-    f.name for f in fields(Record) if f.name != "allstar_nodes"
+    f.name for f in fields(Record) if f.name not in _NON_PAYLOAD_FIELDS
 )
 
 

@@ -26,6 +26,8 @@ def _current_dtype(col: str) -> pl.DataType:
         return pl.Int64
     if col == "allstar_nodes":
         return pl.List(pl.Int64)  # one callsign -> MANY nodes (hdb-8803)
+    if col == "uses_lotw":
+        return pl.Boolean  # LoTW user flag (hdb-fccf); lotw_last_activity stays Utf8 date
     return pl.Utf8
 
 

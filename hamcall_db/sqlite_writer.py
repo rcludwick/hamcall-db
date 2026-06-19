@@ -40,8 +40,14 @@ from hamcall_db.sources.padus_grids import PARK_GRID_SCHEMA_COLUMNS, ParkGridRec
 from hamcall_db.sources.pota import PARK_SCHEMA_COLUMNS, ParkRecord
 
 # Columns whose SQLite affinity should be INTEGER rather than TEXT. ``dxcc`` mirrors the
-# Parquet writer's Int64 treatment; ``id`` is the surrogate key.
-_INT_COLUMNS: frozenset[str] = frozenset({"dxcc"})
+# Parquet writer's Int64 treatment; ``id`` is the surrogate key. ``uses_lotw`` is a bool
+# stored as 0/1 INTEGER (SQLite has no boolean type); it round-trips back to a Python bool
+# in read_prior (hdb-fccf).
+_INT_COLUMNS: frozenset[str] = frozenset({"dxcc", "uses_lotw"})
+
+# Boolean Record columns stored as 0/1 INTEGER. Converted on write (_current_payload) and
+# back to bool on read (read_prior). hdb-fccf.
+_BOOL_COLUMNS: frozenset[str] = frozenset({"uses_lotw"})
 
 # ``allstar_nodes`` is a list[int] (one callsign -> MANY nodes). SQLite has no list type,
 # so it is EXCLUDED from the scalar ``current`` table and instead normalized into a child
@@ -163,7 +169,13 @@ def read_prior(
             # reconstructed Record's allstar_nodes stays [], which is irrelevant to the id
             # ledger (it's excluded from holder identity / _TRACKED_FIELDS). hdb-8803.
             for row in con.execute("SELECT * FROM current"):
-                rec = Record(**{c: row[c] for c in _SCALAR_COLUMNS})
+                values = {c: row[c] for c in _SCALAR_COLUMNS}
+                # Bool columns are stored 0/1; restore Python bools so a reconstructed
+                # Record matches a freshly-built one (hdb-fccf).
+                for col in _BOOL_COLUMNS:
+                    if values.get(col) is not None:
+                        values[col] = bool(values[col])
+                rec = Record(**values)
                 prior_current[rec.callsign] = (row["id"], rec)
 
         prior_history: list[tuple[int | None, HistoryRow]] = []
@@ -292,8 +304,14 @@ def _resolve_history_id(
 
 def _current_payload(rec: Record) -> tuple:
     """The Record values in _SCALAR_COLUMNS order (id added separately; allstar_nodes is
-    the child table, not a current column)."""
-    return tuple(getattr(rec, name) for name in _SCALAR_COLUMNS)
+    the child table, not a current column). Bool columns are coerced to 0/1 INTEGER."""
+    values = []
+    for name in _SCALAR_COLUMNS:
+        value = getattr(rec, name)
+        if name in _BOOL_COLUMNS and value is not None:
+            value = int(bool(value))
+        values.append(value)
+    return tuple(values)
 
 
 def _history_payload(row: HistoryRow) -> tuple:
