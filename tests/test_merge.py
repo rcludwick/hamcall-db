@@ -36,6 +36,87 @@ def test_normalize_is_idempotent() -> None:
     assert once == twice
 
 
+# --- smart title-casing of all-caps name/place fields (hdb-b991) ----------------
+
+import pytest  # noqa: E402
+
+from hamcall_db.merge import _smart_titlecase  # noqa: E402
+
+
+@pytest.mark.parametrize(
+    ("raw", "expected"),
+    [
+        # Plain all-caps -> proper case.
+        ("SMITH", "Smith"),
+        ("KENNETH", "Kenneth"),
+        ("BOISE", "Boise"),
+        ("NEW YORK", "New York"),
+        # Mc / Mac.
+        ("MCDONALD", "McDonald"),
+        ("MCCALL", "McCall"),
+        ("MACEY", "Macey"),  # conservative: not every Mac* is MacX
+        ("MACDONALD", "MacDonald"),  # known exception
+        # Apostrophe / hyphen boundaries.
+        ("O'BRIEN", "O'Brien"),
+        ("D'ANGELO", "D'Angelo"),
+        ("SMITH-JONES", "Smith-Jones"),
+        # Roman-numeral generational suffix kept upper; single-letter initials kept upper.
+        ("JOHN SMITH III", "John Smith III"),
+        ("J R SMITH", "J R Smith"),
+        ("J. R. SMITH", "J. R. Smith"),
+        # Surname particles: lower when interior, capitalized when leading.
+        ("JOHN VON NEUMANN", "John von Neumann"),
+        ("VON NEUMANN", "Von Neumann"),
+        ("DE LA CRUZ", "De la Cruz"),
+        # Known acronyms (club/business holders) stay upper.
+        ("TREASURE VALLEY ARC", "Treasure Valley ARC"),
+        # Place edge cases.
+        ("ST. LOUIS", "St. Louis"),
+        # Already mixed-case values are left UNTOUCHED (never down-cased).
+        ("McDonald", "McDonald"),
+        ("de la Cruz", "de la Cruz"),
+        ("iPhone City", "iPhone City"),
+        # Non-letter / empty passthrough.
+        ("123", "123"),
+        ("", ""),
+    ],
+)
+def test_smart_titlecase(raw: str, expected: str) -> None:
+    assert _smart_titlecase(raw) == expected
+
+
+@pytest.mark.parametrize(
+    "raw",
+    ["SMITH", "MCDONALD", "O'BRIEN", "DE LA CRUZ", "JOHN SMITH III", "J R SMITH", "ARRL"],
+)
+def test_smart_titlecase_is_idempotent(raw: str) -> None:
+    once = _smart_titlecase(raw)
+    assert _smart_titlecase(once) == once
+
+
+def test_normalize_titlecases_name_and_place_fields() -> None:
+    out = normalize(
+        Record(
+            callsign="kf4laj",
+            first_name="KENNETH",
+            last_name="SMITH",
+            city="BOISE",
+            county="ADA",
+            state="ID",  # 2-letter abbreviation must stay UPPER
+        )
+    )
+    assert (out.first_name, out.last_name) == ("Kenneth", "Smith")
+    assert (out.city, out.county) == ("Boise", "Ada")
+    assert out.state == "ID"  # not title-cased
+
+
+def test_normalize_leaves_already_cased_names_untouched() -> None:
+    # ISED/ACMA-style proper-case data must pass through unchanged.
+    out = normalize(Record(callsign="VE3ABC", first_name="Pierre", last_name="de Villiers"))
+    assert out.first_name == "Pierre"
+    assert out.last_name == "de Villiers"
+
+
 # --- merge: dedup + precedence -------------------------------------------------
 
 
