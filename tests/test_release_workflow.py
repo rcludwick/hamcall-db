@@ -27,6 +27,7 @@ def test_release_workflow_references_every_build_artifact() -> None:
         "hamcall-db-",  # current-state parquet + sqlite
         "hamcall-db-history-",
         "hamcall-db-pota-parks-",
+        "hamcall-db-sota-summits-",
         "hamcall-db-pota-park-grids-",
         "hamcall-db-pota-park-grids-osm-",
     ):

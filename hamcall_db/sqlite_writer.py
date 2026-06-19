@@ -38,6 +38,7 @@ from hamcall_db.history import HISTORY_SCHEMA_COLUMNS, HistoryRow, _identity
 from hamcall_db.models import SCHEMA_COLUMNS, Record
 from hamcall_db.sources.padus_grids import PARK_GRID_SCHEMA_COLUMNS, ParkGridRecord
 from hamcall_db.sources.pota import PARK_SCHEMA_COLUMNS, ParkRecord
+from hamcall_db.sources.sota import SUMMIT_SCHEMA_COLUMNS, SummitRecord
 
 # Columns whose SQLite affinity should be INTEGER rather than TEXT. ``dxcc`` mirrors the
 # Parquet writer's Int64 treatment; ``id`` is the surrogate key.
@@ -374,6 +375,83 @@ def write_pota_parks_sqlite(parks: Iterable[ParkRecord], out_path: Path) -> int:
         con.close()
 
     return len(parks)
+
+
+# --- SOTA summits table (hdb-ca00) ---------------------------------------------
+#
+# A SEPARATE additive sibling of pota_parks (summits are public landmarks, not licensees).
+# ``reference`` (SOTA SummitCode) is the primary key; ``alt_m``/``alt_ft``/``points``/
+# ``bonus_points`` are INTEGER; ``lat``/``lon`` REAL; ``active`` 0/1 INTEGER; the rest TEXT.
+# Grid is stored VERBATIM at 6-char (no person-grid 4-char truncation — summits are public
+# landmarks). Never touches the callsign current/history schema (the redistribution contract).
+_SUMMIT_INT_COLUMNS: frozenset[str] = frozenset(
+    {"alt_m", "alt_ft", "points", "bonus_points"}
+)
+_SUMMIT_REAL_COLUMNS: frozenset[str] = frozenset({"lat", "lon"})
+
+
+def _summit_col_def(name: str) -> str:
+    if name == "reference":
+        return "reference TEXT PRIMARY KEY"
+    if name == "active":
+        return "active INTEGER"
+    if name in _SUMMIT_INT_COLUMNS:
+        return f"{name} INTEGER"
+    if name in _SUMMIT_REAL_COLUMNS:
+        return f"{name} REAL"
+    return f"{name} TEXT"
+
+
+_SOTA_SUMMITS_DDL = (
+    "CREATE TABLE IF NOT EXISTS sota_summits (\n"
+    + ",\n".join(f"  {_summit_col_def(c)}" for c in SUMMIT_SCHEMA_COLUMNS)
+    + "\n)"
+)
+_SOTA_SUMMITS_ASSOC_INDEX_DDL = (
+    "CREATE INDEX IF NOT EXISTS idx_sota_summits_association "
+    "ON sota_summits (association)"
+)
+
+
+def _summit_payload(summit: SummitRecord) -> tuple:
+    """SummitRecord values in SUMMIT_SCHEMA_COLUMNS order; ``active`` bool -> 0/1 INTEGER."""
+    values = []
+    for name in SUMMIT_SCHEMA_COLUMNS:
+        value = getattr(summit, name)
+        if name == "active":
+            value = int(bool(value))
+        values.append(value)
+    return tuple(values)
+
+
+def write_sota_summits_sqlite(summits: Iterable[SummitRecord], out_path: Path) -> int:
+    """Write/refresh the ``sota_summits`` table in a SQLite file. Returns the row count.
+
+    ADDITIVE: creates the table if missing and replaces only the summit rows; any existing
+    ``current``/``history``/``allstar_nodes``/``pota_parks`` tables in the same file are
+    untouched (the summits dataset rides alongside the callsign artifact without breaking
+    its contract). Idempotent — re-running replaces the summit rows.
+    """
+    summits = list(summits)
+    out = Path(out_path)
+    out.parent.mkdir(parents=True, exist_ok=True)
+
+    con = sqlite3.connect(out)
+    try:
+        con.execute(_SOTA_SUMMITS_DDL)
+        con.execute(_SOTA_SUMMITS_ASSOC_INDEX_DDL)
+        con.execute("DELETE FROM sota_summits")  # refresh: idempotent rebuild
+        placeholders = ", ".join("?" for _ in SUMMIT_SCHEMA_COLUMNS)
+        con.executemany(
+            f"INSERT INTO sota_summits ({', '.join(SUMMIT_SCHEMA_COLUMNS)}) "
+            f"VALUES ({placeholders})",
+            [_summit_payload(s) for s in summits],
+        )
+        con.commit()
+    finally:
+        con.close()
+
+    return len(summits)
 
 
 # --- POTA park-grids child table (hdb-f53c) ------------------------------------

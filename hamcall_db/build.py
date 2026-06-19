@@ -27,10 +27,12 @@ from hamcall_db.sources.ised import IsedSource
 from hamcall_db.sources.osm import OsmSource, compute_osm_park_grids
 from hamcall_db.sources.padus import PadusSource, compute_park_grids
 from hamcall_db.sources.pota import PotaSource
+from hamcall_db.sources.sota import SotaSource
 from hamcall_db.sqlite_writer import (
     write_pota_park_grids_osm_sqlite,
     write_pota_park_grids_sqlite,
     write_pota_parks_sqlite,
+    write_sota_summits_sqlite,
     write_sqlite,
 )
 from hamcall_db.writer import (
@@ -40,6 +42,7 @@ from hamcall_db.writer import (
     write_pota_park_grids_osm_parquet,
     write_pota_park_grids_parquet,
     write_pota_parks_parquet,
+    write_sota_summits_parquet,
 )
 
 # Registry of available source importers, keyed by their short tag.
@@ -290,6 +293,33 @@ def build(
                 err=True,
             )
 
+        # SOTA summits: a SEPARATE additive reference dataset (places, not licensees,
+        # hdb-ca00), a sibling of POTA parks. Written as its own Parquet file AND a
+        # sota_summits table appended to the SAME CC-BY-NC .db — it NEVER touches the
+        # callsign schema. License: assumed non-commercial + attributed + droppable, same
+        # posture as POTA (NOTICE source 9); no confirmed share-alike, so no OSM-style
+        # segregation. RESILIENT: a SOTA outage must not abort the build — log a warning
+        # and skip, exactly like POTA above. INDEPENDENTLY guarded so a SOTA failure does
+        # not take down the POTA artifacts (or vice versa).
+        try:
+            sota = SotaSource()
+            summits_path_in = sota.download(work_dir)
+            summits = list(sota.parse(summits_path_in))
+            summits_dir_out = out if out_dir else out.parent
+            summits_path = summits_dir_out / _sota_summits_filename()
+            summits_count = write_sota_summits_parquet(summits, summits_path)
+            write_sota_summits_sqlite(summits, db_path)
+            typer.echo(
+                f"Wrote {summits_count} SOTA summits to {summits_path} "
+                f"(+ sota_summits table in {db_path})"
+            )
+        except Exception as exc:  # download/parse/write failure is non-fatal
+            typer.echo(
+                f"WARNING: SOTA summits dataset skipped ({exc}); "
+                "summits artifacts not written",
+                err=True,
+            )
+
 
 def _default_filename() -> str:
     """Dated artifact name: hamcall-db-YYYY-MM-DD.parquet."""
@@ -313,6 +343,12 @@ def _pota_parks_filename() -> str:
     """Dated POTA parks artifact name: hamcall-db-pota-parks-YYYY-MM-DD.parquet."""
     today = dt.date.today().isoformat()
     return f"hamcall-db-pota-parks-{today}.parquet"
+
+
+def _sota_summits_filename() -> str:
+    """Dated SOTA summits artifact name: hamcall-db-sota-summits-YYYY-MM-DD.parquet."""
+    today = dt.date.today().isoformat()
+    return f"hamcall-db-sota-summits-{today}.parquet"
 
 
 def _pota_park_grids_filename() -> str:

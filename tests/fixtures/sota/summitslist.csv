@@ -1,0 +1,8 @@
+SOTA Summits List (Date=18/06/2026)
+SummitCode,AssociationName,RegionName,SummitName,AltM,AltFt,GridRef1,GridRef2,Longitude,Latitude,Points,BonusPoints,ValidFrom,ValidTo,ActivationCount,ActivationDate,ActivationCall
+3Y/BV-001,"Bouvet Island","Bouvetøya (Bouvet Island)",Olavtoppen,780,2559,3.3565,-54.4104,3.35650,-54.41040,10,3,01/03/2018,31/12/2099,0,,
+4O/IC-001,Montenegro,"Istok Crne Gore","Maja Rosit",2524,8280,19.8505,42.4795,19.85050,42.47950,10,3,01/03/2019,31/12/2099,1,27/07/2022,4O/SQ9MDF/P
+W7A/MN-001,"W7A - Arizona","Maricopa","Browns Peak",2399,7871,-111.3870,33.7042,-111.38700,33.70420,8,3,01/05/2010,31/12/2099,42,15/04/2023,K7ABC
+G/LD-001,"England (Lake District)","Lake District","Scafell Pike",978,3209,-3.2117,54.4542,-3.21170,54.45420,8,3,01/07/2002,31/12/2099,512,01/06/2024,M0XYZ
+VK3/VC-001,"VK3 (Victoria)","Victorian Alps","Mount Bogong",1986,6516,147.3083,-36.7297,147.30830,-36.72970,10,0,01/02/2012,31/12/2099,77,03/03/2021,VK3ABC/P
+W0C/SP-001,"W0C - Colorado","Sangre de Cristo","Blanca Peak",4374,14350,-105.4856,37.5775,-105.48560,37.57750,10,3,01/05/2010,31/12/2010,5,20/06/2010,W0RETIRED

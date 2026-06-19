@@ -18,6 +18,7 @@ from hamcall_db.models import Record
 from hamcall_db.sources.osm_grids import OsmFeature
 from hamcall_db.sources.padus_grids import PadusFeature
 from hamcall_db.sources.pota import ParkRecord
+from hamcall_db.sources.sota import SummitRecord
 
 
 class _GoodSource:
@@ -109,6 +110,18 @@ def _stub_all_sources(monkeypatch):
     monkeypatch.setattr("hamcall_db.build.PotaSource", _StubPotaOffline)
     monkeypatch.setattr("hamcall_db.build._load_padus_features", lambda wd: [])
     monkeypatch.setattr("hamcall_db.build._load_osm_features", lambda wd: [])
+
+    # The SOTA summits block likewise instantiates SotaSource() directly; default it to an
+    # offline no-op (storage.sota.org.uk is otherwise hit live). Tests that want real
+    # summits re-override it afterward.
+    class _StubSotaOffline:
+        def download(self, work_dir):
+            return work_dir
+
+        def parse(self, path):
+            return []
+
+    monkeypatch.setattr("hamcall_db.build.SotaSource", _StubSotaOffline)
 
 
 def test_all_build_enriches_allstar_nodes(tmp_path, monkeypatch):
@@ -371,3 +384,101 @@ def test_load_osm_features_downloads_when_reader_present(tmp_path, monkeypatch):
     monkeypatch.setattr("hamcall_db.sources.osm.OsmSource.read_features", _read)
     assert build_mod._load_osm_features(tmp_path) == []
     assert calls == {"download": True, "read": True}
+
+
+# --- SOTA summits additive sibling dataset end-to-end at the CLI (hdb-ca00) -----
+
+
+def _stub_summits(tmp_path, monkeypatch):
+    """Stub the SOTA source so the --all build's summits block runs offline."""
+    _stub_all_sources(monkeypatch)
+    monkeypatch.setattr("hamcall_db.build.ad1c.download_cty", lambda *a, **k: None)
+    monkeypatch.setattr(enrich_allstar, "download_allstar", lambda *a, **k: FIXTURE)
+
+    summits = [
+        SummitRecord(
+            reference="G/LD-001",
+            name="Scafell Pike",
+            association="England (Lake District)",
+            region="Lake District",
+            alt_m=978,
+            grid="IO84jk",
+            lat=54.4542,
+            lon=-3.2117,
+            points=8,
+            active=True,
+            source="sota",
+            synced_at="2026-06-18",
+        ),
+    ]
+
+    class _StubSota:
+        def download(self, work_dir):
+            return work_dir
+
+        def parse(self, path):
+            return summits
+
+    monkeypatch.setattr("hamcall_db.build.SotaSource", _StubSota)
+
+
+def test_all_build_writes_sota_summits_artifacts(tmp_path, monkeypatch):
+    _stub_summits(tmp_path, monkeypatch)
+
+    out = tmp_path / "dist"
+    result = CliRunner().invoke(
+        app, ["--all", "--out", str(out), "--work-dir", str(tmp_path)]
+    )
+    assert result.exit_code == 0, result.output
+
+    # A dedicated SOTA summits Parquet sibling, separate from the callsign/parks files.
+    summits_parquets = list(out.glob("hamcall-db-sota-summits-*.parquet"))
+    assert len(summits_parquets) == 1
+    frame = pl.read_parquet(summits_parquets[0])
+    row = frame.filter(pl.col("reference") == "G/LD-001").to_dicts()[0]
+    assert row["name"] == "Scafell Pike"
+    assert row["grid"] == "IO84jk"  # 6-char verbatim, not truncated
+
+    # A sota_summits table in the SAME CC-BY-NC .db, alongside (not replacing) the
+    # callsign tables — never touches the callsign schema.
+    cc_dbs = [p for p in out.glob("hamcall-db-*.db") if "park-grids-osm" not in p.name]
+    assert len(cc_dbs) == 1
+    con = sqlite3.connect(cc_dbs[0])
+    try:
+        tables = {
+            r[0]
+            for r in con.execute(
+                "SELECT name FROM sqlite_master WHERE type='table'"
+            ).fetchall()
+        }
+        assert "sota_summits" in tables
+        assert "current" in tables  # callsign table still present
+        ref = con.execute(
+            "SELECT reference FROM sota_summits WHERE reference='G/LD-001'"
+        ).fetchone()
+        assert ref == ("G/LD-001",)
+    finally:
+        con.close()
+
+
+def test_all_build_resilient_when_sota_fails(tmp_path, monkeypatch):
+    _stub_all_sources(monkeypatch)
+    monkeypatch.setattr("hamcall_db.build.ad1c.download_cty", lambda *a, **k: None)
+    monkeypatch.setattr(enrich_allstar, "download_allstar", lambda *a, **k: FIXTURE)
+
+    class _BoomSota:
+        def download(self, work_dir):
+            raise OSError("connection timed out")
+
+        def parse(self, path):
+            return []
+
+    monkeypatch.setattr("hamcall_db.build.SotaSource", _BoomSota)
+
+    out = tmp_path / "dist"
+    result = CliRunner().invoke(
+        app, ["--all", "--out", str(out), "--work-dir", str(tmp_path)]
+    )
+    # Build still succeeds; the summits artifacts are simply not written.
+    assert result.exit_code == 0, result.output
+    assert not list(out.glob("hamcall-db-sota-summits-*.parquet"))

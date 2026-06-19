@@ -69,3 +69,13 @@ def test_notice_documents_osm_odbl_separate_file() -> None:
 def test_notice_has_odbl_attribution_statement() -> None:
     # The exact "© OpenStreetMap contributors" attribution must be reproducible from NOTICE.
     assert "OpenStreetMap contributors" in NOTICE
+
+
+def test_notice_mentions_sota() -> None:
+    # SOTA summit data is a published source (hdb-ca00) — must be attributed, must record
+    # the static-file vs. API distinction, the assumed-non-commercial posture, and the
+    # explicit human-sign-off flag before first public release.
+    assert "SOTA" in NOTICE or "Summits on the Air" in NOTICE
+    assert "sota.org.uk" in NOTICE
+    assert "sota_summits" in NOTICE  # the dedicated table name
+    assert "non-commercial" in NOTICE.lower()

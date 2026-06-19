@@ -16,6 +16,7 @@ from hamcall_db.history import HISTORY_SCHEMA_COLUMNS, HistoryRow
 from hamcall_db.models import SCHEMA_COLUMNS, Record
 from hamcall_db.sources.padus_grids import PARK_GRID_SCHEMA_COLUMNS, ParkGridRecord
 from hamcall_db.sources.pota import PARK_SCHEMA_COLUMNS, ParkRecord
+from hamcall_db.sources.sota import SUMMIT_SCHEMA_COLUMNS, SummitRecord
 
 
 # Explicit schema keeps column order and dtypes stable even when a batch is all-null
@@ -133,6 +134,40 @@ def write_pota_park_grids_osm_parquet(
     """
     rows = [asdict(g) for g in grids]
     frame = pl.DataFrame(rows, schema=_PARK_GRID_SCHEMA)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    frame.write_parquet(out_path)
+    return frame.height
+
+
+# SOTA summits artifact schema (hdb-ca00): a SEPARATE sibling dataset (summits are public
+# landmarks, not licensees), mirroring the POTA parks shape. ``alt_m``/``alt_ft``/``points``/
+# ``bonus_points`` are Int64, ``lat``/``lon`` are Float64 (verbatim, indicative-only coords),
+# ``active`` is Boolean; everything else is string. Grid is stored VERBATIM at 6-char (no
+# person-grid 4-char truncation — summits are public landmarks).
+def _summit_dtype(col: str) -> pl.DataType:
+    if col in ("alt_m", "alt_ft", "points", "bonus_points"):
+        return pl.Int64
+    if col in ("lat", "lon"):
+        return pl.Float64
+    if col == "active":
+        return pl.Boolean
+    return pl.Utf8
+
+
+_SUMMIT_SCHEMA: dict[str, pl.DataType] = {
+    col: _summit_dtype(col) for col in SUMMIT_SCHEMA_COLUMNS
+}
+
+
+def write_sota_summits_parquet(summits: Iterable[SummitRecord], out_path: Path) -> int:
+    """Write SOTA `SummitRecord`s to `out_path` as Parquet. Returns the row count written.
+
+    Additive artifact (hamcall-db-sota-summits-YYYY-MM-DD.parquet); separate schema from the
+    callsign current/history files (and the POTA parks file) so none can drift (the
+    redistribution contract).
+    """
+    rows = [asdict(s) for s in summits]
+    frame = pl.DataFrame(rows, schema=_SUMMIT_SCHEMA)
     out_path.parent.mkdir(parents=True, exist_ok=True)
     frame.write_parquet(out_path)
     return frame.height
