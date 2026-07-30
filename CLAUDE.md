@@ -8,37 +8,34 @@ A Python build pipeline that aggregates free, openly-licensed amateur radio lice
 
 This repo produces the artifact. It does NOT consume it. The consumer side (autocomplete UI, QSO enrichment, etc.) lives in the downstream apps (e.g. `adif`). Keep this separation strict — no consumer-side opinions about storage or query patterns leak into the build code.
 
-## au Nugget Tracker
+## Task Tracking
 
-This project uses **au** for nugget (task) tracking. Run `au prime` for tool-level rules and `au guide` for full workflow guidance.
+Use the **Claude Code task tracker** (`TaskCreate` / `TaskUpdate` / `TaskList`) for work in
+the current session: create a task before starting, mark it `in_progress` when you pick it
+up, `completed` when it's done.
 
-### Quick Reference
-
-```bash
-au ready              # Nuggets with no unresolved blockers
-au show <id>          # Full nugget detail (spec, plan, deps, activity)
-au work <id>          # Claim a nugget + create .worktrees/<id> on branch work/<id>
-au done <id>          # Mark complete, auto-commit
-au land               # Write a handoff prompt for the next session
-au memory list        # Project memories (the redistribution contract lives here)
-```
+The durable backlog lives in [`docs/BACKLOG.md`](docs/BACKLOG.md) — 4 open items, each with
+its full description and spec text inline. Anything that outlives the session goes there.
 
 ### Rules
 
-- Use `au` for ALL task tracking — do NOT use TodoWrite, TaskCreate, or markdown TODO lists.
-- Specs live IN the nugget (`au spec <id>` to set/edit), not in separate doc files.
-- Plans live IN the nugget (`au plan <id>`).
-- Run `au tips` for codebase-editing conventions.
-- Use `au memory` for persistent project knowledge — do NOT use MEMORY.md files.
+- Session work goes in the task tracker; anything that outlives the session goes in `docs/BACKLOG.md`
+- Specs and plans live with the backlog item in `docs/BACKLOG.md`, not in separate doc files
+- Durable project knowledge (schema contract, licensing, grid policy) lives in
+  [`docs/PROJECT-NOTES.md`](docs/PROJECT-NOTES.md), recovered from the old au memory store
+- This project used the `au` nugget tracker until 2026-07-29 — do NOT invoke `au`. Nugget IDs
+  (`au-*`, `hdb-*`) still appear in commit messages and docs; look them up in `docs/BACKLOG.md`.
+  A full export of all 39 nuggets (35 closed) is at `docs/issues-archive.jsonl` (gitignored,
+  local-only); the tracker's final committed state survives in git history.
 
 ## Session Completion
 
 **When ending a work session**, you MUST complete ALL steps below. Work is NOT complete until `git push` succeeds.
 
-1. **File nuggets for remaining work** — `au add` anything that needs follow-up.
+1. **Record remaining work** — append anything that needs follow-up to `docs/BACKLOG.md`.
 2. **Run quality gates** (if code changed) — tests, linters, build.
-3. **Update nugget status** — `au done <id>` for finished work.
-4. **Generate handoff** — `au land` writes a markdown prompt into `.au/land/`.
+3. **Update task status** — mark finished tasks `completed`; tick items off `docs/BACKLOG.md`.
+4. **Summarize** — hand off with changed files, validation results, and next steps.
 5. **PUSH TO REMOTE** — mandatory:
    ```bash
    git pull --rebase
@@ -56,9 +53,9 @@ au memory list        # Project memories (the redistribution contract lives here
 
 ## Hard constraints (the redistribution contract)
 
-These are non-negotiable because consumers depend on them. If a change would break any of these, file a nugget and discuss first.
+These are non-negotiable because consumers depend on them. If a change would break any of these, add a backlog item and discuss first.
 
-- **Output schema** is the contract. Adding columns is a minor bump and OK; removing or renaming is breaking. See `au memory list` (mem-c6e0).
+- **Output schema** is the contract. Adding columns is a minor bump and OK; removing or renaming is breaking. See [`docs/PROJECT-NOTES.md`](docs/PROJECT-NOTES.md) (mem-c6e0).
 - **No street addresses** in published output. Ever. Use them at build time for geocoding, then discard.
 - **Grid is 4-char only** (e.g. `DN13`). Never publish 6-char subsquare. Truncate after geocoding. See mem-e3fd.
 - **NOTICE file** must list every upstream source's license terms. Recheck before adding a new source. See mem-371f.

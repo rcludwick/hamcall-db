@@ -21,3 +21,6 @@ data/work/
 .idea/
 .vscode/
 .worktrees/
+
+# Tracker archive from the au/beads migration (local-only; do not commit JSONL exports)
+docs/issues-archive.jsonl
