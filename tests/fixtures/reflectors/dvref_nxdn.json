@@ -1,0 +1,68 @@
+{
+  "status": "success",
+  "generated_at": "2026-08-26T00:05:58.253870Z",
+  "_dvref_metadata": {
+    "license": {
+      "name": "Creative Commons Attribution 4.0 International",
+      "spdx_id": "CC-BY-4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "attribution": "Reflector data provided by DVRef — https://dvref.com/",
+    "aup_url": "https://dvref.com/aup/"
+  },
+  "data": {
+    "reflectors": [
+      {
+        "designator": 14,
+        "name": "(WWW) Spanish NXDN",
+        "slug": "nxdn-14",
+        "url": "http://nxdn.c4fm.es/nxdn14/",
+        "dns": "nxdn.c4fm.es",
+        "ipv4": "57.131.25.19",
+        "ipv6": null,
+        "port": 41401,
+        "sponsor": "NXDN SPAIN",
+        "country": "ES",
+        "ip_source": "dns",
+        "dns_cache_updated_at": "2026-08-25T23:48:26.058269Z",
+        "last_verified_at": "2026-08-17T10:11:51.214584Z",
+        "network_type": "hosting",
+        "description": "<p><strong>(WWW) Spanish NXDN</strong> <strong class=\"Yjhzub\">World Wide Reflector&nbsp; ONLY NXDN&nbsp;</strong></p>"
+      },
+      {
+        "designator": 38,
+        "name": "XLX138 Module B",
+        "slug": "nxdn-38",
+        "url": "https://nxdn38.kozow.com",
+        "dns": null,
+        "ipv4": "128.199.235.93",
+        "ipv6": null,
+        "port": 41400,
+        "sponsor": "NXDN 38 XLX138 Module B Thailand",
+        "country": "TH",
+        "ip_source": "static",
+        "dns_cache_updated_at": "2025-05-24T08:46:00.283916Z",
+        "last_verified_at": "2026-07-25T16:12:57.938881Z",
+        "network_type": "hosting",
+        "description": "<p><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\">Interlink XLX138 Module B&nbsp;</span></span><br><a href=\"https://xlx138.freeddns.org/\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\">https://xlx138.freeddns.org</span></span></a><br><br>Analog Digital Radio Thailand Team</p>"
+      },
+      {
+        "designator": 49,
+        "name": "XLX049 NXDN bridged to XLX049C",
+        "slug": "nxdn-49",
+        "url": "https://xlx049.dyndns.org",
+        "dns": "nxdn49.dyndns.org",
+        "ipv4": "54.237.10.173",
+        "ipv6": "2600:1f18:26b8:4a00:6245:7d20:9e02:f216",
+        "port": 41400,
+        "sponsor": "KA8SCP",
+        "country": "US",
+        "ip_source": "dns",
+        "dns_cache_updated_at": "2026-08-25T23:48:26.040398Z",
+        "last_verified_at": "2026-08-19T15:27:30.550683Z",
+        "network_type": "hosting",
+        "description": "<p>XLX049C-REF049C-BM TG 312543</p>"
+      }
+    ]
+  }
+}

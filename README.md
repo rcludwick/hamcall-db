@@ -20,8 +20,55 @@ A Python build pipeline that aggregates free, openly-licensed amateur radio lice
 | SOTA | Summits on the Air summit directory (places, not licensees) | Used on an assumed non-commercial basis, **pending human sign-off** (see NOTICE) | Static `summitslist.csv` from `storage.sota.org.uk` |
 | PAD-US | US protected-area boundaries → POTA park grid sets (build-time only) | Public domain (USGS) | National GeoPackage/GDB |
 | OpenStreetMap | Non-US protected-area/park boundaries → **separate ODbL** POTA park grid sets (build-time only) | ODbL — shipped in its own file, never mixed into the CC BY-NC dataset (see NOTICE / LICENSE-ODbL) | Geofabrik regional extracts |
+| DVRef | M17 / YSF / NXDN / P25 / URF / XRF reflector directory (places, not licensees) | **CC BY 4.0** — shipped in its own file, never mixed into the CC BY-NC dataset (see NOTICE / LICENSE-CC-BY) | REST API, token required |
+| XLX registry (LX1IQ) | XLX / D-Star reflector directory (~890 reflectors) | No explicit licence; public self-registration directory, attributed — **pending human sign-off** (see NOTICE) | XML over HTTP |
 
 The on-demand long tail (UK, EU, JA, etc.) is intentionally out of scope here — consumer tools should fall through to per-callsign APIs like QRZ or HamQTH for those.
+
+### Reflector directory — a SEPARATE **CC BY 4.0** dataset
+
+Digital-voice reflectors for D-Star, M17, YSF, NXDN, P25 and URF, published three ways:
+`hamcall-db-reflectors-YYYY-MM-DD.parquet`, a matching `.db` (table `reflectors`), and —
+unlike everything else here — as **static JSON served from GitHub Pages**, because a
+reflector picker in a client app needs a URL it can fetch without a token:
+
+```
+https://rcludwick.github.io/hamcall-db/api/index.json
+https://rcludwick.github.io/hamcall-db/api/reflectors/<network>.json
+```
+
+Columns: `id` (PK with `network`), `network`, `name`, `callsign`, `host`, `port`,
+`modules`, `country`, `description`, `dashboard`, `source`, `synced_at`.
+
+`callsign` is the name a reflector answers to **on the air**, which is not always its
+directory name — an XLX reflector is listed as `XLX836` but a DExtra client must send
+`XRF836` in RPT1/RPT2. Publishing it means clients read the value instead of each
+re-deriving the aliasing rule. `port` for D-Star is the DExtra constant 30001, which the
+registry does not publish.
+
+**`XRF###` and `XLX###` are different reflectors.** They share a numbering scheme and
+nothing else: measured 2026-08-26, 13 of 14 sampled pairs resolved to entirely different
+servers. They are never deduplicated against each other.
+
+Rebuilt nightly (`.github/workflows/reflectors.yml`, 06:00 UTC), but the files ask
+clients to cache for **7 days** — reflector hosts move on a scale of weeks. Output is
+content-derived, so a night with no upstream change produces byte-identical files and no
+commit. A network whose fetch fails, or whose row count collapses, keeps its previous
+file rather than publishing a regression.
+
+Building it needs a DVRef API token (free, from <https://dvref.com/accounts/token/>) in
+`DVREF_API_TOKEN`; without one the D-Star half still builds, since the XLX registry needs
+no authentication:
+
+```bash
+uv run hamcall-db-reflectors --out site/api --dist dist/
+uv run hamcall-db-reflectors --out site/api --skip-dvref   # no token needed
+```
+
+**This dataset is CC BY 4.0 and is never merged into the CC BY-NC artifacts.** That is a
+licence requirement, not tidiness: CC BY 4.0 §2(a)(5)(B) forbids adding restrictions the
+licence grants away, so folding it into the non-commercial dataset would violate it. Same
+discipline as the ODbL park grids, opposite direction — see `LICENSE-CC-BY`.
 
 ### POTA parks reference dataset
 

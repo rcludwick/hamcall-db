@@ -1,0 +1,83 @@
+{
+  "status": "success",
+  "generated_at": "2026-08-26T00:05:56.913254Z",
+  "_dvref_metadata": {
+    "license": {
+      "name": "Creative Commons Attribution 4.0 International",
+      "spdx_id": "CC-BY-4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "attribution": "Reflector data provided by DVRef — https://dvref.com/",
+    "aup_url": "https://dvref.com/aup/"
+  },
+  "data": {
+    "reflectors": [
+      {
+        "designator": "00006",
+        "name": "HELLAS Zone A",
+        "use_xx_prefix": false,
+        "description": "(YCS202)",
+        "slug": "ysf-00006-hellas-zone-a",
+        "url": "https://hellaszone.com/ycs/",
+        "dns": "hellaszone.com",
+        "ipv4": "46.59.68.211",
+        "ipv6": null,
+        "port": 42000,
+        "sponsor": "HELLAS Zone Net!  By SA7SVR",
+        "country": "GR",
+        "user_count": "000",
+        "ip_source": "dns",
+        "dns_cache_updated_at": "2025-06-25T15:16:12.427688Z",
+        "last_verified_at": "2026-08-24T01:28:22.916299Z",
+        "network_type": "business",
+        "refcheck_protocol_abuse": true,
+        "refcheck_fcs_cross_listed": true,
+        "extended_description": "<p>Bridge: BM - TG 20208&nbsp; and IPS2- Sweden TG 20269&nbsp;</p>\r\n<p>&nbsp;</p>"
+      },
+      {
+        "designator": "00007",
+        "name": "EUROPELINK",
+        "use_xx_prefix": true,
+        "description": "Europelink",
+        "slug": "ysf-00007-europelink",
+        "url": "https://europelink.pa7lim.nl",
+        "dns": "europelink.pa7lim.nl",
+        "ipv4": "161.97.73.43",
+        "ipv6": null,
+        "port": 42000,
+        "sponsor": "PA7LIM",
+        "country": "NL",
+        "user_count": "000",
+        "ip_source": "dns",
+        "dns_cache_updated_at": "2025-04-28T00:43:45.892075Z",
+        "last_verified_at": "2026-08-17T15:22:05.084695Z",
+        "network_type": "hosting",
+        "refcheck_protocol_abuse": false,
+        "refcheck_fcs_cross_listed": false,
+        "extended_description": ""
+      },
+      {
+        "designator": "00008",
+        "name": "WORLDLINK",
+        "use_xx_prefix": true,
+        "description": "World link",
+        "slug": "ysf-00008-worldlink",
+        "url": "https://worldlink.pa7lim.nl/",
+        "dns": null,
+        "ipv4": "94.72.113.36",
+        "ipv6": null,
+        "port": 42000,
+        "sponsor": "PA7LIM",
+        "country": "US",
+        "user_count": "000",
+        "ip_source": "static",
+        "dns_cache_updated_at": "2025-04-27T12:43:45.946667Z",
+        "last_verified_at": "2026-08-17T15:23:49.489551Z",
+        "network_type": "hosting",
+        "refcheck_protocol_abuse": false,
+        "refcheck_fcs_cross_listed": false,
+        "extended_description": "<p>TREEHOUSE</p>"
+      }
+    ]
+  }
+}

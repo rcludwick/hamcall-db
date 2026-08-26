@@ -36,6 +36,7 @@ from pathlib import Path
 
 from hamcall_db.history import HISTORY_SCHEMA_COLUMNS, HistoryRow, _identity
 from hamcall_db.models import SCHEMA_COLUMNS, Record
+from hamcall_db.reflectors import REFLECTOR_SCHEMA_COLUMNS, ReflectorRecord
 from hamcall_db.sources.padus_grids import PARK_GRID_SCHEMA_COLUMNS, ParkGridRecord
 from hamcall_db.sources.pota import PARK_SCHEMA_COLUMNS, ParkRecord
 from hamcall_db.sources.sota import SUMMIT_SCHEMA_COLUMNS, SummitRecord
@@ -577,3 +578,59 @@ def write_pota_park_grids_osm_sqlite(
         con.close()
 
     return len(grids)
+
+
+# Reflector directory table (hdb-refl): one row per (network, id) reflector. Lives in its
+# OWN .db file under CC BY 4.0 — DVRef's terms permit commercial reuse, and the CC BY-NC
+# artifacts must never absorb it (CC BY 4.0 s2(a)(5)(B) forbids adding that restriction).
+# `modules` is stored as a comma-separated string: SQLite has no array type, and a join
+# table for at most a handful of single letters buys nothing a consumer would use.
+_REFLECTORS_DDL = (
+    "CREATE TABLE IF NOT EXISTS reflectors (\n"
+    + ",\n".join(
+        f"  {c} " + ("INTEGER" if c == "port" else "TEXT") for c in REFLECTOR_SCHEMA_COLUMNS
+    )
+    + ",\n  PRIMARY KEY (network, id)\n)"
+)
+_REFLECTORS_INDEX_DDL = (
+    "CREATE INDEX IF NOT EXISTS idx_reflectors_network ON reflectors (network)"
+)
+
+
+def _reflector_payload(reflector: ReflectorRecord) -> tuple:
+    values = []
+    for col in REFLECTOR_SCHEMA_COLUMNS:
+        value = getattr(reflector, col)
+        values.append(",".join(value) if col == "modules" else value)
+    return tuple(values)
+
+
+def write_reflectors_sqlite(reflectors: Iterable[ReflectorRecord], out_path: Path) -> int:
+    """Write/refresh the ``reflectors`` table in a SEPARATE CC BY 4.0 SQLite file.
+
+    Returns the row count. This writer targets the reflector artifact's OWN ``.db`` and
+    creates ONLY the ``reflectors`` table — it never creates or touches the CC-BY-NC
+    tables (current/history/pota_parks/pota_park_grids/sota_summits). The build wires it
+    to a different path so the two licences never share a file. Idempotent — re-running
+    replaces the rows.
+    """
+    reflectors = list(reflectors)
+    out = Path(out_path)
+    out.parent.mkdir(parents=True, exist_ok=True)
+
+    con = sqlite3.connect(out)
+    try:
+        con.execute(_REFLECTORS_DDL)
+        con.execute(_REFLECTORS_INDEX_DDL)
+        con.execute("DELETE FROM reflectors")  # refresh: idempotent rebuild
+        placeholders = ", ".join("?" for _ in REFLECTOR_SCHEMA_COLUMNS)
+        con.executemany(
+            f"INSERT INTO reflectors ({', '.join(REFLECTOR_SCHEMA_COLUMNS)}) "
+            f"VALUES ({placeholders})",
+            [_reflector_payload(r) for r in reflectors],
+        )
+        con.commit()
+    finally:
+        con.close()
+
+    return len(reflectors)

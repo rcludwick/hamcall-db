@@ -1,0 +1,193 @@
+name: Reflectors
+
+# ============================================================================
+# Nightly rebuild of the digital-voice reflector directory (hdb-refl):
+#
+#   1. fetch DVRef (token) + the XLX registry (no token)
+#   2. write static JSON to site/api/ and commit it IF it changed
+#   3. publish site/ to GitHub Pages
+#   4. publish dated Parquet + SQLite artifacts to a SEPARATE CC BY 4.0 release
+#
+# WHY NIGHTLY BUT CACHED FOR A WEEK
+# ---------------------------------
+# 06:00 UTC is midnight US Mountain. The published files tell clients
+# `client_refresh_days: 7` — the build is nightly so the data is never more than a
+# day stale, while clients are asked to cache for a week so Pages is not hammered by
+# every install polling daily. Those are two different knobs and both matter.
+#
+# The output is content-derived: `generated` carries the UPSTREAM data date, not the
+# build time, and per-row fields never repeat a build stamp. So a night on which
+# nothing upstream changed produces byte-identical files, the commit step finds no
+# diff, and the repository does not accumulate a megabyte of churn a day saying
+# nothing happened.
+#
+# LICENCE SEGREGATION — load-bearing, not housekeeping
+# ----------------------------------------------------
+# Reflector data is CC BY 4.0 (DVRef's 2026-08-04 terms). The callsign dataset is
+# CC BY-NC 4.0. CC BY 4.0 s2(a)(5)(B) forbids imposing restrictions the licence grants
+# away, so merging the two would be a licence violation. That is why this workflow is
+# separate from release.yml, writes its own files, and publishes its own release —
+# exactly the discipline release.yml already applies to the ODbL park grids.
+#
+# SECRETS
+# -------
+# `DVREF_API_TOKEN` — mint at https://dvref.com/accounts/token/ (free, needs a DVRef
+# account). DVRef's terms forbid publishing a token or embedding one in a distributed
+# package, which is the whole reason this job exists: the token stays here, and what
+# ships is static JSON that needs no token to read.
+#
+# Without the secret the job still succeeds and still publishes D-Star: the XLX
+# registry needs no authentication. Every DVRef network is skipped with a warning and
+# keeps whatever is already published.
+
+on:
+  schedule:
+    - cron: "0 6 * * *" # 06:00 UTC daily = midnight US Mountain
+  workflow_dispatch:
+
+# Least privilege: `contents: write` to commit the refreshed JSON and cut the release;
+# `pages`/`id-token` for the Pages deployment.
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Never let two runs race the same branch and the same Pages deployment.
+concurrency:
+  group: reflectors
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+      date: ${{ steps.date.outputs.date }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Set up Python
+        run: uv python install 3.14
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Compute build date
+        id: date
+        run: echo "date=$(date -u +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
+
+      # Builds site/api/*.json plus the dated CC BY 4.0 Parquet/SQLite into dist/.
+      # The existing site/api/ files are the "last good" copy the shrink guard compares
+      # against, so this must run against a checkout, not a clean directory.
+      - name: Build reflector directory
+        env:
+          DVREF_API_TOKEN: ${{ secrets.DVREF_API_TOKEN }}
+        run: uv run hamcall-db-reflectors --out site/api --dist dist/
+
+      # Fail loudly if the build somehow produced nothing — an empty manifest would
+      # otherwise deploy happily and blank out every client.
+      - name: Sanity-check the manifest
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json, pathlib, sys
+          manifest = json.loads(pathlib.Path("site/api/index.json").read_text())
+          networks = manifest.get("networks") or {}
+          total = sum(int(n.get("count", 0)) for n in networks.values())
+          print(f"{len(networks)} networks, {total} reflectors, generated {manifest.get('generated')}")
+          if not networks or total == 0:
+              sys.exit("::error::manifest is empty — refusing to publish")
+          PY
+
+      - name: Commit refreshed JSON if it changed
+        id: commit
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/api
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No upstream changes — nothing to commit."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            git commit -m "reflectors: refresh directory (${{ steps.date.outputs.date }})"
+            git push
+          fi
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: reflector-artifacts
+          path: dist/hamcall-db-reflectors-*
+          if-no-files-found: error
+
+  deploy:
+    needs: refresh
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  release:
+    needs: refresh
+    # Only cut a release when the data actually moved. A nightly release saying
+    # "identical to yesterday" is noise, and it would push the repo's Latest badge
+    # around for no reason.
+    if: needs.refresh.outputs.changed == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: reflector-artifacts
+          path: dist/
+
+      # SEPARATE release, never make_latest: the repo's Latest badge belongs to the
+      # CC BY-NC callsign dataset published by release.yml. LICENSE-CC-BY travels with
+      # the assets so the terms are never separated from the data.
+      - name: Publish reflector release (CC BY 4.0)
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: "latest-reflectors"
+          name: "Latest reflector directory (${{ needs.refresh.outputs.date }})"
+          body: |
+            Digital-voice reflector directory for ${{ needs.refresh.outputs.date }} — **CC BY 4.0**.
+
+            Assets:
+            - `hamcall-db-reflectors-${{ needs.refresh.outputs.date }}.parquet` — one row per (network, id).
+            - `hamcall-db-reflectors-${{ needs.refresh.outputs.date }}.db` — same rows, SQLite (`reflectors` table).
+            - `LICENSE-CC-BY` — the governing licence and required attribution.
+
+            Also served as static JSON, no token required:
+            <https://rcludwick.github.io/hamcall-db/api/index.json>
+
+            **Attribution required.** Reflector data provided by DVRef — <https://dvref.com/>.
+            XLX reflector data from the XLX registry maintained by Luc Engelmann, LX1IQ.
+            Data was reformatted into this project's schema; values are unmodified.
+
+            This is a **separate** dataset from the CC BY-NC `hamcall-db` callsign release and
+            must not be redistributed as part of it — CC BY 4.0 forbids adding the
+            non-commercial restriction that release carries.
+          files: |
+            dist/hamcall-db-reflectors-*
+            LICENSE-CC-BY
+          make_latest: false
+          fail_on_unmatched_files: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -79,3 +79,30 @@ def test_notice_mentions_sota() -> None:
     assert "sota.org.uk" in NOTICE
     assert "sota_summits" in NOTICE  # the dedicated table name
     assert "non-commercial" in NOTICE.lower()
+
+
+def test_notice_documents_reflectors_as_separate_cc_by_file() -> None:
+    # The reflector directory is CC BY 4.0 while the dataset is CC BY-NC. Merging them
+    # would violate CC BY 4.0's ban on adding restrictions, so NOTICE must say so.
+    text = NOTICE
+    assert "DVRef" in text
+    assert "CC BY 4.0" in text
+    assert "LICENSE-CC-BY" in text
+    assert "xlxapi.rlx.lu" in text
+    assert "2(a)(5)(B)" in text
+
+
+def test_notice_has_reflector_attribution_statements() -> None:
+    text = NOTICE
+    assert "Reflector data provided by DVRef — https://dvref.com/" in text
+    assert "LX1IQ" in text
+
+
+def test_cc_by_license_file_exists_and_states_its_scope() -> None:
+    license_file = Path(__file__).resolve().parents[1] / "LICENSE-CC-BY"
+    assert license_file.exists()
+    text = license_file.read_text(encoding="utf-8")
+    assert "CC BY 4.0" in text
+    assert "hamcall-db-reflectors-" in text
+    # CC BY obliges a statement of what was changed.
+    assert "MODIFICATION" in text.upper()

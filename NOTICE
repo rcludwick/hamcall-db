@@ -253,10 +253,78 @@ terms, which means:
     non-commercial basis (pending human sign-off — see source 10). (Source 10 is
     DISABLED BY DEFAULT — opt-in only.)
 
+11. DVRef — digital-voice reflector directory (SEPARATE CC BY 4.0 file)
+   Coverage: M17 (mrefd), YSF, NXDN, P25, URF and XRF reflector listings.
+   Maintainer: Steve Miller, KC1AWV, and the DVRef team.
+   License:  Creative Commons Attribution 4.0 International (CC BY 4.0).
+             https://creativecommons.org/licenses/by/4.0/
+             Declared in DVRef's "Accessing DVRef Data" announcement,
+             2026-08-04, which explicitly permits mirroring, reformatting,
+             commercial use, and building "host files, APIs, directories, and
+             other services" from the data. Responses also carry the license
+             and attribution inline in a `_dvref_metadata` block.
+   Attribution is REQUIRED. Required attribution statement:
+
+       Reflector data provided by DVRef — https://dvref.com/
+
+   ACCESS TERMS (separate from the data license): DVRef's Acceptable Use
+   Policy (https://dvref.com/aup/) governs use of their infrastructure. They
+   ask developers to use the API rather than scraping the website OR
+   re-downloading from downstream mirrors, to send a meaningful User-Agent
+   identifying the application, to authenticate with a per-account token from
+   https://dvref.com/accounts/token/, and to cache rather than refetch
+   unchanged data. DVRef states it offers NO SLA. This project's importer
+   (hamcall_db/sources/dvref.py) implements all of these.
+
+   DO NOT publish an API token or embed one in a distributed package — DVRef
+   forbids it, and it is why the published artifact is static JSON that needs
+   no token to consume.
+
+   NOTE: this source is NOT part of the CC BY-NC combined dataset. See
+   source 12's note and the LICENSE-CC-BY file.
+
+12. XLX registry (xlxapi.rlx.lu) — D-Star reflector directory (SEPARATE CC BY 4.0 file)
+   Coverage: XLX / D-Star reflector listings (~890 reflectors).
+   Maintainer: Luc Engelmann, LX1IQ.
+   License:  No explicit machine-readable license is published. This is a
+             self-registration directory of publicly-advertised reflector
+             addresses, served openly over HTTP for exactly this purpose
+             (Pi-Star and other projects redistribute it). Used on that basis,
+             with attribution. **Flagged for human sign-off** alongside the
+             other assumed-basis sources.
+   Required attribution statement:
+
+       XLX reflector data from the XLX registry maintained by Luc Engelmann,
+       LX1IQ (http://xlxapi.rlx.lu/).
+
+   THE REFLECTOR DIRECTORY IS A SEPARATE CC BY 4.0 DATASET (sources 11-12)
+   ----------------------------------------------------------------------
+   The reflector artifacts — hamcall-db-reflectors-YYYY-MM-DD.parquet, the
+   matching .db (table: reflectors), and the static JSON under site/api/ — are
+   NOT part of the CC BY-NC combined dataset and must never be merged into it.
+
+   This is a license requirement, not a filing preference. DVRef's data is
+   CC BY 4.0, and CC BY 4.0 section 2(a)(5)(B) forbids imposing "additional or
+   different terms ... if doing so restricts exercise of the Licensed Rights".
+   Folding it into the CC BY-NC artifacts would impose a non-commercial
+   restriction that CC BY 4.0 grants away — a license violation.
+
+   Same segregation discipline as the ODbL park grids (source 8), pointing the
+   other way: source 8's upstream is MORE restrictive than this project, and
+   sources 11-12 are LESS. See the LICENSE-CC-BY file for the full terms,
+   required attribution, and the statement of modifications.
+
+
 The SEPARATE OSM park-grids file (source 8) is NOT part of this combined
 CC BY-NC dataset: it is licensed under ODbL (see the LICENSE-ODbL file and
 source 8 above) and must be redistributed under its own terms. Do not co-locate
 or merge it into the CC BY-NC artifacts.
+
+The SEPARATE reflector directory (sources 11-12) is likewise NOT part of this
+combined CC BY-NC dataset: it is licensed under CC BY 4.0 (see the
+LICENSE-CC-BY file) and merging it into the CC BY-NC artifacts would violate
+CC BY 4.0's prohibition on adding restrictions. Do not co-locate or merge it
+into the CC BY-NC artifacts.
 
 PROJECT DECISION (2026-06-16): the published hamcall-db dataset artifacts (the
 Parquet files and the SQLite .db) are licensed under Creative Commons

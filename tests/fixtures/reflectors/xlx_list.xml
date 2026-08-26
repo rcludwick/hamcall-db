@@ -1,0 +1,33 @@
+<XLXAPI>
+  <answer>
+    <reflectorlist>
+         <reflector>
+            <name>XLX001</name>
+            <lastip>217.154.120.107</lastip>   
+            <dashboardurl>http://217.154.120.107</dashboardurl> 
+            <uptime>1331982</uptime>
+            <lastcontact>1787702162</lastcontact>
+            <country>Italy Centro Digiland</country>
+            <comment>DStar <> DMR TG22208 BM2222 <> YSF 22208 <> NXDN 22208</comment>
+         </reflector>
+         <reflector>
+            <name>XLX836</name>
+            <lastip>45.56.69.219</lastip>   
+            <dashboardurl>http://xlx.n7mky.com</dashboardurl> 
+            <uptime>19032567</uptime>
+            <lastcontact>1787702122</lastcontact>
+            <country>USA</country>
+            <comment>Welcome</comment>
+         </reflector>
+         <reflector>
+            <name>XLXACP</name>
+            <lastip>102.67.58.154</lastip>   
+            <dashboardurl>http://xlxacp.zukamore.co.za</dashboardurl> 
+            <uptime>1832674</uptime>
+            <lastcontact>1787701978</lastcontact>
+            <country>South Africa</country>
+            <comment>Cape Agulhas - KF05ae</comment>
+         </reflector>
+    </reflectorlist>
+  </answer>
+</XLXAPI>

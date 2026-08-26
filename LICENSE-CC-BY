@@ -1,0 +1,82 @@
+hamcall-db — reflector directory: LICENSE (CC BY 4.0)
+=====================================================
+
+THIS LICENSE APPLIES ONLY to the SEPARATE digital-voice reflector directory
+artifacts:
+
+  * hamcall-db-reflectors-YYYY-MM-DD.parquet
+  * hamcall-db-reflectors-YYYY-MM-DD.db        (table: reflectors)
+  * the static JSON published at site/api/ (index.json + reflectors/*.json)
+
+These files list digital-voice reflectors — D-Star, M17, YSF, NXDN, P25 and
+URF — with their addresses, ports and modules. They are distributed under the
+Creative Commons Attribution 4.0 International license (CC BY 4.0), NOT under
+the CC BY-NC 4.0 terms that cover the rest of the hamcall-db project.
+
+  https://creativecommons.org/licenses/by/4.0/
+
+WHY THIS IS A SEPARATE FILE, AND WHY IT MUST STAY ONE
+-----------------------------------------------------
+DVRef placed its reflector data under CC BY 4.0 in its "Accessing DVRef Data"
+announcement of 2026-08-04, explicitly permitting mirroring, reformatting,
+commercial use, and the creation of "host files, APIs, directories, and other
+services".
+
+CC BY 4.0 section 2(a)(5)(B) forbids a redistributor from offering or imposing
+"any additional or different terms or conditions on ... the Licensed Material
+if doing so restricts exercise of the Licensed Rights". The rest of hamcall-db
+is CC BY-NC 4.0 — non-commercial. Merging this reflector data into those
+artifacts would impose a non-commercial restriction that CC BY 4.0 grants away,
+so it would be a LICENSE VIOLATION, not merely untidy bookkeeping.
+
+This is the same segregation discipline the project applies to the
+OpenStreetMap-derived park grids (see LICENSE-ODbL), pointing the other way:
+there the upstream is MORE restrictive than the project, here it is LESS.
+
+Do not co-locate or merge these files into the CC BY-NC artifacts.
+
+WHAT CC BY 4.0 REQUIRES OF YOU WHEN YOU REDISTRIBUTE THESE FILES
+-----------------------------------------------------------------
+(Summary — the full text at the URL above governs.)
+
+  * ATTRIBUTE: give appropriate credit, provide a link to the license, and
+    keep any notice of previous modifications.
+  * INDICATE CHANGES: state if you modified the material.
+  * NO ADDITIONAL RESTRICTIONS: you may not apply legal terms or technological
+    measures that legally restrict others from doing anything the license
+    permits — including, specifically, adding a non-commercial term.
+
+You are free to share and adapt the material for any purpose, including
+commercially.
+
+REQUIRED ATTRIBUTION
+--------------------
+Reproduce both statements below when redistributing these files:
+
+    Reflector data provided by DVRef — https://dvref.com/
+
+    XLX reflector data from the XLX registry maintained by Luc Engelmann,
+    LX1IQ (http://xlxapi.rlx.lu/).
+
+STATEMENT OF MODIFICATION (required by CC BY 4.0)
+--------------------------------------------------
+The upstream rows were reformatted into this project's common reflector schema:
+field names and structure differ from upstream, records from the two sources
+were combined into one set per network, entries lacking a resolvable address
+were dropped, and XLX registrations not seen by the registry in over 30 days
+were treated as inactive and omitted. Field VALUES are otherwise unmodified.
+
+Two derived fields are computed by this project and are not upstream data:
+`port` for D-Star (30001, the DExtra protocol constant, which the registry does
+not publish) and `callsign` for XLX rows (the XRF-form name an XLX reflector
+answers to on the DExtra wire).
+
+DVRef's Acceptable Use Policy — https://dvref.com/aup/ — governs ACCESS to
+DVRef's own infrastructure. It is separate from the license on the data, and it
+is why this project pulls from DVRef's API with an identifying User-Agent and a
+per-account token rather than scraping their site or re-downloading from
+third-party mirrors. Nothing in this file grants you access to DVRef's API;
+mint your own token at https://dvref.com/accounts/token/.
+
+The simplest way to comply is to redistribute this file unmodified alongside
+the data.

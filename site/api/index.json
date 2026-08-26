@@ -1,0 +1,65 @@
+{
+  "client_refresh_days": 7,
+  "expires_hint": "2026-09-02",
+  "generated": "2026-08-26",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream; values are unmodified.",
+  "networks": {
+    "dstar": {
+      "count": 953,
+      "generated": "2026-08-26",
+      "source": {
+        "name": "XLX registry (LX1IQ) + DVRef",
+        "url": "http://xlxapi.rlx.lu/api.php?do=GetReflectorList"
+      },
+      "url": "reflectors/dstar.json"
+    },
+    "m17": {
+      "count": 104,
+      "generated": "2026-08-26",
+      "source": {
+        "name": "DVRef",
+        "url": "https://dvref.com/api/v2/"
+      },
+      "url": "reflectors/m17.json"
+    },
+    "nxdn": {
+      "count": 294,
+      "generated": "2026-08-26",
+      "source": {
+        "name": "DVRef",
+        "url": "https://dvref.com/api/v2/"
+      },
+      "url": "reflectors/nxdn.json"
+    },
+    "p25": {
+      "count": 313,
+      "generated": "2026-08-26",
+      "source": {
+        "name": "DVRef",
+        "url": "https://dvref.com/api/v2/"
+      },
+      "url": "reflectors/p25.json"
+    },
+    "urf": {
+      "count": 89,
+      "generated": "2026-08-26",
+      "source": {
+        "name": "DVRef",
+        "url": "https://dvref.com/api/v2/"
+      },
+      "url": "reflectors/urf.json"
+    },
+    "ysf": {
+      "count": 1432,
+      "generated": "2026-08-26",
+      "source": {
+        "name": "DVRef",
+        "url": "https://dvref.com/api/v2/"
+      },
+      "url": "reflectors/ysf.json"
+    }
+  },
+  "schema_version": 1
+}

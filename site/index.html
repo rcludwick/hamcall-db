@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>hamcall-db</title>
+<meta name="description" content="Openly-licensed amateur radio reference data: a callsign database and a digital-voice reflector directory served as static JSON.">
+<style>
+  :root {
+    --bg: #fbfbfa;      --panel: #ffffff;   --ink: #16181d;
+    --muted: #5c6370;   --line: #e2e4e9;    --accent: #1a5fb4;
+    --accent-soft: #eaf1fb; --code-bg: #f4f5f7; --warn-bg: #fff8e6; --warn-line: #e8c96a;
+    --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #14161a;    --panel: #1b1e24;   --ink: #e6e8ec;
+      --muted: #9aa3b2; --line: #2b3038;    --accent: #78aeff;
+      --accent-soft: #16233a; --code-bg: #23272f; --warn-bg: #2c2618; --warn-line: #6b5a22;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #14161a;      --panel: #1b1e24;   --ink: #e6e8ec;
+    --muted: #9aa3b2;   --line: #2b3038;    --accent: #78aeff;
+    --accent-soft: #16233a; --code-bg: #23272f; --warn-bg: #2c2618; --warn-line: #6b5a22;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 60rem; margin: 0 auto; padding: 3rem 1.25rem 5rem; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 1.75rem; margin-bottom: 2.5rem; }
+  h1 { font-size: 2.1rem; margin: 0 0 .4rem; letter-spacing: -.02em; }
+  h2 { font-size: 1.3rem; margin: 2.75rem 0 .85rem; letter-spacing: -.01em; }
+  h3 { font-size: 1.02rem; margin: 1.75rem 0 .5rem; }
+  .lede { color: var(--muted); font-size: 1.08rem; margin: 0; max-width: 46rem; }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  code, pre { font-family: var(--mono); font-size: .875rem; }
+  code { background: var(--code-bg); padding: .12em .38em; border-radius: 4px; }
+  pre {
+    background: var(--code-bg); border: 1px solid var(--line); border-radius: 8px;
+    padding: .9rem 1rem; overflow-x: auto; margin: .85rem 0;
+  }
+  pre code { background: none; padding: 0; }
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 1.15rem 1.25rem; margin: 1rem 0; }
+  .note { background: var(--warn-bg); border: 1px solid var(--warn-line); border-radius: 10px; padding: 1rem 1.15rem; margin: 1.25rem 0; }
+  .note strong { display: block; margin-bottom: .3rem; }
+  .scroll { overflow-x: auto; margin: 1rem 0; }
+  table { border-collapse: collapse; width: 100%; font-size: .9rem; min-width: 34rem; }
+  th, td { text-align: left; padding: .55rem .7rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-weight: 600; color: var(--muted); font-size: .78rem; text-transform: uppercase; letter-spacing: .04em; }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; font-family: var(--mono); }
+  .pill {
+    display: inline-block; font-size: .72rem; font-weight: 600; padding: .12rem .5rem;
+    border-radius: 999px; background: var(--accent-soft); color: var(--accent); white-space: nowrap;
+  }
+  .stamp { color: var(--muted); font-size: .85rem; }
+  footer { margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .88rem; }
+  ul { padding-left: 1.2rem; }
+  li { margin: .3rem 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>hamcall-db</h1>
+  <p class="lede">
+    Openly-licensed amateur radio reference data, rebuilt from upstream sources and
+    published as files you can fetch instead of APIs you have to register for.
+  </p>
+</header>
+
+<h2>Reflector directory</h2>
+
+<p>
+  A digital-voice reflector directory for D-Star, M17, YSF, NXDN, P25 and URF, served as
+  static JSON. No API key, no account, no rate limit — it is a file on a CDN.
+</p>
+
+<div class="scroll">
+<table id="networks">
+  <thead>
+    <tr><th>Network</th><th>Endpoint</th><th style="text-align:right">Reflectors</th><th>Updated</th></tr>
+  </thead>
+  <tbody id="network-rows">
+    <tr><td colspan="4" class="stamp">Loading from <code>api/index.json</code>…</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Using it</h3>
+
+<p>
+  Fetch <a href="api/index.json"><code>api/index.json</code></a> first. It lists every
+  network with its row count and the date its data was generated, so a client can decide
+  whether its cached copy is stale without downloading the big files.
+</p>
+
+<pre><code>curl -s https://rcludwick.github.io/hamcall-db/api/index.json
+curl -s https://rcludwick.github.io/hamcall-db/api/reflectors/dstar.json</code></pre>
+
+<p>
+  Each reflector carries an <code>id</code>, a <code>host</code> and a
+  <code>port</code>, plus <code>modules</code> where the network has them. D-Star and M17
+  entries also carry <code>callsign</code> — the name the reflector answers to
+  <em>on the air</em>, which is not always its directory name. An XLX reflector is listed
+  as <code>XLX836</code> but a DExtra client must put <code>XRF836</code> in its RPT1/RPT2
+  header, so the value is published rather than left for each client to re-derive.
+</p>
+
+<pre><code>{
+  "id": "XLX836",
+  "callsign": "XRF836",
+  "host": "45.56.69.219",
+  "port": 30001,
+  "country": "USA",
+  "source": "xlx"
+}</code></pre>
+
+<div class="note">
+  <strong>XRF and XLX are not the same reflectors.</strong>
+  They share a numbering scheme and nothing else. Measured 2026-08-26, 13 of 14 sampled
+  <code>XRF###</code>/<code>XLX###</code> pairs resolved to entirely different servers —
+  <code>XRF002</code> is <code>xrf002.dstar.club</code>, while <code>XLX002</code> is a
+  host in China. Both are published under their own ids and are never merged.
+</div>
+
+<h3>Refresh policy</h3>
+
+<p>
+  The files are rebuilt nightly, but <code>client_refresh_days</code> is <strong>7</strong>:
+  please cache for a week. Reflector hosts move on a scale of weeks, so polling harder
+  buys nothing and costs everyone bandwidth. The <code>generated</code> date reflects the
+  <em>data</em>, not the build — a rebuild that finds nothing new leaves the files byte for
+  byte unchanged.
+</p>
+
+<p>
+  A network whose upstream fails, or whose row count collapses, keeps its previous file
+  rather than publishing a regression. Upstream is volunteer-run and offers no SLA, so an
+  outage there should not blank out every client's reflector picker.
+</p>
+
+<h2>Callsign dataset</h2>
+
+<p>
+  A normalized amateur licensee dataset aggregated from national regulators, published as
+  Parquet and SQLite through
+  <a href="https://github.com/rcludwick/hamcall-db/releases">GitHub Releases</a> rather
+  than served here — it is far too large for a static site. Separate reference datasets
+  cover POTA parks and SOTA summits.
+</p>
+
+<h2>Where the data comes from</h2>
+
+<p>
+  Every upstream, its licence, and the attribution it requires. The full terms are in
+  <a href="https://github.com/rcludwick/hamcall-db/blob/main/NOTICE">NOTICE</a>.
+</p>
+
+<div class="scroll">
+<table>
+  <thead>
+    <tr><th>Source</th><th>Covers</th><th>Licence</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://dvref.com/">DVRef</a></td>
+      <td>M17, YSF, NXDN, P25, URF and XRF reflectors</td>
+      <td><span class="pill">CC BY 4.0</span></td>
+    </tr>
+    <tr>
+      <td><a href="http://xlxapi.rlx.lu/">XLX registry</a> (LX1IQ)</td>
+      <td>XLX / D-Star reflectors</td>
+      <td><span class="pill">Public registry</span></td>
+    </tr>
+    <tr><td><a href="https://www.fcc.gov/uls">FCC ULS</a></td><td>US licensees</td><td><span class="pill">Public domain</span></td></tr>
+    <tr><td><a href="https://ised-isde.canada.ca/">ISED Canada</a></td><td>Canadian licensees</td><td><span class="pill">OGL-Canada 2.0</span></td></tr>
+    <tr><td><a href="https://www.acma.gov.au/">ACMA</a></td><td>Australian licensees</td><td><span class="pill">CC BY 4.0</span></td></tr>
+    <tr><td><a href="https://www.country-files.com/">AD1C cty.dat</a></td><td>DXCC prefix mapping</td><td><span class="pill">Non-commercial</span></td></tr>
+    <tr><td><a href="https://www.allstarlink.org/">AllStarLink</a></td><td>Node numbers per callsign</td><td><span class="pill">Non-commercial</span></td></tr>
+    <tr><td><a href="https://parksontheair.com/">POTA</a></td><td>Park directory</td><td><span class="pill">Non-commercial</span></td></tr>
+    <tr><td><a href="https://www.sota.org.uk/">SOTA</a></td><td>Summit directory</td><td><span class="pill">Non-commercial</span></td></tr>
+    <tr><td><a href="https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-download">PAD-US</a></td><td>US park boundaries (build-time)</td><td><span class="pill">Public domain</span></td></tr>
+    <tr><td><a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a></td><td>Non-US park boundaries (build-time)</td><td><span class="pill">ODbL</span></td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Licences are kept apart, deliberately</h2>
+
+<p>
+  These datasets are <strong>not</strong> distributed under one licence, and combining
+  them is the consumer's decision to make knowingly:
+</p>
+
+<ul>
+  <li>
+    <strong>Reflector directory — CC BY 4.0.</strong> Free for commercial use. It is a
+    separate artifact precisely so it stays that way: CC BY 4.0 forbids adding
+    restrictions the licence grants away, so folding it into the non-commercial callsign
+    dataset would be a licence violation, not just untidy.
+  </li>
+  <li>
+    <strong>Callsign dataset — CC BY-NC 4.0.</strong> Non-commercial, inherited from
+    <code>cty.dat</code> and other upstreams.
+  </li>
+  <li>
+    <strong>OSM-derived park grids — ODbL.</strong> Share-alike, in their own files.
+    Joining them to anything else and redistributing the result makes that result ODbL.
+  </li>
+</ul>
+
+<p class="stamp">Build code is MIT. The published data is not — see the terms above.</p>
+
+<footer>
+  <p>
+    Reflector data provided by DVRef — <a href="https://dvref.com/">https://dvref.com/</a>.
+    XLX reflector data from the XLX registry maintained by Luc Engelmann, LX1IQ.
+    Data reformatted into this project's JSON schema; values are unmodified.
+  </p>
+  <p><a href="https://github.com/rcludwick/hamcall-db">github.com/rcludwick/hamcall-db</a></p>
+</footer>
+
+</div>
+
+<script>
+// Fill the network table from the manifest so the counts on this page can never
+// disagree with the files it is describing.
+(async function () {
+  const body = document.getElementById("network-rows");
+  const LABELS = { dstar: "D-Star", m17: "M17", ysf: "YSF (Fusion)", nxdn: "NXDN", p25: "P25", urf: "URF" };
+  try {
+    const res = await fetch("api/index.json", { cache: "no-cache" });
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    const manifest = await res.json();
+    const names = Object.keys(manifest.networks || {}).sort();
+    if (!names.length) throw new Error("no networks in manifest");
+    body.innerHTML = names.map(function (name) {
+      const net = manifest.networks[name];
+      const href = "api/" + net.url;
+      return "<tr>"
+        + "<td>" + (LABELS[name] || name) + "</td>"
+        + '<td><a href="' + href + '"><code>' + href + "</code></a></td>"
+        + '<td class="num">' + Number(net.count).toLocaleString() + "</td>"
+        + '<td class="stamp">' + net.generated + "</td>"
+        + "</tr>";
+    }).join("");
+  } catch (err) {
+    body.innerHTML = '<tr><td colspan="4" class="stamp">'
+      + 'Could not load <a href="api/index.json"><code>api/index.json</code></a> ('
+      + String(err.message || err) + ").</td></tr>";
+  }
+})();
+</script>
+
+</body>
+</html>

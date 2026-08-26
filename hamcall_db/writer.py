@@ -14,6 +14,7 @@ import polars as pl
 
 from hamcall_db.history import HISTORY_SCHEMA_COLUMNS, HistoryRow
 from hamcall_db.models import SCHEMA_COLUMNS, Record
+from hamcall_db.reflectors import REFLECTOR_SCHEMA_COLUMNS, ReflectorRecord
 from hamcall_db.sources.padus_grids import PARK_GRID_SCHEMA_COLUMNS, ParkGridRecord
 from hamcall_db.sources.pota import PARK_SCHEMA_COLUMNS, ParkRecord
 from hamcall_db.sources.sota import SUMMIT_SCHEMA_COLUMNS, SummitRecord
@@ -179,3 +180,38 @@ def read_history_parquet(in_path: Path) -> list[HistoryRow]:
     """Read a prior history artifact back into `HistoryRow`s (the diff's prior state)."""
     frame = pl.read_parquet(in_path)
     return [HistoryRow(**row) for row in frame.to_dicts()]
+
+
+# Reflector directory artifact (hdb-refl): a SEPARATE reference dataset — reflectors are
+# places, not licensees — written to its OWN file under a DIFFERENT licence. DVRef's data
+# is CC BY 4.0, and CC BY 4.0 s2(a)(5)(B) forbids adding restrictions the licence grants
+# away, so folding these rows into the CC BY-NC artifacts would be a licence violation,
+# not merely untidy. Same segregation discipline as the ODbL park grids, opposite
+# direction: there the upstream was MORE restrictive, here it is LESS.
+# `modules` is a string list ('A'..'Z'); `port` is Int64; everything else is a string.
+def _reflector_dtype(col: str) -> pl.DataType:
+    if col == "port":
+        return pl.Int64
+    if col == "modules":
+        return pl.List(pl.Utf8)
+    return pl.Utf8
+
+
+_REFLECTOR_SCHEMA: dict[str, pl.DataType] = {
+    col: _reflector_dtype(col) for col in REFLECTOR_SCHEMA_COLUMNS
+}
+
+
+def write_reflectors_parquet(reflectors: Iterable[ReflectorRecord], out_path: Path) -> int:
+    """Write `ReflectorRecord`s to `out_path` as Parquet. Returns the row count.
+
+    SEPARATE CC BY 4.0 artifact (hamcall-db-reflectors-YYYY-MM-DD.parquet): one row per
+    (network, id) reflector across D-Star, M17, YSF, NXDN, P25 and URF. NEVER written into
+    the CC BY-NC callsign/parks files — see the module comment above. Attribution travels
+    with the artifact in NOTICE and the release body.
+    """
+    rows = [asdict(r) for r in reflectors]
+    frame = pl.DataFrame(rows, schema=_REFLECTOR_SCHEMA)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    frame.write_parquet(out_path)
+    return frame.height

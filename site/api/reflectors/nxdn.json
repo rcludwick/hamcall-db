@@ -1,0 +1,2757 @@
+{
+  "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
+  "client_refresh_days": 7,
+  "count": 294,
+  "generated": "2026-08-26",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream; values are unmodified.",
+  "network": "nxdn",
+  "reflectors": [
+    {
+      "country": "GR",
+      "dashboard": "http://nxref.duckdns.org:8008/nxdn/",
+      "host": "2.87.21.221",
+      "id": "100",
+      "name": "NXDN 100",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://dvswitch.org/Modern/?conf=NXDN_NA_Reflector",
+      "description": "<p>NXDN North America</p>",
+      "host": "nxdn.dvswitch.org",
+      "id": "10200",
+      "name": "NXDN North America",
+      "port": 42400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://10201.dyndns.org",
+      "host": "10201.dyndns.org",
+      "id": "10201",
+      "name": "North America Tach",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "description": "<p>NXDN Bridged Talkgroup into the SkyHubLink system Via Allstar Node 600798</p>\r\n<p>Managed by KK7GKG and W0SKY</p>",
+      "host": "nxdn.skyhublink.com",
+      "id": "10294",
+      "name": "SkyHubLink",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "ES",
+      "dashboard": "http://ea5gvk.duckdns.org:84/NXDN/",
+      "host": "ea5gvk.duckdns.org",
+      "id": "10301",
+      "name": "Spain OLE",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "GB",
+      "host": "warc.ddns.net",
+      "id": "10350",
+      "name": "WARC",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "AU",
+      "dashboard": "http://pacific.nxref.org",
+      "description": "<p>Pacific NXDN TG 10400</p>",
+      "host": "pacific.nxref.org",
+      "id": "10400",
+      "name": "Pacific NXDN 10400",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://urfd.dvswitch.org/urf",
+      "description": "<p>DVSwitch test</p>",
+      "host": "urfd.dvswitch.org",
+      "id": "10902",
+      "name": "URF902",
+      "port": 41902,
+      "source": "dvref"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://mb6er.com/nxdn/",
+      "description": "<p>Connects to a popular multimode network.&nbsp;</p>",
+      "host": "81.150.10.62",
+      "id": "10922",
+      "name": "10922",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "description": "<p>NXDN repeater group. RF repeaters.</p>",
+      "host": "area51nxdn.zapto.org",
+      "id": "11053",
+      "name": "W6APX NXDN Group",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "description": "<p>KK6RQ NXDN Reflector</p>",
+      "host": "area52.zapto.org",
+      "id": "11069",
+      "name": "11069",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "host": "innet.tplinkdns.com",
+      "id": "11349",
+      "name": "URFJSS",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://www.kg4trv.ddns.net",
+      "description": "<p>We are a group of friends who are passionate about digital radio, its numerous modes, networks and services.</p>\r\n<p>Somos un grupo de amigos que tenemos pasion por la radio digital, sus numerosas modalidades, redes y servicios</p>",
+      "host": "104.5.243.93",
+      "id": "11520",
+      "name": "US D Friends",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://116nxdn.freestar.network",
+      "description": "<p>NXDN TG 116. Connected to TGIF TG116, SystemX TG116 &amp; IPSC2-FreeSTAR TG116 SLOT1.</p>",
+      "host": "116nxdn.freestar.network",
+      "id": "116",
+      "name": "116 TGIF",
+      "port": 41403,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://www.sbanetweb.com:8080/dvs4/",
+      "description": "<p class=\"MsoNormal\"><strong><span style=\"font-size: 11.0pt;\">Emergency Radio Long Island </span></strong><span style=\"font-size: 11.0pt;\">provides a multi-modal hub for both the practice of and the enjoyment in Ham Radio and Emergency Communications.</span></p>\r\n<p class=\"MsoNormal\"><span style=\"font-size: 11.0pt;\">&nbsp;</span></p>\r\n<p class=\"MsoNormal\"><span style=\"font-size: 11.0pt;\">With approximately a dozen different nets either locally produced or re-broadcast Ham Radio Operators or supporters can listen (via Broadcasity) or participate.</span></p>\r\n<p class=\"MsoNormal\"><span style=\"font-size: 11.0pt;\">&nbsp;</span></p>\r\n<p class=\"MsoNormal\"><strong><span style=\"font-size: 11.0pt;\">Nets available on:<br>AllStar 62499 as well as TG 11710 for TGIF, YSF, P25 and NXDN, M17-117,<br>EchoLink KC2NJV-L and HOIP ext 15077, Amateur Wire ext 90006 and HamShack Hotline ext 940064</span></strong><span style=\"font-size: 11.0pt;\"><br><em>Up to date info can be found at&nbsp;<a href=\"http://sbanetweb.com:8080/\">SBANETWEB.com:8080</a></em></span></p>",
+      "host": "96.224.250.24",
+      "id": "11710",
+      "name": "11710",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "AU",
+      "host": "florida.nxref.org",
+      "id": "1200",
+      "name": "Florida",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://nxdn.ddns.net:81",
+      "host": "nxdn.ddns.net",
+      "id": "121",
+      "name": "XLX121 NXDN  TG121",
+      "port": 41401,
+      "source": "dvref"
+    },
+    {
+      "country": "ES",
+      "dashboard": "http://nxdngalicia.ddns.net:8080/",
+      "description": "<p>Multireflector Galicia</p>",
+      "host": "nxdngalicia.ddns.net",
+      "id": "127",
+      "name": "NXDN EA1RKF",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://nxdn.kd9fuw.com:4000",
+      "description": "<p>KD9FUW NXDN REFLECTOR &ndash; WAUSAU, WI</p>\r\n<p>WHILE THIS SERVER HOSTS MULTIPLE MODES, THEY ARE NOT LINKED AT THIS TIME.</p>\r\n<p>IF YOU HAVE ANY QUESTIONS, PLEASE EMAIL:&nbsp;<a href=\"mailto:AFDERRICO@OUTLOOK.COM\">AFDERRICO@OUTLOOK.COM</a></p>",
+      "host": "nxdn.kd9fuw.com",
+      "id": "131",
+      "name": "KD9FUW-NXDN",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://www.k6ef.net/dvswitch/",
+      "description": "<p>TG1337 K6EF</p>",
+      "host": "www.k6ef.net",
+      "id": "1337",
+      "name": "K6EF",
+      "port": 41040,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://xlx137.mywire.org",
+      "host": "xlx137.mywire.org",
+      "id": "137",
+      "name": "137",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "TH",
+      "dashboard": "https://nxdn138.freeddns.org/",
+      "description": "<p>Interlink to XLX138 Module X<br><a href=\"https://xlx138.freeddns.org/\">https://xlx138.freeddns.org</a><br><br>Analog Digital Radio Thailand Team</p>",
+      "host": "nxdn138.freeddns.org",
+      "id": "138",
+      "name": "XLX138 XNexus",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "ES",
+      "dashboard": "http://nxdn.c4fm.es/nxdn14/",
+      "description": "<p><strong>(WWW) Spanish NXDN</strong> <strong class=\"Yjhzub\">World Wide Reflector&nbsp; ONLY NXDN&nbsp;</strong></p>",
+      "host": "nxdn.c4fm.es",
+      "id": "14",
+      "name": "(WWW) Spanish NXDN",
+      "port": 41401,
+      "source": "dvref"
+    },
+    {
+      "country": "TH",
+      "dashboard": "https://nxdn.hs3tdi.com/",
+      "description": "<p>NXDN Link XLX148 Modules X-Nexus</p>",
+      "host": "nxdn.hs3tdi.com",
+      "id": "148",
+      "name": "148",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "TH",
+      "dashboard": "https://nxdn.pwk.ac.th/",
+      "description": "<p>NXDN Link XLX149 Modules X-Nexus</p>",
+      "host": "nxdn.pwk.ac.th",
+      "id": "149",
+      "name": "149",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://xlx587.openquad.net",
+      "description": "<p>The Quadnet Digitial Voice Network, https://www.openquad.net</p>",
+      "host": "104.8.207.66",
+      "id": "15431",
+      "name": "URF587",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://xlx307.ddns.net/",
+      "description": "<p>The Quadnet Digital voice network, https://www.openquad.net</p>",
+      "host": "72.21.76.154",
+      "id": "15432",
+      "name": "URF307",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "CA",
+      "description": "<p>NXDN&nbsp; London Ontario Canada</p>",
+      "host": "209.142.25.73",
+      "id": "15509",
+      "name": "London ON CA",
+      "port": 41405,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "description": "<p>Personal NXDN reflector operated by KE7WIL.</p>",
+      "host": "node64189.ddns.net",
+      "id": "15846",
+      "name": "KE7WIL Personal NXDN Reflector",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "GR",
+      "dashboard": "http://nxdn165.ddns.net:81",
+      "description": "<p>NXDN 165 Reflector of Digital Voice GREECE.</p>",
+      "host": "nxdn165.ddns.net",
+      "id": "165",
+      "name": "NXDN165-Digital Voice GREECE",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "AU",
+      "dashboard": "https://sfarg-nxdn.vkradio.com",
+      "host": "112.213.34.65",
+      "id": "1701",
+      "name": "SFARG",
+      "port": 41402,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "host": "108.203.211.67",
+      "id": "17352",
+      "name": "NXDN K4SID GA",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "AT",
+      "dashboard": "https://nxdn.oevsv.at/",
+      "host": "nxdn.oevsv.at",
+      "id": "20000",
+      "name": "20000",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "GR",
+      "dashboard": "https://202nxdn.foxhost.org",
+      "description": "<p>NXDN - TG202&nbsp; HELLAS Zone Net!</p>",
+      "host": "foxhost.org",
+      "id": "202",
+      "name": "HELLAS Zone",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "GR",
+      "dashboard": "http://svham.eu:9090",
+      "description": "<p><strong>AETHER HELLAS</strong>&nbsp;is an experimental&nbsp;<strong>Greek</strong> NXDN digital voice project.</p>\r\n<p>Initiated and currently operated by a licensed radio amateur,<br>it openly invites fellow system operators to interconnect and collaborate,<br>as well as licensed radio amateurs to connect via hotspots<br>for testing, experimentation and on-air communication.</p>\r\n<h5>What is \"Aether Hellas\"?</h5>\r\n<p>In Greek Mythology,&nbsp;<strong>Aether</strong>&nbsp;was the personification of the upper air breathed by the Gods. In early physics, it was believed to be the medium that fills the universe, allowing waves to propagate through space.<br>For us,&nbsp;<strong>Aether Hellas</strong> represents the \"invisible web\" that connects Greece to the world. It is our digital gateway that transforms the air into communication, bridging the distances between Rhodes, Thessaly, and Central Greece, uniting people and technology under a shared amateur radio vision.</p>",
+      "host": "38.19.202.24",
+      "id": "2021",
+      "name": "GR-AETHER-HELLAS-NXDN",
+      "port": 41402,
+      "source": "dvref"
+    },
+    {
+      "country": "GR",
+      "dashboard": "http://192.227.190.153:83/",
+      "description": "<p>GR-Hellas-ADN-NXDN</p>",
+      "host": "192.227.190.153",
+      "id": "20210",
+      "name": "NXDN-2021.ADN.Systems.Greece",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "GR",
+      "dashboard": "http://2021adn.ddns.net:89/",
+      "description": "<p>GR-Hellas-ADN-NXDN</p>",
+      "host": "2021adn.ddns.net",
+      "id": "20218",
+      "name": "NXDN-2021.ADN.Systems.Greece",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "GR",
+      "dashboard": "http://hellas-node.ddns.net:83/nxlink/",
+      "host": "hellas-node.ddns.net",
+      "id": "20222",
+      "name": "NXDN-2022.ADN.Systems.Hellas-Node",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "GR",
+      "dashboard": "https://dmr.freedmr.gr/",
+      "host": "dmr.freedmr.gr",
+      "id": "20281",
+      "name": "GR-KERKYRA-DV",
+      "port": 41481,
+      "source": "dvref"
+    },
+    {
+      "country": "DE",
+      "dashboard": "http://nxdn.projekt-pegasus.net/1/",
+      "description": "<p>Bridge to Projekt Pegasus&nbsp; #Pegasus Prime (Pegasus1) via NXDN</p>\r\n<p>For more infos see at projekt-pegasus.net&nbsp;</p>",
+      "host": "5.9.59.26",
+      "id": "20328",
+      "name": "DE-Pegasus-NXDN",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "NL",
+      "dashboard": "http://nxdn.repeaters-haaglanden.nl:8080/",
+      "host": "nxdn.repeaters-haaglanden.nl",
+      "id": "204",
+      "name": "Nxdn NL",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "DE",
+      "dashboard": "https://dl-nordwest.com/urf",
+      "description": "<p><strong>DL-Nordwest Multigateway</strong></p>\r\n<p>DMR: BM TG26429, IPSC2 TG8421 (DMR-DL, DL-Rptr, DL-Hotspot, Ham-Cloud)<br>YSF: 54919, 26200 DG-ID 79<br>YCS: 262, DG-ID 79<br>Wires-X: 27741<br>D-Star: DCS421DL, XLX421DL<br>NXDN: TG20421<br>P25: TG10421<br>M17: URF421 D<br>Peanut: YSF-DLNW</p>\r\n<p>&nbsp;</p>\r\n<p>Sysops: Bernd DK5BS, Stephan 9V1LH/DG1BGS<br><em>for more information visit dl-nordwest.com</em></p>",
+      "host": "dl-nordwest.com",
+      "id": "20421",
+      "name": "dl-nordwest.com",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "NL",
+      "dashboard": "http://51.83.46.75:38000/nxdn/",
+      "description": "<p>NXDN NL-Oost Reflector</p>",
+      "host": "51.83.46.75",
+      "id": "2044",
+      "name": "NXDN NL-Oost Reflector",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "NL",
+      "dashboard": "http://nxdn-almere.nl",
+      "description": "<p>Talkgroup Almere</p>\r\n<p>http://nxdn-almere</p>",
+      "host": "87.106.80.104",
+      "id": "205",
+      "name": "Talkgroup Almere",
+      "port": 42400,
+      "source": "dvref"
+    },
+    {
+      "country": "GR",
+      "dashboard": "http://greeknxdn.ddns.net",
+      "host": "178.105.140.155",
+      "id": "20600",
+      "name": "GR GREECE NXDN",
+      "port": 41402,
+      "source": "dvref"
+    },
+    {
+      "country": "BE",
+      "dashboard": "http://213.219.147.227:61563/NXDNReflector-Dashboard2/index.php",
+      "host": "213.219.147.227",
+      "id": "20612",
+      "name": "NXDN VLAANDEREN WAASLAND ON8PMO",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "BE",
+      "dashboard": "http://xlx.on7hh.be/",
+      "description": "<p>Linked to <strong>XLX898 </strong>(YSF #88898).</p>",
+      "host": "vps.on7hh.be",
+      "id": "20698",
+      "name": "NXDN 20698 - Belgique francophone",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "NL",
+      "dashboard": "http://nxdngnz.nl/",
+      "description": "<div class=\"n4sEPd\">\r\n<div class=\"FFpbKc\">\r\n<div class=\"xMmqsf\">\r\n<div class=\"nidPne\">\r\n<div data-show-delay-ms=\"250\" data-append-to-body=\"true\" data-propagate-tooltip-mouseover-events=\"true\" data-anchor-corner=\"bottom-left\" data-enable-skip-handler=\"true\" data-popup-corner=\"top-left\">\r\n<div class=\"dig2sb\">\r\n<div class=\"scLCMd\">&nbsp;</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n<div class=\"QcsUad BDJ8fb BLojaf sMVRZe hCXDsb wneUed\">\r\n<div class=\"usGWQd\">\r\n<div class=\"KkbLmb\">\r\n<div class=\"lRu31\" dir=\"ltr\"><span class=\"HwtZe\" lang=\"en\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">NXDN reflector&nbsp;</span></span><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">on a Raspberry Pi 4. The intention is to keep the reflector active 24/7.</span></span> </span></div>\r\n<div class=\"lRu31\" dir=\"ltr\"><span class=\"HwtZe\" lang=\"en\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">The reflector is sometimes offline for maintenance,</span></span></span></div>\r\n</div>\r\n</div>\r\n</div>\r\n<p>&nbsp;</p>",
+      "host": "62.131.153.244",
+      "id": "207",
+      "name": "Talkgroup Nieuwegein",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "FR",
+      "dashboard": "https://francemultiprotocole.fr",
+      "description": "<p>RI49 - Francemultiprotocole</p>",
+      "host": "82.66.121.200",
+      "id": "20899",
+      "name": "URF399",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://xlx277.bitbybithams.com",
+      "description": "<p>Bit By Bit Hams 277, part of the larger Bit By Bit Hams transoding network.</p>\r\n<p>&nbsp;</p>",
+      "host": "67.207.37.195",
+      "id": "21277",
+      "name": "URF277",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "AD",
+      "dashboard": "https://urf.adan.ovh/",
+      "description": "<p>Andorra Multiprotocol</p>",
+      "host": "urf.adan.ovh",
+      "id": "213",
+      "name": "URF213",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "ES",
+      "dashboard": "http://214.nxdn.es/",
+      "host": "214nxdn.nxdn.es",
+      "id": "214",
+      "name": "NXDN Treehouse SPAIN",
+      "port": 41401,
+      "source": "dvref"
+    },
+    {
+      "country": "ES",
+      "dashboard": "http://217.154.97.237/nxdn214/",
+      "host": "217.154.97.237",
+      "id": "2140",
+      "name": "2140 Multi",
+      "port": 41401,
+      "source": "dvref"
+    },
+    {
+      "country": "ES",
+      "dashboard": "http://62.84.187.225",
+      "description": "<p>Somos un grupo de amigos que tenemos pasi&oacute;n por la radio digital, sus numerosas modalidades, redes y servicios</p>",
+      "host": "62.84.187.225",
+      "id": "21413",
+      "name": "D-FRIENDS",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "ES",
+      "dashboard": "http://xlxrem.xreflector.es/nxdn/",
+      "host": "51.83.98.154",
+      "id": "21463",
+      "name": "REM NXDNReflector",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "ES",
+      "dashboard": "http://aderdigitales.ddns.net/nxdn/",
+      "host": "aderdigitales.ddns.net",
+      "id": "21465",
+      "name": "ADER",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://prideradionetwork.com",
+      "description": "<p>Pride Radio Network, a network by and for LGBTQIA+ hams and their allies. For information about our network, visit https://prideradionetwork.weebly.com</p>",
+      "host": "5.78.179.25",
+      "id": "21909",
+      "name": "PRIDE",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://nxdn.iz2qcp.it:8083",
+      "host": "nxdn.iz2qcp.it",
+      "id": "222",
+      "name": "IT NXDN Reflector",
+      "port": 41402,
+      "source": "dvref"
+    },
+    {
+      "country": "IT",
+      "dashboard": "https://urfita.freedmr.it",
+      "host": "urfita.freedmr.it",
+      "id": "22200",
+      "name": "URFITA",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "IT",
+      "dashboard": "https://nxdn.is0.org/",
+      "description": "<p>22202 IT Sardinia - Linked TG 22202 BrandMeister</p>",
+      "host": "nxdn.is0.org",
+      "id": "22202",
+      "name": "Sardinia Island",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "IT",
+      "host": "xlx390.ddns.net",
+      "id": "22206",
+      "name": "AOT",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://217.160.155.85/",
+      "description": "<p>Rete multiprotocollo Italy Centro Digiland.</p>\r\n<p>I nostri accessi:</p>\r\n<p>DMR BM 22208</p>\r\n<p>XLX093 C - XLX001 A - XLX157 C</p>\r\n<p>NXDN 22208</p>\r\n<p>P25 22208</p>\r\n<p>M17-ITC</p>\r\n<p>YSF 22208</p>\r\n<p>WIRES-X 88755</p>\r\n<p>FCS 22286</p>\r\n<p>YCS 22201-86</p>\r\n<p>ZELLO MP-ITAC</p>\r\n<p>ASL 521372</p>\r\n<p>PEANUT XLX001A</p>\r\n<p>ECHOLINK IZ0THD-R</p>\r\n<p>Le dashboard : http://185.203.119.229/db.php</p>",
+      "host": "217.160.155.85",
+      "id": "22208",
+      "name": "22208",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://it-radiochat.ddns.net/",
+      "description": "<div class=\"col-10\">\r\n<div class=\"card\">\r\n<div class=\"card-header\">\r\n<h3>IT Radio Group - Network</h3>\r\n</div>\r\n<p>Network radioamatoriale multiprotocollo</p>\r\n<p>DMR = TG 22209 &lt;-&gt; YSF = #22209 &lt;-&gt; NXDN = TG 22209 &lt;-&gt; Room Wires-X = #06350</p>\r\n<p>Da un idea di IN3GID - IT9SKY - IZ2NBD - IU2KUL</p>\r\n</div>\r\n</div>",
+      "host": "it-radiochat.ddns.net",
+      "id": "22209",
+      "name": "IT Radio Group - Network",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://87.106.152.249",
+      "host": "87.106.152.249",
+      "id": "22215",
+      "name": "22215",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://nxdnitalynet.duckdns.org/",
+      "host": "nxdnitalynet.duckdns.org",
+      "id": "22220",
+      "name": "22220",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://nxdn.iz2qcp.it",
+      "host": "nxdn.iz2qcp.it",
+      "id": "22221",
+      "name": "Regionale Lombardia",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "IT",
+      "description": "<p>Brescia Network</p>",
+      "host": "ysf.dmrbrescia.it",
+      "id": "22222",
+      "name": "22222",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "IT",
+      "dashboard": "https://nxdn.arifvg.it",
+      "host": "nxdn.arifvg.it",
+      "id": "22231",
+      "name": "22231",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://nxdn.ddns.net",
+      "host": "nxdn.ddns.net",
+      "id": "22233",
+      "name": "NXDN TG 22233 Veneto",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://85.215.153.178/nxdn/",
+      "host": "85.215.153.178",
+      "id": "22234",
+      "name": "IT 22234",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://nxdngdo.duckdns.org:81",
+      "description": "<p>Gruppo DMR Ossola&nbsp;</p>",
+      "host": "nxdngdo.duckdns.org",
+      "id": "22245",
+      "name": "NXDN Piedmont Gruppo DMR Ossola TG22245",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://46.226.178.80:8888/nxdn/",
+      "description": "<p>NXDN-REFLECTOR INTERCONNECTED TO TG-222995</p>\r\n<p>IT-MULTIPROTOCOL-NETWORK</p>",
+      "host": "46.226.178.80",
+      "id": "22252",
+      "name": "NXDN-REF-IT-MULTI-NET",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://c4fmbat.duckdns.org:7144/",
+      "description": "<p>Reflector NXDN connesso al multiprotocollo IT-C4FM_BAT</p>\r\n<p><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\">TG 22273 citt&agrave; di Barletta&nbsp;</span></span></p>",
+      "host": "82.85.236.36",
+      "id": "22273",
+      "name": "NXDN-BAT",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://nxdn.iz2qcp.it:8085",
+      "host": "nxdn.iz2qcp.it",
+      "id": "22275",
+      "name": "IT NXDN technical group",
+      "port": 41405,
+      "source": "dvref"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://aritrani.does-it.net/",
+      "description": "<p>Riflettore Universale connesso a \"<em><strong>Trani Conference</strong></em>\"<br>Server DMR&nbsp; basato sul&nbsp; HBLINK , col TG 8,&nbsp; interconnesso a sua volta con le<br>reti DMR: FREEDMR, ADN, TGIF, col TG 22276.<br>Connesso anche al sistema AllStarLink nodo n. 556990, Echolink I7IGX-R ed al sistema SVXlink italiano, col TG 76.</p>",
+      "host": "aritrani.does-it.net",
+      "id": "22276",
+      "name": "URFBAT",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://xlxle1.duckdns.org:8085",
+      "host": "80.211.135.179",
+      "id": "22277",
+      "name": "NXDN REFLECTOR SALENTO",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://22367.ddns.net",
+      "host": "22367.ddns.net",
+      "id": "22367",
+      "name": "Ham Network",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "ES",
+      "dashboard": "http://nxdn.c4fm.es/nxdn224",
+      "host": "57.131.25.19",
+      "id": "224",
+      "name": "TG 224 NXDN",
+      "port": 41402,
+      "source": "dvref"
+    },
+    {
+      "country": "RO",
+      "dashboard": "https://nxdn.145500.xyz/",
+      "description": "<p>Romania YO 226 NXDN Reflector</p>",
+      "host": "nxdn.145500.xyz",
+      "id": "226",
+      "name": "Romania NXDN YO",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "RO",
+      "dashboard": "https://nxdn.145500.xyz/",
+      "host": "nxdn.145500.xyz",
+      "id": "2261",
+      "name": "2261",
+      "port": 41401,
+      "source": "dvref"
+    },
+    {
+      "country": "RO",
+      "dashboard": "https://nxdn.145500.xyz/",
+      "host": "nxdn.145500.xyz",
+      "id": "2262",
+      "name": "2262",
+      "port": 41402,
+      "source": "dvref"
+    },
+    {
+      "country": "RO",
+      "dashboard": "https://nxdn.145500.xyz/",
+      "host": "nxdn.145500.xyz",
+      "id": "2263",
+      "name": "2263",
+      "port": 41403,
+      "source": "dvref"
+    },
+    {
+      "country": "RO",
+      "dashboard": "https://nxdn.145500.xyz/",
+      "host": "nxdn.145500.xyz",
+      "id": "2264",
+      "name": "2264",
+      "port": 41404,
+      "source": "dvref"
+    },
+    {
+      "country": "RO",
+      "dashboard": "https://nxdn.145500.xyz/",
+      "host": "nxdn.145500.xyz",
+      "id": "2265",
+      "name": "2265",
+      "port": 41405,
+      "source": "dvref"
+    },
+    {
+      "country": "RO",
+      "dashboard": "https://nxdn.145500.xyz/",
+      "host": "nxdn.145500.xyz",
+      "id": "2266",
+      "name": "2266",
+      "port": 41406,
+      "source": "dvref"
+    },
+    {
+      "country": "RO",
+      "dashboard": "https://nxdn.145500.xyz/",
+      "host": "nxdn.145500.xyz",
+      "id": "2267",
+      "name": "2267",
+      "port": 41407,
+      "source": "dvref"
+    },
+    {
+      "country": "RO",
+      "dashboard": "https://nxdn.145500.xyz/",
+      "host": "nxdn.145500.xyz",
+      "id": "2268",
+      "name": "2268",
+      "port": 41408,
+      "source": "dvref"
+    },
+    {
+      "country": "RO",
+      "dashboard": "https://nxdn.145500.xyz/",
+      "host": "nxdn.145500.xyz",
+      "id": "2269",
+      "name": "2269",
+      "port": 41409,
+      "source": "dvref"
+    },
+    {
+      "country": "CH",
+      "dashboard": "http://212.237.33.114/nxdn/",
+      "host": "212.237.33.114",
+      "id": "22825",
+      "name": "22825",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://retemultiprotocollo.ddns.net/conferenza-italia-monitor/",
+      "host": "91.92.136.119",
+      "id": "22890",
+      "name": "CONF. ITALIA - Rete Multiprotocollo",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "CZ",
+      "dashboard": "http://nxdn.praha8-bohnice.eu:4000",
+      "host": "80.211.223.145",
+      "id": "2301",
+      "name": "CZ-NXDN",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://400club.freestar.network/",
+      "host": "400club.freestar.network",
+      "id": "23416",
+      "name": "400Club",
+      "port": 41402,
+      "source": "dvref"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://nxdn.freestar.network",
+      "host": "nxdn.freestar.network",
+      "id": "23426",
+      "name": "FreeSTAR UK",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://nxdn2350.freestar.network",
+      "host": "nxdn2350.freestar.network",
+      "id": "2350",
+      "name": "ChatterBOX 2350",
+      "port": 41401,
+      "source": "dvref"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://xlxlef-dash.gb7hh.co.uk",
+      "description": "<p>Loughton and Epping Forest Amateur Radio Society - LEFARS</p>",
+      "host": "xlxlef.gb7hh.co.uk",
+      "id": "23511",
+      "name": "23511",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://nxdn.m0xfn.radio/",
+      "description": "<p>The Extended Freedom Network is a Multimode Amateur Radio Network allowing a diverse range of Amateur Operators to come together via different and normally incompatible modes, with connections spanning the globe to bring people together making those QSO's happen.</p>\r\n<p>You can connect to the Extended Freedom Network via a number of ways. Our primary route is via the Allstar system, node no&rsquo;s. <strong>2195 &amp; 2197</strong>.</p>\r\n<p>We have connectivity using EchoLink, DMR, Yaesu Fusion (YSF), Teamspeak, Hamshack Hotline and our own VoIP Network Extended Freedom SIP.</p>",
+      "host": "nxdn.m0xfn.radio",
+      "id": "23525",
+      "name": "23525",
+      "port": 41401,
+      "source": "dvref"
+    },
+    {
+      "country": "GB",
+      "dashboard": "http://nxdnscotland.ddns.net/",
+      "description": "<p>hello, I've just noticed the hostfile handling has changed, we have a nxdn talkgroup could you please add our hostfile to the list. It's been active for serveral years.</p>\r\n<p>many thanks</p>\r\n<p>regards&nbsp;</p>\r\n<p>Carl Joyce MM0HJX</p>",
+      "host": "nxdnscotland.ddns.net",
+      "id": "23551",
+      "name": "NXDN Scotland",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "description": "<p>Southwest Florida NXDN Reflector (239) - Part of the SWFL-Link system sponsored by Fort Myers Amateur Radio Club.</p>\r\n<p>&nbsp;</p>",
+      "host": "108.253.236.228",
+      "id": "239",
+      "name": "SW Florida NXDN Reflector",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://wg5eek.com/digidash",
+      "host": "wg5eek.com",
+      "id": "24033",
+      "name": "Arkansas Radio Heads",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "LT",
+      "dashboard": "https://ham.uplink.lt/nxdn",
+      "host": "dvref.uplink.lt",
+      "id": "24601",
+      "name": "Lithuania MultiMode",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "LT",
+      "host": "24622.outbox.lt",
+      "id": "24622",
+      "name": "LT HAM talks",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "host": "k1rfi.com",
+      "id": "25000",
+      "name": "New England 25000",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "UA",
+      "dashboard": "http://134.249.84.243:85/nxdn/",
+      "host": "134.249.84.243",
+      "id": "25504",
+      "name": "UA-Dnipro",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://wx4alanxdn.radiotechnology.xyz",
+      "host": "45.32.172.166",
+      "id": "256",
+      "name": "WX4ALA",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "RU",
+      "dashboard": "http://37.18.35.2/nxdn/index.php",
+      "description": "<p>NXDN Reflector from Northern Caucasus</p>",
+      "host": "37.18.35.2",
+      "id": "25617",
+      "name": "KAVKAZ",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "RU",
+      "host": "176.192.125.149",
+      "id": "25619",
+      "name": "Volgodonsk",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "RU",
+      "dashboard": "http://UA3LTS.ddns.net:5000",
+      "host": "UA3LTS.ddns.net",
+      "id": "2567",
+      "name": "Smolensk Obl. Digital network",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "PL",
+      "dashboard": "http://185.174.14.75/",
+      "description": "<p>&nbsp;</p>\r\n<div id=\"sconnect-is-installed\" style=\"display: none;\">2.14.0.0</div>",
+      "host": "185.174.14.75",
+      "id": "26000",
+      "name": "NXDN-26000 Poland",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "PL",
+      "dashboard": "http://5.249.151.6/nxdn/",
+      "host": "5.249.151.6",
+      "id": "26059",
+      "name": "NXDN-26059 Poland",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "PL",
+      "dashboard": "https://xlx474.duckdns.org/nxdn/",
+      "description": "<p>Poland &ndash; Warsaw. SP5PA NXDN Reflector, TG 26074. Part of the XLX474 amateur radio network.</p>",
+      "host": "34.138.116.246",
+      "id": "26074",
+      "name": "SP5PA NXDN Reflector",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "PL",
+      "dashboard": "https://nxdn.hblink.kutno.pl/",
+      "description": "<p>&nbsp;</p>\r\n<div id=\"sconnect-is-installed\" style=\"display: none;\">2.14.0.0</div>",
+      "host": "nxdn.hblink.kutno.pl",
+      "id": "26078",
+      "name": "NXDN-26078 Poland",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "PL",
+      "dashboard": "http://nxdn-sp7.noip.pl/",
+      "description": "<p>&nbsp;</p>\r\n<div id=\"sconnect-is-installed\" style=\"display: none;\">2.14.0.0</div>\r\n<div id=\"sconnect-is-installed\" style=\"display: none;\">2.14.0.0</div>",
+      "host": "nxdn-sp7.noip.pl",
+      "id": "26079",
+      "name": "NXDN-26079 Poland",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "PL",
+      "dashboard": "http://94.231.5.39:8888/nxdn/",
+      "host": "94.231.5.39",
+      "id": "26099",
+      "name": "NXDN-26099 Poland",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "DE",
+      "dashboard": "https://26200.nxdn.eu/",
+      "host": "26200.nxdn.eu",
+      "id": "26200",
+      "name": "NXDN-26200 - Deutschland",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "DE",
+      "dashboard": "http://93.240.83.53:22227",
+      "host": "93.240.83.53",
+      "id": "26221",
+      "name": "Hamburg-City",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "DE",
+      "dashboard": "https://26230.nxdn.eu",
+      "host": "26200.nxdn.eu",
+      "id": "26230",
+      "name": "26230 - AFU Reg Hannover",
+      "port": 41410,
+      "source": "dvref"
+    },
+    {
+      "country": "DE",
+      "dashboard": "http://85.215.198.111:8970",
+      "description": "<p>Eine Verbindung in das Funknetz-Celle ( FM 2m, FM 70cm, SSB KW*, FM-Funknetz TG26335, FM DB0CEL* , BM TG26334, YSF, NXDN, P25 )&nbsp;</p>\r\n<p>* nur zur OV-Runde aktiv&nbsp;</p>",
+      "host": "85.215.198.111",
+      "id": "26235",
+      "name": "Funknetz-Celle",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "DE",
+      "dashboard": "https://urf269.26269.de",
+      "description": "<p>the URF269 is used as main Reflector for the multimode Germany Hessen/RLP on Modul A. Currently the 2urfd version from N7TAE is used with local transcoding. Server is running in the HAMNET network but reachable via public internet.</p>",
+      "host": "urf269.26269.de",
+      "id": "26269",
+      "name": "URF269",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "DE",
+      "host": "germering.dnsuser.de",
+      "id": "26275",
+      "name": "DE-RAMSES-NXDN",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "DE",
+      "dashboard": "https://urf363.merg.biz/",
+      "description": "<p>URF363 - Saarland - Multimode Bridge (XLX363)</p>",
+      "host": "urf363.merg.biz",
+      "id": "26363",
+      "name": "URF363",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "PL",
+      "dashboard": "http://waw01.kg5a.us",
+      "description": "<p style=\"text-align: center;\"><strong class=\"Yjhzub\" style=\"font-family: Google Sans, Arial, sans-serif; font-size: 16px; font-weight: 600; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\" data-sfc-root=\"c\" data-sfc-cb=\"\" data-complete=\"true\" data-copy-service-computed-style=\"font-family: Google Sans, Arial, sans-serif; font-size: 16px; font-weight: 600; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\">Warsaw NXDN Reflector 26512 is permanently linked to YSF PL-26512WawaNXDN &amp; tGIF.network DMR TG:26512</strong></p>\r\n<p style=\"text-align: center;\"><em class=\"eujQNb\" style=\"font-family: Google Sans, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\" data-sfc-root=\"c\" data-sfc-cb=\"\" data-complete=\"true\" aria-owns=\"action-menu-parent-container\" data-copy-service-computed-style=\"font-family: Google Sans, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\">Warszawski Reflektor NXDN 26512 jest na sta\u0142e po\u0142\u0105czony z </em><em><span class=\"eujQNb\" style=\"font-family: Google Sans, Arial, sans-serif; font-size: 16px; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\"><span class=\"Yjhzub\" style=\"font-family: Google Sans, Arial, sans-serif; font-size: 16px; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\">YSF PL-26512WawaNXDN</span></span></em><em class=\"eujQNb\" style=\"font-family: Google Sans, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\" data-sfc-root=\"c\" data-sfc-cb=\"\" data-complete=\"true\" aria-owns=\"action-menu-parent-container\" data-copy-service-computed-style=\"font-family: Google Sans, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\"> oraz TG:26512 DMR w sieci tGIF.network</em></p>",
+      "host": "94.177.202.207",
+      "id": "26512",
+      "name": "NXDN-26512 Warszawa Poland",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "PT",
+      "dashboard": "http://nxcore.brandmeister.pt",
+      "host": "nxcore.brandmeister.pt",
+      "id": "26810",
+      "name": "26810",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "host": "2700nxdn.ddns.net",
+      "id": "2700",
+      "name": "Old Melbourne Repeater Association",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://arcnxdn.duckdns.org:83",
+      "description": "<p>America Ragchew</p>",
+      "host": "24.1.186.5",
+      "id": "28299",
+      "name": "America Ragchew",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "BG",
+      "dashboard": "http://284nxdn.ddns.net",
+      "description": "<p>NXDN2DMR&nbsp; &nbsp;ADN systems BG TG284</p>",
+      "host": "77.77.61.52",
+      "id": "284",
+      "name": "URF284",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "TR",
+      "dashboard": "https://nxdn.ta2kw.keenetic.pro",
+      "description": "<p>NXDN T&Uuml;RK\u0130YE 286<br><br>DMR2NXDN TG7000286&nbsp; TS2<br><br></p>",
+      "host": "nxdn.ta2kw.keenetic.pro",
+      "id": "286",
+      "name": "NXDN T\u00dcRK\u0130YE",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28200",
+      "description": "<p>NXDN Turkiye Genel Reflector - YM2KG</p>",
+      "host": "dmr.pistar.com.tr",
+      "id": "28600",
+      "name": "NXDN Turkiye Genel",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28301/",
+      "description": "<p>NXDN Adana Reflector - YM2KG</p>",
+      "host": "dmr.pistar.com.tr",
+      "id": "28601",
+      "name": "NXDN Adana",
+      "port": 41401,
+      "source": "dvref"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28303/",
+      "description": "<p>NXDN Afyon Reflector - YM2KG</p>",
+      "host": "dmr.pistar.com.tr",
+      "id": "28603",
+      "name": "NXDN Afyon",
+      "port": 41403,
+      "source": "dvref"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28306/",
+      "description": "<p>NXDN Ankara Reflector - YM2KG</p>",
+      "host": "dmr.pistar.com.tr",
+      "id": "28606",
+      "name": "NXDN Ankara",
+      "port": 41406,
+      "source": "dvref"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28307/",
+      "description": "<p>NXDN Antalya Reflector - YM2KG</p>",
+      "host": "dmr.pistar.com.tr",
+      "id": "28607",
+      "name": "NXDN Antalya",
+      "port": 41407,
+      "source": "dvref"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28334/",
+      "description": "<p>NXDN Istanbul Reflector - YM2KG</p>",
+      "host": "dmr.pistar.com.tr",
+      "id": "28634",
+      "name": "NXDN Istanbul",
+      "port": 41434,
+      "source": "dvref"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28335/",
+      "description": "<p>NXDN Izmir Reflector - YM2KG</p>",
+      "host": "dmr.pistar.com.tr",
+      "id": "28635",
+      "name": "NXDN Izmir",
+      "port": 41435,
+      "source": "dvref"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28348/",
+      "description": "<p>NXDN Mugla Reflector - YM2KG</p>",
+      "host": "dmr.pistar.com.tr",
+      "id": "28648",
+      "name": "NXDN Mugla",
+      "port": 41448,
+      "source": "dvref"
+    },
+    {
+      "country": "TR",
+      "dashboard": "https://dmr.pistar.com.tr:28381",
+      "description": "<p>NXDN Duzce Reflector - YM2KG</p>",
+      "host": "dmr.pistar.com.tr",
+      "id": "28681",
+      "name": "NXDN Duzce",
+      "port": 41481,
+      "source": "dvref"
+    },
+    {
+      "country": "TR",
+      "dashboard": "https://nxdn.cektor.keenetic.pro",
+      "description": "<p>T&Uuml;RK\u0130YE NXDN TG 28690 QRV73.COM</p>",
+      "host": "nxdn.cektor.keenetic.pro",
+      "id": "28690",
+      "name": "NXDN-28690",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "SI",
+      "dashboard": "https://293.dashboard.nxdn.s5ham.si/",
+      "description": "<p>Slovenian Talk Group - connected to DMR TG293.</p>",
+      "host": "293.reflector.nxdn.s5ham.si",
+      "id": "293",
+      "name": "NXDN Slovenia 293",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "SI",
+      "dashboard": "https://29314.dashboard.nxdn.s5ham.si/",
+      "description": "<p>Slovenian Talk Group - NXDN Only.</p>",
+      "host": "29314.reflector.nxdn.s5ham.si",
+      "id": "29314",
+      "name": "NXDN Slovenia 29314",
+      "port": 41402,
+      "source": "dvref"
+    },
+    {
+      "country": "SI",
+      "dashboard": "https://29320.dashboard.nxdn.s5ham.si/",
+      "description": "<h1>NXDN Slovenia - connected to Multimode-Cross-Link:&nbsp;<br>DMR TG29320,<br>YSF: Slovenia2,<br>WIRES-X: SLOVENIA-ROOM,<br>D-Star: XLX511 B</h1>",
+      "host": "29320.reflector.nxdn.s5ham.si",
+      "id": "29320",
+      "name": "NXDN Slovenia 29320",
+      "port": 41401,
+      "source": "dvref"
+    },
+    {
+      "country": "CL",
+      "host": "reflectores.zonadmr.cl",
+      "id": "30444",
+      "name": "ZONA DMR CL  NXDN PROJECT",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "AU",
+      "dashboard": "http://urf306.warg.org.au/",
+      "description": "<p>Hosted in Perth, Western Australia.</p>\r\n<p>Module A transcoded with tcd and DVStick30</p>",
+      "host": "urf306.warg.org.au",
+      "id": "306",
+      "name": "URF306",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://nfonorcalnxdn.dyndns.org",
+      "host": "nfonorcalnxdn.dyndns.org",
+      "id": "30639",
+      "name": "30639",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://nxdn.alabamalink.info",
+      "description": "<p>Part of the Alabama Link System. Established 2014.</p>",
+      "host": "96.47.95.121",
+      "id": "31010",
+      "name": "Alabama Link",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://vidalia-net.net",
+      "host": "vidalia-net.net",
+      "id": "31059",
+      "name": "vidalia net",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://nxdn.we0fun.com/",
+      "host": "nxdn.we0fun.com",
+      "id": "31081",
+      "name": "Fun Machine Linked Repeater System",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://kingsland-network.net",
+      "host": "kingsland-network.net",
+      "id": "31138",
+      "name": "KingsLand Local",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://illinkp25.radiotechnology.xyz",
+      "description": "<p>ILLINOIS LINK NXDN REFLECTOR&nbsp;</p>\r\n<p>Multimode Reflector</p>",
+      "host": "illink.radiotechnology.xyz",
+      "id": "31171",
+      "name": "31171",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://xlx.w9winxlx.us//",
+      "description": "<p>Part of the W9WIN Linked Digital Repeater System and The Southern Indiana Network</p>",
+      "host": "64.112.234.163",
+      "id": "31188",
+      "name": "URFSIN",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://31201.byrg.net",
+      "host": "31201.byrg.net",
+      "id": "31201",
+      "name": "BYRG",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://31202.byrg.net",
+      "host": "31202.byrg.net",
+      "id": "31202",
+      "name": "BYRG Chat and Testing",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "host": "51.222.159.205",
+      "id": "31226",
+      "name": "World Wide Chat",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://foxhole.radio/index.php/network-status/",
+      "description": "<p>US-Foxhole Network</p>",
+      "host": "nxdn.foxhole.radio",
+      "id": "31238",
+      "name": "31238",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "description": "<p>SW Missouri, Linked to P25 &amp; BM 31291</p>",
+      "host": "nxdn.ddns.me",
+      "id": "31291",
+      "name": "Southwest Missouri",
+      "port": 41401,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://kansascitywide.com",
+      "host": "172.236.106.61",
+      "id": "31313",
+      "name": "KCWide NXDN",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://urf.n9hxr.radio/",
+      "description": "<p>US WCARS URF668. Operated by N9HXR for the Windy City Amateur Radio Society. https://wcars.radio/</p>",
+      "host": "urf.n9hxr.radio",
+      "id": "31337",
+      "name": "URF668",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://nxdn.kc2vrj.com",
+      "host": "198.74.61.105",
+      "id": "31340",
+      "name": "CNJHAM",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "description": "<p>Foothills Wave Whisperers</p>",
+      "host": "67.213.34.230",
+      "id": "31377",
+      "name": "Foothills Wave Whisperers",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "description": "<p>Piedmont Triad Network</p>",
+      "host": "107.152.43.53",
+      "id": "31379",
+      "name": "Piedmont Triad Network",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://3.208.70.29/NXDN/index.php",
+      "description": "<p>RCWA NXDN</p>",
+      "host": "3.208.70.29",
+      "id": "31403",
+      "name": "31403",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://xlx545.pennlinkgroup.com/nxdntg3142",
+      "description": "<p>NXDN External Reflector for TG 3142 (not transcoded / not linked)</p>",
+      "host": "3.215.215.169",
+      "id": "3142",
+      "name": "3142",
+      "port": 41402,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://nxdn.ridigitallink.net",
+      "host": "18.219.32.21",
+      "id": "31444",
+      "name": "31444",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "host": "ddns.w9ml.com",
+      "id": "31473",
+      "name": "TN TAC System",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "description": "<p>Utah 314900 Bridge - AmComm DMR 314900, AmComm YCS-313 DG-ID 49, Wires-X UTDRN-BRG, YSF 31490 (Standard), YSF 31590 (Voice Wide), P25 31490, NXDN 31490, D-Star REF029B, M17-UT0 B, ASL 29630<br><br>Net on Wednesdays at 1800 hrs mountain time&nbsp;</p>",
+      "host": "utah00.utahdrn.org",
+      "id": "31490",
+      "name": "Utah DRN 00 Bridge",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "description": "<p>Utah 01 Bridge: AmComm 314901, YSF 31491 (Standard), YSF 31591 (Voice Wide), P25 31491, NXDN 31491, D-Star REF029C, M17-UT0 C, ASL 29631</p>\r\n<p>&nbsp;</p>\r\n<p>Net on Sundays at 2000 hrs mountain time, Wires-X UTDRN-BRG linked for this net and then returned to the 00 bridge.&nbsp;</p>",
+      "host": "utah01.utahdrn.org",
+      "id": "31491",
+      "name": "Utah DRN 01 Bridge",
+      "port": 41401,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "description": "<p>Utah 05 Bridge: AmComm 314905, YSF 31495 (Standard), YSF 31595 (Voice Wide), P25 31495, NXDN 31495, D-Star REF029D, M17-UT0 D</p>",
+      "host": "ammermon.lorexddns.net",
+      "id": "31495",
+      "name": "Utah DRN 05 Bridge",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://xlx315.duckdns.org/",
+      "description": "<p style=\"padding-left: 40px; text-align: center;\"><strong>Wisconsin DMR(Digital Mode Reflector)</strong></p>\r\n<p style=\"padding-left: 40px; text-align: center;\"><span style=\"text-decoration: underline;\">The following are all linked on XLX315A :</span></p>\r\n<p style=\"padding-left: 40px; text-align: center;\">DMR TG 31555 via CLAND IPSC2</p>\r\n<p style=\"padding-left: 40px; text-align: center;\">P25 TG 31555 via WI Regional P25 Reflector</p>\r\n<p style=\"padding-left: 40px; text-align: center;\">NXDN TG 31555 via NXCore</p>\r\n<p style=\"padding-left: 40px; text-align: center;\">YSF31555 via XLXD</p>\r\n<p style=\"padding-left: 40px; text-align: center;\">M17-315 via XLXD</p>\r\n<p style=\"padding-left: 40px; text-align: center;\">-------------------------------------</p>\r\n<p style=\"padding-left: 40px; text-align: center;\">XLXD Server is hosted by WX9KVH</p>\r\n<p style=\"padding-left: 40px; text-align: center;\">IPSC2 is hosted by N9OIG</p>\r\n<p style=\"padding-left: 40px; text-align: center;\">P25 Reflector is hosted by N9FBF</p>\r\n<p style=\"padding-left: 40px; text-align: center;\">-------------------------------------</p>\r\n<p style=\"padding-left: 40px; text-align: center;\">Visit wisconsindmr.com for more info.</p>\r\n<p style=\"padding-left: 40px; text-align: center;\">&nbsp;</p>",
+      "host": "xlx315.duckdns.org",
+      "id": "31555",
+      "name": "Wisconsin DMR(Digital Mode Reflector)  The followi",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://198.13.41.243:8080",
+      "description": "<p data-sourcepos=\"5:1-5:42\"><strong>Welcome to Our NXDN Ham Radio Network!</strong></p>\r\n<p data-sourcepos=\"7:1-7:145\">You've joined a vibrant and growing part of the amateur radio community! Our NXDN network leverages cutting-edge digital technology to bring you:</p>\r\n<ul data-sourcepos=\"9:1-12:0\">\r\n<li data-sourcepos=\"9:1-9:104\"><strong>Exceptional Audio Quality:</strong> Enjoy clear, crisp voice communications, even at the edges of coverage.</li>\r\n<li data-sourcepos=\"10:1-10:117\"><strong>Efficient Spectrum Use:</strong> NXDN's narrow banding allows us to make the most of our valuable ham radio frequencies.</li>\r\n<li data-sourcepos=\"11:1-12:0\"><strong>Experimentation &amp; Innovation:</strong> NXDN is a fantastic mode for those who love to explore and build upon digital radio.</li>\r\n</ul>\r\n<p data-sourcepos=\"13:1-13:78\">We're excited to have you on board and look forward to hearing you on the air!</p>",
+      "host": "198.13.41.243",
+      "id": "31611",
+      "name": "XPR Pinoy Network",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://nxdn-31672-dash.pistar.uk",
+      "host": "213.171.214.2",
+      "id": "31672",
+      "name": "Pi-Star Multi-Mode Reflector",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://TriStateDMR.org",
+      "description": "<p><strong><span style=\"text-decoration: underline;\">TriStateDMR.org Multimode (IL, IN, WI)</span></strong></p>\r\n<p>DMR+ REF 4641</p>\r\n<p>AmComm/TGIF TG 31691</p>\r\n<p>DStar REF312B/DCS312B</p>\r\n<p>NXDN 31691</p>\r\n<p>P25 31691</p>\r\n<p>Fusion WiresX 40911 and YSF 31691</p>\r\n<p>Allstar 45417</p>\r\n<p>Echolink 7641</p>",
+      "host": "192.241.160.183",
+      "id": "31691",
+      "name": "TriStateDMR (IL-IN-WI Multimode)",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://45.79.74.165:4000",
+      "description": "<p>Starfleet Amateur Radio Group - Trek Talk - N6SFI</p>",
+      "host": "45.79.74.165",
+      "id": "31701",
+      "name": "Starfleet Amateur Radio Group - Trek Talk",
+      "port": 41040,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://144.202.37.96:4000/",
+      "host": "144.202.37.96",
+      "id": "3175",
+      "name": "The Fog Multi mode system XLX073",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://41606.duckdns.org/NXDNReflector-Dashboard/",
+      "description": "<p>DX-LINK SYSTEM Multi Mode Digital/Analog Experimenters Network.</p>",
+      "host": "41606.duckdns.org",
+      "id": "31777",
+      "name": "DX-LINK SYSTEM",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "description": "<p>LMRNET is a multimode network for the LMR Talkaround discord community.</p>",
+      "host": "172.233.211.93",
+      "id": "31910",
+      "name": "LMRNET",
+      "port": 41040,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://NXDNReflector31983.K8JTK.org/",
+      "description": "<div>DVMIS: Ham Radio Digital VoIP Multimode Interlink System ... Bridged to:</div>\r\n<div>\r\n<ul>\r\n<li>AllStar Link: 50394</li>\r\n<li>AmateurWire: 90004</li>\r\n<li>EchoLink: *DVMIS* 600008</li>\r\n<li>Hams Over IP: 15010</li>\r\n<li>DMR: HB_US_K8JTK-HUB-DVMIS_DMO talkgroup 31983 timeslot 2</li>\r\n<li>DMR: BrandMeister talkgroup 3172783</li>\r\n<li>DMR: TGIF talkgroup 31983</li>\r\n<li>D-STAR: XLX/DCS983A</li>\r\n<li>M17: M17-983A</li>\r\n<li>NXDN: TG 31983</li>\r\n<li>P25: TG 31983</li>\r\n<li>YSF: K8JTK-Hub 31983</li>\r\n<li>Wires-X: K8JTK-ROOM 40680</li>\r\n</ul>\r\n</div>",
+      "host": "NXDNReflector31983.K8JTK.org",
+      "id": "31983",
+      "name": "31983",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "IT",
+      "dashboard": "https://nxdn-gmr.duckdns.org/",
+      "host": "nxdn.myqnapcloud.com",
+      "id": "32100",
+      "name": "NXDN-GMR",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://cwopsnxdn.dyndns.org",
+      "host": "cwopsnxdn.dyndns.org",
+      "id": "32103",
+      "name": "CW Ops - CW Academy - CW",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "MX",
+      "dashboard": "http://89.117.61.236",
+      "description": "<p>NXDN-3341 TGIF</p>",
+      "host": "89.117.61.236",
+      "id": "3341",
+      "name": "NXDN-XE1JMB",
+      "port": 41100,
+      "source": "dvref"
+    },
+    {
+      "country": "MX",
+      "dashboard": "http://nxdn-mx.ddns.net/",
+      "host": "nxdn-mx.ddns.net",
+      "id": "33420",
+      "name": "Durango",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://nettalknxdn.dyndns.org",
+      "host": "nettalknxdn.dyndns.org",
+      "id": "33581",
+      "name": "NET TALK NXDN",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://reflector.3400digital.net/nxdn/",
+      "host": "reflector.3400digital.net",
+      "id": "3400",
+      "name": "3400-Digital",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "IT",
+      "dashboard": "https://urf.iv3scp.it",
+      "host": "44.31.102.149",
+      "id": "34075",
+      "name": "URFSCP",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://155.138.236.64/urf/dashboard/",
+      "description": "<p>URF reflector Oklahoma ARES.</p>",
+      "host": "155.138.236.64",
+      "id": "34109",
+      "name": "34109",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "BG",
+      "dashboard": "https://359-reflectors.duckdns.org/nxdn/",
+      "description": "<p>Linked to ADN Systems Bulgaria TG284</p>",
+      "host": "46.10.205.134",
+      "id": "359",
+      "name": "URF359",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://reflector.kb2idx.com",
+      "description": "<p>Dr.Parrot's Office</p>",
+      "host": "reflector.kb2idx.com",
+      "id": "3690",
+      "name": "XLX239 Multiprotocol Reflector",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "BY",
+      "host": "xlx375.bfrr.by",
+      "id": "37500",
+      "name": "37500",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "TH",
+      "dashboard": "https://nxdn38.kozow.com",
+      "description": "<p><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\">Interlink XLX138 Module B&nbsp;</span></span><br><a href=\"https://xlx138.freeddns.org/\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\">https://xlx138.freeddns.org</span></span></a><br><br>Analog Digital Radio Thailand Team</p>",
+      "host": "128.199.235.93",
+      "id": "38",
+      "name": "XLX138 Module B",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "host": "96.44.137.162",
+      "id": "396",
+      "name": "US-KEYWORK",
+      "port": 41040,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://401.ctridash.info:8010",
+      "description": "<p>LINKED TO YSF 99797, P25 TG400 and TGIF 239</p>",
+      "host": "401.ctridash.info",
+      "id": "401",
+      "name": "N1LMA DIGITAL",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "KZ",
+      "description": "<p>KZ NXDN Reflector</p>",
+      "host": "82.115.48.79",
+      "id": "40102",
+      "name": "KZ NXDN Reflector",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://kd2qqv.ddns.net",
+      "description": "<p>NXDN REFLECTOR BRIDGE OPEN FOR USE</p>",
+      "host": "kd2qqv.ddns.net",
+      "id": "4014",
+      "name": "XLX NXDN REFLECTOR",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "CA",
+      "dashboard": "https://xlx405.repeatme.ca",
+      "host": "66.179.209.30",
+      "id": "405",
+      "name": "XLX405 - NXDN",
+      "port": 41405,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "host": "tada-p25.mywire.org",
+      "id": "419",
+      "name": "Toledo Amateur Digital Association",
+      "port": 41040,
+      "source": "dvref"
+    },
+    {
+      "country": "CA",
+      "dashboard": "https://xlx.ve2sus.com",
+      "host": "ref.ve2sus.com",
+      "id": "420",
+      "name": "VE2SUS REF420",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://hop365.nxd.com/",
+      "host": "194.163.172.108",
+      "id": "42021",
+      "name": "NXDN-TEST",
+      "port": 41402,
+      "source": "dvref"
+    },
+    {
+      "country": "CA",
+      "dashboard": "https://xlx427.repeatme.ca",
+      "host": "15.157.128.240",
+      "id": "427",
+      "name": "XLX427A - NXDN TG427",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "TH",
+      "dashboard": "http://44.32.81.27",
+      "host": "44.32.81.27",
+      "id": "4302",
+      "name": "URF162",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://nxdn.lmarc.net/NXDNDash/index.php",
+      "description": "<p>SouthEast Link Bridge System - https://lmarc.net</p>",
+      "host": "nxdn.lmarc.net",
+      "id": "43389",
+      "name": "43389",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "KZ",
+      "dashboard": "http://un1eak.svx03.kz:999/",
+      "host": "un1eak.svx03.kz",
+      "id": "43715",
+      "name": "Kazakhstan NXDN",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "JP",
+      "dashboard": "http://nxdn.f5.si:8500/",
+      "host": "nxdn.f5.si",
+      "id": "44000",
+      "name": "44000",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "JP",
+      "dashboard": "http://nxdn.owari.biz/",
+      "host": "nxdn.owari.biz",
+      "id": "44120",
+      "name": "JP-OWARI",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "JP",
+      "dashboard": "http://xrf298.mydns.jp:8070/",
+      "description": "<p>YSF-NAGOYA-2/TGIF TG-310 / WIRES-X 42314 / XLX298 Y /XLX098 H /M17-LIM L /PEANUT XLX561 P</p>",
+      "host": "122.132.48.86",
+      "id": "44155",
+      "name": "NXDN-NAGOYA",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "KR",
+      "dashboard": "http://45000nxdn.dvham.com/nxdn/index.php",
+      "host": "45000nxdn.dvham.com",
+      "id": "45000",
+      "name": "450IPSC2-NXDN",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "KR",
+      "dashboard": "http://dvref.ddnsfree.com/nxdn/",
+      "description": "<p>DS5QDR DV HAM World</p>",
+      "host": "dvref.ddnsfree.com",
+      "id": "45001",
+      "name": "45001",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "CN",
+      "host": "46001.bh1nyr.net",
+      "id": "46001",
+      "name": "46001",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "CN",
+      "host": "8.156.86.189",
+      "id": "46008",
+      "name": "Cross To BM_TG46008",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "CN",
+      "description": "<p>46010 NXDN Link TG46010, Beijing, China</p>",
+      "host": "46010.bh1nyr.net",
+      "id": "46010",
+      "name": "46010",
+      "port": 41402,
+      "source": "dvref"
+    },
+    {
+      "country": "CN",
+      "host": "47.103.95.163",
+      "id": "46018",
+      "name": "TG46018 Only NXDN",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "CN",
+      "dashboard": "http://8.163.29.23/",
+      "host": "8.163.29.23",
+      "id": "46020",
+      "name": "Guangzhou DMR TG46020",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "CN",
+      "host": "120.76.96.210",
+      "id": "46085",
+      "name": "NXDN TO BM 46085",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "description": "<p>KC6NKK NXDN Reflector Barstow, CA</p>",
+      "host": "kc6nkk.selfip.com",
+      "id": "4610",
+      "name": "KC6NKK NXDN",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "TW",
+      "host": "stayalone.idv.hk",
+      "id": "46601",
+      "name": "NXDN to DMR TG46601",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "host": "nxdn.w4yi.org",
+      "id": "4700",
+      "name": "Tennessee Statewide",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://urf.hamvillage.org",
+      "host": "urf.hamvillage.org",
+      "id": "478",
+      "name": "URF478",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://xlx049.dyndns.org",
+      "description": "<p>XLX049C-REF049C-BM TG 312543</p>",
+      "host": "nxdn49.dyndns.org",
+      "id": "49",
+      "name": "XLX049 NXDN bridged to XLX049C",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "description": "<p>NXDN Bridge into the Salt Lake Youth System Via Allstar Node 1220</p>\r\n<p>Managed by KK7GKG</p>",
+      "host": "site1a.kk7gkg.com",
+      "id": "5030",
+      "name": "KK7GKG ASL Bridge 1",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "description": "<p>KK7GKG Developmental System</p>\r\n<p>Managed by KK7GKG</p>",
+      "host": "205.121.52.125",
+      "id": "5031",
+      "name": "KK7GKG ASL Bridge 2",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "AU",
+      "dashboard": "https://nxdn-50500.dale.id.au/",
+      "description": "<p><strong>VK Calling Hub</strong><br><strong>M17: </strong>434 E, <strong>ASL</strong>: 572982, <strong>YSF</strong>: 50500 (AU-VK-DVAU50500), <strong>P25</strong>: 50500, bridged to DVAU DMR 50500</p>",
+      "host": "45.124.54.132",
+      "id": "50500",
+      "name": "VK Calling Hub",
+      "port": 41401,
+      "source": "dvref"
+    },
+    {
+      "country": "AU",
+      "dashboard": "https://nxdn-50505.dale.id.au/",
+      "description": "<p><strong>VK Calling Hub</strong><br><strong>M17: </strong>434 B, <strong>ASL</strong>: 572981, <strong>YSF</strong>: 50505 (AU-VK-DVAU505), <strong>P25</strong>: 50505, bridged to DVAU DMR 505</p>",
+      "host": "45.124.54.132",
+      "id": "50505",
+      "name": "VK Calling Hub",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "AU",
+      "dashboard": "http://50525.nxref.org",
+      "description": "<p>This is the reflector for 50525, hosted by Ian VK2HK, Australia</p>",
+      "host": "50525.nxref.org",
+      "id": "50525",
+      "name": "50525 NXDN",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "AU",
+      "dashboard": "https://pride-nxdn.vkradio.com/",
+      "description": "<p>PrideNet multimode bridge</p>",
+      "host": "p25tg50535.vkradio.com",
+      "id": "50535",
+      "name": "50535",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "AU",
+      "dashboard": "https://nxdn-5055.dale.id.au/",
+      "description": "<p><strong>VK5 Sth. Aust. Hub</strong><br><strong>M17: </strong>434 C, <strong>ASL</strong>: 572983, <strong>YSF</strong>: 05055 (AU-VK5-DVAU5055), <strong>P25</strong>: 5055, bridged to&nbsp; DVAU DMR 5055</p>",
+      "host": "45.124.54.132",
+      "id": "5055",
+      "name": "Australia - SA",
+      "port": 41402,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "host": "w8lrk-mmdvm.duckdns.org",
+      "id": "50964",
+      "name": "LARK",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "PL",
+      "dashboard": "http://185.174.14.75/",
+      "host": "185.174.14.75",
+      "id": "51000",
+      "name": "NXDN-51000 Poland",
+      "port": 41401,
+      "source": "dvref"
+    },
+    {
+      "country": "PH",
+      "dashboard": "https://dx8wmg.org/nxdn/",
+      "description": "<p>DX8WMG NXDN to Multi-Mode Bridge</p>",
+      "host": "107.152.47.152",
+      "id": "51500",
+      "name": "51500",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://xlx517.radiosc.net",
+      "host": "67.212.42.234",
+      "id": "517",
+      "name": "URF517",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "TH",
+      "dashboard": "https://hs3as.pwk.ac.th/",
+      "description": "<p>NXDN Link XLX149 Modules C</p>",
+      "host": "hs3as.pwk.ac.th",
+      "id": "52032",
+      "name": "52032",
+      "port": 41404,
+      "source": "dvref"
+    },
+    {
+      "country": "TH",
+      "dashboard": "https://nxdn149d.pwk.ac.th/",
+      "description": "<p>NXDN Link XLX149 Modules A</p>",
+      "host": "nxdn149d.pwk.ac.th",
+      "id": "52149",
+      "name": "52149",
+      "port": 41408,
+      "source": "dvref"
+    },
+    {
+      "country": "NZ",
+      "dashboard": "http://xlx530.hopto.org/NXDN",
+      "host": "zldigitalreflectors.hopto.org",
+      "id": "530",
+      "name": "530",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "AU",
+      "host": "45.124.54.132",
+      "id": "53035",
+      "name": "NZ Calling",
+      "port": 41403,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://urf550.hanafarm.biz/",
+      "description": "<p>550 is a YSF Master, connect to urf550.hanafarm.biz , use DGID 10 for module A.&nbsp; Module A is bridged to ASL3 Node 590810 and EchoLink KY4VC-L Node 450801.</p>",
+      "host": "urf550.hanafarm.biz",
+      "id": "5383",
+      "name": "URF550",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "GB",
+      "dashboard": "http://wf-link.ddns.net/",
+      "host": "wf-link.ddns.net",
+      "id": "56429",
+      "name": "Wyre Forest NXDN Link",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://117.55.236.14:85",
+      "host": "117.55.236.14",
+      "id": "58734",
+      "name": "NXDN TECH LINK",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://urf.hrcc.link/",
+      "description": "<p>HRCC Link is a system of linked DV modes created for the<br>Ham Radio Crash Course community.</p>",
+      "host": "urf.hrcc.link",
+      "id": "621",
+      "name": "URF621",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://porter2000.com:4000",
+      "description": "<p>440.395 NXDN RAN 1 TG62238 in Middle River, Maryland, USA near the Chesapeake Bay. This is a mixed-mode hotspot with AllStar on FM and digital modes YSF/C4FM, M17, and now NXDN. KC3YGF ALL BANDS - ALL MODES!</p>",
+      "host": "porter2000.com",
+      "id": "62238",
+      "name": "KC3YGF Middle River, Maryland, USA",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "LV",
+      "host": "xlx.ham.lv",
+      "id": "63600",
+      "name": "63600",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://urf045.pennlinkgroup.com:8082/urfd/",
+      "description": "<p>This Reflector offers a connection to Brandmeister DMR on Module A. &nbsp;For more information see https://info.pennlinkgroup.com</p>",
+      "host": "70.44.20.24",
+      "id": "6381",
+      "name": "URF045",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://xlx645.pennlinkgroup.com/urfd",
+      "description": "<p>URF645 is a full service, trancoded URF Cloud based Reflector</p>",
+      "host": "34.196.134.215",
+      "id": "6382",
+      "name": "URF645",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "ES",
+      "dashboard": "https://grupoelite.es/nxdn/",
+      "host": "grupoelite.es",
+      "id": "64003",
+      "name": "ELITE NXDN",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "RE",
+      "dashboard": "http://vmi2726828.contaboserver.net:9003",
+      "host": "84.247.131.227",
+      "id": "64701",
+      "name": "NXDN REUNION",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "DE",
+      "host": "176.9.1.168",
+      "id": "65000",
+      "name": "World Wide",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://89.46.75.115/2007-NXDN/",
+      "description": "<div class=\"row\">\r\n<div class=\"col-9\">\r\n<div class=\"card\">\r\n<div class=\"card-header\">\r\n<h3>2007 DXGROUP NXDN Reflector</h3>\r\n</div>\r\n<p>Gruppo OM Parco Giochi - 2007-DXGROUP</p>\r\n<p>NXDN #65100 - DMR #7065100 ( Gateway &lt;--&gt; DMR2NXDN ) - YSF #68800</p>\r\n<p>&nbsp;</p>\r\n<p>Dedicato a Diego IK2ZEM</p>\r\n</div>\r\n</div>\r\n</div>",
+      "host": "89.46.75.115",
+      "id": "65100",
+      "name": "65100",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://45.33.22.225:4000/",
+      "description": "<div class=\"n6owBd fVtNVe\" data-sfc-cp=\"\" data-sfc-root=\"ep\" data-hveid=\"CAIIAQgIEAQ\" data-complete=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\"><span class=\"iNqyIf\" data-sfc-cp=\"\" data-sfc-root=\"ep\" data-complete=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\"><strong class=\"Yjhzub\" data-sfc-root=\"ep\" data-complete=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 700; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\">Murphy Radio Network (MRN)</strong><br data-sfc-root=\"ep\" data-sfc-pl=\"|||[]\" data-complete=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\"><strong class=\"Yjhzub\" data-sfc-root=\"ep\" data-complete=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 700; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\">Website:</strong>&nbsp;http://murphy-radio.net/<br data-sfc-root=\"ep\" data-sfc-pl=\"|||[]\" data-complete=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\"><strong class=\"Yjhzub\" data-sfc-root=\"ep\" data-complete=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 700; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\">Location:</strong>&nbsp;North Central Texas</span></div>\r\n<div class=\"n6owBd fVtNVe\" data-sfc-cp=\"\" data-sfc-root=\"ep\" data-hveid=\"CAIIAQgIEAQ\" data-complete=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\">&nbsp;</div>\r\n<div class=\"n6owBd fVtNVe\" data-sfc-cp=\"\" data-sfc-root=\"ep\" data-hveid=\"CAIIAQgIEAc\" data-complete=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\"><span class=\"iNqyIf\" data-sfc-cp=\"\" data-sfc-root=\"ep\" data-complete=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\">The Murphy Radio Network (MRN) is an expanding amateur radio group dedicated to fostering an open, experimental environment for operators in North Central Texas and beyond. Believing that ham radio thrives on variety, our infrastructure seamlessly integrates both analog and digital modes.</span></div>\r\n<div class=\"n6owBd fVtNVe\" data-sfc-cp=\"\" data-sfc-root=\"ep\" data-hveid=\"CAIIAQgIEAc\" data-complete=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\">&nbsp;</div>\r\n<div class=\"n6owBd fVtNVe\" data-sfc-cp=\"\" data-sfc-root=\"ep\" data-hveid=\"CAIIAQgIEAo\" data-complete=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\"><span class=\"iNqyIf\" data-sfc-cp=\"\" data-sfc-root=\"ep\" data-complete=\"true\" aria-owns=\"action-menu-parent-container\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\">MRN operates on a simple philosophy: total freedom to use, experiment, and connect. As long as your operations align with FCC Part 97 licensing regulations, our network is your playground. Whether you are an experienced Elmer or a newly licensed tech looking to experiment with new modes, you will find a welcoming home here. Come join the fun and help us grow the network!</span></div>",
+      "host": "45.33.22.225",
+      "id": "65123",
+      "name": "65123",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "IT",
+      "host": "ysf365.mooo.com",
+      "id": "65200",
+      "name": "NXDN SERVER",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "BE",
+      "dashboard": "http://adn2061.be:3000",
+      "host": "2061.adn.systems",
+      "id": "65206",
+      "name": "65206",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "FR",
+      "dashboard": "https://nxdn.f5dan.fr/",
+      "host": "nxdn.f5dan.fr",
+      "id": "65208",
+      "name": "NXDN-FRA",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://xlx545.pennlinkgroup.com/nxdntg65209",
+      "description": "<p>NXDN External Reflector: Virtual Amateur Radio Group (VARG, K8KH, VARG@gmail.com)</p>",
+      "host": "3.215.215.169",
+      "id": "65209",
+      "name": "65209",
+      "port": 41410,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "host": "96.225.96.169",
+      "id": "654",
+      "name": "N2FED",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "description": "<p>KK6RQ TAC-2</p>",
+      "host": "area52.zapto.org",
+      "id": "665",
+      "name": "665",
+      "port": 41401,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "description": "<p>Netoholics Network multimode amateur radio network. Bridged with AllStar, EchoLink, TGIF, YSF, Zello, M17, and P25.Dom</p>",
+      "host": "nxdn.netoholicsnetwork.net",
+      "id": "6749",
+      "name": "Netoholics Network",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://707nxdn.kd0ioe.com",
+      "description": "<p>Rural Minnesota 707 - linked to P25, YSF, DMR (via TGIF network)</p>",
+      "host": "707nxdn.kd0ioe.com",
+      "id": "707",
+      "name": "707",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "NL",
+      "dashboard": "http://nxdn1.digitalevoice.nl",
+      "host": "94.72.113.36",
+      "id": "711",
+      "name": "NXDN Global by David PA7LIM",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "PA",
+      "dashboard": "http://nxdn-hp3.dnsup.net/",
+      "host": "nxdn-hp3.dnsup.net",
+      "id": "7144",
+      "name": "Chiriqui Link Panama",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "PA",
+      "dashboard": "http://66.154.126.141:81/",
+      "host": "66.154.126.141",
+      "id": "7145",
+      "name": "NXDN GREMPA",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://m17-718.ddns.net/urf/",
+      "host": "m17-718.ddns.net",
+      "id": "718",
+      "name": "URF718",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "AR",
+      "dashboard": "https://bellville-link.tplinkdns.com/urf/",
+      "description": "<p>\"Reflector experimental de Bell Ville, C&oacute;rdoba, ARGENTINA. Laboratorio abierto sin fines de lucro para pruebas de equipos, ajustes y QSOs. &iexcl;Todos los colegas son bienvenidos a utilizar y experimentar en el sistema!\"</p>",
+      "host": "bellville-link.tplinkdns.com",
+      "id": "7221",
+      "name": "URFARG",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "AR",
+      "dashboard": "https://confenautica.ddns.net/nxlink/html/index.php?lang=es",
+      "host": "140.238.184.113",
+      "id": "7224",
+      "name": "Conferencia NAUTICA",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "BR",
+      "dashboard": "http://nxdn.radioserver.qsl.br",
+      "description": "<p>Refletor NXDN conectado ao servidor DMR MASTER-SUL com transcodifica&ccedil;&atilde;o bidirecional simult&acirc;nea para YSF, P25 e DMR.</p>",
+      "host": "191.252.191.246",
+      "id": "7240",
+      "name": "7240",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "BR",
+      "dashboard": "https://pu4ron.dynv6.net/nxdn",
+      "description": "<p>7245&nbsp; Multiprotocolo - Super Link Brasil</p>",
+      "host": "165.73.249.152",
+      "id": "7245",
+      "name": "7245 Brazil - Multiprotocolo",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "CL",
+      "host": "sdradio.cl",
+      "id": "730",
+      "name": "BM TG730 Chile",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "NL",
+      "dashboard": "http://pd2v.ddns.net",
+      "host": "62.194.228.69",
+      "id": "7300",
+      "name": "NXDN Reflector Dashboard TG 7300 Apeldoorn",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "CL",
+      "host": "sdradio.cl",
+      "id": "7309",
+      "name": "BM TG 73099 CHILE-LINK",
+      "port": 41401,
+      "source": "dvref"
+    },
+    {
+      "country": "CO",
+      "host": "bochica.asuscomm.com",
+      "id": "732",
+      "name": "Caf\u00e9 Digital Colombia",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "VE",
+      "dashboard": "http://64.112.43.174:84",
+      "description": "<p>Unificando protocolos en nuestro MCC ADNs</p>",
+      "host": "64.112.43.174",
+      "id": "7344",
+      "name": "NXDN MCC-YV",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "description": "<p>DVMproject MM - KN6TYF</p>",
+      "host": "fne.dv.kn6tyf.com",
+      "id": "747",
+      "name": "747",
+      "port": 41401,
+      "source": "dvref"
+    },
+    {
+      "country": "UY",
+      "host": "198.245.55.26",
+      "id": "748",
+      "name": "UYURUGUAY.NET",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://162.213.130.93:4000/",
+      "host": "162.213.130.93",
+      "id": "7486",
+      "name": "URF073",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "ES",
+      "dashboard": "https://qsoforgenxdn.ddns.net",
+      "description": "<p>San vicente del raspeig, Alicante</p>",
+      "host": "qsoforgenxdn.ddns.net",
+      "id": "7575",
+      "name": "ALICANTE",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://p25.digital-america.org/",
+      "description": "<p>XLX.TNHAMS.NET Californa XLX LINK WITH TENNESSE&nbsp;</p>",
+      "host": "15.204.116.55",
+      "id": "76",
+      "name": "XLX Californa Tennesee",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://xlx760.ddns.net",
+      "description": "<p>URF760</p>\r\n<p>With a <strong>Halo Halo Network</strong>, it celebrates diversity and connection, mixing voices and cultures like the famous Filipino dessert: colorful, layered, and always refreshing. Add in the <strong>XPR Pinoy spirit</strong>, and you get a reflector that&rsquo;s proudly community\u2011driven, welcoming operators worldwide while keeping a strong Pinoy identity at its core.</p>\r\n<p><strong>In short:</strong> URF isn&rsquo;t just about linking modes&mdash;it&rsquo;s about linking people, networks, and cultures into one vibrant digital space.</p>",
+      "host": "xlx760.ddns.net",
+      "id": "760",
+      "name": "URF760",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "host": "innet.tplinkdns.com",
+      "id": "777",
+      "name": "JesusSaves - Not Linked",
+      "port": 41401,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "host": "innet.tplinkdns.com",
+      "id": "7770",
+      "name": "JesusSaves - Linked",
+      "port": 41402,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://wmrasystem.com/NXDN-REF/",
+      "host": "wmrasystem.com",
+      "id": "7941",
+      "name": "WMRA MULTIMODE NETWORK",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "AT",
+      "host": "oe1phs.ddns.net",
+      "id": "801",
+      "name": "XLX-801",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://nxdn.ncvafusion.org/",
+      "host": "nxdn.ncvafusion.org",
+      "id": "822",
+      "name": "NC VA Fusion NXDN",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://urf825.meshnetworks.co.uk/public",
+      "description": "<p>One of the 2 core reflectors on the UK NWMG multimode digital voice network.</p>",
+      "host": "xlx.g6phf.co.uk",
+      "id": "825",
+      "name": "URFLAN",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "EC",
+      "dashboard": "http://jjsc.ddns.net/nxdn",
+      "host": "jjsc.ddns.net",
+      "id": "8465",
+      "name": "ECUADOR NDXN Reflector",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://chandlerhams.org/reflector",
+      "description": "<p>URF847 is a universal, multi-protocol digital voice reflector that supports D-Star protocols (DPlus, DCS, DExtra and G3), DMR protocols (MMDVMHost, DMR+ and NXDN), M17, P25 (using IMBE) and YSF.<br>&nbsp;<br>DCS847 A<br>REF847 A<br>XLX847 A<br>XRF847 A<br>&nbsp;<br>M17-847<br>NXDN TG 847<br>P25 TG 847<br>TGIF 30847<br>YSF 00847<br>&nbsp;<br>https://chandlerhams.org/reflector<br>&nbsp;<br>Chandler Ham Radio Club (N7CHN)</p>",
+      "host": "urf847.kk7mnz.com",
+      "id": "847",
+      "name": "URF847",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://urfd.dvswitch.org/urf/",
+      "description": "<p>https://groups.io/g/AR902MHz/</p>",
+      "host": "45.42.215.8",
+      "id": "902",
+      "name": "NXDN AR902MHz",
+      "port": 41902,
+      "source": "dvref"
+    },
+    {
+      "country": "TH",
+      "dashboard": "http://xlx909.freeddns.org:8808",
+      "host": "xlx909.freeddns.org",
+      "id": "909",
+      "name": "XLX909 NXDN",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "ES",
+      "dashboard": "http://fcs701.xreflector.net/nxdn91/",
+      "host": "fcs701.xreflector.net",
+      "id": "91",
+      "name": "World Wide",
+      "port": 41401,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://xlx910.mywire.org",
+      "description": "<p>910 Washington DC - Virginia - Maryland</p>",
+      "host": "xlx910.mywire.org",
+      "id": "910",
+      "name": "DC - MD -VA XLX910D",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "ES",
+      "dashboard": "http://ea8ee.c4fm.es/2/",
+      "description": "<p>914 Latin America</p>",
+      "host": "ea8ee.c4fm.es",
+      "id": "914",
+      "name": "914",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://47.156.44.132/",
+      "host": "47.156.44.132",
+      "id": "9140",
+      "name": "URF914",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "TH",
+      "dashboard": "https://xlx918.180152.xyz:8810",
+      "host": "xlx918.180152.xyz",
+      "id": "918",
+      "name": "XLX918 NXDN",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "GB",
+      "dashboard": "http://xlx925.hopto.org/index.php",
+      "host": "185.26.243.94",
+      "id": "925",
+      "name": "URF925",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "GR",
+      "dashboard": "http://57.129.48.4:89/",
+      "description": "<p>2021_ADN_SYSTEMS_GREECE</p>",
+      "host": "57.129.48.4",
+      "id": "930",
+      "name": "Hellenic NXDN Chat",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "FR",
+      "dashboard": "http://xlx933.hamdigital.fr",
+      "host": "51.254.33.194",
+      "id": "933",
+      "name": "URF933",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://ref.n6lka.com:4000",
+      "description": "<p>N6LKA SoCal Reflector</p>\r\n<p>This reflector is used to connect the N6LKA and AD5MT repeaters for each mode. Others are welcome to connect to this reflector.</p>",
+      "host": "ref.n6lka.com",
+      "id": "936",
+      "name": "URFLKA",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "GB",
+      "dashboard": "http://xlx942.mb6ds.ampr.org",
+      "description": "<p>XLX942 NXDN</p>",
+      "host": "xlx942.mb6ds.ampr.org",
+      "id": "942",
+      "name": "XLX942",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "AU",
+      "dashboard": "https://m17-nxdn.vkradio.com/",
+      "description": "<p>M17 Project - M17-M17 C Reflector bridge</p>",
+      "host": "112.213.34.65",
+      "id": "9517",
+      "name": "9517",
+      "port": 41401,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://xlxlist.dyndns.org",
+      "host": "xlxlist.dyndns.org",
+      "id": "960",
+      "name": "NXDN Gray",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://urf097.newenglanddigitalradio.com",
+      "description": "<p>New England Digital Radio KC1VAX</p>\r\n<p>&nbsp;</p>",
+      "host": "140.82.24.7",
+      "id": "97",
+      "name": "URF097",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://urfpaw.11cats.org",
+      "description": "<p>https://www.11cats.org</p>\r\n<p>PAW is a YSF Master:&nbsp; Connect to urfpaw.11cats.org, use DGID 10 for module A.</p>",
+      "host": "urfpaw.11cats.org",
+      "id": "9774",
+      "name": "URFPAW",
+      "port": 41400,
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://urf106.com",
+      "description": "<h2>Eastern-MI-Link multi-mode network.&nbsp; See urf106.com for details.</h2>",
+      "host": "24.127.204.177",
+      "id": "9846",
+      "name": "URF106",
+      "port": 41401,
+      "source": "dvref"
+    }
+  ],
+  "schema_version": 1,
+  "source": {
+    "name": "DVRef",
+    "url": "https://dvref.com/api/v2/"
+  }
+}
