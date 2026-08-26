@@ -38,7 +38,7 @@
         "ipv4": "128.199.235.93",
         "ipv6": null,
         "port": 41400,
-        "sponsor": "NXDN 38 XLX138 Module B Thailand",
+        "sponsor": "NXDN 38 XLX138 Module B Thailand, contact nxdn38@example.org",
         "country": "TH",
         "ip_source": "static",
         "dns_cache_updated_at": "2025-05-24T08:46:00.283916Z",
@@ -61,7 +61,7 @@
         "dns_cache_updated_at": "2026-08-25T23:48:26.040398Z",
         "last_verified_at": "2026-08-19T15:27:30.550683Z",
         "network_type": "hosting",
-        "description": "<p>XLX049C-REF049C-BM TG 312543</p>"
+        "description": "<p>XLX049C-REF049C-BM TG 312543 — mail ka8scp@example.net</p>"
       }
     ]
   }

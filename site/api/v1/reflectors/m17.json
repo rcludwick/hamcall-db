@@ -1,0 +1,2807 @@
+{
+  "api_version": "v1",
+  "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
+  "client_refresh_days": 7,
+  "count": 104,
+  "generated": "2026-08-26",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
+  "network": "m17",
+  "reflectors": [
+    {
+      "country": "GB",
+      "dashboard": "http://urf001.cumbriacq.com:98/urf/",
+      "description": "<p>More info on <a href=\"https://cumbriaCQ.com\">https://cumbriaCQ.com</a><br>M17-002 is bridged into the cumbriaCQ Network&nbsp;</p>",
+      "dial": {
+        "callsign": "M17-002",
+        "host": "89.240.4.99",
+        "kind": "m17",
+        "modules": [
+          "A"
+        ],
+        "port": 17000
+      },
+      "id": "M17-002",
+      "name": "M17-002",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "cumbriaCQ.com"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://m17.ridigitallink.net",
+      "description": "<p>Part of the Rhode Island digital link and the Quahog Repeater Network</p>",
+      "dial": {
+        "callsign": "M17-003",
+        "host": "192.227.141.209",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "port": 17000
+      },
+      "id": "M17-003",
+      "name": "RI DIGITALINK",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "KA1MXL"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://hamsat.eu/m17",
+      "dial": {
+        "callsign": "M17-005",
+        "host": "45.77.223.78",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-005",
+      "name": "M17",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "M17"
+    },
+    {
+      "country": "GR",
+      "dashboard": "http://m17.goip.it:3002/",
+      "description": "<p>M17-010 &nbsp;HELLAS Zone Reflector!</p>",
+      "dial": {
+        "callsign": "M17-010",
+        "host": "m17.goip.de",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17002
+      },
+      "id": "M17-010",
+      "name": "M17-010 \u00a0HELLAS Zone!",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "HELLAS Ham Radio Net Zone"
+    },
+    {
+      "country": "BR",
+      "dashboard": "https://ref018.dstar.com.br",
+      "dial": {
+        "callsign": "M17-018",
+        "host": "ref018.dstar.com.br",
+        "kind": "m17",
+        "modules": [
+          "A"
+        ],
+        "port": 17000
+      },
+      "id": "M17-018",
+      "name": "M17-018",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "PY4EI"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://m17-020.k2ie.net",
+      "dial": {
+        "callsign": "M17-020",
+        "host": "m17-020.k2ie.net",
+        "kind": "m17",
+        "modules": [
+          "D",
+          "M"
+        ],
+        "port": 17000
+      },
+      "id": "M17-020",
+      "name": "M17-020",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "020 Digital Multiprotocol Group"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://m17-033.dyndns.org/",
+      "description": "<p>ITALY MULTIPROTOCOL NETWORK</p>",
+      "dial": {
+        "callsign": "M17-033",
+        "host": "46.226.178.84",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-033",
+      "name": "IT-MULTIPROTOCOL-NETWORK",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "IT-MULTIPROTOCOL-NETWORK"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://xlx049.dyndns.org",
+      "description": "<p>new XLXd supporting M17</p>",
+      "dial": {
+        "callsign": "M17-049",
+        "host": "xlx049.dyndns.org",
+        "kind": "m17",
+        "modules": [
+          "C"
+        ],
+        "port": 17000
+      },
+      "id": "M17-049",
+      "name": "XLX049 M17 Reflector",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "ne-dstar.org"
+    },
+    {
+      "country": "BR",
+      "dashboard": "https://xlx.dstar.com.br",
+      "dial": {
+        "callsign": "M17-070",
+        "host": "xlx.dstar.com.br",
+        "kind": "m17",
+        "modules": [
+          "A"
+        ],
+        "port": 17000
+      },
+      "id": "M17-070",
+      "name": "M17-070",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "PY4EI"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://m17-097.newenglanddigitalradio.com/",
+      "description": "<p>M17 reflector operated by KC1VAX for amateur radio communications and experimentation.</p>",
+      "dial": {
+        "callsign": "M17-097",
+        "host": "104.207.138.151",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-097",
+      "name": "KC1VAX M17 Reflector",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "KC1VAX"
+    },
+    {
+      "country": "BR",
+      "dashboard": "https://ref105.dstar.com.br/",
+      "dial": {
+        "callsign": "M17-105",
+        "host": "ref105.dstar.com.br",
+        "kind": "m17",
+        "modules": [
+          "A"
+        ],
+        "port": 17000
+      },
+      "id": "M17-105",
+      "name": "REF105",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "PY4EI"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://sbanetweb.com:8087",
+      "description": "<p>Point of contact for those users of M17 interested in Emergency Communications</p>",
+      "dial": {
+        "callsign": "M17-117",
+        "host": "96.224.250.24",
+        "kind": "m17",
+        "modules": [
+          "B"
+        ],
+        "port": 17000
+      },
+      "id": "M17-117",
+      "name": "M17-117",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "Emergency Radio Long Island"
+    },
+    {
+      "country": "AR",
+      "dashboard": "https://m17-128.radiohub.ar",
+      "description": "<p>M17 Reflector - RadioHUB</p>",
+      "dial": {
+        "callsign": "M17-128",
+        "host": "200.80.247.94",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "port": 17000
+      },
+      "id": "M17-128",
+      "name": "RadioHUB",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "RadioHUB"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://xlx137.mywire.org",
+      "dial": {
+        "callsign": "M17-137",
+        "host": "xlx137.mywire.org",
+        "kind": "m17",
+        "modules": [
+          "A"
+        ],
+        "port": 17000
+      },
+      "id": "M17-137",
+      "name": "XLX137 Reflector",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "XLX137"
+    },
+    {
+      "country": "TH",
+      "dashboard": "http://m17138.freeddns.org:3000",
+      "description": "<p>http://xlx138.freeddns.org<br>M17-138 Module B Interlink XLX138 B<br>M17-138 Module L Interlink XLX138 L<br>M17-138 Module X Interlink XLX138 X Nexus</p>\r\n<p><br>#Analoge&amp;Digital Radio Thailand Team<br>#XNexus Team</p>",
+      "dial": {
+        "callsign": "M17-138",
+        "host": "103.195.7.20",
+        "kind": "m17",
+        "modules": [
+          "B",
+          "L",
+          "X"
+        ],
+        "port": 17000
+      },
+      "id": "M17-138",
+      "name": "M17-138",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "ADR.Thailand Team DE E23JWE"
+    },
+    {
+      "country": "TH",
+      "dashboard": "http://m17.hs3tdi.com:3000",
+      "description": "<p>M17-148 Thailand</p>",
+      "dial": {
+        "callsign": "M17-148",
+        "host": "122.154.141.51",
+        "kind": "m17",
+        "modules": [
+          "B",
+          "C",
+          "L",
+          "X"
+        ],
+        "port": 17000
+      },
+      "id": "M17-148",
+      "name": "M17-148",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "HS3TDI"
+    },
+    {
+      "country": "TH",
+      "dashboard": "http://m17.pwk.ac.th:3000",
+      "description": "<p>M17-149 Thailand</p>",
+      "dial": {
+        "callsign": "M17-149",
+        "host": "122.154.140.136",
+        "kind": "m17",
+        "modules": [
+          "B",
+          "C",
+          "L",
+          "X"
+        ],
+        "port": 17000
+      },
+      "id": "M17-149",
+      "name": "M17-149",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "HS3TDI"
+    },
+    {
+      "country": "TH",
+      "dashboard": "http://44.32.81.27:8080",
+      "dial": {
+        "callsign": "M17-162",
+        "host": "44.32.81.27",
+        "kind": "m17",
+        "modules": [
+          "C"
+        ],
+        "port": 17000
+      },
+      "id": "M17-162",
+      "name": "M17-Thailand-E29SZE",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "ham radio"
+    },
+    {
+      "country": "KR",
+      "dashboard": "https://dvmq.ddnsfree.com/mrefd/index.php",
+      "description": "<p>DS5QDR Heonmin Lee : 2nd M17 Reflector</p>",
+      "dial": {
+        "callsign": "M17-182",
+        "host": "168.107.6.135",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-182",
+      "name": "M17-182",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "DS5QDR DV HAM World"
+    },
+    {
+      "country": "GR",
+      "dashboard": "http://m17.cqnet.org:3001/#/",
+      "description": "<p>M17-202 &nbsp;HELLAS Zone Reflector!</p>",
+      "dial": {
+        "callsign": "M17-202",
+        "host": "m17.cqnet.org",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17001
+      },
+      "id": "M17-202",
+      "name": "M17-202 \u00a0HELLAS Zone!",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "HELLAS Zone Net! By SA7SVR"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://m17-207.w1bsb.net",
+      "description": "<p>A gathering place for M17 users in the Great State of Maine.&nbsp;</p>",
+      "dial": {
+        "callsign": "M17-207",
+        "host": "m17-207.w1bsb.net",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-207",
+      "name": "M17-207",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "W1BSB"
+    },
+    {
+      "country": "AD",
+      "dashboard": "https://urf.adan.ovh/",
+      "description": "URF213 modulos A (ADN 2131) y B (RadioVampiros TG666)",
+      "dial": {
+        "callsign": "M17-213",
+        "host": "urf.adan.ovh",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B"
+        ],
+        "port": 17000
+      },
+      "id": "M17-213",
+      "name": "URF213",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "C31AG"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://xlx217.dynamic-dns.net",
+      "description": "<p>XLX217 Experimental RasPi4 Reflector</p>",
+      "dial": {
+        "callsign": "M17-217",
+        "host": "xlx217.dynamic-dns.net",
+        "kind": "m17",
+        "modules": [
+          "B"
+        ],
+        "port": 17000
+      },
+      "id": "M17-217",
+      "name": "M17-217 Experimental RasPi4 Reflector",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "N3BBF"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://xlx218.chaverimradio.com",
+      "description": "<p>Multimode reflector sponsored by the <em>Chaverim of Greater Washington DC</em>. Supported modes are DMR, D-STAR, M17, and YSF. Full transcoding is available on modules A-E.</p>\r\n<p>&nbsp;</p>\r\n<p>Please join us for our weekly net every Thursday at 9PM US Eastern Time (Friday 0100 UTC) on Module A which is linked to Brandmeister TG 3213668.</p>\r\n<p>&nbsp;</p>\r\n<p>73 &amp; 18!</p>",
+      "dial": {
+        "callsign": "M17-218",
+        "host": "m17-218.chaverimradio.com",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "port": 17000
+      },
+      "id": "M17-218",
+      "name": "Chaverim Multimode Reflector",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "Chaverim of Greater Washington DC"
+    },
+    {
+      "country": "GR",
+      "dashboard": "http://hellasnode-m17.ddns.net:85",
+      "description": "<p>Hellas-Node M17 Reflector Bridged to 2022.adn.systems</p>",
+      "dial": {
+        "callsign": "M17-222",
+        "host": "51.154.9.233",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "port": 17000
+      },
+      "id": "M17-222",
+      "name": "M17-222  Reflector of Hellas-Node.net",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "hellas-node.net"
+    },
+    {
+      "country": "RO",
+      "dashboard": "https://m17.145500.xyz/",
+      "description": "<p>M17 reflector for YO (Rom&acirc;nia), TG 226</p>",
+      "dial": {
+        "callsign": "M17-226",
+        "host": "m17.145500.xyz",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "S",
+          "Y"
+        ],
+        "port": 17000
+      },
+      "id": "M17-226",
+      "name": "M17-YO-Romania",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "145500.xyz"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://wg5eek.com/digidash/",
+      "description": "<p>M17 Reflector to futher communication with those interested in not only 2 meter simplex communication, but many other bands and frequences.&nbsp;<br><br>Modules<br>D = 2MC - Arkansas Radio Heads</p>",
+      "dial": {
+        "callsign": "M17-2MC",
+        "host": "wg5eek.com",
+        "kind": "m17",
+        "modules": [
+          "D"
+        ],
+        "port": 17000
+      },
+      "id": "M17-2MC",
+      "name": "2 Meter Crew Arkansas Radio Heads",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "WG5EEK"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://xlx315.duckdns.org",
+      "description": "<p style=\"padding-left: 40px; text-align: center;\"><strong>Wisconsin DMR(Digital Mode Reflector)</strong></p>\r\n<p style=\"padding-left: 40px; text-align: center;\"><span style=\"text-decoration: underline;\">The following are all linked on XLX315A :</span></p>\r\n<p style=\"padding-left: 40px; text-align: center;\">DMR TG 31555 via CLAND IPSC2</p>\r\n<p style=\"padding-left: 40px; text-align: center;\">P25 TG 31555 via WI Regional P25 Reflector</p>\r\n<p style=\"padding-left: 40px; text-align: center;\">NXDN TG 31555 via NXCore</p>\r\n<p style=\"padding-left: 40px; text-align: center;\">YSF31555 via XLXD</p>\r\n<p style=\"padding-left: 40px; text-align: center;\">M17-315 via XLXD</p>\r\n<p style=\"padding-left: 40px; text-align: center;\">-------------------------------------</p>\r\n<p style=\"padding-left: 40px; text-align: center;\">XLXD Server is hosted by WX9KVH</p>\r\n<p style=\"padding-left: 40px; text-align: center;\">IPSC2 is hosted by N9OIG</p>\r\n<p style=\"padding-left: 40px; text-align: center;\">P25 Reflector is hosted by N9FBF</p>\r\n<p style=\"padding-left: 40px; text-align: center;\">-------------------------------------</p>\r\n<p style=\"padding-left: 40px; text-align: center;\">Visit wisconsindmr.com for more info.</p>\r\n<p style=\"padding-left: 40px; text-align: center;\">&nbsp;</p>",
+      "dial": {
+        "callsign": "M17-315",
+        "host": "xlx315.duckdns.org",
+        "kind": "m17",
+        "modules": [
+          "A"
+        ],
+        "port": 17000
+      },
+      "id": "M17-315",
+      "name": "Wisconsin DMR",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "WX9KVH"
+    },
+    {
+      "country": "US",
+      "description": "<p>M17 333 Rana QQ</p>",
+      "dial": {
+        "callsign": "M17-333",
+        "host": "96.44.137.162",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B"
+        ],
+        "port": 17001
+      },
+      "id": "M17-333",
+      "name": "M17 QQ",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "Rana QQ"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://127.0.0.1",
+      "dial": {
+        "callsign": "M17-396",
+        "host": "96.44.137.162",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B"
+        ],
+        "port": 17000
+      },
+      "id": "M17-396",
+      "name": "US-Keywork",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "US-Keywork"
+    },
+    {
+      "country": "CA",
+      "dashboard": "https://xlx405.repeatme.ca",
+      "dial": {
+        "callsign": "M17-405",
+        "host": "66.179.209.30",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J"
+        ],
+        "port": 17000
+      },
+      "id": "M17-405",
+      "name": "XLX405A - 405",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "VA3UV"
+    },
+    {
+      "country": "CA",
+      "dial": {
+        "callsign": "M17-427",
+        "host": "15.157.128.240",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J"
+        ],
+        "port": 17000
+      },
+      "id": "M17-427",
+      "name": "XLX427A - M17 427",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "VA3UV"
+    },
+    {
+      "country": "AU",
+      "dashboard": "https://m17.vkradio.com",
+      "description": "<p>Aussie M17 reflector, carries the Pride Network, ANZEL, FreeSTAR Module X and others.&nbsp; See&nbsp;<a href=\"https://vkmultimodenetwork.weebly.com\">https://vkmultimodenetwork.weebly.com</a> for more information.</p>",
+      "dial": {
+        "callsign": "M17-432",
+        "host": "112.213.34.65",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-432",
+      "name": "M17-432",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "VK3JED"
+    },
+    {
+      "country": "AU",
+      "dashboard": "https://m17.dale.id.au",
+      "description": "<p><strong>VK Calling Hub</strong><br><strong>M17</strong>: 434 B, <strong>ASL</strong>: 572981, <strong>YSF</strong>: 50505 (AU-VK-DVDU505), <strong>NXDN</strong>: 50505, <strong>P25</strong>: 50505 bridged to DVAU DMR 505</p>\r\n<p>&nbsp;</p>\r\n<p><strong>VK Nets Hub</strong><br><strong>M17</strong>: 434 E, <strong>ASL</strong>: 572982, <strong>YSF</strong>: 50500 (AU-VK-DVDU50500), <strong>NXDN</strong>: 50500, <strong>P25</strong>: 50500 bridged to DVAU DMR 50500</p>\r\n<p>&nbsp;</p>\r\n<p><strong>VK5 Sth. Aust. Hub</strong><br><strong>M17: </strong>434 C, <strong>ASL</strong>: 572983, <strong>YSF</strong>: 05055 (AU-VK5-DVDU5055), <strong>P25</strong>: 5055, <strong>NXDN</strong>: 5055, bridged to DVAU DMR 5055</p>\r\n<p>&nbsp;</p>\r\n<p><strong>Pride Radio Group</strong><br><strong>M17</strong>: 434 D</p>",
+      "dial": {
+        "callsign": "M17-434",
+        "host": "45.124.54.132",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-434",
+      "name": "M17-434",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "VK5ZSH"
+    },
+    {
+      "country": "PL",
+      "dashboard": "http://waw01.kg5a.us",
+      "description": "<p>M17 - TG512 Warsaw Reflector Poland</p>",
+      "dial": {
+        "callsign": "M17-512",
+        "host": "94.177.202.207",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B"
+        ],
+        "port": 17000
+      },
+      "id": "M17-512",
+      "name": "M17-512 Warszawa Poland (26512)",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "SQ5AC"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://m17-517.radiosc.net",
+      "dial": {
+        "callsign": "M17-517",
+        "host": "m17-517.radiosc.net",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-517",
+      "name": "RadioSC Linked M17 Reflector",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "RadioSC"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://m17-556.kq4tnv.net",
+      "description": "<p>M17-556 is an MREFD M17 reflector located in Stafford, Virginia, USA.</p>",
+      "dial": {
+        "callsign": "M17-556",
+        "host": "m17-556.kq4tnv.net",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "port": 17000
+      },
+      "id": "M17-556",
+      "name": "KQ4TNV M17 Reflector in Stafford Virginia",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "KQ4TNV"
+    },
+    {
+      "country": "TH",
+      "dashboard": "http://hs5blo.fortiddns.com:81/",
+      "description": "<p>XLX647 launched the M17 - MREF Reflector for all Module A-Z</p>",
+      "dial": {
+        "callsign": "M17-647",
+        "host": "hs5blo.fortiddns.com",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-647",
+      "name": "M17-647",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "HS5BLO"
+    },
+    {
+      "country": "GB",
+      "dashboard": "http://xlx-672-dash.pistar.uk",
+      "dial": {
+        "callsign": "M17-672",
+        "host": "213.171.214.2",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ],
+        "port": 17000
+      },
+      "id": "M17-672",
+      "name": "M17-672",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "Pi-Star Multi-mode Reflector"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://66.45.238.67/mref/",
+      "description": "<p>italia.it</p>",
+      "dial": {
+        "callsign": "M17-718",
+        "host": "m17-718.ddns.net",
+        "kind": "m17",
+        "modules": [
+          "B",
+          "E"
+        ],
+        "port": 17000
+      },
+      "id": "M17-718",
+      "name": "AllStarLink Italoa",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "Allstar_515930-Net.IT_Hub"
+    },
+    {
+      "country": "TH",
+      "dashboard": "http://m17-727.gleeze.com:3000",
+      "dial": {
+        "callsign": "M17-727",
+        "host": "143.198.216.15",
+        "kind": "m17",
+        "modules": [
+          "X"
+        ],
+        "port": 17000
+      },
+      "id": "M17-727",
+      "name": "M17-727",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "E27GAQ"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://m17.we0fun.com",
+      "dial": {
+        "callsign": "M17-815",
+        "host": "m17.we0fun.com",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "X"
+        ],
+        "port": 17000
+      },
+      "id": "M17-815",
+      "name": "Fun Machine Linked Repeater System",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "WE0FUN Fun Machine Linked Repeater System"
+    },
+    {
+      "country": "TH",
+      "dashboard": "http://m17.hamnew.com:3000",
+      "dial": {
+        "callsign": "M17-818",
+        "host": "188.166.226.76",
+        "kind": "m17",
+        "modules": [
+          "D",
+          "L",
+          "X"
+        ],
+        "port": 17000
+      },
+      "id": "M17-818",
+      "name": "M17-818",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "E21NZC"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://wmrasystem.com/M17/",
+      "dial": {
+        "callsign": "M17-835",
+        "host": "wmrasystem.com",
+        "kind": "m17",
+        "modules": [
+          "A"
+        ],
+        "port": 17000
+      },
+      "id": "M17-835",
+      "name": "WMRA MULTIMODE-NETWORK",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "WMRA"
+    },
+    {
+      "country": "TH",
+      "dashboard": "http://xlx909.freeddns.org:8808",
+      "dial": {
+        "callsign": "M17-909",
+        "host": "xlx909.freeddns.org",
+        "kind": "m17",
+        "modules": [
+          "D"
+        ],
+        "port": 17000
+      },
+      "id": "M17-909",
+      "name": "XLX909 M17",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "E20AE"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://xlx910.mywire.org",
+      "description": "<p>XLX 910 Multiprotocol Reflector</p>\r\n<pre>| YSF#28688, YSF#94369, TGIF TG31910, D-Star REF910D. \r\n| NXDN TG910, P25 TG910, Allstarlink node 547611 and EchoLink W3KIT-L.\r\n| M17-910 Module D and also TGIF TG31670</pre>",
+      "dial": {
+        "callsign": "M17-910",
+        "host": "xlx910.mywire.org",
+        "kind": "m17",
+        "modules": [
+          "D"
+        ],
+        "port": 17000
+      },
+      "id": "M17-910",
+      "name": "XLX910",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "XLX910 - Washington, DC - Maryland - Virginia"
+    },
+    {
+      "country": "TH",
+      "dashboard": "http://911m17.freeddns.org:3000",
+      "dial": {
+        "callsign": "M17-911",
+        "host": "128.199.239.91",
+        "kind": "m17",
+        "modules": [
+          "X"
+        ],
+        "port": 17000
+      },
+      "id": "M17-911",
+      "name": "M17-911",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "E20AE Club Station"
+    },
+    {
+      "country": "TH",
+      "dashboard": "https://xlx918.180152.xyz:8810",
+      "dial": {
+        "callsign": "M17-918",
+        "host": "xlx918.180152.xyz",
+        "kind": "m17",
+        "modules": [
+          "D"
+        ],
+        "port": 17000
+      },
+      "id": "M17-918",
+      "name": "XLX918 M17",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "HS0ZOE"
+    },
+    {
+      "country": "GB",
+      "dashboard": "http://m17.ycs235.com",
+      "description": "<p>M17 Bridge For CQ-UK&nbsp;</p>",
+      "dial": {
+        "callsign": "M17-922",
+        "host": "81.150.10.63",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G"
+        ],
+        "port": 17000
+      },
+      "id": "M17-922",
+      "name": "M17-922",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "CQ-UK"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://aritrani.does-it.net/mref/index.php",
+      "description": "<p>Reflector&nbsp; M17&nbsp; per&nbsp; \"Trani Conference\" sul modulo E<br>M17-718&nbsp; sul modulo&nbsp; B<br>M17-ITA&nbsp; &nbsp;sul modulo&nbsp; C</p>",
+      "dial": {
+        "callsign": "M17-BAT",
+        "host": "44.31.102.133",
+        "kind": "m17",
+        "modules": [
+          "B",
+          "C",
+          "E"
+        ],
+        "port": 17000
+      },
+      "id": "M17-BAT",
+      "name": "Reflector\u00a0 M17\u00a0 per\u00a0 Trani Conference",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "Sez. ARI di Trani"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://mp-bat.duckdns.org:3000/",
+      "description": "<p>Reflector connesso al network Multiprotocollo IT-C4FM_BAT , sysop IZ7EXI</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+      "dial": {
+        "callsign": "M17-BTT",
+        "host": "82.85.236.36",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "port": 17000
+      },
+      "id": "M17-BTT",
+      "name": "IT-C4FM_BAT  Reflector M17",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "IT-C4FM_BAT"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://m17.k0xm.net:3000",
+      "dial": {
+        "callsign": "M17-BYG",
+        "host": "m17.k0xm.net",
+        "kind": "m17",
+        "modules": [
+          "A"
+        ],
+        "port": 17000
+      },
+      "id": "M17-BYG",
+      "name": "Backyard Repeater Group Chat",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "Backyard Repeater Group"
+    },
+    {
+      "country": "AU",
+      "dashboard": "https://m17-cbr.charlesmartin.au",
+      "description": "<p>A Canberra-based M17 reflector.</p>",
+      "dial": {
+        "callsign": "M17-CBR",
+        "host": "m17-cbr.charlesmartin.au",
+        "kind": "m17",
+        "modules": [
+          "A"
+        ],
+        "port": 17000
+      },
+      "id": "M17-CBR",
+      "name": "M17-CBR",
+      "network": "m17",
+      "source": "dvref"
+    },
+    {
+      "country": "JP",
+      "dashboard": "http://ccv.owari.biz:3000/",
+      "dial": {
+        "callsign": "M17-CCV",
+        "host": "122.222.1.50",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J"
+        ],
+        "port": 17000
+      },
+      "id": "M17-CCV",
+      "name": "JP-OWARI",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "JA2CCV"
+    },
+    {
+      "country": "DE",
+      "dashboard": "http://85.215.198.111:8970",
+      "description": "<p>Eine Verbindung in das Funknetz-Celle ( FM 2m, FM 70cm, SSB KW*, FM-Funknetz TG26335, FM DB0CEL* , BM TG26334, YSF, NXDN, P25 )&nbsp;</p>\r\n<p>* nur zur OV-Runde aktiv</p>",
+      "dial": {
+        "callsign": "M17-CEL",
+        "host": "85.215.198.111",
+        "kind": "m17",
+        "modules": [
+          "A"
+        ],
+        "port": 17000
+      },
+      "id": "M17-CEL",
+      "name": "Funknetz-Celle",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "DL2OAM"
+    },
+    {
+      "country": "CH",
+      "dashboard": "http://m17ch-italia.ddns.net:17000/index.php",
+      "dial": {
+        "callsign": "M17-CHI",
+        "host": "212.237.33.114",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-CHI",
+      "name": "M17-CHI Reflector",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "HB9CSR Basel Group"
+    },
+    {
+      "country": "CZ",
+      "dial": {
+        "callsign": "M17-CZ0",
+        "host": "80.250.11.113",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ],
+        "port": 17000
+      },
+      "id": "M17-CZ0",
+      "name": "M17-CZ0",
+      "network": "m17",
+      "source": "dvref"
+    },
+    {
+      "country": "CZ",
+      "dashboard": "http://mrefd.ham-radio.cz",
+      "dial": {
+        "callsign": "M17-CZ1",
+        "host": "mrefd.ham-radio.cz",
+        "kind": "m17",
+        "modules": [
+          "B",
+          "C",
+          "X"
+        ],
+        "port": 17000
+      },
+      "id": "M17-CZ1",
+      "name": "Czech M17 reflector",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "ok1lbc"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://doghousenet.com/m17/",
+      "description": "<p>The M17 module of the doghouse digital network.</p>",
+      "dial": {
+        "callsign": "M17-DHN",
+        "host": "doghousenet.com",
+        "kind": "m17",
+        "modules": [
+          "A"
+        ],
+        "port": 17000
+      },
+      "id": "M17-DHN",
+      "name": "Doghouse Digital Network",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "KN1B- Doghouse Network"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://m17.freestar.network",
+      "description": "<p>FreeSTAR Network official M17 Reflector</p>\r\n<p>Module A - Worldwide M17 Only</p>\r\n<p>Module B - UK ChatterBOX linked to DMR 2350 on most networks.</p>\r\n<p>Module C - M17 Project (N/o)</p>\r\n<p>Module D - FreeSTAR International UK Multi-Mod</p>",
+      "dial": {
+        "callsign": "M17-DMR",
+        "host": "m17.freestar.network",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "port": 17000
+      },
+      "id": "M17-DMR",
+      "name": "FreeSTAR Network M17 Reflector",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "freestar.network"
+    },
+    {
+      "country": "TH",
+      "dashboard": "http://e2hub.vra.or.th/m17dash",
+      "description": "<p><strong>HS1AB : Bangkok Amateur Radio Control Station</strong></p>\r\n<p>by Volunteer Radio Association (VRA)</p>",
+      "dial": {
+        "callsign": "M17-E2H",
+        "host": "e2hub.vra.or.th",
+        "kind": "m17",
+        "modules": [
+          "B"
+        ],
+        "port": 17000
+      },
+      "id": "M17-E2H",
+      "name": "HS1AB - 144.900 MHz BKK,THA",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "HS1AB"
+    },
+    {
+      "country": "GB",
+      "dashboard": "http://m17.ham-radio-fog.org:3000",
+      "dial": {
+        "callsign": "M17-FOG",
+        "host": "95.179.203.54",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-FOG",
+      "name": "THE FOG - Future Orientated Gateways",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "THE FOG - Future Orientated Gateways"
+    },
+    {
+      "country": "FR",
+      "dashboard": "https://m17.f4lml.fr/",
+      "dial": {
+        "callsign": "M17-FR2",
+        "host": "m17.f4lml.fr",
+        "kind": "m17",
+        "modules": [
+          "A"
+        ],
+        "port": 17000
+      },
+      "id": "M17-FR2",
+      "name": "M17-FR2",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "F4LML"
+    },
+    {
+      "country": "IT",
+      "dashboard": "https://m17.arifvg.it",
+      "dial": {
+        "callsign": "M17-FVG",
+        "host": "m17.arifvg.it",
+        "kind": "m17",
+        "modules": [
+          "B",
+          "C",
+          "E",
+          "N"
+        ],
+        "port": 17000
+      },
+      "id": "M17-FVG",
+      "name": "FVG",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "ARI F.V.G."
+    },
+    {
+      "country": "AU",
+      "dashboard": "http://m17-ip6.vkradio.com:3000",
+      "description": "<p>Experimental IPv6 only reflector, to test IPv6 only operation and interoperability with dual stack and IPv4 only systems.&nbsp;&nbsp;</p>",
+      "dial": {
+        "callsign": "M17-IP6",
+        "host": "2401:c080:2000:2c78:5400:4ff:fe51:7afe",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-IP6",
+      "name": "M17-IP6",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "VK3JED"
+    },
+    {
+      "country": "IT",
+      "dashboard": "https://m17.is0.org/",
+      "description": "<p>M17-IS0 Sardegna - Linked TG 22202 BrandMeister</p>",
+      "dial": {
+        "callsign": "M17-IS0",
+        "host": "51.254.206.201",
+        "kind": "m17",
+        "modules": [
+          "H"
+        ],
+        "port": 17000
+      },
+      "id": "M17-IS0",
+      "name": "M17-IS0",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "IS0GQX Bruno"
+    },
+    {
+      "country": "IT",
+      "dashboard": "https://m17ita.hblink.it",
+      "dial": {
+        "callsign": "M17-ITA",
+        "host": "44.31.102.131",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-ITA",
+      "name": "M17 MASTER REFLECTOR ITALY",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "IV3JDV"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://www.n6jet.com/mrefd/",
+      "dial": {
+        "callsign": "M17-JET",
+        "host": "5.161.19.207",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17001
+      },
+      "id": "M17-JET",
+      "name": "N6JET M17 Reflector",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "N6JET"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://m17.kansascitywide.com",
+      "dial": {
+        "callsign": "M17-KCW",
+        "host": "172.234.217.28",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "port": 17000
+      },
+      "id": "M17-KCW",
+      "name": "M17-KCW",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "America's Kansas City Wide Digital Network"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://M17-Home.k0xm.net:3000",
+      "dial": {
+        "callsign": "M17-KXM",
+        "host": "44.27.136.156",
+        "kind": "m17",
+        "modules": [
+          "A"
+        ],
+        "port": 17000
+      },
+      "id": "M17-KXM",
+      "name": "K0XM Test M17 Reflector",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "K0XM"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://xlxlef-dash.gb7hh.co.uk",
+      "dial": {
+        "callsign": "M17-LEF",
+        "host": "77.68.25.66",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ],
+        "port": 17000
+      },
+      "id": "M17-LEF",
+      "name": "M17-LEF",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "LEFARS Multi-Reflector (M0UPM)"
+    },
+    {
+      "country": "NL",
+      "dashboard": "https://m17.pa7lim.nl",
+      "description": "<p>M17 test reflector by David PA7LIM. This reflector is written by David PA7LIM</p>",
+      "dial": {
+        "callsign": "M17-LIM",
+        "host": "m17.pa7lim.nl",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-LIM",
+      "name": "M17 reflector of David PA7LIM",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "David PA7LIM"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://m17.openquad.net",
+      "description": "<p>M17 Project Reflector</p>\r\n<p>M17 Activity Day - All day on Fridays local time</p>",
+      "dial": {
+        "callsign": "M17-M17",
+        "host": "107.191.121.105",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-M17",
+      "name": "M17 Project Reflector",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "Quadnet Amateur Radio Network"
+    },
+    {
+      "country": "MX",
+      "dashboard": "https://m17.xe1e.net",
+      "description": "<p><strong>M17 Reflector Mexico&nbsp;&nbsp;</strong></p>\r\n<p><strong>Module X&nbsp; -&nbsp; Gateway to AllStar 60088 and 61734, DMR FreeDMR, TGIF, ADN Systems, SystemX, all same TG 3340, Echolink XE1E-R, IRLP Ref 0114.</strong></p>\r\n<p><strong>Module A, B and C&nbsp; -&nbsp; General use</strong></p>\r\n<p><strong>Module D&nbsp; -&nbsp; Experimentation</strong></p>",
+      "dial": {
+        "callsign": "M17-MEX",
+        "host": "m17.xe1e.net",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "X"
+        ],
+        "port": 17000
+      },
+      "id": "M17-MEX",
+      "name": "M17-MEX",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "XE1E"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://m17-nca.dyndns.org",
+      "dial": {
+        "callsign": "M17-NCA",
+        "host": "m17-nca.dyndns.org",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "port": 17000
+      },
+      "id": "M17-NCA",
+      "name": "M17-NCA",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "K6HP"
+    },
+    {
+      "country": "US",
+      "description": "<p>Netoholics Network multimode amateur-radio network</p>",
+      "dial": {
+        "callsign": "M17-NET",
+        "host": "m17.netoholicsnetwork.net",
+        "kind": "m17",
+        "modules": [
+          "A"
+        ],
+        "port": 17000
+      },
+      "id": "M17-NET",
+      "name": "Netoholics Network",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "KN4EWT"
+    },
+    {
+      "country": "NL",
+      "dashboard": "http://xlx444.ddns.net:38000/m17/",
+      "description": "<p><u><strong>M17 Reflector in The Netherlands</strong></u></p>",
+      "dial": {
+        "callsign": "M17-NLD",
+        "host": "51.83.46.75",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C"
+        ],
+        "port": 17000
+      },
+      "id": "M17-NLD",
+      "name": "Dutch M17 Server",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "M17 Dutch Reflector PD2VDY"
+    },
+    {
+      "country": "NZ",
+      "dashboard": "https://m17-nzd.dvnz.nz/",
+      "description": "<p>New Zealand M17 experiements, with several modules linked to XLX299, FreeDMR, or both.</p>",
+      "dial": {
+        "callsign": "M17-NZD",
+        "host": "m17-nzd.dvnz.nz",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K"
+        ],
+        "port": 17000
+      },
+      "id": "M17-NZD",
+      "name": "New Zealand",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "Digital Voice New Zealand"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://M17obx.duckdns.org",
+      "description": "<p>Looking to expand usage of M17 on the Outer Banks of North Carolina. Currently testing on a temporary server prior to moving to the cloud.&nbsp;</p>",
+      "dial": {
+        "callsign": "M17-OBX",
+        "host": "M17obx.duckdns.org",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-OBX",
+      "name": "Outer Banks",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "WB8OUE"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://ham.kimberlychase.com:4000",
+      "description": "<p>Pride Radio Network, a network by and for LGBTQIA+ hams and their allies. Module A is linked to our network while the other modules are not linked to anything at the moment. For information about our network, visit https://prideradionetwork.weebly.com</p>",
+      "dial": {
+        "callsign": "M17-OMO",
+        "host": "5.78.179.25",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-OMO",
+      "name": "PRIDE",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "KJ7OMO"
+    },
+    {
+      "country": "PH",
+      "dashboard": "https://dx8wmg.org/m17/",
+      "dial": {
+        "callsign": "M17-PHP",
+        "host": "107.152.47.152",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-PHP",
+      "name": "M17-PHP",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "DX8WMG"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://34.196.134.215/",
+      "description": "<p>Eastern Pennsylvania M17 reflector. &nbsp;See info.pennlinkgroup.com for more info.</p>",
+      "dial": {
+        "callsign": "M17-PLG",
+        "host": "54.85.206.3",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "H"
+        ],
+        "port": 17000
+      },
+      "id": "M17-PLG",
+      "name": "East PA Reflector",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "PennLink Group"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://m17pnw.net/",
+      "description": "<p>M17-PNW is a reflector for M17 users in the Pacific Northwest, USA, to help build and inform a community of users in the region.</p>",
+      "dial": {
+        "callsign": "M17-PNW",
+        "host": "m17pnw.net",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C"
+        ],
+        "port": 17000
+      },
+      "id": "M17-PNW",
+      "name": "M17-PNW",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "KJ7T"
+    },
+    {
+      "country": "PT",
+      "dashboard": "https://m17.hamradio.pt/",
+      "dial": {
+        "callsign": "M17-POR",
+        "host": "5.135.13.79",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "C"
+        ],
+        "port": 17000
+      },
+      "id": "M17-POR",
+      "name": "M17-POR",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "HamRadioPT Team"
+    },
+    {
+      "country": "US",
+      "description": "<p>M17 Reflector sponsored by N6PPP for the Frederick Amateur Radio Club</p>",
+      "dial": {
+        "callsign": "M17-PPP",
+        "host": "69.251.56.54",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "port": 17000
+      },
+      "id": "M17-PPP",
+      "name": "M17-PPP",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "N6PPP"
+    },
+    {
+      "country": "KR",
+      "dashboard": "http://dvref.ddnsfree.com/mrefd/index.php",
+      "description": "<p>DS5QDR Heonmin Lee's M17 Reflector for Koreans and HAM</p>",
+      "dial": {
+        "callsign": "M17-QDR",
+        "host": "158.180.80.27",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-QDR",
+      "name": "M17-QDR",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "DS5QDR DV HAM World"
+    },
+    {
+      "country": "GR",
+      "dashboard": "http://qrz.foxhost.org",
+      "description": "<p>HELLAS Zone Net! By SA7SVR</p>",
+      "dial": {
+        "callsign": "M17-QRZ",
+        "host": "foxhost.org",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17002
+      },
+      "id": "M17-QRZ",
+      "name": "M17-QRZ HELLAS Zone!",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "HELLAS Zone Net! By SA7SVR"
+    },
+    {
+      "country": "PT",
+      "dashboard": "http://m17-rlx.ddnsfree.com/#/",
+      "description": "<p>M17 reflector managed by CT7AYD</p>",
+      "dial": {
+        "callsign": "M17-RLX",
+        "host": "212.227.105.8",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-RLX",
+      "name": "M17-RLX",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "ARRLx"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://m17-sat.n8hm.radio/",
+      "description": "<p>An M17 reflector for discussions of amateur satellite related topics.</p>",
+      "dial": {
+        "callsign": "M17-SAT",
+        "host": "45.56.111.31",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C"
+        ],
+        "port": 17000
+      },
+      "id": "M17-SAT",
+      "name": "AMSAT",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "AMSAT"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://m17.scarsvoip.co.uk:3000",
+      "dial": {
+        "callsign": "M17-SCS",
+        "host": "45.77.119.250",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-SCS",
+      "name": "SCARSVOIP",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "SCARS - South Coast Amateur Radio Service"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://selink.lmarc.net/m17dash",
+      "description": "<p>Lookout Mountain Amateur Radio Community and the SouthEast Link Bridge Systems - https://lmarc.net</p>",
+      "dial": {
+        "callsign": "M17-SEL",
+        "host": "m17.lmarc.net",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-SEL",
+      "name": "M17-SEL",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "Lookout Mountain Amateur Radio Community"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://45.79.74.165/php-dash/index.php",
+      "description": "<p>Starfleet Amateur Radio Group - Trek Talk - N6SFI</p>",
+      "dial": {
+        "callsign": "M17-SFI",
+        "host": "45.79.74.165",
+        "kind": "m17",
+        "modules": [
+          "A"
+        ],
+        "port": 17000
+      },
+      "id": "M17-SFI",
+      "name": "Starfleet Amateur Radio Group - Trek Talk",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "SFARG"
+    },
+    {
+      "country": "BR",
+      "dashboard": "https://m17-digitalvoice.dns.army",
+      "description": "<p>REDE LINKADA SLB BRASIL</p>",
+      "dial": {
+        "callsign": "M17-SLB",
+        "host": "165.73.249.152",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M"
+        ],
+        "port": 17000
+      },
+      "id": "M17-SLB",
+      "name": "M17-SLB Brazil - Multiprotocolo",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "PU4RON"
+    },
+    {
+      "country": "GB",
+      "dashboard": "http://m17swd.swdg.net:3000",
+      "dial": {
+        "callsign": "M17-SWD",
+        "host": "45.32.239.121",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-SWD",
+      "name": "South Wales Digital Group",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "SWDG - South Wales Digital Group"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://m17.w1wra.net",
+      "dial": {
+        "callsign": "M17-USA",
+        "host": "m17.w1wra.net",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-USA",
+      "name": "M17 USA Reflector",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "W1WRA"
+    },
+    {
+      "country": "US",
+      "description": "<p>Module A - 3149 (stand alone M17)</p>\r\n<p>&nbsp;</p>\r\n<p>Module B - 314900 Bridge - AmComm DMR 314900, AmComm YCS-313 DG-ID 49, Wires-X UTDRN-BRG, YSF 31490 (Standard), YSF 31590 (Voice Wide), P25 31490, NXDN 31490, D-Star REF029B, M17-UT0 B, ASL 29630</p>\r\n<p>&nbsp;</p>\r\n<p>Module C - 314901 Bridge - AmComm 314901, YSF 31491 (Standard), YSF 31591 (Voice Wide), P25 31491, NXDN 31491, D-Star REF029C, ASL 29631</p>\r\n<p>&nbsp;</p>\r\n<p>Module D - 314905 Bridge - AmComm 314905, YSF 31495 (Standard), YSF 31595 (Voice Wide), P25 31495, NXDN 31495, D-Star REF029D, M17-UT0 D, ASL By Request</p>",
+      "dial": {
+        "callsign": "M17-UT0",
+        "host": "utah00.utahdrn.org",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "port": 17000
+      },
+      "id": "M17-UT0",
+      "name": "Utah DRN M17",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "Utah Digital Repeater Network"
+    },
+    {
+      "country": "GB",
+      "dashboard": "http://m17wal.swdg.net:3000",
+      "dial": {
+        "callsign": "M17-WAL",
+        "host": "192.248.172.148",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-WAL",
+      "name": "Wales, United Kingdom",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "SWDG - South Wales Digital Group"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://digital.whocaresradio.com",
+      "dial": {
+        "callsign": "M17-WHO",
+        "host": "digital.whocaresradio.com",
+        "kind": "m17",
+        "modules": [
+          "A"
+        ],
+        "port": 17001
+      },
+      "id": "M17-WHO",
+      "name": "Who Cares ARG",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "Who Cares ARG"
+    },
+    {
+      "country": "US",
+      "description": "<p>Personal M17 reflector hosted by KE7WIL. Module A is available to licensed amateur radio operators who deliberately connect. This reflector is not interconnected with other reflectors.</p>",
+      "dial": {
+        "callsign": "M17-WIL",
+        "host": "node64189.ddns.net",
+        "kind": "m17",
+        "modules": [
+          "A"
+        ],
+        "port": 17000
+      },
+      "id": "M17-WIL",
+      "name": "KE7WIL Personal M17 Reflector",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "KE7WIL"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://digital.whocaresradio.com",
+      "dial": {
+        "callsign": "M17-WVD",
+        "host": "digital.whocaresradio.com",
+        "kind": "m17",
+        "modules": [
+          "A"
+        ],
+        "port": 17002
+      },
+      "id": "M17-WVD",
+      "name": "W8VD New Haven, MI",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "W8VD"
+    },
+    {
+      "country": "AT",
+      "dial": {
+        "callsign": "M17-XOR",
+        "host": "138.199.236.169",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "T"
+        ],
+        "port": 17000
+      },
+      "id": "M17-XOR",
+      "name": "OE3ANC - DEV Reflector",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "OE3ANC - Dev Reflector"
+    },
+    {
+      "country": "JP",
+      "dashboard": "https://m17-yai.ja3yai.club/",
+      "dial": {
+        "callsign": "M17-YAI",
+        "host": "m17-yai.ja3yai.club",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "O"
+        ],
+        "port": 17000
+      },
+      "id": "M17-YAI",
+      "name": "Awaji-IS AMC",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "JA3YAI"
+    },
+    {
+      "country": "JP",
+      "dashboard": "http://jh1blt.net:3000/",
+      "dial": {
+        "callsign": "M17-YEG",
+        "host": "219.117.204.205",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J"
+        ],
+        "port": 17000
+      },
+      "id": "M17-YEG",
+      "name": "M17-YEG Mobara, Chiba, JP",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "JJ1YEG Sotobo Amateu Radio Club"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://digital.whocaresradio.com",
+      "dial": {
+        "callsign": "M17-ZOM",
+        "host": "digital.whocaresradio.com",
+        "kind": "m17",
+        "modules": [
+          "A"
+        ],
+        "port": 17003
+      },
+      "id": "M17-ZOM",
+      "name": "Zombie Alert - Metro Detroit MI",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "AA8GK N8ZA W8SOX"
+    }
+  ],
+  "schema_version": 1,
+  "source": {
+    "name": "DVRef",
+    "url": "https://dvref.com/api/v2/"
+  }
+}

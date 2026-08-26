@@ -568,11 +568,15 @@ _REFLECTORS_DDL = (
 _REFLECTORS_INDEX_DDL = "CREATE INDEX IF NOT EXISTS idx_reflectors_network ON reflectors (network)"
 
 
+# The two list-valued columns, stored comma-joined for the same reason.
+_LIST_COLUMNS: frozenset[str] = frozenset({"modules", "aliases"})
+
+
 def _reflector_payload(reflector: ReflectorRecord) -> tuple:
     values = []
     for col in REFLECTOR_SCHEMA_COLUMNS:
         value = getattr(reflector, col)
-        values.append(",".join(value) if col == "modules" else value)
+        values.append(",".join(value) if col in _LIST_COLUMNS else value)
     return tuple(values)
 
 

@@ -1,1127 +1,1567 @@
 {
+  "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 89,
   "generated": "2026-08-26",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
-  "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream; values are unmodified.",
+  "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
   "network": "urf",
   "reflectors": [
     {
       "country": "IT",
       "dashboard": "http://rudinet.giize.com",
-      "host": "rudinet.giize.com",
+      "dial": {
+        "host": "rudinet.giize.com",
+        "kind": "urf"
+      },
       "id": "003",
       "name": "XRF232",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "IW3HWH"
     },
     {
       "country": "ES",
       "dashboard": "https://ea8ee.c4fm.es/ref/",
-      "host": "ea8ee.c4fm.es",
+      "dial": {
+        "host": "ea8ee.c4fm.es",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ]
+      },
       "id": "007",
-      "modules": [
-        "A",
-        "B",
-        "C",
-        "D",
-        "E"
-      ],
       "name": "XRF007 D-STAR SPAIN",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "xreflector.es"
     },
     {
       "country": "BR",
       "dashboard": "https://ref018.dstar.com.br/",
-      "host": "ref018.dstar.com.br",
+      "dial": {
+        "host": "ref018.dstar.com.br",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ]
+      },
       "id": "018",
-      "modules": [
-        "A",
-        "B",
-        "C",
-        "D",
-        "E"
-      ],
       "name": "REF018",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "PY2PE"
     },
     {
       "country": "IT",
       "dashboard": "http://82.165.165.43:4000",
-      "host": "82.165.165.43",
+      "dial": {
+        "host": "82.165.165.43",
+        "kind": "urf"
+      },
       "id": "025",
       "name": "SavonaNetwork",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "CISAR sezione di Genova"
     },
     {
       "country": "BR",
       "dashboard": "https://xlx026.net",
       "description": "<p data-path-to-node=\"12,0\">Otimizado para o protocolo D-Star, nosso servidor garante a melhor experi&ecirc;ncia em comunica&ccedil;&atilde;o digital no radioamadorismo, conectando voc&ecirc; ao mundo.</p>\r\n<p data-path-to-node=\"12,1\"><strong data-path-to-node=\"12,1\" data-index-in-node=\"0\">Nossos Diferenciais no D-Star:</strong></p>\r\n<ul data-path-to-node=\"12,2\">\r\n<li>\r\n<p data-path-to-node=\"12,2,0,0\"><strong data-path-to-node=\"12,2,0,0\" data-index-in-node=\"0\">Qualidade de &Aacute;udio:</strong> Infraestrutura otimizada para transmiss&otilde;es claras e precisas.</p>\r\n</li>\r\n<li>\r\n<p data-path-to-node=\"12,2,1,0\"><strong data-path-to-node=\"12,2,1,0\" data-index-in-node=\"0\">Roteamento Eficiente:</strong> Conex&atilde;o direta e &aacute;gil com a rede global de radioamadores.</p>\r\n</li>\r\n<li>\r\n<p data-path-to-node=\"12,2,2,0\"><strong data-path-to-node=\"12,2,2,0\" data-index-in-node=\"0\">Alta Disponibilidade:</strong> Servidor est&aacute;vel e independente para garantir que seu QSO nunca caia.</p>\r\n</li>\r\n</ul>",
-      "host": "xlx026.net",
+      "dial": {
+        "host": "xlx026.net",
+        "kind": "urf"
+      },
       "id": "026",
       "name": "XLX026",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "PU2PNY"
     },
     {
       "country": "FR",
       "dashboard": "http://dcs033.xreflector.net",
-      "host": "164.132.230.151",
+      "dial": {
+        "host": "164.132.230.151",
+        "kind": "urf",
+        "modules": [
+          "C"
+        ]
+      },
       "id": "033",
-      "modules": [
-        "C"
-      ],
       "name": "XLX033",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "F4GEN"
     },
     {
       "country": "ES",
       "dashboard": "http://2141.adn.systems/xlxd",
-      "host": "2141.adn.systems",
+      "dial": {
+        "host": "2141.adn.systems",
+        "kind": "urf"
+      },
       "id": "051",
       "name": "XLX051 EA SPAIN MULTIPROTOCOLO",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "051"
     },
     {
       "country": "BR",
       "dashboard": "https://xlx.dstar.com.br/",
-      "host": "xlx.dstar.com.br",
+      "dial": {
+        "host": "xlx.dstar.com.br",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ]
+      },
       "id": "070",
-      "modules": [
-        "A",
-        "B",
-        "C",
-        "D",
-        "E"
-      ],
       "name": "XLX070",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "PY4EI"
     },
     {
       "country": "US",
       "dashboard": "http://urf097.newenglanddigitalradio.com",
       "description": "<p>New England Digital Radio KC1VAX</p>\r\n<p>&nbsp;</p>",
-      "host": "140.82.24.7",
+      "dial": {
+        "host": "140.82.24.7",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
       "id": "097",
-      "modules": [
-        "A",
-        "B",
-        "C"
-      ],
       "name": "New England Digital Radio",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "New England Digital Radio"
     },
     {
       "country": "BR",
       "dashboard": "http://ref105.dstar.com.br/",
-      "host": "ref105.dstar.com.br",
+      "dial": {
+        "host": "ref105.dstar.com.br",
+        "kind": "urf",
+        "modules": [
+          "A"
+        ]
+      },
       "id": "105",
-      "modules": [
-        "A"
-      ],
       "name": "REF105",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "PY4EI"
     },
     {
       "country": "US",
       "dashboard": "http://urf106.com",
       "description": "<h2>Eastern-MI-Link multi-mode network.&nbsp; See urf106.com for details.</h2>",
-      "host": "24.127.204.177",
+      "dial": {
+        "host": "24.127.204.177",
+        "kind": "urf"
+      },
       "id": "106",
       "name": "URF106",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "Eastern-MI-Link"
     },
     {
       "country": "ES",
       "dashboard": "http://xrf112.dstar.es/",
-      "host": "117.55.230.159",
+      "dial": {
+        "host": "117.55.230.159",
+        "kind": "urf",
+        "modules": [
+          "D"
+        ]
+      },
       "id": "112",
-      "modules": [
-        "D"
-      ],
       "name": "XLX112 D-STAR SPAIN",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "xreflector.es"
     },
     {
       "country": "CH",
       "dashboard": "http://xlx115.hb9vd.ch",
       "description": "<p>XLX115 Multiprotocol reflector</p>\r\n<p>Radioamateurs du Nord-Vaudois</p>\r\n<p>HB9VD</p>",
-      "host": "217.182.128.3",
+      "dial": {
+        "host": "217.182.128.3",
+        "kind": "urf"
+      },
       "id": "115",
       "name": "XLX115",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "HB9VD"
     },
     {
       "country": "IT",
       "dashboard": "http://xlx121.ddns.net",
-      "host": "xlx121.ddns.net",
+      "dial": {
+        "host": "xlx121.ddns.net",
+        "kind": "urf",
+        "modules": [
+          "B"
+        ]
+      },
       "id": "121",
-      "modules": [
-        "B"
-      ],
       "name": "XLX121",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "VERONA NETWORK"
     },
     {
       "country": "DE",
       "dashboard": "http://xlx.home64.de:8081",
-      "host": "xlx.home64.de",
+      "dial": {
+        "host": "xlx.home64.de",
+        "kind": "urf",
+        "modules": [
+          "A"
+        ]
+      },
       "id": "123",
-      "modules": [
-        "A"
-      ],
       "name": "XLX123 Multimodereflector",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "DK8RG"
     },
     {
       "country": "US",
       "dashboard": "http://xlx.lagranderadioclub.com/",
       "description": "<p>La Grande Radioclub Multiprotocolo</p>",
-      "host": "xlx.lagranderadioclub.com",
+      "dial": {
+        "host": "xlx.lagranderadioclub.com",
+        "kind": "urf"
+      },
       "id": "173",
       "name": "XLX173",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "KN4OIK"
     },
     {
       "country": "IT",
       "dashboard": "http://xlx.iz3mez.it",
-      "host": "xlx.iz3mez.it",
+      "dial": {
+        "host": "xlx.iz3mez.it",
+        "kind": "urf"
+      },
       "id": "177",
       "name": "URF177",
+      "network": "urf",
       "source": "dvref"
     },
     {
       "country": "FR",
       "dashboard": "https://xlx208.f5kav.fr",
       "description": "<p>French D-Star URFD Multiprotocol Reflector and Smart Group Server, brought to you by F5KAV</p>",
-      "host": "xlx208.f5kav.fr",
+      "dial": {
+        "host": "xlx208.f5kav.fr",
+        "kind": "urf",
+        "modules": [
+          "C"
+        ]
+      },
       "id": "208",
-      "modules": [
-        "C"
-      ],
       "name": "XLX208 France",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "F5KAV Club"
     },
     {
       "country": "AD",
       "dashboard": "https://urf.adan.ovh/",
       "description": "<p>Andorra Multiprotocol</p>",
-      "host": "urf.adan.ovh",
+      "dial": {
+        "host": "urf.adan.ovh",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ]
+      },
       "id": "213",
-      "modules": [
-        "A",
-        "B",
-        "C",
-        "D",
-        "E"
-      ],
       "name": "URF213",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "C31AG"
     },
     {
       "country": "ES",
       "dashboard": "https://xlx214.xreflector.es/",
-      "host": "xlx214.xreflector.es",
+      "dial": {
+        "host": "xlx214.xreflector.es",
+        "kind": "urf",
+        "modules": [
+          "D",
+          "G"
+        ]
+      },
       "id": "214",
-      "modules": [
-        "D",
-        "G"
-      ],
       "name": "XLX214 D-STAR SPAIN",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "xreflector.es"
     },
     {
       "country": "US",
       "dashboard": "https://xlx217.dynamic-dns.net",
       "description": "<p>Testbed for experimentation and host for Chaverim TAC2.</p>",
-      "host": "xlx217.dynamic-dns.net",
+      "dial": {
+        "host": "xlx217.dynamic-dns.net",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
       "id": "217",
-      "modules": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
       "name": "Experimental RasPi4 Reflector",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "N3BBF"
     },
     {
       "country": "US",
       "dashboard": "https://xlx218.chaverimradio.com",
       "description": "<p>Multiprotocol reflector sponsored by the <em>Chaverim Radio Club</em>. Currently supported modes are:</p>\r\n<p>&nbsp;</p>\r\n<ul>\r\n<li>- Module A: D-STAR, DMR, M17, and C4FM/YSF</li>\r\n<li>- Module B: Future Use</li>\r\n<li>- Module C: Future Use</li>\r\n<li>- Module D: Future Use</li>\r\n<li>- Module E: Echo</li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<p><strong>Module A linked to Brandmeister TG 3213520</strong></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"text-decoration: underline;\">WEEKLY NETS</span></p>\r\n<p>&nbsp;</p>\r\n<p>Please join us for our weekly multiprotocol nets on XLX218 Module A:</p>\r\n<p><strong>- Washington DC Area Net</strong> every Thursday at 9PM US Eastern Time (Friday 0200 UTC).</p>\r\n<p><strong>- Worldwide Net</strong> every Sunday at 2000 UTC</p>\r\n<p>&nbsp;</p>\r\n<p>73 &amp; 18!</p>",
-      "host": "xlx218.chaverimradio.com",
+      "dial": {
+        "host": "xlx218.chaverimradio.com",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ]
+      },
       "id": "218",
-      "modules": [
-        "A",
-        "B",
-        "C",
-        "D",
-        "E"
-      ],
       "name": "Chaverim Multiprotocol Reflector",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "Chaverim Radio Club"
     },
     {
       "country": "IT",
       "dashboard": "https://xlx.is0.org/",
       "description": "<p>Sardinia Island https://www.is0.org&nbsp;<br>Linked TG 22202 BrandMeister</p>",
-      "host": "xlx.is0.org",
+      "dial": {
+        "host": "xlx.is0.org",
+        "kind": "urf",
+        "modules": [
+          "H"
+        ]
+      },
       "id": "231",
-      "modules": [
-        "H"
-      ],
       "name": "XLX231 Sardinia Island",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "IS0GQX Bruno"
     },
     {
       "country": "GR",
       "dashboard": "http://xlx251.ddns.net/",
       "description": "<p>2021_ADN_SYSTEMS_GREECE</p>",
-      "host": "xlx251.ddns.net",
+      "dial": {
+        "host": "xlx251.ddns.net",
+        "kind": "urf",
+        "modules": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ]
+      },
       "id": "251",
-      "modules": [
-        "B",
-        "C",
-        "D",
-        "E",
-        "F"
-      ],
       "name": "Multi-XLX251-ADN.Systems.Greece",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "2021_ADN_SYSTEMS_GREECE"
     },
     {
       "country": "GR",
       "dashboard": "http://192.227.190.153/",
       "description": "<p>2021_ADN_SYSTEMS_GREECE</p>",
-      "host": "192.227.190.153",
+      "dial": {
+        "host": "192.227.190.153",
+        "kind": "urf"
+      },
       "id": "252",
       "name": "Multi-XLX252-ADN.Systems.Greece",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "2021_ADN_SYSTEMS_GREECE"
     },
     {
       "country": "RU",
       "dashboard": "http://xrf260.radiocult.su:8083/",
       "description": "<p>The DSTAR reflector &nbsp;of XRF type by the RADIOCULT.SU community in the DSTAR.SU digital net</p>",
-      "host": "xrf260.radiocult.su",
+      "dial": {
+        "host": "xrf260.radiocult.su",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
       "id": "260",
-      "modules": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
       "name": "XRF260 - XRF DSTAR reflector of the DSTAR.SU net",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "The \"RADIOCULT.SU\" community"
     },
     {
       "country": "DE",
       "dashboard": "https://urf269.26269.de",
       "description": "<p>the URF269 is used as main Reflector for the multimode Germany Hessen/RLP on Modul A. Currently the 2urfd version from N7TAE is used with local transcoding. Server is running in the HAMNET network but reachable via public internet.</p>",
-      "host": "urf269.26269.de",
+      "dial": {
+        "host": "urf269.26269.de",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "C",
+          "K"
+        ]
+      },
       "id": "269",
-      "modules": [
-        "A",
-        "C",
-        "K"
-      ],
       "name": "Multimode HessenRLP",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "DC9VQ"
     },
     {
       "country": "TT",
       "dashboard": "https://xlxd.9y4c.com",
       "description": "<p><strong>DXHAMS2 Multimode reflector!</strong></p>",
-      "host": "172.233.149.106",
+      "dial": {
+        "host": "172.233.149.106",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "J"
+        ]
+      },
       "id": "272",
-      "modules": [
-        "A",
-        "B",
-        "C",
-        "D",
-        "E",
-        "F",
-        "J"
-      ],
       "name": "DXHAMS Amateur Radio Group",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "9Y4C - DXHAMS Amateur Radio Group"
     },
     {
       "country": "US",
       "dashboard": "https://xlx277.bitbybithams.com",
       "description": "<p>Bit By Bit Hams 277, part of the larger Bit By Bit Hams transoding network.</p>\r\n<p>&nbsp;</p>",
-      "host": "67.207.37.195",
+      "dial": {
+        "host": "67.207.37.195",
+        "kind": "urf",
+        "modules": [
+          "A"
+        ]
+      },
       "id": "277",
-      "modules": [
-        "A"
-      ],
       "name": "BitbyBitHams all mode",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "Bit By Bit Hams"
     },
     {
       "country": "BG",
       "dashboard": "http://284nxdn.ddns.net",
       "description": "<p>NXDN2DMR&nbsp; &nbsp;ADN systems BG TG284</p>",
-      "host": "77.77.61.52",
+      "dial": {
+        "host": "77.77.61.52",
+        "kind": "urf",
+        "modules": [
+          "B"
+        ]
+      },
       "id": "284",
-      "modules": [
-        "B"
-      ],
       "name": "284 NXDN Bulgaria",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "NXDN Bulgaria"
     },
     {
       "country": "TR",
       "dashboard": "http://xlx286.dmrturkiye.com",
       "description": "<p><br><strong>http://xlx286.dmrturkiye.com</strong> T&Uuml;RK\u0130YE'nin ilk multimode digital sunucusudur,&nbsp;<br><span style=\"color: rgb(224, 62, 45);\"><strong>DMR YSF D-STAR</strong></span> digital modlar\u0131 destekler.<br><strong><span style=\"color: rgb(241, 196, 15);\">D mod&uuml;l&uuml; B.M TG28600 linklidir.</span></strong><br><strong><span style=\"color: rgb(53, 152, 219);\">ICOM-Terminal support.<br><br><span style=\"color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);\">XLX286 http://xlx286.dmrturkiye.com</span><br></span><span style=\"background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);\">NXDN 286 https://nxdn.ta2kw.keenetic.pro</span></strong><br><span style=\"background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);\"><strong>P25 286 &nbsp;https://p25.ta2kw.keenetic.pro<br>XLXYLV https://xlxylv.ta2kw.keenetic.pro<br><br>YSF 28677<br>YSF 28600</strong></span><br><br>https://www.dmrturkiye.com&nbsp;<br>https://www.facebook.com/groups/dmrturkiye<br><br><strong>TA2KW 73</strong></p>",
-      "host": "xlx286.dmrturkiye.com",
+      "dial": {
+        "host": "xlx286.dmrturkiye.com",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ]
+      },
       "id": "286",
-      "modules": [
-        "A",
-        "B",
-        "C",
-        "D",
-        "E",
-        "F"
-      ],
       "name": "T\u00dcRK\u0130YE Multi-Mode Reflector XLX286",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "DMR T\u00dcRK\u0130YE"
     },
     {
       "country": "IT",
       "dashboard": "http://ic8uoh.ddns.net",
       "description": "<p>XLX YSF Procida Island</p>",
-      "host": "ic8uoh.ddns.net",
+      "dial": {
+        "host": "ic8uoh.ddns.net",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ]
+      },
       "id": "288",
-      "modules": [
-        "A",
-        "B",
-        "C",
-        "D",
-        "E",
-        "F"
-      ],
       "name": "XLX YSF Procida Island",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "IC8UOH"
     },
     {
       "country": "JP",
       "dashboard": "https://xlx296.h-sol.jp/",
-      "host": "xlx296.h-sol.jp",
+      "dial": {
+        "host": "xlx296.h-sol.jp",
+        "kind": "urf"
+      },
       "id": "296",
       "name": "XLX296",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "JG1XWV"
     },
     {
       "country": "BR",
       "dashboard": "https://xlx300.net/",
-      "host": "xlx300.net",
+      "dial": {
+        "host": "xlx300.net",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ]
+      },
       "id": "300",
-      "modules": [
-        "A",
-        "B",
-        "C",
-        "D",
-        "E"
-      ],
       "name": "BR 300",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "PP5PK"
     },
     {
       "country": "AU",
       "dashboard": "https://vk1kcm.vk44.net",
       "description": "<p>This is the Canberra XLX/URFd reflector. &nbsp;It's a replacement/continuation of the old xlx301 run by Rob, VK2HR. &nbsp;Sadly Rob is no longer able to run the old one, so this one is here to continue its job!</p>\r\n<p>Module C is the most likely to have activity.</p>",
-      "host": "xlx301.stagecraft.cx",
+      "dial": {
+        "host": "xlx301.stagecraft.cx",
+        "kind": "urf"
+      },
       "id": "301",
       "name": "XLX301 - Canberra, Australia",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "Canberra Region Amateur Radio Club"
     },
     {
       "country": "US",
       "dashboard": "http://coloradodigital.duckdns.org/index.php",
       "description": "<p>XLX303 Colorado Digital Multiprotocol Reflector Gateway. https://coloradodigital.net/&nbsp;</p>",
-      "host": "coloradodigital.duckdns.org",
+      "dial": {
+        "host": "coloradodigital.duckdns.org",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "M"
+        ]
+      },
       "id": "303",
-      "modules": [
-        "A",
-        "B",
-        "C",
-        "D",
-        "E",
-        "F",
-        "G",
-        "H",
-        "I",
-        "J",
-        "K",
-        "M"
-      ],
       "name": "303",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "Colorado Digital"
     },
     {
       "country": "CA",
       "dashboard": "http://304.ve5aas.ca",
       "description": "<p>YSF, DMR, soon to be D-Star reflector</p>",
-      "host": "304.ve5aas.ca",
+      "dial": {
+        "host": "304.ve5aas.ca",
+        "kind": "urf"
+      },
       "id": "304",
       "name": "Multi reflector",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "VE5SD"
     },
     {
       "country": "AU",
       "dashboard": "http://urf306.warg.org.au/",
       "description": "<p>Hosted in Perth, Western Australia.</p>\r\n<p>Module A transcoded with tcd and DVStick30</p>",
-      "host": "urf306.warg.org.au",
+      "dial": {
+        "host": "urf306.warg.org.au",
+        "kind": "urf"
+      },
       "id": "306",
       "name": "VK6 URF306",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "West Australian Repeater Group"
     },
     {
       "country": "US",
       "dashboard": "https://xlx307.ddns.net/",
       "description": "<p>The Quadnet Digital voice network, https://www.openquad.net</p>",
-      "host": "72.21.76.154",
+      "dial": {
+        "host": "72.21.76.154",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "C",
+          "W"
+        ]
+      },
       "id": "307",
-      "modules": [
-        "A",
-        "C",
-        "W"
-      ],
       "name": "307",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "QuadNet"
     },
     {
       "country": "US",
       "dashboard": "http://xlx323.ddns.net",
-      "host": "xlx323.ddns.net",
+      "dial": {
+        "host": "xlx323.ddns.net",
+        "kind": "urf"
+      },
       "id": "323",
       "name": "XLX323",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "KQ4HPI"
     },
     {
       "country": "PR",
       "dashboard": "http://wp4nnz.ddns.net/index.php",
       "description": "<p>dstar coamo</p>",
-      "host": "64.237.214.46",
+      "dial": {
+        "host": "64.237.214.46",
+        "kind": "urf",
+        "modules": [
+          "C"
+        ]
+      },
       "id": "331",
-      "modules": [
-        "C"
-      ],
       "name": "dstar coamo",
+      "network": "urf",
       "source": "dvref"
     },
     {
       "country": "US",
       "dashboard": "http://multi.swlalink.com",
       "description": "<p>XLX337 C&nbsp; &nbsp;SWLA-LINK&nbsp; &nbsp;Southwest Louisiana Digital Link</p>",
-      "host": "104.251.219.231",
+      "dial": {
+        "host": "104.251.219.231",
+        "kind": "urf",
+        "modules": [
+          "C"
+        ]
+      },
       "id": "337",
-      "modules": [
-        "C"
-      ],
       "name": "XLX337 SWLA-LINK",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "SWLA-LINK"
     },
     {
       "country": "BG",
       "dashboard": "https://359-reflectors.duckdns.org/nxdn/",
       "description": "<p>Linked to ADN Systems Bulgaria TG284</p>",
-      "host": "46.10.205.134",
+      "dial": {
+        "host": "46.10.205.134",
+        "kind": "urf"
+      },
       "id": "359",
       "name": "NXDN359  - Link to ADN Systems Bulgaria TG28410",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "LZ1DH"
     },
     {
       "country": "DE",
       "dashboard": "https://urf363.merg.biz/",
       "description": "<p>URF363 - Saarland - Multimode Bridge (XLX363)</p>",
-      "host": "urf363.merg.biz",
+      "dial": {
+        "host": "urf363.merg.biz",
+        "kind": "urf",
+        "modules": [
+          "F",
+          "S",
+          "Z"
+        ]
+      },
       "id": "363",
-      "modules": [
-        "F",
-        "S",
-        "Z"
-      ],
       "name": "URF363 - Saarland - Multimode Bridge (XLX363)",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "DL4JC"
     },
     {
       "country": "US",
       "dashboard": "https://xlx.foxhole.radio",
       "description": "<p>Foxhole Bridge Networks</p>\r\n<p>https://foxhole.radio</p>",
-      "host": "xlx.foxhole.radio",
+      "dial": {
+        "host": "xlx.foxhole.radio",
+        "kind": "urf",
+        "modules": [
+          "B"
+        ]
+      },
       "id": "386",
-      "modules": [
-        "B"
-      ],
       "name": "Foxhole",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "KZ4FOX"
     },
     {
       "country": "US",
       "dashboard": "http://xlx.ctridash.info:8081",
       "description": "<p>US-Rhode Island URF</p>",
-      "host": "xlx.ctridash.info",
+      "dial": {
+        "host": "xlx.ctridash.info",
+        "kind": "urf"
+      },
       "id": "401",
       "name": "CTRI MULTIMODE",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "N1LMA"
     },
     {
       "country": "CA",
       "dashboard": "https://xlx.ve2sus.com",
-      "host": "ref.ve2sus.com",
+      "dial": {
+        "host": "ref.ve2sus.com",
+        "kind": "urf",
+        "modules": [
+          "A"
+        ]
+      },
       "id": "420",
-      "modules": [
-        "A"
-      ],
       "name": "VESUS REF",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "VE2SUS"
     },
     {
       "country": "DE",
       "dashboard": "http://xlx433.de",
       "description": "<p>XLX433 Hosted by DG1JP</p>",
-      "host": "217.160.121.75",
+      "dial": {
+        "host": "217.160.121.75",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
       "id": "433",
-      "modules": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
       "name": "XLX433",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "DG1JP"
     },
     {
       "country": "FR",
       "dashboard": "http://171.33.87.233/",
       "description": "<p>XLX multimode reflector D-STAR/DMR/C4FM</p>",
-      "host": "171.33.87.233",
+      "dial": {
+        "host": "171.33.87.233",
+        "kind": "urf"
+      },
       "id": "486",
       "name": "XLX486",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "F1IUQ"
     },
     {
       "country": "US",
       "dashboard": "https://urf493.w0chp.radio",
       "description": "<p>DMR and YSF modes supported. More modes coming soon.</p>\r\n<p>Module E is the WPSD Chat, and is bridged with BrandMeister TG 3170603. Module E is the default YSF module. See&nbsp;<a href=\"https://w0chp.radio/xlx493-reflector/\">the URF/XLX 493 info Page for details.</a></p>",
-      "host": "urf493.w0chp.radio",
+      "dial": {
+        "host": "urf493.w0chp.radio",
+        "kind": "urf",
+        "modules": [
+          "E"
+        ]
+      },
       "id": "493",
-      "modules": [
-        "E"
-      ],
       "name": "URF493 by W0CHP",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "W0CHP"
     },
     {
       "country": "AU",
       "dashboard": "http://xlx500.org",
       "description": "<p>XLX500 currently D-Star, DMR, YSF</p>",
-      "host": "xlx500.org",
+      "dial": {
+        "host": "xlx500.org",
+        "kind": "urf"
+      },
       "id": "500",
       "name": "XLX500",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "VK2HK"
     },
     {
       "country": "DE",
       "dashboard": "https://xlx-owl.de/",
       "description": "<p>Multimode Reflector for Ostwestfalen</p>\r\n<p>YSF26446--&gt; XLX508G --&gt; BM26446</p>\r\n<p>YSF26447--&gt; XLX508J --&gt; BM26447</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
-      "host": "104.156.136.8",
+      "dial": {
+        "host": "104.156.136.8",
+        "kind": "urf"
+      },
       "id": "508",
       "name": "XLX508",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "HB9GFX"
     },
     {
       "country": "US",
       "dashboard": "http://xlx517.radiosc.net",
-      "host": "67.212.42.234",
+      "dial": {
+        "host": "67.212.42.234",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "X",
+          "Y",
+          "Z"
+        ]
+      },
       "id": "517",
-      "modules": [
-        "A",
-        "B",
-        "C",
-        "D",
-        "E",
-        "X",
-        "Y",
-        "Z"
-      ],
       "name": "RadioSC URF517 Multimode Digital Network",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "RadioSC"
     },
     {
       "country": "US",
       "dashboard": "https://xlx587.openquad.net",
       "description": "<p>The Quadnet Digitial Voice Network, https://www.openquad.net</p>",
-      "host": "104.8.207.66",
+      "dial": {
+        "host": "104.8.207.66",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "C",
+          "H"
+        ]
+      },
       "id": "587",
-      "modules": [
-        "A",
-        "C",
-        "H"
-      ],
       "name": "587",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "QuadNet"
     },
     {
       "country": "IT",
       "dashboard": "http://87.106.55.42/",
       "description": "<p>XLX Multiprotocol Reflector</p>",
-      "host": "87.106.55.42",
+      "dial": {
+        "host": "87.106.55.42",
+        "kind": "urf"
+      },
       "id": "606",
       "name": "Abruzzo Radio Network",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "IU6SSZ"
     },
     {
       "country": "US",
       "dashboard": "https://urf.hrcc.link/",
       "description": "<p>HRCC Link is a system of linked DV modes created for the<br>Ham Radio Crash Course community.</p>",
-      "host": "urf.hrcc.link",
+      "dial": {
+        "host": "urf.hrcc.link",
+        "kind": "urf",
+        "modules": [
+          "A"
+        ]
+      },
       "id": "621",
-      "modules": [
-        "A"
-      ],
       "name": "HRCC LINK",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "Ham Radio Crash Course HRCC LINK"
     },
     {
       "country": "US",
       "dashboard": "https://urf.n9hxr.radio/",
       "description": "<p>US WCARS URF668. Operated by N9HXR for the Windy City Amateur Radio Society. https://wcars.radio/</p>",
-      "host": "urf.n9hxr.radio",
+      "dial": {
+        "host": "urf.n9hxr.radio",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "Z"
+        ]
+      },
       "id": "668",
-      "modules": [
-        "A",
-        "B",
-        "C",
-        "D",
-        "E",
-        "Z"
-      ],
       "name": "US WCARS URF668",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "Windy City Amateur Radio Society"
     },
     {
       "country": "US",
       "dashboard": "https://ysf.k0ros.net",
       "description": "<p>K&Oslash;ROS' reflector</p>",
-      "host": "ysf.k0ros.net",
+      "dial": {
+        "host": "ysf.k0ros.net",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
       "id": "713",
-      "modules": [
-        "A",
-        "B",
-        "C"
-      ],
       "name": "US-K0ROS",
+      "network": "urf",
       "source": "dvref"
     },
     {
       "country": "IT",
       "dashboard": "http://m17-718.ddns.net/urf/",
-      "host": "m17-718.ddns.net",
+      "dial": {
+        "host": "m17-718.ddns.net",
+        "kind": "urf",
+        "modules": [
+          "B",
+          "E"
+        ]
+      },
       "id": "718",
-      "modules": [
-        "B",
-        "E"
-      ],
       "name": "AllStarLink Italia",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "iu0NDT"
     },
     {
       "country": "US",
       "dashboard": "https://xlx.colorado720.com/",
       "description": "<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
-      "host": "xlx.colorado720.com",
+      "dial": {
+        "host": "xlx.colorado720.com",
+        "kind": "urf"
+      },
       "id": "720",
       "name": "XLX720 Reflector",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "N0AD"
     },
     {
       "country": "IT",
       "dashboard": "http://xlx736.ddns.net",
-      "host": "101.59.54.185",
+      "dial": {
+        "host": "101.59.54.185",
+        "kind": "urf",
+        "modules": [
+          "C",
+          "F",
+          "G"
+        ]
+      },
       "id": "736",
-      "modules": [
-        "C",
-        "F",
-        "G"
-      ],
       "name": "Vola Basso Multimodo",
+      "network": "urf",
       "source": "dvref"
     },
     {
       "country": "EC",
       "dashboard": "http://xlx743.ddns.net",
       "description": "<p>Ecuador XLX - Amerinet</p>",
-      "host": "xlx743.ddns.net",
+      "dial": {
+        "host": "xlx743.ddns.net",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
       "id": "743",
-      "modules": [
-        "A",
-        "B",
-        "C"
-      ],
       "name": "XLX743",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "HC1LNM"
     },
     {
       "country": "PA",
       "dashboard": "http://xlx-hp3.dnsup.net/",
-      "host": "xlx-hp3.dnsup.net",
+      "dial": {
+        "host": "xlx-hp3.dnsup.net",
+        "kind": "urf"
+      },
       "id": "744",
       "name": "Chiriqui Link Panama",
+      "network": "urf",
       "source": "dvref"
     },
     {
       "country": "AU",
       "dashboard": "https://xlx820.com",
       "description": "<p>AU-Central Qld on YSF, DMR and DSTAR</p>",
-      "host": "172.105.180.77",
+      "dial": {
+        "host": "172.105.180.77",
+        "kind": "urf",
+        "modules": [
+          "Y"
+        ]
+      },
       "id": "820",
-      "modules": [
-        "Y"
-      ],
       "name": "AU-Central Qld",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "John VK4UE"
     },
     {
       "country": "US",
       "dashboard": "https://chandlerhams.org/reflector",
       "description": "<p>URF847 is a universal, multi-protocol digital voice reflector that supports D-Star protocols (DPlus, DCS, DExtra and G3), DMR protocols (MMDVMHost, DMR+ and NXDN), M17, P25 (using IMBE) and YSF.<br>&nbsp;<br>DCS847 A<br>REF847 A<br>XLX847 A<br>XRF847 A<br>&nbsp;<br>M17-847<br>NXDN TG 847<br>P25 TG 847<br>TGIF 30847<br>YSF 00847<br>&nbsp;<br>https://chandlerhams.org/reflector<br>&nbsp;<br>Chandler Ham Radio Club (N7CHN)</p>",
-      "host": "urf847.kk7mnz.com",
+      "dial": {
+        "host": "urf847.kk7mnz.com",
+        "kind": "urf",
+        "modules": [
+          "A"
+        ]
+      },
       "id": "847",
-      "modules": [
-        "A"
-      ],
       "name": "Chandler Hams",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "Chandler Ham Radio Club"
     },
     {
       "country": "US",
       "dashboard": "http://urfd.dvswitch.org/urf",
       "description": "<p>DVSwitch test</p>",
-      "host": "urfd.dvswitch.org",
+      "dial": {
+        "host": "urfd.dvswitch.org",
+        "kind": "urf",
+        "modules": [
+          "D",
+          "M",
+          "N",
+          "P",
+          "Y"
+        ]
+      },
       "id": "902",
-      "modules": [
-        "D",
-        "M",
-        "N",
-        "P",
-        "Y"
-      ],
       "name": "URF DVSwitch",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "DVSwitch"
     },
     {
       "country": "GB",
       "dashboard": "https://urf001.cumbriacq.com/urf/",
-      "host": "89.240.4.99",
+      "dial": {
+        "host": "89.240.4.99",
+        "kind": "urf",
+        "modules": [
+          "A"
+        ]
+      },
       "id": "921",
-      "modules": [
-        "A"
-      ],
       "name": "cumbriaCQ-urf",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "cumbriaCQ.com (XLX921)"
     },
     {
       "country": "FR",
       "dashboard": "http://xlx933.hamdigital.fr",
-      "host": "51.254.33.194",
+      "dial": {
+        "host": "51.254.33.194",
+        "kind": "urf",
+        "modules": [
+          "C",
+          "D",
+          "N",
+          "Y"
+        ]
+      },
       "id": "933",
-      "modules": [
-        "C",
-        "D",
-        "N",
-        "Y"
-      ],
       "name": "XLX933",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "F4GEN"
     },
     {
       "country": "US",
       "dashboard": "https://xlx987.asuscomm.com",
       "description": "<p>WindyLink Tehachapi transcoding reflector, hosted by AK6MW</p>",
-      "host": "xlx987.asuscomm.com",
+      "dial": {
+        "host": "xlx987.asuscomm.com",
+        "kind": "urf",
+        "modules": [
+          "A"
+        ]
+      },
       "id": "987",
-      "modules": [
-        "A"
-      ],
       "name": "WindyLink Tehachapi",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "AK6MW"
     },
     {
       "country": "ES",
       "dashboard": "http://xrf988.dstar.es/",
-      "host": "988.xreflector.es",
+      "dial": {
+        "host": "988.xreflector.es",
+        "kind": "urf",
+        "modules": [
+          "D"
+        ]
+      },
       "id": "988",
-      "modules": [
-        "D"
-      ],
       "name": "XRF988 D-STAR SPAIN",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "xreflector.es"
     },
     {
       "country": "ES",
       "dashboard": "https://xlx992.2x2online.net",
-      "description": "<p>Reflector Multiprotocolo de la Uni&oacute;n de Radioaficionados de C&oacute;rdoba</p>\r\n<p>M&oacute;dulo A:</p>\r\n<p>YSF 13390 - DCS992A - WIRESX 41550 - DMR BM 21414 - XLX992A</p>\r\n<p>admin:</p>\r\n<p>ec7aav@2x2online.net</p>",
-      "host": "116.203.122.135",
+      "description": "<p>Reflector Multiprotocolo de la Uni&oacute;n de Radioaficionados de C&oacute;rdoba</p>\r\n<p>M&oacute;dulo A:</p>\r\n<p>YSF 13390 - DCS992A - WIRESX 41550 - DMR BM 21414 - XLX992A</p>\r\n<p>admin:</p>\r\n<p>[email removed]</p>",
+      "dial": {
+        "host": "116.203.122.135",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "B"
+        ]
+      },
       "id": "992",
-      "modules": [
-        "A",
-        "B"
-      ],
       "name": "Multiprotocolo URE C\u00f3rdoba",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "Ure C\u00f3rdoba"
     },
     {
       "country": "AR",
       "dashboard": "https://bellville-link.tplinkdns.com/urf/",
       "description": "<p>\"Reflector experimental de Bell Ville, C&oacute;rdoba, ARGENTINA. Laboratorio abierto sin fines de lucro para pruebas de equipos, ajustes y QSOs. &iexcl;Todos los colegas son bienvenidos a utilizar y experimentar en el sistema!\"</p>",
-      "host": "bellville-link.tplinkdns.com",
+      "dial": {
+        "host": "bellville-link.tplinkdns.com",
+        "kind": "urf"
+      },
       "id": "ARG",
       "name": "Reflector Bell Ville Link - Cordoba",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "LW2HAH - Bell Ville"
     },
     {
       "country": "IT",
       "dashboard": "http://aritrani.does-it.net/",
       "description": "<p>Riflettore Universale connesso a \"<em><strong>Trani Conference</strong></em>\"<br>Server DMR&nbsp; basato sul&nbsp; HBLINK , col TG 8,&nbsp; interconnesso a sua volta con le<br>reti DMR: FREEDMR, ADN, TGIF, col TG 22276.<br>Connesso anche al sistema AllStarLink nodo n. 556990, Echolink I7IGX-R ed al sistema SVXlink italiano, col TG 76.</p>",
-      "host": "aritrani.does-it.net",
+      "dial": {
+        "host": "aritrani.does-it.net",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "B",
+          "E",
+          "H"
+        ]
+      },
       "id": "BAT",
-      "modules": [
-        "A",
-        "B",
-        "E",
-        "H"
-      ],
       "name": "Riflettore Universale per TRANI CONFERENCE",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "Sezione A.R.I.  di Trani"
     },
     {
       "country": "BR",
       "dashboard": "https://xlxbra.net",
-      "host": "xlxbra.net",
+      "dial": {
+        "host": "xlxbra.net",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ]
+      },
       "id": "BRA",
-      "modules": [
-        "A",
-        "B",
-        "C",
-        "D",
-        "E"
-      ],
       "name": "BR XLXBRA",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "PP5PK"
     },
     {
       "country": "DE",
       "dashboard": "http://85.215.198.111:8970",
       "description": "<p>Eine Verbindung in das Funknetz-Celle ( FM 2m, FM 70cm, SSB KW*, FM-Funknetz TG26335, FM DB0CEL* , BM TG26334, YSF, NXDN, P25 )&nbsp;</p>\r\n<p>* nur zur OV-Runde aktiv&nbsp;</p>",
-      "host": "85.215.198.111",
+      "dial": {
+        "host": "85.215.198.111",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "D",
+          "M",
+          "N",
+          "P",
+          "S",
+          "T",
+          "U",
+          "Y"
+        ]
+      },
       "id": "CEL",
-      "modules": [
-        "A",
-        "D",
-        "M",
-        "N",
-        "P",
-        "S",
-        "T",
-        "U",
-        "Y"
-      ],
       "name": "Funknetz-Celle",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "DL2OAM"
     },
     {
       "country": "ES",
       "dashboard": "http://51.91.58.99/",
-      "host": "51.91.58.99",
+      "dial": {
+        "host": "51.91.58.99",
+        "kind": "urf"
+      },
       "id": "CNP",
       "name": "Asociacion Radioaficionados Santo Angel (ARSA)",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "CNP"
     },
     {
       "country": "CZ",
       "dashboard": "http://128.0.182.6",
-      "host": "128.0.182.6",
+      "dial": {
+        "host": "128.0.182.6",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N"
+        ]
+      },
       "id": "CZS",
-      "modules": [
-        "A",
-        "B",
-        "C",
-        "D",
-        "E",
-        "F",
-        "G",
-        "H",
-        "I",
-        "J",
-        "K",
-        "L",
-        "M",
-        "N"
-      ],
       "name": "Czech XLX Reflector",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "OK1IGO"
     },
     {
       "country": "GR",
       "dashboard": "http://xlxd51.ddns.net/",
       "description": "<p>2021_ADN_SYSTEMS_GREECE</p>",
-      "host": "192.227.177.138",
+      "dial": {
+        "host": "192.227.177.138",
+        "kind": "urf"
+      },
       "id": "D51",
       "name": "Multi-XLXD51-ADN.Systems.Greece",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "2021_ADN_SYSTEMS_GREECE"
     },
     {
       "country": "GR",
       "dashboard": "http://192.227.177.16/",
       "description": "<p>2021_ADN_SYSTEMS_GREECE</p>",
-      "host": "192.227.177.16",
+      "dial": {
+        "host": "192.227.177.16",
+        "kind": "urf"
+      },
       "id": "E51",
       "name": "Multi-XLXE51-ADN.Systems.Greece",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "2021_ADN_SYSTEMS_GREECE"
     },
     {
       "country": "US",
       "dashboard": "http://xlxfox.foxhole.radio",
       "description": "<p>Under Constructions</p>",
-      "host": "xlxfox.foxhole.radio",
+      "dial": {
+        "host": "xlxfox.foxhole.radio",
+        "kind": "urf"
+      },
       "id": "FOX",
       "name": "FOXHOLE-Under Construct.",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "KZ4FOX"
     },
     {
       "country": "IT",
       "dashboard": "http://xlxfra.ddns.net",
-      "host": "82.165.136.30",
+      "dial": {
+        "host": "82.165.136.30",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G"
+        ]
+      },
       "id": "FRA",
-      "modules": [
-        "A",
-        "B",
-        "C",
-        "D",
-        "E",
-        "F",
-        "G"
-      ],
       "name": "IT-Francavilla",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "IW6NBX"
     },
     {
       "country": "US",
-      "host": "134.209.36.128",
+      "dial": {
+        "host": "134.209.36.128",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "D",
+          "Y"
+        ]
+      },
       "id": "H60",
-      "modules": [
-        "A",
-        "D",
-        "Y"
-      ],
       "name": "Military Pilots Lounge",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "AL8T"
     },
     {
       "country": "US",
       "dashboard": "http://www.n6jet.com/urfjet/",
       "description": "<p>n6jet.com/urfjetpurpose.html</p>",
-      "host": "5.161.18.189",
+      "dial": {
+        "host": "5.161.18.189",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
       "id": "JET",
-      "modules": [
-        "A",
-        "B",
-        "C",
-        "D",
-        "E",
-        "F",
-        "G",
-        "H",
-        "I",
-        "J",
-        "K",
-        "L",
-        "M",
-        "N",
-        "O",
-        "P",
-        "R",
-        "S",
-        "T",
-        "U"
-      ],
       "name": "N6JET URF REFLECTOR",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "N6JET"
     },
     {
       "country": "US",
-      "host": "innet.tplinkdns.com",
+      "dial": {
+        "host": "innet.tplinkdns.com",
+        "kind": "urf"
+      },
       "id": "JSS",
       "name": "JSS",
+      "network": "urf",
       "source": "dvref"
     },
     {
       "country": "GB",
       "dashboard": "https://urf825.meshnetworks.co.uk/public",
       "description": "<p>One of the 2 core reflectors on the UK NWMG multimode digital voice network.</p>",
-      "host": "xlx.g6phf.co.uk",
+      "dial": {
+        "host": "xlx.g6phf.co.uk",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "D"
+        ]
+      },
       "id": "LAN",
-      "modules": [
-        "A",
-        "D"
-      ],
       "name": "NW Multimode  Group - Reflector",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "G6PHF"
     },
     {
       "country": "US",
       "dashboard": "http://155.138.236.64/urf/dashboard/",
       "description": "<p>URF reflector Oklahoma ARES.</p>",
-      "host": "155.138.236.64",
+      "dial": {
+        "host": "155.138.236.64",
+        "kind": "urf",
+        "modules": [
+          "A"
+        ]
+      },
       "id": "OKA",
-      "modules": [
-        "A"
-      ],
       "name": "OKA",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "Oklahoma ARES"
     },
     {
       "country": "US",
       "dashboard": "http://xlx.w9winxlx.us//",
       "description": "<p>Part of the W9WIN Linked Digital Repeater System and The Southern Indiana Network</p>",
-      "host": "64.112.234.163",
+      "dial": {
+        "host": "64.112.234.163",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
       "id": "SIN",
-      "modules": [
-        "A",
-        "B",
-        "C"
-      ],
       "name": "Southern Indiana Network (SIN)",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "Southern Indiana Network"
     },
     {
       "country": "RU",
       "dashboard": "https://xlxspb.qth.spb.ru",
       "description": "<p>Saint-Petersburg XLX multimode reflector</p>",
-      "host": "xlxspb.qth.spb.ru",
+      "dial": {
+        "host": "xlxspb.qth.spb.ru",
+        "kind": "urf",
+        "modules": [
+          "A"
+        ]
+      },
       "id": "SPB",
-      "modules": [
-        "A"
-      ],
       "name": "SPB",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "RA1AO"
     },
     {
       "country": "TR",
       "dashboard": "https://xlxylv.ta2kw.keenetic.pro",
       "description": "<p><strong>Module A: DMR C4FM YSF XLX286A</strong><br><strong>Module B: D-PRS/RESiM</strong><br><strong>Module C: D-STAR</strong><br><strong>Module D: ECHO TEST</strong><br><strong><br><br><br>NXDN 286 https://nxdn.ta2kw.keenetic.pro<br>P25 286 &nbsp;https://p25.ta2kw.keenetic.pro<br>XLXYLV https://xlxylv.ta2kw.keenetic.pro<br>XLX286 http://xlx286.dmrturkiye.com<br>YSF 28677<br>YSF 28600<br><br>XLXYLV T&Uuml;RK\u0130YE</strong></p>",
-      "host": "xlxylv.ta2kw.keenetic.pro",
+      "dial": {
+        "host": "xlxylv.ta2kw.keenetic.pro",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
       "id": "YLV",
-      "modules": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
       "name": "XLXYLV T\u00dcRK\u0130YE YALOVA",
-      "source": "dvref"
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "TA2KW"
     }
   ],
   "schema_version": 1,

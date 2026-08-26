@@ -1,0 +1,691 @@
+{
+  "components": {
+    "schemas": {
+      "Dial": {
+        "description": "How to connect. `kind` is the discriminator; every variant carries `host`, and every variant but `urf` carries `port`.",
+        "discriminator": {
+          "mapping": {
+            "dextra": "#/components/schemas/DialDextra",
+            "m17": "#/components/schemas/DialM17",
+            "mmdvm": "#/components/schemas/DialMmdvm",
+            "nxdn": "#/components/schemas/DialNxdn",
+            "p25": "#/components/schemas/DialP25",
+            "urf": "#/components/schemas/DialUrf",
+            "ysf": "#/components/schemas/DialYsf"
+          },
+          "propertyName": "kind"
+        },
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/DialDextra"
+          },
+          {
+            "$ref": "#/components/schemas/DialM17"
+          },
+          {
+            "$ref": "#/components/schemas/DialMmdvm"
+          },
+          {
+            "$ref": "#/components/schemas/DialNxdn"
+          },
+          {
+            "$ref": "#/components/schemas/DialP25"
+          },
+          {
+            "$ref": "#/components/schemas/DialUrf"
+          },
+          {
+            "$ref": "#/components/schemas/DialYsf"
+          }
+        ]
+      },
+      "DialDextra": {
+        "description": "D-Star reflectors reached over DExtra (both XLX and XRF).",
+        "properties": {
+          "callsign": {
+            "description": "The name the reflector answers to ON THE WIRE, which is not always its directory name \u2014 XLX836 is dialled as XRF836 in RPT1/RPT2.",
+            "type": "string"
+          },
+          "host": {
+            "description": "Hostname or IP, verbatim from upstream.",
+            "type": "string"
+          },
+          "kind": {
+            "const": "dextra",
+            "description": "The discriminator.",
+            "type": "string"
+          },
+          "modules": {
+            "description": "Modules/rooms available on this reflector.",
+            "items": {
+              "pattern": "^[A-Z]$",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "port": {
+            "maximum": 65535,
+            "minimum": 1,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "kind",
+          "host",
+          "port"
+        ],
+        "title": "DialDextra",
+        "type": "object"
+      },
+      "DialM17": {
+        "description": "M17 reflectors (mrefd).",
+        "properties": {
+          "callsign": {
+            "description": "The name the reflector answers to ON THE WIRE, which is not always its directory name \u2014 XLX836 is dialled as XRF836 in RPT1/RPT2.",
+            "type": "string"
+          },
+          "host": {
+            "description": "Hostname or IP, verbatim from upstream.",
+            "type": "string"
+          },
+          "kind": {
+            "const": "m17",
+            "description": "The discriminator.",
+            "type": "string"
+          },
+          "modules": {
+            "description": "Modules/rooms available on this reflector.",
+            "items": {
+              "pattern": "^[A-Z]$",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "port": {
+            "maximum": 65535,
+            "minimum": 1,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "kind",
+          "host",
+          "port"
+        ],
+        "title": "DialM17",
+        "type": "object"
+      },
+      "DialMmdvm": {
+        "description": "MMDVM/DMR masters, which need per-user credentials the directory cannot carry.",
+        "properties": {
+          "host": {
+            "description": "Hostname or IP, verbatim from upstream.",
+            "type": "string"
+          },
+          "kind": {
+            "const": "mmdvm",
+            "description": "The discriminator.",
+            "type": "string"
+          },
+          "port": {
+            "maximum": 65535,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "requires": {
+            "description": "What the OPERATOR must supply and the directory cannot. A client seeing this should prompt rather than attempt a connect.",
+            "examples": [
+              [
+                "dmr_id",
+                "password"
+              ]
+            ],
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "talkgroups_url": {
+            "description": "Where this master's talkgroup list is published.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "host",
+          "port"
+        ],
+        "title": "DialMmdvm",
+        "type": "object"
+      },
+      "DialNxdn": {
+        "description": "NXDN reflectors.",
+        "properties": {
+          "host": {
+            "description": "Hostname or IP, verbatim from upstream.",
+            "type": "string"
+          },
+          "kind": {
+            "const": "nxdn",
+            "description": "The discriminator.",
+            "type": "string"
+          },
+          "port": {
+            "maximum": 65535,
+            "minimum": 1,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "kind",
+          "host",
+          "port"
+        ],
+        "title": "DialNxdn",
+        "type": "object"
+      },
+      "DialP25": {
+        "description": "P25 reflectors.",
+        "properties": {
+          "host": {
+            "description": "Hostname or IP, verbatim from upstream.",
+            "type": "string"
+          },
+          "kind": {
+            "const": "p25",
+            "description": "The discriminator.",
+            "type": "string"
+          },
+          "port": {
+            "maximum": 65535,
+            "minimum": 1,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "kind",
+          "host",
+          "port"
+        ],
+        "title": "DialP25",
+        "type": "object"
+      },
+      "DialUrf": {
+        "description": "URF reflectors (urfd). Multi-protocol, so upstream publishes no single port.",
+        "properties": {
+          "host": {
+            "description": "Hostname or IP, verbatim from upstream.",
+            "type": "string"
+          },
+          "kind": {
+            "const": "urf",
+            "description": "The discriminator.",
+            "type": "string"
+          },
+          "modules": {
+            "description": "Modules/rooms available on this reflector.",
+            "items": {
+              "pattern": "^[A-Z]$",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "port": {
+            "maximum": 65535,
+            "minimum": 1,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "kind",
+          "host"
+        ],
+        "title": "DialUrf",
+        "type": "object"
+      },
+      "DialYsf": {
+        "description": "Yaesu System Fusion reflectors.",
+        "properties": {
+          "host": {
+            "description": "Hostname or IP, verbatim from upstream.",
+            "type": "string"
+          },
+          "kind": {
+            "const": "ysf",
+            "description": "The discriminator.",
+            "type": "string"
+          },
+          "port": {
+            "maximum": 65535,
+            "minimum": 1,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "kind",
+          "host",
+          "port"
+        ],
+        "title": "DialYsf",
+        "type": "object"
+      },
+      "Manifest": {
+        "properties": {
+          "api_version": {
+            "const": "v1",
+            "type": "string"
+          },
+          "client_refresh_days": {
+            "description": "How often a client should re-check. Cache for this long.",
+            "type": "integer"
+          },
+          "count": {
+            "description": "Row count, to detect a truncated fetch.",
+            "type": "integer"
+          },
+          "endpoints": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Paths of the other files, relative to this one.",
+            "type": "object"
+          },
+          "expires_hint": {
+            "description": "`generated` plus `client_refresh_days`.",
+            "format": "date",
+            "type": "string"
+          },
+          "generated": {
+            "description": "Date of the UPSTREAM data, never of the build \u2014 a rebuild that finds nothing new produces byte-identical files.",
+            "format": "date",
+            "type": "string"
+          },
+          "license": {
+            "const": "CC BY 4.0",
+            "type": "string"
+          },
+          "license_url": {
+            "format": "uri",
+            "type": "string"
+          },
+          "modifications": {
+            "description": "What this project changed, as CC BY 4.0 requires be stated.",
+            "type": "string"
+          },
+          "networks": {
+            "additionalProperties": {
+              "properties": {
+                "count": {
+                  "type": "integer"
+                },
+                "generated": {
+                  "format": "date",
+                  "type": "string"
+                },
+                "source": {
+                  "$ref": "#/components/schemas/Source"
+                },
+                "url": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "url",
+                "count",
+                "generated"
+              ],
+              "type": "object"
+            },
+            "description": "One entry per network, keyed by network name.",
+            "type": "object"
+          },
+          "schema_version": {
+            "const": 1,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "schema_version",
+          "generated",
+          "networks"
+        ],
+        "type": "object"
+      },
+      "NetworkCollection": {
+        "properties": {
+          "api_version": {
+            "const": "v1",
+            "type": "string"
+          },
+          "attribution": {
+            "type": "string"
+          },
+          "client_refresh_days": {
+            "description": "How often a client should re-check. Cache for this long.",
+            "type": "integer"
+          },
+          "count": {
+            "description": "Row count, to detect a truncated fetch.",
+            "type": "integer"
+          },
+          "generated": {
+            "description": "Date of the UPSTREAM data, never of the build \u2014 a rebuild that finds nothing new produces byte-identical files.",
+            "format": "date",
+            "type": "string"
+          },
+          "license": {
+            "const": "CC BY 4.0",
+            "type": "string"
+          },
+          "license_url": {
+            "format": "uri",
+            "type": "string"
+          },
+          "modifications": {
+            "description": "What this project changed, as CC BY 4.0 requires be stated.",
+            "type": "string"
+          },
+          "network": {
+            "type": "string"
+          },
+          "reflectors": {
+            "items": {
+              "$ref": "#/components/schemas/Reflector"
+            },
+            "type": "array"
+          },
+          "schema_version": {
+            "const": 1,
+            "type": "integer"
+          },
+          "source": {
+            "$ref": "#/components/schemas/Source"
+          }
+        },
+        "required": [
+          "schema_version",
+          "network",
+          "generated",
+          "count",
+          "reflectors"
+        ],
+        "type": "object"
+      },
+      "Reflector": {
+        "description": "One reflector: the searchable envelope plus its `dial`.",
+        "properties": {
+          "aliases": {
+            "description": "Other names that address THIS reflector \u2014 e.g. the XRF-form name an XLX reflector answers to. Searchable, and never a deduplication key: XRF### and XLX### are different machines that merely share a numbering scheme.",
+            "examples": [
+              [
+                "XRF836"
+              ]
+            ],
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "country": {
+            "description": "ISO-ish country code or name, verbatim from upstream.",
+            "type": "string"
+          },
+          "dashboard": {
+            "description": "Web dashboard URL.",
+            "type": "string"
+          },
+          "description": {
+            "description": "Free text from upstream.",
+            "type": "string"
+          },
+          "dial": {
+            "$ref": "#/components/schemas/Dial",
+            "description": "Absent means listed but not dialable from this data."
+          },
+          "id": {
+            "description": "Stable within `network`. What a client stores as a favourite.",
+            "examples": [
+              "XLX836"
+            ],
+            "type": "string"
+          },
+          "name": {
+            "description": "Display name; falls back to `id` when upstream has none.",
+            "type": "string"
+          },
+          "network": {
+            "description": "Which network this reflector belongs to. With `id`, the primary key.",
+            "examples": [
+              "dstar",
+              "m17",
+              "ysf"
+            ],
+            "type": "string"
+          },
+          "source": {
+            "description": "Which importer produced the row: provenance, for debugging a bad entry.",
+            "examples": [
+              "xlx",
+              "dvref"
+            ],
+            "type": "string"
+          },
+          "sponsor": {
+            "description": "Who runs it, as upstream words it.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "network",
+          "id",
+          "name",
+          "source"
+        ],
+        "type": "object"
+      },
+      "ReflectorCollection": {
+        "properties": {
+          "api_version": {
+            "const": "v1",
+            "type": "string"
+          },
+          "attribution": {
+            "type": "string"
+          },
+          "client_refresh_days": {
+            "description": "How often a client should re-check. Cache for this long.",
+            "type": "integer"
+          },
+          "count": {
+            "description": "Row count, to detect a truncated fetch.",
+            "type": "integer"
+          },
+          "generated": {
+            "description": "Date of the UPSTREAM data, never of the build \u2014 a rebuild that finds nothing new produces byte-identical files.",
+            "format": "date",
+            "type": "string"
+          },
+          "license": {
+            "const": "CC BY 4.0",
+            "type": "string"
+          },
+          "license_url": {
+            "format": "uri",
+            "type": "string"
+          },
+          "modifications": {
+            "description": "What this project changed, as CC BY 4.0 requires be stated.",
+            "type": "string"
+          },
+          "networks": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "description": "Row count per network.",
+            "type": "object"
+          },
+          "reflectors": {
+            "items": {
+              "$ref": "#/components/schemas/Reflector"
+            },
+            "type": "array"
+          },
+          "schema_version": {
+            "const": 1,
+            "type": "integer"
+          },
+          "sources": {
+            "items": {
+              "$ref": "#/components/schemas/Source"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "schema_version",
+          "generated",
+          "count",
+          "reflectors"
+        ],
+        "type": "object"
+      },
+      "Source": {
+        "description": "The upstream a file's rows came from.",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "format": "uri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "url"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Design notes: why the shape is what it is.",
+    "url": "https://github.com/rcludwick/hamcall-db/blob/main/docs/REFLECTOR-API.md"
+  },
+  "info": {
+    "contact": {
+      "url": "https://github.com/rcludwick/hamcall-db"
+    },
+    "description": "A directory of digital-voice reflectors \u2014 D-Star, M17, YSF, NXDN, P25 and URF \u2014 rebuilt nightly from upstream and served as static files, so a client picking a reflector needs no API key and no rate-limit budget.\n\nEvery entry is a common envelope plus a discriminated `dial` object. An absent `dial` means the entry is listed but not dialable from this data; no default address is ever substituted. Unknown `network` or `dial.kind` values must be ignored gracefully \u2014 that is the extension mechanism, and a client must never attempt to connect to a kind it does not understand.\n\nAttribution is required: Reflector data provided by DVRef \u2014 https://dvref.com/. XLX reflector data from the XLX registry maintained by Luc Engelmann, LX1IQ (http://xlxapi.rlx.lu/).\n\nModifications: Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
+    "license": {
+      "identifier": "CC-BY-4.0",
+      "name": "CC BY 4.0"
+    },
+    "summary": "Digital-voice reflector directory as static JSON. No token, no account.",
+    "title": "hamcall-db reflector directory",
+    "version": "1.0.0"
+  },
+  "openapi": "3.1.0",
+  "paths": {
+    "/index.json": {
+      "get": {
+        "description": "Fetch this first. It carries every network's row count and `generated` date, so a client can tell whether its cached copy is stale without downloading any of the big files.",
+        "operationId": "getManifest",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Manifest"
+                }
+              }
+            },
+            "description": "The manifest."
+          }
+        },
+        "summary": "Service manifest: what exists and how fresh it is."
+      }
+    },
+    "/openapi.json": {
+      "get": {
+        "operationId": "getOpenapi",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "The contract, machine-readable."
+          }
+        },
+        "summary": "This document."
+      }
+    },
+    "/reflectors.json": {
+      "get": {
+        "operationId": "getAllReflectors",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReflectorCollection"
+                }
+              }
+            },
+            "description": "Every reflector."
+          }
+        },
+        "summary": "Every reflector, every network, in one file."
+      }
+    },
+    "/reflectors/{network}.json": {
+      "get": {
+        "description": "Exists for failure isolation: upstreams fail independently, and a D-Star-only client should not re-download 1400 YSF rows to learn that nothing changed.",
+        "operationId": "getNetworkReflectors",
+        "parameters": [
+          {
+            "description": "Network name, as listed in the manifest.",
+            "in": "path",
+            "name": "network",
+            "required": true,
+            "schema": {
+              "examples": [
+                "dmr",
+                "dstar",
+                "m17",
+                "nxdn",
+                "p25",
+                "urf",
+                "ysf"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NetworkCollection"
+                }
+              }
+            },
+            "description": "One network's reflectors."
+          }
+        },
+        "summary": "One network's reflectors."
+      }
+    }
+  },
+  "servers": [
+    {
+      "description": "GitHub Pages",
+      "url": "https://rcludwick.github.io/hamcall-db/api/v1"
+    }
+  ]
+}

@@ -12,7 +12,7 @@ inline. All 39 issues (35 of them closed) were exported to
 `docs/issues-archive.jsonl`, which is gitignored and local-only; a committed copy of the
 tracker's final state survives in git history at the migration commit.
 
-## Open items (5)
+## Open items (6)
 
 ### hdb-refl-pages — Enable GitHub Pages + add the DVREF_API_TOKEN secret
 *HIGH · task · cx:1*
@@ -38,8 +38,25 @@ things must be done by a human before the nightly job can publish:
    D-Star from the XLX registry, but every DVRef network is skipped with a warning.
 
 Until Pages exists, `.github/workflows/reflectors.yml`'s `deploy` job will fail even
-though `refresh` and `release` succeed. The committed JSON under `site/api/` stays
+though `refresh` and `release` succeed. The committed JSON under `site/api/v1/` stays
 correct regardless.
+
+### hdb-refl-dmr — `mmdvm` dial variant is published contract with no source behind it
+*LOW · task · cx:1*
+
+**Spec:** `docs/REFLECTOR-API.md` defines a `dial.kind` of `mmdvm` for DMR — carrying
+`requires` (what the OPERATOR must supply, e.g. `["dmr_id", "password"]`) and
+`talkgroups_url` — and `openapi.json` publishes that variant, because the point of the
+variant is to show how DMR fits the schema without a public file pretending to carry a
+per-user credential. But no DMR importer exists, so nothing can emit it: `ReflectorRecord`
+has no `requires`/`talkgroups_url` fields, and adding them before there is a source would
+only put two permanently all-null columns in the Parquet/SQLite artifacts.
+
+When a DMR source lands (BrandMeister / TGIF masters are the obvious candidates), add
+those two fields to `ReflectorRecord`, and the existing table-driven emitter and OpenAPI
+generator pick the variant up with no further change. The anti-drift test
+(`test_openapi_covers_every_dial_kind_the_build_can_emit`) already covers the new kind the
+moment `NETWORKS` learns about it.
 
 ### au-1022 — Verify ISED amateur.txt real column layout against in-zip README
 *MED · task · cx:1*

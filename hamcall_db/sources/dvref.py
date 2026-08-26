@@ -269,6 +269,7 @@ class DvrefSource:
                 port=_int(row.get("port")),
                 modules=_modules(row.get("modules")),
                 country=_str(row.get("country")),
+                sponsor=_str(row.get("sponsor")),
                 description=_str(row.get("description")) or _str(row.get("extended_description")),
                 dashboard=_str(row.get("url")),
                 source=self.name,

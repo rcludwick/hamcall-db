@@ -152,11 +152,18 @@ class XlxSource:
             if last_contact is not None and last_contact < cutoff:
                 continue
 
+            # The XRF-form name is a genuine alias of THIS reflector — the same box,
+            # addressed the way DExtra addresses it — so a user typing either form finds
+            # it. It is published as an alias and NEVER used as a merge key: the
+            # standalone XRF reflector sharing that number is a different machine (see
+            # the module docstring and reflectors.merge_by_id).
+            callsign = dextra_callsign(name)
             yield ReflectorRecord(
                 id=name,
                 network=self.network,
                 name=name,
-                callsign=dextra_callsign(name),
+                aliases=[callsign] if callsign and callsign != name else [],
+                callsign=callsign,
                 host=host,
                 port=DEXTRA_PORT,
                 country=_text(element, "country"),

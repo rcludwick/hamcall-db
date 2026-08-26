@@ -6,7 +6,8 @@ artifacts:
 
   * hamcall-db-reflectors-YYYY-MM-DD.parquet
   * hamcall-db-reflectors-YYYY-MM-DD.db        (table: reflectors)
-  * the static JSON published at site/api/ (index.json + reflectors/*.json)
+  * the static JSON API published at site/api/v1/ (index.json, reflectors.json,
+    reflectors/*.json and openapi.json)
 
 These files list digital-voice reflectors — D-Star, M17, YSF, NXDN, P25 and
 URF — with their addresses, ports and modules. They are distributed under the
@@ -64,12 +65,19 @@ The upstream rows were reformatted into this project's common reflector schema:
 field names and structure differ from upstream, records from the two sources
 were combined into one set per network, entries lacking a resolvable address
 were dropped, and XLX registrations not seen by the registry in over 30 days
-were treated as inactive and omitted. Field VALUES are otherwise unmodified.
+were treated as inactive and omitted.
 
-Two derived fields are computed by this project and are not upstream data:
+EMAIL ADDRESSES WERE REMOVED from the free-text fields (`name`, `sponsor`,
+`description`) and replaced with the marker `[email removed]`. These files are a
+bulk-downloadable machine-readable artifact, which turns a sysop's address in a
+reflector blurb into a harvestable list; the marker is left in place so the
+surrounding sentence still reads. Field VALUES are otherwise unmodified.
+
+Three derived fields are computed by this project and are not upstream data:
 `port` for D-Star (30001, the DExtra protocol constant, which the registry does
-not publish) and `callsign` for XLX rows (the XRF-form name an XLX reflector
-answers to on the DExtra wire).
+not publish), `callsign` for XLX rows (the XRF-form name an XLX reflector
+answers to on the DExtra wire), and the matching `aliases` entry carrying that
+same XRF-form name.
 
 DVRef's Acceptable Use Policy — https://dvref.com/aup/ — governs ACCESS to
 DVRef's own infrastructure. It is separate from the license on the data, and it

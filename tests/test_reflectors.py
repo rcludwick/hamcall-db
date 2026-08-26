@@ -12,6 +12,7 @@ so no test touches the network or needs a DVRef token.
 from __future__ import annotations
 
 import json
+import re
 from datetime import UTC, datetime
 from pathlib import Path
 
@@ -23,10 +24,16 @@ from hamcall_db.sources import dvref, xlx
 from hamcall_db.sources.dvref import DvrefAuthError, DvrefSource
 from hamcall_db.sources.xlx import XlxSource, dextra_callsign, sanitize_xml
 
+REPO_ROOT = Path(__file__).parents[1]
 FIXTURES = Path(__file__).parent / "fixtures" / "reflectors"
 XLX_LIST = FIXTURES / "xlx_list.xml"
 DVREF_YSF = FIXTURES / "dvref_ysf.json"
 DVREF_NXDN = FIXTURES / "dvref_nxdn.json"
+
+# Deliberately looser than the redaction pattern in hamcall_db.reflectors: a test that
+# reuses the implementation's own regex cannot catch the case where that regex is the
+# thing that is wrong.
+EMAIL_SHAPED = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
 
 # The fixture rows were captured 2026-08-26; freeze "now" so the staleness filter is
 # deterministic rather than a slow-motion time bomb that starts dropping rows later.
@@ -251,6 +258,28 @@ def _doc() -> dict[str, object]:
     )
 
 
+def _dvref_doc(segment: str, network: str, fixture: Path) -> dict[str, object]:
+    source = DvrefSource(segment, token="t")
+    records = list(source.parse(fixture))
+    return network_document(
+        network,
+        records,
+        source_name="DVRef",
+        source_url="https://dvref.com/api/v2/",
+        attribution=source.attribution,
+        generated=NOW.date(),
+    )
+
+
+def _documents() -> dict[str, dict[str, object]]:
+    """The three fixture networks as published documents — a whole miniature API."""
+    return {
+        "dstar": _doc(),
+        "ysf": _dvref_doc("ysf", "ysf", DVREF_YSF),
+        "nxdn": _dvref_doc("nxdn", "nxdn", DVREF_NXDN),
+    }
+
+
 def test_document_carries_licence_and_attribution() -> None:
     # CC BY 4.0 obliges attribution AND indicating modification. Both must be in the
     # file itself: an attribution that lives only in a README is one copy-paste from
@@ -272,27 +301,50 @@ def test_document_is_sorted_and_counted() -> None:
 def test_document_omits_empty_fields() -> None:
     rows = _doc()["reflectors"]
     assert isinstance(rows, list)
-    assert all("modules" not in row for row in rows)  # D-Star rows carry none
+    assert all("modules" not in row["dial"] for row in rows)  # D-Star rows carry none
     assert all(None not in row.values() for row in rows)
+    assert all(None not in row["dial"].values() for row in rows)
 
 
 def test_rebuild_is_byte_identical_when_nothing_changed(tmp_path: Path) -> None:
     # Stability is what lets the publish step skip a no-op commit, which is what keeps
-    # a nightly job from filling the site's history with churn.
-    write_api(tmp_path, {"dstar": _doc()}, generated=NOW.date())
-    first = (tmp_path / "reflectors" / "dstar.json").read_bytes()
-    write_api(tmp_path, {"dstar": _doc()}, generated=NOW.date())
-    assert (tmp_path / "reflectors" / "dstar.json").read_bytes() == first
+    # a nightly job from filling the site's history with churn. Every emitted file has
+    # to hold that line, not just the network files — a churning manifest or openapi
+    # document would force the commit just as effectively.
+    written = write_api(tmp_path, _documents(), generated=NOW.date())
+    first = {path: path.read_bytes() for path in written}
+    write_api(tmp_path, _documents(), generated=NOW.date())
+    assert {path: path.read_bytes() for path in written} == first
 
 
-def test_write_api_emits_manifest_and_network_files(tmp_path: Path) -> None:
-    written = write_api(tmp_path, {"dstar": _doc()}, generated=NOW.date())
-    assert [p.name for p in written] == ["index.json", "dstar.json"]
+def test_write_api_emits_the_whole_v1_layout(tmp_path: Path) -> None:
+    written = write_api(tmp_path, _documents(), generated=NOW.date())
+    assert [p.relative_to(tmp_path).as_posix() for p in written] == [
+        "index.json",
+        "reflectors.json",
+        "openapi.json",
+        "reflectors/dstar.json",
+        "reflectors/nxdn.json",
+        "reflectors/ysf.json",
+    ]
 
     manifest = json.loads((tmp_path / "index.json").read_text(encoding="utf-8"))
+    assert manifest["api_version"] == reflectors.API_VERSION
     assert manifest["networks"]["dstar"]["url"] == "reflectors/dstar.json"
     assert manifest["networks"]["dstar"]["count"] == 3
     assert manifest["client_refresh_days"] == reflectors.CLIENT_REFRESH_DAYS
+
+
+def test_manifest_advertises_the_other_endpoints(tmp_path: Path) -> None:
+    # A client should be able to find reflectors.json and the contract from the one file
+    # it is told to fetch first, rather than hard-coding paths it cannot see move.
+    manifest = reflectors.manifest_document(_documents(), generated=NOW.date())
+    endpoints = manifest["endpoints"]
+    assert isinstance(endpoints, dict)
+    assert endpoints["all"] == "reflectors.json"
+    assert endpoints["openapi"] == "openapi.json"
+    assert endpoints["network"] == "reflectors/{network}.json"
+    assert manifest["count"] == 9  # 3 + 3 + 3, the sum of the network counts
 
 
 def test_manifest_expiry_follows_the_refresh_window() -> None:
@@ -417,3 +469,299 @@ def test_parquet_artifact_round_trips(tmp_path: Path) -> None:
     assert frame.columns == list(reflectors.REFLECTOR_SCHEMA_COLUMNS)
     assert frame["port"].dtype == pl.Int64
     assert set(frame["id"]) == {"XLX001", "XLX836", "XLXACP"}
+
+
+# --- v1 entry shape: envelope + discriminated dial -------------------------------
+# docs/REFLECTOR-API.md is the contract these pin. The envelope is what you search and
+# display; `dial` is what you connect with, and it differs per protocol because the
+# protocols genuinely differ.
+
+
+def test_entry_is_an_envelope_plus_a_dial() -> None:
+    record = next(r for r in _xlx_records() if r.id == "XLX836")
+    entry = reflectors.entry_json(record)
+
+    assert entry["network"] == "dstar"  # network + id is the primary key
+    assert entry["id"] == "XLX836"
+    assert entry["dial"] == {
+        "kind": "dextra",
+        "host": "45.56.69.219",
+        "port": 30001,
+        "callsign": "XRF836",
+    }
+    # Connect details live under `dial` and nowhere else: a client that switches on
+    # `kind` must not find a second, undiscriminated copy at top level to guess from.
+    assert not {"host", "port", "callsign", "modules"} & set(entry)
+
+
+@pytest.mark.parametrize(("network", "kind"), sorted(reflectors.DIAL_KINDS.items()))
+def test_dial_kind_per_network(network: str, kind: str) -> None:
+    assert reflectors.dial_kind(network) == kind
+
+
+def test_unmapped_network_still_gets_a_coherent_kind() -> None:
+    # Falling back to the network's own name keeps the entry readable; the OpenAPI
+    # coverage test below is what makes the omission loud.
+    assert reflectors.dial_kind("tetra") == "tetra"
+
+
+def test_dial_is_absent_when_there_is_nothing_to_dial() -> None:
+    # "Listed but not dialable" is a real state. Inventing a default port to fill the
+    # gap would point a client at the wrong socket, which is worse than a greyed row.
+    no_host = ReflectorRecord(id="00001", network="ysf", name="No address")
+    no_port = ReflectorRecord(id="00002", network="ysf", name="No port", host="ysf.example.org")
+    assert "dial" not in reflectors.entry_json(no_host)
+    assert "dial" not in reflectors.entry_json(no_port)
+
+
+def test_urf_dials_without_a_port() -> None:
+    # DVRef publishes no port for ANY of the 89 URF reflectors — a urfd speaks several
+    # protocols at once, so there is no single port to carry. The entry is still
+    # dialable, so `port` is optional for this kind and required for every other.
+    record = ReflectorRecord(id="003", network="urf", host="urf.example.org", modules=["A", "B"])
+    assert reflectors.entry_json(record)["dial"] == {
+        "kind": "urf",
+        "host": "urf.example.org",
+        "modules": ["A", "B"],
+    }
+    assert "urf" in reflectors.DIAL_PORT_OPTIONAL
+
+
+def test_dial_carries_only_the_fields_its_kind_defines() -> None:
+    # A YSF reflector has no modules and no wire callsign; emitting them because the
+    # record happens to have the attributes would put fields in the file that the
+    # published schema for that kind does not define.
+    record = ReflectorRecord(
+        id="00006",
+        network="ysf",
+        host="ysf.example.org",
+        port=42000,
+        callsign="NOPE",
+        modules=["A"],
+    )
+    assert reflectors.entry_json(record)["dial"] == {
+        "kind": "ysf",
+        "host": "ysf.example.org",
+        "port": 42000,
+    }
+
+
+def test_name_falls_back_to_the_id() -> None:
+    entry = reflectors.entry_json(ReflectorRecord(id="00009", network="ysf"))
+    assert entry["name"] == "00009"
+
+
+# --- aliases ---------------------------------------------------------------------
+
+
+def test_xlx_rows_carry_the_xrf_form_as_an_alias() -> None:
+    record = next(r for r in _xlx_records() if r.id == "XLX836")
+    assert record.aliases == ["XRF836"]
+    assert reflectors.entry_json(record)["aliases"] == ["XRF836"]
+
+
+def test_an_alias_is_never_a_merge_key() -> None:
+    # XLX002 answers to XRF002 on the wire, so XRF002 is a genuine alias OF THAT BOX.
+    # A standalone XRF002 is a different machine that merely shares the number, and it
+    # keeps its own entry: merging on aliases would send an operator to a reflector on
+    # another continent. Measured 2026-08-26: 13 of 14 sampled pairs differed.
+    xlx_row = ReflectorRecord(
+        id="XLX002", network="dstar", aliases=["XRF002"], host="60.169.240.97"
+    )
+    xrf_row = ReflectorRecord(id="XRF002", network="dstar", host="52.36.45.107")
+    merged = merge_by_id([xlx_row], [xrf_row])
+    assert [r.id for r in merged] == ["XLX002", "XRF002"]
+    assert [r.host for r in merged] == ["60.169.240.97", "52.36.45.107"]
+
+
+# --- the combined file -----------------------------------------------------------
+
+
+def test_combined_file_holds_every_network_in_one_sorted_list() -> None:
+    combined = reflectors.combined_document(_documents(), generated=NOW.date())
+    entries = combined["reflectors"]
+    assert isinstance(entries, list)
+    assert combined["count"] == len(entries) == 9
+    assert combined["networks"] == {"dstar": 3, "nxdn": 3, "ysf": 3}
+    keys = [(e["network"], e["id"]) for e in entries]
+    assert keys == sorted(keys)  # stable order, or an unchanged rebuild churns
+    assert {e["network"] for e in entries} == {"dstar", "nxdn", "ysf"}
+
+
+def test_combined_file_credits_every_upstream_it_contains() -> None:
+    # CC BY attribution has to survive the merge into one file: a reader of
+    # reflectors.json must not have to fetch the per-network files to learn who to credit.
+    combined = reflectors.combined_document(_documents(), generated=NOW.date())
+    attribution = combined["attribution"]
+    assert isinstance(attribution, str)
+    assert "XLX registry" in attribution
+    assert "DVRef" in attribution
+    assert combined["license"] == reflectors.REFLECTOR_LICENSE
+    assert combined["modifications"] == reflectors.MODIFICATION_NOTE
+    sources = combined["sources"]
+    assert isinstance(sources, list)
+    assert {s["name"] for s in sources} == {"XLX registry (LX1IQ)", "DVRef"}
+
+
+def test_combined_file_is_built_from_what_is_published() -> None:
+    # Assembled from the DOCUMENTS, not from a second parse — so on a day the shrink
+    # guard keeps a previous network file, reflectors.json describes what is live.
+    documents = _documents()
+    documents["ysf"]["reflectors"] = [
+        {"network": "ysf", "id": "99999", "name": "kept from yesterday", "source": "dvref"}
+    ]
+    documents["ysf"]["count"] = 1
+    combined = reflectors.combined_document(documents, generated=NOW.date())
+    ids = [e["id"] for e in combined["reflectors"] if e["network"] == "ysf"]
+    assert ids == ["99999"]
+
+
+# --- OpenAPI ---------------------------------------------------------------------
+
+
+def test_openapi_document_is_valid_openapi() -> None:
+    from openapi_spec_validator import validate
+
+    validate(reflectors.openapi_document())  # raises on anything malformed
+
+
+def test_openapi_models_dial_as_a_discriminated_union() -> None:
+    schemas = reflectors.openapi_document()["components"]["schemas"]
+    dial = schemas["Dial"]
+    assert dial["discriminator"]["propertyName"] == "kind"
+    assert {ref["$ref"] for ref in dial["oneOf"]} == set(dial["discriminator"]["mapping"].values())
+
+
+def test_openapi_covers_every_dial_kind_the_build_can_emit() -> None:
+    # THE ANTI-DRIFT TEST. The kinds are derived, never listed here: from the networks
+    # the importers can actually produce, from the emitter's own table, and from the
+    # kinds present in documents built from the real fixtures. Add a network or a kind
+    # without touching the published contract and this fails.
+    networks = {*dvref.NETWORKS.values(), xlx.XlxSource.network}
+    from_sources = {reflectors.dial_kind(n) for n in networks}
+    from_table = set(reflectors.DIAL_KINDS.values())
+    from_data = {
+        entry["dial"]["kind"]
+        for document in _documents().values()
+        for entry in document["reflectors"]
+        if "dial" in entry
+    }
+    kinds = from_sources | from_table | from_data
+    assert from_data  # the fixtures must actually exercise this
+
+    document = reflectors.openapi_document()
+    schemas = document["components"]["schemas"]
+    mapping = schemas["Dial"]["discriminator"]["mapping"]
+    variants = {ref["$ref"] for ref in schemas["Dial"]["oneOf"]}
+
+    for kind in sorted(kinds):
+        assert kind in mapping, f"dial.kind {kind!r} is emitted but undocumented"
+        ref = mapping[kind]
+        assert ref in variants
+        variant = schemas[ref.rsplit("/", 1)[-1]]
+        assert variant["properties"]["kind"]["const"] == kind
+        assert "host" in variant["properties"]
+        for extra in reflectors.DIAL_FIELDS.get(kind, ()):
+            assert extra in variant["properties"], f"{kind}.{extra} is emitted but undocumented"
+
+
+def test_every_emitted_field_appears_in_the_openapi_schemas() -> None:
+    # The other direction of the same guarantee: a field the emitter adds to an entry
+    # or to a dial has to exist in the schema a client generates its types from.
+    document = reflectors.openapi_document()
+    schemas = document["components"]["schemas"]
+    envelope = set(schemas["Reflector"]["properties"])
+    mapping = schemas["Dial"]["discriminator"]["mapping"]
+
+    for document in _documents().values():
+        for entry in document["reflectors"]:
+            assert set(entry) <= envelope, f"undocumented envelope field in {entry['id']}"
+            dial = entry.get("dial")
+            if dial is None:
+                continue
+            variant = schemas[mapping[dial["kind"]].rsplit("/", 1)[-1]]
+            assert set(dial) <= set(variant["properties"])
+
+
+def test_openapi_carries_the_licence_and_attribution() -> None:
+    # A generated client that reads only the contract still learns the terms.
+    info = reflectors.openapi_document()["info"]
+    assert info["license"]["identifier"] == reflectors.REFLECTOR_LICENSE_SPDX
+    assert "DVRef" in info["description"]
+    assert "XLX registry" in info["description"]
+    assert reflectors.MODIFICATION_NOTE in info["description"]
+
+
+def test_openapi_is_written_as_part_of_the_build(tmp_path: Path) -> None:
+    write_api(tmp_path, _documents(), generated=NOW.date())
+    written = json.loads((tmp_path / "openapi.json").read_text(encoding="utf-8"))
+    assert written == reflectors.openapi_document()  # generated, so it cannot drift
+    assert written["servers"][0]["url"].endswith(f"/api/{reflectors.API_VERSION}")
+
+
+# --- email redaction -------------------------------------------------------------
+# The published files are bulk-downloadable JSON on a CDN. A sysop's address in a
+# reflector blurb becomes a harvestable list there, which is the same class of thing as
+# the street addresses and 6-character grids this project already refuses to publish.
+
+
+def test_fixtures_really_contain_email_addresses() -> None:
+    # Guards the guard: without an address in the fixtures the redaction tests below
+    # would pass while testing nothing. (Reserved example.* domains, never a real one.)
+    assert EMAIL_SHAPED.search(XLX_LIST.read_text(encoding="utf-8"))
+    assert EMAIL_SHAPED.search(DVREF_NXDN.read_text(encoding="utf-8"))
+
+
+def test_no_published_entry_carries_an_email_address() -> None:
+    for document in _documents().values():
+        for entry in document["reflectors"]:
+            for value in entry.values():
+                if isinstance(value, str):
+                    assert not EMAIL_SHAPED.search(value), entry
+
+
+def test_redaction_leaves_the_sentence_readable() -> None:
+    assert (
+        reflectors.redact_emails("DStar reflector, contact w1abc@example.com for access")
+        == "DStar reflector, contact [email removed] for access"
+    )
+
+
+@pytest.mark.parametrize(
+    "text",
+    [
+        "DStar <> DMR TG22208 BM2222",  # bare @-less text
+        "XLX105 <-> REF018C",
+        "http://xlx.n7mky.com",  # a URL must survive intact
+        "https://xlx138.freeddns.org/",
+        "TG@22208",  # an @ without a domain is not an address
+        "Cape Agulhas - KF05ae",
+    ],
+)
+def test_redaction_leaves_non_addresses_alone(text: str) -> None:
+    assert reflectors.redact_emails(text) == text
+
+
+def test_redaction_is_applied_by_the_record_itself() -> None:
+    # One choke point, so a future importer cannot leak an address by forgetting a call
+    # — and so the Parquet and SQLite artifacts are covered as well as the JSON.
+    record = ReflectorRecord(
+        id="00001",
+        network="ysf",
+        name="net w1abc@example.com",
+        sponsor="W1ABC w1abc@example.com",
+        description="mail w1abc@example.com",
+    )
+    assert record.name == "net [email removed]"
+    assert record.sponsor == "W1ABC [email removed]"
+    assert record.description == "mail [email removed]"
+
+
+def test_modification_note_declares_the_redaction() -> None:
+    # CC BY 4.0 requires stating that the material was changed. Removing addresses is a
+    # change to the VALUES, not just the structure, so it has to be declared — in the
+    # files themselves and in the licence file that travels with the artifacts.
+    assert "Email addresses have been removed" in reflectors.MODIFICATION_NOTE
+    licence = (REPO_ROOT / "LICENSE-CC-BY").read_text(encoding="utf-8")
+    assert "email" in licence.lower()
+    assert reflectors.EMAIL_PLACEHOLDER in licence

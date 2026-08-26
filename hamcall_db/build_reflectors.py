@@ -4,7 +4,10 @@ Separate entry point from :mod:`hamcall_db.build`, because the reflector directo
 separate artifact under a separate licence (CC BY 4.0, not the project's CC BY-NC) and
 must never be merged into the callsign dataset. See :mod:`hamcall_db.reflectors`.
 
-    uv run hamcall-db-reflectors --out site/api
+    uv run hamcall-db-reflectors --out site/api/v1
+
+Writes the versioned static API described by ``docs/REFLECTOR-API.md`` — a manifest, one
+file with every reflector in it, a file per network, and the generated OpenAPI contract.
 
 Sources per network:
 
@@ -28,6 +31,7 @@ from typing import Annotated
 import typer
 
 from hamcall_db.reflectors import (
+    NETWORK_DIR,
     ReflectorRecord,
     merge_by_id,
     network_document,
@@ -59,7 +63,7 @@ app = typer.Typer(
 
 def _existing_count(out_dir: Path, network: str) -> int | None:
     """Row count of the network file already on disk, or None if there isn't one."""
-    path = out_dir / "reflectors" / f"{network}.json"
+    path = out_dir / NETWORK_DIR / f"{network}.json"
     if not path.exists():
         return None
     try:
@@ -71,7 +75,7 @@ def _existing_count(out_dir: Path, network: str) -> int | None:
 
 
 def _load_existing(out_dir: Path, network: str) -> dict[str, object] | None:
-    path = out_dir / "reflectors" / f"{network}.json"
+    path = out_dir / NETWORK_DIR / f"{network}.json"
     if not path.exists():
         return None
     try:
@@ -84,8 +88,14 @@ def _load_existing(out_dir: Path, network: str) -> dict[str, object] | None:
 @app.command()
 def build(
     out: Annotated[
-        Path, typer.Option(help="Output directory for the API (index.json + reflectors/).")
-    ] = Path("site/api"),
+        Path,
+        typer.Option(
+            help=(
+                "Output directory for the versioned API "
+                "(index.json + reflectors.json + reflectors/ + openapi.json)."
+            )
+        ),
+    ] = Path("site/api/v1"),
     work_dir: Annotated[
         Path, typer.Option(help="Scratch dir for cached upstream downloads.")
     ] = Path("data/raw"),

@@ -300,8 +300,9 @@ terms, which means:
    THE REFLECTOR DIRECTORY IS A SEPARATE CC BY 4.0 DATASET (sources 11-12)
    ----------------------------------------------------------------------
    The reflector artifacts — hamcall-db-reflectors-YYYY-MM-DD.parquet, the
-   matching .db (table: reflectors), and the static JSON under site/api/ — are
-   NOT part of the CC BY-NC combined dataset and must never be merged into it.
+   matching .db (table: reflectors), and the static JSON API under site/api/v1/
+   — are NOT part of the CC BY-NC combined dataset and must never be merged
+   into it.
 
    This is a license requirement, not a filing preference. DVRef's data is
    CC BY 4.0, and CC BY 4.0 section 2(a)(5)(B) forbids imposing "additional or
@@ -312,7 +313,9 @@ terms, which means:
    Same segregation discipline as the ODbL park grids (source 8), pointing the
    other way: source 8's upstream is MORE restrictive than this project, and
    sources 11-12 are LESS. See the LICENSE-CC-BY file for the full terms,
-   required attribution, and the statement of modifications.
+   required attribution, and the statement of modifications — which includes
+   the removal of email addresses from the free-text fields, since CC BY 4.0
+   requires modifications to be declared.
 
 
 The SEPARATE OSM park-grids file (source 8) is NOT part of this combined

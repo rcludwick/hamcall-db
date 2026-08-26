@@ -1,2938 +1,4470 @@
 {
+  "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 313,
   "generated": "2026-08-26",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
-  "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream; values are unmodified.",
+  "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
   "network": "p25",
   "reflectors": [
     {
       "country": "GR",
       "dashboard": "http://svham.eu:89",
       "description": "<h5>What is \"Aether Hellas\"?</h5>\r\n<p>In Greek Mythology,&nbsp;<strong>Aether</strong>&nbsp;was the personification of the upper air breathed by the Gods. In early physics, it was believed to be the medium that fills the universe, allowing waves to propagate through space.<br><br>For us,&nbsp;<strong>Aether Hellas</strong> represents the \"invisible web\" that connects Greece to the world. It is our digital gateway that transforms the air into communication, bridging the distances between Rhodes, Thessaly, and Central Greece, uniting people and technology under a shared amateur radio vision.</p>",
-      "host": "38.19.202.24",
+      "dial": {
+        "host": "38.19.202.24",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "1005",
       "name": "AETHER HELLAS P25 - 1005 REFLECTOR",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "AETHER HELLAS NET By SV4JYD"
     },
     {
       "country": "US",
       "dashboard": "http://dashboard.arert.net/",
       "description": "<p>ARERT is Amature Radio Ermegency Response Teams (Around the world)</p>\r\n<p>This is for mostly weather related chat.&nbsp; Hurricane and other weather nets are on here.</p>\r\n<p>It is crosslinked to the following systems:</p>\r\n<p>Allstar Node: 273660</p>\r\n<p>Echolink Node: 902723 (ARERT conference Server)</p>\r\n<p>DMR TG: 1008 (on IPSC2.mntrbo.net)</p>\r\n<p>DMR Reflector: 4502 (On all DMRPlus IPSC2 servers)</p>",
-      "host": "p25.arert.net",
+      "dial": {
+        "host": "p25.arert.net",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "1008",
       "name": "ARERT - Weather Related Chat",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "MNRADIO.NET"
     },
     {
       "country": "GB",
       "dashboard": "https://dvgateway.m1geo.com/",
-      "host": "dvgateway.m1geo.com",
+      "dial": {
+        "host": "dvgateway.m1geo.com",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "10100",
       "name": "World Wide",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Place holder"
     },
     {
       "country": "GB",
       "dashboard": "https://mb6er.com/p25/",
       "description": "<p>Connects to a popular multimode network&nbsp;</p>",
-      "host": "81.150.10.62",
+      "dial": {
+        "host": "81.150.10.62",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "10120",
       "name": "10120",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "CQ-UK  WORLDWIDE"
     },
     {
       "country": "AU",
       "dashboard": "https://sfarg-p25.vkradio.com",
-      "host": "112.213.34.65",
+      "dial": {
+        "host": "112.213.34.65",
+        "kind": "p25",
+        "port": 41003
+      },
       "id": "1017",
       "name": "SFARG Australian Portal",
-      "port": 41003,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "VK3JED"
     },
     {
       "country": "US",
       "dashboard": "https://dvswitch.org/Modern/?conf=P25_NA_Reflector",
       "description": "<p>P25 North America</p>",
-      "host": "p25.dvswitch.org",
+      "dial": {
+        "host": "p25.dvswitch.org",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "10200",
       "name": "P25 North America",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "DVSwitch"
     },
     {
       "country": "US",
       "dashboard": "https://dvswitch.org/Modern/?conf=P25_TAC1_Reflector",
       "description": "<p>P25 NA TAC 1</p>",
-      "host": "p25.dvswitch.org",
+      "dial": {
+        "host": "p25.dvswitch.org",
+        "kind": "p25",
+        "port": 41010
+      },
       "id": "10201",
       "name": "P25 NA TAC 1",
-      "port": 41010,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "DVSwitch"
     },
     {
       "country": "US",
       "dashboard": "http://n6ex.ddns.net:10207",
-      "host": "n6ex.ddns.net",
+      "dial": {
+        "host": "n6ex.ddns.net",
+        "kind": "p25",
+        "port": 41001
+      },
       "id": "10207",
       "name": "Southwest P25",
-      "port": 41001,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "N6EX"
     },
     {
       "country": "FR",
       "dashboard": "https://p25.f5dan.fr/",
-      "host": "p25.f5dan.fr",
+      "dial": {
+        "host": "p25.f5dan.fr",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "10208",
       "name": "10208",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "F5DAN"
     },
     {
       "country": "US",
       "dashboard": "https://p25.we0fun.com/",
-      "host": "p25.we0fun.com",
+      "dial": {
+        "host": "p25.we0fun.com",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "10209",
       "name": "Fun Machine Linked Repeater System",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "WE0FUN Fun Machine Linked Repeater System"
     },
     {
       "country": "US",
       "dashboard": "http://p25.wd6awp.us:4000",
       "description": "<p>N6OCS</p>",
-      "host": "p25.wd6awp.us",
+      "dial": {
+        "host": "p25.wd6awp.us",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "10253",
       "name": "N6OCS",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "N6OCS"
     },
     {
       "country": "PL",
       "dashboard": "http://185.174.14.75/",
       "description": "<p>&nbsp;</p>\r\n<div id=\"sconnect-is-installed\" style=\"display: none;\">2.14.0.0</div>\r\n<div id=\"sconnect-is-installed\" style=\"display: none;\">2.14.0.0</div>",
-      "host": "185.174.14.75",
+      "dial": {
+        "host": "185.174.14.75",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "10260",
       "name": "P25 TG-10260 Poland",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "P25 TG-10260 Poland"
     },
     {
       "country": "US",
       "dashboard": "https://p25.skyhublink.com/P25Reflector-Dashboard",
-      "host": "p25.skyhublink.com",
+      "dial": {
+        "host": "p25.skyhublink.com",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "10294",
       "name": "SkyHubLink System",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "SkyHubLink System"
     },
     {
       "country": "DE",
       "dashboard": "https://p25-eu.n18.de/",
-      "host": "176.9.1.168",
+      "dial": {
+        "host": "176.9.1.168",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "10300",
       "name": "Europe",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Place holder"
     },
     {
       "country": "ES",
       "dashboard": "http://ea5gvk.duckdns.org:84/P25",
-      "host": "ea5gvk.duckdns.org",
+      "dial": {
+        "host": "ea5gvk.duckdns.org",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "10301",
       "name": "P25 ESPA\u00d1A",
-      "port": 41000,
+      "network": "p25",
       "source": "dvref"
     },
     {
       "country": "DE",
       "dashboard": "http://dv.afu.rwth-aachen.de/P25Reflector-Dashboard/",
-      "host": "dv.afu.rwth-aachen.de",
+      "dial": {
+        "host": "dv.afu.rwth-aachen.de",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "10320",
       "name": "Germany Internet",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "RWTH Amateurfunkgruppe"
     },
     {
       "country": "DE",
       "dashboard": "https://p25.projekt-pegasus.net/",
       "description": "<p>Digital Voice Multimode Bridge to Pegasus1 (Pegasus Prime) via P25</p>\r\n<p>For more infos see at projekt-pegasus.net&nbsp;</p>\r\n<p>&nbsp;</p>",
-      "host": "5.9.59.26",
+      "dial": {
+        "host": "5.9.59.26",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "10328",
       "name": "DE-Pegasus-P25",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Projekt Pegasus EFA Gruppe M\u00fcnchen #DL1BZ"
     },
     {
       "country": "GB",
-      "host": "warc.ddns.net",
+      "dial": {
+        "host": "warc.ddns.net",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "10350",
       "name": "WARC",
-      "port": 41000,
+      "network": "p25",
       "source": "dvref"
     },
     {
       "country": "ES",
       "dashboard": "http://xlxrem.xreflector.es/p25/",
-      "host": "51.83.98.154",
+      "dial": {
+        "host": "51.83.98.154",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "10363",
       "name": "REM-ESP P25Reflector",
-      "port": 41000,
+      "network": "p25",
       "source": "dvref"
     },
     {
       "country": "ES",
       "dashboard": "http://164.132.198.18",
-      "host": "164.132.198.18",
+      "dial": {
+        "host": "164.132.198.18",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "10365",
       "name": "ADER P25Reflector",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "none"
     },
     {
       "country": "AU",
       "dashboard": "http://pacificp25.repeaters.info",
       "description": "<p>10400 Pacific P25</p>",
-      "host": "pacificp25.repeaters.info",
+      "dial": {
+        "host": "pacificp25.repeaters.info",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "10400",
       "name": "Pacific p25 TG 10400",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "VK2HK"
     },
     {
       "country": "AU",
       "dashboard": "http://pacifictac1.repeaters.info",
       "description": "<p>P25 Pacific Tac1 TG 10401</p>",
-      "host": "pacifictac1.repeaters.info",
+      "dial": {
+        "host": "pacifictac1.repeaters.info",
+        "kind": "p25",
+        "port": 41010
+      },
       "id": "10401",
       "name": "Pacific TG 10401",
-      "port": 41010,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "VK2HK"
     },
     {
       "country": "CN",
       "dashboard": "http://125.91.17.122:8090/p25",
       "description": "<p dir=\"auto\">Link YSF CN9, DMR BM TG46001</p>\r\n<p dir=\"auto\">Maintain by BI7JTA</p>",
-      "host": "125.91.17.122",
+      "dial": {
+        "host": "125.91.17.122",
+        "kind": "p25",
+        "port": 42020
+      },
       "id": "10405",
       "name": "P25 China BI7JTA",
-      "port": 42020,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "BI7JTA"
     },
     {
       "country": "CN",
       "dashboard": "http://p25.bi1llm.com/",
-      "host": "p25.bi1llm.com",
+      "dial": {
+        "host": "p25.bi1llm.com",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "10409",
       "name": "BI1LLM P25 bridge to 46001",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "CHINA P25"
     },
     {
       "country": "TW",
       "description": "<p>10411 P25 bridged to DMR TG-46601, hosted by VR2YEP.</p>",
-      "host": "stayalone.idv.hk",
+      "dial": {
+        "host": "stayalone.idv.hk",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "10411",
       "name": "P25 Reflector bridged to DMR TG 46601",
-      "port": 41000,
+      "network": "p25",
       "source": "dvref"
     },
     {
       "country": "DE",
       "dashboard": "https://dl-nordwest.com/urf",
       "description": "<p><strong>DL-Nordwest Multigateway</strong></p>\r\n<p>DMR: BM TG26429, IPSC2 TG8421 (DMR-DL, DL-Rptr, DL-Hotspot, Ham-Cloud)<br>YSF: 54919, 26200 DG-ID 79<br>YCS: 262, DG-ID 79<br>Wires-X: 27741<br>D-Star: DCS421DL, XLX421DL<br>NXDN: TG20421<br>P25: TG10421<br>M17: URF421 D<br>Peanut: YSF-DLNW</p>\r\n<p>&nbsp;</p>\r\n<p>Sysops: Bernd DK5BS, Stephan 9V1LH/DG1BGS<br><em>for more information visit dl-nordwest.com</em></p>",
-      "host": "dl-nordwest.com",
+      "dial": {
+        "host": "dl-nordwest.com",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "10421",
       "name": "dl-nordwest.com",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "dl-nordwest.com"
     },
     {
       "country": "CN",
       "dashboard": "https://hamdao.com/p25/10473/",
       "description": "<p>Fireside Chat Reflector. LinAn, China, CN.</p>",
-      "host": "p25.hamdao.com",
+      "dial": {
+        "host": "p25.hamdao.com",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "10473",
       "name": "Fireside Chat Reflector",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "hamdao"
     },
     {
       "country": "CN",
-      "host": "218.79.254.55",
+      "dial": {
+        "host": "218.79.254.55",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "10512",
       "name": "10512",
-      "port": 41000,
+      "network": "p25",
       "source": "dvref"
     },
     {
       "country": "AU",
       "dashboard": "https://p25nswdash.gustotech.net",
       "description": "<p>10700 Experimental P25 Reflector</p>",
-      "host": "p25nsw.gustotech.net",
+      "dial": {
+        "host": "p25nsw.gustotech.net",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "10700",
       "name": "10700",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Vk2muf"
     },
     {
       "country": "US",
       "dashboard": "http://k5tra.net",
       "description": "<p>Texas P25 Reflector</p>",
-      "host": "927tech.dynuddns.net",
+      "dial": {
+        "host": "927tech.dynuddns.net",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "10888",
       "name": "10888",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "k5tra"
     },
     {
       "country": "US",
-      "host": "75.145.198.42",
+      "dial": {
+        "host": "75.145.198.42",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "10901",
       "name": "Ki4eki",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Randin Confed Radio Group"
     },
     {
       "country": "US",
       "dashboard": "http://urfd.dvswitch.org/urf",
       "description": "<p>DVSwitch test</p>",
-      "host": "urfd.dvswitch.org",
+      "dial": {
+        "host": "urfd.dvswitch.org",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "10902",
       "name": "URF902",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "DVSwitch"
     },
     {
       "country": "US",
       "description": "<p>P25 Group radio electronics and developement.</p>",
-      "host": "area51p25.zapto.org",
+      "dial": {
+        "host": "area51p25.zapto.org",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "11053",
       "name": "W6APX P25 Group",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "W6APX"
     },
     {
       "country": "US",
       "description": "<p>KK6RQ P25 Reflector</p>",
-      "host": "area52.zapto.org",
+      "dial": {
+        "host": "area52.zapto.org",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "11069",
       "name": "11069",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KK6RQ"
     },
     {
       "country": "US",
       "dashboard": "http://www.kg4trv.ddns.net",
       "description": "<p>We are a group of friends who are passionate about digital radio, its numerous modes, networks and services.</p>\r\n<p>Somos un grupo de amigos que tenemos pasion por la radio digital, sus numerosas modalidades, redes y servicios</p>",
-      "host": "104.5.243.93",
+      "dial": {
+        "host": "104.5.243.93",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "11520",
       "name": "US D Friends",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KG4TRV"
     },
     {
       "country": "GB",
       "dashboard": "https://p25116.freestar.network/",
-      "host": "p25116.freestar.network",
+      "dial": {
+        "host": "p25116.freestar.network",
+        "kind": "p25",
+        "port": 41003
+      },
       "id": "116",
       "name": "116 TGIF",
-      "port": 41003,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "FreeSTAR Network"
     },
     {
       "country": "US",
       "dashboard": "http://www.sbanetweb.com:8080/dvs3/",
       "description": "<p><strong>Emergency Radio Long Island </strong>provides a multi-modal hub for both the practice of and the enjoyment in Ham Radio and Emergency Communications.</p>\r\n<p>&nbsp;</p>\r\n<p class=\"MsoNormal\"><span style=\"font-size: 11.0pt;\">With approximately a dozen different nets either locally produced or re-broadcast Ham Radio Operators or supporters can listen (via Broadcasity) or participate.</span></p>\r\n<p>&nbsp;</p>\r\n<p><strong>Nets available on:<br>AllStar 62499 as well as TG 11710 for TGIF, YSF, P25 and NXDN, M17-117,<br>EchoLink KC2NJV-L and HOIP ext 15077, Amateur Wire ext 90006 and HamShack Hotline ext 940064</strong><br><em>Up to date info can be found at&nbsp;<a href=\"http://sbanetweb.com:8080/\">SBANETWEB.com:8080</a></em></p>",
-      "host": "96.224.250.24",
+      "dial": {
+        "host": "96.224.250.24",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "11710",
       "name": "11710",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Emergency Radio Long Island"
     },
     {
       "country": "US",
       "dashboard": "http://p25.kd9fuw.com:4000/",
-      "description": "<p>CENTRAL WISCONSIN P25 REFLECTOR &ndash; WAUSAU, WI</p>\r\n<p>WHILE THIS SERVER HOSTS MULTIPLE MODES, THEY ARE NOT LINKED AT THIS TIME.</p>\r\n<p>IF YOU HAVE ANY QUESTIONS, PLEASE EMAIL: <a href=\"mailto:AFDERRICO@OUTLOOK.COM\">AFDERRICO@OUTLOOK.COM</a></p>\r\n<p>&nbsp;</p>",
-      "host": "p25.kd9fuw.com",
+      "description": "<p>CENTRAL WISCONSIN P25 REFLECTOR &ndash; WAUSAU, WI</p>\r\n<p>WHILE THIS SERVER HOSTS MULTIPLE MODES, THEY ARE NOT LINKED AT THIS TIME.</p>\r\n<p>IF YOU HAVE ANY QUESTIONS, PLEASE EMAIL: <a href=\"mailto:[email removed]\">[email removed]</a></p>\r\n<p>&nbsp;</p>",
+      "dial": {
+        "host": "p25.kd9fuw.com",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "131",
       "name": "CenWisP25",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KD9FUW"
     },
     {
       "country": "US",
       "description": "<p>This is a experimental node.&nbsp; Never know what may be bridged to this node.&nbsp;&nbsp;</p>\r\n<p>Just used for testing.</p>",
-      "host": "1361.mnradio.net",
+      "dial": {
+        "host": "1361.mnradio.net",
+        "kind": "p25",
+        "port": 41002
+      },
       "id": "1361",
       "name": "MN RADIO Network Testing Node",
-      "port": 41002,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "MNRADIO.NET"
     },
     {
       "country": "US",
       "dashboard": "http://xlx137.mywire.org",
-      "host": "xlx137.mywire.org",
+      "dial": {
+        "host": "xlx137.mywire.org",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "137",
       "name": "137",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "W3KIT"
     },
     {
       "country": "TH",
       "dashboard": "https://p25138.freeddns.org/",
       "description": "<p>Interlink to XLX138 Module X<br><a href=\"https://xlx138.freeddns.org/\">https://xlx138.freeddns.org</a></p>",
-      "host": "103.195.7.20",
+      "dial": {
+        "host": "103.195.7.20",
+        "kind": "p25",
+        "port": 41001
+      },
       "id": "138",
       "name": "XLX138 XNexus",
-      "port": 41001,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "P25 138 XLX138 XNexus Thailand"
     },
     {
       "country": "US",
       "description": "<p>This is an installation of DVSwitch and P25Reflector. It links to Allstar Node 483561, which is connected to 483560 on our local 146.790 repeater. This bridge is meant to open a new avenue to our local repeater for remote users.&nbsp;</p>\r\n<p>The 146.790 repeater is located in Greenville, Ohio, and is sponsored by the Treaty City Amateur Radio Association, W8UMD. Adam, W8FLH is our repeater trustee.</p>\r\n<p>Our local Darke County ARES net meets every Monday evening at 7:00 PM ET on 146.790. Feel free to join us! For more info, see http://w8flh.net</p>",
-      "host": "38.194.188.24",
+      "dial": {
+        "host": "38.194.188.24",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "14679",
       "name": "Treaty City ARA",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "W8FLH/W8UMD"
     },
     {
       "country": "TH",
       "dashboard": "https://p148.hs3tdi.com/",
       "description": "<p>P25 Link XLX148 Modules X-Nexus</p>",
-      "host": "p148.hs3tdi.com",
+      "dial": {
+        "host": "p148.hs3tdi.com",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "148",
       "name": "148",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "HS3TDI"
     },
     {
       "country": "TH",
       "dashboard": "https://p25.pwk.ac.th/",
       "description": "<p>P25 Link XLX149 Modules X-Nexus</p>",
-      "host": "p25.pwk.ac.th",
+      "dial": {
+        "host": "p25.pwk.ac.th",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "149",
       "name": "149",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "HS3TDI"
     },
     {
       "country": "US",
       "dashboard": "https://xlx587.openquad.net",
       "description": "<p>The Quadnet Digitial Voice Network, https://www.openquad.net</p>",
-      "host": "104.8.207.66",
+      "dial": {
+        "host": "104.8.207.66",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "15431",
       "name": "URF587",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "QuadNet"
     },
     {
       "country": "US",
       "dashboard": "https://xlx307.ddns.net/",
       "description": "<p>The Quadnet Digital voice network, https://www.openquad.net</p>",
-      "host": "72.21.76.154",
+      "dial": {
+        "host": "72.21.76.154",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "15432",
       "name": "URF307",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "QuadNet"
     },
     {
       "country": "GR",
       "dashboard": "http://p25-165.sv2snh.gr",
       "description": "<p>P25-165 Reflector of Digital Voice GREECE.</p>",
-      "host": "p25-165.ddns.net",
+      "dial": {
+        "host": "p25-165.ddns.net",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "165",
       "name": "TG165-Digital Voice GREECE",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "SV2SNH"
     },
     {
       "country": "US",
-      "host": "73.120.108.193",
+      "dial": {
+        "host": "73.120.108.193",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "19570",
       "name": "KC3KMV Private P25 TG - ASL3 Node",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KC3KMV - Alltune2"
     },
     {
       "country": "GR",
       "dashboard": "http://202p25.foxhost.org",
       "description": "<p>P25 - TG202&nbsp; HELLAS Zone Net!</p>",
-      "host": "foxhost.org",
+      "dial": {
+        "host": "foxhost.org",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "202",
       "name": "HELLAS Zone",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "HELLAS Zone Net!  By SA7SVR"
     },
     {
       "country": "GR",
       "dashboard": "http://gr-hellas-adn-p25.ddns.net",
       "description": "<p>GR-Hellas-ADN-P25</p>",
-      "host": "gr-hellas-adn-p25.ddns.net",
+      "dial": {
+        "host": "gr-hellas-adn-p25.ddns.net",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "20210",
       "name": "P25-2021.ADN.Systems.Greece",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "2021_ADN_SYSTEMS_GREECE"
     },
     {
       "country": "GR",
       "dashboard": "http://hellas-node.ddns.net:84/ysf/",
-      "host": "hellas-node.ddns.net",
+      "dial": {
+        "host": "hellas-node.ddns.net",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "20222",
       "name": "P25-2022.ADN.Systems.Hellas-Node",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "2022_ADN_SYSTEMS_HELLAS_NODE"
     },
     {
       "country": "NL",
       "dashboard": "http://51.83.46.75:38000/p25/",
       "description": "<p>2044 / P25 The Netherlands Main Reflector</p>",
-      "host": "51.83.46.75",
+      "dial": {
+        "host": "51.83.46.75",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "2044",
       "name": "2044",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "PD2VDY"
     },
     {
       "country": "FR",
       "dashboard": "https://francemultiprotocole.fr",
       "description": "<p>RI49 - Francemultiprotocole</p>",
-      "host": "82.66.121.200",
+      "dial": {
+        "host": "82.66.121.200",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "20899",
       "name": "URF399",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "F6KCE"
     },
     {
       "country": "US",
       "dashboard": "http://137.184.68.241",
-      "host": "137.184.68.241",
+      "dial": {
+        "host": "137.184.68.241",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "210",
       "name": "P25 PE",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "PE Group"
     },
     {
       "country": "US",
       "dashboard": "http://44.27.136.61/",
       "description": "<p>Cambria County Multi Mode Hub</p>\r\n<p>&nbsp;</p>\r\n<p>Currently linked to:</p>\r\n<p>Allstar - 2121</p>\r\n<p>DMR - 3142113</p>\r\n<p>P25 - 2121</p>\r\n<p>YSF - 02121</p>\r\n<p>NXDN - 2121</p>\r\n<p>Echolink - NW3F-R<br><br><br>More info - http://108.174.58.66/</p>",
-      "host": "44.27.136.61",
+      "dial": {
+        "host": "44.27.136.61",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "2121",
       "name": "2121 Cambria County Multi-Mode Hub",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Cambria Allied Radio Operators"
     },
     {
       "country": "US",
       "dashboard": "https://xlx277.bitbybithams.com",
       "description": "<p>Bit By Bit Hams 277, part of the larger Bit By Bit Hams transoding network.</p>\r\n<p>&nbsp;</p>",
-      "host": "67.207.37.195",
+      "dial": {
+        "host": "67.207.37.195",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "21277",
       "name": "URF277",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Bit By Bit Hams"
     },
     {
       "country": "AD",
       "dashboard": "https://urf.adan.ovh/",
       "description": "<p>Andorra Multiprotocol</p>",
-      "host": "urf.adan.ovh",
+      "dial": {
+        "host": "urf.adan.ovh",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "213",
       "name": "URF213",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "C31AG"
     },
     {
       "country": "ES",
       "dashboard": "https://fcs701.xreflector.net/p254/",
       "description": "<p>P25 TG 214</p>",
-      "host": "fcs701.xreflector.net",
+      "dial": {
+        "host": "fcs701.xreflector.net",
+        "kind": "p25",
+        "port": 41003
+      },
       "id": "214",
       "name": "214",
-      "port": 41003,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "SPAIN P25"
     },
     {
       "country": "ES",
       "description": "<p>Somos un grupo de amigos que tenemos pasi&oacute;n por la radio digital, sus numerosas modalidades, redes y servicios</p>",
-      "host": "62.84.187.225",
+      "dial": {
+        "host": "62.84.187.225",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "21413",
       "name": "D-FRIENDS",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "EA2RE"
     },
     {
       "country": "US",
       "dashboard": "http://prideradionetwork.com",
       "description": "<p>Pride Radio Network, a network by and for LGBTQIA+ hams and their allies. For information about our network, visit https://prideradionetwork.weebly.com</p>",
-      "host": "5.78.179.25",
+      "dial": {
+        "host": "5.78.179.25",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "21909",
       "name": "PRIDE",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KJ7OMO"
     },
     {
       "country": "IT",
       "dashboard": "http://82.165.165.43:4000",
-      "host": "82.165.165.43",
+      "dial": {
+        "host": "82.165.165.43",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "22108",
       "name": "URF025",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "CISAR sezione di Genova"
     },
     {
       "country": "US",
       "description": "<p>WZ5TX</p>",
-      "host": "66.228.53.254",
+      "dial": {
+        "host": "66.228.53.254",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "222",
       "name": "WZ5TX",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "WZ5TX"
     },
     {
       "country": "IT",
       "dashboard": "https://urfita.freedmr.it",
-      "host": "urfita.freedmr.it",
+      "dial": {
+        "host": "urfita.freedmr.it",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "22200",
       "name": "URFITA",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "FreeDMR IT"
     },
     {
       "country": "IT",
       "dashboard": "https://p25.is0.org/",
       "description": "<p>IT Sardinia - linked TG 22202 BrandMeister</p>",
-      "host": "p25.is0.org",
+      "dial": {
+        "host": "p25.is0.org",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "22202",
       "name": "Sardinia Island",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "IS0GQX Bruno"
     },
     {
       "country": "IT",
       "dashboard": "http://famiuse.ddns.net:81/",
-      "host": "famiuse.ddns.net",
+      "dial": {
+        "host": "famiuse.ddns.net",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "22208",
       "name": "Italy Centro Digiland",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "IZ0THD-IZ0LDE-IW8ELN"
     },
     {
       "country": "IT",
       "dashboard": "http://p25gdo.duckdns.org:81/P25/",
       "description": "<p>Gruppo DMR Ossola&nbsp;</p>",
-      "host": "p25gdo.duckdns.org",
+      "dial": {
+        "host": "p25gdo.duckdns.org",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "22212",
       "name": "P25 Reflector Gruppo DMR Ossola TG 22212",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "P25 Reflector Gruppo DMR Ossola TG 22212"
     },
     {
       "country": "IT",
       "dashboard": "http://46.226.178.80:8888/p25/",
       "description": "<p>P25-REFLECTOR INTERCONNECTED TO TG-222995</p>\r\n<p>IT-MULTIPROTOCOL-NETWORK</p>",
-      "host": "46.226.178.80",
+      "dial": {
+        "host": "46.226.178.80",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "22252",
       "name": "P25-REF-IT-MULTI-NET",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "IT-MULTIPROTOCOL-NETWORK"
     },
     {
       "country": "IT",
       "dashboard": "http://c4fmbat.duckdns.org:7244/",
       "description": "<p>Reflector P25 connesso al multiprotocollo IT-C4FM_BAT</p>\r\n<p>TG 22273 citt&agrave; di Barletta</p>",
-      "host": "82.85.236.36",
+      "dial": {
+        "host": "82.85.236.36",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "22273",
       "name": "P25-BAT",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "IT-C4FM_BAT"
     },
     {
       "country": "IT",
       "dashboard": "http://aritrani.does-it.net/",
       "description": "<p>Riflettore Universale connesso a \"<em><strong>Trani Conference</strong></em>\"<br>Server DMR&nbsp; basato sul&nbsp; HBLINK , col TG 8,&nbsp; interconnesso a sua volta con le<br>reti DMR: FREEDMR, ADN, TGIF, col TG 22276.<br>Connesso anche al sistema AllStarLink nodo n. 556990, Echolink I7IGX-R ed al sistema SVXlink italiano, col TG 76.</p>",
-      "host": "aritrani.does-it.net",
+      "dial": {
+        "host": "aritrani.does-it.net",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "22276",
       "name": "URFBAT",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Sezione A.R.I.  di Trani"
     },
     {
       "country": "US",
-      "host": "74.208.185.176",
+      "dial": {
+        "host": "74.208.185.176",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "223",
       "name": "W2GGI Reflector",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "W2GGI"
     },
     {
       "country": "ES",
       "dashboard": "http://fcs701.xreflector.net/p25/",
-      "host": "fcs701.xreflector.net",
+      "dial": {
+        "host": "fcs701.xreflector.net",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "224",
       "name": "P25 224",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "xreflector.es"
     },
     {
       "country": "RO",
       "dashboard": "https://p25.145500.xyz/",
-      "host": "p25.145500.xyz",
+      "dial": {
+        "host": "p25.145500.xyz",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "226",
       "name": "P25 Romania YO",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "145500.xyz"
     },
     {
       "country": "RO",
       "dashboard": "http://82.165.47.94/",
       "description": "<p>Clear P25 Romania</p>",
-      "host": "82.165.47.94",
+      "dial": {
+        "host": "82.165.47.94",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "22625",
       "name": "22625",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "YO8TEH"
     },
     {
       "country": "RO",
       "dashboard": "https://p25.tetralink.ro",
       "description": "<p>P25Core TestChannel TG22633</p>",
-      "host": "92.5.136.39",
+      "dial": {
+        "host": "92.5.136.39",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "22633",
       "name": "P25Core TG22633",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "YO3TCO"
     },
     {
       "country": "CH",
       "dashboard": "https://project25.ch",
       "description": "<p><strong>TG 228</strong>&nbsp; Switzerland&nbsp;</p>",
-      "host": "project25.ch",
+      "dial": {
+        "host": "project25.ch",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "228",
       "name": "Switzerland",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "HB9FEF"
     },
     {
       "country": "CH",
       "dashboard": "https://p25.network",
       "description": "<p><strong>TG 2284</strong>&nbsp; Basel, Switzerland</p>",
-      "host": "p25.network",
+      "dial": {
+        "host": "p25.network",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "2284",
       "name": "Basel, Switzerland",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "HB9FEF"
     },
     {
       "country": "AT",
       "dashboard": "http://oe9xvi.dyndns.org:46195/",
-      "host": "94.199.174.169",
+      "dial": {
+        "host": "94.199.174.169",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "23225",
       "name": "Austria P25 Group",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "OE9PKV"
     },
     {
       "country": "GB",
       "dashboard": "https://p25.freestar.network",
-      "host": "p25.freestar.network",
+      "dial": {
+        "host": "p25.freestar.network",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "23426",
       "name": "FreeSTAR UK",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "FreeSTAR Network"
     },
     {
       "country": "US",
       "dashboard": "http://45.79.143.117",
-      "host": "45.79.143.117",
+      "dial": {
+        "host": "45.79.143.117",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "23456",
       "name": "DNET_P25_VPS",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "W1NOC"
     },
     {
       "country": "GB",
       "dashboard": "https://p252350.freestar.network",
-      "host": "p252350.freestar.network",
+      "dial": {
+        "host": "p252350.freestar.network",
+        "kind": "p25",
+        "port": 41001
+      },
       "id": "2350",
       "name": "ChatterBOX 2350",
-      "port": 41001,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "FreeSTAR Network"
     },
     {
       "country": "GB",
       "dashboard": "https://xlxlef-dash.gb7hh.co.uk",
       "description": "<p>Loughton and Epping Forest Amateur Radio Society - LEFARS</p>",
-      "host": "xlxlef.gb7hh.co.uk",
+      "dial": {
+        "host": "xlxlef.gb7hh.co.uk",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "23511",
       "name": "23511",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "M0UPM"
     },
     {
       "country": "US",
       "dashboard": "https://wg5eek.com/digidash/",
-      "host": "wg5eek.com",
+      "dial": {
+        "host": "wg5eek.com",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "24033",
       "name": "Arkansas Radio Heads",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "WG5EEK"
     },
     {
       "country": "LT",
       "dashboard": "https://ham.uplink.lt/p25",
-      "host": "dvref.uplink.lt",
+      "dial": {
+        "host": "dvref.uplink.lt",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "24601",
       "name": "Lithuania MultiMode",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "LY4NS"
     },
     {
       "country": "US",
-      "host": "k1rfi.com",
+      "dial": {
+        "host": "k1rfi.com",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "25508",
       "name": "New England 25508",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "NN1D"
     },
     {
       "country": "US",
       "dashboard": "http://wx4alap25.radiotechnology.xyz",
-      "host": "45.32.172.166",
+      "dial": {
+        "host": "45.32.172.166",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "256",
       "name": "WX4ALA",
-      "port": 41000,
+      "network": "p25",
       "source": "dvref"
     },
     {
       "country": "RU",
       "dashboard": "http://kavkaz.qrz.ru/p25/index.php",
       "description": "<p>P25 reflector from N.Caucasus</p>",
-      "host": "37.18.35.2",
+      "dial": {
+        "host": "37.18.35.2",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "25617",
       "name": "KAVKAZ",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Club"
     },
     {
       "country": "RU",
-      "host": "176.192.125.149",
+      "dial": {
+        "host": "176.192.125.149",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "25619",
       "name": "Volgodonsk",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "rn6ljt"
     },
     {
       "country": "PL",
       "dashboard": "http://80.211.195.50/",
       "description": "<p>Polski Reflektor P25</p>\r\n<div id=\"sconnect-is-installed\" style=\"display: none;\">2.14.0.0</div>\r\n<div id=\"sconnect-is-installed\" style=\"display: none;\">2.14.0.0</div>\r\n<div id=\"sconnect-is-installed\" style=\"display: none;\">2.14.0.0</div>\r\n<div id=\"sconnect-is-installed\" style=\"display: none;\">2.14.0.0</div>",
-      "host": "80.211.195.50",
+      "dial": {
+        "host": "80.211.195.50",
+        "kind": "p25",
+        "port": 41005
+      },
       "id": "260",
       "name": "P25 TG-260 Poland",
-      "port": 41005,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "P25 TG-260 Poland"
     },
     {
       "country": "DE",
-      "host": "p25-26230.dl9cma.de",
+      "dial": {
+        "host": "p25-26230.dl9cma.de",
+        "kind": "p25",
+        "port": 41010
+      },
       "id": "26230",
       "name": "DL-AFURegH",
-      "port": 41010,
+      "network": "p25",
       "source": "dvref"
     },
     {
       "country": "DE",
-      "host": "p25-26231.dl9cma.de",
+      "dial": {
+        "host": "p25-26231.dl9cma.de",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "26231",
       "name": "DL-NI-Mitte",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "DL9CMA"
     },
     {
       "country": "DE",
       "dashboard": "https://urf269.26269.de",
       "description": "<p>the URF269 is used as main Reflector for the multimode Germany Hessen/RLP on Modul A. Currently the 2urfd version from N7TAE is used with local transcoding. Server is running in the HAMNET network but reachable via public internet.</p>",
-      "host": "urf269.26269.de",
+      "dial": {
+        "host": "urf269.26269.de",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "26269",
       "name": "URF269",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "DC9VQ"
     },
     {
       "country": "DE",
       "dashboard": "http://85.215.198.111:8970",
       "description": "<p>Eine Verbindung in das Funknetz-Celle ( FM 2m, FM 70cm, SSB KW*, FM-Funknetz TG26335, FM DB0CEL* , BM TG26334, YSF, NXDN, P25 )&nbsp;</p>\r\n<p>* nur zur OV-Runde aktiv&nbsp;</p>",
-      "host": "85.215.198.111",
+      "dial": {
+        "host": "85.215.198.111",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "26334",
       "name": "Funknetz-Celle",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "DL2OAM"
     },
     {
       "country": "CH",
       "dashboard": "https://www.xlx-owl.de/users",
-      "host": "xlx-owl.de",
+      "dial": {
+        "host": "xlx-owl.de",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "26447",
       "name": "Bridge to XLX508",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "HB9GFX"
     },
     {
       "country": "PL",
       "dashboard": "http://waw01.kg5a.us",
-      "host": "94.177.202.207",
+      "dial": {
+        "host": "94.177.202.207",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "26512",
       "name": "P25-26512 Warszawa Poland",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "P25-26512 Warszawa Poland"
     },
     {
       "country": "US",
-      "host": "2700p25.ddns.net",
+      "dial": {
+        "host": "2700p25.ddns.net",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "2700",
       "name": "2700nxdn.ddns.net",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KP4OO"
     },
     {
       "country": "US",
       "dashboard": "https://kc8cpw.com",
-      "host": "p25.kc8cpw.com",
+      "dial": {
+        "host": "p25.kc8cpw.com",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "276",
       "name": "Amateur Radio Network",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "N4TPN"
     },
     {
       "country": "US",
       "dashboard": "http://arcp25.duckdns.org:82",
       "description": "<p>America Ragchew</p>",
-      "host": "24.1.186.5",
+      "dial": {
+        "host": "24.1.186.5",
+        "kind": "p25",
+        "port": 41001
+      },
       "id": "28299",
       "name": "America Ragchew",
-      "port": 41001,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KF4TIM"
     },
     {
       "country": "TR",
       "dashboard": "https://p25.ta2kw.keenetic.pro",
       "description": "<p>P25 T&Uuml;RK\u0130YE 286</p>",
-      "host": "p25.ta2kw.keenetic.pro",
+      "dial": {
+        "host": "p25.ta2kw.keenetic.pro",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "286",
       "name": "P25 T\u00dcRK\u0130YE",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "P25 T\u00dcRK\u0130YE"
     },
     {
       "country": "TR",
       "dashboard": "http://dmr.pistar.com.tr:28200",
       "description": "<p>P25 Turkiye Genel Reflector - YM2KT</p>",
-      "host": "dmr.pistar.com.tr",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "28600",
       "name": "P25 Turkiye",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
       "dashboard": "http://2861.adn.systems:28201",
       "description": "<p>P25 Adana Reflector - YM2KT</p>",
-      "host": "dmr.pistar.com.tr",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41001
+      },
       "id": "28601",
       "name": "P25 Adana",
-      "port": 41001,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
       "dashboard": "http://dmr.pistar.com.tr:28203",
       "description": "<p>P25 Afyon Reflector - YM2KT</p>",
-      "host": "dmr.pistar.com.tr",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41003
+      },
       "id": "28603",
       "name": "P25 Afyon",
-      "port": 41003,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
       "dashboard": "http://dmr.pistar.com.tr:28206",
       "description": "<p>P25 Ankara Reflector - YM2KT</p>",
-      "host": "dmr.pistar.com.tr",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41006
+      },
       "id": "28606",
       "name": "P25 Ankara",
-      "port": 41006,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
       "dashboard": "http://dmr.pistar.com.tr:28207",
       "description": "<p>P25 Antalya Reflector - YM2KT</p>",
-      "host": "dmr.pistar.com.tr",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41007
+      },
       "id": "28607",
       "name": "P25 Antalya",
-      "port": 41007,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
       "dashboard": "http://dmr.pistar.com.tr:28234",
       "description": "<p>P25 Istanbul Reflector - YM2KT</p>",
-      "host": "dmr.pistar.com.tr",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41034
+      },
       "id": "28634",
       "name": "P25 Istanbul",
-      "port": 41034,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
       "dashboard": "http://dmr.pistar.com.tr:28235",
       "description": "<p>P25 Izmir Reflector - YM2KT</p>",
-      "host": "dmr.pistar.com.tr",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41035
+      },
       "id": "28635",
       "name": "P25 Izmir",
-      "port": 41035,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
       "dashboard": "http://2861.adn.systems:28248",
       "description": "<p>P25 Mugla Reflector - YM2KT</p>",
-      "host": "dmr.pistar.com.tr",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41048
+      },
       "id": "28648",
       "name": "P25 Mugla",
-      "port": 41048,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "AU",
       "dashboard": "https://vk1kcm.vk44.net",
       "description": "<p>This is the Canberra XLX/URFd reflector. &nbsp;It's a replacement/continuation of the old xlx301 run by Rob, VK2HR. &nbsp;Sadly Rob is no longer able to run the old one, so this one is here to continue its job!</p>\r\n<p>Module C is the most likely to have activity.</p>",
-      "host": "xlx301.stagecraft.cx",
+      "dial": {
+        "host": "xlx301.stagecraft.cx",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "301",
       "name": "URF301",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Canberra Region Amateur Radio Club"
     },
     {
       "country": "US",
       "dashboard": "http://georgia900p25.us/tg304",
       "description": "<p>WEST VIRGINIA</p>\r\n<p>Appalachian Repeater Association</p>\r\n<p>&nbsp;</p>",
-      "host": "209.46.123.48",
+      "dial": {
+        "host": "209.46.123.48",
+        "kind": "p25",
+        "port": 41004
+      },
       "id": "304",
       "name": "Appalachian Repeater Association West Virginia",
-      "port": 41004,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "W4NOC / KC8PRG"
     },
     {
       "country": "CL",
       "description": "<p data-start=\"215\" data-end=\"511\"><strong data-start=\"215\" data-end=\"256\">LYNK25 &ndash; Reflector P25</strong></p>\r\n<p data-start=\"166\" data-end=\"532\">LYNK25 es un Dashboard WEB<strong data-start=\"179\" data-end=\"227\"> basado en el reflector&nbsp; P25</strong>, ofrece un entorno moderno, con informacion en tiempo real, estad&iacute;sticas, monitoreo de estaciones conectadas y alertas autom&aacute;ticas.</p>\r\n<p data-start=\"513\" data-end=\"799\"><strong data-start=\"513\" data-end=\"528\">ZONA DMR CL</strong><br data-start=\"528\" data-end=\"531\">Comunidad de radioaficionados, dedicada a modos digitales (P25, DMR, YSF y m&aacute;s). Promovemos el aprendizaje, la integraci&oacute;n de tecnolog&iacute;as y el uso responsable del espectro.</p>",
-      "host": "reflectores.zonadmr.cl",
+      "dial": {
+        "host": "reflectores.zonadmr.cl",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "30444",
       "name": "ZONA DMR CL - LYNK25",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "ZONA DMR CHILE - CA2RDP - TELECOVIAJERO"
     },
     {
       "country": "AU",
       "dashboard": "http://urf306.warg.org.au/",
       "description": "<p>Hosted in Perth, Western Australia.</p>\r\n<p>Module A transcoded with tcd and DVStick30</p>",
-      "host": "urf306.warg.org.au",
+      "dial": {
+        "host": "urf306.warg.org.au",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "306",
       "name": "URF306",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "West Australian Repeater Group"
     },
     {
       "country": "US",
       "dashboard": "http://nfonorcalp25.dyndns.org",
-      "host": "nfonorcalp25.dyndns.org",
+      "dial": {
+        "host": "nfonorcalp25.dyndns.org",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "30639",
       "name": "30639",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "K6HP"
     },
     {
       "country": "US",
       "dashboard": "http://69.62.69.117:4000",
       "description": "<p>US Severe Weather (P25/DMR)</p>",
-      "host": "69.62.69.117",
+      "dial": {
+        "host": "69.62.69.117",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "31000",
       "name": "US Severe Weather",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Torcon Weather Team"
     },
     {
       "country": "US",
       "dashboard": "http://p25.alabamalink.info/",
       "description": "<p>Part of the Alabama Link System. Established 2014.</p>",
-      "host": "96.47.95.121",
+      "dial": {
+        "host": "96.47.95.121",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "31010",
       "name": "Alabama Link",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KT4ROY Trojan Amateur Radio Club"
     },
     {
       "country": "US",
       "dashboard": "https://p25.na0d.com",
-      "host": "reflector.na0d.org",
+      "dial": {
+        "host": "reflector.na0d.org",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "31052",
       "name": "NA0D P25 Reflector",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Arkansas AUXCOMM na0d.com"
     },
     {
       "country": "US",
       "dashboard": "http://www.af5xp1.ddns.net",
       "description": "<p>P25 reflector Soutwest Louisiana9</p>",
-      "host": "af5xp.ddns.net",
+      "dial": {
+        "host": "af5xp.ddns.net",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "31057",
       "name": "31057",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "AF5XP"
     },
     {
       "country": "US",
       "dashboard": "http://vidalia-net.net",
-      "host": "vidalia-net.net",
+      "dial": {
+        "host": "vidalia-net.net",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "31059",
       "name": "vidalia net",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "DMR-SE"
     },
     {
       "country": "US",
       "dashboard": "http://216.240.173.55:8888/P25-77/",
       "description": "<p>The talkgroup is hosted by The PAPA System in Southern California. We call this talkgroup \"PAPA Chat\" and is used for members to talk with each other. Guests are welcome on our P25 Net, Tuesdays at 7pm California Time.</p>",
-      "host": "209.112.244.27",
+      "dial": {
+        "host": "209.112.244.27",
+        "kind": "p25",
+        "port": 41007
+      },
       "id": "31077",
       "name": "PAPA Chat",
-      "port": 41007,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "papasys.com"
     },
     {
       "country": "US",
       "dashboard": "http://216.240.173.55:8888/P25/",
       "description": "<p>The talkgroup is hosted by The PAPA System in Southern California. We call this talkgroup \"PAPA Bridge\" as it bridges to our analog system. This talkgroup is for PAPA members only.</p>",
-      "host": "209.112.244.27",
+      "dial": {
+        "host": "209.112.244.27",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "31078",
       "name": "PAPA Bridge",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "papasys.com"
     },
     {
       "country": "US",
       "dashboard": "http://p25.kf0lpt.com:4000/",
-      "host": "p25.kf0lpt.com",
+      "dial": {
+        "host": "p25.kf0lpt.com",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "31088",
       "name": "Colorado HD",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Colorado Digital Multiprotocol XLX-303"
     },
     {
       "country": "US",
       "dashboard": "http://3108.amcomm.network:81",
-      "host": "3108.amcomm.network",
+      "dial": {
+        "host": "3108.amcomm.network",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "31128",
       "name": "Gulf of America Radio Network",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "AmComm Network"
     },
     {
       "country": "US",
       "dashboard": "http://kingsland-network.net",
-      "host": "kingsland-network.net",
+      "dial": {
+        "host": "kingsland-network.net",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "31138",
       "name": "KingsLand Local network",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "DMR-SE"
     },
     {
       "country": "US",
       "description": "<p>Virginia Statewide Talk Group</p>",
-      "host": "98.244.95.99",
+      "dial": {
+        "host": "98.244.95.99",
+        "kind": "p25",
+        "port": 41001
+      },
       "id": "31161",
       "name": "Virginia",
-      "port": 41001,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "N4VGW"
     },
     {
       "country": "US",
       "dashboard": "http://illinkp25.radiotechnology.xyz",
       "description": "<p>ILLINOIS LINK P25</p>\r\n<p>Multi mode digital P25 Reflector</p>",
-      "host": "illink.radiotechnology.xyz",
+      "dial": {
+        "host": "illink.radiotechnology.xyz",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "31171",
       "name": "31171",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "ILLINOIS LINK"
     },
     {
       "country": "US",
       "dashboard": "http://xlx.w9winxlx.us//",
       "description": "<p>Part of the W9WIN Linked Digital Repeater System and The Southern Indiana Network</p>",
-      "host": "64.112.234.163",
+      "dial": {
+        "host": "64.112.234.163",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "31188",
       "name": "URFSIN",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Southern Indiana Network"
     },
     {
       "country": "US",
       "dashboard": "http://p25.byrg.net",
-      "host": "p25.byrg.net",
+      "dial": {
+        "host": "p25.byrg.net",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "31201",
       "name": "BYRG TalkGroup",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Backyard Repeater Group"
     },
     {
       "country": "US",
       "dashboard": "https://foxhole.radio/index.php/network-status/",
       "description": "<p>US-Foxhole Network</p>",
-      "host": "p25.foxhole.radio",
+      "dial": {
+        "host": "p25.foxhole.radio",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "31238",
       "name": "31238",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KZ4FOX"
     },
     {
       "country": "US",
       "description": "<p>Southwest MO, Linked to BM 31291</p>",
-      "host": "p25.ddns.me",
+      "dial": {
+        "host": "p25.ddns.me",
+        "kind": "p25",
+        "port": 41001
+      },
       "id": "31291",
       "name": "Southwest Missouri",
-      "port": 41001,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "K0MGS"
     },
     {
       "country": "US",
       "description": "<p>SW Missouri Skywarn, Linked to BM 31297</p>",
-      "host": "p25.ddns.me",
+      "dial": {
+        "host": "p25.ddns.me",
+        "kind": "p25",
+        "port": 41003
+      },
       "id": "31297",
       "name": "Southwest Missouri Skywarn",
-      "port": 41003,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "K0MGS"
     },
     {
       "country": "US",
       "description": "<p>P25 reflector linked to America's Kansas City Wide Digital network. Typically 500-800 other nodes connected, with bridges to Wires-X, DMR, YSF, DStar, and others. Over 30 weekly nets! See https://kansascitywide.com for more information.</p>",
-      "host": "172.238.171.106",
+      "dial": {
+        "host": "172.238.171.106",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "31313",
       "name": "31313",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "America's Kansas City Wide Digital Network"
     },
     {
       "country": "US",
       "dashboard": "http://bridge.kc5jmj.com",
       "description": "<p>SWLA-LINK</p>\r\n<p>Southwest Louisiana Digital Link System</p>",
-      "host": "bridge.kc5jmj.com",
+      "dial": {
+        "host": "bridge.kc5jmj.com",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "31337",
       "name": "SWLA-LINK",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "SWLA-LINK"
     },
     {
       "country": "US",
       "dashboard": "https://p25.kc2vrj.com",
-      "host": "198.74.61.105",
+      "dial": {
+        "host": "198.74.61.105",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "31340",
       "name": "CNJHAM",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "020 Digital Multiprotocol Group"
     },
     {
       "country": "US",
       "description": "<p>Foothills Wave Whisperers</p>",
-      "host": "67.213.34.230",
+      "dial": {
+        "host": "67.213.34.230",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "31377",
       "name": "Foothills Wave Whisperers",
-      "port": 41000,
+      "network": "p25",
       "source": "dvref"
     },
     {
       "country": "US",
       "description": "<p>Piedmont Traid Network</p>",
-      "host": "130.51.21.144",
+      "dial": {
+        "host": "130.51.21.144",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "31379",
       "name": "Piedmont Triad Network",
-      "port": 41000,
+      "network": "p25",
       "source": "dvref"
     },
     {
       "country": "US",
       "dashboard": "http://167.88.45.175:4000",
       "description": "<p>TORCON WX - TORCON WEATHER TEAM</p>",
-      "host": "167.88.45.175",
+      "dial": {
+        "host": "167.88.45.175",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "31390",
       "name": "Torcon Weather",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Torcon Weather Team"
     },
     {
       "country": "US",
       "dashboard": "http://167.88.45.175:4000",
       "description": "<p>TORCON Amateur Radio Club</p>",
-      "host": "167.88.45.175",
+      "dial": {
+        "host": "167.88.45.175",
+        "kind": "p25",
+        "port": 41001
+      },
       "id": "31391",
       "name": "TORCON Amateur Radio Club",
-      "port": 41001,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Torcon Weather Team"
     },
     {
       "country": "US",
       "dashboard": "http://167.88.45.175:4000",
       "description": "<p>TORCON WX TAC - TORCON WEATHER TEAM TAC</p>",
-      "host": "167.88.45.175",
+      "dial": {
+        "host": "167.88.45.175",
+        "kind": "p25",
+        "port": 41002
+      },
       "id": "31392",
       "name": "TORCON Weather TAC",
-      "port": 41002,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Torcon Weather Team"
     },
     {
       "country": "US",
       "dashboard": "https://xlx545.pennlinkgroup.com/p25tg3142",
       "description": "<p>PennLink Group Pennsylvania wide P25 (not Transcoded)</p>",
-      "host": "3.215.215.169",
+      "dial": {
+        "host": "3.215.215.169",
+        "kind": "p25",
+        "port": 41002
+      },
       "id": "3142",
       "name": "3142",
-      "port": 41002,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "PennLink Group"
     },
     {
       "country": "US",
       "dashboard": "http://xrf245.pennlinkgroup.com/p25A",
       "description": "<p>P25 reflector transcoded to DMR, and linked to XLX045A - TG 31425 - &nbsp;Pennsylvania Cross Mode. (primary reflector)</p>",
-      "host": "54.85.206.3",
+      "dial": {
+        "host": "54.85.206.3",
+        "kind": "p25",
+        "port": 41001
+      },
       "id": "31425",
       "name": "31425",
-      "port": 41001,
+      "network": "p25",
       "source": "dvref"
     },
     {
       "country": "US",
       "dashboard": "http://p25.ridigitallink.net",
-      "host": "149.28.54.153",
+      "dial": {
+        "host": "149.28.54.153",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "31444",
       "name": "RI DIGITALINK",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KA1MXL"
     },
     {
       "country": "US",
       "dashboard": "http://138.128.242.208:4000/",
-      "host": "138.128.242.208",
+      "dial": {
+        "host": "138.128.242.208",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "31471",
       "name": "Midsouth P25",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Mid South Amateur Communications"
     },
     {
       "country": "US",
       "dashboard": "https://tnara.org",
       "description": "<p style=\"text-align: center;\"><strong>Tennessee Amateur Communications System&nbsp;<br><br>TN TAC System is an interoperable statewide system for amateur use. Hosted by The Tennessee Amateur Radio Association&nbsp;<br><br>DMR 3196460 Brandmister&nbsp;<br>All Star Link Node 610750&nbsp;<br>YSF: TN TAC System 31473<br>WIRESX: TARA-TACS 83330<br>P25: TG 31473 NAC$293&nbsp;<br>NXDN: REF 31473 RAN0&nbsp;<br>HOIP: Ext 15097</strong></p>",
-      "host": "44.27.135.140",
+      "dial": {
+        "host": "44.27.135.140",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "31473",
       "name": "TN TAC System",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Tennessee Amateur Radio Association"
     },
     {
       "country": "US",
-      "host": "ammermon.lorexddns.net",
+      "dial": {
+        "host": "ammermon.lorexddns.net",
+        "kind": "p25",
+        "port": 41003
+      },
       "id": "3149",
       "name": "Utah DRN P25 Standalone",
-      "port": 41003,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Utah Digital Repeater Network"
     },
     {
       "country": "US",
       "description": "<p>Utah 314900 Bridge - AmComm DMR 314900, AmComm YCS-313 DG-ID 49, Wires-X UTDRN-BRG, YSF 31490 (Standard), YSF 31590 (Voice Wide), P25 31490, NXDN 31490, D-Star REF029B, M17-UT0 B, ASL 29630</p>\r\n<p>Net on Wednesdays at 1800 hrs mountain time</p>",
-      "host": "utah00.utahdrn.org",
+      "dial": {
+        "host": "utah00.utahdrn.org",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "31490",
       "name": "Utah DRN 00 Bridge",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Utah Digital Repeater Network"
     },
     {
       "country": "US",
       "description": "<p>Utah 01 Bridge: AmComm 314901, YSF 31491 (Standard), YSF 31591 (Voice Wide), P25 31491, NXDN 31491, D-Star REF029C, M17-UT0 C, ASL 29631</p>\r\n<p>Net on Sundays at 2000 hrs mountain time, Wires-X UTDRN-BRG linked for this net and then returned to the 00 bridge.&nbsp;</p>",
-      "host": "utah01.utahdrn.org",
+      "dial": {
+        "host": "utah01.utahdrn.org",
+        "kind": "p25",
+        "port": 41001
+      },
       "id": "31491",
       "name": "Utah DRN 01 Bridge",
-      "port": 41001,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Utah Digital Repeater Network"
     },
     {
       "country": "US",
       "description": "<p>Utah 05 Bridge: AmComm 314905, YSF 31495 (Standard), YSF 31595 (Voice Wide), P25 31495, NXDN 31495, D-Star REF029D, M17-UT0 D</p>",
-      "host": "ammermon.lorexddns.net",
+      "dial": {
+        "host": "ammermon.lorexddns.net",
+        "kind": "p25",
+        "port": 41002
+      },
       "id": "31495",
       "name": "Utah DRN 05 Bridge",
-      "port": 41002,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Utah Digital Repeater Network"
     },
     {
       "country": "US",
       "dashboard": "https://mmdvm-p25.v24bridge.net/41010/",
-      "host": "mmdvm-p25.v24bridge.net",
+      "dial": {
+        "host": "mmdvm-p25.v24bridge.net",
+        "kind": "p25",
+        "port": 41010
+      },
       "id": "3155",
       "name": "3155",
-      "port": 41010,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "N9JSF"
     },
     {
       "country": "US",
       "dashboard": "http://3103.amcomm.network:82",
       "description": "<p>USA-Digital User Network of Wisconsin</p>",
-      "host": "3103.amcomm.network",
+      "dial": {
+        "host": "3103.amcomm.network",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "31551",
       "name": "31551",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "DuNoW / AmComm"
     },
     {
       "country": "US",
       "dashboard": "https://mmdvm-p25.v24bridge.net/41000/",
-      "host": "mmdvm-p25.v24bridge.net",
+      "dial": {
+        "host": "mmdvm-p25.v24bridge.net",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "31555",
       "name": "31555",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "N9JSF"
     },
     {
       "country": "US",
       "dashboard": "http://45.77.124.145:8080",
-      "host": "45.77.124.145",
+      "dial": {
+        "host": "45.77.124.145",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "31611",
       "name": "Halo-Halo Network",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "XPR PINOY NETWORK"
     },
     {
       "country": "US",
       "dashboard": "https://dvswitch.org/Modern/?conf=P25_DVSwitch",
-      "host": "p25.dvswitch.org",
+      "dial": {
+        "host": "p25.dvswitch.org",
+        "kind": "p25",
+        "port": 43166
+      },
       "id": "3166",
       "name": "DVSwitch P25 Reflector",
-      "port": 43166,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "DVSwitch"
     },
     {
       "country": "US",
       "dashboard": "https://xlx-672-dash.pistar.uk",
-      "host": "213.171.214.2",
+      "dial": {
+        "host": "213.171.214.2",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "31672",
       "name": "Pi-Star Multi-Mode Reflector",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Pi-Star Multi-Mode Reflector"
     },
     {
       "country": "US",
       "dashboard": "http://TriStateDMR.org",
       "description": "<p><strong><span style=\"text-decoration: underline;\">TriStateDMR.org Multimode (IL, IN, WI)</span></strong></p>\r\n<p>DMR+ REF 4641</p>\r\n<p>AmComm/TGIF TG 31691</p>\r\n<p>DStar REF312B/DCS312B</p>\r\n<p>NXDN 31691</p>\r\n<p>P25 31691</p>\r\n<p>Fusion WiresX 40911 and YSF 31691</p>\r\n<p>Allstar 45417</p>\r\n<p>Echolink 7641</p>",
-      "host": "192.241.160.183",
+      "dial": {
+        "host": "192.241.160.183",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "31691",
       "name": "TriState DMR (IL-IN-WI multimode)",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "TriState DMR"
     },
     {
       "country": "US",
       "dashboard": "http://45.79.74.165:4000",
       "description": "<p>Starfleet Amateur Radio Group - Trek Talk - N6SFI</p>\r\n<p>Tied to Allstar Node 61172</p>",
-      "host": "45.79.74.165",
+      "dial": {
+        "host": "45.79.74.165",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "31701",
       "name": "Starfleet Amateur Radio Group - Trek Talk",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Starfleet Amateur Radio Group"
     },
     {
       "country": "US",
       "dashboard": "http://144.202.37.96:4000",
-      "host": "144.202.37.96",
+      "dial": {
+        "host": "144.202.37.96",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "3175",
       "name": "The Fog Multimode  XLX073",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "The FOG"
     },
     {
       "country": "US",
       "dashboard": "http://41606.duckdns.org/P25Reflector-Dashboard/",
       "description": "<p>DX-LINK SYSTEM Multi Mode Digital/Analog Experimenters Network.</p>",
-      "host": "41606.duckdns.org",
+      "dial": {
+        "host": "41606.duckdns.org",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "31777",
       "name": "DX-LINK SYSTEM",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "K2HZE"
     },
     {
       "country": "US",
       "dashboard": "http://urfpaw.11cats.org",
       "description": "<p>https://www.11cats.org</p>\r\n<p>PAW is a YSF Master:&nbsp; Connect to urfpaw.11cats.org, use DGID 10 for module A.</p>",
-      "host": "urfpaw.11cats.org",
+      "dial": {
+        "host": "urfpaw.11cats.org",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "31845",
       "name": "URFPAW",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KM5Y"
     },
     {
       "country": "US",
-      "host": "172.233.211.93",
+      "dial": {
+        "host": "172.233.211.93",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "31910",
       "name": "LMRNET",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "LMR Talkaround"
     },
     {
       "country": "US",
       "dashboard": "https://P25Reflector31983.K8JTK.org/",
       "description": "<div>DVMIS: Ham Radio Digital VoIP Multimode Interlink System ... Bridged to:</div>\r\n<div>\r\n<ul>\r\n<li>AllStar Link: 50394</li>\r\n<li>AmateurWire: 90004</li>\r\n<li>EchoLink: *DVMIS* 600008</li>\r\n<li>Hams Over IP: 15010</li>\r\n<li>DMR: HB_US_K8JTK-HUB-DVMIS_DMO talkgroup 31983 timeslot 2</li>\r\n<li>DMR: BrandMeister talkgroup 3172783</li>\r\n<li>DMR: TGIF talkgroup 31983</li>\r\n<li>D-STAR: XLX/DCS983A</li>\r\n<li>M17: M17-983A</li>\r\n<li>NXDN: TG 31983</li>\r\n<li>P25: TG 31983</li>\r\n<li>YSF: US-DVMIS 31983</li>\r\n<li>Wires-X: K8JTK-ROOM 40680</li>\r\n</ul>\r\n<p>System details: http://www.k8jtk.org/ham-radio/k8jtk-hub-digital-voip-mutimode-interlink-system/</p>\r\n</div>",
-      "host": "P25Reflector31983.K8JTK.org",
+      "dial": {
+        "host": "P25Reflector31983.K8JTK.org",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "31983",
       "name": "31983",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "DVMIS Multimode ILS (K8JTK.org)"
     },
     {
       "country": "US",
       "dashboard": "http://urf550.hanafarm.biz/",
       "description": "<p>550 is a YSF Master, connect to urf550.hanafarm.biz , use DGID 10 for module A.&nbsp; Module A is bridged to ASL3 Node 590810 and EchoLink KY4VC-L Node 450801.</p>",
-      "host": "urf550.hanafarm.biz",
+      "dial": {
+        "host": "urf550.hanafarm.biz",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "31985",
       "name": "URF550",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KY4VC"
     },
     {
       "country": "US",
       "dashboard": "http://handihams.p25.mnradio.net/",
       "description": "<p>This reflector is connected to the MNRADIO Multi-Mode linked system.</p>\r\n<p>Also bridged with the HANDIHAM echolink Conf server.</p>",
-      "host": "p25.mnradio.net",
+      "dial": {
+        "host": "p25.mnradio.net",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "31990",
       "name": "MNRADIO",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "MNRADIO.NET"
     },
     {
       "country": "US",
       "dashboard": "http://cwops.dyndns.org",
-      "host": "cwops.dyndns.org",
+      "dial": {
+        "host": "cwops.dyndns.org",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "32103",
       "name": "32103",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "K6HP"
     },
     {
       "country": "US",
       "description": "<p>KN4YDL Amateur Radio Talk Group (Soon TBF Northeast Coastal Florida).</p>",
-      "host": "65.34.52.22",
+      "dial": {
+        "host": "65.34.52.22",
+        "kind": "p25",
+        "port": 41002
+      },
       "id": "32136",
       "name": "KN4YDL Amateur Radio Group TG32136",
-      "port": 41002,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KN4YDL"
     },
     {
       "country": "MX",
       "dashboard": "http://89.117.61.236",
       "description": "<p>P25-XE1JMB</p>",
-      "host": "89.117.61.236",
+      "dial": {
+        "host": "89.117.61.236",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "3341",
       "name": "P25-XE1JMB",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "XE1JMB"
     },
     {
       "country": "MX",
       "dashboard": "http://p25-mx.ddns.net",
-      "host": "p25-mx.ddns.net",
+      "dial": {
+        "host": "p25-mx.ddns.net",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "33420",
       "name": "DURANGO",
-      "port": 41000,
+      "network": "p25",
       "source": "dvref"
     },
     {
       "country": "US",
       "dashboard": "http://nettalkp25.dyndns.org",
-      "host": "nettalkp25.dyndns.org",
+      "dial": {
+        "host": "nettalkp25.dyndns.org",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "33581",
       "name": "NET TALK - P25",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "K6HP"
     },
     {
       "country": "US",
       "dashboard": "http://reflector.3400digital.net/p25/",
-      "host": "reflector.3400digital.net",
+      "dial": {
+        "host": "reflector.3400digital.net",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "3400",
       "name": "3400-Digital",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Boonton ARC"
     },
     {
       "country": "IT",
       "dashboard": "https://urf.iv3scp.it",
-      "host": "44.31.102.149",
+      "dial": {
+        "host": "44.31.102.149",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "34075",
       "name": "URFSCP",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "iv3scp"
     },
     {
       "country": "US",
       "dashboard": "http://155.138.236.64/urf/dashboard/",
       "description": "<p>URF reflector Oklahoma ARES.</p>",
-      "host": "155.138.236.64",
+      "dial": {
+        "host": "155.138.236.64",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "34109",
       "name": "34109",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Oklahoma ARES"
     },
     {
       "country": "US",
       "dashboard": "http://reflector.w9sdi.com:4000",
-      "host": "reflector.w9sdi.com",
+      "dial": {
+        "host": "reflector.w9sdi.com",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "34567",
       "name": "CHICAGO",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "W9SDI"
     },
     {
       "country": "US",
       "dashboard": "https://xlx545.pennlinkgroup.com/p25tg357",
-      "description": "<p>Virtual Amateur Radio Group (VARG, K8KH, VARG@gmail.com)</p>",
-      "host": "3.215.215.169",
+      "description": "<p>Virtual Amateur Radio Group (VARG, K8KH, [email removed])</p>",
+      "dial": {
+        "host": "3.215.215.169",
+        "kind": "p25",
+        "port": 41010
+      },
       "id": "357",
       "name": "357",
-      "port": 41010,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "PennLink Group"
     },
     {
       "country": "US",
       "dashboard": "https://reflector.kb2idx.com",
       "description": "<p>Dr.Parrot is everywhere</p>",
-      "host": "reflector.kb2idx.com",
+      "dial": {
+        "host": "reflector.kb2idx.com",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "3690",
       "name": "P25 Dr.Parrots Office",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KB2IDX"
     },
     {
       "country": "HT",
       "dashboard": "http://xlx545.pennlinkgroup.com/p25tg37225",
-      "description": "<p>Haiti Digital Communications League (HDCL - HH2MJF, HH2MJF@Yahoo.com)</p>",
-      "host": "3.215.215.169",
+      "description": "<p>Haiti Digital Communications League (HDCL - HH2MJF, [email removed])</p>",
+      "dial": {
+        "host": "3.215.215.169",
+        "kind": "p25",
+        "port": 41011
+      },
       "id": "37225",
       "name": "37225",
-      "port": 41011,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "PennLink Group"
     },
     {
       "country": "BY",
       "dashboard": "https://xlx375.bfrr.by/p25/",
-      "host": "xlx375.bfrr.by",
+      "dial": {
+        "host": "xlx375.bfrr.by",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "37500",
       "name": "37500",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "YL3IM"
     },
     {
       "country": "TH",
       "dashboard": "http://p2538.freeddns.org/",
       "description": "<p><span style=\"color: rgb(255, 255, 255);\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\">\u0e40\u0e0a\u0e37\u0e48\u0e2d\u0e21\u0e15\u0e48\u0e2d\u0e01\u0e31\u0e1a XLX138 \u0e42\u0e21\u0e14\u0e39\u0e25 B </span></span><br><a style=\"color: rgb(255, 255, 255);\" href=\"https://xlx138.freeddns.org/\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\">https://xlx138.freeddns.org</span></span></a></span></p>",
-      "host": "p2538.freeddns.org",
+      "dial": {
+        "host": "p2538.freeddns.org",
+        "kind": "p25",
+        "port": 41002
+      },
       "id": "38",
       "name": "XLX138 Module B",
-      "port": 41002,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "P25 38 XLX138 Module B Thailand"
     },
     {
       "country": "US",
-      "host": "96.44.137.162",
+      "dial": {
+        "host": "96.44.137.162",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "396",
       "name": "US-KEYWORK",
-      "port": 41000,
+      "network": "p25",
       "source": "dvref"
     },
     {
       "country": "US",
       "dashboard": "http://xlx.ctridash.info:8081",
       "description": "<p>US-Rhode Island URF</p>",
-      "host": "xlx.ctridash.info",
+      "dial": {
+        "host": "xlx.ctridash.info",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "400",
       "name": "URF401",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "N1LMA"
     },
     {
       "country": "US",
       "dashboard": "http://45.79.160.177/p25/",
       "description": "<p>N1JBC Reflector</p>",
-      "host": "45.79.160.177",
+      "dial": {
+        "host": "45.79.160.177",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "401",
       "name": "N1JBC Reflector (Rhode Island)",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "N1JBC"
     },
     {
       "country": "US",
       "dashboard": "https://kd2qqv.ddns.net/p25dash",
       "description": "<p>P25 REFLECTOR FOR ALL TO USE with Dashboard</p>",
-      "host": "kd2qqv.ddns.net",
+      "dial": {
+        "host": "kd2qqv.ddns.net",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "4016",
       "name": "P25 REFLECTOR",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KD2QQV"
     },
     {
       "country": "CA",
       "dashboard": "https://xlx405.repeatme.ca",
-      "host": "66.179.209.30",
+      "dial": {
+        "host": "66.179.209.30",
+        "kind": "p25",
+        "port": 41001
+      },
       "id": "405",
       "name": "XLX405A - TG405",
-      "port": 41001,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "VA3UV"
     },
     {
       "country": "US",
       "dashboard": "http://lonestarlinksystem.com/STARLINK/P25Reflector/",
       "description": "<p>Link System</p>",
-      "host": "216.128.136.176",
+      "dial": {
+        "host": "216.128.136.176",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "41120",
       "name": "LoneStarLinkSystem",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "LoneStarLinkSystem"
     },
     {
       "country": "US",
-      "host": "tada-p25.mywire.org",
+      "dial": {
+        "host": "tada-p25.mywire.org",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "419",
       "name": "Toledo Amateur Digital Association",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Toledo Amateur Digital  Assoc."
     },
     {
       "country": "CA",
       "dashboard": "https://xlx.ve2sus.com",
-      "host": "ref.ve2sus.com",
+      "dial": {
+        "host": "ref.ve2sus.com",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "420",
       "name": "VE2SUS REF420",
-      "port": 41000,
+      "network": "p25",
       "source": "dvref"
     },
     {
       "country": "IT",
       "dashboard": "http://p25.tim.com:57200",
-      "host": "194.163.172.108",
+      "dial": {
+        "host": "194.163.172.108",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "42021",
       "name": "P25-TEST",
-      "port": 41000,
+      "network": "p25",
       "source": "dvref"
     },
     {
       "country": "US",
       "dashboard": "https://urf.n9hxr.radio/",
       "description": "<p>US WCARS URF668. Operated by N9HXR for the Windy City Amateur Radio Society. https://wcars.radio/</p>",
-      "host": "urf.n9hxr.radio",
+      "dial": {
+        "host": "urf.n9hxr.radio",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "42069",
       "name": "URF668",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Windy City Amateur Radio Society"
     },
     {
       "country": "CA",
       "dashboard": "https://xlx427.repeatme.ca",
-      "host": "15.157.128.240",
+      "dial": {
+        "host": "15.157.128.240",
+        "kind": "p25",
+        "port": 41401
+      },
       "id": "427",
       "name": "427",
-      "port": 41401,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "VA3UV"
     },
     {
       "country": "US",
       "dashboard": "https://p25.lmarc.net/p25dash/index.php",
       "description": "<p>SouthEast Link Bridge System - https://lmarc.net</p>",
-      "host": "p25.lmarc.net",
+      "dial": {
+        "host": "p25.lmarc.net",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "43389",
       "name": "43389",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Lookout Mountain Amateur Radio Community"
     },
     {
       "country": "KZ",
       "dashboard": "http://un1eak.svx03.kz:998/index.php",
-      "host": "un1eak.svx03.kz",
+      "dial": {
+        "host": "un1eak.svx03.kz",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "43715",
       "name": "Kazakhstan P25",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "UN1EAK"
     },
     {
       "country": "JP",
-      "host": "p25-2.f5.si",
+      "dial": {
+        "host": "p25-2.f5.si",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "44000",
       "name": "Japan",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Japan"
     },
     {
       "country": "JP",
       "dashboard": "http://p25.owari.biz",
-      "host": "116.91.197.3",
+      "dial": {
+        "host": "116.91.197.3",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "44064",
       "name": "JP-OWARI",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "JA2CCV"
     },
     {
       "country": "JP",
-      "host": "p25.f5.si",
+      "dial": {
+        "host": "p25.f5.si",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "44120",
       "name": "Japan 44120",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Japan 44120"
     },
     {
       "country": "AU",
       "dashboard": "http://P25.Supermag.fishersaudio.com.au:8189",
-      "host": "Home.marshy.com.au",
+      "dial": {
+        "host": "Home.marshy.com.au",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "445",
       "name": "SuperMag",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "VK2FOX"
     },
     {
       "country": "US",
       "dashboard": "http://n0oba1.asuscomm.com:91",
-      "description": "<p>Covers the Denver Metero area.&nbsp; Contact information:&nbsp; n0oba1@comcast.net</p>",
-      "host": "n0oba1.asuscomm.com",
+      "description": "<p>Covers the Denver Metero area.&nbsp; Contact information:&nbsp; [email removed]</p>",
+      "dial": {
+        "host": "n0oba1.asuscomm.com",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "4487",
       "name": "448.700 Repeater Aurora Denver CO",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "N0OBA"
     },
     {
       "country": "KR",
       "dashboard": "http://45000p25.dvham.com/p25/index.php",
-      "host": "45000p25.dvham.com",
+      "dial": {
+        "host": "45000p25.dvham.com",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "45000",
       "name": "450IPSC2-P25",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "HL1RR"
     },
     {
       "country": "KR",
       "dashboard": "http://dvref.ddnsfree.com/p25",
       "description": "<p>&lt;p&gt;DS5QDR DV HAM World&lt;/p&gt;</p>",
-      "host": "dvref.ddnsfree.com",
+      "dial": {
+        "host": "dvref.ddnsfree.com",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "45001",
       "name": "45001",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "DS5QDR DV HAM World"
     },
     {
       "country": "US",
       "dashboard": "http://n0oba1.asuscomm.com:90",
-      "description": "<p>Covers the Denver Metero area.&nbsp; Ocassionally switches frequency over to 147.075 for Palmer Lake Peoblo coverage by request.&nbsp;</p>\r\n<p>Contact information:&nbsp; n0oba1@comcast.net</p>",
-      "host": "n0oba1.asuscomm.com",
+      "description": "<p>Covers the Denver Metero area.&nbsp; Ocassionally switches frequency over to 147.075 for Palmer Lake Peoblo coverage by request.&nbsp;</p>\r\n<p>Contact information:&nbsp; [email removed]</p>",
+      "dial": {
+        "host": "n0oba1.asuscomm.com",
+        "kind": "p25",
+        "port": 41005
+      },
       "id": "4519",
       "name": "145.190 P25 Aurora Denver CO",
-      "port": 41005,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "N0OBA"
     },
     {
       "country": "CN",
       "description": "<p>46001 P25 Link TG46001, China</p>",
-      "host": "46001.bh1nyr.net",
+      "dial": {
+        "host": "46001.bh1nyr.net",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "46001",
       "name": "46001",
-      "port": 41000,
+      "network": "p25",
       "source": "dvref"
     },
     {
       "country": "CN",
       "description": "<p>&nbsp;TG46005,China</p>",
-      "host": "47.109.24.90",
+      "dial": {
+        "host": "47.109.24.90",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "46005",
       "name": "P25-TG46005",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "BG8AVD,CHENGDU,China"
     },
     {
       "country": "CN",
       "dashboard": "http://tg46023.cn/",
       "description": "<p>P25 Link to BM TG46008, Region 8 of China</p>",
-      "host": "p25.tg46008.cn",
+      "dial": {
+        "host": "p25.tg46008.cn",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "46008",
       "name": "46008",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "P25 Link to BM TG46008, Region 8 of China"
     },
     {
       "country": "CN",
       "description": "<p>46010 P25 Link TG46010, Beijing, China</p>",
-      "host": "46010.bh1nyr.net",
+      "dial": {
+        "host": "46010.bh1nyr.net",
+        "kind": "p25",
+        "port": 41002
+      },
       "id": "46010",
       "name": "46010",
-      "port": 41002,
+      "network": "p25",
       "source": "dvref"
     },
     {
       "country": "CN",
       "dashboard": "http://8.163.29.23/",
       "description": "<p>P25 Link to BM TG46020, Region 7 of China</p>",
-      "host": "8.163.29.23",
+      "dial": {
+        "host": "8.163.29.23",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "46020",
       "name": "CROSS TG46020",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "BD7PET"
     },
     {
       "country": "CN",
       "dashboard": "http://tg46023.cn/",
       "description": "<p>Link to BM TG46023, Chongqing, China</p>",
-      "host": "p25.ioi75.top",
+      "dial": {
+        "host": "p25.ioi75.top",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "46023",
       "name": "46023",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Link to BM TG46023, Chongqing, China"
     },
     {
       "country": "CN",
-      "host": "120.76.96.210",
+      "dial": {
+        "host": "120.76.96.210",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "46085",
       "name": "P25 TG46085 BM46085",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "BH8PYF"
     },
     {
       "country": "CN",
       "description": "<p>P25 TG46351 ( \u6b64\u53cd\u5c04\u5668\u4e0eDMR BM TG46351 \u4e92\u901a\uff09</p>",
-      "host": "47.93.5.94",
+      "dial": {
+        "host": "47.93.5.94",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "46351",
       "name": "Cross 2 BM46351",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "BH3UYQ"
     },
     {
       "country": "CN",
       "description": "<p>\u7eafp25\u6a21\u5f0f\u901a\u8054</p>",
-      "host": "106.55.226.111",
+      "dial": {
+        "host": "106.55.226.111",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "46888",
       "name": "TG46888 only P25",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "bg8lak"
     },
     {
       "country": "BD",
-      "host": "s21alt.freeddns.org",
+      "dial": {
+        "host": "s21alt.freeddns.org",
+        "kind": "p25",
+        "port": 41001
+      },
       "id": "47070",
       "name": "S21ALT P25 74070 Test",
-      "port": 41001,
+      "network": "p25",
       "source": "dvref"
     },
     {
       "country": "US",
       "description": "<p>Virginia Statewide Operations</p>",
-      "host": "178.156.171.181",
+      "dial": {
+        "host": "178.156.171.181",
+        "kind": "p25",
+        "port": 41001
+      },
       "id": "47100",
       "name": "Virginia Ops Primary TG 7A",
-      "port": 41001,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KO4RMV"
     },
     {
       "country": "US",
       "description": "<p>\"Seven Bravo\" | Virginia TAC 1 [Secondary 1]</p>",
-      "host": "178.156.171.181",
+      "dial": {
+        "host": "178.156.171.181",
+        "kind": "p25",
+        "port": 41002
+      },
       "id": "47101",
       "name": "Virginia TAC 1 7B",
-      "port": 41002,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KO4RMV"
     },
     {
       "country": "US",
       "description": "<p>\"Seven Charlie\" | Virginia TAC 2 [Secondary 2]</p>",
-      "host": "178.156.171.181",
+      "dial": {
+        "host": "178.156.171.181",
+        "kind": "p25",
+        "port": 41003
+      },
       "id": "47102",
       "name": "Virginia TAC 2 7C",
-      "port": 41003,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KO4RMV"
     },
     {
       "country": "US",
       "description": "<p>\"Seven Delta\" | Virginia TAC 3 [Secondary 3]<br>DMR X-Mode to 3161 BM Richmond Metro&nbsp;</p>",
-      "host": "178.156.171.181",
+      "dial": {
+        "host": "178.156.171.181",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "47103",
       "name": "Virginia TAC 3 7D DMR X-MODE",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KO4RMV"
     },
     {
       "country": "US",
       "description": "<p>P25 reflector for the Sin City Repeater Group, Inc. in Las Vegas, Nevada. Operated by N4NJJ and provided for amateur radio communications throughout Southern Nevada and beyond.</p>",
-      "host": "p25.sincityrepeaters.com",
+      "dial": {
+        "host": "p25.sincityrepeaters.com",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "47366",
       "name": "Sin City Repeater Group",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Sin City Repeater Group, Inc. / N4NJJ"
     },
     {
       "country": "US",
       "dashboard": "https://urf.hamvillage.org",
-      "host": "urf.hamvillage.org",
+      "dial": {
+        "host": "urf.hamvillage.org",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "478",
       "name": "URF478",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Ham Radio Village"
     },
     {
       "country": "US",
       "dashboard": "https://xlx049.dyndns.org",
-      "host": "p2549.dyndns.org",
+      "dial": {
+        "host": "p2549.dyndns.org",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "49",
       "name": "P25 TG49 interlinked to XLX049C",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "ne-dstar"
     },
     {
       "country": "MY",
       "dashboard": "https://edone.lucifernet.com:8002/p25dash/",
       "description": "<table class=\"wikitable table table-striped table-bordered\">\r\n<tbody>\r\n<tr>\r\n<td>Malaysia-NET Wires-X Room 24060 &amp; YSF Bridge (#59331 #11714 #18807) &amp; DSTAR XLX/DCS/REF/XRF 522D &amp; P25 TG50210</td>\r\n</tr>\r\n</tbody>\r\n</table>",
-      "host": "edone.no-ip.com",
+      "dial": {
+        "host": "edone.no-ip.com",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "50210",
       "name": "Malaysia-NET Digital P25 Room",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Malaysia-NET Digital P25 Room"
     },
     {
       "country": "US",
       "description": "<p>P25 Bridge into the KK7GKG Repeater System Via Allstar Node 600796</p>\r\n<p>Managed by KK7GKG</p>",
-      "host": "site1a.kk7gkg.com",
+      "dial": {
+        "host": "site1a.kk7gkg.com",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "5030",
       "name": "KK7GKG ASL Bridge 1",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KK7GKG"
     },
     {
       "country": "US",
       "description": "<p>KK7GKG Developmental System</p>\r\n<p>Managed by KK7GKG</p>",
-      "host": "205.121.52.125",
+      "dial": {
+        "host": "205.121.52.125",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "5031",
       "name": "KK7GKG ASL Bridge 2",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KK7GKG"
     },
     {
       "country": "US",
       "description": "<p data-path-to-node=\"2,0\"><strong data-path-to-node=\"2,0\" data-index-in-node=\"0\">Welcome to the [ALL IS WELCOME/50405] P25 Reflector!</strong></p>\r\n<p data-path-to-node=\"2,1\">This reflector is an open, friendly digital hub created to bridge operators across the globe. Powered by Project 25 digital audio, our goal is to provide clear, reliable communications and a welcoming space for technical discussion, ragchewing, and testing.</p>\r\n<p data-path-to-node=\"2,2\">Whether you&rsquo;re keying up through a local MMDVM hotspot or a full-power P25 repeater system, all licensed amateur radio operators are welcome to link in and join the conversation. Jump on, drop your callsign, and say hello!</p>",
-      "host": "74.140.246.32",
+      "dial": {
+        "host": "74.140.246.32",
+        "kind": "p25",
+        "port": 41896
+      },
       "id": "50405",
       "name": "ALL IS WELCOME",
-      "port": 41896,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KO4RXE & KJ5EPU"
     },
     {
       "country": "AU",
       "dashboard": "https://p25-50500.dale.id.au",
       "description": "<p><strong>VK Nets Hub</strong><br><strong>M17</strong>: 434 E, <strong>ASL</strong>: 572982, <strong>YSF</strong>: 50500 (AU-VK-DVAU50500), <strong>NXDN</strong>: 50500, bridged to DVAU DMR 50500</p>",
-      "host": "45.124.54.132",
+      "dial": {
+        "host": "45.124.54.132",
+        "kind": "p25",
+        "port": 41001
+      },
       "id": "50500",
       "name": "VK Nets Hub",
-      "port": 41001,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "VK5ZSH"
     },
     {
       "country": "AU",
       "dashboard": "https://p25-50505.dale.id.au",
       "description": "<p><strong>VK Calling Hub</strong><br><strong>M17</strong>: 434 B, <strong>ASL</strong>: 572981, <strong>YSF</strong>: 50505 (AU-VK-DVAU505), <strong>NXDN</strong>: 50505, bridged to DVAU DMR 505</p>",
-      "host": "45.124.54.132",
+      "dial": {
+        "host": "45.124.54.132",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "50505",
       "name": "VK Calling Hub",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "VK5ZSH"
     },
     {
       "country": "AU",
       "dashboard": "http://50525.p25dvm.com",
       "description": "<p>50525 P25 Reflector</p>",
-      "host": "50525.p25dvm.com",
+      "dial": {
+        "host": "50525.p25dvm.com",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "50525",
       "name": "50525 P25 Reflector",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "VK2HK"
     },
     {
       "country": "AU",
       "dashboard": "https://pride-p25.vkradio.com/",
       "description": "<p>Pride Network Multimode Reflector</p>",
-      "host": "p25tg50535.vkradio.com",
+      "dial": {
+        "host": "p25tg50535.vkradio.com",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "50535",
       "name": "50535",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "VK3JED"
     },
     {
       "country": "AU",
       "dashboard": "https://modulex-p25.vkradio.com/",
       "description": "<p>FreeSTAR System-X VK P25</p>",
-      "host": "p25tg50536.vkradio.com",
+      "dial": {
+        "host": "p25tg50536.vkradio.com",
+        "kind": "p25",
+        "port": 41001
+      },
       "id": "50536",
       "name": "50536",
-      "port": 41001,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "VK3JED"
     },
     {
       "country": "AU",
       "dashboard": "https://p25-5055.dale.id.au/",
       "description": "<p><strong>VK5 Sth. Aust. Hub</strong><br><strong>M17: </strong>434 C, <strong>ASL</strong>: 572983, <strong>YSF</strong>: 05055 (AU-VK5-DVAU5055), <strong>NXDN</strong>: 5055, bridged to DVAU DMR 5055</p>",
-      "host": "45.124.54.132",
+      "dial": {
+        "host": "45.124.54.132",
+        "kind": "p25",
+        "port": 41002
+      },
       "id": "5055",
       "name": "Australia - SA",
-      "port": 41002,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "VK5ZSH"
     },
     {
       "country": "US",
-      "host": "w8lrk-mmdvm.duckdns.org",
+      "dial": {
+        "host": "w8lrk-mmdvm.duckdns.org",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "50964",
       "name": "LARK",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "LIVINGSTON AMATEUR RADIO KLUB"
     },
     {
       "country": "ID",
-      "host": "45.198.151.5",
+      "dial": {
+        "host": "45.198.151.5",
+        "kind": "p25",
+        "port": 41005
+      },
       "id": "51000",
       "name": "Indonesia P25 Talkgroup 51000",
-      "port": 41005,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "YD1DGI P25 Reflector 51000"
     },
     {
       "country": "ID",
-      "host": "45.198.151.5",
+      "dial": {
+        "host": "45.198.151.5",
+        "kind": "p25",
+        "port": 41004
+      },
       "id": "51025",
       "name": "Indonesia P25 Talkgroup",
-      "port": 41004,
+      "network": "p25",
       "source": "dvref"
     },
     {
       "country": "ID",
-      "host": "45.198.151.5",
+      "dial": {
+        "host": "45.198.151.5",
+        "kind": "p25",
+        "port": 41003
+      },
       "id": "51051",
       "name": "DGI P25",
-      "port": 41003,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "DGI P25"
     },
     {
       "country": "ID",
-      "host": "103.196.153.208",
+      "dial": {
+        "host": "103.196.153.208",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "51075",
       "name": "Indonesia P25 Talkgroup 51075",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "YG2BTP"
     },
     {
       "country": "ID",
-      "host": "45.198.151.5",
+      "dial": {
+        "host": "45.198.151.5",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "51091",
       "name": "DGI Reflector",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "DGI P25"
     },
     {
       "country": "US",
       "dashboard": "https://p25.kapihan.net/",
-      "host": "p25.kapihan.net",
+      "dial": {
+        "host": "p25.kapihan.net",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "51547",
       "name": "51547",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "N6DOZ"
     },
     {
       "country": "US",
       "dashboard": "http://xlx517.radiosc.net",
-      "host": "67.212.42.234",
+      "dial": {
+        "host": "67.212.42.234",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "517",
       "name": "URF517",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "RadioSC"
     },
     {
       "country": "TH",
       "dashboard": "https://p52032.pwk.ac.th/",
       "description": "<p>P25 Link XLX149 Modules C</p>",
-      "host": "p52032.pwk.ac.th",
+      "dial": {
+        "host": "p52032.pwk.ac.th",
+        "kind": "p25",
+        "port": 41009
+      },
       "id": "52032",
       "name": "52032",
-      "port": 41009,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "HS3TDI"
     },
     {
       "country": "TH",
       "dashboard": "https://p2552138.freeddns.org/",
       "description": "<p>Interlink to XLX138 Module P<br><a href=\"https://xlx138.freeddns.org/\">https://xlx138.freeddns.org</a></p>",
-      "host": "103.195.7.20",
+      "dial": {
+        "host": "103.195.7.20",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "52138",
       "name": "XLX138 Module P",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "P25 52138 XLX138 Module P Thailand"
     },
     {
       "country": "TH",
       "dashboard": "https://p52149.pwk.ac.th/",
       "description": "<p>P25 Link XLX149 Modules R</p>",
-      "host": "p52149.pwk.ac.th",
+      "dial": {
+        "host": "p52149.pwk.ac.th",
+        "kind": "p25",
+        "port": 41005
+      },
       "id": "52149",
       "name": "52149",
-      "port": 41005,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "HS3TDI"
     },
     {
       "country": "NZ",
       "dashboard": "http://xlx530.hopto.org/P25",
-      "host": "zldigitalreflectors.hopto.org",
+      "dial": {
+        "host": "zldigitalreflectors.hopto.org",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "530",
       "name": "530",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "ZL3DMH"
     },
     {
       "country": "AU",
       "description": "<p>Bridged to DVNZ DMR 530</p>",
-      "host": "45.124.54.132",
+      "dial": {
+        "host": "45.124.54.132",
+        "kind": "p25",
+        "port": 41003
+      },
       "id": "53035",
       "name": "NZ Calling",
-      "port": 41003,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "VK5ZSH"
     },
     {
       "country": "US",
       "description": "<p>Southwest Florida P25 Reflector (533) - Part of the SWFL-Link system sponsored by Fort Myers Amateur Radio Club.</p>",
-      "host": "108.253.236.228",
+      "dial": {
+        "host": "108.253.236.228",
+        "kind": "p25",
+        "port": 41001
+      },
       "id": "533",
       "name": "SW Florida P25 Reflector",
-      "port": 41001,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "W4LX"
     },
     {
       "country": "US",
       "dashboard": "http://p25.kb1elv.com/p25dashboard/",
       "description": "<p>Waltham MA P25 Users</p>",
-      "host": "p25.kb1elv.com",
+      "dial": {
+        "host": "p25.kb1elv.com",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "53347",
       "name": "Waltham P25",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KB1ELV"
     },
     {
       "country": "TH",
       "dashboard": "http://synceyote.ddns.net:8086",
-      "host": "synceyote.ddns.net",
+      "dial": {
+        "host": "synceyote.ddns.net",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "54100",
       "name": "THAILAND Bridge to XLX727C",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "THAILAND Link to XLX727C"
     },
     {
       "country": "US",
       "dashboard": "http://georgia900p25.us/tg554",
       "description": "<h2>Georgia 900 P25 Backup Reflector</h2>\r\n<h4>This TG serves as a backup for 555. Repeaters are not normally connected to 554 unless 555 is out-of-service. Please feel free to use it when 555 is busy.</h4>\r\n<p>Gateways:W4NOC_MCDN=927.1375, W4NOC_NBRN=927.7375, W9KLS_MCDN=442.125,&nbsp; K1KC-CNYR=Lithonia 927.1125, KI4FVI_MCD=146.715, WA4ASI=444.8, 419764ASX=Node419764-X-TG777, 1998ASLx=PrivateNode1998-X-TG554, 419762ASLx=Node419762-X-TG555.</p>",
-      "host": "georgia900p25.us",
+      "dial": {
+        "host": "georgia900p25.us",
+        "kind": "p25",
+        "port": 41003
+      },
       "id": "554",
       "name": "Georgia900 Secondary Reflector",
-      "port": 41003,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "W4NOC"
     },
     {
       "country": "US",
       "dashboard": "http://georgia900p25.us/",
       "description": "<h2>Georgia 900 P25 Reflector</h2>\r\n<p>Home of the Conyers 927.1125, McDonough 927.1375, Newborn 927.7375, Covington 442.8, and McDonough 442.125, 146.715, repeaters.</p>\r\n<p>W4NOC_MCDN=927.1375, W4NOC_NBRN=927.7375, W9KLS_MCDN=442.125, KI4FVI_MCD=146.715, K1KC_CNYR=927.1125,&nbsp;<a href=\"https://sites.google.com/site/wa4asirepeater/home\" target=\"_blank\" rel=\"noopener noreferrer\">WA4ASI= 444.8 Covington Ga,</a> <a href=\"http://vps1.georgia900p25.us/419762/index.php\" target=\"_blank\" rel=\"noopener noreferrer\">419762ASLx=Node419762-X-TG555</a>.</p>",
-      "host": "georgia900p25.us",
+      "dial": {
+        "host": "georgia900p25.us",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "555",
       "name": "Georgia900 Primary Reflector",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "W4NOC"
     },
     {
       "country": "US",
       "dashboard": "https://reflector.site/dashboard/",
       "description": "<p>Sponsored by Ad Astra ARC for AFCOM</p>",
-      "host": "reflector.site",
+      "dial": {
+        "host": "reflector.site",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "556",
       "name": "ARFCOM",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Ad Astra ARC"
     },
     {
       "country": "US",
-      "host": "57.138.142.16",
+      "dial": {
+        "host": "57.138.142.16",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "56169",
       "name": "N5QP NE Oklahoma P25",
-      "port": 41000,
+      "network": "p25",
       "source": "dvref"
     },
     {
       "country": "GB",
       "dashboard": "http://wf-link.ddns.net/",
-      "host": "wf-link.ddns.net",
+      "dial": {
+        "host": "wf-link.ddns.net",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "56429",
       "name": "Wyre Forest P25 Link",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "wf-link.ddns.net"
     },
     {
       "country": "TH",
       "dashboard": "http://44.32.81.27",
-      "host": "44.32.81.27",
+      "dial": {
+        "host": "44.32.81.27",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "58907",
       "name": "URF162",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "ham radio"
     },
     {
       "country": "US",
       "description": "<p>MCRC P25 Chat reflector operated by K3EEF for MCRC members.</p>\r\n<p>https://mcrcsocal.com/</p>",
-      "host": "172.236.233.92",
+      "dial": {
+        "host": "172.236.233.92",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "5945",
       "name": "MCRC P25 Chat",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "MCRC"
     },
     {
       "country": "US",
       "dashboard": "https://digital.whocaresradio.com",
-      "host": "digital.whocaresradio.com",
+      "dial": {
+        "host": "digital.whocaresradio.com",
+        "kind": "p25",
+        "port": 41002
+      },
       "id": "60606",
       "name": "W8VD New Haven, MI",
-      "port": 41002,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "W8VD"
     },
     {
       "country": "US",
       "dashboard": "https://digital.whocaresradio.com",
-      "host": "digital.whocaresradio.com",
+      "dial": {
+        "host": "digital.whocaresradio.com",
+        "kind": "p25",
+        "port": 41001
+      },
       "id": "60777",
       "name": "US-WHOCARES",
-      "port": 41001,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Who Cares ARG"
     },
     {
       "country": "US",
       "dashboard": "https://digital.whocaresradio.com",
-      "host": "digital.whocaresradio.com",
+      "dial": {
+        "host": "digital.whocaresradio.com",
+        "kind": "p25",
+        "port": 41003
+      },
       "id": "60888",
       "name": "Zombie Alert - Metro Detroit MI",
-      "port": 41003,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "AA8GK N8ZA W8SOX"
     },
     {
       "country": "US",
       "dashboard": "http://67.205.135.215:4000",
       "description": "<p><strong>WORLD WIDE MULTIMODE&nbsp; THIS REFLECTOR CROSS MODES TO TG 310 ON THE FB DMR SERVER AS WELL AS WIRESX REFLECTOR YSF08005 CREATING A MULTIMODE CONNECTION TO THE WORLD.</strong></p>",
-      "host": "67.205.135.215",
+      "dial": {
+        "host": "67.205.135.215",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "609",
       "name": "AREA-609 Serving SNJ and MultiMode World Wide",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "N2MRH and the FB DMR TEAM"
     },
     {
       "country": "US",
-      "host": "73.2.133.99",
+      "dial": {
+        "host": "73.2.133.99",
+        "kind": "p25",
+        "port": 41010
+      },
       "id": "61668",
       "name": "All Are Welcome",
-      "port": 41010,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KJ5EPU and KO4RXE"
     },
     {
       "country": "US",
       "dashboard": "https://urf.hrcc.link/",
       "description": "<p>HRCC Link is a system of linked DV modes created for the<br>Ham Radio Crash Course community.</p>",
-      "host": "urf.hrcc.link",
+      "dial": {
+        "host": "urf.hrcc.link",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "621",
       "name": "URF621",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Ham Radio Crash Course HRCC LINK"
     },
     {
       "country": "US",
       "dashboard": "http://www.Porter2000.com:4000",
       "description": "<p>926.775 P25 (Phase 1) TG62238 NAC293 in Middle River, Maryland, USA near the Chesapeake Bay. KC3YGF ALL BANDS - ALL MODES</p>",
-      "host": "Porter2000.com",
+      "dial": {
+        "host": "Porter2000.com",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "62238",
       "name": "KC3YGF Middle River, Maryland, USA",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KC3YGF"
     },
     {
       "country": "LV",
       "dashboard": "https://xlx.ham.lv/p25/",
-      "host": "xlx.ham.lv",
+      "dial": {
+        "host": "xlx.ham.lv",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "63600",
       "name": "63600",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "YL3IM"
     },
     {
       "country": "US",
       "dashboard": "http://urf045.pennlinkgroup.com:8082/urfd/",
       "description": "<p>This Reflector offers a connection to Brandmeister DMR on Module A. &nbsp;For more information see https://info.pennlinkgroup.com</p>",
-      "host": "70.44.20.24",
+      "dial": {
+        "host": "70.44.20.24",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "6381",
       "name": "URF045",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "PennLink Group"
     },
     {
       "country": "US",
       "dashboard": "https://xlx645.pennlinkgroup.com/urfd",
       "description": "<p>URF645 is a full service, trancoded URF Cloud based Reflector</p>",
-      "host": "34.196.134.215",
+      "dial": {
+        "host": "34.196.134.215",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "6382",
       "name": "URF645",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "PennLink Group"
     },
     {
       "country": "US",
       "description": "<p>Personal P25 reflector operated by KE7WIL for direct connections and coordinated amateur-radio use. Not intended as a general-purpose traffic reflector.</p>",
-      "host": "node64189.ddns.net",
+      "dial": {
+        "host": "node64189.ddns.net",
+        "kind": "p25",
+        "port": 41010
+      },
       "id": "64189",
       "name": "KE7WIL Personal P25 Reflector",
-      "port": 41010,
+      "network": "p25",
       "source": "dvref"
     },
     {
       "country": "US",
-      "host": "p25.w9ml.com",
+      "dial": {
+        "host": "p25.w9ml.com",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "6453",
       "name": "MIKE-LINK",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "W9ML"
     },
     {
       "country": "RE",
       "dashboard": "http://vmi2726828.contaboserver.net:9002",
-      "host": "84.247.131.227",
+      "dial": {
+        "host": "84.247.131.227",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "64701",
       "name": "64701 REUNION ISLAND",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "FR1LC johann"
     },
     {
       "country": "AU",
-      "host": "p25.vk2ym.com.au",
+      "dial": {
+        "host": "p25.vk2ym.com.au",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "65050",
       "name": "P25 Reflector",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "VK2YM"
     },
     {
       "country": "US",
       "dashboard": "https://uhdarc.org/",
       "description": "<p><strong data-start=\"180\" data-end=\"232\" data-is-only-node=\"\">65102 Utah High Desert Amateur Radio Club Bridge</strong> &mdash; based in Salt Lake and Utah Counties, this system links our local 220 MHz repeaters (plus two additional repeaters in St George, UT) with <strong data-start=\"373\" data-end=\"398\">DMR talk-group 313040, YSF 65102</strong> and the <strong data-start=\"407\" data-end=\"446\">EchoLink conference server <em data-start=\"436\" data-end=\"444\">KF7KGN</em></strong>, providing seamless P25 &harr; DMR &harr; EchoLink connectivity for amateurs across the Wasatch Front and southern Utah.</p>",
-      "host": "44.27.137.117",
+      "dial": {
+        "host": "44.27.137.117",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "65102",
       "name": "Utah High Desert Amateur Radio Club Bridge",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KF7KGN - UHDARC"
     },
     {
       "country": "US",
       "dashboard": "http://45.33.22.225:4000/",
       "description": "<p>Murphy Radio Network (MRN)&nbsp; &nbsp;-- &nbsp; http://murphy-radio.net/</p>",
-      "host": "45.33.22.225",
+      "dial": {
+        "host": "45.33.22.225",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "65123",
       "name": "65123",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Murphy Radio Network (MRN)"
     },
     {
       "country": "US",
       "dashboard": "http://p25.kq4wze.online:4000/",
-      "host": "p25.kq4wze.online",
+      "dial": {
+        "host": "p25.kq4wze.online",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "65300",
       "name": "KQ4WZE Reflector",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KQ4WZE"
     },
     {
       "country": "US",
       "description": "<p>N2FED Repeater</p>",
-      "host": "96.225.96.169",
+      "dial": {
+        "host": "96.225.96.169",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "654",
       "name": "N2FED",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "N2FED Repeater System"
     },
     {
       "country": "US",
       "description": "<p>KK6RQ TAC-2</p>",
-      "host": "area52.zapto.org",
+      "dial": {
+        "host": "area52.zapto.org",
+        "kind": "p25",
+        "port": 41001
+      },
       "id": "665",
       "name": "665",
-      "port": 41001,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KK6RQ"
     },
     {
       "country": "BR",
       "dashboard": "http://p25.py1ip.com",
-      "host": "P25.py1ip.com",
+      "dial": {
+        "host": "P25.py1ip.com",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "666",
       "name": "666",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "PY1IP"
     },
     {
       "country": "US",
-      "host": "p25.netoholicsnetwork.net",
+      "dial": {
+        "host": "p25.netoholicsnetwork.net",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "6749",
       "name": "Netoholics Network",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KN4EWT"
     },
     {
       "country": "US",
       "description": "<p>This reflector is attached to P25 Repeaters in Darke and Mercer Counties in Ohio, and Jay County Indiana.</p>\r\n<p>443.6875 (293) TG1 W8FLH/R in Greenville, Ohio<br>444.6875 (2A3) TG1 KB8SCR/R in Ft Recovery, Ohio<br>444.8125 (2A3) TG1 KB8SCR/R in Portland, Indiana</p>",
-      "host": "172.245.79.131",
+      "dial": {
+        "host": "172.245.79.131",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "6875",
       "name": "W8FLH-KB8SCR Link",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "W8FLH"
     },
     {
       "country": "US",
-      "host": "dvref.novars.space",
+      "dial": {
+        "host": "dvref.novars.space",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "6942",
       "name": "NOVARS P25",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Northwest Ohio VHF Amateur Radio Society"
     },
     {
       "country": "US",
       "dashboard": "https://707p25.kd0ioe.com",
       "description": "<p>Rural Minnesota 707 Talkgroup</p>\r\n<p>Linked to YSF, NXDN, DMR (TGIF)</p>",
-      "host": "707p25.kd0ioe.com",
+      "dial": {
+        "host": "707p25.kd0ioe.com",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "707",
       "name": "707",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KD0IOE"
     },
     {
       "country": "PA",
       "dashboard": "http://p25-hp3.dnsup.net/",
-      "host": "p25-hp3.dnsup.net",
+      "dial": {
+        "host": "p25-hp3.dnsup.net",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "7144",
       "name": "Chiriqui Link Panama",
-      "port": 41000,
+      "network": "p25",
       "source": "dvref"
     },
     {
       "country": "PA",
       "dashboard": "http://66.154.126.141:83/",
-      "host": "66.154.126.141",
+      "dial": {
+        "host": "66.154.126.141",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "7145",
       "name": "GREMPA",
-      "port": 41000,
+      "network": "p25",
       "source": "dvref"
     },
     {
       "country": "IT",
       "dashboard": "http://m17-718.ddns.net/urf/",
-      "host": "m17-718.ddns.net",
+      "dial": {
+        "host": "m17-718.ddns.net",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "718",
       "name": "URF718",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "iu0NDT"
     },
     {
       "country": "AR",
       "dashboard": "https://bellville-link.tplinkdns.com/urf/",
       "description": "<p>\"Reflector experimental de Bell Ville, C&oacute;rdoba, ARGENTINA. Laboratorio abierto sin fines de lucro para pruebas de equipos, ajustes y QSOs. &iexcl;Todos los colegas son bienvenidos a utilizar y experimentar en el sistema!\"</p>",
-      "host": "bellville-link.tplinkdns.com",
+      "dial": {
+        "host": "bellville-link.tplinkdns.com",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "7221",
       "name": "URFARG",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "LW2HAH - Bell Ville"
     },
     {
       "country": "BR",
       "dashboard": "http://189.90.244.29:8081/",
-      "host": "189.90.244.29",
+      "dial": {
+        "host": "189.90.244.29",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "724",
       "name": "TG Brazil",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "py4arr"
     },
     {
       "country": "BR",
       "dashboard": "http://p25.radioserver.qsl.br",
       "description": "<p>Refletor P25 conectado ao servidor DMR MASTER-SUL com transcodifica&ccedil;&atilde;o bidirecional simult&acirc;nea para YSF, NXDN e DMR.</p>",
-      "host": "191.252.191.246",
+      "dial": {
+        "host": "191.252.191.246",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "7240",
       "name": "7240",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "PU3SMS - S\u00e9rgio Saez"
     },
     {
       "country": "BR",
       "dashboard": "https://pu4ron.dynv6.net/p25",
       "description": "<p>7245 Multiprotocolo - Super Link Brasil</p>",
-      "host": "165.73.249.152",
+      "dial": {
+        "host": "165.73.249.152",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "7245",
       "name": "7245 Brazil - Multiprotocolo",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "PU4RON"
     },
     {
       "country": "US",
       "dashboard": "http://162.213.130.93:4000/",
-      "host": "162.213.130.93",
+      "dial": {
+        "host": "162.213.130.93",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "73",
       "name": "URF073",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "MID SOUTH MULTIMODE"
     },
     {
       "country": "US",
       "dashboard": "http://p25.octanenetwork.net:4000/",
       "description": "<p>Linked to XLX732 - Module A</p>\r\n<p>&nbsp;</p>",
-      "host": "p25.octanenetwork.net",
+      "dial": {
+        "host": "p25.octanenetwork.net",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "732",
       "name": "Octane Network P25",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "OCTANE NETWORK XLX732"
     },
     {
       "country": "US",
       "description": "<p>DVMproject2P25 by KN6TYF</p>",
-      "host": "fne.dv.kn6tyf.com",
+      "dial": {
+        "host": "fne.dv.kn6tyf.com",
+        "kind": "p25",
+        "port": 41001
+      },
       "id": "747",
       "name": "747",
-      "port": 41001,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "DVMproject2P25 by KN6TYF"
     },
     {
       "country": "UY",
       "dashboard": "http://uruguaynet.2mydns.net",
-      "host": "198.245.55.26",
+      "dial": {
+        "host": "198.245.55.26",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "7489",
       "name": "Uruguay.Net",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "CX3DW"
     },
     {
       "country": "US",
-      "host": "p25.docksea.com",
+      "dial": {
+        "host": "p25.docksea.com",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "7573",
       "name": "docksea",
-      "port": 41000,
+      "network": "p25",
       "source": "dvref"
     },
     {
       "country": "US",
       "dashboard": "https://p25.digital-america.org",
-      "host": "15.204.116.55",
+      "dial": {
+        "host": "15.204.116.55",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "76",
       "name": "P25TNHAMS",
-      "port": 41000,
+      "network": "p25",
       "source": "dvref"
     },
     {
       "country": "US",
       "dashboard": "http://xlx760.ddns.net",
       "description": "<p>URF760</p>\r\n<p>With a <strong>Halo Halo Network</strong>, it celebrates diversity and connection, mixing voices and cultures like the famous Filipino dessert: colorful, layered, and always refreshing. Add in the <strong>XPR Pinoy spirit</strong>, and you get a reflector that&rsquo;s proudly community\u2011driven, welcoming operators worldwide while keeping a strong Pinoy identity at its core.</p>\r\n<p><strong>In short:</strong> URF isn&rsquo;t just about linking modes&mdash;it&rsquo;s about linking people, networks, and cultures into one vibrant digital space.</p>",
-      "host": "xlx760.ddns.net",
+      "dial": {
+        "host": "xlx760.ddns.net",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "760",
       "name": "URF760",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "K6KWB"
     },
     {
       "country": "US",
       "dashboard": "https://p25.sndcoresys.com/",
       "description": "<p>Welcome! This is a public North Carolina hangout. We may periodically crosslink to other digital voice systems for interoperability.&nbsp; Please leave a brief pause between transmissions when linked so audio can pass cleanly. Currently linked to the TGIF (7620) CrossLink Talk Group.</p>",
-      "host": "p25.sndcoresys.com",
+      "dial": {
+        "host": "p25.sndcoresys.com",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "7620",
       "name": "NC CrossLink",
-      "port": 41000,
+      "network": "p25",
       "source": "dvref"
     },
     {
       "country": "RU",
       "dashboard": "http://176.109.101.61/p25_1/",
       "description": "<p>P25+P25TRS+YSF(<span style=\"text-decoration: underline;\"><strong>VW</strong></span>)+ZELLO&nbsp;</p>",
-      "host": "176.109.101.61",
+      "dial": {
+        "host": "176.109.101.61",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "7701",
       "name": "RU_RoIP DV",
-      "port": 41000,
+      "network": "p25",
       "source": "dvref"
     },
     {
       "country": "RU",
       "dashboard": "http://176.109.101.61/p25_2/",
       "description": "<p>&nbsp;P25+P25TRS+YSF(<span style=\"text-decoration: underline;\"><strong>VW</strong></span>)+ZELLO+ANALOG&nbsp;</p>",
-      "host": "176.109.101.61",
+      "dial": {
+        "host": "176.109.101.61",
+        "kind": "p25",
+        "port": 41001
+      },
       "id": "7702",
       "name": "RU_RoIP MIX",
-      "port": 41001,
+      "network": "p25",
       "source": "dvref"
     },
     {
       "country": "RU",
       "dashboard": "http://176.109.101.61/p25_3/",
       "description": "<p>&nbsp;P25+P25TRS+YSF(<span style=\"text-decoration: underline;\"><strong>VW</strong></span>)+ZELLO+ANALOG+PATCH&nbsp;</p>",
-      "host": "176.109.101.61",
+      "dial": {
+        "host": "176.109.101.61",
+        "kind": "p25",
+        "port": 41002
+      },
       "id": "7703",
       "name": "RU_RoIP AUX",
-      "port": 41002,
+      "network": "p25",
       "source": "dvref"
     },
     {
       "country": "US",
       "dashboard": "http://wv777p25.ddns.net/tg777/",
       "description": "<p>West Virginia &nbsp;777 &nbsp;primary Talk Group for the southern region of WV Bluestone Amature Radio. As dangerous as the currents on the New River 443.900<br><br></p>\r\n<p>this talkgroup is associated wth the Georgia900 network&nbsp;</p>",
-      "host": "wv777p25.ddns.net",
+      "dial": {
+        "host": "wv777p25.ddns.net",
+        "kind": "p25",
+        "port": 41005
+      },
       "id": "777",
       "name": "WV Almost Heaven",
-      "port": 41005,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "W4NOC / KC8PRG"
     },
     {
       "country": "US",
-      "host": "innet.tplinkdns.com",
+      "dial": {
+        "host": "innet.tplinkdns.com",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "7770",
       "name": "JesusSaves",
-      "port": 41000,
+      "network": "p25",
       "source": "dvref"
     },
     {
       "country": "US",
       "dashboard": "https://wmrasystem.com/P25Reflector/",
-      "host": "wmrasystem.com",
+      "dial": {
+        "host": "wmrasystem.com",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "7941",
       "name": "WMRA MULTIMODE NETWORK",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "WMRA"
     },
     {
       "country": "CA",
       "dashboard": "http://ve2nbz.ddns.net:90",
       "description": "<p>P25 MAURICIE</p>",
-      "host": "70.55.87.40",
+      "dial": {
+        "host": "70.55.87.40",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "819",
       "name": "P25 Mauricie et Centre du Qu\u00e9bec",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "VE2NBZ/VE2RVU"
     },
     {
       "country": "CN",
-      "host": "zhongwan.myDS.me",
+      "dial": {
+        "host": "zhongwan.myDS.me",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "8206",
       "name": "ham p25",
-      "port": 41000,
+      "network": "p25",
       "source": "dvref"
     },
     {
       "country": "CN",
       "dashboard": "http://47.105.33.47/p25",
-      "host": "47.105.33.47",
+      "dial": {
+        "host": "47.105.33.47",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "8208",
       "name": "HAM China P25",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "CHINA P25"
     },
     {
       "country": "US",
       "dashboard": "http://p25.ncvafusion.org/",
       "description": "<p>Part of the NC VA Fusion Network www.ncvafusion.org</p>",
-      "host": "139.144.62.35",
+      "dial": {
+        "host": "139.144.62.35",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "822",
       "name": "NC VA Fusion P25",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KE4TZN"
     },
     {
       "country": "GB",
       "dashboard": "https://urf825.meshnetworks.co.uk/public",
       "description": "<p>One of the 2 core reflectors on the UK NWMG multimode digital voice network.</p>",
-      "host": "xlx.g6phf.co.uk",
+      "dial": {
+        "host": "xlx.g6phf.co.uk",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "825",
       "name": "URFLAN",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "G6PHF"
     },
     {
       "country": "US",
       "dashboard": "https://chandlerhams.org/reflector",
       "description": "<p>URF847 is a universal, multi-protocol digital voice reflector that supports D-Star protocols (DPlus, DCS, DExtra and G3), DMR protocols (MMDVMHost, DMR+ and NXDN), M17, P25 (using IMBE) and YSF.<br>&nbsp;<br>DCS847 A<br>REF847 A<br>XLX847 A<br>XRF847 A<br>&nbsp;<br>M17-847<br>NXDN TG 847<br>P25 TG 847<br>TGIF 30847<br>YSF 00847<br>&nbsp;<br>https://chandlerhams.org/reflector<br>&nbsp;<br>Chandler Ham Radio Club (N7CHN)</p>",
-      "host": "urf847.kk7mnz.com",
+      "dial": {
+        "host": "urf847.kk7mnz.com",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "847",
       "name": "URF847",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Chandler Ham Radio Club"
     },
     {
       "country": "US",
       "dashboard": "https://crhrc.org",
-      "host": "vpn.crhrc.org",
+      "dial": {
+        "host": "vpn.crhrc.org",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "8610",
       "name": "CRHRC-TX",
-      "port": 41000,
+      "network": "p25",
       "source": "dvref"
     },
     {
       "country": "US",
-      "host": "208.87.131.165",
+      "dial": {
+        "host": "208.87.131.165",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "899",
       "name": "North Carolina",
-      "port": 41000,
+      "network": "p25",
       "source": "dvref"
     },
     {
       "country": "US",
       "description": "<p>NEAR900 New England Amateur Radio 900 MHz Repeater P25 Network. http://near900.com</p>",
-      "host": "stn4571.ip.irlp.net",
+      "dial": {
+        "host": "stn4571.ip.irlp.net",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "900",
       "name": "NEAR900 New England Amateur Radio 900 MHz P25 Net",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "NEAR900 New England Amateur Radio 900 MHz Network"
     },
     {
       "country": "TH",
       "dashboard": "http://xlx909.freeddns.org:8808",
-      "host": "xlx909.freeddns.org",
+      "dial": {
+        "host": "xlx909.freeddns.org",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "909",
       "name": "XLX909 P25",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "E20AE"
     },
     {
       "country": "ES",
       "dashboard": "http://fcs701.xreflector.net/p91/",
-      "host": "fcs701.xreflector.net",
+      "dial": {
+        "host": "fcs701.xreflector.net",
+        "kind": "p25",
+        "port": 41002
+      },
       "id": "91",
       "name": "World Wide",
-      "port": 41002,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "xreflector.es"
     },
     {
       "country": "US",
       "dashboard": "https://xlx910.mywire.org",
       "description": "<p>Washington DC - Virginia - Maryland</p>",
-      "host": "xlx910.mywire.org",
+      "dial": {
+        "host": "xlx910.mywire.org",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "910",
       "name": "DC - MD -VA XLX910D",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "W3KIT DC - MD -VA XLX910D"
     },
     {
       "country": "AU",
       "dashboard": "https://vk2adf-n1.vk44.net/p25/",
-      "host": "150.107.73.56",
+      "dial": {
+        "host": "150.107.73.56",
+        "kind": "p25",
+        "port": 41005
+      },
       "id": "9106",
       "name": "VK2ADF Public Interop",
-      "port": 41005,
+      "network": "p25",
       "source": "dvref"
     },
     {
       "country": "ES",
       "dashboard": "http://fcs701.xreflector.net/p914/",
-      "host": "fcs701.xreflector.net",
+      "dial": {
+        "host": "fcs701.xreflector.net",
+        "kind": "p25",
+        "port": 41001
+      },
       "id": "914",
       "name": "P25 HISPANO",
-      "port": 41001,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "xreflector.es"
     },
     {
       "country": "US",
       "dashboard": "http://47.156.44.132/",
-      "host": "47.156.44.132",
+      "dial": {
+        "host": "47.156.44.132",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "9140",
       "name": "URF914",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "N6RBH"
     },
     {
       "country": "TH",
       "dashboard": "https://xlx918.180152.xyz:8810",
-      "host": "xlx918.180152.xyz",
+      "dial": {
+        "host": "xlx918.180152.xyz",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "918",
       "name": "XLX918 P25",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "XLX918"
     },
     {
       "country": "DE",
       "dashboard": "http://p25.motochat.eu/p25-tg925/",
-      "host": "p25.motochat.eu",
+      "dial": {
+        "host": "p25.motochat.eu",
+        "kind": "p25",
+        "port": 41009
+      },
       "id": "925",
       "name": "925",
-      "port": 41009,
+      "network": "p25",
       "source": "dvref"
     },
     {
       "country": "GB",
       "dashboard": "http://xlx925.hopto.org/index.php",
-      "host": "185.26.243.94",
+      "dial": {
+        "host": "185.26.243.94",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "926",
       "name": "URF925",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "MI5DAW"
     },
     {
       "country": "US",
       "dashboard": "http://ref.n6lka.com:4000",
       "description": "<p>N6LKA SoCal Reflector</p>\r\n<p>This reflector is used to connect the N6LKA and AD5MT repeaters for each mode. Others are welcome to connect to this reflector.</p>",
-      "host": "ref.n6lka.com",
+      "dial": {
+        "host": "ref.n6lka.com",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "936",
       "name": "URFLKA",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "N6LKA"
     },
     {
       "country": "AU",
       "dashboard": "https://m17-p25.vkradio.com/",
       "description": "<p>M17 Project - M17-M17 C Reflector bridge</p>",
-      "host": "112.213.34.65",
+      "dial": {
+        "host": "112.213.34.65",
+        "kind": "p25",
+        "port": 41002
+      },
       "id": "9517",
       "name": "9517",
-      "port": 41002,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "VK3JED"
     },
     {
       "country": "US",
       "dashboard": "http://grayp25.dyndns.org",
-      "host": "grayp25.dyndns.org",
+      "dial": {
+        "host": "grayp25.dyndns.org",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "960",
       "name": "NorCal Gray Channel",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "K6HP"
     },
     {
       "country": "US",
       "dashboard": "http://urf097.newenglanddigitalradio.com",
       "description": "<p>New England Digital Radio KC1VAX</p>\r\n<p>&nbsp;</p>",
-      "host": "140.82.24.7",
+      "dial": {
+        "host": "140.82.24.7",
+        "kind": "p25",
+        "port": 41000
+      },
       "id": "97",
       "name": "URF097",
-      "port": 41000,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "New England Digital Radio"
     },
     {
       "country": "US",
       "dashboard": "http://urf106.com",
       "description": "<h2>Eastern-MI-Link multi-mode network.&nbsp; See urf106.com for details.</h2>",
-      "host": "24.127.204.177",
+      "dial": {
+        "host": "24.127.204.177",
+        "kind": "p25",
+        "port": 41001
+      },
       "id": "9846",
       "name": "URF106",
-      "port": 41001,
-      "source": "dvref"
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Eastern-MI-Link"
     }
   ],
   "schema_version": 1,

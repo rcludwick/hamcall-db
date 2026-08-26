@@ -4,7 +4,7 @@ name: Reflectors
 # Nightly rebuild of the digital-voice reflector directory (hdb-refl):
 #
 #   1. fetch DVRef (token) + the XLX registry (no token)
-#   2. write static JSON to site/api/ and commit it IF it changed
+#   2. write the versioned static JSON API to site/api/v1/ and commit IF it changed
 #   3. publish site/ to GitHub Pages
 #   4. publish dated Parquet + SQLite artifacts to a SEPARATE CC BY 4.0 release
 #
@@ -81,13 +81,13 @@ jobs:
         id: date
         run: echo "date=$(date -u +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
 
-      # Builds site/api/*.json plus the dated CC BY 4.0 Parquet/SQLite into dist/.
-      # The existing site/api/ files are the "last good" copy the shrink guard compares
-      # against, so this must run against a checkout, not a clean directory.
+      # Builds the whole site/api/v1/ tree plus the dated CC BY 4.0 Parquet/SQLite into
+      # dist/. The existing site/api/v1/ files are the "last good" copy the shrink guard
+      # compares against, so this must run against a checkout, not a clean directory.
       - name: Build reflector directory
         env:
           DVREF_API_TOKEN: ${{ secrets.DVREF_API_TOKEN }}
-        run: uv run hamcall-db-reflectors --out site/api --dist dist/
+        run: uv run hamcall-db-reflectors --out site/api/v1 --dist dist/
 
       # Fail loudly if the build somehow produced nothing — an empty manifest would
       # otherwise deploy happily and blank out every client.
@@ -96,7 +96,7 @@ jobs:
           set -euo pipefail
           python - <<'PY'
           import json, pathlib, sys
-          manifest = json.loads(pathlib.Path("site/api/index.json").read_text())
+          manifest = json.loads(pathlib.Path("site/api/v1/index.json").read_text())
           networks = manifest.get("networks") or {}
           total = sum(int(n.get("count", 0)) for n in networks.values())
           print(f"{len(networks)} networks, {total} reflectors, generated {manifest.get('generated')}")
@@ -175,11 +175,12 @@ jobs:
             - `LICENSE-CC-BY` — the governing licence and required attribution.
 
             Also served as static JSON, no token required:
-            <https://rcludwick.github.io/hamcall-db/api/index.json>
+            <https://rcludwick.github.io/hamcall-db/api/v1/reflectors.json>
 
             **Attribution required.** Reflector data provided by DVRef — <https://dvref.com/>.
             XLX reflector data from the XLX registry maintained by Luc Engelmann, LX1IQ.
-            Data was reformatted into this project's schema; values are unmodified.
+            Data was reformatted into this project's schema and email addresses were
+            removed from free-text fields; values are otherwise unmodified.
 
             This is a **separate** dataset from the CC BY-NC `hamcall-db` callsign release and
             must not be redistributed as part of it — CC BY 4.0 forbids adding the
