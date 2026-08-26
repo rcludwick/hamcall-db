@@ -1,0 +1,137 @@
+# ============================================================================
+# Zensical configuration for the hamcall-db site.
+#
+# Zensical is the static site generator from the Material for MkDocs team.
+# This is TOML, not MkDocs' mkdocs.yml.
+#
+#   uvx zensical serve                      → http://localhost:8000, live reload
+#   uvx zensical build --clean --strict     → docs/.site
+#
+# The site serves TWO things that are built differently:
+#
+#   * Prose — the pages under docs/site/*.md, rendered by Zensical.
+#   * Data  — docs/site/api/v1/*.json, written by `hamcall-db-reflectors` and
+#             copied through verbatim. Zensical passes non-Markdown files in
+#             docs_dir straight to the output, which is what lets the JSON API
+#             and the documentation ship from one directory and one deploy.
+#
+# That is also why the nightly data refresh and the docs build are separate
+# jobs in .github/workflows/reflectors.yml: `--strict` fails on a broken link,
+# which is correct for prose and must never be able to block a data refresh.
+# ============================================================================
+
+[project]
+
+site_name = "hamcall-db"
+site_description = "Openly-licensed amateur radio reference data: a callsign database and a digital-voice reflector directory served as static JSON."
+site_author = "Rob Ludwick"
+
+# Must carry the /hamcall-db/ sub-path: GitHub Pages serves the project site
+# from there, and instant navigation plus the 404 page resolve against it.
+site_url = "https://rcludwick.github.io/hamcall-db/"
+
+repo_url = "https://github.com/rcludwick/hamcall-db"
+repo_name = "rcludwick/hamcall-db"
+
+# Zensical's default edit_uri assumes a `master` branch; this repository's
+# default branch is `main`.
+edit_uri = "edit/main/docs/site/"
+
+# The published site lives in docs/site/. The rest of docs/ is internal
+# engineering material — BACKLOG.md, PROJECT-NOTES.md, the issues archive —
+# and is deliberately NOT part of the site. Zensical has no exclude_docs key,
+# so a dedicated docs_dir is the only way to keep those unpublished.
+docs_dir = "docs/site"
+
+# Build output, kept under docs/ so a local build cannot leave an untracked
+# directory at the repo root.
+site_dir = "docs/.site"
+
+# Two licences, and the distinction is load-bearing rather than decorative —
+# see licensing.md.
+copyright = "Code MIT &copy; 2026 Rob Ludwick &nbsp;·&nbsp; data CC BY-NC 4.0, reflector directory CC BY 4.0"
+
+# Explicit navigation. Without it Zensical derives the nav from the directory
+# layout, which would sweep in the api/ JSON. Every path here must exist or
+# `--strict` fails.
+nav = [
+  { "Home" = "index.md" },
+  { "Reflector directory" = [
+    "reflectors/index.md",
+    "reflectors/api.md",
+  ] },
+  { "Callsign dataset" = "callsigns.md" },
+  { "About" = [
+    "about/sources.md",
+    "about/licensing.md",
+  ] },
+]
+
+# ----------------------------------------------------------------------------
+# Theme
+# ----------------------------------------------------------------------------
+
+[project.theme]
+language = "en"
+
+features = [
+  "content.code.copy",
+  "navigation.footer",
+  "navigation.indexes",
+  "navigation.instant",
+  "navigation.sections",
+  "navigation.top",
+  "navigation.tracking",
+  "search.highlight",
+  "toc.follow",
+]
+
+# Light and dark, with a toggle. Unlike astar's site this is not the companion
+# to an app with its own fixed appearance — it is reference data people read at
+# odd hours, so let them pick.
+[[project.theme.palette]]
+scheme = "default"
+primary = "indigo"
+accent = "indigo"
+[project.theme.palette.toggle]
+icon = "material/brightness-7"
+name = "Switch to dark mode"
+
+[[project.theme.palette]]
+scheme = "slate"
+primary = "indigo"
+accent = "indigo"
+[project.theme.palette.toggle]
+icon = "material/brightness-4"
+name = "Switch to light mode"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/github"
+link = "https://github.com/rcludwick/hamcall-db"
+name = "hamcall-db on GitHub"
+
+# ----------------------------------------------------------------------------
+# Markdown extensions
+# ----------------------------------------------------------------------------
+
+[project.markdown_extensions]
+abbr = {}
+admonition = {}
+attr_list = {}
+def_list = {}
+footnotes = {}
+md_in_html = {}
+tables = {}
+toc = { permalink = true }
+
+"pymdownx.betterem" = {}
+"pymdownx.details" = {}
+"pymdownx.inlinehilite" = {}
+"pymdownx.magiclink" = {}
+"pymdownx.smartsymbols" = {}
+"pymdownx.snippets" = {}
+
+"pymdownx.highlight" = { anchor_linenums = true, line_spans = "__span", pygments_lang_class = true }
+"pymdownx.tabbed" = { alternate_style = true, combine_header_slug = true }
+
+[project.markdown_extensions."pymdownx.superfences"]

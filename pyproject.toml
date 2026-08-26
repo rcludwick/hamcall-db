@@ -26,7 +26,7 @@ hamcall-db = "hamcall_db.build:app"
 hamcall-db-serve = "hamcall_db.serve:main"
 # Build the static reflector JSON API (CC BY 4.0 — SEPARATE artifact from the
 # CC BY-NC callsign dataset; see hamcall_db/reflectors.py):
-#   uv run hamcall-db-reflectors --out site/api/v1
+#   uv run hamcall-db-reflectors --out docs/site/api/v1
 hamcall-db-reflectors = "hamcall_db.build_reflectors:main"
 
 [project.urls]

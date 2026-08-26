@@ -4,7 +4,7 @@ Separate entry point from :mod:`hamcall_db.build`, because the reflector directo
 separate artifact under a separate licence (CC BY 4.0, not the project's CC BY-NC) and
 must never be merged into the callsign dataset. See :mod:`hamcall_db.reflectors`.
 
-    uv run hamcall-db-reflectors --out site/api/v1
+    uv run hamcall-db-reflectors --out docs/site/api/v1
 
 Writes the versioned static API described by ``docs/REFLECTOR-API.md`` — a manifest, one
 file with every reflector in it, a file per network, and the generated OpenAPI contract.
@@ -95,7 +95,7 @@ def build(
                 "(index.json + reflectors.json + reflectors/ + openapi.json)."
             )
         ),
-    ] = Path("site/api/v1"),
+    ] = Path("docs/site/api/v1"),
     work_dir: Annotated[
         Path, typer.Option(help="Scratch dir for cached upstream downloads.")
     ] = Path("data/raw"),

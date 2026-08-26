@@ -4,7 +4,7 @@ name: Reflectors
 # Nightly rebuild of the digital-voice reflector directory (hdb-refl):
 #
 #   1. fetch DVRef (token) + the XLX registry (no token)
-#   2. write the versioned static JSON API to site/api/v1/ and commit IF it changed
+#   2. write the versioned static JSON API to docs/site/api/v1/ and commit IF it changed
 #   3. publish site/ to GitHub Pages
 #   4. publish dated Parquet + SQLite artifacts to a SEPARATE CC BY 4.0 release
 #
@@ -81,13 +81,13 @@ jobs:
         id: date
         run: echo "date=$(date -u +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
 
-      # Builds the whole site/api/v1/ tree plus the dated CC BY 4.0 Parquet/SQLite into
-      # dist/. The existing site/api/v1/ files are the "last good" copy the shrink guard
+      # Builds the whole docs/site/api/v1/ tree plus the dated CC BY 4.0 Parquet/SQLite into
+      # dist/. The existing docs/site/api/v1/ files are the "last good" copy the shrink guard
       # compares against, so this must run against a checkout, not a clean directory.
       - name: Build reflector directory
         env:
           DVREF_API_TOKEN: ${{ secrets.DVREF_API_TOKEN }}
-        run: uv run hamcall-db-reflectors --out site/api/v1 --dist dist/
+        run: uv run hamcall-db-reflectors --out docs/site/api/v1 --dist dist/
 
       # Fail loudly if the build somehow produced nothing — an empty manifest would
       # otherwise deploy happily and blank out every client.
@@ -96,7 +96,7 @@ jobs:
           set -euo pipefail
           python - <<'PY'
           import json, pathlib, sys
-          manifest = json.loads(pathlib.Path("site/api/v1/index.json").read_text())
+          manifest = json.loads(pathlib.Path("docs/site/api/v1/index.json").read_text())
           networks = manifest.get("networks") or {}
           total = sum(int(n.get("count", 0)) for n in networks.values())
           print(f"{len(networks)} networks, {total} reflectors, generated {manifest.get('generated')}")
@@ -110,7 +110,7 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add site/api
+          git add docs/site/api
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "No upstream changes — nothing to commit."
@@ -120,10 +120,18 @@ jobs:
             git push
           fi
 
+      # Render the prose pages. Zensical copies docs/site/api/ through verbatim,
+      # so the JSON written above lands beside the rendered documentation and one
+      # deploy serves both. `--strict` fails on a broken link — correct for prose,
+      # and the reason this step sits AFTER the data is already committed: a rotted
+      # doc link must never be able to block a reflector refresh.
+      - name: Build the documentation site
+        run: uvx zensical build --clean --strict
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: site/
+          path: docs/.site/
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4

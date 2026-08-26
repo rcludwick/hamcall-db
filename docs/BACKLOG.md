@@ -38,7 +38,7 @@ things must be done by a human before the nightly job can publish:
    D-Star from the XLX registry, but every DVRef network is skipped with a warning.
 
 Until Pages exists, `.github/workflows/reflectors.yml`'s `deploy` job will fail even
-though `refresh` and `release` succeed. The committed JSON under `site/api/v1/` stays
+though `refresh` and `release` succeed. The committed JSON under `docs/site/api/v1/` stays
 correct regardless.
 
 ### hdb-refl-dmr — `mmdvm` dial variant is published contract with no source behind it
