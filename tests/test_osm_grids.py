@@ -109,9 +109,7 @@ def _holed_park() -> Polygon:
 def test_hole_is_preserved_not_filled() -> None:
     park = _holed_park()
     assert len(park.interiors) == 1
-    assert park.area < Polygon(
-        [(11.0, 47.0), (13.0, 47.0), (13.0, 48.0), (11.0, 48.0)]
-    ).area
+    assert park.area < Polygon([(11.0, 47.0), (13.0, 47.0), (13.0, 48.0), (11.0, 48.0)]).area
 
 
 def test_point_inside_hole_is_outside_park() -> None:

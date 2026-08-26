@@ -56,10 +56,7 @@ def test_no_duplicate_postal_keys() -> None:
 
 def test_no_duplicate_city_keys() -> None:
     rows = _load("city_centroids.json")
-    keys = [
-        (r["country"].upper(), r.get("state", "").upper(), r["city"].upper())
-        for r in rows
-    ]
+    keys = [(r["country"].upper(), r.get("state", "").upper(), r["city"].upper()) for r in rows]
     assert len(keys) == len(set(keys))
 
 
@@ -80,8 +77,19 @@ def test_all_canadian_provinces_and_territories_present() -> None:
     cities = _load("city_centroids.json")
     ca_states = {r["state"] for r in cities if r["country"] == "Canada"}
     expected = {
-        "ON", "QC", "BC", "AB", "MB", "SK", "NS", "NB", "NL", "PE",
-        "NT", "YT", "NU",
+        "ON",
+        "QC",
+        "BC",
+        "AB",
+        "MB",
+        "SK",
+        "NS",
+        "NB",
+        "NL",
+        "PE",
+        "NT",
+        "YT",
+        "NU",
     }
     assert expected <= ca_states
 
@@ -100,17 +108,15 @@ _POSTAL_CASES = [
     ("United States", "60601", "EN61"),  # Chicago, IL
     ("United States", "33101", "EL95"),  # Miami, FL
     ("United States", "98101", "CN87"),  # Seattle, WA
-    ("Canada", "M5H", "FN03"),           # Toronto, ON
-    ("Canada", "T2P", "DO21"),           # Calgary, AB
-    ("Australia", "3000", "QF22"),       # Melbourne, VIC
-    ("Australia", "6000", "OF78"),       # Perth, WA
+    ("Canada", "M5H", "FN03"),  # Toronto, ON
+    ("Canada", "T2P", "DO21"),  # Calgary, AB
+    ("Australia", "3000", "QF22"),  # Melbourne, VIC
+    ("Australia", "6000", "OF78"),  # Perth, WA
 ]
 
 
 @pytest.mark.parametrize(("country", "postal", "expected"), _POSTAL_CASES)
-def test_postal_entries_resolve_to_expected_grid(
-    country: str, postal: str, expected: str
-) -> None:
+def test_postal_entries_resolve_to_expected_grid(country: str, postal: str, expected: str) -> None:
     geo = LookupGeocoder()
     rec = Record(callsign="TEST", postal_code=postal, country=country)
     assert geo(rec) == expected

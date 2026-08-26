@@ -24,15 +24,13 @@ _BOISE_GEOJSON = {
     "type": "Polygon",
     "coordinates": [
         [[-116.5, 43.5], [-115.0, 43.5], [-115.0, 44.5], [-116.5, 44.5], [-116.5, 43.5]],
-        [[-116.2, 43.7], [-116.0, 43.7], [-116.0, 43.85], [-116.2, 43.85],
-         [-116.2, 43.7]],
+        [[-116.2, 43.7], [-116.0, 43.7], [-116.0, 43.85], [-116.2, 43.85], [-116.2, 43.7]],
     ],
 }
 _EAGLE_GEOJSON = {
     "type": "Polygon",
     "coordinates": [
-        [[-116.35, 43.65], [-116.25, 43.65], [-116.25, 43.75], [-116.35, 43.75],
-         [-116.35, 43.65]]
+        [[-116.35, 43.65], [-116.25, 43.65], [-116.25, 43.75], [-116.35, 43.75], [-116.35, 43.65]]
     ],
 }
 
@@ -45,14 +43,18 @@ def _fake_features() -> list[PadusFeature]:
 
 
 _PARKS = [
-    ParkRecord(reference="US-4567", name="Boise National Forest", country="US",
-               lat=44.0, lon=-115.5),
-    ParkRecord(reference="US-0001", name="Acadia National Park", country="US",
-               lat=44.31, lon=-68.2034),  # no PAD-US feature -> point fallback
-    ParkRecord(reference="CA-0001", name="Banff", country="CA",
-               lat=51.0, lon=-115.5),  # non-US -> point fallback (PHASE 1)
-    ParkRecord(reference="US-9999", name="Inactive", country="US",
-               lat=None, lon=None),  # no point, no polygon -> no rows
+    ParkRecord(
+        reference="US-4567", name="Boise National Forest", country="US", lat=44.0, lon=-115.5
+    ),
+    ParkRecord(
+        reference="US-0001", name="Acadia National Park", country="US", lat=44.31, lon=-68.2034
+    ),  # no PAD-US feature -> point fallback
+    ParkRecord(
+        reference="CA-0001", name="Banff", country="CA", lat=51.0, lon=-115.5
+    ),  # non-US -> point fallback (PHASE 1)
+    ParkRecord(
+        reference="US-9999", name="Inactive", country="US", lat=None, lon=None
+    ),  # no point, no polygon -> no rows
 ]
 
 
@@ -92,8 +94,11 @@ def test_compute_park_grids_no_point_no_polygon_yields_nothing() -> None:
 def test_compute_park_grids_only_processes_us_against_padus() -> None:
     # A non-US park whose point happens to fall inside a US PAD-US polygon must still NOT
     # be polygon-matched in PHASE 1 (country gate), to avoid cross-border false matches.
-    parks = [ParkRecord(reference="XX-0001", name="Boise National Forest",
-                        country="XX", lat=44.0, lon=-115.5)]
+    parks = [
+        ParkRecord(
+            reference="XX-0001", name="Boise National Forest", country="XX", lat=44.0, lon=-115.5
+        )
+    ]
     rows = padus.compute_park_grids(parks, _fake_features())
     assert len(rows) == 1
     assert rows[0].source == "pota-point"  # not matched to the US polygon
@@ -102,8 +107,11 @@ def test_compute_park_grids_only_processes_us_against_padus() -> None:
 def test_compute_park_grids_never_raises_on_bad_geometry() -> None:
     # A degenerate feature geometry must not blow up the whole build.
     bad = PadusFeature("Broken", None, shape({"type": "Polygon", "coordinates": [[]]}))
-    parks = [ParkRecord(reference="US-4567", name="Boise National Forest",
-                        country="US", lat=44.0, lon=-115.5)]
+    parks = [
+        ParkRecord(
+            reference="US-4567", name="Boise National Forest", country="US", lat=44.0, lon=-115.5
+        )
+    ]
     rows = padus.compute_park_grids(parks, [bad] + _fake_features())
     assert any(r.reference == "US-4567" for r in rows)
 
@@ -168,9 +176,7 @@ def test_download_caches_zipped_geodatabase_extension(tmp_path: Path) -> None:
     def fetcher(url: str, since: float | None) -> bytes | None:
         return b"PK\x03\x04FAKE-PADUS-GDB-ZIP"
 
-    path = padus.PadusSource().download(
-        tmp_path, on=dt.date(2026, 6, 17), fetcher=fetcher
-    )
+    path = padus.PadusSource().download(tmp_path, on=dt.date(2026, 6, 17), fetcher=fetcher)
     assert path.name.endswith(".gdb.zip")
 
 

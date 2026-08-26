@@ -41,24 +41,31 @@ _BANFF_GEOJSON = {
 
 def _fake_features() -> list[OsmFeature]:
     return [
-        OsmFeature("Bayerischer Wald", {"boundary": "protected_area"}, "r1",
-                   shape(_BAYWALD_GEOJSON)),
-        OsmFeature("Banff National Park", {"boundary": "protected_area"}, "r2",
-                   shape(_BANFF_GEOJSON)),
+        OsmFeature(
+            "Bayerischer Wald", {"boundary": "protected_area"}, "r1", shape(_BAYWALD_GEOJSON)
+        ),
+        OsmFeature(
+            "Banff National Park", {"boundary": "protected_area"}, "r2", shape(_BANFF_GEOJSON)
+        ),
     ]
 
 
 _PARKS = [
-    ParkRecord(reference="DE-0001", name="Bayerischer Wald", country="DE",
-               lat=47.5, lon=12.0),  # OSM polygon match
-    ParkRecord(reference="CA-0001", name="Banff National Park", country="CA",
-               lat=51.0, lon=-115.5),  # OSM polygon match
-    ParkRecord(reference="DE-9999", name="Unmapped Park", country="DE",
-               lat=51.0, lon=10.0),  # no OSM feature -> point fallback
-    ParkRecord(reference="US-4567", name="Boise National Forest", country="US",
-               lat=44.0, lon=-115.5),  # US -> EXCLUDED from the OSM set (PAD-US owns it)
-    ParkRecord(reference="DE-0000", name="Inactive", country="DE",
-               lat=None, lon=None),  # no point, no polygon -> no rows
+    ParkRecord(
+        reference="DE-0001", name="Bayerischer Wald", country="DE", lat=47.5, lon=12.0
+    ),  # OSM polygon match
+    ParkRecord(
+        reference="CA-0001", name="Banff National Park", country="CA", lat=51.0, lon=-115.5
+    ),  # OSM polygon match
+    ParkRecord(
+        reference="DE-9999", name="Unmapped Park", country="DE", lat=51.0, lon=10.0
+    ),  # no OSM feature -> point fallback
+    ParkRecord(
+        reference="US-4567", name="Boise National Forest", country="US", lat=44.0, lon=-115.5
+    ),  # US -> EXCLUDED from the OSM set (PAD-US owns it)
+    ParkRecord(
+        reference="DE-0000", name="Inactive", country="DE", lat=None, lon=None
+    ),  # no point, no polygon -> no rows
 ]
 
 
@@ -97,8 +104,9 @@ def test_compute_no_point_no_polygon_yields_nothing() -> None:
 
 def test_compute_never_raises_on_bad_geometry() -> None:
     bad = OsmFeature("Broken", {}, "r9", shape({"type": "Polygon", "coordinates": [[]]}))
-    parks = [ParkRecord(reference="DE-0001", name="Bayerischer Wald", country="DE",
-                        lat=47.5, lon=12.0)]
+    parks = [
+        ParkRecord(reference="DE-0001", name="Bayerischer Wald", country="DE", lat=47.5, lon=12.0)
+    ]
     rows = osm.compute_osm_park_grids(parks, [bad] + _fake_features())
     assert any(r.reference == "DE-0001" for r in rows)
 

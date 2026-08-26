@@ -67,12 +67,7 @@ def test_collect_streams_all_failed_returns_empty(tmp_path):
 
 # --- AllStarLink enrichment wiring on --all (hdb-8803) -------------------------
 
-FIXTURE = (
-    __import__("pathlib").Path(__file__).parent
-    / "fixtures"
-    / "allstar"
-    / "allmondb.txt"
-)
+FIXTURE = __import__("pathlib").Path(__file__).parent / "fixtures" / "allstar" / "allmondb.txt"
 
 
 def _stub_all_sources(monkeypatch):
@@ -132,9 +127,7 @@ def test_all_build_enriches_allstar_nodes(tmp_path, monkeypatch):
     monkeypatch.setattr(enrich_allstar, "download_allstar", lambda *a, **k: FIXTURE)
 
     out = tmp_path / "out.parquet"
-    result = CliRunner().invoke(
-        app, ["--all", "--out", str(out), "--work-dir", str(tmp_path)]
-    )
+    result = CliRunner().invoke(app, ["--all", "--out", str(out), "--work-dir", str(tmp_path)])
     assert result.exit_code == 0, result.output
     frame = pl.read_parquet(out)
     nodes = frame.filter(pl.col("callsign") == "WB6NIL")["allstar_nodes"].to_list()[0]
@@ -151,9 +144,7 @@ def test_all_build_treats_suffixless_out_as_directory(tmp_path, monkeypatch):
     monkeypatch.setattr(enrich_allstar, "download_allstar", lambda *a, **k: FIXTURE)
 
     out = tmp_path / "dist"  # does NOT exist yet, no file suffix
-    result = CliRunner().invoke(
-        app, ["--all", "--out", str(out), "--work-dir", str(tmp_path)]
-    )
+    result = CliRunner().invoke(app, ["--all", "--out", str(out), "--work-dir", str(tmp_path)])
     assert result.exit_code == 0, result.output
     assert out.is_dir(), "out should have been created as a directory"
     dated = sorted(p.name for p in out.glob("hamcall-db-*"))
@@ -175,9 +166,7 @@ def test_all_build_resilient_when_allstar_download_fails(tmp_path, monkeypatch):
     monkeypatch.setattr(enrich_allstar, "download_allstar", _boom)
 
     out = tmp_path / "out.parquet"
-    result = CliRunner().invoke(
-        app, ["--all", "--out", str(out), "--work-dir", str(tmp_path)]
-    )
+    result = CliRunner().invoke(app, ["--all", "--out", str(out), "--work-dir", str(tmp_path)])
     # Build still succeeds; allstar_nodes left empty.
     assert result.exit_code == 0, result.output
     frame = pl.read_parquet(out)
@@ -199,10 +188,10 @@ def _stub_parks_and_boundaries(tmp_path, monkeypatch):
     monkeypatch.setattr(enrich_allstar, "download_allstar", lambda *a, **k: FIXTURE)
 
     parks = [
-        ParkRecord(reference="US-4567", name="Boise National Forest", country="US",
-                   lat=44.0, lon=-115.5),
-        ParkRecord(reference="DE-0001", name="Bayerischer Wald", country="DE",
-                   lat=47.5, lon=12.0),
+        ParkRecord(
+            reference="US-4567", name="Boise National Forest", country="US", lat=44.0, lon=-115.5
+        ),
+        ParkRecord(reference="DE-0001", name="Bayerischer Wald", country="DE", lat=47.5, lon=12.0),
     ]
 
     class _StubPota:
@@ -222,8 +211,7 @@ def _stub_parks_and_boundaries(tmp_path, monkeypatch):
     )
     monkeypatch.setattr(
         "hamcall_db.build._load_osm_features",
-        lambda wd: [OsmFeature("Bayerischer Wald", {"boundary": "protected_area"}, "r1",
-                               baywald)],
+        lambda wd: [OsmFeature("Bayerischer Wald", {"boundary": "protected_area"}, "r1", baywald)],
     )
     return parks
 
@@ -232,9 +220,7 @@ def test_all_build_writes_segregated_osm_and_ccbync_grid_artifacts(tmp_path, mon
     _stub_parks_and_boundaries(tmp_path, monkeypatch)
 
     out = tmp_path / "dist"
-    result = CliRunner().invoke(
-        app, ["--all", "--out", str(out), "--work-dir", str(tmp_path)]
-    )
+    result = CliRunner().invoke(app, ["--all", "--out", str(out), "--work-dir", str(tmp_path)])
     assert result.exit_code == 0, result.output
 
     # The OSM (ODbL) grid set ships in its OWN parquet AND its OWN .db, separate from the
@@ -242,8 +228,7 @@ def test_all_build_writes_segregated_osm_and_ccbync_grid_artifacts(tmp_path, mon
     osm_parquets = list(out.glob("hamcall-db-pota-park-grids-osm-*.parquet"))
     osm_dbs = list(out.glob("hamcall-db-pota-park-grids-osm-*.db"))
     cc_grid_parquets = [
-        p for p in out.glob("hamcall-db-pota-park-grids-*.parquet")
-        if "osm" not in p.name
+        p for p in out.glob("hamcall-db-pota-park-grids-*.parquet") if "osm" not in p.name
     ]
     assert len(osm_parquets) == 1
     assert len(osm_dbs) == 1
@@ -269,16 +254,12 @@ def test_all_build_writes_segregated_osm_and_ccbync_grid_artifacts(tmp_path, mon
 
     # The CC-BY-NC SQLite .db (callsign + parks + pota_park_grids) must NOT carry the OSM
     # table; the OSM .db must NOT carry any CC-BY-NC table.
-    cc_db = next(
-        p for p in out.glob("hamcall-db-*.db")
-        if "pota-park-grids-osm" not in p.name
-    )
+    cc_db = next(p for p in out.glob("hamcall-db-*.db") if "pota-park-grids-osm" not in p.name)
     con = sqlite3.connect(cc_db)
     try:
         cc_tables = {
-            r[0] for r in con.execute(
-                "SELECT name FROM sqlite_master WHERE type='table'"
-            ).fetchall()
+            r[0]
+            for r in con.execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall()
         }
     finally:
         con.close()
@@ -288,9 +269,8 @@ def test_all_build_writes_segregated_osm_and_ccbync_grid_artifacts(tmp_path, mon
     con = sqlite3.connect(osm_dbs[0])
     try:
         osm_tables = {
-            r[0] for r in con.execute(
-                "SELECT name FROM sqlite_master WHERE type='table'"
-            ).fetchall()
+            r[0]
+            for r in con.execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall()
         }
     finally:
         con.close()
@@ -308,9 +288,7 @@ def test_all_build_resilient_when_osm_reader_missing(tmp_path, monkeypatch):
     monkeypatch.setattr("hamcall_db.build._load_osm_features", _boom)
 
     out = tmp_path / "dist"
-    result = CliRunner().invoke(
-        app, ["--all", "--out", str(out), "--work-dir", str(tmp_path)]
-    )
+    result = CliRunner().invoke(app, ["--all", "--out", str(out), "--work-dir", str(tmp_path)])
     assert result.exit_code == 0, result.output
     osm_parquets = list(out.glob("hamcall-db-pota-park-grids-osm-*.parquet"))
     assert len(osm_parquets) == 1
@@ -449,9 +427,7 @@ def test_all_build_writes_sota_summits_artifacts(tmp_path, monkeypatch):
     try:
         tables = {
             r[0]
-            for r in con.execute(
-                "SELECT name FROM sqlite_master WHERE type='table'"
-            ).fetchall()
+            for r in con.execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall()
         }
         assert "sota_summits" in tables
         assert "current" in tables  # callsign table still present
@@ -511,9 +487,7 @@ def test_all_build_omits_restricted_sources_by_default(tmp_path, monkeypatch):
     monkeypatch.setattr("hamcall_db.build.SotaSource", _BoomSota)
 
     out = tmp_path / "dist"
-    result = CliRunner().invoke(
-        app, ["--all", "--out", str(out), "--work-dir", str(tmp_path)]
-    )
+    result = CliRunner().invoke(app, ["--all", "--out", str(out), "--work-dir", str(tmp_path)])
     assert result.exit_code == 0, result.output
     assert not list(out.glob("hamcall-db-sota-summits-*.parquet"))
     current = next(

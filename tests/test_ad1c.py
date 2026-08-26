@@ -16,7 +16,7 @@ from hamcall_db.sources import ad1c
 # Minimal cty.dat-shaped payload; load_cty (tested elsewhere) parses the real format. The
 # downloader treats the body as opaque bytes, so a tiny stand-in is enough here.
 _DAT_BYTES = b"United States:    05:  08:  NA:   37.53:  -91.66:    5.0:  K:\n    K;\n"
-_CSV_BYTES = b'United States,5,08,NA,37.53,-91.66,5.0,K,K;\n'
+_CSV_BYTES = b"United States,5,08,NA,37.53,-91.66,5.0,K,K;\n"
 
 
 def _const_fetcher(payload: bytes):
@@ -42,9 +42,7 @@ def test_downloads_and_caches_cty_dat(tmp_path: Path) -> None:
 
 
 def test_caches_under_dated_ad1c_directory(tmp_path: Path) -> None:
-    out = ad1c.download_cty(
-        tmp_path, on=date(2026, 6, 16), fetcher=_const_fetcher(_DAT_BYTES)
-    )
+    out = ad1c.download_cty(tmp_path, on=date(2026, 6, 16), fetcher=_const_fetcher(_DAT_BYTES))
     expected = tmp_path / "data" / "raw" / "ad1c" / "2026-06-16" / "cty.dat"
     assert out == expected
     assert out.exists()
@@ -57,7 +55,7 @@ def test_conditional_get_sends_if_modified_since_when_cached(tmp_path: Path) -> 
     fetch = _const_fetcher(_DAT_BYTES)
     ad1c.download_cty(tmp_path, on=date(2026, 6, 16), fetcher=fetch)
 
-    (url, since), = fetch.calls
+    ((url, since),) = fetch.calls
     assert url == ad1c.CTY_DAT_URL
     assert since is not None  # mtime of the cached file was passed through
 
@@ -89,9 +87,7 @@ def test_with_csv_also_caches_cty_csv_but_returns_dat(tmp_path: Path) -> None:
         seen.append(url)
         return _CSV_BYTES if url == ad1c.CTY_CSV_URL else _DAT_BYTES
 
-    out = ad1c.download_cty(
-        tmp_path, on=date(2026, 6, 16), with_csv=True, fetcher=fetch
-    )
+    out = ad1c.download_cty(tmp_path, on=date(2026, 6, 16), with_csv=True, fetcher=fetch)
 
     assert out.name == "cty.dat"
     csv_path = out.parent / "cty.csv"
@@ -105,9 +101,7 @@ def test_returned_path_feeds_enrich_load_cty(tmp_path: Path) -> None:
     fixture = Path(__file__).parent / "fixtures" / "cty" / "cty.dat"
     payload = fixture.read_bytes()
 
-    out = ad1c.download_cty(
-        tmp_path, on=date(2026, 6, 16), fetcher=_const_fetcher(payload)
-    )
+    out = ad1c.download_cty(tmp_path, on=date(2026, 6, 16), fetcher=_const_fetcher(payload))
 
     from hamcall_db.enrich import load_cty
 

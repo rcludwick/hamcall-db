@@ -28,20 +28,60 @@ _NAME_FIELDS: frozenset[str] = frozenset({"first_name", "last_name", "city", "co
 
 # Surname particles rendered lowercase when INTERIOR (capitalized when leading). Conservative
 # European set; cross-cultural overlaps (e.g. Vietnamese "Le"/"Van") are accepted imperfections.
-_PARTICLES: frozenset[str] = frozenset({
-    "de", "del", "della", "van", "von", "der", "den", "da", "das", "dos", "di", "du",
-    "la", "le", "of", "the",
-})
+_PARTICLES: frozenset[str] = frozenset(
+    {
+        "de",
+        "del",
+        "della",
+        "van",
+        "von",
+        "der",
+        "den",
+        "da",
+        "das",
+        "dos",
+        "di",
+        "du",
+        "la",
+        "le",
+        "of",
+        "the",
+    }
+)
 # Known acronyms (club/business holders often live in last_name) kept fully uppercase.
-_ACRONYMS: frozenset[str] = frozenset({
-    "ARRL", "ARC", "ARES", "RACES", "VFW", "EOC", "USA", "VHF", "UHF", "DX",
-})
+_ACRONYMS: frozenset[str] = frozenset(
+    {
+        "ARRL",
+        "ARC",
+        "ARES",
+        "RACES",
+        "VFW",
+        "EOC",
+        "USA",
+        "VHF",
+        "UHF",
+        "DX",
+    }
+)
 # "Mac" is only prefixed-capitalized for known names; every other Mac* stays plain-Title
 # (MACEY -> Macey, MACDONALD -> MacDonald).
-_MAC_EXCEPTIONS: frozenset[str] = frozenset({
-    "MACDONALD", "MACARTHUR", "MACKENZIE", "MACLEOD", "MACMILLAN", "MACGREGOR",
-    "MACINTOSH", "MACINTYRE", "MACNEIL", "MACPHERSON", "MACKAY", "MACLEAN", "MACLACHLAN",
-})
+_MAC_EXCEPTIONS: frozenset[str] = frozenset(
+    {
+        "MACDONALD",
+        "MACARTHUR",
+        "MACKENZIE",
+        "MACLEOD",
+        "MACMILLAN",
+        "MACGREGOR",
+        "MACINTOSH",
+        "MACINTYRE",
+        "MACNEIL",
+        "MACPHERSON",
+        "MACKAY",
+        "MACLEAN",
+        "MACLACHLAN",
+    }
+)
 # Generational roman-numeral suffixes kept upper ("JOHN SMITH III" -> "John Smith III").
 _ROMAN_SUFFIXES: frozenset[str] = frozenset({"II", "III", "IV", "V", "VI", "VII", "VIII", "IX"})
 # A single letter, optionally with a trailing period: a personal initial -> kept upper.
@@ -94,6 +134,7 @@ def _smart_titlecase(value: str) -> str:
         else:
             out.append(_cap_word(word))
     return " ".join(out)
+
 
 # A geocoder maps a (normalized) record to a 4-char Maidenhead grid, or None.
 Geocoder = Callable[[Record], "str | None"]

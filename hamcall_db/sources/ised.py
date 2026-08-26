@@ -150,9 +150,7 @@ def parse_dir(path: Path, *, synced_at: str | None = None) -> Iterator[Record]:
     """
     amateur = path / AMATEUR_FILENAME
     if not amateur.exists():
-        matches = [
-            p for p in path.iterdir() if p.name.lower() == AMATEUR_FILENAME.lower()
-        ]
+        matches = [p for p in path.iterdir() if p.name.lower() == AMATEUR_FILENAME.lower()]
         if not matches:
             raise FileNotFoundError(f"no {AMATEUR_FILENAME} under {path}")
         amateur = matches[0]

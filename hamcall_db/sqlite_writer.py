@@ -54,9 +54,7 @@ _BOOL_COLUMNS: frozenset[str] = frozenset({"uses_lotw"})
 # ``allstar_nodes`` is a list[int] (one callsign -> MANY nodes). SQLite has no list type,
 # so it is EXCLUDED from the scalar ``current`` table and instead normalized into a child
 # table keyed by the stable id (see _ALLSTAR_DDL below). hdb-8803.
-_SCALAR_COLUMNS: tuple[str, ...] = tuple(
-    c for c in SCHEMA_COLUMNS if c != "allstar_nodes"
-)
+_SCALAR_COLUMNS: tuple[str, ...] = tuple(c for c in SCHEMA_COLUMNS if c != "allstar_nodes")
 
 
 def _col_def(name: str) -> str:
@@ -70,9 +68,7 @@ _CURRENT_DDL = (
     "CREATE TABLE current (\n"
     "  id INTEGER PRIMARY KEY,\n"
     "  callsign TEXT UNIQUE NOT NULL,\n"
-    + ",\n".join(
-        f"  {_col_def(c)}" for c in _SCALAR_COLUMNS if c != "callsign"
-    )
+    + ",\n".join(f"  {_col_def(c)}" for c in _SCALAR_COLUMNS if c != "callsign")
     + "\n)"
 )
 
@@ -80,9 +76,7 @@ _CURRENT_DDL = (
 # scalar ``current`` table, keyed by the stable id. Only CURRENT holders carry node
 # associations (closed/retired history rows do not). Indexed on id for the join back to
 # current. hdb-8803.
-_ALLSTAR_DDL = (
-    "CREATE TABLE allstar_nodes (\n  id INTEGER,\n  node INTEGER\n)"
-)
+_ALLSTAR_DDL = "CREATE TABLE allstar_nodes (\n  id INTEGER,\n  node INTEGER\n)"
 _ALLSTAR_INDEX_DDL = "CREATE INDEX idx_allstar_id ON allstar_nodes (id)"
 
 # history: the HistoryRow payload columns PLUS the stable id carried from current, so a
@@ -90,9 +84,7 @@ _ALLSTAR_INDEX_DDL = "CREATE INDEX idx_allstar_id ON allstar_nodes (id)"
 # a callsign leaves current. Non-unique callsign index added separately.
 _HISTORY_DDL = (
     "CREATE TABLE history (\n"
-    "  id INTEGER,\n"
-    + ",\n".join(f"  {_col_def(c)}" for c in HISTORY_SCHEMA_COLUMNS)
-    + "\n)"
+    "  id INTEGER,\n" + ",\n".join(f"  {_col_def(c)}" for c in HISTORY_SCHEMA_COLUMNS) + "\n)"
 )
 
 _HISTORY_INDEX_DDL = "CREATE INDEX idx_history_callsign ON history (callsign)"
@@ -160,9 +152,7 @@ def read_prior(
     try:
         tables = {
             r[0]
-            for r in con.execute(
-                "SELECT name FROM sqlite_master WHERE type='table'"
-            ).fetchall()
+            for r in con.execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall()
         }
 
         prior_current: dict[str, tuple[int, Record]] = {}
@@ -214,17 +204,13 @@ def write_sqlite(
     else:
         prior_current, prior_history = {}, []
 
-    assigned = assign_ids(
-        records, prior_current=prior_current, prior_history=prior_history
-    )
+    assigned = assign_ids(records, prior_current=prior_current, prior_history=prior_history)
     id_by_callsign = {rec.callsign: rid for rid, rec in assigned}
     # Ids of prior history intervals, keyed by their stable interval key (callsign,
     # valid_from). Lets a CLOSED interval whose callsign has left ``current`` (or been
     # reassigned) keep the id it was written with last build.
     prior_history_ids = {
-        (hist.callsign, hist.valid_from): hid
-        for hid, hist in prior_history
-        if hid is not None
+        (hist.callsign, hist.valid_from): hid for hid, hist in prior_history if hid is not None
     }
 
     out = Path(out_path)
@@ -242,28 +228,24 @@ def write_sqlite(
 
         current_placeholders = ", ".join("?" for _ in _CURRENT_COLUMNS)
         con.executemany(
-            f"INSERT INTO current ({', '.join(_CURRENT_COLUMNS)}) "
-            f"VALUES ({current_placeholders})",
+            f"INSERT INTO current ({', '.join(_CURRENT_COLUMNS)}) VALUES ({current_placeholders})",
             [(rid, *_current_payload(rec)) for rid, rec in assigned],
         )
 
         # Child table: one row per (id, node). Only current holders carry nodes.
         con.executemany(
             "INSERT INTO allstar_nodes (id, node) VALUES (?, ?)",
-            [
-                (rid, node)
-                for rid, rec in assigned
-                for node in rec.allstar_nodes
-            ],
+            [(rid, node) for rid, rec in assigned for node in rec.allstar_nodes],
         )
 
         history_placeholders = ", ".join("?" for _ in _HISTORY_COLUMNS)
         con.executemany(
-            f"INSERT INTO history ({', '.join(_HISTORY_COLUMNS)}) "
-            f"VALUES ({history_placeholders})",
+            f"INSERT INTO history ({', '.join(_HISTORY_COLUMNS)}) VALUES ({history_placeholders})",
             [
-                (_resolve_history_id(row, id_by_callsign, prior_history_ids),
-                 *_history_payload(row))
+                (
+                    _resolve_history_id(row, id_by_callsign, prior_history_ids),
+                    *_history_payload(row),
+                )
                 for row in history
             ],
         )
@@ -385,8 +367,7 @@ def write_pota_parks_sqlite(parks: Iterable[ParkRecord], out_path: Path) -> int:
         con.execute("DELETE FROM pota_parks")  # refresh: idempotent rebuild
         placeholders = ", ".join("?" for _ in PARK_SCHEMA_COLUMNS)
         con.executemany(
-            f"INSERT INTO pota_parks ({', '.join(PARK_SCHEMA_COLUMNS)}) "
-            f"VALUES ({placeholders})",
+            f"INSERT INTO pota_parks ({', '.join(PARK_SCHEMA_COLUMNS)}) VALUES ({placeholders})",
             [_park_payload(p) for p in parks],
         )
         con.commit()
@@ -403,9 +384,7 @@ def write_pota_parks_sqlite(parks: Iterable[ParkRecord], out_path: Path) -> int:
 # ``bonus_points`` are INTEGER; ``lat``/``lon`` REAL; ``active`` 0/1 INTEGER; the rest TEXT.
 # Grid is stored VERBATIM at 6-char (no person-grid 4-char truncation — summits are public
 # landmarks). Never touches the callsign current/history schema (the redistribution contract).
-_SUMMIT_INT_COLUMNS: frozenset[str] = frozenset(
-    {"alt_m", "alt_ft", "points", "bonus_points"}
-)
+_SUMMIT_INT_COLUMNS: frozenset[str] = frozenset({"alt_m", "alt_ft", "points", "bonus_points"})
 _SUMMIT_REAL_COLUMNS: frozenset[str] = frozenset({"lat", "lon"})
 
 
@@ -427,8 +406,7 @@ _SOTA_SUMMITS_DDL = (
     + "\n)"
 )
 _SOTA_SUMMITS_ASSOC_INDEX_DDL = (
-    "CREATE INDEX IF NOT EXISTS idx_sota_summits_association "
-    "ON sota_summits (association)"
+    "CREATE INDEX IF NOT EXISTS idx_sota_summits_association ON sota_summits (association)"
 )
 
 
@@ -486,8 +464,7 @@ _POTA_PARK_GRIDS_DDL = (
     + "\n)"
 )
 _POTA_PARK_GRIDS_INDEX_DDL = (
-    "CREATE INDEX IF NOT EXISTS idx_pota_park_grids_reference "
-    "ON pota_park_grids (reference)"
+    "CREATE INDEX IF NOT EXISTS idx_pota_park_grids_reference ON pota_park_grids (reference)"
 )
 
 
@@ -496,9 +473,7 @@ def _park_grid_payload(grid: ParkGridRecord) -> tuple:
     return tuple(getattr(grid, name) for name in PARK_GRID_SCHEMA_COLUMNS)
 
 
-def write_pota_park_grids_sqlite(
-    grids: Iterable[ParkGridRecord], out_path: Path
-) -> int:
+def write_pota_park_grids_sqlite(grids: Iterable[ParkGridRecord], out_path: Path) -> int:
     """Write/refresh the ``pota_park_grids`` table in a SQLite file. Returns the row count.
 
     ADDITIVE: creates the table if missing and replaces only the grid rows; any existing
@@ -547,9 +522,7 @@ _POTA_PARK_GRIDS_OSM_INDEX_DDL = (
 )
 
 
-def write_pota_park_grids_osm_sqlite(
-    grids: Iterable[ParkGridRecord], out_path: Path
-) -> int:
+def write_pota_park_grids_osm_sqlite(grids: Iterable[ParkGridRecord], out_path: Path) -> int:
     """Write/refresh the ``pota_park_grids_osm`` table in a SEPARATE ODbL SQLite file.
 
     Returns the row count. This writer targets the OSM artifact's OWN ``.db`` and creates
@@ -592,9 +565,7 @@ _REFLECTORS_DDL = (
     )
     + ",\n  PRIMARY KEY (network, id)\n)"
 )
-_REFLECTORS_INDEX_DDL = (
-    "CREATE INDEX IF NOT EXISTS idx_reflectors_network ON reflectors (network)"
-)
+_REFLECTORS_INDEX_DDL = "CREATE INDEX IF NOT EXISTS idx_reflectors_network ON reflectors (network)"
 
 
 def _reflector_payload(reflector: ReflectorRecord) -> tuple:

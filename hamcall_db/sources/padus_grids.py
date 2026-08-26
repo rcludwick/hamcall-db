@@ -213,8 +213,7 @@ def match_park(
         same_name = [
             f
             for f in features
-            if _normalize_name(f.unit_nm) in match_names
-            or _normalize_name(f.loc_nm) in match_names
+            if _normalize_name(f.unit_nm) in match_names or _normalize_name(f.loc_nm) in match_names
         ]
         geom = unary_union([f.geometry for f in same_name])
         return geom, "high"
@@ -261,8 +260,7 @@ def park_grids(
         grids = grid_cells_for_geometry(geom)
         if grids:
             return [
-                ParkGridRecord(reference=reference, grid=g, source="padus",
-                               confidence=confidence)
+                ParkGridRecord(reference=reference, grid=g, source="padus", confidence=confidence)
                 for g in sorted(grids)
             ]
 
@@ -271,8 +269,7 @@ def park_grids(
     if lat is not None and lon is not None:
         grid = latlon_to_grid(lat, lon)
         return [
-            ParkGridRecord(reference=reference, grid=grid, source="pota-point",
-                           confidence="low")
+            ParkGridRecord(reference=reference, grid=grid, source="pota-point", confidence="low")
         ]
 
     return []

@@ -20,8 +20,7 @@ from hamcall_db.writer import write_pota_park_grids_parquet
 GRIDS = [
     ParkGridRecord(reference="US-4567", grid="DN13", source="padus", confidence="high"),
     ParkGridRecord(reference="US-4567", grid="DN14", source="padus", confidence="high"),
-    ParkGridRecord(reference="US-0001", grid="FN54", source="pota-point",
-                   confidence="low"),
+    ParkGridRecord(reference="US-0001", grid="FN54", source="pota-point", confidence="low"),
 ]
 
 
@@ -58,14 +57,11 @@ def test_write_sqlite_creates_table(tmp_path: Path) -> None:
     try:
         tables = {
             r[0]
-            for r in con.execute(
-                "SELECT name FROM sqlite_master WHERE type='table'"
-            ).fetchall()
+            for r in con.execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall()
         }
         assert "pota_park_grids" in tables
         rows = con.execute(
-            "SELECT grid, source, confidence FROM pota_park_grids "
-            "WHERE reference = 'US-0001'"
+            "SELECT grid, source, confidence FROM pota_park_grids WHERE reference = 'US-0001'"
         ).fetchall()
         assert rows == [("FN54", "pota-point", "low")]
     finally:
@@ -77,10 +73,7 @@ def test_write_sqlite_has_reference_index(tmp_path: Path) -> None:
     write_pota_park_grids_sqlite(GRIDS, db)
     con = sqlite3.connect(db)
     try:
-        idx = {
-            r[1]
-            for r in con.execute("PRAGMA index_list(pota_park_grids)").fetchall()
-        }
+        idx = {r[1] for r in con.execute("PRAGMA index_list(pota_park_grids)").fetchall()}
         # An index on reference (the FK join back to pota_parks) exists.
         assert any("reference" in name for name in idx)
     finally:
@@ -114,9 +107,9 @@ def test_write_sqlite_preserves_other_tables(tmp_path: Path) -> None:
     try:
         # Both the callsign table AND the parks table are untouched (additive contract).
         assert con.execute("SELECT callsign FROM current").fetchone() == ("W1AW",)
-        assert con.execute(
-            "SELECT name FROM pota_parks WHERE reference='US-4567'"
-        ).fetchone() == ("Boise National Forest",)
+        assert con.execute("SELECT name FROM pota_parks WHERE reference='US-4567'").fetchone() == (
+            "Boise National Forest",
+        )
         assert con.execute("SELECT COUNT(*) FROM pota_park_grids").fetchone()[0] == 3
     finally:
         con.close()

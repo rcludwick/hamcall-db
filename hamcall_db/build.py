@@ -185,8 +185,7 @@ def build(
             records = list(enrich_allstar.enrich(records, lookup))
         except Exception as exc:  # download/parse failure is non-fatal
             typer.echo(
-                f"WARNING: AllStarLink enrichment skipped ({exc}); "
-                "allstar_nodes left empty",
+                f"WARNING: AllStarLink enrichment skipped ({exc}); allstar_nodes left empty",
                 err=True,
             )
 
@@ -227,9 +226,7 @@ def build(
         as_of = dt.date.today().isoformat()
         prior = read_history_parquet(history_in) if history_in is not None else []
         history = diff_history(prior, records, as_of=as_of)
-        hist_path = (
-            (out.parent if not out_dir else out) / _history_filename()
-        )
+        hist_path = (out.parent if not out_dir else out) / _history_filename()
         hist_count = write_history_parquet(history, hist_path)
         typer.echo(f"Wrote {hist_count} history intervals to {hist_path}")
 
@@ -258,8 +255,7 @@ def build(
             parks_count = write_pota_parks_parquet(parks, parks_path)
             write_pota_parks_sqlite(parks, db_path)
             typer.echo(
-                f"Wrote {parks_count} POTA parks to {parks_path} "
-                f"(+ pota_parks table in {db_path})"
+                f"Wrote {parks_count} POTA parks to {parks_path} (+ pota_parks table in {db_path})"
             )
 
             # POTA park -> Maidenhead grid SETS (hdb-f53c, PHASE 1: US/PAD-US only). A
@@ -317,8 +313,7 @@ def build(
             )
         except Exception as exc:  # download/parse/write failure is non-fatal
             typer.echo(
-                f"WARNING: POTA parks dataset skipped ({exc}); "
-                "parks artifacts not written",
+                f"WARNING: POTA parks dataset skipped ({exc}); parks artifacts not written",
                 err=True,
             )
 
@@ -345,8 +340,7 @@ def build(
                 )
             except Exception as exc:  # download/parse/write failure is non-fatal
                 typer.echo(
-                    f"WARNING: SOTA summits dataset skipped ({exc}); "
-                    "summits artifacts not written",
+                    f"WARNING: SOTA summits dataset skipped ({exc}); summits artifacts not written",
                     err=True,
                 )
 

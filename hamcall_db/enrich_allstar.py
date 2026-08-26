@@ -76,9 +76,7 @@ def _urllib_fetch(url: str, if_modified_since: float | None) -> bytes | None:
     """Default fetcher: conditional GET via urllib. None => 304 Not Modified."""
     request = urllib.request.Request(url, headers={"User-Agent": _USER_AGENT})
     if if_modified_since is not None:
-        request.add_header(
-            "If-Modified-Since", formatdate(if_modified_since, usegmt=True)
-        )
+        request.add_header("If-Modified-Since", formatdate(if_modified_since, usegmt=True))
     try:
         # Plain http (no https mirror upstream); timeout guards against a hung server.
         with urllib.request.urlopen(request, timeout=DOWNLOAD_TIMEOUT) as response:  # noqa: S310
@@ -112,9 +110,7 @@ def download_allstar(
     if data is not None:
         dest.write_bytes(data)
     elif not dest.exists():  # 304 but nothing cached — should never happen
-        raise RuntimeError(
-            f"{ALLSTAR_DB_URL} returned not-modified but no cached file at {dest}"
-        )
+        raise RuntimeError(f"{ALLSTAR_DB_URL} returned not-modified but no cached file at {dest}")
     return dest
 
 
@@ -155,9 +151,7 @@ def enrich_record(record: Record, lookup: dict[str, list[int]]) -> Record:
     return replace(record, allstar_nodes=list(nodes) if nodes else [])
 
 
-def enrich(
-    records: Iterable[Record], lookup: dict[str, list[int]]
-) -> Iterator[Record]:
+def enrich(records: Iterable[Record], lookup: dict[str, list[int]]) -> Iterator[Record]:
     """Apply `enrich_record` lazily across a stream of Records."""
     for record in records:
         yield enrich_record(record, lookup)

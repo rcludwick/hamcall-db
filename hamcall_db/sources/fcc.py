@@ -183,9 +183,7 @@ def parse_dir(
             frn=_field(row, _EN_FRN),
             entity_type=_field(row, _EN_ENTITY_TYPE),
             applicant_type=(
-                APPLICANT_TYPE.get(applicant_code, applicant_code)
-                if applicant_code
-                else None
+                APPLICANT_TYPE.get(applicant_code, applicant_code) if applicant_code else None
             ),
             previous_callsign=previous_callsigns.get(usi),
         )

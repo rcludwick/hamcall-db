@@ -164,9 +164,7 @@ def match_park(
     if named:
         match_names = {_normalize_name(f.name) for f in named}
         match_names.discard("")
-        same_name = [
-            f for f in features if _normalize_name(f.name) in match_names
-        ]
+        same_name = [f for f in features if _normalize_name(f.name) in match_names]
         geom = unary_union([f.geometry for f in same_name])
         return geom, "high"
 
@@ -200,8 +198,9 @@ def osm_park_grids(
         grids = grid_cells_for_geometry(geom)
         if grids:
             return [
-                ParkGridRecord(reference=reference, grid=g, source=SOURCE_OSM,
-                               confidence=confidence)
+                ParkGridRecord(
+                    reference=reference, grid=g, source=SOURCE_OSM, confidence=confidence
+                )
                 for g in sorted(grids)
             ]
 
@@ -210,8 +209,9 @@ def osm_park_grids(
     if lat is not None and lon is not None:
         grid = latlon_to_grid(lat, lon)
         return [
-            ParkGridRecord(reference=reference, grid=grid, source=SOURCE_OSM_POINT,
-                           confidence="low")
+            ParkGridRecord(
+                reference=reference, grid=grid, source=SOURCE_OSM_POINT, confidence="low"
+            )
         ]
 
     return []

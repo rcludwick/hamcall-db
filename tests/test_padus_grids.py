@@ -27,17 +27,13 @@ def test_eagle_island_small_park_one_grid() -> None:
     # 43.7) intersects exactly ONE 4-char grid. -116.3,43.7 -> DN13 (lon field D=3rd 20deg
     # band starting -180 -> [-120,-100); square (-116.3 - -120)//2 = 1; lat field N=14th
     # 10deg band from -90 -> [40,50); square 43.7-40 = 3 -> DN13).
-    park = Polygon(
-        [(-116.35, 43.65), (-116.25, 43.65), (-116.25, 43.75), (-116.35, 43.75)]
-    )
+    park = Polygon([(-116.35, 43.65), (-116.25, 43.65), (-116.25, 43.75), (-116.35, 43.75)])
     grids = pg.grid_cells_for_geometry(park)
     assert grids == {"DN13"}
 
 
 def test_grid_is_always_four_char() -> None:
-    park = Polygon(
-        [(-116.35, 43.65), (-116.25, 43.65), (-116.25, 43.75), (-116.35, 43.75)]
-    )
+    park = Polygon([(-116.35, 43.65), (-116.25, 43.65), (-116.25, 43.75), (-116.35, 43.75)])
     for grid in pg.grid_cells_for_geometry(park):
         assert len(grid) == 4  # never publish 6-char subsquare (mem-e3fd)
 
@@ -82,8 +78,9 @@ def test_hole_is_preserved_not_filled() -> None:
     park = _boise_with_bogus_basin_hole()
     # The geometry must carry exactly one interior ring (the inholding) — no hole-filling.
     assert len(park.interiors) == 1
-    assert park.area < Polygon([(-116.5, 43.5), (-115.0, 43.5),
-                                (-115.0, 44.5), (-116.5, 44.5)]).area
+    assert (
+        park.area < Polygon([(-116.5, 43.5), (-115.0, 43.5), (-115.0, 44.5), (-116.5, 44.5)]).area
+    )
 
 
 def test_point_inside_hole_is_outside_park() -> None:
@@ -292,10 +289,8 @@ def test_geojson_holed_polygon_roundtrips() -> None:
     geojson = {
         "type": "Polygon",
         "coordinates": [
-            [[-116.5, 43.5], [-115.0, 43.5], [-115.0, 44.5], [-116.5, 44.5],
-             [-116.5, 43.5]],
-            [[-116.2, 43.7], [-116.0, 43.7], [-116.0, 43.85], [-116.2, 43.85],
-             [-116.2, 43.7]],
+            [[-116.5, 43.5], [-115.0, 43.5], [-115.0, 44.5], [-116.5, 44.5], [-116.5, 43.5]],
+            [[-116.2, 43.7], [-116.0, 43.7], [-116.0, 43.85], [-116.2, 43.85], [-116.2, 43.7]],
         ],
     }
     geom = shape(geojson)

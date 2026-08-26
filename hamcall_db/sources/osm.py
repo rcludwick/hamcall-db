@@ -182,8 +182,7 @@ class OsmSource:
                 dest.write_bytes(data)
             elif not dest.exists():  # 304 but nothing cached — should never happen
                 raise RuntimeError(
-                    f"{self._region_url(region)} returned not-modified but no cached file "
-                    f"at {dest}"
+                    f"{self._region_url(region)} returned not-modified but no cached file at {dest}"
                 )
             paths.append(dest)
 

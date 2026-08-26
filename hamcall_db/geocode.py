@@ -73,9 +73,7 @@ def _city_table() -> dict[tuple[str, str, str], tuple[float, float]]:
 
     STATE may be empty for countries without a province field.
     """
-    raw = json.loads(
-        resources.files("hamcall_db.data").joinpath("city_centroids.json").read_text()
-    )
+    raw = json.loads(resources.files("hamcall_db.data").joinpath("city_centroids.json").read_text())
     out: dict[tuple[str, str, str], tuple[float, float]] = {}
     for entry in raw:
         key = (_norm(entry["country"]), _norm(entry.get("state")), _norm(entry["city"]))
@@ -98,9 +96,7 @@ class LookupGeocoder:
                 return latlon_to_grid(*coords)
 
         if record.city:
-            coords = _city_table().get(
-                (country, _norm(record.state), _norm(record.city))
-            )
+            coords = _city_table().get((country, _norm(record.state), _norm(record.city)))
             if coords is not None:
                 return latlon_to_grid(*coords)
 

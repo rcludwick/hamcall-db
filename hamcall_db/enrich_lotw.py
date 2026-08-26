@@ -89,9 +89,7 @@ def _urllib_fetch(url: str, if_modified_since: float | None) -> bytes | None:
     """Default fetcher: conditional GET via urllib. None => 304 Not Modified."""
     request = urllib.request.Request(url, headers={"User-Agent": _USER_AGENT})
     if if_modified_since is not None:
-        request.add_header(
-            "If-Modified-Since", formatdate(if_modified_since, usegmt=True)
-        )
+        request.add_header("If-Modified-Since", formatdate(if_modified_since, usegmt=True))
     try:
         with urllib.request.urlopen(request, timeout=DOWNLOAD_TIMEOUT) as response:
             return response.read()

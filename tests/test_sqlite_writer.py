@@ -43,16 +43,12 @@ def test_tables_and_indexes_exist(tmp_path) -> None:
     try:
         tables = {
             r[0]
-            for r in con.execute(
-                "SELECT name FROM sqlite_master WHERE type='table'"
-            ).fetchall()
+            for r in con.execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall()
         }
         assert {"current", "history"} <= tables
         indexes = {
             r[0]
-            for r in con.execute(
-                "SELECT name FROM sqlite_master WHERE type='index'"
-            ).fetchall()
+            for r in con.execute("SELECT name FROM sqlite_master WHERE type='index'").fetchall()
         }
         # Non-unique callsign index on history must exist by name.
         assert any("history" in name and "callsign" in name for name in indexes)
@@ -86,9 +82,7 @@ def test_current_callsign_is_unique(tmp_path) -> None:
     try:
         # A second row with the same callsign must be rejected by UNIQUE.
         with pytest.raises(sqlite3.IntegrityError):
-            con.execute(
-                "INSERT INTO current (id, callsign) VALUES (?, ?)", (999, "W1AW")
-            )
+            con.execute("INSERT INTO current (id, callsign) VALUES (?, ?)", (999, "W1AW"))
     finally:
         con.close()
 
@@ -103,12 +97,8 @@ def test_history_carries_id_column(tmp_path) -> None:
         assert "id" in cols
         assert {"callsign", "valid_from", "valid_to"} <= cols
         # the open history row gets the same id as the current row for that callsign
-        cur_id = con.execute(
-            "SELECT id FROM current WHERE callsign='W1AW'"
-        ).fetchone()[0]
-        hist_id = con.execute(
-            "SELECT id FROM history WHERE callsign='W1AW'"
-        ).fetchone()[0]
+        cur_id = con.execute("SELECT id FROM current WHERE callsign='W1AW'").fetchone()[0]
+        hist_id = con.execute("SELECT id FROM history WHERE callsign='W1AW'").fetchone()[0]
         assert hist_id == cur_id
     finally:
         con.close()
@@ -168,9 +158,7 @@ def test_new_callsign_gets_fresh_id_above_high_water() -> None:
     ]
     assigned = dict(
         (rec.callsign, i)
-        for i, rec in assign_ids(
-            recs, prior_current=prior_current, prior_history=prior_history
-        )
+        for i, rec in assign_ids(recs, prior_current=prior_current, prior_history=prior_history)
     )
     assert assigned["W1AW"] == 5  # unchanged holder keeps id
     assert assigned["K9NEW"] == 6  # fresh id above high-water 5
@@ -186,9 +174,7 @@ def test_unchanged_holder_keeps_id_across_two_builds(tmp_path) -> None:
 
     # Second build, same holder, reading the prior db.
     db2 = tmp_path / "out2.db"
-    write_sqlite(
-        [rec], [_open("W1AW", DAY1, last_name="Maxim")], db2, prior_db=db
-    )
+    write_sqlite([rec], [_open("W1AW", DAY1, last_name="Maxim")], db2, prior_db=db)
     con = sqlite3.connect(db2)
     second_id = con.execute("SELECT id FROM current WHERE callsign='W1AW'").fetchone()[0]
     con.close()
@@ -248,10 +234,7 @@ def test_high_water_uses_history_after_callsign_leaves_current(tmp_path) -> None
         db,
     )
     con = sqlite3.connect(db)
-    ids = {
-        r[0]: r[1]
-        for r in con.execute("SELECT callsign, id FROM current").fetchall()
-    }
+    ids = {r[0]: r[1] for r in con.execute("SELECT callsign, id FROM current").fetchall()}
     con.close()
     high = max(ids.values())  # whichever got id 2
 
@@ -370,9 +353,7 @@ def test_reassigned_callsign_old_closed_interval_keeps_old_id(tmp_path) -> None:
     # new open interval gets the NEW id.
     db2 = tmp_path / "b2.db"
     history2 = [
-        HistoryRow(
-            callsign="W1AW", valid_from=DAY1, valid_to=DAY2, last_name="Maxim"
-        ),
+        HistoryRow(callsign="W1AW", valid_from=DAY1, valid_to=DAY2, last_name="Maxim"),
         _open("W1AW", DAY2, last_name="Newholder"),
     ]
     write_sqlite(
@@ -405,16 +386,12 @@ def test_unknown_closed_interval_id_falls_back_to_null(tmp_path) -> None:
         [Record(callsign="W1AW", last_name="Maxim")],
         [
             _open("W1AW", DAY1, last_name="Maxim"),
-            HistoryRow(
-                callsign="X9ORPHAN", valid_from=DAY1, valid_to=DAY2, last_name="Ghost"
-            ),
+            HistoryRow(callsign="X9ORPHAN", valid_from=DAY1, valid_to=DAY2, last_name="Ghost"),
         ],
         db,
     )
     con = sqlite3.connect(db)
-    orphan_id = con.execute(
-        "SELECT id FROM history WHERE callsign='X9ORPHAN'"
-    ).fetchone()[0]
+    orphan_id = con.execute("SELECT id FROM history WHERE callsign='X9ORPHAN'").fetchone()[0]
     con.close()
     assert orphan_id is None
 
@@ -471,18 +448,14 @@ def test_allstar_child_table_and_index_exist(tmp_path) -> None:
     try:
         tables = {
             r[0]
-            for r in con.execute(
-                "SELECT name FROM sqlite_master WHERE type='table'"
-            ).fetchall()
+            for r in con.execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall()
         }
         assert "allstar_nodes" in tables
         cols = {c[1] for c in con.execute("PRAGMA table_info(allstar_nodes)").fetchall()}
         assert cols == {"id", "node"}
         indexes = {
             r[0]
-            for r in con.execute(
-                "SELECT name FROM sqlite_master WHERE type='index'"
-            ).fetchall()
+            for r in con.execute("SELECT name FROM sqlite_master WHERE type='index'").fetchall()
         }
         assert "idx_allstar_id" in indexes
     finally:
@@ -501,9 +474,7 @@ def test_allstar_child_rows_keyed_by_stable_id(tmp_path) -> None:
     )
     con = sqlite3.connect(db)
     try:
-        wb_id = con.execute(
-            "SELECT id FROM current WHERE callsign='WB6NIL'"
-        ).fetchone()[0]
+        wb_id = con.execute("SELECT id FROM current WHERE callsign='WB6NIL'").fetchone()[0]
         nodes = [
             r[0]
             for r in con.execute(

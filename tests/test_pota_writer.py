@@ -98,14 +98,11 @@ def test_write_sqlite_creates_pota_parks_table(tmp_path: Path) -> None:
     try:
         tables = {
             r[0]
-            for r in con.execute(
-                "SELECT name FROM sqlite_master WHERE type='table'"
-            ).fetchall()
+            for r in con.execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall()
         }
         assert "pota_parks" in tables
         row = con.execute(
-            "SELECT reference, name, grid, lat, active FROM pota_parks "
-            "WHERE reference = 'US-0001'"
+            "SELECT reference, name, grid, lat, active FROM pota_parks WHERE reference = 'US-0001'"
         ).fetchone()
         assert row == ("US-0001", "Acadia National Park", "FN54vh", 44.31, 1)
     finally:

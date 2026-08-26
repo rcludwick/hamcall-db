@@ -149,9 +149,7 @@ class PadusSource:
         if data is not None:
             dest.write_bytes(data)
         elif not dest.exists():  # 304 but nothing cached — should never happen
-            raise RuntimeError(
-                f"{self.url} returned not-modified but no cached file at {dest}"
-            )
+            raise RuntimeError(f"{self.url} returned not-modified but no cached file at {dest}")
 
         self.synced_at = day
         return dest

@@ -48,16 +48,13 @@ def test_osm_sqlite_uses_dedicated_table_name(tmp_path: Path) -> None:
     try:
         tables = {
             r[0]
-            for r in con.execute(
-                "SELECT name FROM sqlite_master WHERE type='table'"
-            ).fetchall()
+            for r in con.execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall()
         }
         # The OSM table is dedicated and segregated; the CC-BY-NC table name is NOT present.
         assert "pota_park_grids_osm" in tables
         assert "pota_park_grids" not in tables
         rows = con.execute(
-            "SELECT reference, grid, source, confidence FROM pota_park_grids_osm "
-            "ORDER BY grid"
+            "SELECT reference, grid, source, confidence FROM pota_park_grids_osm ORDER BY grid"
         ).fetchall()
         assert rows[0] == ("DE-0001", "JN57", "osm", "high")
         assert ("DE-9999", "JO50", "osm-point", "low") in rows
@@ -73,9 +70,7 @@ def test_osm_sqlite_never_touches_cc_by_nc_tables(tmp_path: Path) -> None:
     try:
         tables = {
             r[0]
-            for r in con.execute(
-                "SELECT name FROM sqlite_master WHERE type='table'"
-            ).fetchall()
+            for r in con.execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall()
         }
         assert tables == {"pota_park_grids_osm"}
         for forbidden in ("current", "history", "pota_parks", "pota_park_grids"):
@@ -90,8 +85,7 @@ def test_osm_and_padus_grids_go_to_different_db_files(tmp_path: Path) -> None:
     cc_db = tmp_path / "hamcall-db-2026-06-17.db"
     odbl_db = tmp_path / "hamcall-db-pota-park-grids-osm-2026-06-17.db"
     padus_rows = [
-        ParkGridRecord(reference="US-4567", grid="DN13", source="padus",
-                       confidence="high"),
+        ParkGridRecord(reference="US-4567", grid="DN13", source="padus", confidence="high"),
     ]
     write_pota_park_grids_sqlite(padus_rows, cc_db)
     write_pota_park_grids_osm_sqlite(_OSM_ROWS, odbl_db)
@@ -100,14 +94,11 @@ def test_osm_and_padus_grids_go_to_different_db_files(tmp_path: Path) -> None:
     odbl = sqlite3.connect(odbl_db)
     try:
         cc_tables = {
-            r[0] for r in cc.execute(
-                "SELECT name FROM sqlite_master WHERE type='table'"
-            ).fetchall()
+            r[0] for r in cc.execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall()
         }
         odbl_tables = {
-            r[0] for r in odbl.execute(
-                "SELECT name FROM sqlite_master WHERE type='table'"
-            ).fetchall()
+            r[0]
+            for r in odbl.execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall()
         }
         assert "pota_park_grids" in cc_tables
         assert "pota_park_grids_osm" not in cc_tables  # no ODbL taint in the CC-BY-NC file

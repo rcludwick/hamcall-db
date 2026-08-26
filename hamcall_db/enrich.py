@@ -108,15 +108,9 @@ def _strip_token(token: str) -> str:
 def _dxcc_numbers() -> dict[str, int]:
     """Primary-prefix (UPPER) -> ADIF DXCC entity number, from the bundled seed."""
     raw = json.loads(
-        resources.files("hamcall_db.data")
-        .joinpath("dxcc_entity_numbers.json")
-        .read_text()
+        resources.files("hamcall_db.data").joinpath("dxcc_entity_numbers.json").read_text()
     )
-    return {
-        str(k).strip().upper(): int(v)
-        for k, v in raw.items()
-        if not k.startswith("_")
-    }
+    return {str(k).strip().upper(): int(v) for k, v in raw.items() if not k.startswith("_")}
 
 
 class CtyLookup:

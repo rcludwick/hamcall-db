@@ -28,7 +28,7 @@ def synced_at_from(last_modified: str | None, fallback_path: Path | None) -> str
     if last_modified:
         try:
             dt = parsedate_to_datetime(last_modified)
-        except (TypeError, ValueError):
+        except TypeError, ValueError:
             dt = None
         if dt is not None:
             if dt.tzinfo is not None:

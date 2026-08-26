@@ -64,7 +64,7 @@ def _existing_count(out_dir: Path, network: str) -> int | None:
         return None
     try:
         payload = json.loads(path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
+    except OSError, json.JSONDecodeError:
         return None
     count = payload.get("count") if isinstance(payload, dict) else None
     return count if isinstance(count, int) else None
@@ -76,7 +76,7 @@ def _load_existing(out_dir: Path, network: str) -> dict[str, object] | None:
         return None
     try:
         payload = json.loads(path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
+    except OSError, json.JSONDecodeError:
         return None
     return payload if isinstance(payload, dict) else None
 

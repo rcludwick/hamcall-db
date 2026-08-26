@@ -144,7 +144,7 @@ def _int(value: str | None) -> int | None:
         return None
     try:
         return int(float(value))
-    except (TypeError, ValueError):
+    except TypeError, ValueError:
         return None
 
 
@@ -154,7 +154,7 @@ def _float(value: str | None) -> float | None:
         return None
     try:
         return float(value)
-    except (TypeError, ValueError):
+    except TypeError, ValueError:
         return None
 
 
@@ -304,20 +304,14 @@ class SotaSource:
         if data is not None:
             dest.write_bytes(data)
         elif not dest.exists():  # 304 but nothing cached — should never happen
-            raise RuntimeError(
-                f"{self.url} returned not-modified but no cached file at {dest}"
-            )
+            raise RuntimeError(f"{self.url} returned not-modified but no cached file at {dest}")
 
         self.synced_at = day
         return dest
 
-    def parse(
-        self, path: Path, *, synced_at: str | None = None
-    ) -> Iterable[SummitRecord]:
+    def parse(self, path: Path, *, synced_at: str | None = None) -> Iterable[SummitRecord]:
         """Parse a cached ``summitslist.csv`` into `SummitRecord`s.
 
         When ``synced_at`` is None, falls back to ``self.synced_at`` (set by download()).
         """
-        return parse_file(
-            path, synced_at=synced_at if synced_at is not None else self.synced_at
-        )
+        return parse_file(path, synced_at=synced_at if synced_at is not None else self.synced_at)

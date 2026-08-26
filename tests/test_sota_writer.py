@@ -114,9 +114,7 @@ def test_write_sqlite_creates_sota_summits_table(tmp_path: Path) -> None:
     try:
         tables = {
             r[0]
-            for r in con.execute(
-                "SELECT name FROM sqlite_master WHERE type='table'"
-            ).fetchall()
+            for r in con.execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall()
         }
         assert "sota_summits" in tables
         row = con.execute(

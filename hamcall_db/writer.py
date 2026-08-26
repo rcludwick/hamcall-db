@@ -78,9 +78,7 @@ def _park_dtype(col: str) -> pl.DataType:
     return pl.Utf8
 
 
-_PARK_SCHEMA: dict[str, pl.DataType] = {
-    col: _park_dtype(col) for col in PARK_SCHEMA_COLUMNS
-}
+_PARK_SCHEMA: dict[str, pl.DataType] = {col: _park_dtype(col) for col in PARK_SCHEMA_COLUMNS}
 
 
 def write_pota_parks_parquet(parks: Iterable[ParkRecord], out_path: Path) -> int:
@@ -99,14 +97,10 @@ def write_pota_parks_parquet(parks: Iterable[ParkRecord], out_path: Path) -> int
 # POTA park-grids child table (hdb-f53c): all four columns are strings (reference FK,
 # 4-char grid, source tag, confidence flag). Additive to the MAIN CC BY-NC artifact;
 # separate file so neither the callsign nor the parks schema can drift.
-_PARK_GRID_SCHEMA: dict[str, pl.DataType] = {
-    col: pl.Utf8 for col in PARK_GRID_SCHEMA_COLUMNS
-}
+_PARK_GRID_SCHEMA: dict[str, pl.DataType] = {col: pl.Utf8 for col in PARK_GRID_SCHEMA_COLUMNS}
 
 
-def write_pota_park_grids_parquet(
-    grids: Iterable[ParkGridRecord], out_path: Path
-) -> int:
+def write_pota_park_grids_parquet(grids: Iterable[ParkGridRecord], out_path: Path) -> int:
     """Write POTA `ParkGridRecord`s to `out_path` as Parquet. Returns the row count.
 
     Additive artifact (hamcall-db-pota-park-grids-YYYY-MM-DD.parquet): one row per
@@ -125,9 +119,7 @@ def write_pota_park_grids_parquet(
 # hamcall-db-pota-park-grids-osm-YYYY-MM-DD.parquet — NEVER mixed into the CC BY-NC artifact.
 # OSM-derived grids form an ODbL derivative database; share-alike is incompatible with the
 # main artifact's CC BY-NC terms, so they ship segregated (source='osm'/'osm-point').
-def write_pota_park_grids_osm_parquet(
-    grids: Iterable[ParkGridRecord], out_path: Path
-) -> int:
+def write_pota_park_grids_osm_parquet(grids: Iterable[ParkGridRecord], out_path: Path) -> int:
     """Write OSM-derived `ParkGridRecord`s to `out_path` as Parquet. Returns the row count.
 
     SEPARATE ODbL artifact (hamcall-db-pota-park-grids-osm-YYYY-MM-DD.parquet): one row per
@@ -157,9 +149,7 @@ def _summit_dtype(col: str) -> pl.DataType:
     return pl.Utf8
 
 
-_SUMMIT_SCHEMA: dict[str, pl.DataType] = {
-    col: _summit_dtype(col) for col in SUMMIT_SCHEMA_COLUMNS
-}
+_SUMMIT_SCHEMA: dict[str, pl.DataType] = {col: _summit_dtype(col) for col in SUMMIT_SCHEMA_COLUMNS}
 
 
 def write_sota_summits_parquet(summits: Iterable[SummitRecord], out_path: Path) -> int:

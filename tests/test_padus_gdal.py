@@ -33,9 +33,7 @@ from hamcall_db.sources import padus  # noqa: E402
 
 # A Boise-area box in WGS84; the real PAD-US ships geometry in EPSG:5070 (Albers), so we store
 # it reprojected and expect the reader to bring it back to ~these WGS84 coordinates.
-_BOX_WGS = Polygon(
-    [(-116.5, 43.5), (-115.0, 43.5), (-115.0, 44.5), (-116.5, 44.5), (-116.5, 43.5)]
-)
+_BOX_WGS = Polygon([(-116.5, 43.5), (-115.0, 43.5), (-115.0, 44.5), (-116.5, 44.5), (-116.5, 43.5)])
 _COMBINED_LAYER = "PADUS4_0Combined_Proclamation_Marine_Fee_Designation_Easement"
 
 

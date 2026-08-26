@@ -138,7 +138,7 @@ def _coord(value: object) -> float | None:
         return None
     try:
         return float(value)  # type: ignore[arg-type]
-    except (TypeError, ValueError):
+    except TypeError, ValueError:
         return None
 
 
@@ -151,7 +151,7 @@ def _active_flag(obj: dict) -> bool:
         return raw
     try:
         return int(raw) != 0
-    except (TypeError, ValueError):
+    except TypeError, ValueError:
         return bool(raw)
 
 
@@ -276,16 +276,12 @@ class PotaSource:
             if data is not None:
                 dest.write_bytes(data)
             elif not dest.exists():  # 304 but nothing cached — should never happen
-                raise RuntimeError(
-                    f"{url} returned not-modified but no cached file at {dest}"
-                )
+                raise RuntimeError(f"{url} returned not-modified but no cached file at {dest}")
 
         self.synced_at = day
         return cache_dir
 
-    def parse(
-        self, path: Path, *, synced_at: str | None = None
-    ) -> Iterable[ParkRecord]:
+    def parse(self, path: Path, *, synced_at: str | None = None) -> Iterable[ParkRecord]:
         """Parse a cache directory of per-program JSON files into `ParkRecord`s.
 
         When ``synced_at`` is None, falls back to ``self.synced_at`` (set by download()).
