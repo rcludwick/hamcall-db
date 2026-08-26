@@ -96,9 +96,25 @@ def _urllib_fetch(url: str, token: str) -> bytes:
             return response.read()
     except urllib.error.HTTPError as exc:
         if exc.code in (401, 403):
+            # Surface what upstream actually said. A 401 really is an auth
+            # problem, but a 403 from here is usually NOT about the token —
+            # DVRef sits behind Cloudflare, which rejects requests by IP
+            # reputation and by User-Agent signature (error 1010) before the
+            # API ever authenticates them. Reporting every 403 as "bad token"
+            # sends whoever reads the log to the wrong place; that mistake cost
+            # a debugging session, so the body is quoted verbatim now.
+            detail = ""
+            try:
+                detail = exc.read().decode("utf-8", "replace").strip()[:300]
+            except Exception:  # noqa: BLE001 - diagnostics must not mask the error
+                pass
+            hint = (
+                f"Mint one at https://dvref.com/accounts/token/ and set {TOKEN_ENV}."
+                if exc.code == 401
+                else "This is usually an edge block (IP reputation or User-Agent), not the token."
+            )
             raise DvrefAuthError(
-                f"DVRef rejected the token ({exc.code}). Mint one at "
-                f"https://dvref.com/accounts/token/ and set {TOKEN_ENV}."
+                f"DVRef refused the request ({exc.code}): {detail or '<no body>'} {hint}"
             ) from exc
         raise
 
