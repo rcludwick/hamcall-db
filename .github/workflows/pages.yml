@@ -1,0 +1,68 @@
+name: Pages
+
+# ============================================================================
+# Renders the documentation site and deploys it to GitHub Pages.
+#
+# WHY THIS IS SEPARATE FROM reflectors.yml
+# ----------------------------------------
+# The reflector DATA is built on my-vps, not here — DVRef sits behind
+# Cloudflare, which refuses GitHub-hosted runner IP ranges with a 403 HTML
+# block page even for a valid token (verified 2026-08-26; the same token
+# returns 200 from that box, and a genuinely bad token returns a JSON 401, so
+# it is the origin being refused rather than the credential).
+#
+# So the nightly build runs there and pushes docs/site/api/v1/. This workflow
+# is what turns that push into a published site. It never fetches anything.
+#
+# `--strict` fails the build on a broken link, which is correct for prose. It
+# cannot block a data refresh, because by the time this runs the data is
+# already committed — the worst case is a stale site, not a stale directory.
+# ============================================================================
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "docs/site/**"
+      - "zensical.toml"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Let a newer deploy supersede one still in flight; only the latest site matters.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      # Zensical renders docs/site/*.md and copies everything else in that
+      # directory through verbatim — which is how docs/site/api/v1/*.json ends
+      # up served alongside the rendered pages from a single deploy.
+      - name: Build the site
+        run: uvx zensical build --clean --strict
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/.site/
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,7 +1,20 @@
 name: Reflectors
 
 # ============================================================================
-# Nightly rebuild of the digital-voice reflector directory (hdb-refl):
+# MANUAL rebuild of the digital-voice reflector directory (hdb-refl).
+#
+# THE NIGHTLY BUILD DOES NOT RUN HERE. It runs on my-vps
+# (/opt/hamcall-db/build.sh, hamcall-db-reflectors.timer) and pushes
+# docs/site/api/v1/ to main; pages.yml then publishes that push.
+#
+# DVRef sits behind Cloudflare, which refuses GitHub-hosted runner IP ranges
+# with a 403 HTML block page even for a valid token and a correct User-Agent.
+# Verified 2026-08-26: the same token returns 200 from that box and from a
+# workstation, a bad token returns a JSON 401, and a Python-urllib User-Agent
+# returns 403 "error code: 1010" — so it is the origin being refused, not the
+# credential. The XLX registry is not behind Cloudflare and works from here.
+#
+# What this workflow still does, when dispatched by hand:
 #
 #   1. fetch DVRef (token) + the XLX registry (no token)
 #   2. write the versioned static JSON API to docs/site/api/v1/ and commit IF it changed
@@ -40,9 +53,13 @@ name: Reflectors
 # registry needs no authentication. Every DVRef network is skipped with a warning and
 # keeps whatever is already published.
 
+# NO SCHEDULE. The nightly data build runs on my-vps, not here — see the
+# banner above. Left dispatchable for the rare manual case, but be aware of
+# what a run from GitHub actually produces: D-Star rebuilt from the XLX
+# registry alone (892 rows), losing DVRef's 61 XRF entries. That is a ~6%
+# shrink, which passes the shrink guard, so it would be published rather than
+# rejected. Use the VPS unless you specifically want an XLX-only refresh.
 on:
-  schedule:
-    - cron: "0 6 * * *" # 06:00 UTC daily = midnight US Mountain
   workflow_dispatch:
 
 # Least privilege: `contents: write` to commit the refreshed JSON and cut the release;

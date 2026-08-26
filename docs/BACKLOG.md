@@ -106,3 +106,32 @@ ACCEPTANCE (once direction chosen): a callsign that goes E in ULS surfaces with 
 *LOW · task · cx:3*
 
 **Spec:** au-63fb shipped a curated public-domain subset (159 city / 55 postal). For full coverage, implement the documented build-time ingestion (GeoNames postal-codes CC-BY 4.0 -> NOTICE entry needed; or Census ZCTA gazetteer public-domain) into data/raw/ + a compaction step. Do NOT vendor gigabytes into git. See hamcall_db/data/README.md.
+
+### hdb-refl-vps — The nightly reflector build runs on my-vps, not in Actions
+*INFO · note · cx:1*
+
+**Why:** DVRef sits behind Cloudflare, which refuses GitHub-hosted runner IP
+ranges with a 403 HTML block page even for a valid token and a correct
+User-Agent. Verified 2026-08-26: the same token returns 200 from my-vps and from
+a workstation; a deliberately bad token returns a JSON `401 {"detail":"Invalid
+token."}`; a `Python-urllib` User-Agent returns `403 error code: 1010`; and an
+absent one returns `403 A valid User-Agent header is required`. So the origin is
+being refused, not the credential. The XLX registry (D-Star) is not behind
+Cloudflare and works from Actions.
+
+**Where it lives:** `root@74.208.108.191` —
+- `/opt/hamcall-db/build.sh` — pull, build, verify, commit-if-changed, push
+- `/opt/hamcall-db/verify.py` — refuses to publish a build missing a network
+- `/opt/hamcall-db/env` — `DVREF_API_TOKEN`, mode 600
+- `/opt/hamcall-db/repo` — clone, pushing via the `my-vps nightly reflector
+  build` deploy key (write, key id 161335913)
+- `hamcall-db-reflectors.timer` — 05:30 UTC, `Persistent=true`
+
+`pages.yml` publishes whatever lands on main. `reflectors.yml` keeps only
+`workflow_dispatch`: a run from GitHub rebuilds D-Star from XLX alone (892 rows,
+losing DVRef's 61 XRF entries), which is a ~6% shrink that PASSES the shrink
+guard and would therefore be published rather than rejected.
+
+**Open:** ask DVRef to allowlist authenticated requests, which would let this
+move back into Actions and remove a machine from the critical path. A draft
+ticket exists; not sent.
