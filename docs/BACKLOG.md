@@ -12,7 +12,34 @@ inline. All 39 issues (35 of them closed) were exported to
 `docs/issues-archive.jsonl`, which is gitignored and local-only; a committed copy of the
 tracker's final state survives in git history at the migration commit.
 
-## Open items (4)
+## Open items (5)
+
+### hdb-refl-pages — Enable GitHub Pages + add the DVREF_API_TOKEN secret
+*HIGH · task · cx:1*
+
+**Spec:** The reflector directory (`hamcall_db/reflectors.py`, `sources/dvref.py`,
+`sources/xlx.py`, `.github/workflows/reflectors.yml`) is built and committed, but two
+things must be done by a human before the nightly job can publish:
+
+1. **GitHub Pages is not available on this repository.** `rcludwick/hamcall-db` is
+   private and `has_pages` is false; Pages from a private repo requires a paid plan
+   (Pro/Team/Enterprise), and every Pages-enabled repo on this account today is public.
+   Options, in rough order of least surprise:
+   * make this repo public — the build code is already MIT and the data terms are
+     already documented, so nothing here is secret; or
+   * publish `site/` from a separate public repo; or
+   * upgrade the plan, at which point the workflow works unchanged.
+
+   Note that a Pages site published from a private repo is still publicly readable by
+   default, which is what we want here — the constraint is the plan, not visibility.
+
+2. **`DVREF_API_TOKEN` repository secret** — mint at <https://dvref.com/accounts/token/>
+   (free, needs a DVRef account). Without it the job still succeeds and still publishes
+   D-Star from the XLX registry, but every DVRef network is skipped with a warning.
+
+Until Pages exists, `.github/workflows/reflectors.yml`'s `deploy` job will fail even
+though `refresh` and `release` succeed. The committed JSON under `site/api/` stays
+correct regardless.
 
 ### au-1022 — Verify ISED amateur.txt real column layout against in-zip README
 *MED · task · cx:1*
