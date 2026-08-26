@@ -14945,9 +14945,9 @@
       "aliases": [
         "XRFNLD"
       ],
-      "country": "The Netherlands",
+      "country": "Netherlands",
       "dashboard": "http://dstarnld.pa7lim.nl",
-      "description": "Dutch Reflector by David PA7LIM",
+      "description": "Dutch DSTAR Central",
       "dial": {
         "callsign": "XRFNLD",
         "host": "90.145.156.214",
