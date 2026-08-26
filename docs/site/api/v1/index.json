@@ -1,7 +1,7 @@
 {
   "api_version": "v1",
   "client_refresh_days": 7,
-  "count": 3124,
+  "count": 3185,
   "endpoints": {
     "all": "reflectors.json",
     "network": "reflectors/{network}.json",
@@ -14,10 +14,10 @@
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
   "networks": {
     "dstar": {
-      "count": 892,
+      "count": 953,
       "generated": "2026-08-26",
       "source": {
-        "name": "XLX registry (LX1IQ)",
+        "name": "XLX registry (LX1IQ) + DVRef",
         "url": "http://xlxapi.rlx.lu/api.php?do=GetReflectorList"
       },
       "url": "reflectors/dstar.json"
