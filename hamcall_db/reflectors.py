@@ -112,6 +112,14 @@ MODIFICATION_NOTE = (
 # request volume that buys nothing — reflector hosts move on a scale of weeks.
 CLIENT_REFRESH_DAYS = 7
 
+# Attribution statements are joined with a newline rather than a space. A network
+# assembled from two upstreams carries two statements, and the combined file has to
+# be able to take them apart again to avoid repeating one — D-Star's credit is
+# "XLX ... DVRef ..." while M17's is the DVRef line alone, so deduplicating whole
+# strings leaves DVRef credited twice. A newline is an unambiguous split point that
+# no attribution statement contains, and it renders as separate lines besides.
+ATTRIBUTION_SEPARATOR = "\n"
+
 # The JSON schema version of the published files. Bump only when an existing field
 # changes meaning or goes away; adding a field is not a bump (an older reader ignores
 # what it does not recognise).
@@ -365,9 +373,17 @@ def combined_document(
         stamp = doc.get("generated")
         if isinstance(stamp, str):
             stamps.append(stamp)
+        # Split each network's credit back into its individual statements before
+        # deduplicating. Comparing whole strings is not enough: a two-source network
+        # publishes a compound credit that CONTAINS a single-source network's credit
+        # without being equal to it, which is how DVRef ended up credited twice in
+        # the combined file.
         credit = doc.get("attribution")
-        if isinstance(credit, str) and credit and credit not in attributions:
-            attributions.append(credit)
+        if isinstance(credit, str):
+            for statement in credit.split(ATTRIBUTION_SEPARATOR):
+                statement = statement.strip()
+                if statement and statement not in attributions:
+                    attributions.append(statement)
         source = doc.get("source")
         if isinstance(source, dict) and source not in sources:
             sources.append(source)
@@ -380,7 +396,7 @@ def combined_document(
         "generated": newest,
         "client_refresh_days": CLIENT_REFRESH_DAYS,
         **_license_block(),
-        "attribution": " ".join(attributions),
+        "attribution": ATTRIBUTION_SEPARATOR.join(attributions),
         "sources": sources,
         "networks": counts,
         "count": len(entries),

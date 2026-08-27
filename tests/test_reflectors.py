@@ -822,3 +822,53 @@ def test_a_source_merely_shrinking_is_not_treated_as_lost() -> None:
     fewer = reflectors_build._source_counts(_dstar_doc(890, 58))
     lost = [n for n, c in complete.items() if c > 0 and fewer.get(n, 0) == 0]
     assert lost == []
+
+
+# --- attribution must credit each upstream exactly once -------------------------
+
+
+def test_combined_attribution_credits_each_upstream_once() -> None:
+    # D-Star is assembled from two upstreams so its credit is compound; every other
+    # network carries DVRef's line alone. Deduplicating whole strings is not enough —
+    # the compound credit CONTAINS the single one without equalling it, which put
+    # DVRef in the published combined file twice.
+    dvref = "Reflector data provided by DVRef — https://dvref.com/"
+    xlx = "XLX reflector data from the XLX registry maintained by Luc Engelmann, LX1IQ."
+
+    dstar = network_document(
+        "dstar",
+        [ReflectorRecord(id="XLX836", network="dstar", host="10.0.0.1", source="xlx")],
+        source_name="XLX registry (LX1IQ) + DVRef",
+        source_url="http://xlxapi.rlx.lu/",
+        attribution=reflectors.ATTRIBUTION_SEPARATOR.join([xlx, dvref]),
+        generated=NOW.date(),
+    )
+    m17 = network_document(
+        "m17",
+        [ReflectorRecord(id="M17-M17", network="m17", host="10.0.0.2", source="dvref")],
+        source_name="DVRef",
+        source_url="https://dvref.com/api/v2/",
+        attribution=dvref,
+        generated=NOW.date(),
+    )
+
+    combined = reflectors.combined_document({"dstar": dstar, "m17": m17}, generated=NOW.date())
+    credit = combined["attribution"]
+    assert isinstance(credit, str)
+
+    assert credit.count("provided by DVRef") == 1, credit
+    assert credit.count("XLX registry") == 1, credit
+    # Both upstreams must still be credited — deduplicating must not drop one.
+    assert dvref in credit
+    assert xlx in credit
+
+
+def test_attribution_statements_survive_a_round_trip() -> None:
+    # The separator has to be something no attribution statement contains, or
+    # splitting would tear a credit in half.
+    dvref = "Reflector data provided by DVRef — https://dvref.com/"
+    xlx = "XLX reflector data from the XLX registry maintained by Luc Engelmann, LX1IQ."
+    for statement in (dvref, xlx):
+        assert reflectors.ATTRIBUTION_SEPARATOR not in statement
+    joined = reflectors.ATTRIBUTION_SEPARATOR.join([xlx, dvref])
+    assert joined.split(reflectors.ATTRIBUTION_SEPARATOR) == [xlx, dvref]
