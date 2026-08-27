@@ -66,10 +66,23 @@ ATTRIBUTION = "Reflector data provided by DVRef — https://dvref.com/"
 
 # DVRef path segment -> the network name we publish under. `mrefd` is the reflector
 # daemon's name; the network everyone calls it is M17. `urfd` likewise -> `urf`.
+# NOTE: `dstar` is deliberately ABSENT. DVRef disabled its D-Star listings and
+# says so in the response itself:
+#
+#   "D-Star reflector listings (REF, DCS, XRF) are currently disabled in DVRef.
+#    XRF is being split out into a dedicated app; REF and DCS are maintained
+#    externally."
+#
+# The endpoint still answers 200 with `status: success` and an EMPTY reflectors
+# list, so nothing errors — it simply stops contributing the 61 XRF rows it used
+# to. Keeping it configured would make every build look like an upstream failure
+# forever, and the source guard would freeze D-Star indefinitely to protect rows
+# that are never coming back. D-Star is the XLX registry's now (892 of the
+# previous 953, so ~94% of coverage). Restore this entry if DVRef re-enables the
+# listings or the dedicated XRF app appears.
 NETWORKS: dict[str, str] = {
     "mrefd": "m17",
     "ysf": "ysf",
-    "dstar": "dstar",
     "nxdn": "nxdn",
     "p25": "p25",
     "urfd": "urf",
@@ -150,6 +163,24 @@ def _rows(payload: object) -> list[dict[str, object]]:
     return []
 
 
+def payload_notice(payload: object) -> str | None:
+    """Any operational message upstream attached to the response.
+
+    DVRef uses ``data.notice`` to explain a deliberately empty result — it is how
+    we learned the D-Star listings had been switched off rather than broken. A
+    field that only appears when something has changed is exactly the field worth
+    printing, so the build echoes it instead of silently reporting zero rows.
+    """
+    if not isinstance(payload, dict):
+        return None
+    data = payload.get("data")
+    if isinstance(data, dict):
+        notice = _str(data.get("notice"))
+        if notice:
+            return notice
+    return _str(payload.get("notice"))
+
+
 def payload_attribution(payload: object) -> str | None:
     """The attribution string DVRef embeds in the response, if present.
 
@@ -205,6 +236,8 @@ class DvrefSource:
         # Filled in by parse() from the response's own _dvref_metadata; falls back to
         # our constant if a response ever omits it.
         self.attribution: str = ATTRIBUTION
+        # Set by parse() when upstream attaches an operational message.
+        self.notice: str | None = None
 
     def _identity(self, designator: str) -> tuple[str, str | None]:
         """Map a DVRef designator to the dialable id and the on-the-wire callsign.
@@ -225,6 +258,10 @@ class DvrefSource:
         if self.network == "m17":
             name = designator if designator.upper().startswith("M17-") else f"M17-{designator}"
             return name, name
+        # Dormant: DVRef retired its D-Star listings, so this branch is currently
+        # unreachable (the constructor rejects the segment). Kept because it is the
+        # correct behaviour if they re-enable them or the dedicated XRF app lands —
+        # restoring the NETWORKS entry should be the only change needed.
         if self.network == "dstar":
             return designator, designator
         return designator, None
@@ -263,6 +300,7 @@ class DvrefSource:
         # not the moment we happened to write it to disk.
         stamp = synced_at or _generated_date(payload) or self.synced_at
         self.attribution = payload_attribution(payload) or ATTRIBUTION
+        self.notice = payload_notice(payload)
 
         for row in _rows(payload):
             designator = _ident(row.get("designator")) or _str(row.get("name"))

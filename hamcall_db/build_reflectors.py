@@ -140,6 +140,12 @@ def build(
     documents: dict[str, dict[str, object]] = {}
     kept: list[str] = []
     failed: list[str] = []
+    # Which importers this build ATTEMPTED for each network. The source guard
+    # compares against this rather than against history alone: a source that is
+    # no longer configured has not been "lost", it has been retired, and treating
+    # the two alike would freeze a network forever protecting rows that are never
+    # coming back. DVRef retiring its D-Star listings is exactly that case.
+    attempted: dict[str, set[str]] = {}
 
     # --- D-Star: XLX registry is the source of record (coverage), DVRef supplements ---
     dstar: list[ReflectorRecord] = []
@@ -148,6 +154,7 @@ def build(
         xlx = XlxSource()
         dstar.extend(xlx.parse(xlx.download(day_dir / "xlx")))
         dstar_attribution.append(XLX_ATTRIBUTION)
+        attempted.setdefault("dstar", set()).add("xlx")
         typer.echo(f"xlx: {len(dstar)} D-Star reflectors")
     except Exception as exc:  # noqa: BLE001 - one bad source must not sink the build
         typer.echo(f"WARNING: xlx failed ({exc})", err=True)
@@ -164,7 +171,13 @@ def build(
             # Credit exactly as upstream words it — parse() lifts this out of the
             # response's own _dvref_metadata block.
             dvref_credit[network] = source.attribution
+            attempted.setdefault(network, set()).add("dvref")
             typer.echo(f"dvref/{segment}: {len(rows)} {network} reflectors")
+            # Upstream sets this only when something has changed. An empty list
+            # WITH an explanation is not an outage, and the difference is
+            # invisible unless the message is printed.
+            if source.notice:
+                typer.echo(f"  notice from dvref/{segment}: {source.notice}", err=True)
         except DvrefAuthError as exc:
             typer.echo(f"WARNING: dvref/{segment} skipped — {exc}", err=True)
             failed.append(f"dvref/{segment}")
@@ -213,10 +226,14 @@ def build(
     for network in list(documents):
         previous_sources = _source_counts(_load_existing(out, network))
         fresh_sources = _source_counts(documents[network])
+        # Only a source this build actually TRIED can be lost. One no longer in
+        # the source table was retired deliberately, and the one-time drop in rows
+        # is the intended outcome rather than a fault to guard against.
+        tried = attempted.get(network, set())
         lost = sorted(
             name
             for name, count in previous_sources.items()
-            if count > 0 and fresh_sources.get(name, 0) == 0
+            if count > 0 and name in tried and fresh_sources.get(name, 0) == 0
         )
         if lost:
             existing = _load_existing(out, network)
