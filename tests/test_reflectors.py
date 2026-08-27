@@ -18,6 +18,7 @@ from pathlib import Path
 
 import pytest
 
+from hamcall_db import build_reflectors as reflectors_build
 from hamcall_db import reflectors
 from hamcall_db.reflectors import ReflectorRecord, merge_by_id, network_document, write_api
 from hamcall_db.sources import dvref, xlx
@@ -765,3 +766,59 @@ def test_modification_note_declares_the_redaction() -> None:
     licence = (REPO_ROOT / "LICENSE-CC-BY").read_text(encoding="utf-8")
     assert "email" in licence.lower()
     assert reflectors.EMAIL_PLACEHOLDER in licence
+
+
+# --- losing a whole source without tripping the shrink guard ---------------------
+
+
+def _dstar_doc(xlx_rows: int, dvref_rows: int) -> dict[str, object]:
+    """A D-Star document assembled from both sources, as the build produces it."""
+    records = [
+        ReflectorRecord(id=f"XLX{i:03d}", network="dstar", host=f"10.0.0.{i}", source="xlx")
+        for i in range(xlx_rows)
+    ] + [
+        ReflectorRecord(id=f"XRF{i:03d}", network="dstar", host=f"10.1.0.{i}", source="dvref")
+        for i in range(dvref_rows)
+    ]
+    return network_document(
+        "dstar",
+        records,
+        source_name="XLX registry (LX1IQ) + DVRef",
+        source_url="http://xlxapi.rlx.lu/",
+        attribution="test",
+        generated=NOW.date(),
+    )
+
+
+def test_source_counts_reads_provenance_out_of_a_document() -> None:
+    assert reflectors_build._source_counts(_dstar_doc(892, 61)) == {"xlx": 892, "dvref": 61}
+    assert reflectors_build._source_counts(None) == {}
+    assert reflectors_build._source_counts({"reflectors": "not a list"}) == {}
+
+
+def test_losing_one_source_is_caught_even_though_the_shrink_guard_would_not_fire(
+    tmp_path: Path,
+) -> None:
+    # The real incident: DVRef answered with a well-formed response carrying zero
+    # rows, so D-Star rebuilt from XLX alone. 953 -> 892 is a 6% drop, far inside
+    # the 66% shrink guard, and it published an XLX-only D-Star as if that were
+    # the whole network.
+    write_api(tmp_path, {"dstar": _dstar_doc(892, 61)}, generated=NOW.date())
+
+    complete = reflectors_build._source_counts(_dstar_doc(892, 61))
+    degraded = reflectors_build._source_counts(_dstar_doc(892, 0))
+
+    lost = [n for n, c in complete.items() if c > 0 and degraded.get(n, 0) == 0]
+    assert lost == ["dvref"], "losing DVRef entirely must be detectable"
+
+    # And the shrink guard alone would NOT have caught it — that is the point.
+    assert 892 >= 953 * reflectors_build.SHRINK_GUARD
+
+
+def test_a_source_merely_shrinking_is_not_treated_as_lost() -> None:
+    # Reflectors do come and go. Only losing a source ENTIRELY is the signal;
+    # otherwise every quiet night would refuse to publish.
+    complete = reflectors_build._source_counts(_dstar_doc(892, 61))
+    fewer = reflectors_build._source_counts(_dstar_doc(890, 58))
+    lost = [n for n, c in complete.items() if c > 0 and fewer.get(n, 0) == 0]
+    assert lost == []

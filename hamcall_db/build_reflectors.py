@@ -85,6 +85,26 @@ def _load_existing(out_dir: Path, network: str) -> dict[str, object] | None:
     return payload if isinstance(payload, dict) else None
 
 
+def _source_counts(document: dict[str, object] | None) -> dict[str, int]:
+    """How many rows each importer contributed to a published document.
+
+    ``source`` is a published field, so this reads out of the file itself rather
+    than needing the build to remember what it did.
+    """
+    if not document:
+        return {}
+    rows = document.get("reflectors")
+    if not isinstance(rows, list):
+        return {}
+    counts: dict[str, int] = {}
+    for row in rows:
+        if isinstance(row, dict):
+            name = row.get("source")
+            if isinstance(name, str) and name:
+                counts[name] = counts.get(name, 0) + 1
+    return counts
+
+
 @app.command()
 def build(
     out: Annotated[
@@ -179,7 +199,37 @@ def build(
         )
 
     # --- Failure policy: keep last-good rather than publishing a regression ----------
+    # A network assembled from MORE THAN ONE source can lose a whole source
+    # without the row count falling far enough to trip the shrink guard. D-Star
+    # is the live case: 892 XLX rows plus 61 from DVRef, so a DVRef outage is a
+    # 6% drop — comfortably inside the guard, and it would publish an
+    # XLX-only D-Star as though that were the truth. Observed happening on
+    # 2026-08-26, when DVRef returned a well-formed response with zero rows.
+    #
+    # So compare the SOURCE COMPOSITION, not just the total: a source that the
+    # published file has rows from, and this build has none from, means an
+    # incomplete build regardless of how small the shortfall looks.
     for network in list(documents):
+        previous_sources = _source_counts(_load_existing(out, network))
+        fresh_sources = _source_counts(documents[network])
+        lost = sorted(
+            name
+            for name, count in previous_sources.items()
+            if count > 0 and fresh_sources.get(name, 0) == 0
+        )
+        if lost:
+            existing = _load_existing(out, network)
+            typer.echo(
+                f"WARNING: {network} lost every row from {', '.join(lost)} "
+                f"({previous_sources} -> {fresh_sources}); keeping the previous file",
+                err=True,
+            )
+            if existing is not None:
+                documents[network] = existing
+                kept.append(network)
+                failed.append(f"{network}:{'+'.join(lost)}")
+                continue
+
         previous = _existing_count(out, network)
         fresh = documents[network]["count"]
         assert isinstance(fresh, int)
