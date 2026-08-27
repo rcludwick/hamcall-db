@@ -396,8 +396,8 @@ def test_dextra_port_is_the_protocol_constant() -> None:
         ("mrefd", "002", "M17-002", "M17-002"),
         ("mrefd", "M17", "M17-M17", "M17-M17"),
         ("mrefd", "M17-010", "M17-010", "M17-010"),  # already prefixed, not doubled
-        # D-Star designators arrive already in XRF form and are their own callsign.
-        ("dstar", "XRF002", "XRF002", "XRF002"),
+        # D-Star is absent: DVRef retired those listings. The dormant branch in
+        # _identity is covered by test_dvref_rejects_the_retired_dstar_segment.
         # Everything else is dialled by designator and has no separate wire callsign.
         ("ysf", "00006", "00006", None),
         ("nxdn", "12345", "12345", None),
@@ -872,3 +872,60 @@ def test_attribution_statements_survive_a_round_trip() -> None:
         assert reflectors.ATTRIBUTION_SEPARATOR not in statement
     joined = reflectors.ATTRIBUTION_SEPARATOR.join([xlx, dvref])
     assert joined.split(reflectors.ATTRIBUTION_SEPARATOR) == [xlx, dvref]
+
+
+# --- a retired source is not a lost source --------------------------------------
+
+
+def test_notice_is_read_from_the_response() -> None:
+    # DVRef explains a deliberately empty result in `data.notice`. This is how we
+    # learned the D-Star listings were switched off rather than broken, so the
+    # field must not go unread.
+    payload = {
+        "status": "success",
+        "data": {"reflectors": [], "notice": "D-Star reflector listings are currently disabled."},
+    }
+    assert dvref.payload_notice(payload) == "D-Star reflector listings are currently disabled."
+    assert dvref.payload_notice({"data": {"reflectors": []}}) is None
+    assert dvref.payload_notice("not a dict") is None
+
+
+def test_dvref_is_no_longer_a_dstar_source() -> None:
+    # DVRef disabled D-Star listings; the endpoint answers 200 with an empty list
+    # forever. Keeping it configured would make every build look like an upstream
+    # failure and freeze D-Star to protect 61 rows that are not coming back.
+    assert "dstar" not in dvref.NETWORKS
+    assert "dstar" not in dvref.NETWORKS.values()
+    # The networks it does still serve must be untouched.
+    assert set(dvref.NETWORKS.values()) == {"m17", "ysf", "nxdn", "p25", "urf"}
+
+
+def test_a_retired_source_is_not_treated_as_lost() -> None:
+    # The guard freezes a network when a source it TRIED returns nothing. A source
+    # that is no longer configured was retired on purpose, and the one-time drop
+    # is the intended outcome — otherwise D-Star would never update again.
+    previous_sources = {"xlx": 892, "dvref": 61}
+    fresh_sources = {"xlx": 892}
+
+    # Retired: dvref was not attempted, so nothing is lost.
+    tried_now = {"xlx"}
+    assert [
+        n
+        for n, c in previous_sources.items()
+        if c > 0 and n in tried_now and fresh_sources.get(n, 0) == 0
+    ] == []
+
+    # Failed: dvref WAS attempted and produced nothing — that is still a fault.
+    tried_before = {"xlx", "dvref"}
+    assert [
+        n
+        for n, c in previous_sources.items()
+        if c > 0 and n in tried_before and fresh_sources.get(n, 0) == 0
+    ] == ["dvref"]
+
+
+def test_dvref_rejects_the_retired_dstar_segment() -> None:
+    # Constructing a source for a segment that is no longer served should fail
+    # loudly at the call site rather than quietly fetching an always-empty list.
+    with pytest.raises(ValueError, match="unknown DVRef segment"):
+        DvrefSource("dstar", token="t")
