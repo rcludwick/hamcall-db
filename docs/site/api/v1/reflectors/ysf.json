@@ -2,7 +2,7 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1434,
+  "count": 1435,
   "generated": "2026-08-27",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
@@ -1977,6 +1977,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "GW4OBA"
+    },
+    {
+      "country": "AU",
+      "dashboard": "http://vk2jbx.gizzinet.com",
+      "description": "vk2jbx test",
+      "dial": {
+        "host": "vk2jbx.gizzinet.com",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00491",
+      "name": "Shoalhaven",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "vk2jbx"
     },
     {
       "country": "US",
