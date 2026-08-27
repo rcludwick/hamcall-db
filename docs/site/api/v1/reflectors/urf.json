@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 91,
-  "generated": "2026-08-27",
+  "count": 89,
+  "generated": "2026-08-26",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1173,19 +1173,6 @@
       "sponsor": "F4GEN"
     },
     {
-      "country": "GB",
-      "dashboard": "http://g3brg.freeddns.org",
-      "dial": {
-        "host": "g3brg.freeddns.org",
-        "kind": "urf"
-      },
-      "id": "938",
-      "name": "G3BRG - Brundall Radio Group",
-      "network": "urf",
-      "source": "dvref",
-      "sponsor": "Brundall Radio Group"
-    },
-    {
       "country": "US",
       "dashboard": "https://xlx987.asuscomm.com",
       "description": "<p>WindyLink Tehachapi transcoding reflector, hosted by AK6MW</p>",
@@ -1519,22 +1506,6 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "Oklahoma ARES"
-    },
-    {
-      "country": "CN",
-      "dashboard": "http://urf.fmrs.cn:59",
-      "dial": {
-        "host": "urf.fmrs.cn",
-        "kind": "urf",
-        "modules": [
-          "A"
-        ]
-      },
-      "id": "PRC",
-      "name": "Foshan Multi-mode Reflector Service",
-      "network": "urf",
-      "source": "dvref",
-      "sponsor": "FMRS"
     },
     {
       "country": "US",

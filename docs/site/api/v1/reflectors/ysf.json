@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1434,
-  "generated": "2026-08-27",
+  "count": 1432,
+  "generated": "2026-08-26",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1907,21 +1907,6 @@
       "sponsor": "DL3MC"
     },
     {
-      "country": "CN",
-      "dashboard": "http://urf.fmrs.cn:59",
-      "description": "URFPRC",
-      "dial": {
-        "host": "urf.fmrs.cn",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "00461",
-      "name": "URFPRC",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "FMRS"
-    },
-    {
       "country": "FR",
       "dashboard": "https://xlx462.ddns.net",
       "description": "<p>R&eacute;flecteur des Hauts de France</p>",
@@ -2899,21 +2884,6 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "N6LKA"
-    },
-    {
-      "country": "GB",
-      "dashboard": "http://g3brg.freeddns.org",
-      "description": "URF938",
-      "dial": {
-        "host": "g3brg.freeddns.org",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "00938",
-      "name": "URF938",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "Brundall Radio Group"
     },
     {
       "country": "AU",

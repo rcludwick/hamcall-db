@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 105,
-  "generated": "2026-08-27",
+  "count": 104,
+  "generated": "2026-08-26",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1510,29 +1510,6 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "freestar.network"
-    },
-    {
-      "country": "US",
-      "dashboard": "https://150.136.69.97/?conf=M17Reflector",
-      "description": "<p>An M17 digital voice reflector based on the lightweight C++ DVS-Reflectors codebase. It supports modules A&ndash;Z with native hub-and-spoke edge linking, hot-reloadable allow/block lists, abuse mitigations, and real-time MQTT telemetry reporting to a live web dashboard.</p>",
-      "dial": {
-        "callsign": "M17-DVS",
-        "host": "150.136.69.97",
-        "kind": "m17",
-        "modules": [
-          "A",
-          "D",
-          "M",
-          "S",
-          "Z"
-        ],
-        "port": 17000
-      },
-      "id": "M17-DVS",
-      "name": "DVSwitch M17",
-      "network": "m17",
-      "source": "dvref",
-      "sponsor": "DVSwitch"
     },
     {
       "country": "TH",
