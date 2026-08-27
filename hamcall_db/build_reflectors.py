@@ -31,6 +31,7 @@ from typing import Annotated
 import typer
 
 from hamcall_db.reflectors import (
+    ATTRIBUTION_SEPARATOR,
     NETWORK_DIR,
     ReflectorRecord,
     merge_by_id,
@@ -182,7 +183,7 @@ def build(
             dstar,
             source_name="XLX registry (LX1IQ)" + (" + DVRef" if len(dstar_attribution) > 1 else ""),
             source_url=XLX_LIST_URL,
-            attribution=" ".join(dstar_attribution),
+            attribution=ATTRIBUTION_SEPARATOR.join(dstar_attribution),
             generated=today,
         )
 
