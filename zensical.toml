@@ -51,6 +51,8 @@ site_dir = "docs/.site"
 # see licensing.md.
 copyright = "Code MIT &copy; 2026 Rob Ludwick &nbsp;·&nbsp; data CC BY-NC 4.0, reflector directory CC BY 4.0"
 
+extra_css = ["stylesheets/hamcall-db.css"]
+
 # Explicit navigation. Without it Zensical derives the nav from the directory
 # layout, which would sweep in the api/ JSON. Every path here must exist or
 # `--strict` fails.
@@ -74,6 +76,10 @@ nav = [
 [project.theme]
 language = "en"
 
+# No Google Fonts request. hamcall-db.css then selects the native Apple system
+# stack (SF Pro / SF Mono) instead of Roboto — the same type as the astar site.
+font = false
+
 features = [
   "content.code.copy",
   "navigation.footer",
@@ -89,18 +95,21 @@ features = [
 # Light and dark, with a toggle. Unlike astar's site this is not the companion
 # to an app with its own fixed appearance — it is reference data people read at
 # odd hours, so let them pick.
+#
+# `custom` tells the theme to emit no colour rules at all and hands both brand
+# colours to docs/site/stylesheets/hamcall-db.css, which paints both schemes.
 [[project.theme.palette]]
 scheme = "default"
-primary = "indigo"
-accent = "indigo"
+primary = "custom"
+accent = "custom"
 [project.theme.palette.toggle]
 icon = "material/brightness-7"
 name = "Switch to dark mode"
 
 [[project.theme.palette]]
 scheme = "slate"
-primary = "indigo"
-accent = "indigo"
+primary = "custom"
+accent = "custom"
 [project.theme.palette.toggle]
 icon = "material/brightness-4"
 name = "Switch to light mode"
@@ -133,5 +142,11 @@ toc = { permalink = true }
 
 "pymdownx.highlight" = { anchor_linenums = true, line_spans = "__span", pygments_lang_class = true }
 "pymdownx.tabbed" = { alternate_style = true, combine_header_slug = true }
+
+# The `.grid cards` blocks on the home page open with `:material-…:` icon
+# shortcodes; without this they render as literal text.
+[project.markdown_extensions."pymdownx.emoji"]
+emoji_generator = "zensical.extensions.emoji.to_svg"
+emoji_index = "zensical.extensions.emoji.twemoji"
 
 [project.markdown_extensions."pymdownx.superfences"]

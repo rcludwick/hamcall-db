@@ -1,0 +1,569 @@
+/* hamcall-db documentation theme — Apple-inspired, light and dark.
+ *
+ * Shared house style with the astar site (rcludwick/astar,
+ * docs/site/stylesheets/astar.css). Same type stack, same neutrals, same flat
+ * Apple components; the difference is that astar's site is dark-only because it
+ * ships beside an app with one fixed appearance, and this one keeps its
+ * light/dark toggle because it is reference data people read at any hour.
+ *
+ * Zensical/Material expose only a fixed 21-colour palette through
+ * [project.theme.palette]. `primary = "custom"` / `accent = "custom"` is the
+ * documented escape hatch: the theme emits no colour rules and this file owns
+ * the variables. Almost everything below is a variable assignment rather than
+ * selector surgery against theme internals, so upstream restyles do not break
+ * it.
+ *
+ * ── HOW THE TWO SCHEMES ARE WIRED ──────────────────────────────────────────
+ * Every component rule further down reads a semantic `--hdb-*` token and never
+ * a literal colour. The two scheme blocks are therefore the ONLY place a
+ * colour is chosen, and adding a component means picking a token, not writing
+ * a second rule for the other scheme. If you find yourself adding a
+ * `[data-md-color-scheme=...]` selector below the palette section, the token
+ * set is missing something — add the token instead.
+ *
+ * ── RAINBOW POLICY (deliberate, do not "improve") ──────────────────────────
+ * The seven-stop spectrum appears in exactly ONE place: the hairline under the
+ * header. It is the same spectrum as astar's asterisk mark, which is what makes
+ * the two sites read as one family; hamcall-db has no logo of its own, so the
+ * hairline is the whole of it. Nowhere else. Links, buttons, headings, nav,
+ * code, admonitions, tables and cards all use ordinary flat Apple system
+ * colours. A gradient anywhere else is a defect, not a flourish. The
+ * --hdb-spectrum-* tokens exist ONLY to feed `.md-header::after` and are
+ * referenced by no other declaration in this file.
+ */
+
+/* ---------------------------------------------------------------- type --- */
+/* theme.font = false in zensical.toml suppresses the Google Fonts request;
+ * these two variables then select the native Apple stack, so the site renders
+ * in SF Pro on macOS/iOS and falls back to the platform UI face elsewhere. */
+:root {
+  --md-text-font:
+    -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+    "Helvetica Neue", system-ui, sans-serif;
+  --md-code-font:
+    ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* Spectrum stops — the header hairline and nothing else. Scheme-independent:
+   * they sit on a dark header in both schemes. */
+  --hdb-spectrum-1: #ff1a33;
+  --hdb-spectrum-2: #ff8000;
+  --hdb-spectrum-3: #ffe000;
+  --hdb-spectrum-4: #14e04a;
+  --hdb-spectrum-5: #00b4ff;
+  --hdb-spectrum-6: #5b4bff;
+  --hdb-spectrum-7: #c03bff;
+}
+
+/* -------------------------------------------------------- palette: dark --- */
+/* macOS dark mode, not Material's blue-grey. Values shared with astar.css. */
+[data-md-color-scheme="slate"] {
+  --hdb-ink: #0b0b0f;
+  --hdb-surface: #16161c;
+  --hdb-surface-2: #1e1e26;
+  --hdb-surface-3: #2a2a33;
+  --hdb-hairline: #2c2c35;
+  --hdb-hairline-strong: #3a3a45;
+  --hdb-hairline-stronger: #4a4a56;
+  --hdb-footer-bg: #0e0e13;
+  --hdb-footer-meta-bg: #08080c;
+
+  /* Apple system colours, dark-mode variants — the ordinary accent set.
+   * These, not the spectrum above, colour every interactive element. */
+  --hdb-blue: #0a84ff;
+  --hdb-blue-hover: #3d9bff;
+  --hdb-green: #30d158;
+  --hdb-orange: #ff9f0a;
+  --hdb-red: #ff453a;
+  --hdb-gray: #8e8e93;
+
+  --md-default-bg-color: var(--hdb-ink);
+  --md-default-bg-color--light: var(--hdb-surface);
+  --md-default-bg-color--lighter: var(--hdb-surface-2);
+  --md-default-bg-color--lightest: var(--hdb-surface-3);
+
+  --md-default-fg-color: #f5f5f7;
+  --md-default-fg-color--light: #c7c7cc;
+  --md-default-fg-color--lighter: var(--hdb-gray);
+  /* NOTE: --md-default-fg-color--lightest is consumed as a *background* tint by
+   * the modern theme variant (footer meta bar, table stripes) despite its name,
+   * so it must stay a low-alpha white here. An opaque grey paints a light band
+   * across the bottom of every page. */
+  --md-default-fg-color--lightest: #ffffff12;
+
+  --md-typeset-color: #e8e8ed;
+  --md-typeset-mark-color: rgb(255 214 10 / 25%);
+  --md-typeset-kbd-color: var(--hdb-surface-2);
+  --md-typeset-kbd-accent-color: #33333d;
+  --md-typeset-kbd-border-color: #0a0a0e;
+
+  /* Code: Xcode-dark-ish, flat, no brand hues. */
+  --md-code-fg-color: #e8e8ed;
+  --md-code-hl-keyword-color: #ff7ab2;
+  --md-code-hl-string-color: #ff8170;
+  --md-code-hl-number-color: #d9c97c;
+  --md-code-hl-function-color: #78c2b3;
+  --md-code-hl-constant-color: #b281eb;
+  --md-code-hl-variable-color: #e8e8ed;
+  --md-code-hl-comment-color: #7d7d87;
+  --md-code-hl-operator-color: #c7c7cc;
+  --md-code-hl-punctuation-color: #c7c7cc;
+
+  /* Read by the "classic" theme variant only; the "modern" default derives the
+   * footer from the explicit rules further down. */
+  --md-footer-bg-color: var(--hdb-footer-bg);
+  --md-footer-bg-color--dark: var(--hdb-footer-meta-bg);
+
+  color-scheme: dark;
+}
+
+/* ------------------------------------------------------- palette: light --- */
+/* macOS light mode: paper white page, #f5f5f7 secondary surfaces, #d2d2d7
+ * separators — the same three-value system Apple uses, so the two schemes are
+ * one design rather than two. */
+[data-md-color-scheme="default"] {
+  --hdb-ink: #ffffff;
+  --hdb-surface: #f5f5f7;
+  --hdb-surface-2: #ececef;
+  --hdb-surface-3: #e2e2e6;
+  --hdb-hairline: #d2d2d7;
+  --hdb-hairline-strong: #bcbcc4;
+  --hdb-hairline-stronger: #a1a1aa;
+  --hdb-footer-bg: #f5f5f7;
+  --hdb-footer-meta-bg: #ececef;
+
+  /* Apple system colours, light-mode variants. */
+  --hdb-blue: #0071e3;
+  --hdb-blue-hover: #0058b0;
+  --hdb-green: #248a3d;
+  --hdb-orange: #c05600;
+  --hdb-red: #d70015;
+  --hdb-gray: #6e6e73;
+
+  --md-default-bg-color: var(--hdb-ink);
+  --md-default-bg-color--light: var(--hdb-surface);
+  --md-default-bg-color--lighter: var(--hdb-surface-2);
+  --md-default-bg-color--lightest: var(--hdb-surface-3);
+
+  --md-default-fg-color: #1d1d1f;
+  --md-default-fg-color--light: #515154;
+  --md-default-fg-color--lighter: var(--hdb-gray);
+  /* Same caveat as the dark block: this is used as a background tint, so it
+   * must stay a low-alpha ink rather than an opaque grey. */
+  --md-default-fg-color--lightest: #00000010;
+
+  --md-typeset-color: #1d1d1f;
+  --md-typeset-mark-color: rgb(255 214 10 / 45%);
+  --md-typeset-kbd-color: var(--hdb-surface);
+  --md-typeset-kbd-accent-color: #ffffff;
+  --md-typeset-kbd-border-color: var(--hdb-hairline-strong);
+
+  /* Code: Xcode-light. The dark block's hues are unreadable on paper, so this
+   * is the one place the two schemes carry genuinely different colours rather
+   * than the same colour at a different lightness. */
+  --md-code-fg-color: #1d1d1f;
+  --md-code-hl-keyword-color: #9b2393;
+  --md-code-hl-string-color: #c41a16;
+  --md-code-hl-number-color: #1c00cf;
+  --md-code-hl-function-color: #326d74;
+  --md-code-hl-constant-color: #703daa;
+  --md-code-hl-variable-color: #1d1d1f;
+  --md-code-hl-comment-color: #5d6c79;
+  --md-code-hl-operator-color: #3a3a3c;
+  --md-code-hl-punctuation-color: #3a3a3c;
+
+  --md-footer-bg-color: var(--hdb-footer-bg);
+  --md-footer-bg-color--dark: var(--hdb-footer-meta-bg);
+
+  color-scheme: light;
+}
+
+/* --------------------------------------------------- palette: both ------- */
+/* The header chrome is the SAME dark bar in both schemes. It carries the
+ * spectrum hairline and the site identity, and Apple's own light-mode
+ * chrome is likewise dark, so flipping it with the toggle would cost the
+ * shared look and buy nothing. `--md-primary-bg-color` is the header's
+ * foreground, hence light in both.
+ *
+ * `[data-md-color-scheme]` matches whichever scheme is active; `:root > *` is
+ * what upstream's custom-colour example targets. Both are given so the palette
+ * holds however the theme chooses to stamp the attribute. */
+[data-md-color-scheme],
+:root > * {
+  /* primary = header / nav chrome */
+  --md-primary-fg-color: #101016;
+  --md-primary-fg-color--light: #2a2a36;
+  --md-primary-fg-color--dark: #08080c;
+  --md-primary-bg-color: #f5f5f7;
+  --md-primary-bg-color--light: #a1a1aa;
+
+  /* accent = hover links, active nav, focus rings */
+  --md-accent-fg-color: var(--hdb-blue);
+  --md-accent-fg-color--transparent: rgb(10 132 255 / 12%);
+  --md-accent-bg-color: #ffffff;
+  --md-accent-bg-color--light: rgb(255 255 255 / 70%);
+
+  --md-typeset-a-color: var(--hdb-blue);
+  --md-typeset-table-color: var(--hdb-hairline);
+  --md-code-bg-color: var(--hdb-surface);
+}
+
+/* ---------------------------------------------------------- typography --- */
+/* Apple display type: large, tight, slightly negative tracking. */
+.md-typeset {
+  font-size: 0.78rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.md-typeset h1 {
+  font-weight: 700;
+  letter-spacing: -0.022em;
+  color: var(--md-default-fg-color);
+}
+
+.md-typeset h2 {
+  font-weight: 650;
+  letter-spacing: -0.018em;
+  margin-top: 2.2em;
+}
+
+.md-typeset h3 {
+  font-weight: 600;
+  letter-spacing: -0.012em;
+}
+
+.md-typeset h4 {
+  font-weight: 600;
+  letter-spacing: -0.008em;
+}
+
+/* Lead paragraph directly under the page title. */
+.md-typeset h1 + p {
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: var(--md-default-fg-color--light);
+  letter-spacing: -0.01em;
+}
+
+/* ------------------------------------------------------------- header --- */
+.md-header {
+  background-color: var(--md-primary-fg-color);
+  border-bottom: 1px solid #2c2c35;
+  box-shadow: none;
+}
+
+/* ── RAINBOW, THE ONLY PLACE ──────────────────────────────────────────────
+ * The one gradient on the site; stops and offsets match astar's asterisk mark.
+ * Do not reuse these tokens elsewhere. */
+.md-header::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--hdb-spectrum-1) 0%,
+    var(--hdb-spectrum-2) 17%,
+    var(--hdb-spectrum-3) 34%,
+    var(--hdb-spectrum-4) 51%,
+    var(--hdb-spectrum-5) 68%,
+    var(--hdb-spectrum-6) 84%,
+    var(--hdb-spectrum-7) 100%
+  );
+}
+
+.md-header__title {
+  font-weight: 600;
+  letter-spacing: -0.012em;
+}
+
+/* Search field reads as a macOS field, not a Material one. The header is dark
+ * in both schemes, so the field's tints are white in both. */
+.md-search__form {
+  border-radius: 0.5rem;
+  background-color: rgb(255 255 255 / 8%);
+}
+
+.md-search__form:hover {
+  background-color: rgb(255 255 255 / 14%);
+}
+
+.md-search__input::placeholder {
+  color: #8e8e93;
+}
+
+.md-search__output {
+  border-radius: 0.5rem;
+}
+
+/* ---------------------------------------------------------------- nav --- */
+.md-nav__link:hover,
+.md-nav__link--active {
+  color: var(--hdb-blue);
+}
+
+.md-nav__title {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.md-tabs {
+  border-bottom: none;
+}
+
+/* --------------------------------------------------------- admonitions --- */
+/* The theme paints each flavour as a Material-tinted block (a 10%-alpha wash of
+ * #448aff, #ff9100, #ff1744 …). We replace that with one flat Apple card and a
+ * single coloured rule down the left edge, so colour marks severity instead of
+ * flooding the block. Flat fills only — no gradients, and deliberately not the
+ * spectrum.
+ *
+ * Specificity note: the theme's flavour rules are `.md-typeset
+ * .admonition.warning` (0,3,0), so the overrides below must match that shape;
+ * this file loads after the theme, so an equal-specificity rule wins. */
+.md-typeset .admonition,
+.md-typeset details {
+  border: 1px solid var(--hdb-hairline);
+  border-left: 3px solid var(--hdb-adm, var(--hdb-gray));
+  border-radius: 0.6rem;
+  background-color: var(--hdb-surface);
+  box-shadow: none;
+  font-size: 0.68rem;
+}
+
+.md-typeset :is(.admonition-title, summary) {
+  background-color: var(--md-default-fg-color--lightest);
+  font-weight: 600;
+  letter-spacing: -0.008em;
+}
+
+/* One Apple system colour per flavour, carried by --hdb-adm to the left rule,
+ * the icon and the title chevron. */
+.md-typeset .admonition.note,
+.md-typeset details.note,
+.md-typeset .admonition.info,
+.md-typeset details.info,
+.md-typeset .admonition.abstract,
+.md-typeset details.abstract {
+  --hdb-adm: var(--hdb-blue);
+}
+
+.md-typeset .admonition.tip,
+.md-typeset details.tip,
+.md-typeset .admonition.success,
+.md-typeset details.success,
+.md-typeset .admonition.example,
+.md-typeset details.example {
+  --hdb-adm: var(--hdb-green);
+}
+
+.md-typeset .admonition.warning,
+.md-typeset details.warning,
+.md-typeset .admonition.caution,
+.md-typeset details.caution,
+.md-typeset .admonition.question,
+.md-typeset details.question {
+  --hdb-adm: var(--hdb-orange);
+}
+
+.md-typeset .admonition.danger,
+.md-typeset details.danger,
+.md-typeset .admonition.failure,
+.md-typeset details.failure,
+.md-typeset .admonition.bug,
+.md-typeset details.bug {
+  --hdb-adm: var(--hdb-red);
+}
+
+.md-typeset .admonition.quote,
+.md-typeset details.quote,
+.md-typeset .admonition.cite,
+.md-typeset details.cite {
+  --hdb-adm: var(--hdb-gray);
+}
+
+/* Kill the theme's per-flavour background wash at its own specificity. */
+.md-typeset .admonition.note,
+.md-typeset details.note,
+.md-typeset .admonition.info,
+.md-typeset details.info,
+.md-typeset .admonition.abstract,
+.md-typeset details.abstract,
+.md-typeset .admonition.tip,
+.md-typeset details.tip,
+.md-typeset .admonition.success,
+.md-typeset details.success,
+.md-typeset .admonition.example,
+.md-typeset details.example,
+.md-typeset .admonition.warning,
+.md-typeset details.warning,
+.md-typeset .admonition.caution,
+.md-typeset details.caution,
+.md-typeset .admonition.question,
+.md-typeset details.question,
+.md-typeset .admonition.danger,
+.md-typeset details.danger,
+.md-typeset .admonition.failure,
+.md-typeset details.failure,
+.md-typeset .admonition.bug,
+.md-typeset details.bug,
+.md-typeset .admonition.quote,
+.md-typeset details.quote,
+.md-typeset .admonition.cite,
+.md-typeset details.cite {
+  background-color: var(--hdb-surface);
+}
+
+/* Icon (::before is a masked glyph) and the details chevron (::after). */
+.md-typeset .admonition > .admonition-title::before,
+.md-typeset details > summary::before {
+  background-color: var(--hdb-adm, var(--hdb-gray));
+}
+
+.md-typeset .admonition > .admonition-title::after,
+.md-typeset details > summary::after {
+  color: var(--hdb-adm, var(--hdb-gray));
+}
+
+/* ---------------------------------------------------------------- code --- */
+/* Rounded, hairline-bounded, no drop shadow — Apple, not Material. */
+.md-typeset .highlight,
+.md-typeset pre > code {
+  border-radius: 0.6rem;
+}
+
+.md-typeset .highlight {
+  border: 1px solid var(--hdb-hairline);
+  background-color: var(--md-code-bg-color);
+  overflow: hidden;
+}
+
+.md-typeset code {
+  border-radius: 0.3rem;
+  font-size: 0.85em;
+}
+
+/* --------------------------------------------------------------- table --- */
+/* Covers both the Markdown tables and the raw `<table id="networks">` on the
+ * home page that the manifest script fills in: it carries an id but no class,
+ * so `table:not([class])` is what styles it, same as every other table here. */
+.md-typeset table:not([class]) {
+  border: 1px solid var(--hdb-hairline);
+  border-radius: 0.6rem;
+  overflow: hidden;
+  font-size: 0.7rem;
+}
+
+.md-typeset table:not([class]) th {
+  background: var(--hdb-surface-2);
+  font-weight: 600;
+  letter-spacing: -0.006em;
+}
+
+.md-typeset table:not([class]) td {
+  border-top: 1px solid var(--hdb-hairline);
+}
+
+/* `<div class="scroll" markdown>` — the wrapper around wide content on the home
+ * page. The theme already lets a bare table scroll itself; this makes the
+ * wrapper hold that promise for anything else put inside it. */
+.md-typeset .scroll {
+  overflow-x: auto;
+}
+
+/* --------------------------------------------------------------- cards --- */
+/* `<div class="grid cards" markdown>` — flat Apple cards: one surface, one
+ * hairline, generous radius. No gradient, no shadow. */
+.md-typeset .grid.cards > :is(ul, ol) > li,
+.md-typeset .grid > .card {
+  border: 1px solid var(--hdb-hairline);
+  border-radius: 0.75rem;
+  background: var(--hdb-surface);
+  box-shadow: none;
+  transition:
+    border-color 120ms ease,
+    background-color 120ms ease;
+}
+
+.md-typeset .grid.cards > :is(ul, ol) > li:hover,
+.md-typeset .grid > .card:hover {
+  border-color: var(--hdb-hairline-strong);
+  background: var(--hdb-surface-2);
+  box-shadow: none;
+}
+
+/* ------------------------------------------------------------- buttons --- */
+/* `[Text](url){ .md-button }` — an Apple push button: flat fill, 8px radius,
+ * no gradient. `.md-button--primary` is the filled/default variant. */
+.md-typeset .md-button {
+  border: 1px solid var(--hdb-hairline-strong);
+  border-radius: 0.5rem;
+  background-color: var(--hdb-surface-2);
+  color: var(--md-default-fg-color);
+  padding: 0.35em 1em;
+  font-size: 0.72rem;
+  font-weight: 590;
+  letter-spacing: -0.008em;
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease;
+}
+
+.md-typeset .md-button:hover,
+.md-typeset .md-button:focus-visible {
+  background-color: var(--hdb-surface-3);
+  border-color: var(--hdb-hairline-stronger);
+  color: var(--md-default-fg-color);
+}
+
+.md-typeset .md-button--primary {
+  background-color: var(--hdb-blue);
+  border-color: var(--hdb-blue);
+  color: #ffffff;
+}
+
+.md-typeset .md-button:is(.md-button--primary):hover,
+.md-typeset .md-button:is(.md-button--primary):focus-visible {
+  background-color: var(--hdb-blue-hover);
+  border-color: var(--hdb-blue-hover);
+  color: #ffffff;
+}
+
+/* ---------------------------------------------------------------- misc --- */
+.md-typeset hr {
+  border-bottom-color: var(--hdb-hairline);
+}
+
+.md-typeset blockquote {
+  border-left: 2px solid var(--hdb-hairline-strong);
+  color: var(--md-default-fg-color--light);
+}
+
+.md-typeset kbd {
+  border-radius: 0.3rem;
+}
+
+/* -------------------------------------------------------------- footer --- */
+/* The modern theme variant ignores --md-footer-bg-color, so set it directly. */
+.md-footer {
+  background-color: var(--hdb-footer-bg);
+  border-top: 1px solid var(--hdb-hairline);
+}
+
+.md-footer-meta {
+  background-color: var(--hdb-footer-meta-bg);
+}
+
+.md-footer__link {
+  border-radius: 0.5rem;
+}
+
+/* -------------------------------------------------- reduced motion / a11y -- */
+@media (prefers-reduced-motion: reduce) {
+  .md-typeset .grid.cards > :is(ul, ol) > li,
+  .md-typeset .grid > .card,
+  .md-typeset .md-button {
+    transition: none;
+  }
+}
