@@ -297,7 +297,27 @@ terms, which means:
        XLX reflector data from the XLX registry maintained by Luc Engelmann,
        LX1IQ (http://xlxapi.rlx.lu/).
 
-   THE REFLECTOR DIRECTORY IS A SEPARATE CC BY 4.0 DATASET (sources 11-12)
+   13. Pi-Star DExtra host file — standalone XRF reflectors (SEPARATE CC BY 4.0 file)
+   Coverage: XRF / DExtra reflectors the XLX registry does not list (~53).
+   Maintainer: Andy Taylor, MW0MWZ (Pi-Star).
+   License:  No explicit machine-readable license. A publicly served host file
+             of reflector addresses, published for exactly this purpose and
+             redistributed by hotspot software generally. Used on that basis,
+             with attribution. **Flagged for human sign-off** alongside the
+             other assumed-basis sources.
+   Required attribution statement:
+
+       Standalone XRF reflector data from the Pi-Star DExtra host file
+       (http://www.pistar.uk/downloads/DExtra_Hosts.txt).
+
+   WHY THIS SOURCE EXISTS: DVRef retired its D-Star listings on 2026-08-26, and
+   xrefl.net — the XReflector Directory those reflectors registered with — is now
+   a parked domain. This file is what survives. It is NOT a mirror of DVRef data
+   (it merges xrefl.net with the XLX registry's hostname endpoint), so using it
+   does not conflict with DVRef's request that callers avoid downstream mirrors
+   of THEIR data.
+
+   THE REFLECTOR DIRECTORY IS A SEPARATE CC BY 4.0 DATASET (sources 11-13)
    ----------------------------------------------------------------------
    The reflector artifacts — hamcall-db-reflectors-YYYY-MM-DD.parquet, the
    matching .db (table: reflectors), and the static JSON API under site/api/v1/
@@ -323,7 +343,7 @@ CC BY-NC dataset: it is licensed under ODbL (see the LICENSE-ODbL file and
 source 8 above) and must be redistributed under its own terms. Do not co-locate
 or merge it into the CC BY-NC artifacts.
 
-The SEPARATE reflector directory (sources 11-12) is likewise NOT part of this
+The SEPARATE reflector directory (sources 11-13) is likewise NOT part of this
 combined CC BY-NC dataset: it is licensed under CC BY 4.0 (see the
 LICENSE-CC-BY file) and merging it into the CC BY-NC artifacts would violate
 CC BY 4.0's prohibition on adding restrictions. Do not co-locate or merge it

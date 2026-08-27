@@ -59,6 +59,9 @@ Reproduce both statements below when redistributing these files:
     XLX reflector data from the XLX registry maintained by Luc Engelmann,
     LX1IQ (http://xlxapi.rlx.lu/).
 
+    Standalone XRF reflector data from the Pi-Star DExtra host file
+    (http://www.pistar.uk/downloads/DExtra_Hosts.txt).
+
 STATEMENT OF MODIFICATION (required by CC BY 4.0)
 --------------------------------------------------
 The upstream rows were reformatted into this project's common reflector schema:
@@ -72,6 +75,12 @@ EMAIL ADDRESSES WERE REMOVED from the free-text fields (`name`, `sponsor`,
 bulk-downloadable machine-readable artifact, which turns a sysop's address in a
 reflector blurb into a harvestable list; the marker is left in place so the
 surrounding sentence still reads. Field VALUES are otherwise unmodified.
+
+D-Star entries are drawn from two sources and DEDUPLICATED BY ADDRESS: the
+Pi-Star host file lists every XLX reflector under its XRF alias at the same
+address, and those aliases are dropped so one machine is not published twice
+under two ids. Standalone XRF reflectors are kept even where their number
+collides with an unrelated XLX reflector's.
 
 Three derived fields are computed by this project and are not upstream data:
 `port` for D-Star (30001, the DExtra protocol constant, which the registry does

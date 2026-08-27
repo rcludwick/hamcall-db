@@ -21,7 +21,7 @@ import pytest
 from hamcall_db import build_reflectors as reflectors_build
 from hamcall_db import reflectors
 from hamcall_db.reflectors import ReflectorRecord, merge_by_id, network_document, write_api
-from hamcall_db.sources import dvref, xlx
+from hamcall_db.sources import dextra, dvref, xlx
 from hamcall_db.sources.dvref import DvrefAuthError, DvrefSource
 from hamcall_db.sources.xlx import XlxSource, dextra_callsign, sanitize_xml
 
@@ -982,3 +982,75 @@ def test_throttling_is_not_reported_as_an_auth_problem() -> None:
 
 def test_the_published_rate_limit_is_recorded_where_it_binds() -> None:
     assert dvref.AUTHENTICATED_HOURLY_LIMIT == 60
+
+
+# --- standalone XRF reflectors, and the address-not-name deduplication -----------
+
+DEXTRA_HOSTS = FIXTURES / "dextra_hosts.txt"
+
+
+def _dextra_records() -> list[ReflectorRecord]:
+    source = dextra.DextraHostsSource()
+    return list(source.parse(DEXTRA_HOSTS, synced_at="2026-08-27"))
+
+
+def test_dextra_parses_the_host_file() -> None:
+    records = _dextra_records()
+    assert [r.id for r in records] == ["XRF002", "XRF836", "XRFKSJ"]
+    first = records[0]
+    assert first.network == "dstar"
+    assert first.host == "52.36.45.107"
+    assert first.port == 30001  # protocol constant; the file publishes no port
+    assert first.source == "dextra"
+
+
+def test_dextra_name_is_its_own_callsign() -> None:
+    # Unlike XLX rows, where the directory name and the wire name differ, an XRF
+    # row's name IS what a DExtra client sends. There is no aliasing to undo.
+    for record in _dextra_records():
+        assert record.callsign == record.id
+
+
+def test_dextra_skips_rows_it_cannot_use() -> None:
+    ids = {r.id for r in _dextra_records()}
+    assert "XRF999" not in ids  # no address
+    assert "NOTAREFLECTOR" not in ids  # not an XRF name
+
+
+def test_an_xlx_alias_is_dropped_but_a_standalone_reflector_is_kept() -> None:
+    # The whole point of this source. The host file lists BOTH an XLX reflector's
+    # XRF alias (same machine, same address, already published) and genuinely
+    # standalone XRF reflectors. Only the address tells them apart.
+    xlx_hosts = {"45.56.69.219"}  # XLX836's address
+    kept = dextra.without_known_addresses(_dextra_records(), xlx_hosts)
+    ids = [r.id for r in kept]
+
+    assert "XRF836" not in ids, "an XLX reflector's alias must not be published twice"
+    assert "XRF002" in ids, "a standalone XRF reflector must survive"
+    assert "XRFKSJ" in ids
+
+
+def test_deduplicating_by_name_would_be_wrong_in_both_directions() -> None:
+    # XRF002 and XLX002 are different machines that share a number; XRF836 and
+    # XLX836 are one machine under two names. Name-matching would drop the real
+    # reflector and keep the duplicate — exactly backwards.
+    records = _dextra_records()
+    xlx_names = {"XRF836", "XRF002"}  # what the XLX rows' callsigns look like
+    by_name = [r for r in records if r.id not in xlx_names]
+    assert "XRF002" not in [r.id for r in by_name], "name-matching drops a real reflector"
+
+    by_address = dextra.without_known_addresses(records, {"45.56.69.219"})
+    assert "XRF002" in [r.id for r in by_address], "address-matching keeps it"
+
+
+def test_dextra_download_uses_the_injected_fetcher_and_caches(tmp_path: Path) -> None:
+    calls: list[str] = []
+
+    def fetch(url: str) -> bytes:
+        calls.append(url)
+        return DEXTRA_HOSTS.read_bytes()
+
+    source = dextra.DextraHostsSource(fetch=fetch)
+    source.download(tmp_path)
+    source.download(tmp_path)  # same day -> must not refetch
+    assert len(calls) == 1
