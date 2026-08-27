@@ -1,0 +1,9 @@
+# DExtra_Hosts.txt downloaded from http://www.pistar.uk/downloads/DExtra_Hosts.txt
+# DExtra Hosts resolved from the XReflector Directory (http://xrefl.net),
+# additional host information sourced from http://xlxapi.rlx.lu/api.php?do=GetReflectorHostname
+# File updated on Thursday 27th of August 2026
+XRF002	52.36.45.107
+XRF836	45.56.69.219
+XRFKSJ	203.0.113.9
+XRF999
+NOTAREFLECTOR	198.51.100.4

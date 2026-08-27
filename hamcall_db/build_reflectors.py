@@ -39,6 +39,10 @@ from hamcall_db.reflectors import (
     records_from_document,
     write_api,
 )
+from hamcall_db.sources.dextra import (
+    DextraHostsSource,
+    without_known_addresses,
+)
 from hamcall_db.sources.dvref import (
     API_ROOT,
     NETWORKS,
@@ -50,6 +54,11 @@ from hamcall_db.sources.dvref import ATTRIBUTION as DVREF_ATTRIBUTION
 from hamcall_db.sources.xlx import XLX_LIST_URL, XlxSource
 from hamcall_db.sqlite_writer import write_reflectors_sqlite
 from hamcall_db.writer import write_reflectors_parquet
+
+DEXTRA_ATTRIBUTION = (
+    "Standalone XRF reflector data from the Pi-Star DExtra host file "
+    "(http://www.pistar.uk/downloads/DExtra_Hosts.txt)."
+)
 
 XLX_ATTRIBUTION = (
     "XLX reflector data from the XLX registry maintained by Luc Engelmann, LX1IQ "
@@ -198,16 +207,42 @@ def build(
             typer.echo(f"WARNING: dvref/{segment} failed ({exc})", err=True)
             failed.append(f"dvref/{segment}")
 
-    # XLX first: it is the coverage source, so its row wins an id collision.
-    if "dstar" in dvref_records:
-        dstar = merge_by_id(dstar, dvref_records.pop("dstar"))
-        dstar_attribution.append(dvref_credit.pop("dstar", DVREF_ATTRIBUTION))
+    # Standalone XRF reflectors — the ones the XLX registry does not know about.
+    # DVRef used to supply these and retired the listings; xrefl.net, where they
+    # registered, is now a parked domain. Pi-Star's host file is what survives.
+    #
+    # The file also lists every XLX reflector under its XRF alias, at the SAME
+    # address, so those must be dropped or one machine is published twice under
+    # two ids. Deduplication is BY ADDRESS: a standalone XRF reflector can share
+    # a number with an unrelated XLX one (XRF002 is 52.36.45.107, XLX002 is a
+    # host in China), so matching on name would drop the real reflectors and keep
+    # the aliases — wrong in both directions at once.
+    if dstar:
+        try:
+            dextra_source = DextraHostsSource()
+            dextra_rows = list(dextra_source.parse(dextra_source.download(day_dir / "dextra")))
+            known_hosts = {r.host for r in dstar if r.host}
+            standalone = without_known_addresses(dextra_rows, known_hosts)
+            typer.echo(
+                f"dextra: {len(dextra_rows)} XRF rows, {len(standalone)} standalone "
+                f"after dropping XLX aliases by address"
+            )
+            if standalone:
+                dstar = merge_by_id(dstar, standalone)
+                dstar_attribution.append(DEXTRA_ATTRIBUTION)
+                attempted.setdefault("dstar", set()).add("dextra")
+        except Exception as exc:  # noqa: BLE001 - one bad source must not sink the build
+            typer.echo(f"WARNING: dextra failed ({exc})", err=True)
+            failed.append("dextra")
 
     if dstar:
         documents["dstar"] = network_document(
             "dstar",
             dstar,
-            source_name="XLX registry (LX1IQ)" + (" + DVRef" if len(dstar_attribution) > 1 else ""),
+            source_name=(
+                "XLX registry (LX1IQ)"
+                + (" + Pi-Star DExtra hosts" if len(dstar_attribution) > 1 else "")
+            ),
             source_url=XLX_LIST_URL,
             attribution=ATTRIBUTION_SEPARATOR.join(dstar_attribution),
             generated=today,
