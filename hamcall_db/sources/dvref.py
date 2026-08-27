@@ -64,6 +64,22 @@ USER_AGENT = "hamcall-db/0 (+https://github.com/rcludwick/hamcall-db)"
 
 ATTRIBUTION = "Reflector data provided by DVRef — https://dvref.com/"
 
+# DVRef's published rate limits (API Guide, 2026-08-26).
+#
+#   Authenticated: 60 requests per HOUR per ACCOUNT — shared across every DVRef
+#                  endpoint, and counted against the account rather than the
+#                  source IP, so it follows the token wherever it is used.
+#   Anonymous:     1 retrieval per resource per source IP every 6 hours, using
+#                  User-Agent + X-DVRef-Callsign + X-DVRef-Contact and no token.
+#
+# A nightly build spends five requests, which is comfortable. The trap is that
+# interactive debugging spends from the SAME budget: running experiments from a
+# workstation while the nightly job uses the same token can throttle the build.
+# That happened on 2026-08-26. If you are poking at the API by hand, either
+# expect it or use the anonymous tier, which is per-IP and would fit this
+# project's once-a-night access pattern on its own.
+AUTHENTICATED_HOURLY_LIMIT = 60
+
 # DVRef path segment -> the network name we publish under. `mrefd` is the reflector
 # daemon's name; the network everyone calls it is M17. `urfd` likewise -> `urf`.
 # NOTE: `dstar` is deliberately ABSENT. DVRef disabled its D-Star listings and
@@ -95,6 +111,20 @@ class DvrefAuthError(RuntimeError):
     """No usable API token, or upstream rejected the one supplied."""
 
 
+class DvrefThrottled(RuntimeError):
+    """Upstream asked us to slow down, and said for how long.
+
+    Distinct from :class:`DvrefAuthError` because the remedy is different and
+    mechanical: wait. ``retry_after`` is seconds, taken from the response body's
+    ``retry_after_seconds`` or the ``Retry-After`` header, and is None only if
+    upstream sent neither.
+    """
+
+    def __init__(self, message: str, retry_after: int | None = None) -> None:
+        super().__init__(message)
+        self.retry_after = retry_after
+
+
 def _urllib_fetch(url: str, token: str) -> bytes:
     request = urllib.request.Request(
         url,
@@ -108,6 +138,12 @@ def _urllib_fetch(url: str, token: str) -> bytes:
         with urllib.request.urlopen(request) as response:  # noqa: S310 (fixed https URL)
             return response.read()
     except urllib.error.HTTPError as exc:
+        if exc.code == 429:
+            # Upstream tells us exactly how long to wait, in the body and again
+            # in a header. Treating that as a generic failure throws the answer
+            # away and skips the network for the night over something that
+            # resolves itself.
+            raise _throttled(exc) from exc
         if exc.code in (401, 403):
             # Surface what upstream actually said. A 401 really is an auth
             # problem, but a 403 from here is usually NOT about the token —
@@ -130,6 +166,33 @@ def _urllib_fetch(url: str, token: str) -> bytes:
                 f"DVRef refused the request ({exc.code}): {detail or '<no body>'} {hint}"
             ) from exc
         raise
+
+
+def _throttled(exc: urllib.error.HTTPError) -> DvrefThrottled:
+    """Build a :class:`DvrefThrottled` from a 429, preserving the wait it names."""
+    body = ""
+    try:
+        body = exc.read().decode("utf-8", "replace").strip()
+    except Exception:  # noqa: BLE001 - diagnostics must not mask the error
+        pass
+
+    retry_after: int | None = None
+    try:
+        payload = json.loads(body)
+        if isinstance(payload, dict):
+            value = payload.get("retry_after_seconds")
+            if isinstance(value, int) and not isinstance(value, bool):
+                retry_after = value
+    except ValueError, TypeError:
+        pass
+    if retry_after is None:
+        header = exc.headers.get("Retry-After") if exc.headers else None
+        if header and str(header).strip().isdigit():
+            retry_after = int(str(header).strip())
+
+    detail = body[:200] or "<no body>"
+    wait = f" Retry after {retry_after}s." if retry_after is not None else ""
+    return DvrefThrottled(f"DVRef throttled the request (429): {detail}{wait}", retry_after)
 
 
 def _rows(payload: object) -> list[dict[str, object]]:

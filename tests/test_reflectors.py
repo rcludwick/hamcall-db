@@ -929,3 +929,56 @@ def test_dvref_rejects_the_retired_dstar_segment() -> None:
     # loudly at the call site rather than quietly fetching an always-empty list.
     with pytest.raises(ValueError, match="unknown DVRef segment"):
         DvrefSource("dstar", token="t")
+
+
+# --- upstream asking us to slow down --------------------------------------------
+
+
+def _http_error(code: int, body: str, headers: dict[str, str] | None = None):
+    import io
+    import urllib.error
+
+    return urllib.error.HTTPError(
+        url="https://dvref.com/api/v2/ysf/reflectors/",
+        code=code,
+        msg="Too Many Requests",
+        hdrs=headers or {},  # type: ignore[arg-type]
+        fp=io.BytesIO(body.encode("utf-8")),
+    )
+
+
+def test_a_throttle_preserves_the_wait_upstream_named() -> None:
+    # DVRef answers 429 with the exact number of seconds to wait. Treating that
+    # as a generic failure throws the answer away and skips the network for the
+    # night over something that resolves itself.
+    exc = _http_error(
+        429,
+        '{"detail": "Authenticated DVRef API clients are limited to 60 requests per hour.",'
+        ' "retry_after_seconds": 1114}',
+    )
+    throttled = dvref._throttled(exc)
+    assert isinstance(throttled, dvref.DvrefThrottled)
+    assert throttled.retry_after == 1114
+    assert "1114" in str(throttled)
+
+
+def test_a_throttle_falls_back_to_the_retry_after_header() -> None:
+    exc = _http_error(429, "not json at all", {"Retry-After": "300"})
+    assert dvref._throttled(exc).retry_after == 300
+
+
+def test_a_throttle_without_a_stated_wait_is_still_a_throttle() -> None:
+    # Missing guidance must not become a crash or a silent zero.
+    assert dvref._throttled(_http_error(429, "")).retry_after is None
+
+
+def test_throttling_is_not_reported_as_an_auth_problem() -> None:
+    # The two have different remedies: one is "wait", the other is "your token
+    # is wrong". Conflating them is what sent me hunting a secrets problem that
+    # did not exist.
+    assert not issubclass(dvref.DvrefThrottled, dvref.DvrefAuthError)
+    assert not issubclass(dvref.DvrefAuthError, dvref.DvrefThrottled)
+
+
+def test_the_published_rate_limit_is_recorded_where_it_binds() -> None:
+    assert dvref.AUTHENTICATED_HOURLY_LIMIT == 60
