@@ -39,7 +39,13 @@ from hamcall_db.reflectors import (
     records_from_document,
     write_api,
 )
-from hamcall_db.sources.dvref import API_ROOT, NETWORKS, DvrefAuthError, DvrefSource
+from hamcall_db.sources.dvref import (
+    API_ROOT,
+    NETWORKS,
+    DvrefAuthError,
+    DvrefSource,
+    DvrefThrottled,
+)
 from hamcall_db.sources.dvref import ATTRIBUTION as DVREF_ATTRIBUTION
 from hamcall_db.sources.xlx import XLX_LIST_URL, XlxSource
 from hamcall_db.sqlite_writer import write_reflectors_sqlite
@@ -178,6 +184,13 @@ def build(
             # invisible unless the message is printed.
             if source.notice:
                 typer.echo(f"  notice from dvref/{segment}: {source.notice}", err=True)
+        except DvrefThrottled as exc:
+            # Distinct from a failure: upstream said to wait, and said how long.
+            # The keep-last-good path below covers the data; this just makes the
+            # log say something a reader can act on.
+            wait = f" (retry after {exc.retry_after}s)" if exc.retry_after else ""
+            typer.echo(f"WARNING: dvref/{segment} throttled{wait} — {exc}", err=True)
+            failed.append(f"dvref/{segment}:throttled")
         except DvrefAuthError as exc:
             typer.echo(f"WARNING: dvref/{segment} skipped — {exc}", err=True)
             failed.append(f"dvref/{segment}")
