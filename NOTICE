@@ -317,7 +317,28 @@ terms, which means:
    does not conflict with DVRef's request that callers avoid downstream mirrors
    of THEIR data.
 
-   THE REFLECTOR DIRECTORY IS A SEPARATE CC BY 4.0 DATASET (sources 11-13)
+   14. Pi-Star DPlus + DCS host files — REF/DCS names (SEPARATE CC BY 4.0 file)
+   Coverage: The other two names an already-listed D-Star reflector answers to
+             (~802 REF, ~881 DCS). NAMES ONLY — this source adds no rows.
+   Maintainer: Andy Taylor, MW0MWZ (Pi-Star).
+   License:  Same basis as source 13: publicly served host files of reflector
+             addresses, published for this purpose and redistributed by hotspot
+             software generally. Used on that basis, with attribution.
+             **Flagged for human sign-off** alongside the other assumed-basis
+             sources.
+   Required attribution statement:
+
+       REF and DCS reflector names from the Pi-Star DPlus and DCS host files
+       (http://www.pistar.uk/downloads/).
+
+   WHY THIS SOURCE EXISTS: D-Star has three linking protocols and the XLX
+   multiprotocol reflector answers on all of them, so one machine is REF836,
+   XRF836 and DCS836 at once. An operator who knows a reflector by its REF name
+   should be able to find it. Only the names are taken; the addresses and ports
+   already come from sources 12-13, and matching is BY ADDRESS (REF001 and
+   XRF001 are different machines that share a number).
+
+   THE REFLECTOR DIRECTORY IS A SEPARATE CC BY 4.0 DATASET (sources 11-14)
    ----------------------------------------------------------------------
    The reflector artifacts — hamcall-db-reflectors-YYYY-MM-DD.parquet, the
    matching .db (table: reflectors), and the static JSON API under site/api/v1/
@@ -343,7 +364,7 @@ CC BY-NC dataset: it is licensed under ODbL (see the LICENSE-ODbL file and
 source 8 above) and must be redistributed under its own terms. Do not co-locate
 or merge it into the CC BY-NC artifacts.
 
-The SEPARATE reflector directory (sources 11-13) is likewise NOT part of this
+The SEPARATE reflector directory (sources 11-14) is likewise NOT part of this
 combined CC BY-NC dataset: it is licensed under CC BY 4.0 (see the
 LICENSE-CC-BY file) and merging it into the CC BY-NC artifacts would violate
 CC BY 4.0's prohibition on adding restrictions. Do not co-locate or merge it

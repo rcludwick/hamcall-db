@@ -1,0 +1,13 @@
+# DPlus_Hosts.txt downloaded from http://www.pistar.uk/downloads/DPlus_Hosts.txt
+# File updated on Friday 28th of August 2026
+#
+# Real rows, sliced from the live file. REF836 shares XLX836's address (one XLX
+# box answering on DPlus too); REF001 does NOT share XRF001's, which is why
+# matching on the digits would be wrong.
+REF001	104.237.157.7
+REF836	45.56.69.219
+REF002	45.56.119.213
+# A repeater gateway, not a reflector — the live file carries ~590 of these.
+DB0LJ	203.0.113.77
+# Malformed: no address.
+REF999

@@ -1,0 +1,8 @@
+# DCS_Hosts.txt downloaded from http://www.pistar.uk/downloads/DCS_Hosts.txt
+# File updated on Friday 28th of August 2026
+#
+# The live file lists every XLX reflector twice: once as DCS### and once under
+# its own XLX### name. Only the DCS name-space is an alias worth publishing.
+DCS836	45.56.69.219
+XLX836	45.56.69.219
+DCS002	185.228.139.209
