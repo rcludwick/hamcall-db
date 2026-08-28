@@ -853,8 +853,8 @@
         "DCS045"
       ],
       "country": "USA",
-      "dashboard": "http://urf045.pennlinkgroup.com:8082/urfd",
-      "description": "PennLink Group URF045",
+      "dashboard": "http://xlx045.pennlinkgroup.com/xlxd/",
+      "description": "Penn-Link - info.pennlinkgroup.com - DSTAR/DMR/YSF/P25/NXDN/Wires-X",
       "dial": {
         "callsign": "XRF045",
         "host": "70.44.20.24",
@@ -5314,7 +5314,7 @@
       "description": "XLX288 / YSF IT-URF288 #22250",
       "dial": {
         "callsign": "XRF288",
-        "host": "79.41.30.217",
+        "host": "79.27.137.138",
         "kind": "dextra",
         "port": 30001
       },
@@ -8465,9 +8465,9 @@
         "REF479",
         "DCS479"
       ],
-      "country": "United States",
-      "dashboard": "http://imrs.amcomm.network",
-      "description": "AmComm Network IMRS",
+      "country": "USA",
+      "dashboard": "http://n9ink.net/db",
+      "description": "Welcome to Ozark Digital",
       "dial": {
         "callsign": "XRF479",
         "host": "198.58.106.10",
@@ -8601,7 +8601,9 @@
     },
     {
       "aliases": [
-        "XRF488"
+        "XRF488",
+        "REF488",
+        "DCS488"
       ],
       "country": "RU",
       "dashboard": "http://77.222.53.249",
@@ -9402,8 +9404,8 @@
         "DCS545"
       ],
       "country": "USA",
-      "dashboard": "http://xlx545.pennlinkgroup.com/xlxd/",
-      "description": "info.pennlinkgroup.com - G3 Terminal Serices - DMR/DSTAR/Fusion/P25/NXDN - Module B",
+      "dashboard": "http://xlx545.pennlinkgroup.com/xlx/",
+      "description": "info.pennlinkgroup.com - G3 Terminal Services - DSTAR/DMR/Fusion/P25/NXDN (module B)",
       "dial": {
         "callsign": "XRF545",
         "host": "3.215.215.169",
@@ -13006,7 +13008,7 @@
       ],
       "country": "Germany",
       "dashboard": "http://xlx850.bm262.de",
-      "description": "MultiMode: BM-TG263<>YSF: DE-Germany<>Wires-X: DL-WIRESX-BM263 <> Tetra",
+      "description": "MultiMode DV: BM-TG263<=>YSF: DE-Germany<=>Wires-X: DL-WIRESX-BM263",
       "dial": {
         "callsign": "XRF850",
         "host": "116.203.56.12",
@@ -16381,7 +16383,7 @@
       "description": "New England MultiMode Group",
       "dial": {
         "callsign": "XRFMMG",
-        "host": "172.56.198.157",
+        "host": "137.103.112.175",
         "kind": "dextra",
         "port": 30001
       },
@@ -18012,7 +18014,7 @@
     {
       "dial": {
         "callsign": "XRF321",
-        "host": "104.21.57.126",
+        "host": "172.67.163.225",
         "kind": "dextra",
         "port": 30001
       },
@@ -18072,7 +18074,7 @@
     {
       "dial": {
         "callsign": "XRF555",
-        "host": "178.107.232.203",
+        "host": "178.107.232.204",
         "kind": "dextra",
         "port": 30001
       },
@@ -44035,7 +44037,7 @@
       "dashboard": "http://fortiga.ddns.net:42180",
       "description": "SCANIA TEAM",
       "dial": {
-        "host": "85.73.210.109",
+        "host": "85.73.213.205",
         "kind": "ysf",
         "port": 42007
       },

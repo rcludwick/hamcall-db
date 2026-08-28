@@ -12642,7 +12642,7 @@
       "dashboard": "http://fortiga.ddns.net:42180",
       "description": "SCANIA TEAM",
       "dial": {
-        "host": "85.73.210.109",
+        "host": "85.73.213.205",
         "kind": "ysf",
         "port": 42007
       },
