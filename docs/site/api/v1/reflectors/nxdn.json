@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 295,
-  "generated": "2026-08-27",
+  "count": 296,
+  "generated": "2026-08-28",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -3042,6 +3042,18 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "W4YI"
+    },
+    {
+      "country": "BD",
+      "dial": {
+        "host": "s21altnxdn.ddnsfree.com",
+        "kind": "nxdn",
+        "port": 41401
+      },
+      "id": "47070",
+      "name": "S21ALT NXDN 47070",
+      "network": "nxdn",
+      "source": "dvref"
     },
     {
       "country": "US",

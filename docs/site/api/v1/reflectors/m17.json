@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 105,
-  "generated": "2026-08-27",
+  "generated": "2026-08-28",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1471,6 +1471,27 @@
       "sponsor": "ok1lbc"
     },
     {
+      "country": "DE",
+      "dashboard": "https://dc7jzb.de/M17Dash",
+      "description": "<p>M17 Reflector M17-D22 des DARC OV D22 - Soziale Medien.</p>\r\n<p>Verbunden mit YSF-Reflector DE-D22 und Brandmeister Talkgroup 26322.</p>",
+      "dial": {
+        "callsign": "M17-D22",
+        "host": "90.187.72.177",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C"
+        ],
+        "port": 17000
+      },
+      "id": "M17-D22",
+      "name": "D22",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "None"
+    },
+    {
       "country": "US",
       "dashboard": "https://doghousenet.com/m17/",
       "description": "<p>The M17 module of the doghouse digital network.</p>",
@@ -1804,24 +1825,6 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "America's Kansas City Wide Digital Network"
-    },
-    {
-      "country": "US",
-      "dashboard": "http://M17-Home.k0xm.net:3000",
-      "dial": {
-        "callsign": "M17-KXM",
-        "host": "44.27.136.156",
-        "kind": "m17",
-        "modules": [
-          "A"
-        ],
-        "port": 17000
-      },
-      "id": "M17-KXM",
-      "name": "K0XM Test M17 Reflector",
-      "network": "m17",
-      "source": "dvref",
-      "sponsor": "K0XM"
     },
     {
       "country": "GB",

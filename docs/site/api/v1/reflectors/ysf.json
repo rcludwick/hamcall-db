@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1435,
-  "generated": "2026-08-27",
+  "count": 1439,
+  "generated": "2026-08-28",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -736,6 +736,21 @@
       "sponsor": "IW0HKS"
     },
     {
+      "country": "AR",
+      "dashboard": "https://wire2link.lw6emn.ar",
+      "description": "WIRE2LINK",
+      "dial": {
+        "host": "wire2link.lw6emn.ar",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00080",
+      "name": "WIRE2LINK",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "LW6EMN"
+    },
+    {
       "country": "US",
       "dashboard": "https://xlx082.hamradio.services",
       "description": "XLX082",
@@ -1101,6 +1116,21 @@
       },
       "id": "00139",
       "name": "XLX139 Maine",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "ne-dstar.org"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://xlx153.dyndns.org",
+      "description": "XLX153",
+      "dial": {
+        "host": "xlx153.dyndns.org",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00153",
+      "name": "XLX153",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "ne-dstar.org"
@@ -5142,7 +5172,7 @@
       "country": "RO",
       "description": "YO5KAW-Radio c",
       "dial": {
-        "host": "86.120.173.160",
+        "host": "188.25.59.214",
         "kind": "ysf",
         "port": 42002
       },
@@ -9853,6 +9883,20 @@
       "sponsor": "DL9CMA"
     },
     {
+      "country": "CZ",
+      "dashboard": "http://xlx230.ok2it.com",
+      "description": "TG2300 DCS19V",
+      "dial": {
+        "host": "80.250.3.114",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "26541",
+      "name": "Czech",
+      "network": "ysf",
+      "source": "dvref"
+    },
+    {
       "country": "FR",
       "dashboard": "https://ysf-jura.fr",
       "description": "C4FM/DMR LINK",
@@ -12598,7 +12642,7 @@
       "dashboard": "http://fortiga.ddns.net:42180",
       "description": "SCANIA TEAM",
       "dial": {
-        "host": "85.73.214.181",
+        "host": "85.73.210.109",
         "kind": "ysf",
         "port": 42007
       },
@@ -14419,10 +14463,10 @@
     },
     {
       "country": "US",
-      "dashboard": "http://n8dad.ddns.net:8082/",
+      "dashboard": "http://ysf-reflector.n8dad.net/",
       "description": "HOUGHTON LAKE",
       "dial": {
-        "host": "24.180.157.226",
+        "host": "24.180.157.206",
         "kind": "ysf",
         "port": 42002
       },
@@ -14609,6 +14653,19 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "KM5Y"
+    },
+    {
+      "country": "GB",
+      "description": "all Welcome",
+      "dial": {
+        "host": "ysfblue.ddns.net",
+        "kind": "ysf",
+        "port": 42008
+      },
+      "id": "50659",
+      "name": "G8TVH",
+      "network": "ysf",
+      "source": "dvref"
     },
     {
       "country": "AT",
@@ -20592,7 +20649,7 @@
     {
       "country": "US",
       "dashboard": "http://www.n6jet.com/c4fm/",
-      "description": "N6JET C4FM-JET",
+      "description": "C4FMJET  N6JET",
       "dial": {
         "host": "5.161.18.72",
         "kind": "ysf",
