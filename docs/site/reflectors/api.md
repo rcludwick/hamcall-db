@@ -49,7 +49,7 @@ differs per protocol because the protocols genuinely differ.
   "network": "dstar",
   "id": "XLX836",
   "name": "XLX836",
-  "aliases": ["XRF836"],
+  "aliases": ["XRF836", "REF836", "DCS836"],
   "description": "Welcome",
   "country": "US",
   "sponsor": "N7MKY",
@@ -139,6 +139,37 @@ sampled `XRF###`/`XLX###` pairs resolved to entirely different servers:
 So: entries are **never** deduplicated across that boundary, and `aliases` holds
 only names that genuinely address *this* entry. Collapsing them would send an
 operator to a reflector on another continent.
+
+### Three protocols, three names
+
+D-Star has three linking protocols — DPlus (`REF`), DExtra (`XRF`) and DCS
+(`DCS`) — and an XLX reflector answers on all three. So `XLX836` carries
+`XRF836`, `REF836` **and** `DCS836`, all naming one machine at one address.
+Those names are searchable and resolvable; they are not a claim that the
+reflector must be reached over that protocol. The `dial` object still says how
+to connect, and for D-Star it always says `dextra`.
+
+Aliases are attached by **address**, never by number. `REF836` and `XRF836` are
+both `45.56.69.219`; `REF001` is `104.237.157.7` while `XRF001` is
+`217.154.120.107` — unrelated machines that happen to share a number.
+
+### An alias is never another entry's `id`
+
+**A name resolves to exactly one entry.** If a string is an alias of one row and
+the `id` of another, a client that indexes both resolves it to whichever it saw
+first — silently, and differently depending on row order. So the publisher drops
+the alias and keeps the id.
+
+This is not hypothetical: 44 D-Star names collided this way until 2026-08-28.
+`XLX002` carried the alias `XRF002` (its DExtra callsign) while a standalone
+`XRF002` existed as its own entry — the first in China, the second in the US.
+Clients resolving `XRF002` reached the wrong one.
+
+The dropped alias costs nothing. The row is still found by its own `id`, and the
+wire callsign lives in `dial.callsign`, which is untouched — so a client
+dialling `XLX002` still sends `XRF002` in the RPT1/RPT2 header, which is what
+that field is for. **Do not reconstruct aliases from `dial.callsign`**; that
+would put the collision straight back.
 
 ## Search
 

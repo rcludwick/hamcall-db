@@ -43,6 +43,7 @@ from hamcall_db.sources.dextra import (
     DextraHostsSource,
     without_known_addresses,
 )
+from hamcall_db.sources.dstar_aliases import DStarAliasSource, apply_aliases
 from hamcall_db.sources.dvref import (
     API_ROOT,
     NETWORKS,
@@ -58,6 +59,11 @@ from hamcall_db.writer import write_reflectors_parquet
 DEXTRA_ATTRIBUTION = (
     "Standalone XRF reflector data from the Pi-Star DExtra host file "
     "(http://www.pistar.uk/downloads/DExtra_Hosts.txt)."
+)
+
+DSTAR_ALIAS_ATTRIBUTION = (
+    "REF and DCS reflector names from the Pi-Star DPlus and DCS host files "
+    "(http://www.pistar.uk/downloads/)."
 )
 
 XLX_ATTRIBUTION = (
@@ -235,13 +241,47 @@ def build(
             typer.echo(f"WARNING: dextra failed ({exc})", err=True)
             failed.append("dextra")
 
+    # The other names for reflectors we already publish. One XLX box answers on
+    # all three D-Star linking protocols, so it is REF836 and DCS836 as well as
+    # XLX836/XRF836 — and an operator who knows it by one of those should not be
+    # told it does not exist. Aliases only: nothing here claims astar can speak
+    # DPlus or DCS, and nothing here adds a row.
+    #
+    # Matched BY ADDRESS, like everything else on this network. REF001 is
+    # 104.237.157.7 and XRF001 is 217.154.120.107 — unrelated machines sharing a
+    # number, so matching on the digits would hand one reflector's name to
+    # another.
+    if dstar:
+        try:
+            alias_source = DStarAliasSource()
+            names = alias_source.parse(alias_source.download(day_dir / "dstar-aliases"))
+            dstar, added = apply_aliases(dstar, names)
+            typer.echo(f"dstar-aliases: {len(names)} addresses upstream, {added} names added")
+            if added:
+                dstar_attribution.append(DSTAR_ALIAS_ATTRIBUTION)
+        except Exception as exc:  # noqa: BLE001 - one bad source must not sink the build
+            # Deliberately NOT recorded in `attempted`: aliases enrich rows that
+            # already exist, so losing them costs searchability, never coverage.
+            # Letting this failure feed the source-composition guard would freeze
+            # a D-Star list that is otherwise perfectly current.
+            typer.echo(f"WARNING: dstar-aliases failed ({exc})", err=True)
+            failed.append("dstar-aliases")
+
     if dstar:
         documents["dstar"] = network_document(
             "dstar",
             dstar,
-            source_name=(
-                "XLX registry (LX1IQ)"
-                + (" + Pi-Star DExtra hosts" if len(dstar_attribution) > 1 else "")
+            # Named from the credits actually collected, not from how many
+            # there are: a build where DExtra failed but the alias files
+            # answered has two attributions and must not claim DExtra.
+            source_name=" + ".join(
+                label
+                for credit, label in (
+                    (XLX_ATTRIBUTION, "XLX registry (LX1IQ)"),
+                    (DEXTRA_ATTRIBUTION, "Pi-Star DExtra hosts"),
+                    (DSTAR_ALIAS_ATTRIBUTION, "Pi-Star DPlus/DCS names"),
+                )
+                if credit in dstar_attribution
             ),
             source_url=XLX_LIST_URL,
             attribution=ATTRIBUTION_SEPARATOR.join(dstar_attribution),

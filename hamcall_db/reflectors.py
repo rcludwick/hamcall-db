@@ -310,6 +310,35 @@ def _license_block() -> dict[str, object]:
     }
 
 
+def drop_shadowing_aliases(records: Sequence[ReflectorRecord]) -> int:
+    """Remove any alias that is also some OTHER row's id. Returns how many went.
+
+    A name has to mean one reflector. Clients index ``id`` and ``aliases``
+    together and resolve a typed name to a single entry, so a string that is an
+    alias of one row and the id of another resolves to whichever the index
+    happened to see first — silently, and differently depending on row order.
+
+    This is not hypothetical. ``XLX002`` carries the alias ``XRF002`` because an
+    XLX reflector answers to its XRF-form callsign on the DExtra wire; there is
+    also a standalone ``XRF002``, a different machine on a different continent
+    (60.169.240.97 in China versus 52.36.45.107). Before this ran, typing
+    ``XRF002`` reached the Chinese box. 44 D-Star names collided this way.
+
+    **The id wins and the alias goes.** An id is the name upstream filed the
+    reflector under; an alias is a derived form. Nothing is lost by dropping it:
+    the row is still reachable by its own id, and the wire callsign lives in
+    ``callsign``, which this does not touch — so a client still sends
+    ``XRF002`` in the RPT1/RPT2 header when it dials XLX002 by name.
+    """
+    ids = {r.id.upper() for r in records}
+    dropped = 0
+    for record in records:
+        keep = [a for a in record.aliases if a.upper() not in ids or a.upper() == record.id.upper()]
+        dropped += len(record.aliases) - len(keep)
+        record.aliases = keep
+    return dropped
+
+
 def network_document(
     network: str,
     records: Sequence[ReflectorRecord],
@@ -326,6 +355,11 @@ def network_document(
     the site's history free of daily no-op churn.
     """
     ordered = sorted(records, key=lambda r: r.id)
+    # Last thing before publication, and deliberately here rather than in any one
+    # importer: a name that means two reflectors can only be spotted once every
+    # source for the network has been merged, and no future source can forget to
+    # call it from here.
+    drop_shadowing_aliases(ordered)
     # Prefer the UPSTREAM data date over "when this ran". A build-time stamp changes
     # every night whether or not anything did, which defeats the whole point of a
     # commit-if-changed publish step; the data's own date only moves when the data does.

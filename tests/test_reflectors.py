@@ -21,7 +21,7 @@ import pytest
 from hamcall_db import build_reflectors as reflectors_build
 from hamcall_db import reflectors
 from hamcall_db.reflectors import ReflectorRecord, merge_by_id, network_document, write_api
-from hamcall_db.sources import dextra, dvref, xlx
+from hamcall_db.sources import dextra, dstar_aliases, dvref, xlx
 from hamcall_db.sources.dvref import DvrefAuthError, DvrefSource
 from hamcall_db.sources.xlx import XlxSource, dextra_callsign, sanitize_xml
 
@@ -1054,3 +1054,165 @@ def test_dextra_download_uses_the_injected_fetcher_and_caches(tmp_path: Path) ->
     source.download(tmp_path)
     source.download(tmp_path)  # same day -> must not refetch
     assert len(calls) == 1
+
+
+# --- REF / DCS names for reflectors we already publish (hdb-dstar-alias) --------------
+
+DPLUS_HOSTS = FIXTURES / "dplus_hosts.txt"
+DCS_HOSTS = FIXTURES / "dcs_hosts.txt"
+
+
+def _alias_names() -> dict[str, list[str]]:
+    return dstar_aliases.DStarAliasSource().parse([DPLUS_HOSTS, DCS_HOSTS])
+
+
+def _xlx836() -> ReflectorRecord:
+    """The row as the XLX importer publishes it: XLX-named, XRF-aliased."""
+    return ReflectorRecord(
+        id="XLX836",
+        network="dstar",
+        name="XLX836",
+        aliases=["XRF836"],
+        callsign="XRF836",
+        host="45.56.69.219",
+        port=30001,
+        source="xlx",
+    )
+
+
+def test_alias_files_are_read_for_the_reflector_namespaces_only() -> None:
+    names = _alias_names()
+    # One XLX box, three protocol names, one address.
+    assert names["45.56.69.219"] == ["REF836", "DCS836"]
+    # A repeater gateway is not the reflector, and the XLX name is already an id.
+    flat = {n for v in names.values() for n in v}
+    assert "DB0LJ" not in flat
+    assert "XLX836" not in flat
+    # A row with no address cannot be matched and is skipped, not guessed at.
+    assert "REF999" not in flat
+
+
+def test_an_xlx_row_gains_its_ref_and_dcs_names() -> None:
+    rows, added = dstar_aliases.apply_aliases([_xlx836()], _alias_names())
+    assert added == 2
+    assert rows[0].aliases == ["XRF836", "REF836", "DCS836"]
+
+
+def test_aliases_are_matched_by_address_never_by_number() -> None:
+    """REF001 is 104.237.157.7; XRF001 is a different machine entirely.
+
+    Matching the digits would attach one reflector's name to another's row —
+    the same failure `dextra.without_known_addresses` exists to prevent, in the
+    other direction.
+    """
+    xrf001 = ReflectorRecord(
+        id="XRF001",
+        network="dstar",
+        name="XRF001",
+        host="217.154.120.107",
+        port=30001,
+        source="dextra",
+    )
+    rows, added = dstar_aliases.apply_aliases([xrf001], _alias_names())
+    assert added == 0
+    assert rows[0].aliases == []
+
+
+def test_a_name_that_is_some_rows_id_is_never_added_as_an_alias() -> None:
+    """A string cannot be both an alias of one reflector and the id of another.
+
+    Client name-indexes resolve a name to one entry; a collision resolves to
+    whichever the index saw first. No such overlap exists today — REF/DCS share
+    no prefix with XLX/XRF — but publishing the DPlus-only reflectors as rows
+    would create it.
+    """
+    published_ref = ReflectorRecord(
+        id="REF836", network="dstar", name="REF836", host="198.51.100.9", source="dplus"
+    )
+    rows, added = dstar_aliases.apply_aliases([_xlx836(), published_ref], _alias_names())
+    assert added == 1, "DCS836 still lands; REF836 is refused"
+    assert rows[0].aliases == ["XRF836", "DCS836"]
+
+
+def test_applying_aliases_twice_adds_nothing_the_second_time() -> None:
+    """The nightly build is content-derived: a rerun must not churn the file."""
+    names = _alias_names()
+    rows, first = dstar_aliases.apply_aliases([_xlx836()], names)
+    rows, second = dstar_aliases.apply_aliases(rows, names)
+    assert (first, second) == (2, 0)
+
+
+def test_a_row_with_no_address_is_left_alone() -> None:
+    hostless = ReflectorRecord(id="XLX000", network="dstar", name="XLX000", source="xlx")
+    rows, added = dstar_aliases.apply_aliases([hostless], _alias_names())
+    assert added == 0
+    assert rows[0].aliases == []
+
+
+def test_alias_download_uses_the_injected_fetcher_and_caches(tmp_path: Path) -> None:
+    calls: list[str] = []
+
+    def fetch(url: str) -> bytes:
+        calls.append(url)
+        return b"REF836\t45.56.69.219\n"
+
+    source = dstar_aliases.DStarAliasSource(fetch=fetch)
+    paths = source.download(tmp_path)
+    assert len(paths) == 2 and len(calls) == 2
+    source.download(tmp_path)
+    assert len(calls) == 2, "a same-day file is reused rather than refetched"
+
+
+def test_an_alias_that_is_another_rows_id_never_reaches_the_document() -> None:
+    """XRF002 is XLX002's DExtra alias AND a standalone reflector's id.
+
+    Two different machines on two continents. Before this guard, a client
+    resolving `XRF002` reached whichever row its index saw first — which was
+    the Chinese XLX box, not the reflector actually named XRF002.
+    """
+    xlx002 = ReflectorRecord(
+        id="XLX002",
+        network="dstar",
+        name="XLX002",
+        aliases=["XRF002"],
+        callsign="XRF002",
+        host="60.169.240.97",
+        port=30001,
+        source="xlx",
+    )
+    standalone = ReflectorRecord(
+        id="XRF002",
+        network="dstar",
+        name="XRF002",
+        callsign="XRF002",
+        host="52.36.45.107",
+        port=30001,
+        source="dextra",
+    )
+    doc = network_document(
+        "dstar",
+        [xlx002, standalone],
+        source_name="test",
+        source_url="http://example.invalid/",
+        attribution="test",
+    )
+    rows = {r["id"]: r for r in doc["reflectors"]}
+    # Absent, not empty: the emitter omits an empty list, and to a client the
+    # two say the same thing.
+    assert rows["XLX002"].get("aliases", []) == [], "the derived alias loses to the real id"
+    # The wire callsign is a different field and must survive: a client dialling
+    # XLX002 still has to put XRF002 in the RPT1/RPT2 header.
+    assert rows["XLX002"]["dial"]["callsign"] == "XRF002"
+    assert rows["XRF002"]["dial"]["host"] == "52.36.45.107"
+
+
+def test_an_unambiguous_alias_is_left_alone() -> None:
+    """XRF836 names only one machine, so it stays searchable."""
+    doc = network_document(
+        "dstar",
+        [_xlx836()],
+        source_name="test",
+        source_url="http://example.invalid/",
+        attribution="test",
+    )
+    assert doc["reflectors"][0]["aliases"] == ["XRF836"]
