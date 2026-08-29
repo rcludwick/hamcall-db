@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 314,
-  "generated": "2026-08-28",
+  "count": 321,
+  "generated": "2026-08-29",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1533,6 +1533,21 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "https://xlxylv.ta2kw.keenetic.pro",
+      "description": "<p><strong>Module A: DMR C4FM YSF XLX286A</strong><br><strong>Module B: D-PRS/RESiM</strong><br><strong>Module C: D-STAR</strong><br><strong>Module D: ECHO TEST&nbsp;</strong><br><strong><br><br><br>NXDN 286 https://nxdn.ta2kw.keenetic.pro<br>P25 286 &nbsp;https://p25.ta2kw.keenetic.pro<br>XLXYLV https://xlxylv.ta2kw.keenetic.pro<br>XLX286 http://xlx286.dmrturkiye.com<br>YSF 28677<br>YSF 28600<br><br>XLXYLV T&Uuml;RK\u0130YE</strong></p>",
+      "dial": {
+        "host": "xlxylv.ta2kw.keenetic.pro",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "28677",
+      "name": "URFYLV",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "TA2KW"
     },
     {
       "country": "AU",
@@ -4326,6 +4341,71 @@
     },
     {
       "country": "AU",
+      "dashboard": "http://vk2adf-n1.vk44.net/p25",
+      "dial": {
+        "host": "150.107.73.56",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "9101",
+      "name": "VK2ADF Main",
+      "network": "p25",
+      "source": "dvref"
+    },
+    {
+      "country": "AU",
+      "dashboard": "http://vk2adf-n1.vk44.net/p25",
+      "dial": {
+        "host": "150.107.73.56",
+        "kind": "p25",
+        "port": 41001
+      },
+      "id": "9102",
+      "name": "VK2ADF Training 1",
+      "network": "p25",
+      "source": "dvref"
+    },
+    {
+      "country": "AU",
+      "dashboard": "http://vk2adf-n1.vk44.net/p25",
+      "dial": {
+        "host": "150.107.73.56",
+        "kind": "p25",
+        "port": 41002
+      },
+      "id": "9103",
+      "name": "VK2ADF Training 2",
+      "network": "p25",
+      "source": "dvref"
+    },
+    {
+      "country": "AU",
+      "dashboard": "http://vk2adf-n1.vk44.net/p25",
+      "dial": {
+        "host": "150.107.73.56",
+        "kind": "p25",
+        "port": 41003
+      },
+      "id": "9104",
+      "name": "VK2ADF Exercise",
+      "network": "p25",
+      "source": "dvref"
+    },
+    {
+      "country": "AU",
+      "dashboard": "http://vk2adf-n1.vk44.net/p25",
+      "dial": {
+        "host": "150.107.73.56",
+        "kind": "p25",
+        "port": 41004
+      },
+      "id": "9105",
+      "name": "VK2ADF Special",
+      "network": "p25",
+      "source": "dvref"
+    },
+    {
+      "country": "AU",
       "dashboard": "https://vk2adf-n1.vk44.net/p25/",
       "dial": {
         "host": "150.107.73.56",
@@ -4420,6 +4500,21 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "N6LKA"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://www.n6jet.com/urfjet/",
+      "description": "<p>n6jet.com/urfjetpurpose.html</p>",
+      "dial": {
+        "host": "5.161.18.189",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "9511",
+      "name": "URFJET",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "N6JET"
     },
     {
       "country": "AU",

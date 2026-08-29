@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 1439,
-  "generated": "2026-08-28",
+  "generated": "2026-08-29",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -7324,30 +7324,15 @@
     },
     {
       "country": "ES",
-      "dashboard": "http://canal19.c4fm.es/",
-      "description": "C4FM-CARRETERA",
-      "dial": {
-        "host": "212.227.87.198",
-        "kind": "ysf",
-        "port": 42319
-      },
-      "id": "21419",
-      "name": "CANAL-19",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "xreflector.es"
-    },
-    {
-      "country": "ES",
-      "dashboard": "http://ronda.c4fm.es/",
-      "description": "SALA-RONDA",
+      "dashboard": "http://malaga.c4fm.es/",
+      "description": "SALA-MALAGA",
       "dial": {
         "host": "57.131.25.19",
         "kind": "ysf",
         "port": 42395
       },
       "id": "21429",
-      "name": "RONDA",
+      "name": "MALAGA",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "xreflector.es"
@@ -20672,6 +20657,21 @@
       },
       "id": "95111",
       "name": "URFJET",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "N6JET"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://www.n6jet.com/xlxd/",
+      "description": "XLXJET N6JET",
+      "dial": {
+        "host": "5.161.215.224",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "95112",
+      "name": "XLXJET",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "N6JET"

@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 91,
-  "generated": "2026-08-28",
+  "count": 93,
+  "generated": "2026-08-29",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -248,6 +248,19 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "DK8RG"
+    },
+    {
+      "country": "TH",
+      "dashboard": "http://44.32.81.27",
+      "dial": {
+        "host": "44.32.81.27",
+        "kind": "urf"
+      },
+      "id": "162",
+      "name": "M17-Thailand-E29SZE",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "ham radio"
     },
     {
       "country": "US",
@@ -1437,6 +1450,19 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "AL8T"
+    },
+    {
+      "country": "IT",
+      "dashboard": "https://urfita.freedmr.it",
+      "dial": {
+        "host": "urfita.freedmr.it",
+        "kind": "urf"
+      },
+      "id": "ITA",
+      "name": "FREEDMR ITALY MULTISTANDARD REFLECTOR",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "FreeDMR IT"
     },
     {
       "country": "US",
