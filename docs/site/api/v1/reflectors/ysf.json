@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 1439,
-  "generated": "2026-08-29",
+  "generated": "2026-08-30",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -10680,7 +10680,7 @@
     },
     {
       "country": "ES",
-      "dashboard": "http://107.152.42.188/main.php",
+      "dashboard": "http://ea4ddl.ddns.net",
       "description": "TOLEDO",
       "dial": {
         "host": "ea4ddl.ddns.net",
@@ -12137,7 +12137,7 @@
         "port": 42000
       },
       "id": "34567",
-      "name": "CHICAGO",
+      "name": "SKYSCRAPER",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "W9SDI"
@@ -17980,17 +17980,17 @@
     },
     {
       "country": "CO",
-      "description": "COLOMBIA LINK",
+      "description": "HUBNet REM52Hz",
       "dial": {
         "host": "181.143.174.154",
         "kind": "ysf",
         "port": 42052
       },
       "id": "73237",
-      "name": "COLOMBIA-LINK",
+      "name": "HUBNetREM52Hz",
       "network": "ysf",
       "source": "dvref",
-      "sponsor": "HUBNet REM52Hz"
+      "sponsor": "HJ3REM"
     },
     {
       "country": "CO",

@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 321,
-  "generated": "2026-08-29",
+  "count": 322,
+  "generated": "2026-08-30",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -2448,7 +2448,7 @@
         "port": 41000
       },
       "id": "34567",
-      "name": "CHICAGO",
+      "name": "SKYSCRAPER",
       "network": "p25",
       "source": "dvref",
       "sponsor": "W9SDI"
@@ -3862,6 +3862,21 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "Northwest Ohio VHF Amateur Radio Society"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://p25.k1xjm.net/p25dashboard/",
+      "description": "<p>Boston 7000 Reflector</p>",
+      "dial": {
+        "host": "p25.k1xjm.net",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "7000",
+      "name": "Boston 7000 Reflector",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Boston 7000 Repeater"
     },
     {
       "country": "US",
