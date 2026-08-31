@@ -1,21 +1,21 @@
 {
   "api_version": "v1",
   "client_refresh_days": 7,
-  "count": 3197,
+  "count": 3204,
   "endpoints": {
     "all": "reflectors.json",
     "network": "reflectors/{network}.json",
     "openapi": "openapi.json"
   },
-  "expires_hint": "2026-09-06",
-  "generated": "2026-08-30",
+  "expires_hint": "2026-09-07",
+  "generated": "2026-08-31",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
   "networks": {
     "dstar": {
-      "count": 940,
-      "generated": "2026-08-30",
+      "count": 942,
+      "generated": "2026-08-31",
       "source": {
         "name": "XLX registry (LX1IQ) + Pi-Star DExtra hosts + Pi-Star DPlus/DCS names",
         "url": "http://xlxapi.rlx.lu/api.php?do=GetReflectorList"
@@ -23,8 +23,8 @@
       "url": "reflectors/dstar.json"
     },
     "m17": {
-      "count": 105,
-      "generated": "2026-08-30",
+      "count": 107,
+      "generated": "2026-08-31",
       "source": {
         "name": "DVRef",
         "url": "https://dvref.com/api/v2/"
@@ -33,7 +33,7 @@
     },
     "nxdn": {
       "count": 298,
-      "generated": "2026-08-30",
+      "generated": "2026-08-31",
       "source": {
         "name": "DVRef",
         "url": "https://dvref.com/api/v2/"
@@ -42,7 +42,7 @@
     },
     "p25": {
       "count": 322,
-      "generated": "2026-08-30",
+      "generated": "2026-08-31",
       "source": {
         "name": "DVRef",
         "url": "https://dvref.com/api/v2/"
@@ -51,7 +51,7 @@
     },
     "urf": {
       "count": 93,
-      "generated": "2026-08-30",
+      "generated": "2026-08-31",
       "source": {
         "name": "DVRef",
         "url": "https://dvref.com/api/v2/"
@@ -59,8 +59,8 @@
       "url": "reflectors/urf.json"
     },
     "ysf": {
-      "count": 1439,
-      "generated": "2026-08-30",
+      "count": 1442,
+      "generated": "2026-08-31",
       "source": {
         "name": "DVRef",
         "url": "https://dvref.com/api/v2/"

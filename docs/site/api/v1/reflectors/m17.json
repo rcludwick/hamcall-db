@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 105,
-  "generated": "2026-08-30",
+  "count": 107,
+  "generated": "2026-08-31",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -913,6 +913,27 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "VK5ZSH"
+    },
+    {
+      "country": "PL",
+      "dashboard": "https://xlx474.duckdns.org/",
+      "description": "<p>KAB Amateur Radio Club/ SP5PA</p>",
+      "dial": {
+        "callsign": "M17-474",
+        "host": "xlx474.duckdns.org",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C"
+        ],
+        "port": 17000
+      },
+      "id": "M17-474",
+      "name": "KAB Amateur Radio Club",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "SP5PA"
     },
     {
       "country": "PL",
@@ -2805,6 +2826,24 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "JJ1YEG Sotobo Amateu Radio Club"
+    },
+    {
+      "country": "TR",
+      "dashboard": "https://xlxylv.ta2kw.keenetic.pro",
+      "dial": {
+        "callsign": "M17-YLV",
+        "host": "xlxylv.ta2kw.keenetic.pro",
+        "kind": "m17",
+        "modules": [
+          "D"
+        ],
+        "port": 17000
+      },
+      "id": "M17-YLV",
+      "name": "M17 YALOVA",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "TA2KW"
     },
     {
       "country": "US",

@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1439,
-  "generated": "2026-08-30",
+  "count": 1442,
+  "generated": "2026-08-31",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -740,7 +740,7 @@
       "dashboard": "https://wire2link.lw6emn.ar",
       "description": "WIRE2LINK",
       "dial": {
-        "host": "wire2link.lw6emn.ar",
+        "host": "161.153.200.24",
         "kind": "ysf",
         "port": 42000
       },
@@ -764,6 +764,20 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "K0RAP"
+    },
+    {
+      "country": "IE",
+      "dashboard": "http://echelon.redetzke.aero",
+      "description": "ECHELON",
+      "dial": {
+        "host": "echelon.redetzke.aero",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00085",
+      "name": "ECHELON",
+      "network": "ysf",
+      "source": "dvref"
     },
     {
       "country": "US",
@@ -4086,7 +4100,7 @@
     },
     {
       "country": "GB",
-      "dashboard": "http://213.171.208.97/",
+      "dashboard": "https://www.gb7wy.co.uk",
       "description": "XLXEAR GB7WY",
       "dial": {
         "host": "213.171.208.97",
@@ -6804,6 +6818,20 @@
       },
       "id": "20255",
       "name": "K8RON",
+      "network": "ysf",
+      "source": "dvref"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://ysf73.tomy.org:57200",
+      "description": "YSF",
+      "dial": {
+        "host": "ysf73.mooo.com",
+        "kind": "ysf",
+        "port": 42002
+      },
+      "id": "20273",
+      "name": "YSF-X",
       "network": "ysf",
       "source": "dvref"
     },
@@ -12937,21 +12965,6 @@
     },
     {
       "country": "FR",
-      "dashboard": "https://ysf-france.fr/tg20876/main.php",
-      "description": "pYSF3",
-      "dial": {
-        "host": "nws.ysf-france.fr",
-        "kind": "ysf",
-        "port": 42276
-      },
-      "id": "42076",
-      "name": "YSF-VWIDE",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "F1PTL Bruno"
-    },
-    {
-      "country": "FR",
       "dashboard": "http://xlx42d.dyndns.org",
       "description": "YSF & DMR",
       "dial": {
@@ -13622,6 +13635,21 @@
       "sponsor": "DL1AMT"
     },
     {
+      "country": "PH",
+      "dashboard": "http://ic6008.com:6860/ysf",
+      "description": "DX1BBC",
+      "dial": {
+        "host": "ic6008.com",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "44220",
+      "name": "DX1BBC",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "KC1JFN"
+    },
+    {
       "country": "GB",
       "dial": {
         "host": "185.26.243.94",
@@ -14287,6 +14315,21 @@
       "name": "HB C4FM Basel",
       "network": "ysf",
       "source": "dvref"
+    },
+    {
+      "country": "PL",
+      "dashboard": "https://xlx474.duckdns.org/",
+      "description": "KAB Radio Club",
+      "dial": {
+        "host": "34.138.116.246",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "47474",
+      "name": "KAB-FUSION",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "KAB Amateur Radio Club/SP5PA"
     },
     {
       "country": "ES",
@@ -17987,7 +18030,7 @@
         "port": 42052
       },
       "id": "73237",
-      "name": "HUBNetREM52Hz",
+      "name": "HUBNETREM52HZ",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "HJ3REM"

@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 322,
-  "generated": "2026-08-30",
+  "generated": "2026-08-31",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -2965,8 +2965,9 @@
     },
     {
       "country": "BD",
+      "dashboard": "http://44.27.133.131",
       "dial": {
-        "host": "s21alt.freeddns.org",
+        "host": "44.27.133.131",
         "kind": "p25",
         "port": 41001
       },
@@ -3273,6 +3274,7 @@
     },
     {
       "country": "ID",
+      "description": "<p>Indonesia P25 Reflector linked to DMR TG 51075</p>",
       "dial": {
         "host": "103.196.153.208",
         "kind": "p25",
@@ -3282,7 +3284,7 @@
       "name": "Indonesia P25 Talkgroup 51075",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "YG2BTP"
+      "sponsor": "Indonesia P25 Reflector linked to DMR TG 51075"
     },
     {
       "country": "ID",
@@ -3866,17 +3868,17 @@
     {
       "country": "US",
       "dashboard": "http://p25.k1xjm.net/p25dashboard/",
-      "description": "<p>Boston 7000 Reflector</p>",
+      "description": "<p>Boston 7000 P25 Reflector</p>",
       "dial": {
         "host": "p25.k1xjm.net",
         "kind": "p25",
         "port": 41000
       },
       "id": "7000",
-      "name": "Boston 7000 Reflector",
+      "name": "Boston 7000 P25 Reflector",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "Boston 7000 Repeater"
+      "sponsor": "K1XJM"
     },
     {
       "country": "US",

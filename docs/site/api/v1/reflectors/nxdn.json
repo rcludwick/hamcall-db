@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 298,
-  "generated": "2026-08-30",
+  "generated": "2026-08-31",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -3060,8 +3060,9 @@
     },
     {
       "country": "BD",
+      "dashboard": "http://44.27.136.201",
       "dial": {
-        "host": "s21altnxdn.ddnsfree.com",
+        "host": "44.27.136.201",
         "kind": "nxdn",
         "port": 41401
       },
@@ -3504,8 +3505,9 @@
     },
     {
       "country": "IT",
+      "dashboard": "http://ysf73.tomy.org:57202",
       "dial": {
-        "host": "ysf365.mooo.com",
+        "host": "ysf73.mooo.com",
         "kind": "nxdn",
         "port": 41400
       },
