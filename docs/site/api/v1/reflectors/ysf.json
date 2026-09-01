@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1442,
-  "generated": "2026-08-31",
+  "count": 1444,
+  "generated": "2026-09-01",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -736,21 +736,6 @@
       "sponsor": "IW0HKS"
     },
     {
-      "country": "AR",
-      "dashboard": "https://wire2link.lw6emn.ar",
-      "description": "WIRE2LINK",
-      "dial": {
-        "host": "161.153.200.24",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "00080",
-      "name": "WIRE2LINK",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "LW6EMN"
-    },
-    {
       "country": "US",
       "dashboard": "https://xlx082.hamradio.services",
       "description": "XLX082",
@@ -764,20 +749,6 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "K0RAP"
-    },
-    {
-      "country": "IE",
-      "dashboard": "http://echelon.redetzke.aero",
-      "description": "ECHELON",
-      "dial": {
-        "host": "echelon.redetzke.aero",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "00085",
-      "name": "ECHELON",
-      "network": "ysf",
-      "source": "dvref"
     },
     {
       "country": "US",
@@ -899,6 +870,20 @@
       "sponsor": "YSF00099"
     },
     {
+      "country": "MK",
+      "dashboard": "https://ysf.dmr.net.mk",
+      "description": "Macedonia-C4FM",
+      "dial": {
+        "host": "84.74.145.32",
+        "kind": "ysf",
+        "port": 42001
+      },
+      "id": "00100",
+      "name": "MACEDONIA",
+      "network": "ysf",
+      "source": "dvref"
+    },
+    {
       "country": "BR",
       "dashboard": "https://ref105.dstar.com.br/",
       "description": "REF105",
@@ -927,6 +912,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "JQ1ZVS"
+    },
+    {
+      "country": "AR",
+      "dashboard": "https://wire2link.lw6emn.ar",
+      "description": "WIRE2LINK",
+      "dial": {
+        "host": "wire2link.lw6emn.ar",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00110",
+      "name": "WIRE2LINK",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "LW6EMN"
     },
     {
       "country": "GB",
@@ -1448,6 +1448,21 @@
       "sponsor": "DH9YAP"
     },
     {
+      "country": "JP",
+      "dashboard": "https://xlx245.sub.h-sol.jp/",
+      "description": "Hitachi245",
+      "dial": {
+        "host": "xlx245.sub.h-sol.jp",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00245",
+      "name": "XLX245",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "JS1YTG"
+    },
+    {
       "country": "GB",
       "dashboard": "http://de9956.ddns.net:81",
       "description": "WDRG",
@@ -1535,6 +1550,20 @@
       "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
+      "country": "MK",
+      "dashboard": "https://xlx.dmr.net.mk",
+      "description": "XLX Reflector",
+      "dial": {
+        "host": "84.74.145.32",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00294",
+      "name": "XLX294",
+      "network": "ysf",
+      "source": "dvref"
+    },
+    {
       "country": "JP",
       "dashboard": "https://xlx296.h-sol.jp/",
       "description": "Japan XLX296-F",
@@ -1545,21 +1574,6 @@
       },
       "id": "00296",
       "name": "XLX296",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "jg1xwv"
-    },
-    {
-      "country": "JP",
-      "dashboard": "https://xlx297.sub.h-sol.jp/",
-      "description": "Japan XLX297-F",
-      "dial": {
-        "host": "xlx297.sub.h-sol.jp",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "00297",
-      "name": "XLX297",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "jg1xwv"
@@ -5358,21 +5372,6 @@
       "sponsor": "KT4ROY Trojan Amateur Radio Club"
     },
     {
-      "country": "TH",
-      "dashboard": "http://203.159.93.71/",
-      "description": "YSF-XLX535",
-      "dial": {
-        "host": "203.159.93.71",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "11304",
-      "name": "XLX535",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "HS9AI pattani Thailand"
-    },
-    {
       "country": "US",
       "dashboard": "http://www.kg4trv.ddns.net",
       "description": "Digi amigos",
@@ -6630,10 +6629,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://ysfnetgr.ddns.net:81/",
+      "dashboard": "http://51.195.107.129:82",
       "description": "HELLAS-ADNDMR",
       "dial": {
-        "host": "ysfnetgr.ddns.net",
+        "host": "51.195.107.129",
         "kind": "ysf",
         "port": 42001
       },
@@ -6645,10 +6644,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://2021adn.ddns.net:85/",
+      "dashboard": "http://ysfnetgr.ddns.net:85/",
       "description": "HELLAS-ADNDMR",
       "dial": {
-        "host": "2021adn.ddns.net",
+        "host": "ysfnetgr.ddns.net",
         "kind": "ysf",
         "port": 42002
       },
@@ -6674,10 +6673,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://2021adn.ddns.net:86",
+      "dashboard": "http://ysfnetgr.ddns.net:86",
       "description": "HELLAS-ADNDMR",
       "dial": {
-        "host": "2021adn.ddns.net",
+        "host": "ysfnetgr.ddns.net",
         "kind": "ysf",
         "port": 42003
       },
@@ -6689,10 +6688,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://2021adn.ddns.net:88/",
+      "dashboard": "http://ysfnetgr.ddns.net:88/",
       "description": "HELLAS-ADNDMR",
       "dial": {
-        "host": "2021adn.ddns.net",
+        "host": "ysfnetgr.ddns.net",
         "kind": "ysf",
         "port": 42004
       },
@@ -6719,10 +6718,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://2021adn.ddns.net:84/",
+      "dashboard": "http://ysfnetgr.ddns.net:84/",
       "description": "HELLAS-ADNDMR",
       "dial": {
-        "host": "2021adn.ddns.net",
+        "host": "ysfnetgr.ddns.net",
         "kind": "ysf",
         "port": 42001
       },
@@ -6734,10 +6733,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://ysfnetgr.ddns.net:82/",
+      "dashboard": "http://51.195.107.129:83/",
       "description": "HELLAS-ADNDMR",
       "dial": {
-        "host": "ysfnetgr.ddns.net",
+        "host": "51.195.107.129",
         "kind": "ysf",
         "port": 42002
       },
@@ -6749,10 +6748,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://ysfnetgr.ddns.net:83/",
+      "dashboard": "http://51.195.107.129:84",
       "description": "HELLAS-ADNDMR",
       "dial": {
-        "host": "ysfnetgr.ddns.net",
+        "host": "51.195.107.129",
         "kind": "ysf",
         "port": 42003
       },
@@ -6764,10 +6763,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://2021adn.ddns.net/",
+      "dashboard": "http://ysfnetgr.ddns.net/",
       "description": "HELLAS-ADNDMR",
       "dial": {
-        "host": "51.195.107.129",
+        "host": "ysfnetgr.ddns.net",
         "kind": "ysf",
         "port": 42005
       },
@@ -6823,7 +6822,6 @@
     },
     {
       "country": "IT",
-      "dashboard": "http://ysf73.tomy.org:57200",
       "description": "YSF",
       "dial": {
         "host": "ysf73.mooo.com",
@@ -7355,7 +7353,7 @@
       "dashboard": "http://malaga.c4fm.es/",
       "description": "SALA-MALAGA",
       "dial": {
-        "host": "57.131.25.19",
+        "host": "sala-andalucia.es",
         "kind": "ysf",
         "port": 42395
       },
@@ -9407,6 +9405,21 @@
       "sponsor": "DC9VQ"
     },
     {
+      "country": "GB",
+      "dashboard": "https://echelon.redetzke.aero",
+      "description": "ECHELON",
+      "dial": {
+        "host": "echelon.redetzke.aero",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "26204",
+      "name": "ECHELON",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "M0LII"
+    },
+    {
       "country": "DE",
       "description": "F17 Reflector",
       "dial": {
@@ -9467,7 +9480,7 @@
     },
     {
       "country": "DE",
-      "dashboard": "https://ysf-deutschland.de/main2.php?room=57",
+      "dashboard": "https://ysf-deutschland.de/main.php?room=57",
       "description": "YSF Siegerland",
       "dial": {
         "host": "ysf-deutschland.de",
@@ -9970,6 +9983,20 @@
       "sponsor": "BrandMeister PT"
     },
     {
+      "country": "PL",
+      "dashboard": "http://sq5fgh.binio.pl:42001/",
+      "dial": {
+        "host": "sq5fgh.binio.pl",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "26999",
+      "name": "YSF-FGH",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "SQ5FGH"
+    },
+    {
       "country": "IT",
       "dashboard": "http://ysfroomitaly.iw2gob.it",
       "description": "WIRES-X ITALY",
@@ -10146,7 +10173,7 @@
       "dial": {
         "host": "cy28000.ddns.net",
         "kind": "ysf",
-        "port": 42000
+        "port": 42001
       },
       "id": "28000",
       "name": "CYPRUS-YSF",
@@ -10711,7 +10738,7 @@
       "dashboard": "http://ea4ddl.ddns.net",
       "description": "TOLEDO",
       "dial": {
-        "host": "ea4ddl.ddns.net",
+        "host": "107.152.42.188",
         "kind": "ysf",
         "port": 42000
       },
@@ -16131,6 +16158,21 @@
       "sponsor": "JF2ANH"
     },
     {
+      "country": "PH",
+      "dashboard": "http://4g1ftu.ysf.kapihan.network/",
+      "description": "4G1FTU",
+      "dial": {
+        "host": "162.212.154.202",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "59659",
+      "name": "4G1FTU",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "4G1FTU"
+    },
+    {
       "country": "US",
       "dashboard": "http://kj5apa.mywire.org/",
       "description": "TEXAS-MRN-2",
@@ -17490,21 +17532,6 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "xreflector.es"
-    },
-    {
-      "country": "FR",
-      "dashboard": "https://srv.ysf-france.fr/",
-      "description": "Serveur XLXD",
-      "dial": {
-        "host": "srv.ysf-france.fr",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "70366",
-      "name": "XLX310",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "F1PTL Bruno"
     },
     {
       "country": "US",

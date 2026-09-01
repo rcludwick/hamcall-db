@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 298,
-  "generated": "2026-08-31",
+  "count": 297,
+  "generated": "2026-09-01",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -513,10 +513,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://192.227.190.153:83/",
+      "dashboard": "http://51.195.107.129:85/",
       "description": "<p>GR-Hellas-ADN-NXDN</p>",
       "dial": {
-        "host": "192.227.190.153",
+        "host": "51.195.107.129",
         "kind": "nxdn",
         "port": 41400
       },
@@ -528,10 +528,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://2021adn.ddns.net:89/",
+      "dashboard": "http://192.227.190.153:81/",
       "description": "<p>GR-Hellas-ADN-NXDN</p>",
       "dial": {
-        "host": "2021adn.ddns.net",
+        "host": "192.227.190.153",
         "kind": "nxdn",
         "port": 41400
       },
@@ -1929,21 +1929,6 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "dashboard": "https://xlxylv.ta2kw.keenetic.pro",
-      "description": "<p><strong>Module A: DMR C4FM YSF XLX286A</strong><br><strong>Module B: D-PRS/RESiM</strong><br><strong>Module C: D-STAR</strong><br><strong>Module D: ECHO TEST&nbsp;</strong><br><strong><br><br><br>NXDN 286 https://nxdn.ta2kw.keenetic.pro<br>P25 286 &nbsp;https://p25.ta2kw.keenetic.pro<br>XLXYLV https://xlxylv.ta2kw.keenetic.pro<br>XLX286 http://xlx286.dmrturkiye.com<br>YSF 28677<br>YSF 28600<br><br>XLXYLV T&Uuml;RK\u0130YE</strong></p>",
-      "dial": {
-        "host": "xlxylv.ta2kw.keenetic.pro",
-        "kind": "nxdn",
-        "port": 41400
-      },
-      "id": "28677",
-      "name": "URFYLV",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "TA2KW"
     },
     {
       "country": "TR",
@@ -3505,9 +3490,8 @@
     },
     {
       "country": "IT",
-      "dashboard": "http://ysf73.tomy.org:57202",
       "dial": {
-        "host": "ysf73.mooo.com",
+        "host": "ysf365.mooo.com",
         "kind": "nxdn",
         "port": 41400
       },

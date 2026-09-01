@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 322,
-  "generated": "2026-08-31",
+  "generated": "2026-09-01",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1535,21 +1535,6 @@
       "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
-      "country": "TR",
-      "dashboard": "https://xlxylv.ta2kw.keenetic.pro",
-      "description": "<p><strong>Module A: DMR C4FM YSF XLX286A</strong><br><strong>Module B: D-PRS/RESiM</strong><br><strong>Module C: D-STAR</strong><br><strong>Module D: ECHO TEST&nbsp;</strong><br><strong><br><br><br>NXDN 286 https://nxdn.ta2kw.keenetic.pro<br>P25 286 &nbsp;https://p25.ta2kw.keenetic.pro<br>XLXYLV https://xlxylv.ta2kw.keenetic.pro<br>XLX286 http://xlx286.dmrturkiye.com<br>YSF 28677<br>YSF 28600<br><br>XLXYLV T&Uuml;RK\u0130YE</strong></p>",
-      "dial": {
-        "host": "xlxylv.ta2kw.keenetic.pro",
-        "kind": "p25",
-        "port": 41000
-      },
-      "id": "28677",
-      "name": "URFYLV",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "TA2KW"
-    },
-    {
       "country": "AU",
       "dashboard": "https://vk1kcm.vk44.net",
       "description": "<p>This is the Canberra XLX/URFd reflector. &nbsp;It's a replacement/continuation of the old xlx301 run by Rob, VK2HR. &nbsp;Sadly Rob is no longer able to run the old one, so this one is here to continue its job!</p>\r\n<p>Module C is the most likely to have activity.</p>",
@@ -2666,6 +2651,19 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "Windy City Amateur Radio Society"
+    },
+    {
+      "country": "NL",
+      "dial": {
+        "host": "78.141.219.36",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "42555",
+      "name": "4X Allstar to P25 Cloud Bridge",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "4X1KS"
     },
     {
       "country": "CA",

@@ -2,18 +2,18 @@
   "api_version": "v1",
   "attribution": "XLX reflector data from the XLX registry maintained by Luc Engelmann, LX1IQ (http://xlxapi.rlx.lu/).\nStandalone XRF reflector data from the Pi-Star DExtra host file (http://www.pistar.uk/downloads/DExtra_Hosts.txt).\nREF and DCS reflector names from the Pi-Star DPlus and DCS host files (http://www.pistar.uk/downloads/).\nReflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 3204,
-  "generated": "2026-08-31",
+  "count": 3215,
+  "generated": "2026-09-01",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
   "networks": {
-    "dstar": 942,
+    "dstar": 951,
     "m17": 107,
-    "nxdn": 298,
+    "nxdn": 297,
     "p25": 322,
-    "urf": 93,
-    "ysf": 1442
+    "urf": 94,
+    "ysf": 1444
   },
   "reflectors": [
     {
@@ -61,7 +61,7 @@
       "description": "Anhui_Wuhu",
       "dial": {
         "callsign": "XRF002",
-        "host": "60.169.240.97",
+        "host": "60.167.155.113",
         "kind": "dextra",
         "port": 30001
       },
@@ -469,6 +469,24 @@
       },
       "id": "XLX024",
       "name": "XLX024",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "aliases": [
+        "XRF025"
+      ],
+      "country": "RU",
+      "dashboard": "http://ua3lts.ddns.net:8118",
+      "description": "RU, Smolensk obl. local Reflector",
+      "dial": {
+        "callsign": "XRF025",
+        "host": "92.241.103.46",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLX025",
+      "name": "XLX025",
       "network": "dstar",
       "source": "xlx"
     },
@@ -1415,6 +1433,25 @@
       },
       "id": "XLX075",
       "name": "XLX075",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "aliases": [
+        "XRF076",
+        "DCS076"
+      ],
+      "country": "Japan",
+      "dashboard": "http://xrf076.xreflector-jp.org/",
+      "description": "Hosted by VoIP Reflector Club in Tokyo, Japan.",
+      "dial": {
+        "callsign": "XRF076",
+        "host": "203.137.116.117",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLX076",
+      "name": "XLX076",
       "network": "dstar",
       "source": "xlx"
     },
@@ -3859,8 +3896,8 @@
         "DCS208"
       ],
       "country": "France",
-      "dashboard": "http://urf208.f5kav.fr",
-      "description": "French Multimode Reflector, brought to you by F5KAV Club",
+      "dashboard": "http://xlx208.f5kav.fr",
+      "description": "French D-Star XLX Multiprotocol Reflector and Smart Group Server, brought to you by F5KAV",
       "dial": {
         "callsign": "XRF208",
         "host": "213.186.34.50",
@@ -4652,6 +4689,26 @@
     },
     {
       "aliases": [
+        "XRF249",
+        "REF249",
+        "DCS249"
+      ],
+      "country": "USA",
+      "dashboard": "http://107.128.234.208",
+      "description": "West Georgia Reflector - All Are Welcome",
+      "dial": {
+        "callsign": "XRF249",
+        "host": "209.184.235.51",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLX249",
+      "name": "XLX249",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "aliases": [
         "REF250",
         "DCS250"
       ],
@@ -5315,7 +5372,7 @@
       "description": "XLX288 / YSF IT-URF288 #22250",
       "dial": {
         "callsign": "XRF288",
-        "host": "87.21.222.126",
+        "host": "87.18.37.34",
         "kind": "dextra",
         "port": 30001
       },
@@ -5475,7 +5532,7 @@
       "description": "| RESTRICTED ACCESS | For information contact Daniel K., PP5PK.",
       "dial": {
         "callsign": "XRF300",
-        "host": "200.150.197.246",
+        "host": "201.23.71.192",
         "kind": "dextra",
         "port": 30001
       },
@@ -5892,7 +5949,7 @@
       "dashboard": "http://your_dashboard",
       "dial": {
         "callsign": "XRF324",
-        "host": "192.253.246.39",
+        "host": "192.253.246.36",
         "kind": "dextra",
         "port": 30001
       },
@@ -6018,6 +6075,26 @@
       },
       "id": "XLX330",
       "name": "XLX330",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "aliases": [
+        "XRF331",
+        "REF331",
+        "DCS331"
+      ],
+      "country": "Coamo PR",
+      "dashboard": "http://10.0.0.110",
+      "description": "Bacalao",
+      "dial": {
+        "callsign": "XRF331",
+        "host": "64.237.214.46",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLX331",
+      "name": "XLX331",
       "network": "dstar",
       "source": "xlx"
     },
@@ -6157,26 +6234,6 @@
       },
       "id": "XLX340",
       "name": "XLX340",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "aliases": [
-        "XRF341",
-        "REF341",
-        "DCS341"
-      ],
-      "country": "your_country",
-      "dashboard": "http://xlx341.duckdns.org",
-      "description": "your_comment",
-      "dial": {
-        "callsign": "XRF341",
-        "host": "148.170.96.90",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLX341",
-      "name": "XLX341",
       "network": "dstar",
       "source": "xlx"
     },
@@ -7127,7 +7184,7 @@
       ],
       "country": "Fl\u00e9malle",
       "dashboard": "http://synoweb.ddns.net",
-      "description": "XLX402 Multiprotocol Reflector by ON5JCQ, info: [email removed]",
+      "description": "XLX402 Multiprotocol Reflector by ON4VK, ON3JM",
       "dial": {
         "callsign": "XRF402",
         "host": "91.86.232.96",
@@ -7536,6 +7593,26 @@
       },
       "id": "XLX422",
       "name": "XLX422",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "aliases": [
+        "XRF423",
+        "REF423",
+        "DCS423"
+      ],
+      "country": "USA",
+      "dashboard": "http://44.27.137.39",
+      "description": "Oro Valley ARC reflector, open to everyone",
+      "dial": {
+        "callsign": "XRF423",
+        "host": "44.27.137.39",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLX423",
+      "name": "XLX423",
       "network": "dstar",
       "source": "xlx"
     },
@@ -9283,8 +9360,8 @@
         "DCS535"
       ],
       "country": "Thailand",
-      "dashboard": "http://203.159.93.71",
-      "description": "Built by PATTANI Team",
+      "dashboard": "http://xlx.hs9awo.com",
+      "description": "XLX535 Multiprotocol Reflector by HS9AWO, info: [email removed]",
       "dial": {
         "callsign": "XRF535",
         "host": "203.159.93.71",
@@ -11584,6 +11661,26 @@
     },
     {
       "aliases": [
+        "XRF740",
+        "REF740",
+        "DCS740"
+      ],
+      "country": "Ecuador",
+      "dashboard": "http://616264.ip.hamvoip.org/urfd",
+      "description": "Amerinet URF740 Universal Reflector",
+      "dial": {
+        "callsign": "XRF740",
+        "host": "192.253.246.5",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLX740",
+      "name": "XLX740",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "aliases": [
         "XRF741",
         "REF741",
         "DCS741"
@@ -11959,26 +12056,6 @@
       },
       "id": "XLX768",
       "name": "XLX768",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "aliases": [
-        "XRF769",
-        "REF769",
-        "DCS769"
-      ],
-      "country": "Sweden",
-      "dashboard": "http://xlx769.scumm.it",
-      "description": "Exlporing Digital",
-      "dial": {
-        "callsign": "XRF769",
-        "host": "94.254.79.50",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLX769",
-      "name": "XLX769",
       "network": "dstar",
       "source": "xlx"
     },
@@ -13190,7 +13267,7 @@
       "description": "Gruppo Dstar Agrigento",
       "dial": {
         "callsign": "XRF862",
-        "host": "195.231.117.45",
+        "host": "195.231.118.80",
         "kind": "dextra",
         "port": 30001
       },
@@ -14697,6 +14774,26 @@
     },
     {
       "aliases": [
+        "XRF981",
+        "REF981",
+        "DCS981"
+      ],
+      "country": "USA",
+      "dashboard": "https://curiously-upward-pegasus.ngrok-free.app/",
+      "description": "Livingston Amateur Radio Klub (IMRS Only)",
+      "dial": {
+        "callsign": "XRF981",
+        "host": "172.58.120.143",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLX981",
+      "name": "XLX981",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "aliases": [
         "XRF982",
         "REF982",
         "DCS982"
@@ -15055,6 +15152,26 @@
     },
     {
       "aliases": [
+        "XRFABL",
+        "REFABL",
+        "DCSABL"
+      ],
+      "country": "Germany",
+      "dashboard": "http://xlxabl.duckdns.org",
+      "description": "XLXABL Reflector by DG7ABL, info: [email removed]",
+      "dial": {
+        "callsign": "XRFABL",
+        "host": "128.140.34.135",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLXABL",
+      "name": "XLXABL",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "aliases": [
         "XRFACP",
         "REFACP",
         "DCSACP"
@@ -15255,6 +15372,26 @@
     },
     {
       "aliases": [
+        "XRFBUL",
+        "REFBUL",
+        "DCSBUL"
+      ],
+      "country": "Switzerland",
+      "dashboard": "http://xlxbul.net",
+      "description": "XLXBUL Multiprotocol Reflector by HB9HER, info: [email removed]",
+      "dial": {
+        "callsign": "XRFBUL",
+        "host": "109.203.45.102",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLXBUL",
+      "name": "XLXBUL",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "aliases": [
         "XRFCAN",
         "REFCAN",
         "DCSCAN"
@@ -15304,7 +15441,7 @@
       "description": "XLXCHA China \u4e2d\u56fd\u53cd\u5c04\u5668 \u9002\u5408\u4e2d\u56fd\u5927\u9646\u5730\u533a\u4f7f\u7528",
       "dial": {
         "callsign": "XRFCHA",
-        "host": "110.84.209.85",
+        "host": "27.156.107.47",
         "kind": "dextra",
         "port": 30001
       },
@@ -15430,6 +15567,26 @@
       },
       "id": "XLXCZE",
       "name": "XLXCZE",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "aliases": [
+        "XRFCZS",
+        "REFCZS",
+        "DCSCZS"
+      ],
+      "country": "Czechia",
+      "dashboard": "http://128.0.182.6",
+      "description": "Czech XLX Reflector - OK1IGO",
+      "dial": {
+        "callsign": "XRFCZS",
+        "host": "128.0.182.6",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLXCZS",
+      "name": "XLXCZS",
       "network": "dstar",
       "source": "xlx"
     },
@@ -16332,6 +16489,11 @@
       "source": "xlx"
     },
     {
+      "aliases": [
+        "XRFMMG",
+        "REFMMG",
+        "DCSMMG"
+      ],
       "country": "United States",
       "dashboard": "http://xlxmmg.nemmg.club",
       "description": "New England MultiMode Group",
@@ -17052,7 +17214,7 @@
       ],
       "country": "UK",
       "dashboard": "http://g7rup.ddns.net",
-      "description": "XLXUK1 Multiprotocol Reflector by G7RUP, info: [email removed]",
+      "description": "XLXUK1 ImpNets XLX Refkector",
       "dial": {
         "callsign": "XRFUK1",
         "host": "81.103.101.116",
@@ -17426,6 +17588,26 @@
     },
     {
       "aliases": [
+        "XRFVRC",
+        "REFVRC",
+        "DCSVRC"
+      ],
+      "country": "Korea, Republic of",
+      "dashboard": "https://xlx.lemonrusk.com",
+      "description": "XLX Reflector for VRC Friends",
+      "dial": {
+        "callsign": "XRFVRC",
+        "host": "210.123.100.116",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLXVRC",
+      "name": "XLXVRC",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "aliases": [
         "XRFWA1",
         "REFWA1",
         "DCSWA1"
@@ -17629,7 +17811,7 @@
         "DCSYLV"
       ],
       "country": "T\u00dcRK\u0130YE",
-      "dashboard": "xlxylv.ta2kw.keenetic.pro",
+      "dashboard": "https://xlxylv.ta2kw.keenetic.pro",
       "description": "T\u00dcRK\u0130YE XLX286 Multi-Mode Reflector D-STAR DMR XLX_286 YSF TR-URF28600 NXDN 286 P25-286",
       "dial": {
         "callsign": "XRFYLV",
@@ -17659,6 +17841,26 @@
       },
       "id": "XLXYO2",
       "name": "XLXYO2",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "aliases": [
+        "XRFZVU",
+        "REFZVU",
+        "DCSZVU"
+      ],
+      "country": "FR",
+      "dashboard": "http://xlxzvu.chappat.fr",
+      "description": "XLXZVU Multiprotocol Reflector by F4HWB, info: [email removed]",
+      "dial": {
+        "callsign": "XRFZVU",
+        "host": "176.128.229.6",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLXZVU",
+      "name": "XLXZVU",
       "network": "dstar",
       "source": "xlx"
     },
@@ -17725,7 +17927,7 @@
     {
       "dial": {
         "callsign": "XRF014",
-        "host": "172.67.201.108",
+        "host": "104.21.21.239",
         "kind": "dextra",
         "port": 30001
       },
@@ -18028,7 +18230,7 @@
     {
       "dial": {
         "callsign": "XRF555",
-        "host": "178.107.232.203",
+        "host": "178.107.232.205",
         "kind": "dextra",
         "port": 30001
       },
@@ -18258,22 +18460,6 @@
       },
       "id": "XRF988",
       "name": "XRF988",
-      "network": "dstar",
-      "source": "dextra"
-    },
-    {
-      "aliases": [
-        "REFMMG",
-        "DCSMMG"
-      ],
-      "dial": {
-        "callsign": "XRFMMG",
-        "host": "172.56.198.157",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XRFMMG",
-      "name": "XRFMMG",
       "network": "dstar",
       "source": "dextra"
     },
@@ -21647,10 +21833,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://192.227.190.153:83/",
+      "dashboard": "http://51.195.107.129:85/",
       "description": "<p>GR-Hellas-ADN-NXDN</p>",
       "dial": {
-        "host": "192.227.190.153",
+        "host": "51.195.107.129",
         "kind": "nxdn",
         "port": 41400
       },
@@ -21662,10 +21848,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://2021adn.ddns.net:89/",
+      "dashboard": "http://192.227.190.153:81/",
       "description": "<p>GR-Hellas-ADN-NXDN</p>",
       "dial": {
-        "host": "2021adn.ddns.net",
+        "host": "192.227.190.153",
         "kind": "nxdn",
         "port": 41400
       },
@@ -23063,21 +23249,6 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "dashboard": "https://xlxylv.ta2kw.keenetic.pro",
-      "description": "<p><strong>Module A: DMR C4FM YSF XLX286A</strong><br><strong>Module B: D-PRS/RESiM</strong><br><strong>Module C: D-STAR</strong><br><strong>Module D: ECHO TEST&nbsp;</strong><br><strong><br><br><br>NXDN 286 https://nxdn.ta2kw.keenetic.pro<br>P25 286 &nbsp;https://p25.ta2kw.keenetic.pro<br>XLXYLV https://xlxylv.ta2kw.keenetic.pro<br>XLX286 http://xlx286.dmrturkiye.com<br>YSF 28677<br>YSF 28600<br><br>XLXYLV T&Uuml;RK\u0130YE</strong></p>",
-      "dial": {
-        "host": "xlxylv.ta2kw.keenetic.pro",
-        "kind": "nxdn",
-        "port": 41400
-      },
-      "id": "28677",
-      "name": "URFYLV",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "TA2KW"
     },
     {
       "country": "TR",
@@ -24639,9 +24810,8 @@
     },
     {
       "country": "IT",
-      "dashboard": "http://ysf73.tomy.org:57202",
       "dial": {
-        "host": "ysf73.mooo.com",
+        "host": "ysf365.mooo.com",
         "kind": "nxdn",
         "port": 41400
       },
@@ -26909,21 +27079,6 @@
       "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
-      "country": "TR",
-      "dashboard": "https://xlxylv.ta2kw.keenetic.pro",
-      "description": "<p><strong>Module A: DMR C4FM YSF XLX286A</strong><br><strong>Module B: D-PRS/RESiM</strong><br><strong>Module C: D-STAR</strong><br><strong>Module D: ECHO TEST&nbsp;</strong><br><strong><br><br><br>NXDN 286 https://nxdn.ta2kw.keenetic.pro<br>P25 286 &nbsp;https://p25.ta2kw.keenetic.pro<br>XLXYLV https://xlxylv.ta2kw.keenetic.pro<br>XLX286 http://xlx286.dmrturkiye.com<br>YSF 28677<br>YSF 28600<br><br>XLXYLV T&Uuml;RK\u0130YE</strong></p>",
-      "dial": {
-        "host": "xlxylv.ta2kw.keenetic.pro",
-        "kind": "p25",
-        "port": 41000
-      },
-      "id": "28677",
-      "name": "URFYLV",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "TA2KW"
-    },
-    {
       "country": "AU",
       "dashboard": "https://vk1kcm.vk44.net",
       "description": "<p>This is the Canberra XLX/URFd reflector. &nbsp;It's a replacement/continuation of the old xlx301 run by Rob, VK2HR. &nbsp;Sadly Rob is no longer able to run the old one, so this one is here to continue its job!</p>\r\n<p>Module C is the most likely to have activity.</p>",
@@ -28040,6 +28195,19 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "Windy City Amateur Radio Society"
+    },
+    {
+      "country": "NL",
+      "dial": {
+        "host": "78.141.219.36",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "42555",
+      "name": "4X Allstar to P25 Cloud Bridge",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "4X1KS"
     },
     {
       "country": "CA",
@@ -30096,6 +30264,19 @@
       "sponsor": "PY4EI"
     },
     {
+      "country": "GR",
+      "dashboard": "http://svham.eu:82/xlxd",
+      "dial": {
+        "host": "38.19.202.24",
+        "kind": "urf"
+      },
+      "id": "076",
+      "name": "XLX076 AETHER HELLAS NET",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "AETHER HELLAS NET"
+    },
+    {
       "country": "US",
       "dashboard": "http://urf097.newenglanddigitalradio.com",
       "description": "<p>New England Digital Radio KC1VAX</p>\r\n<p>&nbsp;</p>",
@@ -30381,10 +30562,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://192.227.190.153/",
+      "dashboard": "http://xlx252.ddns.net/",
       "description": "<p>2021_ADN_SYSTEMS_GREECE</p>",
       "dial": {
-        "host": "192.227.190.153",
+        "host": "xlx252.ddns.net",
         "kind": "urf"
       },
       "id": "252",
@@ -31329,7 +31510,7 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://xlxd51.ddns.net/",
+      "dashboard": "http://192.227.177.138/",
       "description": "<p>2021_ADN_SYSTEMS_GREECE</p>",
       "dial": {
         "host": "192.227.177.138",
@@ -32308,21 +32489,6 @@
       "sponsor": "IW0HKS"
     },
     {
-      "country": "AR",
-      "dashboard": "https://wire2link.lw6emn.ar",
-      "description": "WIRE2LINK",
-      "dial": {
-        "host": "161.153.200.24",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "00080",
-      "name": "WIRE2LINK",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "LW6EMN"
-    },
-    {
       "country": "US",
       "dashboard": "https://xlx082.hamradio.services",
       "description": "XLX082",
@@ -32336,20 +32502,6 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "K0RAP"
-    },
-    {
-      "country": "IE",
-      "dashboard": "http://echelon.redetzke.aero",
-      "description": "ECHELON",
-      "dial": {
-        "host": "echelon.redetzke.aero",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "00085",
-      "name": "ECHELON",
-      "network": "ysf",
-      "source": "dvref"
     },
     {
       "country": "US",
@@ -32471,6 +32623,20 @@
       "sponsor": "YSF00099"
     },
     {
+      "country": "MK",
+      "dashboard": "https://ysf.dmr.net.mk",
+      "description": "Macedonia-C4FM",
+      "dial": {
+        "host": "84.74.145.32",
+        "kind": "ysf",
+        "port": 42001
+      },
+      "id": "00100",
+      "name": "MACEDONIA",
+      "network": "ysf",
+      "source": "dvref"
+    },
+    {
       "country": "BR",
       "dashboard": "https://ref105.dstar.com.br/",
       "description": "REF105",
@@ -32499,6 +32665,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "JQ1ZVS"
+    },
+    {
+      "country": "AR",
+      "dashboard": "https://wire2link.lw6emn.ar",
+      "description": "WIRE2LINK",
+      "dial": {
+        "host": "wire2link.lw6emn.ar",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00110",
+      "name": "WIRE2LINK",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "LW6EMN"
     },
     {
       "country": "GB",
@@ -33020,6 +33201,21 @@
       "sponsor": "DH9YAP"
     },
     {
+      "country": "JP",
+      "dashboard": "https://xlx245.sub.h-sol.jp/",
+      "description": "Hitachi245",
+      "dial": {
+        "host": "xlx245.sub.h-sol.jp",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00245",
+      "name": "XLX245",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "JS1YTG"
+    },
+    {
       "country": "GB",
       "dashboard": "http://de9956.ddns.net:81",
       "description": "WDRG",
@@ -33107,6 +33303,20 @@
       "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
+      "country": "MK",
+      "dashboard": "https://xlx.dmr.net.mk",
+      "description": "XLX Reflector",
+      "dial": {
+        "host": "84.74.145.32",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00294",
+      "name": "XLX294",
+      "network": "ysf",
+      "source": "dvref"
+    },
+    {
       "country": "JP",
       "dashboard": "https://xlx296.h-sol.jp/",
       "description": "Japan XLX296-F",
@@ -33117,21 +33327,6 @@
       },
       "id": "00296",
       "name": "XLX296",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "jg1xwv"
-    },
-    {
-      "country": "JP",
-      "dashboard": "https://xlx297.sub.h-sol.jp/",
-      "description": "Japan XLX297-F",
-      "dial": {
-        "host": "xlx297.sub.h-sol.jp",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "00297",
-      "name": "XLX297",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "jg1xwv"
@@ -36930,21 +37125,6 @@
       "sponsor": "KT4ROY Trojan Amateur Radio Club"
     },
     {
-      "country": "TH",
-      "dashboard": "http://203.159.93.71/",
-      "description": "YSF-XLX535",
-      "dial": {
-        "host": "203.159.93.71",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "11304",
-      "name": "XLX535",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "HS9AI pattani Thailand"
-    },
-    {
       "country": "US",
       "dashboard": "http://www.kg4trv.ddns.net",
       "description": "Digi amigos",
@@ -38202,10 +38382,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://ysfnetgr.ddns.net:81/",
+      "dashboard": "http://51.195.107.129:82",
       "description": "HELLAS-ADNDMR",
       "dial": {
-        "host": "ysfnetgr.ddns.net",
+        "host": "51.195.107.129",
         "kind": "ysf",
         "port": 42001
       },
@@ -38217,10 +38397,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://2021adn.ddns.net:85/",
+      "dashboard": "http://ysfnetgr.ddns.net:85/",
       "description": "HELLAS-ADNDMR",
       "dial": {
-        "host": "2021adn.ddns.net",
+        "host": "ysfnetgr.ddns.net",
         "kind": "ysf",
         "port": 42002
       },
@@ -38246,10 +38426,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://2021adn.ddns.net:86",
+      "dashboard": "http://ysfnetgr.ddns.net:86",
       "description": "HELLAS-ADNDMR",
       "dial": {
-        "host": "2021adn.ddns.net",
+        "host": "ysfnetgr.ddns.net",
         "kind": "ysf",
         "port": 42003
       },
@@ -38261,10 +38441,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://2021adn.ddns.net:88/",
+      "dashboard": "http://ysfnetgr.ddns.net:88/",
       "description": "HELLAS-ADNDMR",
       "dial": {
-        "host": "2021adn.ddns.net",
+        "host": "ysfnetgr.ddns.net",
         "kind": "ysf",
         "port": 42004
       },
@@ -38291,10 +38471,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://2021adn.ddns.net:84/",
+      "dashboard": "http://ysfnetgr.ddns.net:84/",
       "description": "HELLAS-ADNDMR",
       "dial": {
-        "host": "2021adn.ddns.net",
+        "host": "ysfnetgr.ddns.net",
         "kind": "ysf",
         "port": 42001
       },
@@ -38306,10 +38486,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://ysfnetgr.ddns.net:82/",
+      "dashboard": "http://51.195.107.129:83/",
       "description": "HELLAS-ADNDMR",
       "dial": {
-        "host": "ysfnetgr.ddns.net",
+        "host": "51.195.107.129",
         "kind": "ysf",
         "port": 42002
       },
@@ -38321,10 +38501,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://ysfnetgr.ddns.net:83/",
+      "dashboard": "http://51.195.107.129:84",
       "description": "HELLAS-ADNDMR",
       "dial": {
-        "host": "ysfnetgr.ddns.net",
+        "host": "51.195.107.129",
         "kind": "ysf",
         "port": 42003
       },
@@ -38336,10 +38516,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://2021adn.ddns.net/",
+      "dashboard": "http://ysfnetgr.ddns.net/",
       "description": "HELLAS-ADNDMR",
       "dial": {
-        "host": "51.195.107.129",
+        "host": "ysfnetgr.ddns.net",
         "kind": "ysf",
         "port": 42005
       },
@@ -38395,7 +38575,6 @@
     },
     {
       "country": "IT",
-      "dashboard": "http://ysf73.tomy.org:57200",
       "description": "YSF",
       "dial": {
         "host": "ysf73.mooo.com",
@@ -38927,7 +39106,7 @@
       "dashboard": "http://malaga.c4fm.es/",
       "description": "SALA-MALAGA",
       "dial": {
-        "host": "57.131.25.19",
+        "host": "sala-andalucia.es",
         "kind": "ysf",
         "port": 42395
       },
@@ -40979,6 +41158,21 @@
       "sponsor": "DC9VQ"
     },
     {
+      "country": "GB",
+      "dashboard": "https://echelon.redetzke.aero",
+      "description": "ECHELON",
+      "dial": {
+        "host": "echelon.redetzke.aero",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "26204",
+      "name": "ECHELON",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "M0LII"
+    },
+    {
       "country": "DE",
       "description": "F17 Reflector",
       "dial": {
@@ -41039,7 +41233,7 @@
     },
     {
       "country": "DE",
-      "dashboard": "https://ysf-deutschland.de/main2.php?room=57",
+      "dashboard": "https://ysf-deutschland.de/main.php?room=57",
       "description": "YSF Siegerland",
       "dial": {
         "host": "ysf-deutschland.de",
@@ -41542,6 +41736,20 @@
       "sponsor": "BrandMeister PT"
     },
     {
+      "country": "PL",
+      "dashboard": "http://sq5fgh.binio.pl:42001/",
+      "dial": {
+        "host": "sq5fgh.binio.pl",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "26999",
+      "name": "YSF-FGH",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "SQ5FGH"
+    },
+    {
       "country": "IT",
       "dashboard": "http://ysfroomitaly.iw2gob.it",
       "description": "WIRES-X ITALY",
@@ -41718,7 +41926,7 @@
       "dial": {
         "host": "cy28000.ddns.net",
         "kind": "ysf",
-        "port": 42000
+        "port": 42001
       },
       "id": "28000",
       "name": "CYPRUS-YSF",
@@ -42283,7 +42491,7 @@
       "dashboard": "http://ea4ddl.ddns.net",
       "description": "TOLEDO",
       "dial": {
-        "host": "ea4ddl.ddns.net",
+        "host": "107.152.42.188",
         "kind": "ysf",
         "port": 42000
       },
@@ -47703,6 +47911,21 @@
       "sponsor": "JF2ANH"
     },
     {
+      "country": "PH",
+      "dashboard": "http://4g1ftu.ysf.kapihan.network/",
+      "description": "4G1FTU",
+      "dial": {
+        "host": "162.212.154.202",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "59659",
+      "name": "4G1FTU",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "4G1FTU"
+    },
+    {
       "country": "US",
       "dashboard": "http://kj5apa.mywire.org/",
       "description": "TEXAS-MRN-2",
@@ -49062,21 +49285,6 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "xreflector.es"
-    },
-    {
-      "country": "FR",
-      "dashboard": "https://srv.ysf-france.fr/",
-      "description": "Serveur XLXD",
-      "dial": {
-        "host": "srv.ysf-france.fr",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "70366",
-      "name": "XLX310",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "F1PTL Bruno"
     },
     {
       "country": "US",
