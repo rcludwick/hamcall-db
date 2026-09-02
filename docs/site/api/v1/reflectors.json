@@ -2,15 +2,15 @@
   "api_version": "v1",
   "attribution": "XLX reflector data from the XLX registry maintained by Luc Engelmann, LX1IQ (http://xlxapi.rlx.lu/).\nStandalone XRF reflector data from the Pi-Star DExtra host file (http://www.pistar.uk/downloads/DExtra_Hosts.txt).\nREF and DCS reflector names from the Pi-Star DPlus and DCS host files (http://www.pistar.uk/downloads/).\nReflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 3215,
-  "generated": "2026-09-01",
+  "count": 3212,
+  "generated": "2026-09-02",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
   "networks": {
-    "dstar": 951,
-    "m17": 107,
-    "nxdn": 297,
+    "dstar": 948,
+    "m17": 108,
+    "nxdn": 296,
     "p25": 322,
     "urf": 94,
     "ysf": 1444
@@ -853,8 +853,8 @@
         "DCS045"
       ],
       "country": "USA",
-      "dashboard": "http://xlx045.pennlinkgroup.com/xlxd/",
-      "description": "Penn-Link - info.pennlinkgroup.com - DSTAR/DMR/YSF/P25/NXDN/Wires-X",
+      "dashboard": "http://urf045.pennlinkgroup.com:8082/urfd",
+      "description": "PennLink Group URF045",
       "dial": {
         "callsign": "XRF045",
         "host": "70.44.20.24",
@@ -3418,7 +3418,7 @@
       ],
       "country": "USA",
       "dashboard": "http://ny1usxlx.ddns.net",
-      "description": "XLX181 Multiprotocol Reflector by NY1US, info: [email removed]",
+      "description": "XLX181 85 Ragchew Net, South Wales DMR, Allstar 47669, info: [email removed]",
       "dial": {
         "callsign": "XRF181",
         "host": "64.177.41.242",
@@ -3581,7 +3581,7 @@
       "description": "XLX191 Multiprotocol Reflector by LU1DQU, info: [email removed]",
       "dial": {
         "callsign": "XRF191",
-        "host": "181.23.125.20",
+        "host": "181.23.113.235",
         "kind": "dextra",
         "port": 30001
       },
@@ -4915,7 +4915,7 @@
       "description": "HAMNET http://44.149.73.11 / Internet https://xlx.prgm.org, Icom terminalmode, Multiprotocol",
       "dial": {
         "callsign": "XRF262",
-        "host": "87.176.114.33",
+        "host": "217.88.23.211",
         "kind": "dextra",
         "port": 30001
       },
@@ -7008,7 +7008,7 @@
       "description": "XLX Multiprotocol Gateway Reflector TG 22206",
       "dial": {
         "callsign": "XRF390",
-        "host": "87.6.179.76",
+        "host": "79.27.179.108",
         "kind": "dextra",
         "port": 30001
       },
@@ -7587,7 +7587,7 @@
       "description": "XLX422 Multiprotocol Reflector by LU9HOO, info: [email removed]",
       "dial": {
         "callsign": "XRF422",
-        "host": "181.87.242.26",
+        "host": "181.87.245.210",
         "kind": "dextra",
         "port": 30001
       },
@@ -7862,9 +7862,9 @@
         "REF437",
         "DCS437"
       ],
-      "country": "your_country",
+      "country": "USA",
       "dashboard": "http://109.172.7.162/xlxd",
-      "description": "your_comment",
+      "description": "FIJI_comment",
       "dial": {
         "callsign": "XRF437",
         "host": "109.172.7.162",
@@ -8501,9 +8501,9 @@
         "REF479",
         "DCS479"
       ],
-      "country": "USA",
-      "dashboard": "http://n9ink.net/db",
-      "description": "Welcome to Ozark Digital",
+      "country": "United States",
+      "dashboard": "http://imrs.amcomm.network",
+      "description": "AmComm Network IMRS",
       "dial": {
         "callsign": "XRF479",
         "host": "198.58.106.10",
@@ -10152,26 +10152,6 @@
     },
     {
       "aliases": [
-        "XRF612",
-        "REF612",
-        "DCS612"
-      ],
-      "country": "South Africa",
-      "dashboard": "http://xlx612.warpservices.co.za",
-      "description": "Radio Hams XLX Node",
-      "dial": {
-        "callsign": "XRF612",
-        "host": "105.184.236.87",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLX612",
-      "name": "XLX612",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "aliases": [
         "XRF616",
         "REF616",
         "DCS616"
@@ -10901,7 +10881,7 @@
       "description": "XLX VoIP Reflector by JA9DIJ",
       "dial": {
         "callsign": "XRF680",
-        "host": "153.221.255.146",
+        "host": "153.130.136.236",
         "kind": "dextra",
         "port": 30001
       },
@@ -11444,21 +11424,6 @@
       },
       "id": "XLX723",
       "name": "XLX723",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "country": "brazil",
-      "dashboard": "https://dstarbrasil.com.br",
-      "description": "XLX724 Multiprotocol Reflector by PU2PNY, info: [email removed]",
-      "dial": {
-        "callsign": "XRF724",
-        "host": "82.152.174.236",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLX724",
-      "name": "XLX724",
       "network": "dstar",
       "source": "xlx"
     },
@@ -13144,7 +13109,7 @@
       ],
       "country": "Germany",
       "dashboard": "http://xlx850.bm262.de",
-      "description": "MultiMode: BM-TG263<>YSF: DE-Germany<>Wires-X: DL-WIRESX-BM263 <> Tetra",
+      "description": "MultiMode DV: BM-TG263<=>YSF: DE-Germany<=>Wires-X: DL-WIRESX-BM263",
       "dial": {
         "callsign": "XRF850",
         "host": "116.203.56.12",
@@ -14603,7 +14568,7 @@
       "description": "XLX966 for BG5CIA TEST ONLY",
       "dial": {
         "callsign": "XRF966",
-        "host": "125.123.153.41",
+        "host": "183.141.197.254",
         "kind": "dextra",
         "port": 30001
       },
@@ -15241,7 +15206,7 @@
       "description": "XLX Transcode",
       "dial": {
         "callsign": "XRFBAS",
-        "host": "87.1.114.218",
+        "host": "79.18.115.15",
         "kind": "dextra",
         "port": 30001
       },
@@ -16050,6 +16015,26 @@
     },
     {
       "aliases": [
+        "XRFHKS",
+        "REFHKS",
+        "DCSHKS"
+      ],
+      "country": "CZ",
+      "dashboard": "http://xlx.iw0hks.it",
+      "description": "TEST XLX",
+      "dial": {
+        "callsign": "XRFHKS",
+        "host": "62.171.159.149",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLXHKS",
+      "name": "XLXHKS",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "aliases": [
         "XRFHRT",
         "REFHRT",
         "DCSHRT"
@@ -16410,26 +16395,6 @@
     },
     {
       "aliases": [
-        "XRFM17",
-        "REFM17",
-        "DCSM17"
-      ],
-      "country": "USA",
-      "dashboard": "http://XLXServer.duckdns.org",
-      "description": "DroidStar.Net",
-      "dial": {
-        "callsign": "XRFM17",
-        "host": "45.79.204.38",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLXM17",
-      "name": "XLXM17",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "aliases": [
         "XRFMDM",
         "REFMDM",
         "DCSMDM"
@@ -16554,9 +16519,9 @@
         "REFNLD",
         "DCSNLD"
       ],
-      "country": "Netherlands",
+      "country": "The Netherlands",
       "dashboard": "http://dstarnld.pa7lim.nl",
-      "description": "Dutch DSTAR Central",
+      "description": "Dutch Reflector by David PA7LIM",
       "dial": {
         "callsign": "XRFNLD",
         "host": "90.145.156.214",
@@ -17103,26 +17068,6 @@
       },
       "id": "XLXTUR",
       "name": "XLXTUR",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "aliases": [
-        "XRFTYL",
-        "REFTYL",
-        "DCSTYL"
-      ],
-      "country": "USA",
-      "dashboard": "http://xlxtyl.itsmith.com",
-      "description": "Tyler Net XLX Reflector",
-      "dial": {
-        "callsign": "XRFTYL",
-        "host": "66.179.209.225",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLXTYL",
-      "name": "XLXTYL",
       "network": "dstar",
       "source": "xlx"
     },
@@ -17812,7 +17757,7 @@
       ],
       "country": "T\u00dcRK\u0130YE",
       "dashboard": "https://xlxylv.ta2kw.keenetic.pro",
-      "description": "T\u00dcRK\u0130YE XLX286 Multi-Mode Reflector D-STAR DMR XLX_286 YSF TR-URF28600 NXDN 286 P25-286",
+      "description": "T\u00dcRK\u0130YE XLX286 Multi-Mode Reflector D-STAR DMR XLX_286 YSF TR-URF28600 NXDN 286 P25 286",
       "dial": {
         "callsign": "XRFYLV",
         "host": "85.103.82.115",
@@ -18230,7 +18175,7 @@
     {
       "dial": {
         "callsign": "XRF555",
-        "host": "178.107.232.205",
+        "host": "178.107.232.203",
         "kind": "dextra",
         "port": 30001
       },
@@ -20312,6 +20257,32 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "America's Kansas City Wide Digital Network"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://m17.kapihan.net",
+      "description": "<p>M17-KPH is part of the KAPIHAN Network, a multilingual multi-mode worldwide digital amateur radio system consisting of linked TGIF Network &amp; FreeDMR TGs, Wires-X Room, YSF, FCS, XLX, P25,NXDN, M17, Peanut, DVSwitch HUC, AllStarLink, Hamshack Hotline and Echolink&mdash;connecting licensed amateur radio operators worldwide.</p>",
+      "dial": {
+        "callsign": "M17-KPH",
+        "host": "107.152.46.246",
+        "kind": "m17",
+        "modules": [
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-KPH",
+      "name": "M17-KPH",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "KN6SF"
     },
     {
       "country": "GB",
@@ -24794,21 +24765,6 @@
       "sponsor": "2007 DX GRoup"
     },
     {
-      "country": "US",
-      "dashboard": "http://45.33.22.225:4000/",
-      "description": "<div class=\"n6owBd fVtNVe\" data-sfc-cp=\"\" data-sfc-root=\"ep\" data-hveid=\"CAIIAQgIEAQ\" data-complete=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\"><span class=\"iNqyIf\" data-sfc-cp=\"\" data-sfc-root=\"ep\" data-complete=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\"><strong class=\"Yjhzub\" data-sfc-root=\"ep\" data-complete=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 700; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\">Murphy Radio Network (MRN)</strong><br data-sfc-root=\"ep\" data-sfc-pl=\"|||[]\" data-complete=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\"><strong class=\"Yjhzub\" data-sfc-root=\"ep\" data-complete=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 700; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\">Website:</strong>&nbsp;http://murphy-radio.net/<br data-sfc-root=\"ep\" data-sfc-pl=\"|||[]\" data-complete=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\"><strong class=\"Yjhzub\" data-sfc-root=\"ep\" data-complete=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 700; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\">Location:</strong>&nbsp;North Central Texas</span></div>\r\n<div class=\"n6owBd fVtNVe\" data-sfc-cp=\"\" data-sfc-root=\"ep\" data-hveid=\"CAIIAQgIEAQ\" data-complete=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\">&nbsp;</div>\r\n<div class=\"n6owBd fVtNVe\" data-sfc-cp=\"\" data-sfc-root=\"ep\" data-hveid=\"CAIIAQgIEAc\" data-complete=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\"><span class=\"iNqyIf\" data-sfc-cp=\"\" data-sfc-root=\"ep\" data-complete=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\">The Murphy Radio Network (MRN) is an expanding amateur radio group dedicated to fostering an open, experimental environment for operators in North Central Texas and beyond. Believing that ham radio thrives on variety, our infrastructure seamlessly integrates both analog and digital modes.</span></div>\r\n<div class=\"n6owBd fVtNVe\" data-sfc-cp=\"\" data-sfc-root=\"ep\" data-hveid=\"CAIIAQgIEAc\" data-complete=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\">&nbsp;</div>\r\n<div class=\"n6owBd fVtNVe\" data-sfc-cp=\"\" data-sfc-root=\"ep\" data-hveid=\"CAIIAQgIEAo\" data-complete=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\"><span class=\"iNqyIf\" data-sfc-cp=\"\" data-sfc-root=\"ep\" data-complete=\"true\" aria-owns=\"action-menu-parent-container\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\">MRN operates on a simple philosophy: total freedom to use, experiment, and connect. As long as your operations align with FCC Part 97 licensing regulations, our network is your playground. Whether you are an experienced Elmer or a newly licensed tech looking to experiment with new modes, you will find a welcoming home here. Come join the fun and help us grow the network!</span></div>",
-      "dial": {
-        "host": "45.33.22.225",
-        "kind": "nxdn",
-        "port": 41400
-      },
-      "id": "65123",
-      "name": "65123",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "Murphy Radio Network (MRN)"
-    },
-    {
       "country": "IT",
       "dial": {
         "host": "ysf365.mooo.com",
@@ -28765,6 +28721,20 @@
     },
     {
       "country": "US",
+      "description": "<p>This is going to be a p25 reflector for the Kilowatt Amateur Radio Club K0KWC&nbsp;</p>",
+      "dial": {
+        "host": "K0KWC-53594.duckdns.org",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "50592",
+      "name": "Kilowatt Amateur Radio Club p25 Reflector",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Kilowatt Amateur Radio Club"
+    },
+    {
+      "country": "US",
       "dial": {
         "host": "w8lrk-mmdvm.duckdns.org",
         "kind": "p25",
@@ -29295,21 +29265,6 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "KF7KGN - UHDARC"
-    },
-    {
-      "country": "US",
-      "dashboard": "http://45.33.22.225:4000/",
-      "description": "<p>Murphy Radio Network (MRN)&nbsp; &nbsp;-- &nbsp; http://murphy-radio.net/</p>",
-      "dial": {
-        "host": "45.33.22.225",
-        "kind": "p25",
-        "port": 41000
-      },
-      "id": "65123",
-      "name": "65123",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "Murphy Radio Network (MRN)"
     },
     {
       "country": "US",
@@ -30562,10 +30517,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://xlx252.ddns.net/",
+      "dashboard": "http://51.195.107.129/",
       "description": "<p>2021_ADN_SYSTEMS_GREECE</p>",
       "dial": {
-        "host": "xlx252.ddns.net",
+        "host": "51.195.107.129",
         "kind": "urf"
       },
       "id": "252",
@@ -31510,10 +31465,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://192.227.177.138/",
+      "dashboard": "http://xlxd51.ddns.net/",
       "description": "<p>2021_ADN_SYSTEMS_GREECE</p>",
       "dial": {
-        "host": "192.227.177.138",
+        "host": "xlxd51.ddns.net",
         "kind": "urf"
       },
       "id": "D51",
@@ -33068,10 +33023,10 @@
     },
     {
       "country": "ES",
-      "dashboard": "https://sala-andalucia.es/",
+      "dashboard": "https://ysf.ysf.es",
       "description": "TG214",
       "dial": {
-        "host": "57.131.25.19",
+        "host": "113.20.8.61",
         "kind": "ysf",
         "port": 45004
       },
@@ -37385,21 +37340,6 @@
     },
     {
       "country": "US",
-      "dashboard": "http://45.33.22.225:4000/",
-      "description": "US Texas MRN",
-      "dial": {
-        "host": "45.33.22.225",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "13041",
-      "name": "TEXAS-MRN-X",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "Murphy Radio Network (MRN)"
-    },
-    {
-      "country": "US",
       "dashboard": "http://mrn-network.duckdns.org/",
       "description": "US Texas MRN",
       "dial": {
@@ -38968,12 +38908,12 @@
     },
     {
       "country": "ES",
-      "dashboard": "https://sala-andalucia.es/",
+      "dashboard": "https://ysf.ysf.es",
       "description": "LORO",
       "dial": {
-        "host": "57.131.25.19",
+        "host": "113.20.8.61",
         "kind": "ysf",
-        "port": 45001
+        "port": 45002
       },
       "id": "21400",
       "name": "PARROT",
@@ -39088,10 +39028,10 @@
     },
     {
       "country": "ES",
-      "dashboard": "https://sala-andalucia.es/",
+      "dashboard": "https://ysf.ysf.es",
       "description": "TG-21418",
       "dial": {
-        "host": "57.131.25.19",
+        "host": "113.20.8.61",
         "kind": "ysf",
         "port": 42018
       },
@@ -40047,10 +39987,10 @@
     },
     {
       "country": "ES",
-      "dashboard": "https://nxdn.c4fm.es/",
+      "dashboard": "https://ysf.ysf.es",
       "description": "NXDN-C4FM",
       "dial": {
-        "host": "nxdn.c4fm.es",
+        "host": "113.20.8.61",
         "kind": "ysf",
         "port": 42393
       },
@@ -40075,10 +40015,10 @@
     },
     {
       "country": "HN",
-      "dashboard": "http://sala-andalucia.es",
+      "dashboard": "https://ysf.ysf.es",
       "description": "HONDURAS",
       "dial": {
-        "host": "57.131.25.19",
+        "host": "113.20.8.61",
         "kind": "ysf",
         "port": 42378
       },
@@ -40767,10 +40707,10 @@
     },
     {
       "country": "US",
-      "dashboard": "https://sala-andalucia.es/2/",
+      "dashboard": "https://ysf.ysf.es",
       "description": "MIAMI-HISPANO",
       "dial": {
-        "host": "57.131.25.19",
+        "host": "113.20.8.61",
         "kind": "ysf",
         "port": 42398
       },
@@ -41513,51 +41453,6 @@
     },
     {
       "country": "DE",
-      "dashboard": "http://jura.goip.de",
-      "description": "Bridge",
-      "dial": {
-        "host": "jura.goip.de",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "26385",
-      "name": "Jura",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "DL2NJM"
-    },
-    {
-      "country": "DE",
-      "dashboard": "http://xlx890.goip.de",
-      "description": "XLX890",
-      "dial": {
-        "host": "xlx890.goip.de",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "26390",
-      "name": "Neumarkt",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "DL2NJM"
-    },
-    {
-      "country": "DE",
-      "dashboard": "http://raute.goip.de:8080",
-      "description": "No Britge",
-      "dial": {
-        "host": "raute.goip.de",
-        "kind": "ysf",
-        "port": 43000
-      },
-      "id": "26395",
-      "name": "Raute",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "DL2NJM"
-    },
-    {
-      "country": "DE",
       "dashboard": "https://xlx850.bm262.de/ysf-de-inselfreunde/",
       "description": "BM-TG26444",
       "dial": {
@@ -41921,10 +41816,10 @@
     },
     {
       "country": "CY",
-      "dashboard": "http://cy28000.ddns.net:82/",
+      "dashboard": "http://192.227.177.138:82/",
       "description": "YSF CYPRUS",
       "dial": {
-        "host": "cy28000.ddns.net",
+        "host": "192.227.177.138",
         "kind": "ysf",
         "port": 42001
       },
@@ -42862,6 +42757,20 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "DMR-SE"
+    },
+    {
+      "country": "US",
+      "description": "SOMOS LATINOS",
+      "dial": {
+        "host": "66.168.193.157",
+        "kind": "ysf",
+        "port": 42080
+      },
+      "id": "31113",
+      "name": "SOMOSLATINOS",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "KQ4KQP"
     },
     {
       "country": "US",
@@ -46712,6 +46621,21 @@
     },
     {
       "country": "PH",
+      "dashboard": "https://dx2bsp.kapihan.network",
+      "description": "DX2BSP",
+      "dial": {
+        "host": "130.51.23.102",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "51521",
+      "name": "DX2BSP",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "N6DOZ"
+    },
+    {
+      "country": "PH",
       "dashboard": "http://107.152.39.54/ysf",
       "description": "PINOYLINK",
       "dial": {
@@ -46828,6 +46752,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "N6DOZ"
+    },
+    {
+      "country": "PH",
+      "dashboard": "http://ysf.dx9bc.kapihan.net",
+      "description": "DX9BC",
+      "dial": {
+        "host": "107.152.47.61",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "51590",
+      "name": "DX9BC",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "DX9BC"
     },
     {
       "country": "PH",
@@ -52573,6 +52512,20 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "EA7CCQ"
+    },
+    {
+      "country": "ES",
+      "dashboard": "http://51.255.41.144/YSF/index.php",
+      "description": "ERA-IRESC",
+      "dial": {
+        "host": "51.255.41.144",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "96125",
+      "name": "ERA-IRESC",
+      "network": "ysf",
+      "source": "dvref"
     },
     {
       "country": "KR",

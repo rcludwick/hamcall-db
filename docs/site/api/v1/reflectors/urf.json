@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 94,
-  "generated": "2026-09-01",
+  "generated": "2026-09-02",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -437,10 +437,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://xlx252.ddns.net/",
+      "dashboard": "http://51.195.107.129/",
       "description": "<p>2021_ADN_SYSTEMS_GREECE</p>",
       "dial": {
-        "host": "xlx252.ddns.net",
+        "host": "51.195.107.129",
         "kind": "urf"
       },
       "id": "252",
@@ -1385,10 +1385,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://192.227.177.138/",
+      "dashboard": "http://xlxd51.ddns.net/",
       "description": "<p>2021_ADN_SYSTEMS_GREECE</p>",
       "dial": {
-        "host": "192.227.177.138",
+        "host": "xlxd51.ddns.net",
         "kind": "urf"
       },
       "id": "D51",

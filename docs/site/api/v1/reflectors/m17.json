@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 107,
-  "generated": "2026-09-01",
+  "count": 108,
+  "generated": "2026-09-02",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1846,6 +1846,32 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "America's Kansas City Wide Digital Network"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://m17.kapihan.net",
+      "description": "<p>M17-KPH is part of the KAPIHAN Network, a multilingual multi-mode worldwide digital amateur radio system consisting of linked TGIF Network &amp; FreeDMR TGs, Wires-X Room, YSF, FCS, XLX, P25,NXDN, M17, Peanut, DVSwitch HUC, AllStarLink, Hamshack Hotline and Echolink&mdash;connecting licensed amateur radio operators worldwide.</p>",
+      "dial": {
+        "callsign": "M17-KPH",
+        "host": "107.152.46.246",
+        "kind": "m17",
+        "modules": [
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-KPH",
+      "name": "M17-KPH",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "KN6SF"
     },
     {
       "country": "GB",

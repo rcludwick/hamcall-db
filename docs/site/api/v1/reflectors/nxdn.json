@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 297,
-  "generated": "2026-09-01",
+  "count": 296,
+  "generated": "2026-09-02",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -3472,21 +3472,6 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "2007 DX GRoup"
-    },
-    {
-      "country": "US",
-      "dashboard": "http://45.33.22.225:4000/",
-      "description": "<div class=\"n6owBd fVtNVe\" data-sfc-cp=\"\" data-sfc-root=\"ep\" data-hveid=\"CAIIAQgIEAQ\" data-complete=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\"><span class=\"iNqyIf\" data-sfc-cp=\"\" data-sfc-root=\"ep\" data-complete=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\"><strong class=\"Yjhzub\" data-sfc-root=\"ep\" data-complete=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 700; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\">Murphy Radio Network (MRN)</strong><br data-sfc-root=\"ep\" data-sfc-pl=\"|||[]\" data-complete=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\"><strong class=\"Yjhzub\" data-sfc-root=\"ep\" data-complete=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 700; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\">Website:</strong>&nbsp;http://murphy-radio.net/<br data-sfc-root=\"ep\" data-sfc-pl=\"|||[]\" data-complete=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\"><strong class=\"Yjhzub\" data-sfc-root=\"ep\" data-complete=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 700; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\">Location:</strong>&nbsp;North Central Texas</span></div>\r\n<div class=\"n6owBd fVtNVe\" data-sfc-cp=\"\" data-sfc-root=\"ep\" data-hveid=\"CAIIAQgIEAQ\" data-complete=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\">&nbsp;</div>\r\n<div class=\"n6owBd fVtNVe\" data-sfc-cp=\"\" data-sfc-root=\"ep\" data-hveid=\"CAIIAQgIEAc\" data-complete=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\"><span class=\"iNqyIf\" data-sfc-cp=\"\" data-sfc-root=\"ep\" data-complete=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\">The Murphy Radio Network (MRN) is an expanding amateur radio group dedicated to fostering an open, experimental environment for operators in North Central Texas and beyond. Believing that ham radio thrives on variety, our infrastructure seamlessly integrates both analog and digital modes.</span></div>\r\n<div class=\"n6owBd fVtNVe\" data-sfc-cp=\"\" data-sfc-root=\"ep\" data-hveid=\"CAIIAQgIEAc\" data-complete=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\">&nbsp;</div>\r\n<div class=\"n6owBd fVtNVe\" data-sfc-cp=\"\" data-sfc-root=\"ep\" data-hveid=\"CAIIAQgIEAo\" data-complete=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\"><span class=\"iNqyIf\" data-sfc-cp=\"\" data-sfc-root=\"ep\" data-complete=\"true\" aria-owns=\"action-menu-parent-container\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\">MRN operates on a simple philosophy: total freedom to use, experiment, and connect. As long as your operations align with FCC Part 97 licensing regulations, our network is your playground. Whether you are an experienced Elmer or a newly licensed tech looking to experiment with new modes, you will find a welcoming home here. Come join the fun and help us grow the network!</span></div>",
-      "dial": {
-        "host": "45.33.22.225",
-        "kind": "nxdn",
-        "port": 41400
-      },
-      "id": "65123",
-      "name": "65123",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "Murphy Radio Network (MRN)"
     },
     {
       "country": "IT",

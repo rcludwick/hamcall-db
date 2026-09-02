@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 322,
-  "generated": "2026-09-01",
+  "generated": "2026-09-02",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -3221,6 +3221,20 @@
     },
     {
       "country": "US",
+      "description": "<p>This is going to be a p25 reflector for the Kilowatt Amateur Radio Club K0KWC&nbsp;</p>",
+      "dial": {
+        "host": "K0KWC-53594.duckdns.org",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "50592",
+      "name": "Kilowatt Amateur Radio Club p25 Reflector",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Kilowatt Amateur Radio Club"
+    },
+    {
+      "country": "US",
       "dial": {
         "host": "w8lrk-mmdvm.duckdns.org",
         "kind": "p25",
@@ -3751,21 +3765,6 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "KF7KGN - UHDARC"
-    },
-    {
-      "country": "US",
-      "dashboard": "http://45.33.22.225:4000/",
-      "description": "<p>Murphy Radio Network (MRN)&nbsp; &nbsp;-- &nbsp; http://murphy-radio.net/</p>",
-      "dial": {
-        "host": "45.33.22.225",
-        "kind": "p25",
-        "port": 41000
-      },
-      "id": "65123",
-      "name": "65123",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "Murphy Radio Network (MRN)"
     },
     {
       "country": "US",
