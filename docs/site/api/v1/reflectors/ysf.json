@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1444,
-  "generated": "2026-09-02",
+  "count": 1447,
+  "generated": "2026-09-03",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -3180,6 +3180,18 @@
     },
     {
       "country": "GB",
+      "dial": {
+        "host": "194.99.65.1",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "01223",
+      "name": "EASTANGLIA",
+      "network": "ysf",
+      "source": "dvref"
+    },
+    {
+      "country": "GB",
       "dashboard": "http://82.165.7.197",
       "description": "XLX234",
       "dial": {
@@ -3967,6 +3979,19 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "JH4UVQ"
+    },
+    {
+      "country": "GB",
+      "description": "Test reflector",
+      "dial": {
+        "host": "ysf.m0dwk.net",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "03617",
+      "name": "M0DWK-YSF",
+      "network": "ysf",
+      "source": "dvref"
     },
     {
       "country": "US",
@@ -9979,7 +10004,7 @@
     },
     {
       "country": "ES",
-      "dashboard": "http://27187.ysf.es/",
+      "dashboard": "https://27187.c4fm.es",
       "description": "Wires-X-Spain",
       "dial": {
         "host": "217.154.97.237",
@@ -14632,6 +14657,20 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "ANZEL"
+    },
+    {
+      "country": "US",
+      "description": "Kilowatt ARC",
+      "dial": {
+        "host": "K0KWC-53594.duckdns.org",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "50592",
+      "name": "KilowattARC",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "Kilowatt Amateur Radio Club"
     },
     {
       "country": "AU",
