@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1447,
-  "generated": "2026-09-03",
+  "count": 1449,
+  "generated": "2026-09-04",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1875,6 +1875,20 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "NE-DSTAR"
+    },
+    {
+      "country": "US",
+      "description": "URF425",
+      "dial": {
+        "host": "155.138.252.204",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00425",
+      "name": "URF425",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "K5WHG"
     },
     {
       "country": "US",
@@ -8816,10 +8830,10 @@
     },
     {
       "country": "JP",
-      "dashboard": "http://takshino.mydns.jp:8080",
+      "dashboard": "http://takshino-2.mydns.jp:8080",
       "description": "JA2FYO YSF",
       "dial": {
-        "host": "133.232.90.95",
+        "host": "takshino-2.mydns.jp",
         "kind": "ysf",
         "port": 43000
       },
@@ -12661,7 +12675,7 @@
       "dashboard": "http://fortiga.ddns.net:42180",
       "description": "SCANIA TEAM",
       "dial": {
-        "host": "85.73.213.205",
+        "host": "85.73.53.126",
         "kind": "ysf",
         "port": 42007
       },
@@ -19488,6 +19502,20 @@
       },
       "id": "84177",
       "name": "PL4836",
+      "network": "ysf",
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://urf.leapfrog.radio",
+      "description": "URFDIG",
+      "dial": {
+        "host": "urf.leapfrog.radio",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "84242",
+      "name": "URFDIG",
       "network": "ysf",
       "source": "dvref"
     },

@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 94,
-  "generated": "2026-09-03",
+  "count": 97,
+  "generated": "2026-09-04",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -838,6 +838,19 @@
       "sponsor": "VE2SUS"
     },
     {
+      "country": "US",
+      "description": "<p>Parker County Regional Radio &amp; Meshtastic Network</p>",
+      "dial": {
+        "host": "155.138.252.204",
+        "kind": "urf"
+      },
+      "id": "425",
+      "name": "US-PCRRMN",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "K5WHG"
+    },
+    {
       "country": "DE",
       "dashboard": "http://xlx433.de",
       "description": "<p>XLX433 Hosted by DG1JP</p>",
@@ -938,6 +951,19 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "RadioSC"
+    },
+    {
+      "country": "TH",
+      "dashboard": "http://203.159.93.71/",
+      "dial": {
+        "host": "203.159.93.71",
+        "kind": "urf"
+      },
+      "id": "535",
+      "name": "XLX535",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "HS9AI pattani Thailand"
     },
     {
       "country": "US",
@@ -1396,6 +1422,21 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "2021_ADN_SYSTEMS_GREECE"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://urf.leapfrog.radio",
+      "dial": {
+        "host": "urf.leapfrog.radio",
+        "kind": "urf",
+        "modules": [
+          "A"
+        ]
+      },
+      "id": "DIG",
+      "name": "DIG",
+      "network": "urf",
+      "source": "dvref"
     },
     {
       "country": "GR",

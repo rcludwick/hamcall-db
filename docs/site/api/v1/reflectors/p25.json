@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 322,
-  "generated": "2026-09-03",
+  "count": 324,
+  "generated": "2026-09-04",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1401,10 +1401,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "https://p25.ta2kw.keenetic.pro",
+      "dashboard": "https://xlxylv.ta2kw.keenetic.pro",
       "description": "<p>P25 T&Uuml;RK\u0130YE 286</p>",
       "dial": {
-        "host": "p25.ta2kw.keenetic.pro",
+        "host": "xlxylv.ta2kw.keenetic.pro",
         "kind": "p25",
         "port": 41000
       },
@@ -2653,6 +2653,20 @@
       "sponsor": "Windy City Amateur Radio Society"
     },
     {
+      "country": "US",
+      "description": "<p>Parker County Regional Radio &amp; Meshtastic Network</p>",
+      "dial": {
+        "host": "155.138.252.204",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "425",
+      "name": "URF425",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "K5WHG"
+    },
+    {
       "country": "NL",
       "dial": {
         "host": "78.141.219.36",
@@ -3440,6 +3454,20 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "KB1ELV"
+    },
+    {
+      "country": "TH",
+      "dashboard": "http://203.159.93.71/",
+      "dial": {
+        "host": "203.159.93.71",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "535",
+      "name": "URF535",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "HS9AI pattani Thailand"
     },
     {
       "country": "TH",
