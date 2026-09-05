@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1449,
-  "generated": "2026-09-04",
+  "count": 1451,
+  "generated": "2026-09-05",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -164,7 +164,7 @@
       "dashboard": "https://digital.cumbriacq.com/marras",
       "description": "MARRAS",
       "dial": {
-        "host": "digital.cumbriacq.com",
+        "host": "57.128.190.202",
         "kind": "ysf",
         "port": 42201
       },
@@ -470,6 +470,20 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "JQ1ZVS"
+    },
+    {
+      "country": "CH",
+      "dashboard": "https://xlx.hb9v.ch",
+      "description": "Reflector HB9V",
+      "dial": {
+        "host": "xlx.hb9v.ch",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00040",
+      "name": "HB9V",
+      "network": "ysf",
+      "source": "dvref"
     },
     {
       "country": "GB",
@@ -1208,6 +1222,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "DC9VQ"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://64.177.41.242",
+      "description": "XLX181",
+      "dial": {
+        "host": "ny1usxlx.ddns.net",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00181",
+      "name": "XLX181",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "85 Ragchew Net"
     },
     {
       "country": "PL",
@@ -7377,7 +7406,7 @@
       "dashboard": "http://malaga.c4fm.es/",
       "description": "SALA-MALAGA",
       "dial": {
-        "host": "sala-andalucia.es",
+        "host": "57.131.25.19",
         "kind": "ysf",
         "port": 42395
       },
@@ -9430,10 +9459,10 @@
     },
     {
       "country": "GB",
-      "dashboard": "https://echelon.redetzke.aero",
+      "dashboard": "https://echelon.m0lii.com",
       "description": "ECHELON",
       "dial": {
-        "host": "echelon.redetzke.aero",
+        "host": "echelon.m0lii.com",
         "kind": "ysf",
         "port": 42000
       },
@@ -12687,10 +12716,10 @@
     },
     {
       "country": "US",
-      "dashboard": "https://xlx.km7hbn.com",
+      "dashboard": "https://xlx.kb7dan.com",
       "description": "XLXLWT Mod C",
       "dial": {
-        "host": "xlx.km7hbn.com",
+        "host": "xlx.kb7dan.com",
         "kind": "ysf",
         "port": 42000
       },

@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 107,
-  "generated": "2026-09-04",
+  "generated": "2026-09-05",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -11,11 +11,11 @@
   "reflectors": [
     {
       "country": "GB",
-      "dashboard": "http://urf001.cumbriacq.com:98/urf/",
+      "dashboard": "https://urf001.cumbriacq.com/urf/",
       "description": "<p>More info on <a href=\"https://cumbriaCQ.com\">https://cumbriaCQ.com</a><br>M17-002 is bridged into the cumbriaCQ Network&nbsp;</p>",
       "dial": {
         "callsign": "M17-002",
-        "host": "89.240.4.99",
+        "host": "urf001.cumbriacq.com",
         "kind": "m17",
         "modules": [
           "A"
@@ -23,7 +23,7 @@
         "port": 17000
       },
       "id": "M17-002",
-      "name": "M17-002",
+      "name": "CumbriaCQ.com M17",
       "network": "m17",
       "source": "dvref",
       "sponsor": "cumbriaCQ.com"

@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 324,
-  "generated": "2026-09-04",
+  "generated": "2026-09-05",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -599,7 +599,7 @@
       "country": "US",
       "description": "<p>This is an installation of DVSwitch and P25Reflector. It links to Allstar Node 483561, which is connected to 483560 on our local 146.790 repeater. This bridge is meant to open a new avenue to our local repeater for remote users.&nbsp;</p>\r\n<p>The 146.790 repeater is located in Greenville, Ohio, and is sponsored by the Treaty City Amateur Radio Association, W8UMD. Adam, W8FLH is our repeater trustee.</p>\r\n<p>Our local Darke County ARES net meets every Monday evening at 7:00 PM ET on 146.790. Feel free to join us! For more info, see http://w8flh.net</p>",
       "dial": {
-        "host": "38.194.188.24",
+        "host": "38.194.188.118",
         "kind": "p25",
         "port": 41000
       },
