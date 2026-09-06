@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1451,
-  "generated": "2026-09-05",
+  "count": 1453,
+  "generated": "2026-09-06",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -10263,10 +10263,10 @@
     },
     {
       "country": "US",
-      "dashboard": "https://digital.whocaresradio.com",
+      "dashboard": "https://digital.wc8mi.net",
       "description": "Zombie Alert",
       "dial": {
-        "host": "digital.whocaresradio.com",
+        "host": "digital.wc8mi.net",
         "kind": "ysf",
         "port": 42003
       },
@@ -12435,6 +12435,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "KN1B"
+    },
+    {
+      "country": "ES",
+      "dashboard": "http://149.22.108.192/YSFReflector-Dashboard/index.php",
+      "description": "YSF SALAMANCA",
+      "dial": {
+        "host": "149.22.108.192",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "37006",
+      "name": "SALAMANCA",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "ea1hg"
     },
     {
       "country": "US",
@@ -14950,6 +14965,21 @@
     },
     {
       "country": "PH",
+      "dashboard": "https://ysf.dz1rh.rec.org.ph/",
+      "description": "DZ1RH",
+      "dial": {
+        "host": "ysf.dz1rh.rec.org.ph",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "51514",
+      "name": "DZ1RH",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "DZ1RH"
+    },
+    {
+      "country": "PH",
       "dashboard": "http://107.152.44.121/ysf",
       "description": "DX2AFP",
       "dial": {
@@ -16371,10 +16401,10 @@
     },
     {
       "country": "US",
-      "dashboard": "https://digital.whocaresradio.com",
+      "dashboard": "https://digital.wc8mi.net",
       "description": "New Haven MI",
       "dial": {
-        "host": "digital.whocaresradio.com",
+        "host": "digital.wc8mi.net",
         "kind": "ysf",
         "port": 42002
       },
@@ -17329,7 +17359,7 @@
       "dashboard": "http://ysftrujillo.ddns.net",
       "description": "YSF TO DMR",
       "dial": {
-        "host": "ysftrujillo.ddns.net",
+        "host": "awregisb.ddns.net",
         "kind": "ysf",
         "port": 42000
       },
@@ -17601,10 +17631,10 @@
     },
     {
       "country": "US",
-      "dashboard": "https://digital.whocaresradio.com",
+      "dashboard": "https://digital.wc8mi.net",
       "description": "Who Cares ARG",
       "dial": {
-        "host": "digital.whocaresradio.com",
+        "host": "digital.wc8mi.net",
         "kind": "ysf",
         "port": 42001
       },

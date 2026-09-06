@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 107,
-  "generated": "2026-09-05",
+  "count": 108,
+  "generated": "2026-09-06",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -2624,6 +2624,25 @@
       "sponsor": "SWDG - South Wales Digital Group"
     },
     {
+      "country": "UY",
+      "dashboard": "https://m17.cx4ae.com",
+      "description": "<p>Uruguay-Link M17 reflector operated by CX4AE in Uruguay</p>",
+      "dial": {
+        "callsign": "M17-URU",
+        "host": "113.20.7.188",
+        "kind": "m17",
+        "modules": [
+          "A"
+        ],
+        "port": 17000
+      },
+      "id": "M17-URU",
+      "name": "Uruguay-Link",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "cx4ae"
+    },
+    {
       "country": "US",
       "dashboard": "http://m17.w1wra.net",
       "dial": {
@@ -2732,10 +2751,10 @@
     },
     {
       "country": "US",
-      "dashboard": "https://digital.whocaresradio.com",
+      "dashboard": "https://digital.wc8mi.net",
       "dial": {
         "callsign": "M17-WHO",
-        "host": "digital.whocaresradio.com",
+        "host": "digital.wc8mi.net",
         "kind": "m17",
         "modules": [
           "A"
@@ -2768,10 +2787,10 @@
     },
     {
       "country": "US",
-      "dashboard": "https://digital.whocaresradio.com",
+      "dashboard": "https://digital.wc8mi.net",
       "dial": {
         "callsign": "M17-WVD",
-        "host": "digital.whocaresradio.com",
+        "host": "digital.wc8mi.net",
         "kind": "m17",
         "modules": [
           "A"
@@ -2855,10 +2874,10 @@
     },
     {
       "country": "US",
-      "dashboard": "https://digital.whocaresradio.com",
+      "dashboard": "https://digital.wc8mi.net",
       "dial": {
         "callsign": "M17-ZOM",
-        "host": "digital.whocaresradio.com",
+        "host": "digital.wc8mi.net",
         "kind": "m17",
         "modules": [
           "A"

@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 97,
-  "generated": "2026-09-05",
+  "count": 98,
+  "generated": "2026-09-06",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -413,6 +413,39 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "IS0GQX Bruno"
+    },
+    {
+      "country": "JP",
+      "dashboard": "https://xlx245.sub.h-sol.jp/",
+      "dial": {
+        "host": "xlx245.sub.h-sol.jp",
+        "kind": "urf"
+      },
+      "id": "245",
+      "name": "URF245",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "JS1YTG"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://xlx.oz-dmr.network/",
+      "dial": {
+        "host": "xlx.oz-dmr.network",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "E",
+          "G",
+          "K",
+          "M"
+        ]
+      },
+      "id": "247",
+      "name": "OZ-DMR NETWORK",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "OZ-DMR NETWORK"
     },
     {
       "country": "GR",
@@ -951,19 +984,6 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "RadioSC"
-    },
-    {
-      "country": "TH",
-      "dashboard": "http://203.159.93.71/",
-      "dial": {
-        "host": "203.159.93.71",
-        "kind": "urf"
-      },
-      "id": "535",
-      "name": "XLX535",
-      "network": "urf",
-      "source": "dvref",
-      "sponsor": "HS9AI pattani Thailand"
     },
     {
       "country": "US",

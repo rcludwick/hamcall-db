@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 298,
-  "generated": "2026-09-05",
+  "count": 297,
+  "generated": "2026-09-06",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -175,21 +175,6 @@
       "name": "URFJSS",
       "network": "nxdn",
       "source": "dvref"
-    },
-    {
-      "country": "US",
-      "dashboard": "http://www.kg4trv.ddns.net",
-      "description": "<p>We are a group of friends who are passionate about digital radio, its numerous modes, networks and services.</p>\r\n<p>Somos un grupo de amigos que tenemos pasion por la radio digital, sus numerosas modalidades, redes y servicios</p>",
-      "dial": {
-        "host": "104.5.243.93",
-        "kind": "nxdn",
-        "port": 41400
-      },
-      "id": "11520",
-      "name": "US D Friends",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "KG4TRV"
     },
     {
       "country": "GB",
@@ -1397,6 +1382,20 @@
       "name": "NXDN Scotland",
       "network": "nxdn",
       "source": "dvref"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://england.oz-dmr.network/",
+      "dial": {
+        "host": "england.oz-dmr.network",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "23595",
+      "name": "23595",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "OZ-DMR NETWORK"
     },
     {
       "country": "US",
@@ -3046,16 +3045,18 @@
     },
     {
       "country": "US",
+      "dashboard": "http://status.w4yi.org:19080",
+      "description": "<p>Tennessee Statewide NXDN Reflector</p>",
       "dial": {
         "host": "nxdn.w4yi.org",
         "kind": "nxdn",
         "port": 41400
       },
       "id": "4700",
-      "name": "Tennessee Statewide",
+      "name": "W4YI",
       "network": "nxdn",
       "source": "dvref",
-      "sponsor": "W4YI"
+      "sponsor": "Tennessee Statewide NXDN (W4YI)"
     },
     {
       "country": "BD",
@@ -3314,20 +3315,6 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "VK5ZSH"
-    },
-    {
-      "country": "TH",
-      "dashboard": "http://203.159.93.71/",
-      "dial": {
-        "host": "203.159.93.71",
-        "kind": "nxdn",
-        "port": 41400
-      },
-      "id": "535",
-      "name": "URF535",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "HS9AI pattani Thailand"
     },
     {
       "country": "US",
