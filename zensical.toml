@@ -64,6 +64,7 @@ nav = [
   ] },
   { "Callsign dataset" = "callsigns.md" },
   { "About" = [
+    "about/datasets.md",
     "about/sources.md",
     "about/licensing.md",
   ] },
