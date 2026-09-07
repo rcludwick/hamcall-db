@@ -192,7 +192,7 @@ License (ODbL), https://opendatacommons.org/licenses/odbl/1-0/.
 
 ## Reflector directory
 
-Digital-voice reflectors for D-Star, M17, YSF, NXDN, P25 and URF. This is the
+Digital-voice reflectors for D-Star, M17, YSF, NXDN, P25, URF and DMR. This is the
 one dataset served **from this site**, as static JSON needing no token, because
 a reflector picker in a client app needs a URL it can just fetch. Full
 description: [Reflector directory](../reflectors/index.md); the contract is the
@@ -210,6 +210,7 @@ description: [Reflector directory](../reflectors/index.md); the contract is the
 | [`api/v1/reflectors/nxdn.json`](../api/v1/reflectors/nxdn.json) | NXDN only. |
 | [`api/v1/reflectors/p25.json`](../api/v1/reflectors/p25.json) | P25 only. |
 | [`api/v1/reflectors/urf.json`](../api/v1/reflectors/urf.json) | URF only. |
+| [`api/v1/reflectors/dmr.json`](../api/v1/reflectors/dmr.json) | DMR only — one row per master server. |
 | [`api/v1/openapi.json`](../api/v1/openapi.json) | The contract, machine-readable. |
 
 ```bash

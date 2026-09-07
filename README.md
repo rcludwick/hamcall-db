@@ -20,14 +20,14 @@ A Python build pipeline that aggregates free, openly-licensed amateur radio lice
 | SOTA | Summits on the Air summit directory (places, not licensees) | Used on an assumed non-commercial basis, **pending human sign-off** (see NOTICE) | Static `summitslist.csv` from `storage.sota.org.uk` |
 | PAD-US | US protected-area boundaries → POTA park grid sets (build-time only) | Public domain (USGS) | National GeoPackage/GDB |
 | OpenStreetMap | Non-US protected-area/park boundaries → **separate ODbL** POTA park grid sets (build-time only) | ODbL — shipped in its own file, never mixed into the CC BY-NC dataset (see NOTICE / LICENSE-ODbL) | Geofabrik regional extracts |
-| DVRef | M17 / YSF / NXDN / P25 / URF / XRF reflector directory (places, not licensees) | **CC BY 4.0** — shipped in its own file, never mixed into the CC BY-NC dataset (see NOTICE / LICENSE-CC-BY) | REST API, token required |
+| DVRef | M17 / YSF / NXDN / P25 / URF / DMR reflector directory (places, not licensees) | **CC BY 4.0** — shipped in its own file, never mixed into the CC BY-NC dataset (see NOTICE / LICENSE-CC-BY) | REST API, token required |
 | XLX registry (LX1IQ) | XLX / D-Star reflector directory (~890 reflectors) | No explicit licence; public self-registration directory, attributed — **pending human sign-off** (see NOTICE) | XML over HTTP |
 
 The on-demand long tail (UK, EU, JA, etc.) is intentionally out of scope here — consumer tools should fall through to per-callsign APIs like QRZ or HamQTH for those.
 
 ### Reflector directory — a SEPARATE **CC BY 4.0** dataset
 
-Digital-voice reflectors for D-Star, M17, YSF, NXDN, P25 and URF, published three ways:
+Digital-voice reflectors for D-Star, M17, YSF, NXDN, P25, URF and DMR, published three ways:
 `hamcall-db-reflectors-YYYY-MM-DD.parquet`, a matching `.db` (table `reflectors`), and —
 unlike everything else here — as a **versioned static JSON API served from GitHub Pages**,
 because a reflector picker in a client app needs a URL it can fetch without a token:
@@ -58,9 +58,9 @@ Every entry is a common **envelope** — `network`, `id`, `name`, `aliases`, `de
 }
 ```
 
-`dial.kind` is `dextra` (D-Star), `m17`, `ysf`, `nxdn`, `p25` or `urf`. A client switches
-on it and must **ignore a kind it does not know** rather than guessing — that is how a new
-network ships without breaking older clients. An **absent `dial` means listed but not
+`dial.kind` is `dextra` (D-Star), `m17`, `ysf`, `nxdn`, `p25`, `urf` or `mmdvm` (DMR).
+A client switches on it and must **ignore a kind it does not know** rather than guessing —
+that is how a new network ships without breaking older clients. An **absent `dial` means listed but not
 dialable** from this data; no default address is ever invented. `dial.callsign` is the name
 a reflector answers to **on the air**, which is not always its directory name — an XLX
 reflector is listed as `XLX836` but a DExtra client must send `XRF836` in RPT1/RPT2.
@@ -68,9 +68,18 @@ reflector is listed as `XLX836` but a DExtra client must send `XRF836` in RPT1/R
 URF entries carry no port because upstream publishes none and a urfd speaks several
 protocols at once.
 
+**A DMR row is one master server, not one network.** `system` names the DMR network it
+belongs to — a talkgroup number is only defined within one network, so the server alone is
+not enough. It is on the envelope of every `dmr` row (and repeated in `dial.system`), so a
+server whose address upstream never published still says where it belongs.
+`dial.talkgroups_url` links that network's talkgroup list rather than mirroring it. `dial.talkgroup` / `dial.timeslot` are in the contract and unset on every row
+today. Upstream's `dns` column sometimes holds a dashboard URL instead of a host; those
+rows fall back to the numeric address, or publish no `dial` at all.
+
 The Parquet/SQLite columns are the flat form of the same data: `id` (PK with `network`),
 `network`, `name`, `aliases`, `callsign`, `host`, `port`, `modules`, `country`, `sponsor`,
-`description`, `dashboard`, `source`, `synced_at`.
+`description`, `dashboard`, `source`, `synced_at`, and the DMR-only `system`, `requires`,
+`talkgroups_url`, `talkgroup`, `timeslot`.
 
 **`XRF###` and `XLX###` are different reflectors.** They share a numbering scheme and
 nothing else: measured 2026-08-26, 13 of 14 sampled pairs resolved to entirely different

@@ -178,11 +178,16 @@ def read_history_parquet(in_path: Path) -> list[HistoryRow]:
 # away, so folding these rows into the CC BY-NC artifacts would be a licence violation,
 # not merely untidy. Same segregation discipline as the ODbL park grids, opposite
 # direction: there the upstream was MORE restrictive, here it is LESS.
-# `modules` ('A'..'Z') and `aliases` are string lists; `port` is Int64; the rest are strings.
+# `modules`, `aliases` and `requires` are string lists; `port`, `talkgroup` and `timeslot`
+# are Int64; the rest are strings.
+_REFLECTOR_INT_COLUMNS = ("port", "talkgroup", "timeslot")
+_REFLECTOR_LIST_COLUMNS = ("modules", "aliases", "requires")
+
+
 def _reflector_dtype(col: str) -> pl.DataType:
-    if col == "port":
+    if col in _REFLECTOR_INT_COLUMNS:
         return pl.Int64
-    if col in ("modules", "aliases"):
+    if col in _REFLECTOR_LIST_COLUMNS:
         return pl.List(pl.Utf8)
     return pl.Utf8
 

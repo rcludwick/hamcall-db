@@ -638,7 +638,7 @@ def test_openapi_covers_every_dial_kind_the_build_can_emit() -> None:
     # the importers can actually produce, from the emitter's own table, and from the
     # kinds present in documents built from the real fixtures. Add a network or a kind
     # without touching the published contract and this fails.
-    networks = {*dvref.NETWORKS.values(), xlx.XlxSource.network}
+    networks = {*dvref.NETWORKS.values(), dvref.DvrefDmrSource.network, xlx.XlxSource.network}
     from_sources = {reflectors.dial_kind(n) for n in networks}
     from_table = set(reflectors.DIAL_KINDS.values())
     from_data = {

@@ -1,7 +1,12 @@
 """DVRef reflector directory importer (hdb-refl).
 
-Produces ``ReflectorRecord``s for the M17, YSF, NXDN, P25, URF and D-Star networks — a
+Produces ``ReflectorRecord``s for the M17, YSF, NXDN, P25, URF and DMR networks — a
 SEPARATE reference dataset from the callsign schema (see :mod:`hamcall_db.reflectors`).
+
+Two shapes of endpoint live here. :class:`DvrefSource` reads the per-network reflector
+lists, one request per network; :class:`DvrefDmrSource` reads the DMR endpoint, which
+publishes networks-of-servers and is flattened to one row per server. Both share
+:class:`_DvrefEndpoint` for auth, caching and metadata.
 
 Licence — CC BY 4.0, and why that matters here
 ----------------------------------------------
@@ -72,9 +77,14 @@ ATTRIBUTION = "Reflector data provided by DVRef — https://dvref.com/"
 #   Anonymous:     1 retrieval per resource per source IP every 6 hours, using
 #                  User-Agent + X-DVRef-Callsign + X-DVRef-Contact and no token.
 #
-# A nightly build spends five requests, which is comfortable. The trap is that
-# interactive debugging spends from the SAME budget: running experiments from a
-# workstation while the nightly job uses the same token can throttle the build.
+# A nightly build spends six requests — five reflector lists plus the DMR
+# networks endpoint — which is comfortable. Mirroring DMR talkgroups would not
+# be: they live behind a PER-NETWORK endpoint and there are 172 networks, so it
+# has to become a rotating slice rather than a nightly sweep (hdb-refl-dmrtg).
+#
+# The trap is that interactive debugging spends from the SAME budget: running
+# experiments from a workstation while the nightly job uses the same token can
+# throttle the build.
 # That happened on 2026-08-26. If you are poking at the API by hand, either
 # expect it or use the anonymous tier, which is per-IP and would fit this
 # project's once-a-night access pattern on its own.
@@ -203,6 +213,9 @@ def _rows(payload: object) -> list[dict[str, object]]:
         {"status": "success", "generated_at": ..., "_dvref_metadata": {...},
          "data": {"reflectors": [...]}}
 
+    The DMR endpoint is the same envelope with a different row key —
+    ``data.networks`` (verified 2026-09-06) — so one reader serves both.
+
     DVRef's OpenAPI schema documents these endpoints as "No response body", so that
     shape is observed rather than contractual. We look inside ``data`` first, then
     accept a bare array or a flat ``results``/``reflectors`` wrapper, so a future
@@ -219,7 +232,7 @@ def _rows(payload: object) -> list[dict[str, object]]:
         if isinstance(container, list):
             return [row for row in container if isinstance(row, dict)]
         if isinstance(container, dict):
-            for key in ("reflectors", "servers", "results"):
+            for key in ("reflectors", "networks", "servers", "results"):
                 value = container.get(key)
                 if isinstance(value, list):
                     return [row for row in value if isinstance(row, dict)]
@@ -272,7 +285,68 @@ def _generated_date(payload: object) -> str | None:
         return None
 
 
-class DvrefSource:
+class _DvrefEndpoint:
+    """Shared plumbing for one DVRef endpoint: token, fetch, cache, metadata.
+
+    Subclasses supply :attr:`url` and a ``cache_name``, and do their own row shaping in
+    ``parse()``. Everything above that is identical for every endpoint — the same token,
+    the same hourly budget, the same "reuse a same-day file" rule — and duplicating it
+    per endpoint is how one of them ends up quietly refetching or missing a header.
+    """
+
+    #: Which importer produced the row. One name for every DVRef endpoint: `source` is
+    #: provenance, and the build's source guard keys on it.
+    name = "dvref"
+
+    #: File name for the cached response inside the work dir.
+    cache_name = "dvref.json"
+
+    def __init__(self, *, token: str | None = None, fetch: Fetcher | None = None) -> None:
+        self._token = token if token is not None else os.environ.get(TOKEN_ENV, "")
+        self._fetch = fetch or _urllib_fetch
+        self.synced_at: str | None = None
+        # Filled in by parse() from the response's own _dvref_metadata; falls back to
+        # our constant if a response ever omits it.
+        self.attribution: str = ATTRIBUTION
+        # Set by parse() when upstream attaches an operational message.
+        self.notice: str | None = None
+
+    @property
+    def url(self) -> str:  # pragma: no cover - every subclass overrides this
+        raise NotImplementedError
+
+    def download(self, work_dir: Path) -> Path:
+        """Fetch this endpoint's response into ``work_dir``.
+
+        A same-day cached file is reused untouched — DVRef asks callers to "avoid
+        downloading unchanged data more frequently than your application actually
+        requires", and a directory that moves on a scale of weeks does not require more.
+        """
+        work_dir.mkdir(parents=True, exist_ok=True)
+        path = work_dir / self.cache_name
+        if not path.exists():
+            if not self._token:
+                raise DvrefAuthError(
+                    f"{TOKEN_ENV} is not set. Mint a token at "
+                    "https://dvref.com/accounts/token/ (free, requires a DVRef account)."
+                )
+            path.write_bytes(self._fetch(self.url, self._token))
+        self.synced_at = datetime.fromtimestamp(path.stat().st_mtime, tz=UTC).date().isoformat()
+        return path
+
+    def _envelope(self, path: Path, synced_at: str | None) -> tuple[object, str | None]:
+        """Read a cached response, record its metadata, and return it with its date.
+
+        Upstream's own ``generated_at`` beats the cache file's mtime: it dates the DATA,
+        not the moment we happened to write it to disk.
+        """
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        self.attribution = payload_attribution(payload) or ATTRIBUTION
+        self.notice = payload_notice(payload)
+        return payload, synced_at or _generated_date(payload) or self.synced_at
+
+
+class DvrefSource(_DvrefEndpoint):
     """One DVRef network as a reflector source.
 
     ``segment`` is the API path segment (``"ysf"``, ``"mrefd"``, ...); ``network`` is the
@@ -290,17 +364,10 @@ class DvrefSource:
             raise ValueError(
                 f"unknown DVRef segment {segment!r}; expected one of {sorted(NETWORKS)}"
             )
+        super().__init__(token=token, fetch=fetch)
         self.segment = segment
         self.network = NETWORKS[segment]
-        self.name = "dvref"
-        self._token = token if token is not None else os.environ.get(TOKEN_ENV, "")
-        self._fetch = fetch or _urllib_fetch
-        self.synced_at: str | None = None
-        # Filled in by parse() from the response's own _dvref_metadata; falls back to
-        # our constant if a response ever omits it.
-        self.attribution: str = ATTRIBUTION
-        # Set by parse() when upstream attaches an operational message.
-        self.notice: str | None = None
+        self.cache_name = f"{segment}.json"
 
     def _identity(self, designator: str) -> tuple[str, str | None]:
         """Map a DVRef designator to the dialable id and the on-the-wire callsign.
@@ -333,37 +400,13 @@ class DvrefSource:
     def url(self) -> str:
         return f"{API_ROOT}/{self.segment}/reflectors/?include_description=true"
 
-    def download(self, work_dir: Path) -> Path:
-        """Fetch this network's reflector list into ``work_dir``.
-
-        A same-day cached file is reused untouched — DVRef asks callers to "avoid
-        downloading unchanged data more frequently than your application actually
-        requires", and a directory that moves on a scale of weeks does not require more.
-        """
-        work_dir.mkdir(parents=True, exist_ok=True)
-        path = work_dir / f"{self.segment}.json"
-        if not path.exists():
-            if not self._token:
-                raise DvrefAuthError(
-                    f"{TOKEN_ENV} is not set. Mint a token at "
-                    "https://dvref.com/accounts/token/ (free, requires a DVRef account)."
-                )
-            path.write_bytes(self._fetch(self.url, self._token))
-        self.synced_at = datetime.fromtimestamp(path.stat().st_mtime, tz=UTC).date().isoformat()
-        return path
-
     def parse(self, path: Path, *, synced_at: str | None = None) -> Iterable[ReflectorRecord]:
         """Parse a downloaded network file into reflector records.
 
         Rows with neither a hostname nor an address are skipped: an entry that cannot be
         dialled is not a directory entry, it is a client-side failure waiting to happen.
         """
-        payload = json.loads(path.read_text(encoding="utf-8"))
-        # Upstream's own generated_at beats the cache file's mtime: it dates the DATA,
-        # not the moment we happened to write it to disk.
-        stamp = synced_at or _generated_date(payload) or self.synced_at
-        self.attribution = payload_attribution(payload) or ATTRIBUTION
-        self.notice = payload_notice(payload)
+        payload, stamp = self._envelope(path, synced_at)
 
         for row in _rows(payload):
             designator = _ident(row.get("designator")) or _str(row.get("name"))
@@ -392,6 +435,117 @@ class DvrefSource:
                 source=self.name,
                 synced_at=stamp,
             )
+
+
+class DvrefDmrSource(_DvrefEndpoint):
+    """DVRef's DMR networks, published as ONE ROW PER SERVER.
+
+    Why a server and not a network
+    ------------------------------
+    The DMR endpoint is shaped differently from the other five: it lists 172 *networks*,
+    each holding zero or more *servers*. A network is an organisation, not an address —
+    what an operator actually points a hotspot at is one server, with a host and a port.
+    So the row this publishes is the server, and the network it belongs to travels with
+    it as ``system``: a talkgroup number is only defined within one network, so a master
+    without its network name is not enough to talk to anybody.
+
+    A network with no servers publishes nothing. 61 of the 172 are in that state — a
+    listing on DVRef with no address behind it — and a row you cannot dial and cannot
+    even describe as a place is not a directory entry.
+
+    Data quality, and why ``dns`` is not trusted
+    -------------------------------------------
+    ``dns`` is a free-text field upstream and is not always a host. FreeDMR fills it with
+    real hostnames on port 62031; several SystemX entries carry a DASHBOARD URL
+    (``https://apollo.dmr.uk.pe/dashboard/``) with a null port. Publishing that as a host
+    would hand a client something it cannot resolve, let alone connect to, so anything
+    that is not a bare hostname or IP literal is rejected and the numeric address is used
+    instead. When nothing usable remains the row is still published — a server you can
+    name and attribute is worth listing — but WITHOUT a ``dial``, per the API's rule that
+    an address is never invented.
+
+    Talkgroups are not mirrored
+    ---------------------------
+    They live behind a per-network endpoint, which is 172 requests against an hourly
+    budget of 60 (:data:`AUTHENTICATED_HOURLY_LIMIT`). This costs ONE request a night and
+    publishes ``talkgroups_url`` so a client can follow the link; mirroring them is
+    hdb-refl-dmrtg.
+    """
+
+    network = "dmr"
+    cache_name = "dmr-networks.json"
+
+    #: What the operator must supply and a public directory cannot: a DMR ID is issued to
+    #: a person, and the password is per-master. A client seeing this should prompt.
+    REQUIRES: tuple[str, ...] = ("dmr_id", "password")
+
+    @property
+    def url(self) -> str:
+        return f"{API_ROOT}/dmr/networks/?include_description=true"
+
+    def parse(self, path: Path, *, synced_at: str | None = None) -> Iterable[ReflectorRecord]:
+        """Flatten the networks-of-servers response into one record per server."""
+        payload, stamp = self._envelope(path, synced_at)
+
+        for network in _rows(payload):
+            system = _str(network.get("slug"))
+            if not system:
+                continue
+            servers = network.get("servers")
+            if not isinstance(servers, list):
+                continue
+            # The display name is the fallback sponsor: a network with no sponsor
+            # recorded is still run by someone, and "FreeDMR" beats an empty cell.
+            sponsor = _str(network.get("sponsor")) or _str(network.get("network"))
+            description = _str(network.get("description"))
+            dashboard = _str(network.get("url"))
+            talkgroups_url = _str(network.get("tglist"))
+
+            for server in servers:
+                if not isinstance(server, dict):
+                    continue
+                identifier = _str(server.get("slug"))
+                if not identifier:
+                    continue
+                yield ReflectorRecord(
+                    id=identifier,
+                    network=self.network,
+                    name=_str(server.get("server")) or identifier,
+                    host=_host(server.get("dns"))
+                    or _host(server.get("ipv4"))
+                    or _host(server.get("ipv6")),
+                    port=_int(server.get("port")),
+                    country=_str(server.get("country")),
+                    # The network's, not the server's: DVRef records these once per
+                    # network, and a server inherits the organisation that runs it.
+                    sponsor=sponsor,
+                    description=description,
+                    dashboard=dashboard,
+                    source=self.name,
+                    synced_at=stamp,
+                    system=system,
+                    requires=list(self.REQUIRES),
+                    talkgroups_url=talkgroups_url,
+                )
+
+
+def _host(value: object) -> str | None:
+    """A bare hostname or IP literal, or None if the value is anything else.
+
+    DVRef's ``dns`` column holds a dashboard URL for several DMR servers rather than a
+    host — ``https://apollo.dmr.uk.pe/dashboard/`` is a real value, and so is the
+    path-bearing ``ipsc2.freestar.network/ipsc``. Both LOOK like an address and neither
+    is one: a client would try to resolve the whole string and fail, or worse, strip it
+    to something that resolves to the wrong machine. So a value carrying a scheme, a
+    path, or whitespace is refused rather than repaired — the row then falls back to the
+    numeric address, and if there is none it is published without a ``dial``.
+    """
+    host = _str(value)
+    if host is None:
+        return None
+    if "://" in host or "/" in host or any(character.isspace() for character in host):
+        return None
+    return host
 
 
 def _str(value: object) -> str | None:

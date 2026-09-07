@@ -8,7 +8,7 @@ version — with the exact attribution wording each one requires — is the
 
 | Source | Covers | Licence |
 |---|---|---|
-| [DVRef](https://dvref.com/) | M17 (`mrefd`), YSF, NXDN, P25, URF, XRF | **CC BY 4.0** |
+| [DVRef](https://dvref.com/) | M17 (`mrefd`), YSF, NXDN, P25, URF, DMR | **CC BY 4.0** |
 | [XLX registry](http://xlxapi.rlx.lu/) (LX1IQ) | XLX / D-Star (~890 reflectors) | No explicit licence; public self-registration directory, attributed |
 
 DVRef placed its data under CC BY 4.0 in its *Accessing DVRef Data* announcement
@@ -23,6 +23,11 @@ good copy rather than publishing an empty list when a fetch fails.
 
 For D-Star the XLX registry is the source of record: DVRef's XRF list carries
 ~61 reflectors where the registry carries ~890.
+
+DMR comes from the same API but a different endpoint, which lists networks rather
+than reflectors. Each of its **servers** becomes a row, tagged with the network it
+belongs to; the per-network **talkgroup** lists are linked, not mirrored, because
+fetching 172 of them does not fit in a 60-request hourly budget.
 
 ## Callsign dataset
 

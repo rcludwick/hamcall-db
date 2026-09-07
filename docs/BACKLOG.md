@@ -41,22 +41,29 @@ Until Pages exists, `.github/workflows/reflectors.yml`'s `deploy` job will fail 
 though `refresh` and `release` succeed. The committed JSON under `docs/site/api/v1/` stays
 correct regardless.
 
-### hdb-refl-dmr — `mmdvm` dial variant is published contract with no source behind it
-*LOW · task · cx:1*
+### hdb-refl-dmrtg — Mirror DMR talkgroups, a rotating slice per night
+*LOW · task · cx:2*
 
-**Spec:** `docs/REFLECTOR-API.md` defines a `dial.kind` of `mmdvm` for DMR — carrying
-`requires` (what the OPERATOR must supply, e.g. `["dmr_id", "password"]`) and
-`talkgroups_url` — and `openapi.json` publishes that variant, because the point of the
-variant is to show how DMR fits the schema without a public file pretending to carry a
-per-user credential. But no DMR importer exists, so nothing can emit it: `ReflectorRecord`
-has no `requires`/`talkgroups_url` fields, and adding them before there is a source would
-only put two permanently all-null columns in the Parquet/SQLite artifacts.
+**Spec:** `dmr` publishes one row per master server (hdb-refl-dmr) and links each
+network's talkgroup list as `dial.talkgroups_url`; it does not mirror them. They live
+behind a PER-NETWORK endpoint — `GET /api/v2/dmr/networks/<slug>/talkgroups/` — and
+there are 172 networks against DVRef's authenticated budget of **60 requests per hour
+per account**, shared with the six requests the rest of the build already spends. A
+nightly sweep does not fit and would throttle the whole build.
 
-When a DMR source lands (BrandMeister / TGIF masters are the obvious candidates), add
-those two fields to `ReflectorRecord`, and the existing table-driven emitter and OpenAPI
-generator pick the variant up with no further change. The anti-drift test
-(`test_openapi_covers_every_dial_kind_the_build_can_emit`) already covers the new kind the
-moment `NETWORKS` learns about it.
+So: fetch a ROTATING SLICE of ~40 networks a night, oldest-fetched first, cached under
+`data/raw/dvref/<date>/` and carried forward between runs so a network keeps its last
+good talkgroup list until its turn comes round again — the same keep-last-good posture
+as the network files themselves. Every network gets refreshed inside a week, which is
+the `client_refresh_days` the API already asks clients to cache for.
+
+The schema is ready: `ReflectorRecord.talkgroup` and `.timeslot` exist, are in the
+`mmdvm` dial variant and in `openapi.json`, and are unset on every row today —
+so publishing talkgroup rows is not a version bump. Decide first whether a talkgroup
+is a ROW (one per talkgroup per server, which multiplies the file size by a lot) or a
+separate `/api/v1/talkgroups/<system>.json` file keyed by `system`; the second is
+probably right, since a client only needs the talkgroups of the network it just
+connected to.
 
 ### au-1022 — Verify ISED amateur.txt real column layout against in-zip README
 *MED · task · cx:1*
@@ -135,3 +142,31 @@ guard and would therefore be published rather than rejected.
 **Open:** ask DVRef to allowlist authenticated requests, which would let this
 move back into Actions and remove a machine from the critical path. A draft
 ticket exists; not sent.
+
+## Shipped
+
+### hdb-refl-dmr — DMR importer (2026-09-06)
+*was: `mmdvm` dial variant is published contract with no source behind it*
+
+`DvrefDmrSource` reads DVRef's `GET /api/v2/dmr/networks/?include_description=true` —
+ONE request a night for all 172 networks — and flattens networks-of-servers into **one
+published row per master server**; a network with no servers (61 of the 172) publishes
+nothing. `ReflectorRecord` grew `system`, `requires`, `talkgroups_url`, `talkgroup` and
+`timeslot`, all five in the `mmdvm` dial variant and in the generated `openapi.json`,
+and all five now Parquet and SQLite columns. `system` is the load-bearing one — a
+talkgroup number is only defined within one network — so it is published TWICE: on the
+ENVELOPE of every `dmr` row, and again in `dial.system` where there is a dial. The dial
+copy keeps a dial self-contained; the envelope copy is what survives on a server with no
+usable address, which would otherwise be published unable to say which network it is on.
+
+Upstream's `dns` column is free text and is not always a host — SystemX fills it with
+dashboard URLs and publishes no port — so anything carrying a scheme, a path or
+whitespace is refused, the row falls back to `ipv4`/`ipv6`, and a server with no usable
+address is published WITHOUT a `dial` rather than with an address a client cannot
+resolve — but still with `system`, `name`, `sponsor`, `country` and `dashboard`. Against
+the checked-in fixture: 44 servers, 35 of them dialable.
+
+Descriptions are published as upstream HTML, exactly as they are for the other five
+DVRef networks; stripping tags would be a separate change across all six.
+
+Talkgroups are linked, not mirrored — that is hdb-refl-dmrtg above.

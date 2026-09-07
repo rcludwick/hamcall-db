@@ -603,18 +603,20 @@ def write_pota_park_grids_osm_sqlite(grids: Iterable[ParkGridRecord], out_path: 
 # artifacts must never absorb it (CC BY 4.0 s2(a)(5)(B) forbids adding that restriction).
 # `modules` is stored as a comma-separated string: SQLite has no array type, and a join
 # table for at most a handful of single letters buys nothing a consumer would use.
+_INT_COLUMNS: frozenset[str] = frozenset({"port", "talkgroup", "timeslot"})
+
 _REFLECTORS_DDL = (
     "CREATE TABLE IF NOT EXISTS reflectors (\n"
     + ",\n".join(
-        f"  {c} " + ("INTEGER" if c == "port" else "TEXT") for c in REFLECTOR_SCHEMA_COLUMNS
+        f"  {c} " + ("INTEGER" if c in _INT_COLUMNS else "TEXT") for c in REFLECTOR_SCHEMA_COLUMNS
     )
     + ",\n  PRIMARY KEY (network, id)\n)"
 )
 _REFLECTORS_INDEX_DDL = "CREATE INDEX IF NOT EXISTS idx_reflectors_network ON reflectors (network)"
 
 
-# The two list-valued columns, stored comma-joined for the same reason.
-_LIST_COLUMNS: frozenset[str] = frozenset({"modules", "aliases"})
+# The list-valued columns, stored comma-joined for the same reason.
+_LIST_COLUMNS: frozenset[str] = frozenset({"modules", "aliases", "requires"})
 
 
 def _reflector_payload(reflector: ReflectorRecord) -> tuple:
