@@ -196,11 +196,18 @@ jobs:
 
             Assets:
             - `hamcall-db-reflectors-${{ needs.refresh.outputs.date }}.parquet` — one row per (network, id).
-            - `hamcall-db-reflectors-${{ needs.refresh.outputs.date }}.db` — same rows, SQLite (`reflectors` table).
+            - `hamcall-db-reflectors-${{ needs.refresh.outputs.date }}.db` — same rows, SQLite (`reflectors` and `dmr_talkgroups` tables).
+            - `hamcall-db-reflectors-dmr-talkgroups-${{ needs.refresh.outputs.date }}.parquet` — one row per (DMR system, talkgroup).
             - `LICENSE-CC-BY` — the governing licence and required attribution.
 
             Also served as static JSON, no token required:
             <https://rcludwick.github.io/hamcall-db/api/v1/reflectors.json>
+
+            DMR talkgroups are a rotating mirror — 40 of the 111 networks with servers are
+            refetched a night, longest-ago first, because upstream publishes them per network
+            against a 60-per-hour account budget. A file's `generated` is when that network's
+            talkgroups last CHANGED; `index.json` lists which networks have a mirror and when
+            each was last confirmed (`fetched`).
 
             **Attribution required.** Reflector data provided by DVRef — <https://dvref.com/>.
             XLX reflector data from the XLX registry maintained by Luc Engelmann, LX1IQ.

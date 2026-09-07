@@ -6,7 +6,7 @@ must never be merged into the callsign dataset. See :mod:`hamcall_db.reflectors`
 
     uv run hamcall-db-reflectors --out docs/site/api/v1
 
-Writes the versioned static API described by ``docs/REFLECTOR-API.md`` — a manifest, one
+Writes the versioned static API described by ``docs/site/reflectors/api.md`` — a manifest, one
 file with every reflector in it, a file per network, and the generated OpenAPI contract.
 
 Sources per network:
@@ -14,20 +14,25 @@ Sources per network:
 * ``dstar`` — the XLX registry (:mod:`hamcall_db.sources.xlx`, ~892 reflectors, no
   token), supplemented by the Pi-Star DExtra and DPlus/DCS host files.
 * ``dmr`` — DVRef's DMR networks endpoint, flattened to one row per master SERVER
-  (:class:`hamcall_db.sources.dvref.DvrefDmrSource`).
+  (:class:`hamcall_db.sources.dvref.DvrefDmrSource`), plus a rotating slice of
+  per-network TALKGROUP lists
+  (:class:`hamcall_db.sources.dvref.DvrefDmrTalkgroupSource`) — see
+  :func:`talkgroup_slice` for why only a slice.
 * everything else — DVRef (:mod:`hamcall_db.sources.dvref`, token required).
 
 Failure policy: **never publish an empty or sharply-shrunken list.** A network whose
 fetch fails, or whose row count collapses against the copy already on disk, keeps its
-previous file and the command reports it. DVRef is explicit that they offer no SLA, and
+previous file and the command reports it. The DMR talkgroup mirrors apply the same rule
+111 times over: only tonight's slice is refetched, and every other network republishes
+exactly the list it already had. DVRef is explicit that they offer no SLA, and
 an outage upstream must not translate into every client's reflector picker going blank.
 """
 
 from __future__ import annotations
 
 import json
-from collections.abc import Callable
-from datetime import UTC, datetime
+from collections.abc import Callable, Mapping, Sequence
+from datetime import UTC, date, datetime
 from functools import partial
 from pathlib import Path
 from typing import Annotated
@@ -38,9 +43,16 @@ from hamcall_db.reflectors import (
     ATTRIBUTION_SEPARATOR,
     NETWORK_DIR,
     ReflectorRecord,
+    TalkgroupRecord,
     merge_by_id,
     network_document,
+    read_talkgroup_documents,
+    read_talkgroup_fetched,
     records_from_document,
+    talkgroup_document,
+    talkgroup_json,
+    talkgroup_path,
+    talkgroups_from_document,
     write_api,
 )
 from hamcall_db.sources.dextra import (
@@ -51,15 +63,18 @@ from hamcall_db.sources.dstar_aliases import DStarAliasSource, apply_aliases
 from hamcall_db.sources.dvref import (
     API_ROOT,
     NETWORKS,
+    TALKGROUP_MIN_AGE_DAYS,
+    TALKGROUP_SLICE,
     DvrefAuthError,
     DvrefDmrSource,
+    DvrefDmrTalkgroupSource,
     DvrefSource,
     DvrefThrottled,
 )
 from hamcall_db.sources.dvref import ATTRIBUTION as DVREF_ATTRIBUTION
 from hamcall_db.sources.xlx import XLX_LIST_URL, XlxSource
-from hamcall_db.sqlite_writer import write_reflectors_sqlite
-from hamcall_db.writer import write_reflectors_parquet
+from hamcall_db.sqlite_writer import write_dmr_talkgroups_sqlite, write_reflectors_sqlite
+from hamcall_db.writer import write_dmr_talkgroups_parquet, write_reflectors_parquet
 
 DEXTRA_ATTRIBUTION = (
     "Standalone XRF reflector data from the Pi-Star DExtra host file "
@@ -70,6 +85,10 @@ DSTAR_ALIAS_ATTRIBUTION = (
     "REF and DCS reflector names from the Pi-Star DPlus and DCS host files "
     "(http://www.pistar.uk/downloads/)."
 )
+
+# What DVRef is called in a published document's `source` block. One spelling for the
+# reflector lists and the talkgroup mirrors alike.
+DVREF_SOURCE_NAME = "DVRef"
 
 XLX_ATTRIBUTION = (
     "XLX reflector data from the XLX registry maintained by Luc Engelmann, LX1IQ "
@@ -130,6 +149,187 @@ def _source_counts(document: dict[str, object] | None) -> dict[str, int]:
             if isinstance(name, str) and name:
                 counts[name] = counts.get(name, 0) + 1
     return counts
+
+
+# --- DMR talkgroups: a rotating slice, oldest first (hdb-refl-dmrtg) ---------------
+
+
+def _as_date(stamp: object) -> date | None:
+    """An ISO date string as a date, or None for anything unparsable.
+
+    A hand-edited or truncated stamp reads as "never fetched", so the network is
+    refetched rather than trusted and skipped.
+    """
+    if not isinstance(stamp, str):
+        return None
+    try:
+        return date.fromisoformat(stamp)
+    except ValueError:
+        return None
+
+
+def talkgroup_slice(
+    systems: Sequence[str],
+    fetched: Mapping[str, str],
+    *,
+    today: date,
+    limit: int = TALKGROUP_SLICE,
+    min_age_days: int = TALKGROUP_MIN_AGE_DAYS,
+) -> list[str]:
+    """Which DMR networks get their talkgroups refetched tonight.
+
+    Oldest first, never-fetched before that, capped at ``limit`` — so 111 networks are
+    covered in roughly three nights against an hourly budget of 60 requests, and a newly
+    listed network gets its list on its first or second night.
+
+    ``fetched`` is when each network was last successfully FETCHED, read out of the
+    published manifest. Not when its list last CHANGED: a list that never changes would
+    otherwise stay permanently "oldest" and be refetched every single night, starving
+    every other network out of the rotation.
+
+    A network fetched within ``min_age_days`` is skipped even when the slice reaches it.
+    That only happens when fewer than ``limit`` networks are stale, and it is what stops
+    a second build on the same day spending requests to confirm what it just confirmed.
+    """
+    ordered = sorted(
+        (
+            system
+            for system in systems
+            if not _fetched_recently(fetched.get(system), today=today, min_age_days=min_age_days)
+        ),
+        # date.min sorts a never-fetched network to the front; the name is a tiebreak so
+        # the choice is deterministic rather than dict-order.
+        key=lambda system: (_as_date(fetched.get(system)) or date.min, system),
+    )
+    return ordered[:limit]
+
+
+def _fetched_recently(stamp: object, *, today: date, min_age_days: int) -> bool:
+    fetched = _as_date(stamp)
+    return fetched is not None and (today - fetched).days < min_age_days
+
+
+def _systems_with_servers(document: dict[str, object] | None) -> list[str]:
+    """The DMR networks that actually have a server row, from the published document.
+
+    Only these are worth a talkgroup request: a network DVRef lists with no server
+    behind it is not something an operator can connect to, so its talkgroups are a
+    request spent on nothing — and requests are the scarce thing here.
+    """
+    rows = document.get("reflectors") if document else None
+    if not isinstance(rows, list):
+        return []
+    return sorted(
+        {
+            str(row["system"])
+            for row in rows
+            if isinstance(row, dict) and isinstance(row.get("system"), str) and row["system"]
+        }
+    )
+
+
+def _published_count(document: dict[str, object] | None) -> int:
+    """How many talkgroups the published mirror holds, or 0 when there is none."""
+    count = document.get("count") if document else None
+    return count if isinstance(count, int) and not isinstance(count, bool) else 0
+
+
+def _unchanged(document: dict[str, object] | None, rows: Sequence[TalkgroupRecord]) -> bool:
+    """Whether a freshly fetched list is exactly what the published file already says.
+
+    Compared on the published rows, not on the envelope, because the envelope carries
+    dates and the whole question here is whether a date should move at all.
+    """
+    if not document:
+        return False
+    return document.get("talkgroups") == [talkgroup_json(record) for record in rows]
+
+
+def _refresh_talkgroups(
+    systems: Sequence[str],
+    documents: dict[str, dict[str, object]],
+    fetched: dict[str, str],
+    work_dir: Path,
+    *,
+    today: date,
+    make_source: Callable[[str], DvrefDmrTalkgroupSource] | None = None,
+) -> tuple[list[str], list[str]]:
+    """Refetch tonight's slice of talkgroup lists, updating ``documents`` in place.
+
+    Returns (changed, failed) — the networks whose PUBLISHED FILE moved, which is not
+    the same as the networks that were fetched. A refetch that finds the same rows
+    records the fetch in ``fetched`` and leaves the file untouched, so the nightly diff
+    is the one manifest rather than forty mirrors saying nothing happened.
+
+    Every network NOT in the slice keeps the document it already has, which is the whole
+    point — this is keep-last-good applied 111 times.
+
+    **A throttle stops the slice.** Upstream counts against an account budget the
+    reflector lists draw on too, so once it says "slow down" every further request is
+    both refused and charged; carrying on would turn one late night into a night where
+    the directory itself cannot be fetched. Talkgroups are deliberately fetched last for
+    the same reason. A network whose fetch fails keeps its old ``fetched`` date, so it
+    is first in line again tomorrow.
+    """
+    changed: list[str] = []
+    failed: list[str] = []
+    # Resolved here rather than as a default argument so the module attribute is what
+    # binds — which is what lets a test substitute the whole endpoint.
+    build_source = make_source or DvrefDmrTalkgroupSource
+
+    for system in talkgroup_slice(systems, fetched, today=today):
+        source = build_source(system)
+        try:
+            rows = list(source.parse(source.download(work_dir)))
+        except DvrefThrottled as exc:
+            wait = f" (retry after {exc.retry_after}s)" if exc.retry_after else ""
+            typer.echo(
+                f"WARNING: dvref talkgroups throttled at {system}{wait} — "
+                f"stopping the slice for tonight; {len(changed)} changed",
+                err=True,
+            )
+            failed.append("dvref/talkgroups:throttled")
+            break
+        except Exception as exc:  # noqa: BLE001 - one network must not sink the build
+            typer.echo(f"WARNING: dvref talkgroups/{system} failed ({exc})", err=True)
+            failed.append(f"dvref/talkgroups/{system}")
+            continue
+
+        if not rows and _published_count(documents.get(system)):
+            # Same posture as the shrink guard: a list that HAD rows and now has none is
+            # an upstream fault far more often than a network deleting every talkgroup.
+            # The fetch is deliberately not recorded, so this network is first in line
+            # again tomorrow rather than waiting out the rotation on a suspect answer.
+            #
+            # Note the guard is on the previous COUNT, not on the file existing: a
+            # network whose list is genuinely empty answers with nothing every night,
+            # and treating that as a fault would refetch it forever — which is the one
+            # thing a 60-an-hour budget cannot afford.
+            typer.echo(
+                f"WARNING: dvref talkgroups/{system} returned no rows; keeping the previous file",
+                err=True,
+            )
+            failed.append(f"dvref/talkgroups/{system}:empty")
+            continue
+
+        # The fetch happened either way, and that is what the rotation turns on.
+        fetched[system] = source.synced_at or today.isoformat()
+        if _unchanged(documents.get(system), rows):
+            continue
+
+        documents[system] = talkgroup_document(
+            system,
+            rows,
+            source_name=DVREF_SOURCE_NAME,
+            source_url=source.url,
+            attribution=source.attribution,
+            # The date the CONTENT moved, which is the only thing that should ever
+            # rewrite this file.
+            generated=fetched[system],
+        )
+        changed.append(system)
+
+    return changed, failed
 
 
 @app.command()
@@ -228,6 +428,49 @@ def build(
         except Exception as exc:  # noqa: BLE001
             typer.echo(f"WARNING: dvref/{segment} failed ({exc})", err=True)
             failed.append(f"dvref/{segment}")
+
+    # --- DMR talkgroups: tonight's rotating slice (hdb-refl-dmrtg) -----------------
+    # Last of the DVRef work on purpose. These are up to TALKGROUP_SLICE requests
+    # against the same hourly account budget the reflector lists spend from, so they
+    # queue behind the directories themselves: a throttle here costs a few talkgroup
+    # files that keep their previous copies, never the reflector list a client needs to
+    # connect at all.
+    talkgroup_documents = read_talkgroup_documents(out)
+    # The rotation's state, out of the published manifest. Falling back to each mirror's
+    # own content date means a manifest written before this field existed resumes the
+    # rotation conservatively instead of refetching all 111 networks at once.
+    talkgroup_fetched = {
+        system: document["generated"]
+        for system, document in talkgroup_documents.items()
+        if isinstance(document.get("generated"), str)
+    } | read_talkgroup_fetched(out)
+    dmr_rows = dvref_records.get(DvrefDmrSource.network, [])
+    # Which networks are worth a request: the ones with a server. Taken from tonight's
+    # rows when the DMR endpoint answered, and from the published file when it did not —
+    # a night that cannot fetch the directory can still rotate the talkgroups behind it.
+    dmr_systems = sorted({r.system for r in dmr_rows if r.system}) or _systems_with_servers(
+        _load_existing(out, DvrefDmrSource.network)
+    )
+    if not skip_dvref and dmr_systems:
+        changed, talkgroup_failures = _refresh_talkgroups(
+            dmr_systems,
+            talkgroup_documents,
+            talkgroup_fetched,
+            day_dir / "dvref",
+            today=today,
+        )
+        failed.extend(talkgroup_failures)
+        typer.echo(
+            f"dvref/talkgroups: {len(changed)} of {len(dmr_systems)} networks changed, "
+            f"{len(talkgroup_documents)} mirrored in all"
+        )
+
+    # The mirror's path travels ON the server row, so a client follows a link instead of
+    # assembling a path and hoping. Only where a mirror exists: 111 networks are covered
+    # a slice at a time, and a row must never point at a file that is not there.
+    for record in dmr_rows:
+        if record.system in talkgroup_documents:
+            record.talkgroups = talkgroup_path(record.system)
 
     # Standalone XRF reflectors — the ones the XLX registry does not know about.
     # DVRef used to supply these and retired the listings; xrefl.net, where they
@@ -381,7 +624,13 @@ def build(
         )
         raise typer.Exit(code=1)
 
-    written = write_api(out, documents, generated=today)
+    written = write_api(
+        out,
+        documents,
+        talkgroups=talkgroup_documents,
+        talkgroups_fetched=talkgroup_fetched,
+        generated=today,
+    )
     typer.echo(f"Wrote {len(written)} files to {out}")
 
     if dist is not None:
@@ -399,6 +648,24 @@ def build(
         rows = write_reflectors_parquet(all_records, parquet_path)
         write_reflectors_sqlite(all_records, sqlite_path)
         typer.echo(f"Wrote {rows} reflector rows to {parquet_path.name} and {sqlite_path.name}")
+
+        # DMR talkgroups: one row per (system, tg), built from the documents actually
+        # published — so a network whose fetch failed contributes the list that is live,
+        # not nothing. Same CC BY 4.0 terms, so they share the .db and take their own
+        # .parquet (one schema per file).
+        talkgroup_records: list[TalkgroupRecord] = [
+            record
+            for system in sorted(talkgroup_documents)
+            for record in talkgroups_from_document(talkgroup_documents[system])
+        ]
+        talkgroups_parquet = dist / f"hamcall-db-reflectors-dmr-talkgroups-{stamp}.parquet"
+        write_dmr_talkgroups_parquet(talkgroup_records, talkgroups_parquet)
+        write_dmr_talkgroups_sqlite(talkgroup_records, sqlite_path)
+        typer.echo(
+            f"Wrote {len(talkgroup_records)} DMR talkgroup rows from "
+            f"{len(talkgroup_documents)} networks to {talkgroups_parquet.name} "
+            f"and {sqlite_path.name}"
+        )
     if kept:
         typer.echo(f"Kept previous data for: {', '.join(sorted(set(kept)))}", err=True)
     if failed:

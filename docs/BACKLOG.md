@@ -12,7 +12,7 @@ inline. All 39 issues (35 of them closed) were exported to
 `docs/issues-archive.jsonl`, which is gitignored and local-only; a committed copy of the
 tracker's final state survives in git history at the migration commit.
 
-## Open items (7)
+## Open items (6)
 
 ### hdb-refl-pages — Enable GitHub Pages + add the DVREF_API_TOKEN secret
 *HIGH · task · cx:1*
@@ -40,30 +40,6 @@ things must be done by a human before the nightly job can publish:
 Until Pages exists, `.github/workflows/reflectors.yml`'s `deploy` job will fail even
 though `refresh` and `release` succeed. The committed JSON under `docs/site/api/v1/` stays
 correct regardless.
-
-### hdb-refl-dmrtg — Mirror DMR talkgroups, a rotating slice per night
-*LOW · task · cx:2*
-
-**Spec:** `dmr` publishes one row per master server (hdb-refl-dmr) and links each
-network's talkgroup list as `dial.talkgroups_url`; it does not mirror them. They live
-behind a PER-NETWORK endpoint — `GET /api/v2/dmr/networks/<slug>/talkgroups/` — and
-there are 172 networks against DVRef's authenticated budget of **60 requests per hour
-per account**, shared with the six requests the rest of the build already spends. A
-nightly sweep does not fit and would throttle the whole build.
-
-So: fetch a ROTATING SLICE of ~40 networks a night, oldest-fetched first, cached under
-`data/raw/dvref/<date>/` and carried forward between runs so a network keeps its last
-good talkgroup list until its turn comes round again — the same keep-last-good posture
-as the network files themselves. Every network gets refreshed inside a week, which is
-the `client_refresh_days` the API already asks clients to cache for.
-
-The schema is ready: `ReflectorRecord.talkgroup` and `.timeslot` exist, are in the
-`mmdvm` dial variant and in `openapi.json`, and are unset on every row today —
-so publishing talkgroup rows is not a version bump. Decide first whether a talkgroup
-is a ROW (one per talkgroup per server, which multiplies the file size by a lot) or a
-separate `/api/v1/talkgroups/<system>.json` file keyed by `system`; the second is
-probably right, since a client only needs the talkgroups of the network it just
-connected to.
 
 ### au-1022 — Verify ISED amateur.txt real column layout against in-zip README
 *MED · task · cx:1*
@@ -145,6 +121,45 @@ ticket exists; not sent.
 
 ## Shipped
 
+### hdb-refl-dmrtg — DMR talkgroups, mirrored a rotating slice at a time (2026-09-07)
+*was: talkgroups linked but not mirrored — 172 per-network endpoints against a 60/hour budget*
+
+`DvrefDmrTalkgroupSource` reads `GET /api/v2/dmr/networks/<slug>/talkgroups/` — one
+request per network, and the reason this could not simply be swept nightly. 111 of the
+172 networks have servers, against an authenticated budget of **60 requests an hour per
+account** that the six directory requests already draw on. So the build fetches a
+**rotating slice of `TALKGROUP_SLICE` = 40** networks a night (60 budget − 7 spent and
+reserved for a retry − 13 headroom for interactive debugging on the same token), picking
+the ones whose lists are OLDEST or missing. Every network turns over in roughly three
+nights and a newly listed one is mirrored on its first or second.
+
+**The rotation's state is the published output itself** — no side-car state file to fall
+out of sync with what was committed — and it is split from the content date on purpose.
+A mirror's own `generated` is when that network's talkgroups last CHANGED, so a refetch
+that finds the same rows leaves the file byte-identical; when it was last FETCHED lives
+in the manifest's `talkgroups` map as `fetched`, because `index.json` already moves
+whenever a count does and forty rewritten mirrors a night would say nothing. The slice
+picker reads `fetched` (a list that never changes would otherwise be permanently
+"oldest" and starve the rotation), and `TALKGROUP_MIN_AGE_DAYS` = 2 skips a network
+confirmed within two days. Talkgroups are fetched LAST and a `DvrefThrottled` stops the
+slice for the night — recording no fetch, so those networks are first in line tomorrow —
+which is how they can never starve the reflector lists a client needs to connect at all.
+A network that fails, or answers with an empty list where it previously had ROWS, keeps
+its previous file; a network whose list is genuinely empty answers empty every night and
+must NOT be treated as a fault, or it would be refetched forever.
+
+Published as one file per network, `api/v1/reflectors/dmr/<system>/talkgroups.json`
+(`{tg, name}` rows sorted by `tg`, CC BY 4.0 inline like every other file), and the
+manifest's `dmr` entry gained a `talkgroups` map of `{url, count, generated, fetched}` so
+a client discovers what exists instead of probing 111 URLs for 404s. Every `dmr` server row for a
+mirrored network carries the same path in a new ENVELOPE field `talkgroups`;
+`dial.talkgroups_url` still points at DVRef, which stays canonical — the mirror is
+tokenless but days behind, and both facts are documented. Artifacts gained a
+`dmr_talkgroups` table (`system`, `tg`, `name`, `synced_at`) in the reflector `.db` —
+same CC BY 4.0 file, which is why they may share one — and its own
+`hamcall-db-reflectors-dmr-talkgroups-<date>.parquet`. `synced_at` is per ROW because
+rows in one file are routinely days apart in freshness.
+
 ### hdb-refl-dmr — DMR importer (2026-09-06)
 *was: `mmdvm` dial variant is published contract with no source behind it*
 
@@ -169,7 +184,7 @@ the checked-in fixture: 44 servers, 35 of them dialable.
 Descriptions are published as upstream HTML, exactly as they are for the other five
 DVRef networks; stripping tags would be a separate change across all six.
 
-Talkgroups are linked, not mirrored — that is hdb-refl-dmrtg above.
+Talkgroups were linked and not mirrored here; hdb-refl-dmrtg mirrored them.
 
 ### hdb-release-retention — Decide and implement a retention policy for nightly dated releases
 *LOW · task · cx:1*

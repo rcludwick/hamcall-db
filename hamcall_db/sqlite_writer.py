@@ -38,7 +38,12 @@ from pathlib import Path
 
 from hamcall_db.history import HISTORY_SCHEMA_COLUMNS, HistoryRow, _identity
 from hamcall_db.models import SCHEMA_COLUMNS, Record
-from hamcall_db.reflectors import REFLECTOR_SCHEMA_COLUMNS, ReflectorRecord
+from hamcall_db.reflectors import (
+    REFLECTOR_SCHEMA_COLUMNS,
+    TALKGROUP_SCHEMA_COLUMNS,
+    ReflectorRecord,
+    TalkgroupRecord,
+)
 from hamcall_db.sources.padus_grids import PARK_GRID_SCHEMA_COLUMNS, ParkGridRecord
 from hamcall_db.sources.pota import PARK_SCHEMA_COLUMNS, ParkRecord
 from hamcall_db.sources.sota import SUMMIT_SCHEMA_COLUMNS, SummitRecord
@@ -603,12 +608,16 @@ def write_pota_park_grids_osm_sqlite(grids: Iterable[ParkGridRecord], out_path: 
 # artifacts must never absorb it (CC BY 4.0 s2(a)(5)(B) forbids adding that restriction).
 # `modules` is stored as a comma-separated string: SQLite has no array type, and a join
 # table for at most a handful of single letters buys nothing a consumer would use.
-_INT_COLUMNS: frozenset[str] = frozenset({"port", "talkgroup", "timeslot"})
+# Named apart from the callsign table's _INT_COLUMNS on purpose: rebinding that name
+# here would silently change what `_col_def` (used by the current/history DDL above)
+# treats as an integer for any later caller.
+_REFLECTOR_INT_COLUMNS: frozenset[str] = frozenset({"port", "talkgroup", "timeslot"})
 
 _REFLECTORS_DDL = (
     "CREATE TABLE IF NOT EXISTS reflectors (\n"
     + ",\n".join(
-        f"  {c} " + ("INTEGER" if c in _INT_COLUMNS else "TEXT") for c in REFLECTOR_SCHEMA_COLUMNS
+        f"  {c} " + ("INTEGER" if c in _REFLECTOR_INT_COLUMNS else "TEXT")
+        for c in REFLECTOR_SCHEMA_COLUMNS
     )
     + ",\n  PRIMARY KEY (network, id)\n)"
 )
@@ -635,6 +644,9 @@ def write_reflectors_sqlite(reflectors: Iterable[ReflectorRecord], out_path: Pat
     tables (current/history/pota_parks/pota_park_grids/sota_summits). The build wires it
     to a different path so the two licences never share a file. Idempotent — re-running
     replaces the rows.
+
+    :func:`write_dmr_talkgroups_sqlite` adds a second table to the SAME file; both are
+    DVRef's CC BY 4.0 data, which is exactly why they may share one.
     """
     reflectors = list(reflectors)
     out = Path(out_path)
@@ -656,3 +668,47 @@ def write_reflectors_sqlite(reflectors: Iterable[ReflectorRecord], out_path: Pat
         con.close()
 
     return len(reflectors)
+
+
+# DMR talkgroups (hdb-refl-dmrtg): a child table of `reflectors`, in the SAME CC BY 4.0
+# file. `system` + `tg` is the key, and there is no foreign key to `reflectors`: a
+# network's talkgroups are published even on a night when the server rows for it were
+# kept from a previous file, and a strict FK would drop rows for that.
+_TALKGROUPS_DDL = (
+    "CREATE TABLE IF NOT EXISTS dmr_talkgroups (\n"
+    + ",\n".join(f"  {c} " + ("INTEGER" if c == "tg" else "TEXT") for c in TALKGROUP_SCHEMA_COLUMNS)
+    + ",\n  PRIMARY KEY (system, tg)\n)"
+)
+_TALKGROUPS_INDEX_DDL = "CREATE INDEX IF NOT EXISTS idx_dmr_talkgroups_tg ON dmr_talkgroups (tg)"
+
+
+def write_dmr_talkgroups_sqlite(talkgroups: Iterable[TalkgroupRecord], out_path: Path) -> int:
+    """Write/refresh the ``dmr_talkgroups`` table in the reflector artifact's ``.db``.
+
+    Returns the row count. Same file as :func:`write_reflectors_sqlite` and the same
+    CC BY 4.0 terms; it creates ONLY this table and never touches the CC BY-NC ones.
+    Idempotent — re-running replaces the rows.
+
+    The index is on ``tg`` because the interesting question a talkgroup table answers is
+    "which networks carry 235?", and the primary key already covers lookups by system.
+    """
+    talkgroups = list(talkgroups)
+    out = Path(out_path)
+    out.parent.mkdir(parents=True, exist_ok=True)
+
+    con = sqlite3.connect(out)
+    try:
+        con.execute(_TALKGROUPS_DDL)
+        con.execute(_TALKGROUPS_INDEX_DDL)
+        con.execute("DELETE FROM dmr_talkgroups")  # refresh: idempotent rebuild
+        placeholders = ", ".join("?" for _ in TALKGROUP_SCHEMA_COLUMNS)
+        con.executemany(
+            f"INSERT INTO dmr_talkgroups ({', '.join(TALKGROUP_SCHEMA_COLUMNS)}) "
+            f"VALUES ({placeholders})",
+            [tuple(getattr(t, col) for col in TALKGROUP_SCHEMA_COLUMNS) for t in talkgroups],
+        )
+        con.commit()
+    finally:
+        con.close()
+
+    return len(talkgroups)
