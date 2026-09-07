@@ -645,6 +645,17 @@ def write_reflectors_sqlite(reflectors: Iterable[ReflectorRecord], out_path: Pat
     to a different path so the two licences never share a file. Idempotent — re-running
     replaces the rows.
 
+    SCHEMA FRESHNESS (hdb-dbfresh): the target file may already exist with an OLDER
+    ``reflectors`` schema — the dist directory is dated by day, not by build, so a
+    second same-day build reuses whatever the first one left. Because ``ReflectorRecord``
+    gains columns over time (e.g. ``system``/``talkgroups``), ``CREATE TABLE IF NOT
+    EXISTS`` alone would silently keep a stale table and the INSERT below would fail
+    with ``OperationalError: table reflectors has no column named ...``. So the table is
+    unconditionally dropped and recreated here — the file itself is never unlinked
+    (unlike :func:`write_sqlite`), because :func:`write_dmr_talkgroups_sqlite` may
+    already share it with a ``dmr_talkgroups`` table this same build is about to
+    (re)write right after this call, and that table must be left alone.
+
     :func:`write_dmr_talkgroups_sqlite` adds a second table to the SAME file; both are
     DVRef's CC BY 4.0 data, which is exactly why they may share one.
     """
@@ -654,9 +665,9 @@ def write_reflectors_sqlite(reflectors: Iterable[ReflectorRecord], out_path: Pat
 
     con = sqlite3.connect(out)
     try:
+        con.execute("DROP TABLE IF EXISTS reflectors")
         con.execute(_REFLECTORS_DDL)
         con.execute(_REFLECTORS_INDEX_DDL)
-        con.execute("DELETE FROM reflectors")  # refresh: idempotent rebuild
         placeholders = ", ".join("?" for _ in REFLECTOR_SCHEMA_COLUMNS)
         con.executemany(
             f"INSERT INTO reflectors ({', '.join(REFLECTOR_SCHEMA_COLUMNS)}) "
