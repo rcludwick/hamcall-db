@@ -12,7 +12,7 @@ inline. All 39 issues (35 of them closed) were exported to
 `docs/issues-archive.jsonl`, which is gitignored and local-only; a committed copy of the
 tracker's final state survives in git history at the migration commit.
 
-## Open items (6)
+## Open items (7)
 
 ### hdb-refl-pages — Enable GitHub Pages + add the DVREF_API_TOKEN secret
 *HIGH · task · cx:1*
@@ -170,3 +170,23 @@ Descriptions are published as upstream HTML, exactly as they are for the other f
 DVRef networks; stripping tags would be a separate change across all six.
 
 Talkgroups are linked, not mirrored — that is hdb-refl-dmrtg above.
+
+### hdb-release-retention — Decide and implement a retention policy for nightly dated releases
+*LOW · task · cx:1*
+
+**Spec:** The callsign Release workflow (`.github/workflows/release.yml`) moved from
+weekly to nightly (2026-09-06/07). Each nightly run publishes a new dated
+`hamcall-db-YYYY-MM-DD` release (and `hamcall-db-osm-YYYY-MM-DD` when OSM grids are
+produced) at roughly 460 MB per CC BY-NC release; the `latest` / `latest-osm` aliases
+are cleared and re-uploaded each run so they stay single-build, but the dated releases
+themselves are never deleted. At nightly cadence that is ~460 MB/night with no cap —
+365+ dated releases and ~168 GB/year if nothing is ever pruned.
+
+Decide a retention policy — for example: keep every dated release for 30 days, then
+thin to one per week, then one per month past some age — and implement it as a
+workflow step (or a separate scheduled workflow) that deletes both the GitHub Release
+and its underlying tag for anything outside the retained set. Consumers pin to dated
+releases for reproducibility, so pruning needs to be predictable and documented (README
+should say what is guaranteed to still exist and for how long).
+
+Until this ships, nothing is deleted — dated releases accrue indefinitely.

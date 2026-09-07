@@ -1,10 +1,10 @@
 # hamcall-db
 
-A weekly-rebuilt, publicly-licensed amateur radio callsign database, published as a single Parquet file.
+A nightly-rebuilt, publicly-licensed amateur radio callsign database, published as a single Parquet file.
 
 ## What it is
 
-A Python build pipeline that aggregates free, openly-licensed amateur radio licensee data from multiple national regulators and DXCC reference files into one normalized Parquet artifact. The artifact is published as a GitHub Release on a weekly cadence so other ham-radio tools can pull a pre-built dataset instead of running their own importers.
+A Python build pipeline that aggregates free, openly-licensed amateur radio licensee data from multiple national regulators and DXCC reference files into one normalized Parquet artifact. The artifact is published as a GitHub Release on a nightly cadence so other ham-radio tools can pull a pre-built dataset instead of running their own importers.
 
 ## Sources
 
@@ -189,7 +189,7 @@ lotw_last_activity TEXT -- ISO date of last LoTW upload; OFF by default (opt-in 
 - `grant_date` / `effective_date` / `expired_date` / `frn` / `entity_type` / `applicant_type` / `previous_callsign` are sourced from the FCC ULS amateur bulk extract (HD/EN/AM `.dat` files) and are NULL for non-FCC sources. Dates are normalized to ISO `YYYY-MM-DD` from the source `mm/dd/yyyy`. `entity_type` is the raw FCC entity-type code; `applicant_type` maps the FCC `applicant_type_code` to a readable value (e.g. `I` → `Individual`, `B` → `Amateur Club`, `M` → `Military Recreation`, `R` → `RACES`), passing unmapped codes through verbatim. `previous_callsign` comes from the amateur-specific AM record. These fields are exposed for downstream use only; the published artifact does **not** derive active/expired status from them (that is a separate concern). They are NOT holder/location identity, so they do not participate in SCD2 history.
 - `uses_lotw` / `lotw_last_activity` flag whether the callsign appears in [ARRL](https://www.arrl.org/)'s public [Logbook of the World](https://lotw.arrl.org/) user-activity list and, if so, the ISO date (`YYYY-MM-DD`) of that user's last LoTW upload. **This enrichment is OFF by default and is NEVER part of the published release:** ARRL states no explicit redistribution license (only "All Rights Reserved"), so the columns ship empty in the official artifact. You can populate them in a *personal/local* build by passing `--include-restricted` (see [Optional / restricted sources](#optional--restricted-sources)). The data is activity metadata, not holder identity, so it never opens a history interval; in SQLite `uses_lotw` is a `0`/`1` INTEGER. See [`NOTICE`](NOTICE).
 
-Each weekly build publishes two releases, each with a rolling alias that always points at the most recent build.
+Each nightly build publishes two releases, each with a rolling alias that always points at the most recent build. Dated releases are kept indefinitely; pin to a specific `hamcall-db-YYYY-MM-DD` (or `hamcall-db-osm-YYYY-MM-DD`) release when reproducibility matters, or pull `latest` (`latest-osm`) for the newest build.
 
 **CC BY-NC release** — tag `hamcall-db-YYYY-MM-DD`, alias `latest`:
 - `hamcall-db-YYYY-MM-DD.parquet` — current-state dataset (the schema above; the redistribution contract).
@@ -203,7 +203,7 @@ Each weekly build publishes two releases, each with a rolling alias that always 
 - `hamcall-db-pota-park-grids-osm-YYYY-MM-DD.parquet` + `…-osm-YYYY-MM-DD.db` — OSM-derived park grid sets ([above](#pota-park-grid-sets--international-openstreetmap-odbl--separate-file)).
 - `LICENSE-ODbL` — the governing license + © OpenStreetMap contributors attribution.
 
-> The POTA park-grid sets currently published are **indicative point grids**: the public weekly build runs without the build-time `padus`/`osm` GIS groups, so real polygon→grid coverage is not yet in the released artifacts. Treat the grids as approximate until polygon coverage ships.
+> The POTA park-grid sets currently published are **indicative point grids**: the public nightly build runs without the build-time `padus`/`osm` GIS groups, so real polygon→grid coverage is not yet in the released artifacts. Treat the grids as approximate until polygon coverage ships.
 
 ### Optional / restricted sources
 
@@ -224,7 +224,7 @@ In the official release the LoTW columns are present but empty, and the SOTA art
 
 ## Consumers
 
-The Parquet files have no opinion about your storage — download and load them into whatever your tool prefers: DuckDB for analytics, pandas/Polars for one-off scripts, or SQLite + FTS5 if you want prefix autocomplete. Each weekly release also ships a ready-to-use SQLite `.db` (see below) for zero-setup browsing.
+The Parquet files have no opinion about your storage — download and load them into whatever your tool prefers: DuckDB for analytics, pandas/Polars for one-off scripts, or SQLite + FTS5 if you want prefix autocomplete. Each nightly release also ships a ready-to-use SQLite `.db` (see below) for zero-setup browsing.
 
 ## Exploring the data with Datasette
 

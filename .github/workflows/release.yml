@@ -1,14 +1,16 @@
 name: Release
 
-# Weekly build + publish of the hamcall-db Parquet artifact(s).
+# Nightly build + publish of the hamcall-db Parquet artifact(s).
 #
-# Schedule: every Monday at 07:00 UTC. Cron is in UTC (GitHub Actions has no
-# timezone support); pick a low-traffic, early-week slot so a fresh build is
-# ready at the start of each week. Also runnable on demand via the Actions UI
-# (workflow_dispatch) for backfills or re-runs.
+# Schedule: every day at 07:00 UTC. Cron is in UTC (GitHub Actions has no
+# timezone support). Upstream ACMA and LoTW change daily and FCC ULS weekly,
+# so most nights still produce a real delta, and the history ledger
+# (--history-in / --db-in) accrues at day granularity instead of week
+# granularity. Also runnable on demand via the Actions UI (workflow_dispatch)
+# for backfills or re-runs.
 on:
   schedule:
-    - cron: "0 7 * * 1"
+    - cron: "0 7 * * *"
   workflow_dispatch:
 
 # Required so the workflow can create/move tags and publish releases.
@@ -40,7 +42,7 @@ jobs:
 
       # Carry the previous build forward: the history diff extends the prior
       # history, and the SQLite stable-id ledger requires the prior .db so ids
-      # are never reused across weekly rebuilds (au-80c0, au-d824). Tolerant of
+      # are never reused across nightly rebuilds (au-80c0, au-d824). Tolerant of
       # the first-ever run, when no 'latest' release exists yet.
       - name: Fetch prior 'latest' artifacts
         id: prior
@@ -142,7 +144,7 @@ jobs:
           tag_name: "hamcall-db-${{ steps.date.outputs.date }}"
           name: "hamcall-db ${{ steps.date.outputs.date }}"
           body: |
-            Weekly hamcall-db build for ${{ steps.date.outputs.date }} — **CC BY-NC 4.0** (non-commercial; see NOTICE).
+            Nightly hamcall-db build for ${{ steps.date.outputs.date }} — **CC BY-NC 4.0** (non-commercial; see NOTICE).
 
             Assets:
             - `hamcall-db-${{ steps.date.outputs.date }}.parquet` — current-state callsign dataset (schema is the redistribution contract).
@@ -186,6 +188,19 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      # softprops/action-gh-release APPENDS files to an existing release rather than
+      # replacing them, and every build's dated asset names differ — so without this,
+      # the 'latest-osm' alias would accumulate one more file per nightly run forever.
+      # Delete every existing asset first. Tolerant of the release not existing yet
+      # (first-ever run): a failing 'gh release view' must not fail the job.
+      - name: Clear 'latest-osm' release assets (ODbL)
+        if: steps.assets.outputs.has_odbl == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          gh release view latest-osm --json assets --jq '.assets[].name' 2>/dev/null | xargs -r -n1 gh release delete-asset latest-osm --yes || true
+
       - name: Update 'latest-osm' release alias (ODbL)
         if: steps.assets.outputs.has_odbl == 'true'
         uses: softprops/action-gh-release@v2
@@ -204,6 +219,18 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      # Same accumulation problem as 'latest-osm' above: softprops/action-gh-release
+      # APPENDS rather than replaces, and dated asset names differ every night, so
+      # without this the 'latest' release would grow one more file per nightly run
+      # forever. Delete every existing asset first; tolerant of the release not
+      # existing yet (first-ever run).
+      - name: Clear 'latest' release assets (CC BY-NC)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          gh release view latest --json assets --jq '.assets[].name' 2>/dev/null | xargs -r -n1 gh release delete-asset latest --yes || true
+
       # Moving alias, published LAST so it owns the repo's "Latest" badge: the `latest`
       # tag/release always points at the most recent CC-BY-NC build.
       - name: Update 'latest' release alias (CC BY-NC)
@@ -212,7 +239,7 @@ jobs:
           tag_name: "latest"
           name: "Latest (hamcall-db ${{ steps.date.outputs.date }})"
           body: |
-            Rolling alias for the most recent weekly hamcall-db build (**CC BY-NC 4.0**).
+            Rolling alias for the most recent nightly hamcall-db build (**CC BY-NC 4.0**).
             Currently pointing at the ${{ steps.date.outputs.date }} build.
 
             Pull this by default; pin to a dated `hamcall-db-YYYY-MM-DD` release when reproducibility matters.

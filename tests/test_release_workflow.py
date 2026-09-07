@@ -72,3 +72,27 @@ def test_odbl_and_ccbync_assets_are_collected_into_separate_lists() -> None:
     assert "cc_files" in text and "odbl_files" in text, (
         "collect step must build separate cc_files / odbl_files outputs"
     )
+
+
+def test_release_workflow_runs_nightly() -> None:
+    text = _workflow_text()
+    # Pinned schedule (hdb-nightly): every day at 07:00 UTC, not the old weekly Monday
+    # slot. A daily cron matches upstream ACMA/LoTW's daily cadence and lets the history
+    # ledger accrue at day granularity.
+    assert '- cron: "0 7 * * *"' in text, "release schedule must be daily at 07:00 UTC"
+    assert '- cron: "0 7 * * 1"' not in text, "the old weekly (Monday-only) cron must be gone"
+
+
+def test_alias_releases_clear_prior_assets_before_upload() -> None:
+    text = _workflow_text()
+    # softprops/action-gh-release APPENDS assets to an existing release rather than
+    # replacing them, and every nightly build's dated asset names differ, so the
+    # rolling aliases ('latest', 'latest-osm') must delete their existing assets before
+    # each re-upload or they accumulate one more file per night forever (hdb-nightly).
+    for alias in ("latest", "latest-osm"):
+        assert f"gh release delete-asset {alias} --yes" in text, (
+            f"'{alias}' release must clear its existing assets before re-upload"
+        )
+        assert f"gh release view {alias} --json assets" in text, (
+            f"'{alias}' asset-clearing step must list existing assets via 'gh release view {alias}'"
+        )

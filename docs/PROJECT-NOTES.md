@@ -9,7 +9,7 @@ belong in the task tracker, and work items in [`docs/BACKLOG.md`](BACKLOG.md).
 
 ### mem-afa3
 
-Project: hamcall-db. Weekly-rebuilt amateur radio callsign database, aggregated from FCC ULS (US), ISED (Canada), ACMA (Australia), and AD1C cty.dat (DXCC prefixes). Published as a single Parquet artifact via GitHub Releases. Consumers (e.g. adif) download the Parquet and load it into whatever local store they want.
+Project: hamcall-db. Nightly-rebuilt amateur radio callsign database, aggregated from FCC ULS (US), ISED (Canada), ACMA (Australia), and AD1C cty.dat (DXCC prefixes). Published as a single Parquet artifact via GitHub Releases. Consumers (e.g. adif) download the Parquet and load it into whatever local store they want.
 
 ### mem-c6e0
 
@@ -25,7 +25,7 @@ Source licenses (must surface in NOTICE): FCC ULS = public domain; ISED Canada =
 
 ### mem-ad43
 
-Build cadence: weekly via GitHub Actions cron. Artifact naming: hamcall-db-YYYY-MM-DD.parquet on Releases page. 'latest' tag/release alias points at most recent build. Consumers should pull 'latest' by default and pin to a date when reproducibility matters.
+Build cadence: nightly via GitHub Actions cron (changed from weekly 2026-09-07). Artifact naming: hamcall-db-YYYY-MM-DD.parquet on Releases page. 'latest' tag/release alias points at most recent build. Consumers should pull 'latest' by default and pin to a date when reproducibility matters.
 
 ### mem-8a86
 
@@ -33,11 +33,11 @@ Repo lives at github.com/rcludwick/hamcall-db (private as of 2026-06-16; flip to
 
 ### mem-4784
 
-Artifact model is TWO separate Parquet files (decided 2026-06-16, tracked in au-80c0): (1) the current-state file — the existing contract (mem-c6e0), callsign PK, one row per callsign, UNCHANGED; (2) a separate hamcall-db-history-YYYY-MM-DD.parquet holding callsign holder/location changes over time (SCD2 interval rows), for QSO-time attribution in downstream apps. History is FORWARD-ONLY: upstream sources are current-snapshot only, so history accrues by diffing successive weekly builds; pre-first-build history is not recoverable from these free sources. Consumers opt into history by downloading the second file; the current-state contract is never broken by it.
+Artifact model is TWO separate Parquet files (decided 2026-06-16, tracked in au-80c0): (1) the current-state file — the existing contract (mem-c6e0), callsign PK, one row per callsign, UNCHANGED; (2) a separate hamcall-db-history-YYYY-MM-DD.parquet holding callsign holder/location changes over time (SCD2 interval rows), for QSO-time attribution in downstream apps. History is FORWARD-ONLY: upstream sources are current-snapshot only, so history accrues by diffing successive builds (nightly since 2026-09-07); pre-first-build history is not recoverable from these free sources. Consumers opt into history by downloading the second file; the current-state contract is never broken by it.
 
 ### mem-34da
 
-Output artifacts are now THREE (as of 2026-06-16): (1) hamcall-db-YYYY-MM-DD.parquet current-state — the canonical, storage-neutral contract (mem-c6e0); (2) hamcall-db-history-YYYY-MM-DD.parquet SCD2 history (mem-4784); (3) hamcall-db-YYYY-MM-DD.db SQLite convenience copy holding current+history in one multi-table file (au-d824). SQLite is EXPLICITLY OPTIONAL — Parquet stays canonical/neutral; no FTS or query-pattern indexes baked in. The SQLite 'current' table uses a SURROGATE id INTEGER PRIMARY KEY that is STABLE and NEVER REUSED across weekly rebuilds (callsign is UNIQUE, not the PK); consumers may treat that id as a stable 'original id'. The weekly release passes --db-in (prior latest .db) and --history-in (prior history) so the id ledger and history persist across builds.
+Output artifacts are now THREE (as of 2026-06-16): (1) hamcall-db-YYYY-MM-DD.parquet current-state — the canonical, storage-neutral contract (mem-c6e0); (2) hamcall-db-history-YYYY-MM-DD.parquet SCD2 history (mem-4784); (3) hamcall-db-YYYY-MM-DD.db SQLite convenience copy holding current+history in one multi-table file (au-d824). SQLite is EXPLICITLY OPTIONAL — Parquet stays canonical/neutral; no FTS or query-pattern indexes baked in. The SQLite 'current' table uses a SURROGATE id INTEGER PRIMARY KEY that is STABLE and NEVER REUSED across successive builds (nightly since 2026-09-07; callsign is UNIQUE, not the PK); consumers may treat that id as a stable 'original id'. The nightly release passes --db-in (prior latest .db) and --history-in (prior history) so the id ledger and history persist across builds.
 
 ### mem-ffc0
 
