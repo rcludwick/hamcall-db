@@ -344,6 +344,30 @@
                 "source": {
                   "$ref": "#/components/schemas/Source"
                 },
+                "talkgroups": {
+                  "additionalProperties": {
+                    "properties": {
+                      "count": {
+                        "type": "integer"
+                      },
+                      "generated": {
+                        "format": "date",
+                        "type": "string"
+                      },
+                      "url": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "url",
+                      "count",
+                      "generated"
+                    ],
+                    "type": "object"
+                  },
+                  "description": "DMR only: which networks have a mirrored talkgroup list, keyed by network slug. Read this instead of probing for 404s \u2014 a network absent here has not been mirrored yet.",
+                  "type": "object"
+                },
                 "url": {
                   "type": "string"
                 }
@@ -499,6 +523,13 @@
               "freedmr-network"
             ],
             "type": "string"
+          },
+          "talkgroups": {
+            "description": "Path of this project's MIRROR of the network's talkgroup list, relative to the API root; DMR only, and absent until the network has been mirrored. `dial.talkgroups_url` remains upstream's canonical list \u2014 the mirror is refreshed a rotating slice of networks a night and can be a few days behind, so a client that needs the current list should follow `talkgroups_url` and use this to work without a token.",
+            "examples": [
+              "reflectors/dmr/freedmr-network/talkgroups.json"
+            ],
+            "type": "string"
           }
         },
         "required": [
@@ -591,6 +622,103 @@
           "url"
         ],
         "type": "object"
+      },
+      "Talkgroup": {
+        "description": "One talkgroup within one DMR network. `system` is not repeated per row \u2014 it is in the document envelope, and is the same for every row in the file.",
+        "properties": {
+          "name": {
+            "description": "Display name, as upstream words it.",
+            "examples": [
+              "235 Alive"
+            ],
+            "type": "string"
+          },
+          "tg": {
+            "description": "The talkgroup number, as dialled on this network.",
+            "examples": [
+              235
+            ],
+            "type": "integer"
+          }
+        },
+        "required": [
+          "tg"
+        ],
+        "type": "object"
+      },
+      "TalkgroupCollection": {
+        "description": "One DMR network's mirrored talkgroup list.",
+        "properties": {
+          "api_version": {
+            "const": "v1",
+            "type": "string"
+          },
+          "attribution": {
+            "type": "string"
+          },
+          "client_refresh_days": {
+            "description": "How often a client should re-check. Cache for this long.",
+            "type": "integer"
+          },
+          "count": {
+            "description": "Row count, to detect a truncated fetch.",
+            "type": "integer"
+          },
+          "generated": {
+            "description": "Date this network's talkgroups were last fetched. Files are refreshed a rotating slice at a time, so expect a few days.",
+            "format": "date",
+            "type": "string"
+          },
+          "license": {
+            "const": "CC BY 4.0",
+            "type": "string"
+          },
+          "license_url": {
+            "format": "uri",
+            "type": "string"
+          },
+          "modifications": {
+            "description": "What this project changed, as CC BY 4.0 requires be stated.",
+            "type": "string"
+          },
+          "network": {
+            "const": "dmr",
+            "type": "string"
+          },
+          "schema_version": {
+            "const": 1,
+            "type": "integer"
+          },
+          "source": {
+            "description": "Which importer produced the rows.",
+            "examples": [
+              "dvref"
+            ],
+            "type": "string"
+          },
+          "system": {
+            "description": "The DMR network these talkgroups belong to.",
+            "examples": [
+              "freedmr-network"
+            ],
+            "type": "string"
+          },
+          "talkgroups": {
+            "items": {
+              "$ref": "#/components/schemas/Talkgroup"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "schema_version",
+          "network",
+          "system",
+          "generated",
+          "count",
+          "talkgroups"
+        ],
+        "type": "object"
       }
     }
   },
@@ -666,6 +794,39 @@
           }
         },
         "summary": "Every reflector, every network, in one file."
+      }
+    },
+    "/reflectors/dmr/{system}/talkgroups.json": {
+      "get": {
+        "description": "A mirror of DVRef's per-network talkgroup list, served without a token. Only the networks listed under `networks.dmr.talkgroups` in the manifest exist; the rest have not been mirrored yet. Talkgroups are refreshed a rotating slice of networks a night (172 networks against an hourly budget of 60 upstream), so a file can be a few days behind \u2014 `generated` says when it was last fetched, and `dial.talkgroups_url` on the server rows is upstream's always-current copy.",
+        "operationId": "getDmrTalkgroups",
+        "parameters": [
+          {
+            "description": "DMR network slug, as published in `system`.",
+            "in": "path",
+            "name": "system",
+            "required": true,
+            "schema": {
+              "examples": [
+                "freedmr-network"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TalkgroupCollection"
+                }
+              }
+            },
+            "description": "One DMR network's talkgroups."
+          }
+        },
+        "summary": "One DMR network's talkgroups."
       }
     },
     "/reflectors/{network}.json": {

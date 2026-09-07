@@ -3,10 +3,12 @@
 Produces ``ReflectorRecord``s for the M17, YSF, NXDN, P25, URF and DMR networks — a
 SEPARATE reference dataset from the callsign schema (see :mod:`hamcall_db.reflectors`).
 
-Two shapes of endpoint live here. :class:`DvrefSource` reads the per-network reflector
-lists, one request per network; :class:`DvrefDmrSource` reads the DMR endpoint, which
-publishes networks-of-servers and is flattened to one row per server. Both share
-:class:`_DvrefEndpoint` for auth, caching and metadata.
+Three shapes of endpoint live here. :class:`DvrefSource` reads the per-network
+reflector lists, one request per network; :class:`DvrefDmrSource` reads the DMR
+endpoint, which publishes networks-of-servers and is flattened to one row per server;
+:class:`DvrefDmrTalkgroupSource` reads ONE DMR network's talkgroups and yields
+``TalkgroupRecord``s, which is a separate table rather than reflector rows. All three
+share :class:`_DvrefEndpoint` for auth, caching and metadata.
 
 Licence — CC BY 4.0, and why that matters here
 ----------------------------------------------
@@ -54,7 +56,7 @@ from collections.abc import Callable, Iterable
 from datetime import UTC, datetime
 from pathlib import Path
 
-from hamcall_db.reflectors import ReflectorRecord
+from hamcall_db.reflectors import ReflectorRecord, TalkgroupRecord
 
 API_ROOT = "https://dvref.com/api/v2"
 
@@ -77,10 +79,11 @@ ATTRIBUTION = "Reflector data provided by DVRef — https://dvref.com/"
 #   Anonymous:     1 retrieval per resource per source IP every 6 hours, using
 #                  User-Agent + X-DVRef-Callsign + X-DVRef-Contact and no token.
 #
-# A nightly build spends six requests — five reflector lists plus the DMR
-# networks endpoint — which is comfortable. Mirroring DMR talkgroups would not
-# be: they live behind a PER-NETWORK endpoint and there are 172 networks, so it
-# has to become a rotating slice rather than a nightly sweep (hdb-refl-dmrtg).
+# A nightly build spends six requests on the directories themselves — five
+# reflector lists plus the DMR networks endpoint — which is comfortable. DMR
+# talkgroups are the endpoint that does not fit: they live behind a PER-NETWORK
+# endpoint and there are 172 networks, so they are fetched as a rotating slice
+# rather than a nightly sweep (see TALKGROUP_SLICE, hdb-refl-dmrtg).
 #
 # The trap is that interactive debugging spends from the SAME budget: running
 # experiments from a workstation while the nightly job uses the same token can
@@ -89,6 +92,28 @@ ATTRIBUTION = "Reflector data provided by DVRef — https://dvref.com/"
 # expect it or use the anonymous tier, which is per-IP and would fit this
 # project's once-a-night access pattern on its own.
 AUTHENTICATED_HOURLY_LIMIT = 60
+
+# How many DMR networks' talkgroup lists one nightly build may fetch (hdb-refl-dmrtg).
+#
+#   60  the authenticated hourly budget above
+#  - 7  what the rest of the build already spends: five reflector lists, the DMR
+#       networks endpoint, and one held back for the retry a transient failure costs
+#  -13  headroom, because interactive debugging draws on the SAME account budget —
+#       that is what throttled the build on 2026-08-26
+#  ---
+#   40
+#
+# 111 of the 172 networks have servers, so at 40 a night every network is refreshed
+# roughly every three nights and a newly listed one gets its talkgroups on its first
+# or second night — well inside the week clients are asked to cache for.
+TALKGROUP_SLICE = 40
+
+# A talkgroup file younger than this is not refetched even when the slice reaches it.
+# The slice picks oldest-first, so this only bites when FEWER than TALKGROUP_SLICE
+# networks are stale — which is exactly the case where refetching buys nothing and
+# would rewrite the file's `generated` date for nothing. It is also what makes an
+# immediate rebuild byte-identical.
+TALKGROUP_MIN_AGE_DAYS = 2
 
 # DVRef path segment -> the network name we publish under. `mrefd` is the reflector
 # daemon's name; the network everyone calls it is M17. `urfd` likewise -> `urf`.
@@ -236,6 +261,37 @@ def _rows(payload: object) -> list[dict[str, object]]:
                 value = container.get(key)
                 if isinstance(value, list):
                     return [row for row in value if isinstance(row, dict)]
+    return []
+
+
+def _talkgroup_rows(payload: object) -> list[dict[str, object]]:
+    """Pull the talkgroup list out of a per-network talkgroups response.
+
+    Same envelope as everything else, one level deeper (verified 2026-09-07)::
+
+        {"status": "success", "generated_at": ..., "_dvref_metadata": {...},
+         "data": {"network": {"network": "SystemX", "talkgroups": [{"tg": 69, ...}]}}}
+
+    ``data.network`` is an OBJECT here, not a list, which is why :func:`_rows` cannot
+    serve this endpoint: it looks for a list under ``data`` and would find none. The
+    fallbacks are the same defensive posture — a reshuffle upstream should cost rows,
+    not crash the nightly build.
+    """
+    if isinstance(payload, list):
+        return [row for row in payload if isinstance(row, dict)]
+    if not isinstance(payload, dict):
+        return []
+
+    data = payload.get("data")
+    containers: list[object] = []
+    if isinstance(data, dict):
+        containers.extend((data.get("network"), data))
+    containers.append(payload)
+    for container in containers:
+        if isinstance(container, dict):
+            value = container.get("talkgroups")
+            if isinstance(value, list):
+                return [row for row in value if isinstance(row, dict)]
     return []
 
 
@@ -464,12 +520,13 @@ class DvrefDmrSource(_DvrefEndpoint):
     name and attribute is worth listing — but WITHOUT a ``dial``, per the API's rule that
     an address is never invented.
 
-    Talkgroups are not mirrored
-    ---------------------------
+    Talkgroups are mirrored a slice at a time
+    ----------------------------------------
     They live behind a per-network endpoint, which is 172 requests against an hourly
-    budget of 60 (:data:`AUTHENTICATED_HOURLY_LIMIT`). This costs ONE request a night and
-    publishes ``talkgroups_url`` so a client can follow the link; mirroring them is
-    hdb-refl-dmrtg.
+    budget of 60 (:data:`AUTHENTICATED_HOURLY_LIMIT`). This endpoint costs ONE request a
+    night and publishes ``talkgroups_url``, DVRef's canonical list, on every row; the
+    mirror is fetched separately by :class:`DvrefDmrTalkgroupSource`, a rotating
+    :data:`TALKGROUP_SLICE` of networks a night (hdb-refl-dmrtg).
     """
 
     network = "dmr"
@@ -527,6 +584,69 @@ class DvrefDmrSource(_DvrefEndpoint):
                     requires=list(self.REQUIRES),
                     talkgroups_url=talkgroups_url,
                 )
+
+
+class DvrefDmrTalkgroupSource(_DvrefEndpoint):
+    """ONE DMR network's talkgroup list — one request, one network (hdb-refl-dmrtg).
+
+    A talkgroup number only means something inside one network, so the row this yields
+    is ``(system, tg, name)`` and ``system`` is never optional.
+
+    **One request per network is the whole design problem.** 172 networks against a
+    60-per-hour account budget cannot be swept nightly, so the build fetches a rotating
+    :data:`TALKGROUP_SLICE` of them, oldest-first, and every other network keeps the
+    list it already has. That makes a published talkgroup list up to a few days behind
+    upstream by construction — which is why ``talkgroups_url`` stays on every DMR server
+    row: it is upstream's canonical list, and this is a mirror of it.
+    """
+
+    network = "dmr"
+
+    def __init__(
+        self,
+        system: str,
+        *,
+        token: str | None = None,
+        fetch: Fetcher | None = None,
+    ) -> None:
+        slug = _str(system)
+        if not slug:
+            raise ValueError("a DMR talkgroup fetch needs a network slug")
+        super().__init__(token=token, fetch=fetch)
+        self.system = slug
+        # Namespaced by slug so 111 of these can share one day's cache directory with
+        # the reflector lists without colliding.
+        self.cache_name = f"talkgroups-{slug}.json"
+
+    @property
+    def url(self) -> str:
+        return f"{API_ROOT}/dmr/networks/{self.system}/talkgroups/"
+
+    def parse(self, path: Path, *, synced_at: str | None = None) -> Iterable[TalkgroupRecord]:
+        """Parse one network's talkgroups response into records.
+
+        ``synced_at`` is the FETCH date, not upstream's ``generated_at``: this endpoint
+        stamps every response with the moment it was rendered, so its own date says when
+        we asked rather than when the list last changed. What a client needs to know is
+        how stale the mirror is, and that is the date of the fetch.
+        """
+        payload, _ = self._envelope(path, synced_at)
+        stamp = synced_at or self.synced_at
+
+        seen: set[int] = set()
+        for row in _talkgroup_rows(payload):
+            number = _int(row.get("tg"))
+            if number is None or number in seen:
+                # A talkgroup with no number cannot be dialled, and a duplicate would
+                # break the (system, tg) key the published file and both artifacts use.
+                continue
+            seen.add(number)
+            yield TalkgroupRecord(
+                system=self.system,
+                tg=number,
+                name=_str(row.get("name")),
+                synced_at=stamp,
+            )
 
 
 def _host(value: object) -> str | None:

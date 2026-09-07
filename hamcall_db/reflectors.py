@@ -30,6 +30,7 @@ document from the same tables the emitter uses, so the two cannot drift::
     site/api/v1/index.json                 manifest: networks, counts, licence, freshness
     site/api/v1/reflectors.json            every reflector, one file (the primary endpoint)
     site/api/v1/reflectors/<network>.json  one network
+    site/api/v1/reflectors/dmr/<system>/talkgroups.json   one DMR network's talkgroups
     site/api/v1/openapi.json               the contract, machine-readable
 
 ``reflectors.json`` is what most clients want; the per-network files exist for FAILURE
@@ -45,7 +46,7 @@ from __future__ import annotations
 
 import json
 import re
-from collections.abc import Iterable, Sequence
+from collections.abc import Iterable, Mapping, Sequence
 from dataclasses import dataclass, field, fields
 from datetime import UTC, date, datetime, timedelta
 from pathlib import Path
@@ -140,6 +141,22 @@ ALL_REFLECTORS_FILE = "reflectors.json"
 OPENAPI_FILE = "openapi.json"
 NETWORK_DIR = "reflectors"
 
+# DMR talkgroup mirrors: one file per network, under the network's own directory
+# (hdb-refl-dmrtg). `reflectors/dmr.json` (the server list) and `reflectors/dmr/`
+# (the talkgroup mirrors) sit side by side — a file and a directory, which is fine
+# on a static host and keeps everything DMR under one prefix.
+TALKGROUP_NETWORK = "dmr"
+TALKGROUP_FILE = "talkgroups.json"
+
+
+def talkgroup_path(system: str) -> str:
+    """Where one DMR network's talkgroup mirror is published, relative to the API root.
+
+    The same string the manifest publishes and the same string a `dmr` row carries in
+    its `talkgroups` field, because a client should never have to assemble a path.
+    """
+    return f"{NETWORK_DIR}/{TALKGROUP_NETWORK}/{system}/{TALKGROUP_FILE}"
+
 
 @dataclass(slots=True)
 class ReflectorRecord:
@@ -190,11 +207,17 @@ class ReflectorRecord:
     system: str | None = None  # DMR network slug, e.g. 'freedmr-network'
     requires: list[str] = field(default_factory=list)  # e.g. ['dmr_id', 'password']
     talkgroups_url: str | None = None  # where that network publishes its talkgroups
-    # Reserved, and None on every row today: the build does not mirror talkgroups,
-    # because they live behind a per-network endpoint and 172 networks do not fit in a
-    # 60-request hourly budget (hdb-refl-dmrtg). The fields exist now so talkgroup rows
-    # can be added later without a schema bump — adding a field is not a bump, but a
-    # client can only ignore-what-it-does-not-know if the field is in the contract.
+    # OUR mirror of that list, as a path relative to the API root, or None when this
+    # network has none yet. Deliberately a sibling of `talkgroups_url` rather than a
+    # replacement for it: upstream's list is canonical and always current, this one is
+    # a rotating mirror that can be a few days behind (hdb-refl-dmrtg). It is also
+    # deliberately NOT in the dial — it is not part of making a connection.
+    talkgroups: str | None = None
+    # Reserved, and None on every row today. A talkgroup mirror is its own file and its
+    # own table, not a column on a server row: these two say which talkgroup a SINGLE
+    # row is pinned to, which nothing upstream publishes. The fields exist so such a row
+    # could be added without a schema bump — adding a field is not a bump, but a client
+    # can only ignore-what-it-does-not-know if the field is in the contract.
     talkgroup: int | None = None
     timeslot: int | None = None  # 1 or 2
 
@@ -211,6 +234,35 @@ REDACTED_TEXT_FIELDS: tuple[str, ...] = ("name", "sponsor", "description")
 
 REFLECTOR_SCHEMA_COLUMNS: tuple[str, ...] = tuple(f.name for f in fields(ReflectorRecord))
 """Ordered field names of the published reflector rows."""
+
+
+@dataclass(slots=True)
+class TalkgroupRecord:
+    """One DMR talkgroup, inside one DMR network (hdb-refl-dmrtg).
+
+    ``system`` + ``tg`` is the primary key, and ``system`` is never optional: a
+    talkgroup number is only defined within one network, so TG 235 on SystemX and TG 235
+    on FreeDMR are different conversations. A bare number is not addressable.
+
+    A separate record from :class:`ReflectorRecord` on purpose. A talkgroup is not a
+    place you connect to — it is what you talk on once you are connected to a master —
+    and flattening the two would multiply the reflector rows by every talkgroup their
+    network happens to publish.
+    """
+
+    system: str  # DMR network slug, e.g. 'freedmr-network'
+    tg: int  # the talkgroup number a client dials
+    name: str | None = None  # display name, as upstream words it
+    synced_at: str | None = None  # ISO date of the FETCH — how stale this mirror is
+
+    def __post_init__(self) -> None:
+        # Same one choke point as the reflector rows: names are sysop-written free text
+        # and this file is bulk-downloadable JSON on a CDN.
+        self.name = redact_emails(self.name)
+
+
+TALKGROUP_SCHEMA_COLUMNS: tuple[str, ...] = tuple(f.name for f in fields(TalkgroupRecord))
+"""Ordered field names of the published talkgroup rows."""
 
 
 # --- the `dial` discriminator -----------------------------------------------------
@@ -301,6 +353,11 @@ _ENVELOPE_FIELDS: tuple[str, ...] = (
     # but a server whose address upstream did not publish still has to say which
     # network it belongs to, and the dial is exactly what such a row does not have.
     "system",
+    # DMR only, and only once this network's talkgroups have been mirrored: the path of
+    # OUR copy of its talkgroup list. `dial.talkgroups_url` still points at DVRef, which
+    # is the canonical list; this is the mirror, and it is on the envelope because it is
+    # something to READ about the network, not part of dialling the server.
+    "talkgroups",
     "id",
     "name",
     "aliases",
@@ -410,6 +467,90 @@ def network_document(
     }
 
 
+def talkgroup_document(
+    system: str,
+    records: Sequence[TalkgroupRecord],
+    *,
+    attribution: str,
+    generated: str,
+    source: str = "dvref",
+) -> dict[str, object]:
+    """Build the published mirror of ONE DMR network's talkgroup list.
+
+    ``generated`` is the date of the last successful FETCH for this network, and it is
+    passed in rather than derived from the clock because that is the whole freshness
+    contract here: 172 networks do not fit in an hourly budget of 60, so the build
+    refreshes a rotating slice a night and every other file must come back out
+    byte-identical (hdb-refl-dmrtg). A build-time stamp would rewrite all 111 files
+    every night and produce a commit that says nothing happened.
+
+    Rows are sorted by ``tg`` for the same reason — a stable order is what makes an
+    unchanged rebuild byte-identical.
+    """
+    ordered = sorted(records, key=lambda r: r.tg)
+    return {
+        "schema_version": SCHEMA_VERSION,
+        "api_version": API_VERSION,
+        "network": TALKGROUP_NETWORK,
+        "system": system,
+        "generated": generated,
+        "client_refresh_days": CLIENT_REFRESH_DAYS,
+        **_license_block(),
+        "attribution": attribution,
+        # The importer name, as on every published row — provenance, for debugging a
+        # wrong entry. Not the {name, url} object the reflector documents carry: this
+        # file mirrors ONE upstream endpoint, and `talkgroups_url` on the server rows is
+        # already the pointer to it.
+        "source": source,
+        "count": len(ordered),
+        "talkgroups": [talkgroup_json(record) for record in ordered],
+    }
+
+
+def talkgroup_json(record: TalkgroupRecord) -> dict[str, object]:
+    """One talkgroup as a published entry: the number and, when upstream has one, a name.
+
+    ``system`` and ``synced_at`` are NOT repeated per row — they are the same for every
+    row in the file and live in its envelope. That is the difference from the artifacts,
+    where each row must stand alone.
+    """
+    out: dict[str, object] = {"tg": record.tg}
+    if record.name:
+        out["name"] = record.name
+    return out
+
+
+def talkgroups_from_document(document: dict[str, object]) -> list[TalkgroupRecord]:
+    """Rebuild ``TalkgroupRecord``s from a published talkgroup mirror.
+
+    The Parquet/SQLite tables are derived from the documents actually being published,
+    exactly like the reflector rows — so on a night when a network keeps its previous
+    file, the artifacts describe what is live rather than what was fetched.
+    """
+    system = str(document.get("system") or "")
+    stamp = document.get("generated")
+    rows = document.get("talkgroups")
+    if not system or not isinstance(rows, list):
+        return []
+
+    out: list[TalkgroupRecord] = []
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        number = _opt_int(row.get("tg"))
+        if number is None:
+            continue
+        out.append(
+            TalkgroupRecord(
+                system=system,
+                tg=number,
+                name=_opt_str(row.get("name")),
+                synced_at=str(stamp) if stamp else None,
+            )
+        )
+    return out
+
+
 def combined_document(
     documents: dict[str, dict[str, object]],
     *,
@@ -472,6 +613,7 @@ def combined_document(
 def manifest_document(
     documents: dict[str, dict[str, object]],
     *,
+    talkgroups: Mapping[str, dict[str, object]] | None = None,
     generated: date | None = None,
 ) -> dict[str, object]:
     """Build ``index.json`` from the per-network documents.
@@ -479,6 +621,11 @@ def manifest_document(
     This is the only file a client must fetch on a routine check: it carries each
     network's row count and ``generated`` date, so a client can tell whether its cached
     copy is stale without downloading any of the big files.
+
+    ``talkgroups`` maps a DMR network slug to its published mirror document, and lands
+    under the ``dmr`` entry as a map of what exists — so a client discovers which
+    networks have a mirrored talkgroup list, how many rows it holds and how fresh it is,
+    without probing 111 URLs for 404s.
     """
     networks: dict[str, dict[str, object]] = {}
     for name in sorted(documents):
@@ -489,8 +636,21 @@ def manifest_document(
             "generated": doc["generated"],
             "source": doc["source"],
         }
+
+    if talkgroups and TALKGROUP_NETWORK in networks:
+        networks[TALKGROUP_NETWORK]["talkgroups"] = {
+            system: {
+                "url": talkgroup_path(system),
+                "count": talkgroups[system]["count"],
+                "generated": talkgroups[system]["generated"],
+            }
+            for system in sorted(talkgroups)
+        }
     # Derived from the network files, not from the clock, for the same reason: the
-    # manifest must not be the one file that churns nightly and forces a commit.
+    # manifest must not be the one file that churns nightly and forces a commit. The
+    # talkgroup mirrors deliberately do NOT feed it: they rotate by design, and letting
+    # them move the whole API's `generated` would tell every client the directory had
+    # changed on a night when no reflector did.
     dates = sorted(str(n["generated"]) for n in networks.values())
     stamp = dates[-1] if dates else (generated or datetime.now(UTC).date()).isoformat()
     total = sum(int(n["count"]) for n in networks.values() if isinstance(n["count"], int))
@@ -565,6 +725,18 @@ _ENVELOPE_PROPERTIES: dict[str, dict[str, object]] = {
             "without it, so a row that has no dial still has to carry it."
         ),
         "examples": ["freedmr-network"],
+    },
+    "talkgroups": {
+        "type": "string",
+        "description": (
+            "Path of this project's MIRROR of the network's talkgroup list, relative to "
+            "the API root; DMR only, and absent until the network has been mirrored. "
+            "`dial.talkgroups_url` remains upstream's canonical list — the mirror is "
+            "refreshed a rotating slice of networks a night and can be a few days "
+            "behind, so a client that needs the current list should follow "
+            "`talkgroups_url` and use this to work without a token."
+        ),
+        "examples": ["reflectors/dmr/freedmr-network/talkgroups.json"],
     },
 }
 
@@ -773,6 +945,35 @@ def openapi_document() -> dict[str, object]:
                     ),
                 }
             },
+            f"/{NETWORK_DIR}/{TALKGROUP_NETWORK}/{{system}}/{TALKGROUP_FILE}": {
+                "get": {
+                    "operationId": "getDmrTalkgroups",
+                    "summary": "One DMR network's talkgroups.",
+                    "description": (
+                        "A mirror of DVRef's per-network talkgroup list, served without a "
+                        "token. Only the networks listed under `networks.dmr.talkgroups` "
+                        "in the manifest exist; the rest have not been mirrored yet. "
+                        "Talkgroups are refreshed a rotating slice of networks a night "
+                        "(172 networks against an hourly budget of 60 upstream), so a "
+                        "file can be a few days behind — `generated` says when it was "
+                        "last fetched, and `dial.talkgroups_url` on the server rows is "
+                        "upstream's always-current copy."
+                    ),
+                    "parameters": [
+                        {
+                            "name": "system",
+                            "in": "path",
+                            "required": True,
+                            "description": "DMR network slug, as published in `system`.",
+                            "schema": {"type": "string", "examples": ["freedmr-network"]},
+                        }
+                    ],
+                    "responses": _json_response(
+                        "#/components/schemas/TalkgroupCollection",
+                        "One DMR network's talkgroups.",
+                    ),
+                }
+            },
             f"/{OPENAPI_FILE}": {
                 "get": {
                     "operationId": "getOpenapi",
@@ -837,6 +1038,27 @@ def openapi_document() -> dict[str, object]:
                                     "count": {"type": "integer"},
                                     "generated": {"type": "string", "format": "date"},
                                     "source": {"$ref": "#/components/schemas/Source"},
+                                    "talkgroups": {
+                                        "type": "object",
+                                        "description": (
+                                            "DMR only: which networks have a mirrored "
+                                            "talkgroup list, keyed by network slug. Read "
+                                            "this instead of probing for 404s — a network "
+                                            "absent here has not been mirrored yet."
+                                        ),
+                                        "additionalProperties": {
+                                            "type": "object",
+                                            "properties": {
+                                                "url": {"type": "string"},
+                                                "count": {"type": "integer"},
+                                                "generated": {
+                                                    "type": "string",
+                                                    "format": "date",
+                                                },
+                                            },
+                                            "required": ["url", "count", "generated"],
+                                        },
+                                    },
                                 },
                                 "required": ["url", "count", "generated"],
                             },
@@ -884,6 +1106,73 @@ def openapi_document() -> dict[str, object]:
                     },
                     "required": ["schema_version", "network", "generated", "count", "reflectors"],
                 },
+                "Talkgroup": {
+                    "type": "object",
+                    "description": (
+                        "One talkgroup within one DMR network. `system` is not repeated "
+                        "per row — it is in the document envelope, and is the same for "
+                        "every row in the file."
+                    ),
+                    "properties": {
+                        "tg": {
+                            "type": "integer",
+                            "description": "The talkgroup number, as dialled on this network.",
+                            "examples": [235],
+                        },
+                        "name": {
+                            "type": "string",
+                            "description": "Display name, as upstream words it.",
+                            "examples": ["235 Alive"],
+                        },
+                    },
+                    "required": ["tg"],
+                },
+                "TalkgroupCollection": {
+                    "type": "object",
+                    "description": "One DMR network's mirrored talkgroup list.",
+                    "properties": {
+                        **meta,
+                        # Overrides the shared meaning: everywhere else `generated` is
+                        # the upstream data's date. Upstream stamps a talkgroups
+                        # response with the moment it was rendered, which says when we
+                        # asked rather than when the list changed — so here it is the
+                        # date of the last successful fetch, which is what tells a
+                        # client how stale this mirror is.
+                        "generated": {
+                            "type": "string",
+                            "format": "date",
+                            "description": (
+                                "Date this network's talkgroups were last fetched. Files "
+                                "are refreshed a rotating slice at a time, so expect a "
+                                "few days."
+                            ),
+                        },
+                        "network": {"type": "string", "const": TALKGROUP_NETWORK},
+                        "system": {
+                            "type": "string",
+                            "description": "The DMR network these talkgroups belong to.",
+                            "examples": ["freedmr-network"],
+                        },
+                        "attribution": {"type": "string"},
+                        "source": {
+                            "type": "string",
+                            "description": "Which importer produced the rows.",
+                            "examples": ["dvref"],
+                        },
+                        "talkgroups": {
+                            "type": "array",
+                            "items": {"$ref": "#/components/schemas/Talkgroup"},
+                        },
+                    },
+                    "required": [
+                        "schema_version",
+                        "network",
+                        "system",
+                        "generated",
+                        "count",
+                        "talkgroups",
+                    ],
+                },
                 "Source": {
                     "type": "object",
                     "description": "The upstream a file's rows came from.",
@@ -902,13 +1191,15 @@ def write_api(
     out_dir: Path,
     documents: dict[str, dict[str, object]],
     *,
+    talkgroups: Mapping[str, dict[str, object]] | None = None,
     generated: date | None = None,
 ) -> list[Path]:
     """Write the whole v1 API under ``out_dir``.
 
     Returns the paths written: the manifest, the combined file, the OpenAPI document,
-    then one file per network. Files are written with a trailing newline and sorted keys
-    so the output is stable across runs and diffs cleanly.
+    one file per network, then one talkgroup mirror per DMR network. Files are written
+    with a trailing newline and sorted keys so the output is stable across runs and
+    diffs cleanly.
     """
     api = out_dir
     api.mkdir(parents=True, exist_ok=True)
@@ -916,7 +1207,7 @@ def write_api(
 
     written: list[Path] = []
     for name, document in (
-        (MANIFEST_FILE, manifest_document(documents, generated=generated)),
+        (MANIFEST_FILE, manifest_document(documents, talkgroups=talkgroups, generated=generated)),
         (ALL_REFLECTORS_FILE, combined_document(documents, generated=generated)),
         (OPENAPI_FILE, openapi_document()),
     ):
@@ -928,7 +1219,36 @@ def write_api(
         path = api / NETWORK_DIR / f"{name}.json"
         _write_json(path, documents[name])
         written.append(path)
+
+    for system in sorted(talkgroups or {}):
+        path = api / talkgroup_path(system)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        _write_json(path, (talkgroups or {})[system])
+        written.append(path)
     return written
+
+
+def read_talkgroup_documents(out_dir: Path) -> dict[str, dict[str, object]]:
+    """Load every talkgroup mirror already published under ``out_dir``.
+
+    Keep-last-good, generalised: only a slice of the networks is refetched on any given
+    night, so the ones that were not are republished exactly as they stand. Reading them
+    back from the output tree is also what persists each network's last-fetch date —
+    there is no side-car state file to fall out of sync with what was published.
+    """
+    root = out_dir / NETWORK_DIR / TALKGROUP_NETWORK
+    if not root.is_dir():
+        return {}
+
+    documents: dict[str, dict[str, object]] = {}
+    for path in sorted(root.glob(f"*/{TALKGROUP_FILE}")):
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+        except OSError, json.JSONDecodeError:
+            continue
+        if isinstance(payload, dict) and payload.get("system"):
+            documents[str(payload["system"])] = payload
+    return documents
 
 
 def _write_json(path: Path, document: dict[str, object]) -> None:
@@ -996,6 +1316,7 @@ def records_from_document(document: dict[str, object]) -> list[ReflectorRecord]:
                 system=_opt_str(row.get("system")) or _opt_str(dial.get("system")),
                 requires=_str_list(dial.get("requires")),
                 talkgroups_url=_opt_str(dial.get("talkgroups_url")),
+                talkgroups=_opt_str(row.get("talkgroups")),
                 talkgroup=_opt_int(dial.get("talkgroup")),
                 timeslot=_opt_int(dial.get("timeslot")),
             )

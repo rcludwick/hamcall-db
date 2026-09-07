@@ -18,10 +18,11 @@ limit — it is JSON on a CDN.**
 ## Paths
 
 ```
-/api/v1/index.json                     service manifest: what exists, how fresh
-/api/v1/reflectors.json                every reflector, one file
-/api/v1/reflectors/{network}.json      one network
-/api/v1/openapi.json                   this contract, machine-readable
+/api/v1/index.json                            service manifest: what exists, how fresh
+/api/v1/reflectors.json                       every reflector, one file
+/api/v1/reflectors/{network}.json             one network
+/api/v1/reflectors/dmr/{system}/talkgroups.json   one DMR network's talkgroups
+/api/v1/openapi.json                          this contract, machine-readable
 ```
 
 `/api/v1/reflectors.json` is the endpoint most clients want. The per-network
@@ -78,6 +79,7 @@ differs per protocol because the protocols genuinely differ.
 | `dashboard` | no | Web dashboard URL. |
 | `source` | yes | Which importer produced the row (`xlx`, `dvref`, …). Provenance, for debugging a wrong entry. |
 | `system` | no | Which DMR network a server belongs to; **DMR only**. Present on every `dmr` row, absent on every other network. Repeated in `dial.system`. |
+| `talkgroups` | no | Path of **our mirror** of that network's talkgroup list, relative to the API root; **DMR only**, and absent until the network has been mirrored. Not the same thing as `dial.talkgroups_url` — see "DMR talkgroups". |
 | `dial` | no | How to connect. **Absent means listed-but-not-dialable** — see below. |
 
 ### `dial` variants
@@ -118,15 +120,18 @@ self-contained for a client that switches on `kind` and reads nothing else; the 
 copy is the one that survives on a server with no dial at all (see below). They always
 agree.
 
-**Talkgroups are linked, not mirrored.** `talkgroups_url` points at DVRef's list for
-that network, reachable with a token or on their anonymous tier. This directory does
-not copy them: they live behind a per-network endpoint and there are 172 networks
-against an hourly budget of 60, so mirroring is a rotating job rather than a nightly
-sweep, and it has not been built yet.
+**Talkgroups are both linked and mirrored.** `dial.talkgroups_url` points at DVRef's
+own list for that network — canonical, always current, and needing a token or their
+anonymous tier. The envelope's `talkgroups` points at *our* copy of the same list,
+served without a token, and is present only for the networks that have been mirrored.
+Prefer the mirror when you have no token; follow `talkgroups_url` when you need the list
+to be current to the minute. See "DMR talkgroups" below.
 
 **`talkgroup` and `timeslot` are reserved.** They are in the contract and absent from
-every published row today, so that talkgroup rows can be added later without a version
-bump — a client can only ignore-what-it-does-not-know if the field was declared.
+every published row today: a mirrored talkgroup list is its own file, not a column on a
+server row, and these two would say which single talkgroup a row is pinned to — which
+nothing upstream publishes. They stay declared so such a row could be added without a
+version bump; a client can only ignore-what-it-does-not-know if the field was declared.
 `timeslot` is `1` or `2`, and only means anything alongside a `talkgroup`.
 
 **Servers with no usable address are listed without a `dial`.** Upstream's `dns` column
@@ -142,6 +147,96 @@ making a connection this row does not offer.
 **Descriptions are upstream HTML**, as for every DVRef network — they arrive as written
 on the network's own dashboard, tags, entities and all, with only email addresses
 removed.
+
+### DMR talkgroups
+
+A DMR master tells you where to connect; a **talkgroup** is what you actually talk on
+once you are there. Numbers are only defined *within* one network — TG 235 on SystemX
+and TG 235 on FreeDMR are different conversations — so the mirror is per network, keyed
+by the same `system` slug the server rows carry.
+
+```
+GET /api/v1/reflectors/dmr/systemx/talkgroups.json
+```
+
+```json
+{
+  "schema_version": 1,
+  "api_version": "v1",
+  "network": "dmr",
+  "system": "systemx",
+  "generated": "2026-09-07",
+  "client_refresh_days": 7,
+  "license": "CC BY 4.0",
+  "attribution": "Reflector data provided by DVRef — https://dvref.com/",
+  "source": "dvref",
+  "count": 21,
+  "talkgroups": [
+    { "tg": 69, "name": "CQ North West UK" },
+    { "tg": 235, "name": "235 Alive" }
+  ]
+}
+```
+
+Rows are sorted by `tg` and carry nothing else: `system` and the date are the same for
+every row in the file, so they live in the envelope rather than being repeated. `name`
+is omitted when upstream has none.
+
+**Discover them from the manifest, do not probe for them.** Only some networks have a
+mirror, and `index.json` says which:
+
+```json
+"networks": {
+  "dmr": {
+    "url": "reflectors/dmr.json",
+    "count": 249,
+    "generated": "2026-09-07",
+    "talkgroups": {
+      "systemx": {
+        "url": "reflectors/dmr/systemx/talkgroups.json",
+        "count": 21,
+        "generated": "2026-09-07"
+      }
+    }
+  }
+}
+```
+
+A network absent from that map has no mirrored list — fetch `dial.talkgroups_url`
+instead, or show none. Every `dmr` server row for a mirrored network also carries the
+same path in its envelope `talkgroups` field, so a client that has a row in hand never
+has to assemble a URL.
+
+#### Freshness: expect days, not hours
+
+**This is a rotating mirror, and it is the one endpoint here that is deliberately
+behind.** Talkgroups live behind a *per-network* upstream endpoint, and there are 172
+networks (111 with servers) against an authenticated budget of **60 requests an hour per
+account** — shared with the six requests the rest of the nightly build already spends.
+A nightly sweep does not fit and would throttle the whole directory.
+
+So each night the build refetches the **40** networks whose lists are oldest, and every
+other network republishes the list it already had:
+
+* every network is refreshed roughly **every three nights**, and a newly listed one gets
+  its talkgroups on its first or second night;
+* `generated` on a talkgroup file is the date **that network** was last fetched — not
+  the build date, and not the date any other file was fetched. It is the number to read
+  when you want to know how stale a list is;
+* a network's file is not refetched at all while it is less than two days old, so a
+  rebuild on the same day changes nothing;
+* if upstream throttles the build, the slice stops for the night and every list keeps
+  its previous copy. The reflector directories are fetched first, so talkgroups can
+  never starve them.
+
+A talkgroup list changes far more slowly than that window, so a few days behind is not a
+practical problem. But if you need the current list to the minute — a client that is
+about to key up on a talkgroup a sysop added this morning — follow `talkgroups_url` to
+DVRef, which is exactly why that field stays on every row.
+
+**Licence, the same as everything else here: CC BY 4.0.** The talkgroup files carry
+`license`, `attribution` and `modifications` inline like every other file, and
+attribution is required if you redistribute them.
 
 **`urf` is the one variant without a required `port`.** Upstream publishes none for any
 of the 89 URF reflectors, and a urfd speaks several protocols at once, so there is no
@@ -237,6 +332,12 @@ network already selected.
 `generated` is content-derived on purpose: the job rebuilds nightly, but a night
 that finds nothing new produces byte-identical files. A client comparing
 `generated` therefore sees movement only when the data actually moved.
+
+The one exception is a **DMR talkgroup file**, where `generated` is the date that
+network was last *fetched* — see "DMR talkgroups". It is a rotating mirror, so the fetch
+date is the only honest answer to "how stale is this?". The manifest's own `generated`
+deliberately ignores those dates: a rotation must not tell every client that the
+directory changed on a night when no reflector did.
 
 **Cache for a week.** Reflector addresses change on a scale of weeks. Polling
 harder costs bandwidth and buys nothing, and there is no SLA here to lean on.

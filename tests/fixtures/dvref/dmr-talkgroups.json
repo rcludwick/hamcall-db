@@ -1,0 +1,170 @@
+{
+ "systemx": {
+  "status": "success",
+  "generated_at": "2026-09-07T05:54:18.828963Z",
+  "_dvref_metadata": {
+   "license": {
+    "name": "Creative Commons Attribution 4.0 International",
+    "spdx_id": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+   },
+   "attribution": "Reflector data provided by DVRef — https://dvref.com/",
+   "aup_url": "https://dvref.com/aup/"
+  },
+  "data": {
+   "network": {
+    "network": "SystemX",
+    "talkgroups": [
+     {
+      "tg": 69,
+      "name": "CQ North West UK"
+     },
+     {
+      "tg": 80,
+      "name": "Chat 1"
+     },
+     {
+      "tg": 81,
+      "name": "Chat 2"
+     },
+     {
+      "tg": 82,
+      "name": "Chat 3"
+     },
+     {
+      "tg": 87,
+      "name": "Blind Hams"
+     },
+     {
+      "tg": 121,
+      "name": "Digital NorthEast"
+     },
+     {
+      "tg": 122,
+      "name": "Digital ScotWest"
+     },
+     {
+      "tg": 198,
+      "name": "Technology First"
+     },
+     {
+      "tg": 235,
+      "name": "235 Alive"
+     },
+     {
+      "tg": 320,
+      "name": "Quadnet Array"
+     },
+     {
+      "tg": 326,
+      "name": "Do Dropin"
+     },
+     {
+      "tg": 748,
+      "name": "Uruguay Link"
+     },
+     {
+      "tg": 2013,
+      "name": "13 Colonies"
+     },
+     {
+      "tg": 2350,
+      "name": "UK Chatterbox"
+     },
+     {
+      "tg": 2351,
+      "name": "CQ-UK"
+     },
+     {
+      "tg": 2352,
+      "name": "UK Chatterbox 2"
+     },
+     {
+      "tg": 2353,
+      "name": "UK Chatterbox 3"
+     },
+     {
+      "tg": 2358,
+      "name": "Digital England"
+     },
+     {
+      "tg": 2359,
+      "name": "Southern Fusion"
+     },
+     {
+      "tg": 23426,
+      "name": "FreeSTAR UK"
+     },
+     {
+      "tg": 89134,
+      "name": "CUMBRIA CQ"
+     }
+    ]
+   }
+  }
+ },
+ "freedmr-network": {
+  "status": "success",
+  "generated_at": "2026-09-07T05:54:18.888967Z",
+  "_dvref_metadata": {
+   "license": {
+    "name": "Creative Commons Attribution 4.0 International",
+    "spdx_id": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+   },
+   "attribution": "Reflector data provided by DVRef — https://dvref.com/",
+   "aup_url": "https://dvref.com/aup/"
+  },
+  "data": {
+   "network": {
+    "network": "FreeDMR Network",
+    "talkgroups": [
+     {
+      "tg": 334,
+      "name": "Mexico National"
+     },
+     {
+      "tg": 722,
+      "name": "Argentina"
+     },
+     {
+      "tg": 3166,
+      "name": "DVSwitch"
+     },
+     {
+      "tg": 3340,
+      "name": "AllSTar<>TGIF<>Echolink<>M17"
+     },
+     {
+      "tg": 3341,
+      "name": "XE1 Mexico"
+     },
+     {
+      "tg": 3342,
+      "name": "XE2 Mexico"
+     },
+     {
+      "tg": 3343,
+      "name": "XE3 Mexico"
+     },
+     {
+      "tg": 7221,
+      "name": "Red Delta Victor"
+     },
+     {
+      "tg": 22200,
+      "name": "FreeDMR IT"
+     },
+     {
+      "tg": 23525,
+      "name": "Extended Freedom Network"
+     },
+     {
+      "tg": 33455,
+      "name": "Experimentation Mexico"
+     }
+    ]
+   }
+  }
+ }
+}

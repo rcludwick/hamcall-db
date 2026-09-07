@@ -14,7 +14,12 @@ import polars as pl
 
 from hamcall_db.history import HISTORY_SCHEMA_COLUMNS, HistoryRow
 from hamcall_db.models import SCHEMA_COLUMNS, Record
-from hamcall_db.reflectors import REFLECTOR_SCHEMA_COLUMNS, ReflectorRecord
+from hamcall_db.reflectors import (
+    REFLECTOR_SCHEMA_COLUMNS,
+    TALKGROUP_SCHEMA_COLUMNS,
+    ReflectorRecord,
+    TalkgroupRecord,
+)
 from hamcall_db.sources.padus_grids import PARK_GRID_SCHEMA_COLUMNS, ParkGridRecord
 from hamcall_db.sources.pota import PARK_SCHEMA_COLUMNS, ParkRecord
 from hamcall_db.sources.sota import SUMMIT_SCHEMA_COLUMNS, SummitRecord
@@ -207,6 +212,32 @@ def write_reflectors_parquet(reflectors: Iterable[ReflectorRecord], out_path: Pa
     """
     rows = [asdict(r) for r in reflectors]
     frame = pl.DataFrame(rows, schema=_REFLECTOR_SCHEMA)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    frame.write_parquet(out_path)
+    return frame.height
+
+
+# DMR talkgroups (hdb-refl-dmrtg): a CHILD table of the reflector directory, in its own
+# file for the same reason the park grids are — one row per (system, tg), which does not
+# fit beside one row per server without multiplying the server rows by every talkgroup
+# its network publishes. Same CC BY 4.0 terms as the reflector rows, and the same
+# absolute bar on mixing either into the CC BY-NC artifacts.
+_TALKGROUP_SCHEMA: dict[str, pl.DataType] = {
+    col: (pl.Int64 if col == "tg" else pl.Utf8) for col in TALKGROUP_SCHEMA_COLUMNS
+}
+
+
+def write_dmr_talkgroups_parquet(talkgroups: Iterable[TalkgroupRecord], out_path: Path) -> int:
+    """Write `TalkgroupRecord`s to `out_path` as Parquet. Returns the row count.
+
+    SEPARATE CC BY 4.0 artifact (hamcall-db-reflectors-dmr-talkgroups-YYYY-MM-DD.parquet):
+    one row per (system, tg). `synced_at` is per ROW rather than per file because the
+    build refreshes a rotating slice of networks a night, so two rows in the same file
+    are routinely days apart in freshness — a single file-level date would be a lie about
+    most of them.
+    """
+    rows = [asdict(t) for t in talkgroups]
+    frame = pl.DataFrame(rows, schema=_TALKGROUP_SCHEMA)
     out_path.parent.mkdir(parents=True, exist_ok=True)
     frame.write_parquet(out_path)
     return frame.height

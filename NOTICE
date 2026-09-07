@@ -254,7 +254,11 @@ terms, which means:
     DISABLED BY DEFAULT — opt-in only.)
 
 11. DVRef — digital-voice reflector directory (SEPARATE CC BY 4.0 file)
-   Coverage: M17 (mrefd), YSF, NXDN, P25, URF and XRF reflector listings.
+   Coverage: M17 (mrefd), YSF, NXDN, P25 and URF reflector listings; the DMR
+             networks endpoint (published as one row per master server); and
+             per-network DMR TALKGROUP lists, mirrored a rotating slice at a
+             time. DVRef's D-Star (REF/DCS/XRF) listings were retired upstream
+             on 2026-08-26 and are no longer a source here.
    Maintainer: Steve Miller, KC1AWV, and the DVRef team.
    License:  Creative Commons Attribution 4.0 International (CC BY 4.0).
              https://creativecommons.org/licenses/by/4.0/
