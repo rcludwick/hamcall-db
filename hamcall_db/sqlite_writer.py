@@ -709,9 +709,11 @@ def write_dmr_talkgroups_sqlite(talkgroups: Iterable[TalkgroupRecord], out_path:
 
     con = sqlite3.connect(out)
     try:
+        # Same-day rebuilds must never inherit a stale schema (the reflectors
+        # table learned this the hard way): drop and recreate, then fill.
+        con.execute("DROP TABLE IF EXISTS dmr_talkgroups")
         con.execute(_TALKGROUPS_DDL)
         con.execute(_TALKGROUPS_INDEX_DDL)
-        con.execute("DELETE FROM dmr_talkgroups")  # refresh: idempotent rebuild
         placeholders = ", ".join("?" for _ in TALKGROUP_SCHEMA_COLUMNS)
         con.executemany(
             f"INSERT INTO dmr_talkgroups ({', '.join(TALKGROUP_SCHEMA_COLUMNS)}) "
