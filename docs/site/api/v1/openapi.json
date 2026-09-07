@@ -350,7 +350,13 @@
                       "count": {
                         "type": "integer"
                       },
+                      "fetched": {
+                        "description": "When they were last successfully fetched from upstream. Lists are refreshed a rotating slice a night, so this moves while `generated` stands still \u2014 the gap is how long the list has been confirmed unchanged, not how stale it is.",
+                        "format": "date",
+                        "type": "string"
+                      },
                       "generated": {
+                        "description": "When this network's talkgroups last CHANGED.",
                         "format": "date",
                         "type": "string"
                       },
@@ -361,7 +367,8 @@
                     "required": [
                       "url",
                       "count",
-                      "generated"
+                      "generated",
+                      "fetched"
                     ],
                     "type": "object"
                   },
@@ -665,7 +672,7 @@
             "type": "integer"
           },
           "generated": {
-            "description": "Date this network's talkgroups were last fetched. Files are refreshed a rotating slice at a time, so expect a few days.",
+            "description": "Date this network's talkgroups last CHANGED \u2014 the file is byte-identical between changes. When it was last fetched is in the manifest, as `networks.dmr.talkgroups.<system>.fetched`.",
             "format": "date",
             "type": "string"
           },
@@ -690,11 +697,7 @@
             "type": "integer"
           },
           "source": {
-            "description": "Which importer produced the rows.",
-            "examples": [
-              "dvref"
-            ],
-            "type": "string"
+            "$ref": "#/components/schemas/Source"
           },
           "system": {
             "description": "The DMR network these talkgroups belong to.",
@@ -724,7 +727,7 @@
   },
   "externalDocs": {
     "description": "Design notes: why the shape is what it is.",
-    "url": "https://github.com/rcludwick/hamcall-db/blob/main/docs/REFLECTOR-API.md"
+    "url": "https://github.com/rcludwick/hamcall-db/blob/main/docs/site/reflectors/api.md"
   },
   "info": {
     "contact": {
@@ -798,7 +801,7 @@
     },
     "/reflectors/dmr/{system}/talkgroups.json": {
       "get": {
-        "description": "A mirror of DVRef's per-network talkgroup list, served without a token. Only the networks listed under `networks.dmr.talkgroups` in the manifest exist; the rest have not been mirrored yet. Talkgroups are refreshed a rotating slice of networks a night (172 networks against an hourly budget of 60 upstream), so a file can be a few days behind \u2014 `generated` says when it was last fetched, and `dial.talkgroups_url` on the server rows is upstream's always-current copy.",
+        "description": "A mirror of DVRef's per-network talkgroup list, served without a token. Only the networks listed under `networks.dmr.talkgroups` in the manifest exist; the rest have not been mirrored yet. Talkgroups are refreshed a rotating slice of networks a night (172 networks against an hourly budget of 60 upstream), so a file can be a few days behind. `generated` says when the list last changed and the manifest's `fetched` says when it was last confirmed; `dial.talkgroups_url` on the server rows is upstream's always-current copy.",
         "operationId": "getDmrTalkgroups",
         "parameters": [
           {

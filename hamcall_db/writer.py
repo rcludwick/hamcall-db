@@ -233,8 +233,8 @@ def write_dmr_talkgroups_parquet(talkgroups: Iterable[TalkgroupRecord], out_path
     SEPARATE CC BY 4.0 artifact (hamcall-db-reflectors-dmr-talkgroups-YYYY-MM-DD.parquet):
     one row per (system, tg). `synced_at` is per ROW rather than per file because the
     build refreshes a rotating slice of networks a night, so two rows in the same file
-    are routinely days apart in freshness — a single file-level date would be a lie about
-    most of them.
+    are routinely months apart in when their network last changed — a single file-level
+    date would be a lie about most of them.
     """
     rows = [asdict(t) for t in talkgroups]
     frame = pl.DataFrame(rows, schema=_TALKGROUP_SCHEMA)

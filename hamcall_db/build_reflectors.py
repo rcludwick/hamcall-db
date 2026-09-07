@@ -6,7 +6,7 @@ must never be merged into the callsign dataset. See :mod:`hamcall_db.reflectors`
 
     uv run hamcall-db-reflectors --out docs/site/api/v1
 
-Writes the versioned static API described by ``docs/REFLECTOR-API.md`` — a manifest, one
+Writes the versioned static API described by ``docs/site/reflectors/api.md`` — a manifest, one
 file with every reflector in it, a file per network, and the generated OpenAPI contract.
 
 Sources per network:
@@ -47,8 +47,10 @@ from hamcall_db.reflectors import (
     merge_by_id,
     network_document,
     read_talkgroup_documents,
+    read_talkgroup_fetched,
     records_from_document,
     talkgroup_document,
+    talkgroup_json,
     talkgroup_path,
     talkgroups_from_document,
     write_api,
@@ -83,6 +85,10 @@ DSTAR_ALIAS_ATTRIBUTION = (
     "REF and DCS reflector names from the Pi-Star DPlus and DCS host files "
     "(http://www.pistar.uk/downloads/)."
 )
+
+# What DVRef is called in a published document's `source` block. One spelling for the
+# reflector lists and the talkgroup mirrors alike.
+DVREF_SOURCE_NAME = "DVRef"
 
 XLX_ATTRIBUTION = (
     "XLX reflector data from the XLX registry maintained by Luc Engelmann, LX1IQ "
@@ -148,14 +154,12 @@ def _source_counts(document: dict[str, object] | None) -> dict[str, int]:
 # --- DMR talkgroups: a rotating slice, oldest first (hdb-refl-dmrtg) ---------------
 
 
-def _fetched(document: dict[str, object] | None) -> date | None:
-    """When this talkgroup mirror was last fetched, per the file itself.
+def _as_date(stamp: object) -> date | None:
+    """An ISO date string as a date, or None for anything unparsable.
 
-    The rotation's state lives in the PUBLISHED output and nowhere else: no side-car
-    file to fall out of sync with what was actually committed, and a fresh checkout
-    resumes the rotation exactly where the last build left it.
+    A hand-edited or truncated stamp reads as "never fetched", so the network is
+    refetched rather than trusted and skipped.
     """
-    stamp = document.get("generated") if document else None
     if not isinstance(stamp, str):
         return None
     try:
@@ -166,7 +170,7 @@ def _fetched(document: dict[str, object] | None) -> date | None:
 
 def talkgroup_slice(
     systems: Sequence[str],
-    published: Mapping[str, dict[str, object]],
+    fetched: Mapping[str, str],
     *,
     today: date,
     limit: int = TALKGROUP_SLICE,
@@ -178,25 +182,30 @@ def talkgroup_slice(
     covered in roughly three nights against an hourly budget of 60 requests, and a newly
     listed network gets its list on its first or second night.
 
-    A file younger than ``min_age_days`` is skipped even when the slice reaches it. That
-    only happens when fewer than ``limit`` networks are stale, and it is what stops a
-    second build on the same day rewriting every file's date for nothing.
+    ``fetched`` is when each network was last successfully FETCHED, read out of the
+    published manifest. Not when its list last CHANGED: a list that never changes would
+    otherwise stay permanently "oldest" and be refetched every single night, starving
+    every other network out of the rotation.
+
+    A network fetched within ``min_age_days`` is skipped even when the slice reaches it.
+    That only happens when fewer than ``limit`` networks are stale, and it is what stops
+    a second build on the same day spending requests to confirm what it just confirmed.
     """
     ordered = sorted(
         (
             system
             for system in systems
-            if not _too_young(published.get(system), today=today, min_age_days=min_age_days)
+            if not _fetched_recently(fetched.get(system), today=today, min_age_days=min_age_days)
         ),
         # date.min sorts a never-fetched network to the front; the name is a tiebreak so
         # the choice is deterministic rather than dict-order.
-        key=lambda system: (_fetched(published.get(system)) or date.min, system),
+        key=lambda system: (_as_date(fetched.get(system)) or date.min, system),
     )
     return ordered[:limit]
 
 
-def _too_young(document: dict[str, object] | None, *, today: date, min_age_days: int) -> bool:
-    fetched = _fetched(document)
+def _fetched_recently(stamp: object, *, today: date, min_age_days: int) -> bool:
+    fetched = _as_date(stamp)
     return fetched is not None and (today - fetched).days < min_age_days
 
 
@@ -219,9 +228,27 @@ def _systems_with_servers(document: dict[str, object] | None) -> list[str]:
     )
 
 
+def _published_count(document: dict[str, object] | None) -> int:
+    """How many talkgroups the published mirror holds, or 0 when there is none."""
+    count = document.get("count") if document else None
+    return count if isinstance(count, int) and not isinstance(count, bool) else 0
+
+
+def _unchanged(document: dict[str, object] | None, rows: Sequence[TalkgroupRecord]) -> bool:
+    """Whether a freshly fetched list is exactly what the published file already says.
+
+    Compared on the published rows, not on the envelope, because the envelope carries
+    dates and the whole question here is whether a date should move at all.
+    """
+    if not document:
+        return False
+    return document.get("talkgroups") == [talkgroup_json(record) for record in rows]
+
+
 def _refresh_talkgroups(
     systems: Sequence[str],
     documents: dict[str, dict[str, object]],
+    fetched: dict[str, str],
     work_dir: Path,
     *,
     today: date,
@@ -229,22 +256,28 @@ def _refresh_talkgroups(
 ) -> tuple[list[str], list[str]]:
     """Refetch tonight's slice of talkgroup lists, updating ``documents`` in place.
 
-    Returns (refreshed, failed). Every network NOT in the slice keeps the document it
-    already has, which is the whole point — this is keep-last-good applied 111 times.
+    Returns (changed, failed) — the networks whose PUBLISHED FILE moved, which is not
+    the same as the networks that were fetched. A refetch that finds the same rows
+    records the fetch in ``fetched`` and leaves the file untouched, so the nightly diff
+    is the one manifest rather than forty mirrors saying nothing happened.
+
+    Every network NOT in the slice keeps the document it already has, which is the whole
+    point — this is keep-last-good applied 111 times.
 
     **A throttle stops the slice.** Upstream counts against an account budget the
     reflector lists draw on too, so once it says "slow down" every further request is
     both refused and charged; carrying on would turn one late night into a night where
     the directory itself cannot be fetched. Talkgroups are deliberately fetched last for
-    the same reason.
+    the same reason. A network whose fetch fails keeps its old ``fetched`` date, so it
+    is first in line again tomorrow.
     """
-    refreshed: list[str] = []
+    changed: list[str] = []
     failed: list[str] = []
     # Resolved here rather than as a default argument so the module attribute is what
     # binds — which is what lets a test substitute the whole endpoint.
     build_source = make_source or DvrefDmrTalkgroupSource
 
-    for system in talkgroup_slice(systems, documents, today=today):
+    for system in talkgroup_slice(systems, fetched, today=today):
         source = build_source(system)
         try:
             rows = list(source.parse(source.download(work_dir)))
@@ -252,7 +285,7 @@ def _refresh_talkgroups(
             wait = f" (retry after {exc.retry_after}s)" if exc.retry_after else ""
             typer.echo(
                 f"WARNING: dvref talkgroups throttled at {system}{wait} — "
-                f"stopping the slice for tonight; {len(refreshed)} refreshed",
+                f"stopping the slice for tonight; {len(changed)} changed",
                 err=True,
             )
             failed.append("dvref/talkgroups:throttled")
@@ -262,11 +295,16 @@ def _refresh_talkgroups(
             failed.append(f"dvref/talkgroups/{system}")
             continue
 
-        if not rows and system in documents:
-            # Same posture as the shrink guard: a list that had rows and now has none is
+        if not rows and _published_count(documents.get(system)):
+            # Same posture as the shrink guard: a list that HAD rows and now has none is
             # an upstream fault far more often than a network deleting every talkgroup.
-            # With no previous file, publish the empty list — it is what upstream says,
-            # and it stops this network being refetched every single night.
+            # The fetch is deliberately not recorded, so this network is first in line
+            # again tomorrow rather than waiting out the rotation on a suspect answer.
+            #
+            # Note the guard is on the previous COUNT, not on the file existing: a
+            # network whose list is genuinely empty answers with nothing every night,
+            # and treating that as a fault would refetch it forever — which is the one
+            # thing a 60-an-hour budget cannot afford.
             typer.echo(
                 f"WARNING: dvref talkgroups/{system} returned no rows; keeping the previous file",
                 err=True,
@@ -274,18 +312,24 @@ def _refresh_talkgroups(
             failed.append(f"dvref/talkgroups/{system}:empty")
             continue
 
+        # The fetch happened either way, and that is what the rotation turns on.
+        fetched[system] = source.synced_at or today.isoformat()
+        if _unchanged(documents.get(system), rows):
+            continue
+
         documents[system] = talkgroup_document(
             system,
             rows,
+            source_name=DVREF_SOURCE_NAME,
+            source_url=source.url,
             attribution=source.attribution,
-            # The FETCH date, and only this network's: a build stamp would rewrite all
-            # 111 files every night, which is exactly the churn this design avoids.
-            generated=source.synced_at or today.isoformat(),
-            source=source.name,
+            # The date the CONTENT moved, which is the only thing that should ever
+            # rewrite this file.
+            generated=fetched[system],
         )
-        refreshed.append(system)
+        changed.append(system)
 
-    return refreshed, failed
+    return changed, failed
 
 
 @app.command()
@@ -392,6 +436,14 @@ def build(
     # files that keep their previous copies, never the reflector list a client needs to
     # connect at all.
     talkgroup_documents = read_talkgroup_documents(out)
+    # The rotation's state, out of the published manifest. Falling back to each mirror's
+    # own content date means a manifest written before this field existed resumes the
+    # rotation conservatively instead of refetching all 111 networks at once.
+    talkgroup_fetched = {
+        system: document["generated"]
+        for system, document in talkgroup_documents.items()
+        if isinstance(document.get("generated"), str)
+    } | read_talkgroup_fetched(out)
     dmr_rows = dvref_records.get(DvrefDmrSource.network, [])
     # Which networks are worth a request: the ones with a server. Taken from tonight's
     # rows when the DMR endpoint answered, and from the published file when it did not —
@@ -400,12 +452,16 @@ def build(
         _load_existing(out, DvrefDmrSource.network)
     )
     if not skip_dvref and dmr_systems:
-        refreshed, talkgroup_failures = _refresh_talkgroups(
-            dmr_systems, talkgroup_documents, day_dir / "dvref", today=today
+        changed, talkgroup_failures = _refresh_talkgroups(
+            dmr_systems,
+            talkgroup_documents,
+            talkgroup_fetched,
+            day_dir / "dvref",
+            today=today,
         )
         failed.extend(talkgroup_failures)
         typer.echo(
-            f"dvref/talkgroups: {len(refreshed)} of {len(dmr_systems)} networks refreshed, "
+            f"dvref/talkgroups: {len(changed)} of {len(dmr_systems)} networks changed, "
             f"{len(talkgroup_documents)} mirrored in all"
         )
 
@@ -568,7 +624,13 @@ def build(
         )
         raise typer.Exit(code=1)
 
-    written = write_api(out, documents, talkgroups=talkgroup_documents, generated=today)
+    written = write_api(
+        out,
+        documents,
+        talkgroups=talkgroup_documents,
+        talkgroups_fetched=talkgroup_fetched,
+        generated=today,
+    )
     typer.echo(f"Wrote {len(written)} files to {out}")
 
     if dist is not None:

@@ -105,9 +105,12 @@ def _records(system: str, tmp_path: Path) -> list[TalkgroupRecord]:
 
 
 def _document(system: str, tmp_path: Path, *, generated: str = "2026-09-07") -> dict[str, object]:
+    source = _FixtureTalkgroupSource(system)
     return talkgroup_document(
         system,
-        _records(system, tmp_path),
+        list(source.parse(source.download(tmp_path))),
+        source_name="DVRef",
+        source_url=source.url,
         attribution=dvref.ATTRIBUTION,
         generated=generated,
     )
@@ -262,18 +265,27 @@ def test_the_slice_fits_inside_the_hourly_budget() -> None:
     assert 111 / TALKGROUP_SLICE < reflectors.CLIENT_REFRESH_DAYS
 
 
-def _published(**dates: str | None) -> dict[str, dict[str, object]]:
-    return {system: {"generated": stamp} for system, stamp in dates.items() if stamp}
-
-
 def test_the_slice_takes_the_oldest_first() -> None:
     picked = reflectors_build.talkgroup_slice(
         ["a", "b", "c"],
-        _published(a="2026-09-01", b="2026-08-20", c="2026-08-25"),
+        {"a": "2026-09-01", "b": "2026-08-20", "c": "2026-08-25"},
         today=TODAY,
         limit=2,
     )
     assert picked == ["b", "c"]
+
+
+def test_the_slice_turns_on_the_fetch_date_not_the_content_date() -> None:
+    # A list that never changes would otherwise stay permanently "oldest" and be
+    # refetched every single night, starving every other network out of the rotation.
+    # `fetched` is what the picker reads, and it moves whether or not the list did.
+    picked = reflectors_build.talkgroup_slice(
+        ["never-changes", "changed-recently"],
+        {"never-changes": TODAY.isoformat(), "changed-recently": "2026-08-01"},
+        today=TODAY,
+        limit=1,
+    )
+    assert picked == ["changed-recently"]
 
 
 def test_a_network_never_fetched_goes_first() -> None:
@@ -281,7 +293,7 @@ def test_a_network_never_fetched_goes_first() -> None:
     # queue behind 110 networks that already have a list.
     picked = reflectors_build.talkgroup_slice(
         ["known", "brand-new"],
-        _published(known="2026-01-01"),
+        {"known": "2026-01-01"},
         today=TODAY,
         limit=1,
     )
@@ -304,16 +316,14 @@ def test_a_file_younger_than_two_days_is_skipped_even_inside_the_slice() -> None
         "old": (TODAY - timedelta(days=TALKGROUP_MIN_AGE_DAYS)).isoformat(),
     }
     picked = reflectors_build.talkgroup_slice(
-        sorted(stamps), _published(**stamps), today=TODAY, limit=TALKGROUP_SLICE
+        sorted(stamps), stamps, today=TODAY, limit=TALKGROUP_SLICE
     )
     assert picked == ["old"]
 
 
 def test_a_stamp_that_is_not_a_date_is_treated_as_never_fetched() -> None:
-    # A hand-edited or truncated file must be refetched, not trusted and skipped.
-    assert reflectors_build.talkgroup_slice(
-        ["x"], {"x": {"generated": "yesterday-ish"}}, today=TODAY
-    ) == ["x"]
+    # A hand-edited or truncated manifest must be refetched, not trusted and skipped.
+    assert reflectors_build.talkgroup_slice(["x"], {"x": "yesterday-ish"}, today=TODAY) == ["x"]
 
 
 # --- refreshing: keep-last-good, 111 times ----------------------------------------
@@ -324,11 +334,13 @@ def _refresh(
     documents: dict[str, dict[str, object]],
     tmp_path: Path,
     *,
+    fetched: dict[str, str] | None = None,
     make_source=None,
 ) -> tuple[list[str], list[str]]:
     return reflectors_build._refresh_talkgroups(
         systems,
         documents,
+        fetched if fetched is not None else {},
         tmp_path,
         today=TODAY,
         make_source=make_source or _FixtureTalkgroupSource,
@@ -337,32 +349,59 @@ def _refresh(
 
 def test_a_refresh_writes_the_networks_it_fetched(tmp_path: Path) -> None:
     documents: dict[str, dict[str, object]] = {}
-    refreshed, failed = _refresh(["systemx", "freedmr-network"], documents, tmp_path)
-    assert sorted(refreshed) == ["freedmr-network", "systemx"]
+    fetched: dict[str, str] = {}
+    changed, failed = _refresh(["systemx", "freedmr-network"], documents, tmp_path, fetched=fetched)
+    assert sorted(changed) == ["freedmr-network", "systemx"]
     assert failed == []
+    assert documents["systemx"]["count"] == SYSTEMX_TALKGROUPS
+    assert sorted(fetched) == ["freedmr-network", "systemx"]
+
+
+def test_a_refetch_that_finds_nothing_new_leaves_the_file_alone(tmp_path: Path) -> None:
+    # The byte-stability rule, at its source: the file moves only when its CONTENT
+    # moves, and the fetch is recorded in the rotation state instead.
+    documents: dict[str, dict[str, object]] = {}
+    fetched: dict[str, str] = {}
+    _refresh(["systemx"], documents, tmp_path, fetched=fetched)
+    published = json.loads(json.dumps(documents["systemx"]))  # a deep copy to compare to
+
+    fetched["systemx"] = "2026-08-01"  # old enough to be picked again
+    changed, failed = _refresh(["systemx"], documents, tmp_path, fetched=fetched)
+
+    assert changed == []  # fetched, unchanged, so nothing to publish
+    assert failed == []
+    assert documents["systemx"] == published
+    assert fetched["systemx"] == TODAY.isoformat()  # but the fetch is recorded
+
+
+def test_a_changed_list_moves_the_files_own_date(tmp_path: Path) -> None:
+    documents = {
+        "systemx": {
+            "system": "systemx",
+            "generated": "2026-08-01",
+            "count": 1,
+            "talkgroups": [{"tg": 1, "name": "gone tomorrow"}],
+        }
+    }
+    changed, _ = _refresh(["systemx"], documents, tmp_path, fetched={"systemx": "2026-08-01"})
+    assert changed == ["systemx"]
+    assert documents["systemx"]["generated"] == TODAY.isoformat()
     assert documents["systemx"]["count"] == SYSTEMX_TALKGROUPS
 
 
 def test_a_network_outside_the_slice_keeps_the_file_it_has(tmp_path: Path) -> None:
     # This is the whole design: only a slice is refetched, and every other network
-    # republishes exactly what it already had, dated when it was actually fetched.
+    # republishes exactly what it already had.
     documents: dict[str, dict[str, object]] = {
-        "systemx": {"system": "systemx", "generated": TODAY.isoformat(), "count": 3},
-        "freedmr-network": {
-            "system": "freedmr-network",
-            "generated": "2026-08-01",
-            "count": 3,
-        },
+        "systemx": {"system": "systemx", "generated": "2026-01-01", "count": 3},
+        "freedmr-network": {"system": "freedmr-network", "generated": "2026-01-01", "count": 3},
     }
-    refreshed, failed = _refresh(sorted(documents), documents, tmp_path)
+    fetched = {"systemx": TODAY.isoformat(), "freedmr-network": "2026-08-01"}
+    changed, failed = _refresh(sorted(documents), documents, tmp_path, fetched=fetched)
 
-    assert refreshed == ["freedmr-network"]  # the stale one, and only it
+    assert changed == ["freedmr-network"]  # the one fetched long ago, and only it
     assert failed == []
-    assert documents["systemx"] == {
-        "system": "systemx",
-        "generated": TODAY.isoformat(),
-        "count": 3,
-    }
+    assert documents["systemx"] == {"system": "systemx", "generated": "2026-01-01", "count": 3}
     assert documents["freedmr-network"]["count"] == FREEDMR_TALKGROUPS
 
 
@@ -378,11 +417,17 @@ def test_a_throttle_stops_the_slice_for_the_night(tmp_path: Path) -> None:
             raise DvrefThrottled("slow down", retry_after=1114)
 
     documents: dict[str, dict[str, object]] = {}
-    refreshed, failed = _refresh(["a", "b", "c"], documents, tmp_path, make_source=_Throttled)
-    assert refreshed == []
+    fetched: dict[str, str] = {}
+    changed, failed = _refresh(
+        ["a", "b", "c"], documents, tmp_path, fetched=fetched, make_source=_Throttled
+    )
+    assert changed == []
     assert documents == {}
     assert attempted == ["a"]  # stopped after the first, not tried three times
     assert failed == ["dvref/talkgroups:throttled"]
+    # Nothing was fetched, so nothing moves down the queue: all three are first in line
+    # again tomorrow.
+    assert fetched == {}
 
 
 def test_one_networks_failure_does_not_stop_the_others(tmp_path: Path) -> None:
@@ -395,11 +440,18 @@ def test_one_networks_failure_does_not_stop_the_others(tmp_path: Path) -> None:
             return super().download(work_dir)
 
     documents: dict[str, dict[str, object]] = {}
-    refreshed, failed = _refresh(
-        ["freedmr-network", "systemx"], documents, tmp_path, make_source=_OneBadNetwork
+    fetched: dict[str, str] = {}
+    changed, failed = _refresh(
+        ["freedmr-network", "systemx"],
+        documents,
+        tmp_path,
+        fetched=fetched,
+        make_source=_OneBadNetwork,
     )
-    assert refreshed == ["systemx"]
+    assert changed == ["systemx"]
     assert failed == ["dvref/talkgroups/freedmr-network"]
+    # The failed one keeps no fetch date, so it is first in line again tomorrow.
+    assert sorted(fetched) == ["systemx"]
 
 
 def test_an_empty_response_keeps_a_list_that_had_rows(tmp_path: Path) -> None:
@@ -410,10 +462,38 @@ def test_an_empty_response_keeps_a_list_that_had_rows(tmp_path: Path) -> None:
             return json.dumps({"data": {"network": {"talkgroups": []}}}).encode("utf-8")
 
     documents = {"systemx": {"system": "systemx", "generated": "2026-08-01", "count": 21}}
-    refreshed, failed = _refresh(["systemx"], documents, tmp_path, make_source=_Empty)
-    assert refreshed == []
+    fetched: dict[str, str] = {}
+    changed, failed = _refresh(
+        ["systemx"], documents, tmp_path, fetched=fetched, make_source=_Empty
+    )
+    assert changed == []
     assert documents["systemx"]["count"] == 21
     assert failed == ["dvref/talkgroups/systemx:empty"]
+    assert fetched == {}  # a suspect answer does not count as a fetch
+
+
+def test_a_network_that_is_genuinely_empty_is_not_refetched_forever(tmp_path: Path) -> None:
+    # The guard above is on the previous COUNT, not on the file existing. A network
+    # whose list really is empty answers with nothing every night; treating that as a
+    # fault would put it back at the head of the queue every night, forever, which is
+    # the one thing a 60-an-hour budget cannot afford.
+    class _Empty(_FixtureTalkgroupSource):
+        def _fetch_fixture(self, url: str, token: str) -> bytes:
+            return json.dumps({"data": {"network": {"talkgroups": []}}}).encode("utf-8")
+
+    documents: dict[str, dict[str, object]] = {}
+    fetched: dict[str, str] = {}
+    _refresh(["quiet-net"], documents, tmp_path, fetched=fetched, make_source=_Empty)
+    published = json.loads(json.dumps(documents["quiet-net"]))
+
+    fetched["quiet-net"] = "2026-08-01"  # old enough to come round again
+    changed, failed = _refresh(
+        ["quiet-net"], documents, tmp_path, fetched=fetched, make_source=_Empty
+    )
+    assert changed == []
+    assert failed == []
+    assert documents["quiet-net"] == published  # still byte-identical
+    assert fetched["quiet-net"] == TODAY.isoformat()  # and it moves down the queue
 
 
 def test_a_first_empty_response_is_published_rather_than_refetched_nightly(
@@ -426,8 +506,8 @@ def test_a_first_empty_response_is_published_rather_than_refetched_nightly(
             return json.dumps({"data": {"network": {"talkgroups": []}}}).encode("utf-8")
 
     documents: dict[str, dict[str, object]] = {}
-    refreshed, failed = _refresh(["quiet-net"], documents, tmp_path, make_source=_Empty)
-    assert refreshed == ["quiet-net"]
+    changed, failed = _refresh(["quiet-net"], documents, tmp_path, make_source=_Empty)
+    assert changed == ["quiet-net"]
     assert documents["quiet-net"]["count"] == 0
     assert failed == []
 
@@ -443,15 +523,20 @@ def test_the_document_is_sorted_counted_and_credited(tmp_path: Path) -> None:
     assert document["count"] == len(rows) == SYSTEMX_TALKGROUPS
     assert document["system"] == "systemx"
     assert document["network"] == "dmr"
-    assert document["source"] == "dvref"
+    # The same {name, url} object every other document carries — one key, one shape.
+    assert document["source"] == {
+        "name": "DVRef",
+        "url": "https://dvref.com/api/v2/dmr/networks/systemx/talkgroups/",
+    }
+    assert set(document["source"]) == set(_dmr_document()["source"])
     assert document["license"] == reflectors.REFLECTOR_LICENSE
     assert "DVRef" in str(document["attribution"])
     assert document["modifications"]
 
 
-def test_generated_is_this_networks_fetch_date_and_nothing_elses(tmp_path: Path) -> None:
-    # Not a build stamp: a build stamp would rewrite all 111 files every night and
-    # produce a nightly commit saying nothing happened.
+def test_generated_is_when_this_networks_list_last_changed(tmp_path: Path) -> None:
+    # Not a build stamp, and not the fetch date either: either would rewrite files on a
+    # night when nothing about them moved. The fetch date lives in the manifest.
     document = _document("systemx", tmp_path, generated="2026-08-30")
     assert document["generated"] == "2026-08-30"
 
@@ -508,7 +593,13 @@ def test_each_network_is_published_as_its_own_file(tmp_path: Path) -> None:
 def test_the_manifest_says_which_networks_have_a_mirror(tmp_path: Path) -> None:
     # A client must be able to discover what exists without probing 111 URLs for 404s.
     out = tmp_path / "api"
-    write_api(out, {"dmr": _dmr_document()}, talkgroups=_mirrors(tmp_path), generated=TODAY)
+    write_api(
+        out,
+        {"dmr": _dmr_document()},
+        talkgroups=_mirrors(tmp_path),
+        talkgroups_fetched={"systemx": "2026-09-20", "freedmr-network": "2026-09-20"},
+        generated=TODAY,
+    )
 
     manifest = json.loads((out / "index.json").read_text(encoding="utf-8"))
     entry = manifest["networks"]["dmr"]["talkgroups"]["systemx"]
@@ -516,8 +607,41 @@ def test_the_manifest_says_which_networks_have_a_mirror(tmp_path: Path) -> None:
         "url": "reflectors/dmr/systemx/talkgroups.json",
         "count": SYSTEMX_TALKGROUPS,
         "generated": "2026-09-07",
+        # The rotation's state: when it was last CONFIRMED, as against when it last
+        # changed. This is the field that moves nightly, in this one small file.
+        "fetched": "2026-09-20",
     }
     assert "talkgroups" not in manifest["networks"].get("ysf", {})
+
+
+def test_a_mirror_with_no_recorded_fetch_falls_back_to_its_content_date(
+    tmp_path: Path,
+) -> None:
+    # A manifest written before `fetched` existed must not read as "never fetched" —
+    # that would refetch all 111 networks at once. The content date is the last moment
+    # the list was known current, so the rotation resumes from there.
+    out = tmp_path / "api"
+    write_api(out, {"dmr": _dmr_document()}, talkgroups=_mirrors(tmp_path), generated=TODAY)
+    entry = json.loads((out / "index.json").read_text("utf-8"))["networks"]["dmr"]["talkgroups"]
+    assert entry["systemx"]["fetched"] == entry["systemx"]["generated"]
+    assert reflectors.read_talkgroup_fetched(out)["systemx"] == "2026-09-07"
+
+
+def test_the_rotation_state_survives_a_round_trip_through_the_manifest(
+    tmp_path: Path,
+) -> None:
+    out = tmp_path / "api"
+    write_api(
+        out,
+        {"dmr": _dmr_document()},
+        talkgroups=_mirrors(tmp_path),
+        talkgroups_fetched={"systemx": "2026-09-20"},
+        generated=TODAY,
+    )
+    fetched = reflectors.read_talkgroup_fetched(out)
+    assert fetched["systemx"] == "2026-09-20"
+    assert fetched["freedmr-network"] == "2026-09-07"  # fell back to its content date
+    assert reflectors.read_talkgroup_fetched(tmp_path / "nothing-here") == {}
 
 
 def test_the_talkgroup_dates_do_not_move_the_whole_apis_stamp(tmp_path: Path) -> None:
@@ -568,14 +692,14 @@ def test_a_published_mirror_round_trips_back_into_rows(tmp_path: Path) -> None:
     assert (235, "235 Alive") in {(r.tg, r.name) for r in rows}
 
 
-def test_reading_the_published_tree_recovers_the_rotation_state(tmp_path: Path) -> None:
-    # The last-fetch date lives in the committed output and nowhere else, so a fresh
-    # checkout resumes the rotation exactly where the previous build left it.
+def test_reading_the_published_tree_recovers_the_mirrors(tmp_path: Path) -> None:
+    # The mirrors and the rotation's state both live in the committed output and
+    # nowhere else, so a fresh checkout resumes exactly where the last build left it.
     out = tmp_path / "api"
     write_api(out, {"dmr": _dmr_document()}, talkgroups=_mirrors(tmp_path), generated=TODAY)
     loaded = reflectors.read_talkgroup_documents(out)
     assert sorted(loaded) == ["freedmr-network", "systemx"]
-    assert reflectors_build._fetched(loaded["systemx"]) == date(2026, 9, 7)
+    assert reflectors_build._as_date(loaded["systemx"]["generated"]) == date(2026, 9, 7)
     assert reflectors.read_talkgroup_documents(tmp_path / "nothing-here") == {}
 
 
@@ -614,7 +738,7 @@ def test_the_openapi_publishes_the_talkgroup_path_and_the_manifest_map() -> None
     manifest = document["components"]["schemas"]["Manifest"]
     network = manifest["properties"]["networks"]["additionalProperties"]
     mirror = network["properties"]["talkgroups"]["additionalProperties"]
-    assert set(mirror["required"]) == {"url", "count", "generated"}
+    assert set(mirror["required"]) == {"url", "count", "generated", "fetched"}
     # And the envelope link, which is what points at all of it.
     envelope = document["components"]["schemas"]["Reflector"]["properties"]
     assert "talkgroups" in envelope
@@ -698,26 +822,70 @@ def test_a_rebuild_the_same_day_is_byte_identical(
     assert before == after
 
 
-def _age_the_mirrors(out: Path, stamp: str) -> None:
-    """Backdate every published mirror, so the next build's slice reaches all of them."""
-    for path in out.glob("reflectors/dmr/*/talkgroups.json"):
-        document = json.loads(path.read_text(encoding="utf-8"))
-        document["generated"] = stamp
-        path.write_text(json.dumps(document, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+def _age_the_fetch_dates(out: Path, stamp: str) -> None:
+    """Backdate the manifest's fetch dates, so the next build's slice reaches everything.
+
+    The rotation's state is in the manifest now, so this is where a "later night" is
+    simulated — the mirrors themselves are untouched, exactly as they would be on a real
+    night when nothing upstream changed.
+    """
+    path = out / "index.json"
+    manifest = json.loads(path.read_text(encoding="utf-8"))
+    for entry in manifest["networks"]["dmr"]["talkgroups"].values():
+        entry["fetched"] = stamp
+    path.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+
+def test_a_later_night_with_no_upstream_change_moves_only_the_fetch_dates(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    # THE BYTE-STABILITY GUARANTEE. Every mirror is stale enough to be refetched, and
+    # upstream returns exactly what it returned before. Not one of the 111 files may
+    # move; the only thing that changes anywhere is the fetch dates in the manifest,
+    # which is one small file that already moves whenever a count does.
+    out = tmp_path / "api"
+    _build(out, tmp_path, monkeypatch, dist=None)
+    _age_the_fetch_dates(out, "2026-08-01")
+
+    mirrors = out / "reflectors" / "dmr"
+    before_mirrors = {p: p.read_bytes() for p in sorted(mirrors.rglob("*.json"))}
+    before_manifest = json.loads((out / "index.json").read_text(encoding="utf-8"))
+
+    _build(out, tmp_path / "night2", monkeypatch, dist=None)
+
+    assert {p: p.read_bytes() for p in sorted(mirrors.rglob("*.json"))} == before_mirrors
+
+    after_manifest = json.loads((out / "index.json").read_text(encoding="utf-8"))
+    assert after_manifest != before_manifest
+    today = datetime.now(UTC).date().isoformat()
+    for system, entry in after_manifest["networks"]["dmr"]["talkgroups"].items():
+        was = before_manifest["networks"]["dmr"]["talkgroups"][system]
+        assert entry["fetched"] == today  # confirmed tonight
+        assert was["fetched"] == "2026-08-01"
+        # and nothing else about the entry moved, `generated` above all
+        assert {k: v for k, v in entry.items() if k != "fetched"} == {
+            k: v for k, v in was.items() if k != "fetched"
+        }
+
+    # The rest of the manifest is untouched too.
+    def _without_talkgroups(manifest: dict) -> dict:
+        copy = json.loads(json.dumps(manifest))
+        copy["networks"]["dmr"].pop("talkgroups")
+        return copy
+
+    assert _without_talkgroups(after_manifest) == _without_talkgroups(before_manifest)
 
 
 def test_a_throttled_night_keeps_every_mirror_it_had(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
     # Every mirror is stale enough to be in tonight's slice, and upstream refuses the
-    # first request. The lists must republish exactly as they stand rather than
-    # disappearing from the manifest — and the reflector directory, fetched first, is
-    # untouched either way.
+    # first request. Nothing moves at all — not the lists, and not the fetch dates
+    # either, so all of them are still first in line tomorrow.
     out = tmp_path / "api"
-    mirrors = out / "reflectors" / "dmr"
     _build(out, tmp_path, monkeypatch, dist=None)
-    _age_the_mirrors(out, "2026-08-01")
-    before = {p: p.read_bytes() for p in sorted(mirrors.rglob("*.json"))}
+    _age_the_fetch_dates(out, "2026-08-01")
+    before = {p: p.read_bytes() for p in sorted(out.rglob("*.json"))}
 
     attempts: list[str] = []
 
@@ -729,32 +897,36 @@ def test_a_throttled_night_keeps_every_mirror_it_had(
     _build(out, tmp_path / "night2", monkeypatch, talkgroups=_Throttled, dist=None)
 
     assert len(attempts) == 1  # stopped at the first refusal, not eight times
-    assert {p: p.read_bytes() for p in sorted(mirrors.rglob("*.json"))} == before
-    # And they are still advertised: a throttled night must not drop a network out of
-    # the manifest, which would read to a client as "this list no longer exists".
-    listed = json.loads((out / "index.json").read_text("utf-8"))["networks"]["dmr"]["talkgroups"]
-    assert {system: entry["count"] for system, entry in listed.items()} == {
-        json.loads(path.read_text("utf-8"))["system"]: json.loads(path.read_text("utf-8"))["count"]
-        for path in sorted(mirrors.rglob("*.json"))
-    }
-    assert all(entry["generated"] == "2026-08-01" for entry in listed.values())
+    assert {p: p.read_bytes() for p in sorted(out.rglob("*.json"))} == before
 
 
-def test_a_stale_mirror_is_refreshed_on_a_later_night(
+def test_a_changed_list_republishes_that_one_file(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
-    # The other half of the rotation: once a file is old enough, the slice reaches it
-    # and its `generated` moves to tonight.
+    # The other half of the contract: when upstream really does change, the file moves
+    # and its `generated` moves with it — and no other mirror is touched.
     out = tmp_path / "api"
     _build(out, tmp_path, monkeypatch, dist=None)
-    _age_the_mirrors(out, "2026-08-01")
-    _build(out, tmp_path / "night2", monkeypatch, dist=None)
+    _age_the_fetch_dates(out, "2026-08-01")
+    mirrors = out / "reflectors" / "dmr"
+    before = {p: p.read_bytes() for p in sorted(mirrors.rglob("*.json"))}
 
-    mirror = json.loads(
-        (out / "reflectors" / "dmr" / "systemx" / "talkgroups.json").read_text("utf-8")
-    )
-    assert mirror["generated"] == datetime.now(UTC).date().isoformat()
-    assert mirror["count"] == SYSTEMX_TALKGROUPS
+    class _OneNewTalkgroup(_FixtureTalkgroupSource):
+        def _fetch_fixture(self, url: str, token: str) -> bytes:
+            payload = _response(self.system)
+            if self.system == "systemx":
+                payload["data"]["network"]["talkgroups"].append({"tg": 4242, "name": "New"})
+            return json.dumps(payload).encode("utf-8")
+
+    _build(out, tmp_path / "night2", monkeypatch, talkgroups=_OneNewTalkgroup, dist=None)
+
+    changed = mirrors / "systemx" / "talkgroups.json"
+    document = json.loads(changed.read_text(encoding="utf-8"))
+    assert document["count"] == SYSTEMX_TALKGROUPS + 1
+    assert document["generated"] == datetime.now(UTC).date().isoformat()
+    assert {p: p.read_bytes() for p in sorted(mirrors.rglob("*.json")) if p != changed} == {
+        p: b for p, b in before.items() if p != changed
+    }
 
 
 def test_the_artifacts_carry_the_talkgroup_table(

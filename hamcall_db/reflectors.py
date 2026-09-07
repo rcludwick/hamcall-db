@@ -23,9 +23,10 @@ at publish time.
 
 Output shape — the v1 API
 -------------------------
-The published surface is static JSON served by GitHub Pages. ``docs/REFLECTOR-API.md``
-is the authoritative contract; this module implements it and generates the OpenAPI
-document from the same tables the emitter uses, so the two cannot drift::
+The published surface is static JSON served by GitHub Pages.
+``docs/site/reflectors/api.md`` is the authoritative contract; this module implements it
+and generates the OpenAPI document from the same tables the emitter uses, so the two
+cannot drift::
 
     site/api/v1/index.json                 manifest: networks, counts, licence, freshness
     site/api/v1/reflectors.json            every reflector, one file (the primary endpoint)
@@ -127,7 +128,7 @@ ATTRIBUTION_SEPARATOR = "\n"
 SCHEMA_VERSION = 1
 
 # The path segment the whole API lives under. A bump moves the path (/api/v2/...) and
-# the old path keeps serving until clients migrate — see docs/REFLECTOR-API.md.
+# the old path keeps serving until clients migrate — see docs/site/reflectors/api.md.
 API_VERSION = "v1"
 
 # Where the files are actually served from. Only used to fill OpenAPI's `servers`, so a
@@ -253,7 +254,11 @@ class TalkgroupRecord:
     system: str  # DMR network slug, e.g. 'freedmr-network'
     tg: int  # the talkgroup number a client dials
     name: str | None = None  # display name, as upstream words it
-    synced_at: str | None = None  # ISO date of the FETCH — how stale this mirror is
+    # The date this row is AS OF: the fetch date when the importer just read it, and the
+    # published file's `generated` — when that network's list last changed — when the
+    # artifacts rebuild it from what is being published. Both answer "as of when?"; the
+    # artifacts take the second because that is the date the file itself carries.
+    synced_at: str | None = None
 
     def __post_init__(self) -> None:
         # Same one choke point as the reflector rows: names are sysop-written free text
@@ -342,7 +347,7 @@ def _dial_json(record: ReflectorRecord) -> dict[str, object] | None:
     return dial
 
 
-# Envelope fields, in the order docs/REFLECTOR-API.md lists them. `network` is repeated
+# Envelope fields, in the order docs/site/reflectors/api.md lists them. `network` is repeated
 # on every entry rather than living once at document level, because reflectors.json
 # mixes networks — and an entry whose meaning depended on which file it came from would
 # be a trap for any client that caches rows individually.
@@ -471,18 +476,20 @@ def talkgroup_document(
     system: str,
     records: Sequence[TalkgroupRecord],
     *,
+    source_name: str,
+    source_url: str,
     attribution: str,
     generated: str,
-    source: str = "dvref",
 ) -> dict[str, object]:
     """Build the published mirror of ONE DMR network's talkgroup list.
 
-    ``generated`` is the date of the last successful FETCH for this network, and it is
-    passed in rather than derived from the clock because that is the whole freshness
-    contract here: 172 networks do not fit in an hourly budget of 60, so the build
-    refreshes a rotating slice a night and every other file must come back out
-    byte-identical (hdb-refl-dmrtg). A build-time stamp would rewrite all 111 files
-    every night and produce a commit that says nothing happened.
+    ``generated`` is the date this network's talkgroups last CHANGED, and it is passed
+    in rather than derived from the clock because that is the whole freshness contract
+    here: 172 networks do not fit in an hourly budget of 60, so the build refreshes a
+    rotating slice a night, and a night that refetches a list and finds it identical
+    must leave the file byte-identical (hdb-refl-dmrtg). When the list was last
+    FETCHED — the rotation's own state — lives in the manifest, which is one small file
+    that already moves whenever counts do.
 
     Rows are sorted by ``tg`` for the same reason — a stable order is what makes an
     unchanged rebuild byte-identical.
@@ -497,11 +504,10 @@ def talkgroup_document(
         "client_refresh_days": CLIENT_REFRESH_DAYS,
         **_license_block(),
         "attribution": attribution,
-        # The importer name, as on every published row — provenance, for debugging a
-        # wrong entry. Not the {name, url} object the reflector documents carry: this
-        # file mirrors ONE upstream endpoint, and `talkgroups_url` on the server rows is
-        # already the pointer to it.
-        "source": source,
+        # The same {name, url} object every other document carries — one key, one shape
+        # across the whole API. The url is this network's own upstream endpoint, which
+        # is also what `dial.talkgroups_url` points at on its server rows.
+        "source": {"name": source_name, "url": source_url},
         "count": len(ordered),
         "talkgroups": [talkgroup_json(record) for record in ordered],
     }
@@ -614,6 +620,7 @@ def manifest_document(
     documents: dict[str, dict[str, object]],
     *,
     talkgroups: Mapping[str, dict[str, object]] | None = None,
+    talkgroups_fetched: Mapping[str, str] | None = None,
     generated: date | None = None,
 ) -> dict[str, object]:
     """Build ``index.json`` from the per-network documents.
@@ -626,6 +633,12 @@ def manifest_document(
     under the ``dmr`` entry as a map of what exists — so a client discovers which
     networks have a mirrored talkgroup list, how many rows it holds and how fresh it is,
     without probing 111 URLs for 404s.
+
+    ``talkgroups_fetched`` is the rotation's state: when each of those networks was last
+    successfully FETCHED, as against ``generated``, which is when its talkgroups last
+    CHANGED. It lives here rather than in the 111 mirror files because this file already
+    moves whenever a count does — putting a nightly-moving date in each mirror would
+    churn forty files a night to say that nothing happened.
     """
     networks: dict[str, dict[str, object]] = {}
     for name in sorted(documents):
@@ -638,11 +651,15 @@ def manifest_document(
         }
 
     if talkgroups and TALKGROUP_NETWORK in networks:
+        fetched = talkgroups_fetched or {}
         networks[TALKGROUP_NETWORK]["talkgroups"] = {
             system: {
                 "url": talkgroup_path(system),
                 "count": talkgroups[system]["count"],
                 "generated": talkgroups[system]["generated"],
+                # A mirror written before the fetch dates were recorded falls back to
+                # its content date, which is the last moment we know it was current.
+                "fetched": str(fetched.get(system) or talkgroups[system]["generated"]),
             }
             for system in sorted(talkgroups)
         }
@@ -897,7 +914,9 @@ def openapi_document() -> dict[str, object]:
         },
         "servers": [{"url": API_BASE_URL, "description": "GitHub Pages"}],
         "externalDocs": {
-            "url": "https://github.com/rcludwick/hamcall-db/blob/main/docs/REFLECTOR-API.md",
+            "url": (
+                "https://github.com/rcludwick/hamcall-db/blob/main/docs/site/reflectors/api.md"
+            ),
             "description": "Design notes: why the shape is what it is.",
         },
         "paths": {
@@ -955,8 +974,9 @@ def openapi_document() -> dict[str, object]:
                         "in the manifest exist; the rest have not been mirrored yet. "
                         "Talkgroups are refreshed a rotating slice of networks a night "
                         "(172 networks against an hourly budget of 60 upstream), so a "
-                        "file can be a few days behind — `generated` says when it was "
-                        "last fetched, and `dial.talkgroups_url` on the server rows is "
+                        "file can be a few days behind. `generated` says when the list "
+                        "last changed and the manifest's `fetched` says when it was last "
+                        "confirmed; `dial.talkgroups_url` on the server rows is "
                         "upstream's always-current copy."
                     ),
                     "parameters": [
@@ -1054,9 +1074,32 @@ def openapi_document() -> dict[str, object]:
                                                 "generated": {
                                                     "type": "string",
                                                     "format": "date",
+                                                    "description": (
+                                                        "When this network's talkgroups "
+                                                        "last CHANGED."
+                                                    ),
+                                                },
+                                                "fetched": {
+                                                    "type": "string",
+                                                    "format": "date",
+                                                    "description": (
+                                                        "When they were last successfully "
+                                                        "fetched from upstream. Lists are "
+                                                        "refreshed a rotating slice a "
+                                                        "night, so this moves while "
+                                                        "`generated` stands still — the "
+                                                        "gap is how long the list has been "
+                                                        "confirmed unchanged, not how "
+                                                        "stale it is."
+                                                    ),
                                                 },
                                             },
-                                            "required": ["url", "count", "generated"],
+                                            "required": [
+                                                "url",
+                                                "count",
+                                                "generated",
+                                                "fetched",
+                                            ],
                                         },
                                     },
                                 },
@@ -1132,19 +1175,14 @@ def openapi_document() -> dict[str, object]:
                     "description": "One DMR network's mirrored talkgroup list.",
                     "properties": {
                         **meta,
-                        # Overrides the shared meaning: everywhere else `generated` is
-                        # the upstream data's date. Upstream stamps a talkgroups
-                        # response with the moment it was rendered, which says when we
-                        # asked rather than when the list changed — so here it is the
-                        # date of the last successful fetch, which is what tells a
-                        # client how stale this mirror is.
                         "generated": {
                             "type": "string",
                             "format": "date",
                             "description": (
-                                "Date this network's talkgroups were last fetched. Files "
-                                "are refreshed a rotating slice at a time, so expect a "
-                                "few days."
+                                "Date this network's talkgroups last CHANGED — the file is "
+                                "byte-identical between changes. When it was last fetched "
+                                "is in the manifest, as `networks.dmr.talkgroups.<system>."
+                                "fetched`."
                             ),
                         },
                         "network": {"type": "string", "const": TALKGROUP_NETWORK},
@@ -1154,11 +1192,7 @@ def openapi_document() -> dict[str, object]:
                             "examples": ["freedmr-network"],
                         },
                         "attribution": {"type": "string"},
-                        "source": {
-                            "type": "string",
-                            "description": "Which importer produced the rows.",
-                            "examples": ["dvref"],
-                        },
+                        "source": {"$ref": "#/components/schemas/Source"},
                         "talkgroups": {
                             "type": "array",
                             "items": {"$ref": "#/components/schemas/Talkgroup"},
@@ -1192,6 +1226,7 @@ def write_api(
     documents: dict[str, dict[str, object]],
     *,
     talkgroups: Mapping[str, dict[str, object]] | None = None,
+    talkgroups_fetched: Mapping[str, str] | None = None,
     generated: date | None = None,
 ) -> list[Path]:
     """Write the whole v1 API under ``out_dir``.
@@ -1207,7 +1242,15 @@ def write_api(
 
     written: list[Path] = []
     for name, document in (
-        (MANIFEST_FILE, manifest_document(documents, talkgroups=talkgroups, generated=generated)),
+        (
+            MANIFEST_FILE,
+            manifest_document(
+                documents,
+                talkgroups=talkgroups,
+                talkgroups_fetched=talkgroups_fetched,
+                generated=generated,
+            ),
+        ),
         (ALL_REFLECTORS_FILE, combined_document(documents, generated=generated)),
         (OPENAPI_FILE, openapi_document()),
     ):
@@ -1226,6 +1269,41 @@ def write_api(
         _write_json(path, (talkgroups or {})[system])
         written.append(path)
     return written
+
+
+def read_talkgroup_fetched(out_dir: Path) -> dict[str, str]:
+    """When each DMR network's talkgroups were last fetched, per the published manifest.
+
+    The rotation's state, and the reason it is not in the mirror files: a per-network
+    fetch date moves for forty networks a night whether or not any of them changed, and
+    forty rewritten files a night is exactly the no-op commit this design avoids. The
+    manifest is one small file that already moves when a count does.
+
+    A manifest that predates this field yields nothing, and the caller falls back to the
+    mirrors' own content dates — which are the last moment those lists were known
+    current, so the rotation resumes conservatively rather than refetching all 111.
+    """
+    path = out_dir / MANIFEST_FILE
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except OSError, json.JSONDecodeError:
+        return {}
+    if not isinstance(payload, dict):
+        return {}
+    networks = payload.get("networks")
+    entry = networks.get(TALKGROUP_NETWORK) if isinstance(networks, dict) else None
+    mirrors = entry.get("talkgroups") if isinstance(entry, dict) else None
+    if not isinstance(mirrors, dict):
+        return {}
+
+    out: dict[str, str] = {}
+    for system, mirror in mirrors.items():
+        if not isinstance(mirror, dict):
+            continue
+        stamp = mirror.get("fetched") or mirror.get("generated")
+        if isinstance(stamp, str) and stamp:
+            out[str(system)] = stamp
+    return out
 
 
 def read_talkgroup_documents(out_dir: Path) -> dict[str, dict[str, object]]:

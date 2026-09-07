@@ -169,7 +169,10 @@ GET /api/v1/reflectors/dmr/systemx/talkgroups.json
   "client_refresh_days": 7,
   "license": "CC BY 4.0",
   "attribution": "Reflector data provided by DVRef — https://dvref.com/",
-  "source": "dvref",
+  "source": {
+    "name": "DVRef",
+    "url": "https://dvref.com/api/v2/dmr/networks/systemx/talkgroups/"
+  },
   "count": 21,
   "talkgroups": [
     { "tg": 69, "name": "CQ North West UK" },
@@ -195,7 +198,8 @@ mirror, and `index.json` says which:
       "systemx": {
         "url": "reflectors/dmr/systemx/talkgroups.json",
         "count": 21,
-        "generated": "2026-09-07"
+        "generated": "2026-09-07",
+        "fetched": "2026-09-12"
       }
     }
   }
@@ -207,7 +211,7 @@ instead, or show none. Every `dmr` server row for a mirrored network also carrie
 same path in its envelope `talkgroups` field, so a client that has a row in hand never
 has to assemble a URL.
 
-#### Freshness: expect days, not hours
+#### Freshness: two dates, and why they differ
 
 **This is a rotating mirror, and it is the one endpoint here that is deliberately
 behind.** Talkgroups live behind a *per-network* upstream endpoint, and there are 172
@@ -215,21 +219,39 @@ networks (111 with servers) against an authenticated budget of **60 requests an 
 account** — shared with the six requests the rest of the nightly build already spends.
 A nightly sweep does not fit and would throttle the whole directory.
 
-So each night the build refetches the **40** networks whose lists are oldest, and every
-other network republishes the list it already had:
+So each night the build refetches the **40** networks fetched longest ago, and every
+other network republishes the list it already had. Every network comes round roughly
+**every three nights**, and a newly listed one gets its talkgroups on its first or
+second night.
 
-* every network is refreshed roughly **every three nights**, and a newly listed one gets
-  its talkgroups on its first or second night;
-* `generated` on a talkgroup file is the date **that network** was last fetched — not
-  the build date, and not the date any other file was fetched. It is the number to read
-  when you want to know how stale a list is;
-* a network's file is not refetched at all while it is less than two days old, so a
-  rebuild on the same day changes nothing;
-* if upstream throttles the build, the slice stops for the night and every list keeps
-  its previous copy. The reflector directories are fetched first, so talkgroups can
-  never starve them.
+That gives a client two dates, and they answer different questions:
 
-A talkgroup list changes far more slowly than that window, so a few days behind is not a
+| Date | Where | Means |
+|---|---|---|
+| `generated` | the talkgroup file | When this network's talkgroups last **changed**. |
+| `fetched` | `index.json`, in the `talkgroups` map | When they were last **confirmed** against upstream. |
+
+The gap between them is how long the list has been *known unchanged* — not how stale it
+is. A `generated` of three months ago and a `fetched` of last night means a settled
+network, not a neglected file.
+
+Splitting them is what keeps the files stable: a refetch that finds the same rows leaves
+the file byte-identical and only moves `fetched` in the manifest, so a night that
+changes nothing produces no diff in any of the 111 mirrors. (Putting the fetch date in
+each file instead would rewrite forty of them a night to say that nothing happened.)
+
+The rest of the rules follow from the budget:
+
+* a network is not refetched at all within two days of its last fetch, so a rebuild on
+  the same day spends no requests and changes nothing;
+* if upstream throttles the build, the slice stops for the night, every list keeps its
+  previous copy, and no `fetched` date moves — so the networks that missed their turn
+  are first in line tomorrow. The reflector directories are fetched first, so talkgroups
+  can never starve them;
+* a network that answers with an empty list where it previously had rows keeps its
+  previous file, and is retried the next night rather than waiting out the rotation.
+
+A talkgroup list changes far more slowly than this window, so a few days behind is not a
 practical problem. But if you need the current list to the minute — a client that is
 about to key up on a talkgroup a sysop added this morning — follow `talkgroups_url` to
 DVRef, which is exactly why that field stays on every row.
@@ -333,10 +355,10 @@ network already selected.
 that finds nothing new produces byte-identical files. A client comparing
 `generated` therefore sees movement only when the data actually moved.
 
-The one exception is a **DMR talkgroup file**, where `generated` is the date that
-network was last *fetched* — see "DMR talkgroups". It is a rotating mirror, so the fetch
-date is the only honest answer to "how stale is this?". The manifest's own `generated`
-deliberately ignores those dates: a rotation must not tell every client that the
+A **DMR talkgroup file** follows the same rule and adds a second date beside it: its
+`generated` is when that network's talkgroups last changed, and the manifest's `fetched`
+is when they were last confirmed — see "DMR talkgroups". The manifest's own top-level
+`generated` deliberately ignores both: a rotation must not tell every client that the
 directory changed on a night when no reflector did.
 
 **Cache for a week.** Reflector addresses change on a scale of weeks. Polling

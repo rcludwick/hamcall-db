@@ -134,18 +134,24 @@ the ones whose lists are OLDEST or missing. Every network turns over in roughly 
 nights and a newly listed one is mirrored on its first or second.
 
 **The rotation's state is the published output itself** — no side-car state file to fall
-out of sync with what was committed. Each mirror's `generated` is the date THAT network
-was last fetched, so a night refreshes ~40 files and leaves the rest byte-identical; a
-file younger than `TALKGROUP_MIN_AGE_DAYS` = 2 is skipped even when the slice reaches it,
-which is what makes a same-day rebuild produce no diff at all. Talkgroups are fetched
-LAST and a `DvrefThrottled` stops the slice for the night, so they can never starve the
-reflector lists a client needs to connect at all; a network that fails, or answers with
-an empty list where it previously had rows, republishes its previous file.
+out of sync with what was committed — and it is split from the content date on purpose.
+A mirror's own `generated` is when that network's talkgroups last CHANGED, so a refetch
+that finds the same rows leaves the file byte-identical; when it was last FETCHED lives
+in the manifest's `talkgroups` map as `fetched`, because `index.json` already moves
+whenever a count does and forty rewritten mirrors a night would say nothing. The slice
+picker reads `fetched` (a list that never changes would otherwise be permanently
+"oldest" and starve the rotation), and `TALKGROUP_MIN_AGE_DAYS` = 2 skips a network
+confirmed within two days. Talkgroups are fetched LAST and a `DvrefThrottled` stops the
+slice for the night — recording no fetch, so those networks are first in line tomorrow —
+which is how they can never starve the reflector lists a client needs to connect at all.
+A network that fails, or answers with an empty list where it previously had ROWS, keeps
+its previous file; a network whose list is genuinely empty answers empty every night and
+must NOT be treated as a fault, or it would be refetched forever.
 
 Published as one file per network, `api/v1/reflectors/dmr/<system>/talkgroups.json`
 (`{tg, name}` rows sorted by `tg`, CC BY 4.0 inline like every other file), and the
-manifest's `dmr` entry gained a `talkgroups` map of `{url, count, generated}` so a client
-discovers what exists instead of probing 111 URLs for 404s. Every `dmr` server row for a
+manifest's `dmr` entry gained a `talkgroups` map of `{url, count, generated, fetched}` so
+a client discovers what exists instead of probing 111 URLs for 404s. Every `dmr` server row for a
 mirrored network carries the same path in a new ENVELOPE field `talkgroups`;
 `dial.talkgroups_url` still points at DVRef, which stays canonical — the mirror is
 tokenless but days behind, and both facts are documented. Artifacts gained a

@@ -473,7 +473,7 @@ def test_parquet_artifact_round_trips(tmp_path: Path) -> None:
 
 
 # --- v1 entry shape: envelope + discriminated dial -------------------------------
-# docs/REFLECTOR-API.md is the contract these pin. The envelope is what you search and
+# docs/site/reflectors/api.md is the contract these pin. The envelope is what you search and
 # display; `dial` is what you connect with, and it differs per protocol because the
 # protocols genuinely differ.
 
