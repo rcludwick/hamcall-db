@@ -12,7 +12,9 @@ file with every reflector in it, a file per network, and the generated OpenAPI c
 Sources per network:
 
 * ``dstar`` — the XLX registry (:mod:`hamcall_db.sources.xlx`, ~892 reflectors, no
-  token), supplemented by DVRef's smaller D-Star list when a token is available.
+  token), supplemented by the Pi-Star DExtra and DPlus/DCS host files.
+* ``dmr`` — DVRef's DMR networks endpoint, flattened to one row per master SERVER
+  (:class:`hamcall_db.sources.dvref.DvrefDmrSource`).
 * everything else — DVRef (:mod:`hamcall_db.sources.dvref`, token required).
 
 Failure policy: **never publish an empty or sharply-shrunken list.** A network whose
@@ -24,7 +26,9 @@ an outage upstream must not translate into every client's reflector picker going
 from __future__ import annotations
 
 import json
+from collections.abc import Callable
 from datetime import UTC, datetime
+from functools import partial
 from pathlib import Path
 from typing import Annotated
 
@@ -48,6 +52,7 @@ from hamcall_db.sources.dvref import (
     API_ROOT,
     NETWORKS,
     DvrefAuthError,
+    DvrefDmrSource,
     DvrefSource,
     DvrefThrottled,
 )
@@ -181,19 +186,30 @@ def build(
         typer.echo(f"WARNING: xlx failed ({exc})", err=True)
         failed.append("xlx")
 
-    dvref_networks = {} if skip_dvref else NETWORKS
+    # DVRef, endpoint by endpoint. The DMR one is a different SHAPE — networks of
+    # servers, flattened to one row per server — but the same token, budget, cache
+    # and failure handling, so it goes through the same loop rather than a second
+    # copy of it. `segment` is the log/failure name, `network` the published one.
+    dvref_endpoints: list[tuple[str, str, Callable[[], DvrefSource | DvrefDmrSource]]] = []
+    if not skip_dvref:
+        dvref_endpoints = [
+            (segment, network, partial(DvrefSource, segment))
+            for segment, network in NETWORKS.items()
+        ]
+        dvref_endpoints.append(("dmr", DvrefDmrSource.network, DvrefDmrSource))
+
     dvref_records: dict[str, list[ReflectorRecord]] = {}
     dvref_credit: dict[str, str] = {}
-    for segment, network in dvref_networks.items():
+    for segment, network, make_source in dvref_endpoints:
         try:
-            source = DvrefSource(segment)
+            source = make_source()
             rows = list(source.parse(source.download(day_dir / "dvref")))
             dvref_records[network] = rows
             # Credit exactly as upstream words it — parse() lifts this out of the
             # response's own _dvref_metadata block.
             dvref_credit[network] = source.attribution
             attempted.setdefault(network, set()).add("dvref")
-            typer.echo(f"dvref/{segment}: {len(rows)} {network} reflectors")
+            typer.echo(f"dvref/{segment}: {len(rows)} {network} rows")
             # Upstream sets this only when something has changed. An empty list
             # WITH an explanation is not an outage, and the difference is
             # invisible unless the message is printed.
@@ -351,7 +367,7 @@ def build(
                 kept.append(network)
 
     # A network that failed entirely keeps whatever is already published.
-    for network in NETWORKS.values():
+    for network in (*NETWORKS.values(), DvrefDmrSource.network):
         if network in documents:
             continue
         existing = _load_existing(out, network)

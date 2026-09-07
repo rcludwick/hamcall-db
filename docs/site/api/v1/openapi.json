@@ -116,7 +116,7 @@
         "type": "object"
       },
       "DialMmdvm": {
-        "description": "MMDVM/DMR masters, which need per-user credentials the directory cannot carry.",
+        "description": "MMDVM/DMR master servers \u2014 one row per server, not per network \u2014 which need per-user credentials the directory cannot carry.",
         "properties": {
           "host": {
             "description": "Hostname or IP, verbatim from upstream.",
@@ -145,9 +145,28 @@
             },
             "type": "array"
           },
+          "system": {
+            "description": "Which DMR network this server belongs to \u2014 a talkgroup number means nothing without it.",
+            "examples": [
+              "freedmr-network"
+            ],
+            "type": "string"
+          },
+          "talkgroup": {
+            "description": "Reserved. Absent on every published row today: the directory does not mirror talkgroups, and `talkgroups_url` is where they live.",
+            "type": "integer"
+          },
           "talkgroups_url": {
             "description": "Where this master's talkgroup list is published.",
             "type": "string"
+          },
+          "timeslot": {
+            "description": "Reserved, and only meaningful alongside `talkgroup`.",
+            "enum": [
+              1,
+              2
+            ],
+            "type": "integer"
           }
         },
         "required": [

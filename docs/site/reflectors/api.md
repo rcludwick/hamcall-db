@@ -8,10 +8,9 @@ it, and clients (astar's network picker first) are written against it.
 
 Digital-voice reflector directories are scattered, each behind a different
 upstream with different terms, uptime and address formats. DVRef covers M17, YSF,
-NXDN, P25, URF and a small XRF set; the XLX registry covers D-Star properly; DMR
-is masters-plus-talkgroups somewhere else again. A client that wants a "pick a
-reflector" list should not have to speak six upstreams, hold an API token, or
-re-derive per-network naming rules.
+NXDN, P25, URF and DMR; the XLX registry covers D-Star properly. A client that
+wants a "pick a reflector" list should not have to speak six upstreams, hold an
+API token, or re-derive per-network naming rules.
 
 So hamcall-db does that once and publishes files. **No token, no account, no rate
 limit — it is JSON on a CDN.**
@@ -92,12 +91,45 @@ differs per protocol because the protocols genuinely differ.
 | `ysf` | ysf | — |
 | `nxdn`, `p25` | nxdn, p25 | — |
 | `urf` | urf | `modules` |
-| `mmdvm` | dmr | `requires`, `talkgroups_url` |
+| `mmdvm` | dmr | `system`, `requires`, `talkgroups_url`, `talkgroup`, `timeslot` |
 
 `requires` lists what the **operator** must supply and the directory therefore
 cannot: `["dmr_id", "password"]`. This is how DMR fits without the schema
 pretending a public file can carry a per-user credential. A client seeing
 `requires` should prompt rather than attempt a connect.
+
+### DMR
+
+**A DMR row is one master SERVER, not one network.** Upstream lists networks, each
+holding zero or more servers; a network is an organisation, and what you actually
+point a hotspot at is a server with a host and a port. So the server is the row, its
+`id` is the server's slug, and a network with no servers publishes nothing.
+
+**`system` is load-bearing.** It names the DMR network the server belongs to
+(`freedmr-network`, `systemx`, …), and without it the rest is not enough to talk to
+anybody: a talkgroup number is only defined *within* one network, so TG 235 on one
+system is not TG 235 on another. Treat `system` as part of the answer to "what did I
+just connect to", not as a label.
+
+**Talkgroups are linked, not mirrored.** `talkgroups_url` points at DVRef's list for
+that network, reachable with a token or on their anonymous tier. This directory does
+not copy them: they live behind a per-network endpoint and there are 172 networks
+against an hourly budget of 60, so mirroring is a rotating job rather than a nightly
+sweep, and it has not been built yet.
+
+**`talkgroup` and `timeslot` are reserved.** They are in the contract and absent from
+every published row today, so that talkgroup rows can be added later without a version
+bump — a client can only ignore-what-it-does-not-know if the field was declared.
+`timeslot` is `1` or `2`, and only means anything alongside a `talkgroup`.
+
+**Servers with no usable address are listed without a `dial`.** Upstream's `dns` column
+is free text and is not always a host — several entries carry a dashboard URL
+(`https://apollo.dmr.uk.pe/dashboard/`) or a host with a path. Anything that is not a
+bare hostname or IP literal is refused, the numeric address is used instead, and if
+there is none the row is published with no `dial` at all rather than an address a client
+cannot resolve. Note the consequence: `system`, `requires` and `talkgroups_url` live
+*inside* `dial`, so such a row does not carry them — its `sponsor` and `dashboard` are
+what identify the network it belongs to.
 
 **`urf` is the one variant without a required `port`.** Upstream publishes none for any
 of the 89 URF reflectors, and a urfd speaks several protocols at once, so there is no

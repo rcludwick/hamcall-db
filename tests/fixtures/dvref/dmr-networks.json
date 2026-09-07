@@ -1,0 +1,511 @@
+{
+ "status": "success",
+ "generated_at": "2026-09-07T01:56:04.303504Z",
+ "_dvref_metadata": {
+  "license": {
+   "name": "Creative Commons Attribution 4.0 International",
+   "spdx_id": "CC-BY-4.0",
+   "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "attribution": "Reflector data provided by DVRef — https://dvref.com/",
+  "aup_url": "https://dvref.com/aup/"
+ },
+ "data": {
+  "networks": [
+   {
+    "network": "AmComm",
+    "slug": "amcomm",
+    "tglist": "https://dvref.com/api/v2/dmr/networks/amcomm/talkgroups/",
+    "url": "https://amcomm.network",
+    "sponsor": "Amateur Communications Network",
+    "servers": [
+     {
+      "server": "3101 - Alabama",
+      "slug": "amcomm-server-3101-alabama",
+      "dns": "3101.amcomm.network",
+      "ipv4": null,
+      "ipv6": null,
+      "port": 62031,
+      "country": "US"
+     },
+     {
+      "server": "31010 - Seattle",
+      "slug": "amcomm-server-31010-seattle",
+      "dns": "31010.amcomm.network",
+      "ipv4": null,
+      "ipv6": null,
+      "port": 62031,
+      "country": "US"
+     },
+     {
+      "server": "31011 - Alabama Hotspot",
+      "slug": "amcomm-server-31011-alabama-hotspot",
+      "dns": "31011.amcomm.network",
+      "ipv4": null,
+      "ipv6": null,
+      "port": 62031,
+      "country": "US"
+     },
+     {
+      "server": "3102 - Atlanta",
+      "slug": "amcomm-server-3102-atlanta",
+      "dns": "3102.amcomm.network",
+      "ipv4": null,
+      "ipv6": null,
+      "port": 62031,
+      "country": "US"
+     },
+     {
+      "server": "3103 - Chicago",
+      "slug": "amcomm-server-3103-chicago",
+      "dns": "3103.amcomm.network",
+      "ipv4": null,
+      "ipv6": null,
+      "port": 62031,
+      "country": "US"
+     },
+     {
+      "server": "3104 - Dallas",
+      "slug": "amcomm-server-3104-dallas",
+      "dns": "3104.amcomm.network",
+      "ipv4": null,
+      "ipv6": null,
+      "port": 62031,
+      "country": "US"
+     },
+     {
+      "server": "3105 - Los Angeles",
+      "slug": "amcomm-server-3105-los-angeles",
+      "dns": "3105.amcomm.network",
+      "ipv4": null,
+      "ipv6": null,
+      "port": 62031,
+      "country": "US"
+     },
+     {
+      "server": "31051 - Arkansas",
+      "slug": "amcomm-server-31051-arkansas",
+      "dns": "31051.amcomm.network",
+      "ipv4": null,
+      "ipv6": null,
+      "port": 62031,
+      "country": "US"
+     },
+     {
+      "server": "3106 - Miami",
+      "slug": "amcomm-server-3106-miami",
+      "dns": "3106.amcomm.network",
+      "ipv4": null,
+      "ipv6": null,
+      "port": 62031,
+      "country": "US"
+     },
+     {
+      "server": "3108 - New Jersey",
+      "slug": "amcomm-server-3108-new-jersey",
+      "dns": "3108.amcomm.network",
+      "ipv4": null,
+      "ipv6": null,
+      "port": 62031,
+      "country": "US"
+     },
+     {
+      "server": "3109 - Washington D.C.",
+      "slug": "amcomm-server-3109-washington-dc",
+      "dns": "3109.amcomm.network",
+      "ipv4": null,
+      "ipv6": null,
+      "port": 62031,
+      "country": "US"
+     }
+    ],
+    "description": "<p>The <strong>AmComm DMR Networ</strong>k offers several compelling reasons for amateur radio enthusiasts to join:</p>\r\n<p>&nbsp;</p>\r\n<ul>\r\n<li><strong>Global Connectivity</strong>: With multiple interconnected servers worldwide, you can communicate seamlessly across continents.</li>\r\n<li><strong>Community Focus</strong>: It was created by ham radio operators who value respect and camaraderie, fostering a friendly and inclusive environment.</li>\r\n<li><strong>Ease of Use</strong>: No account is needed&mdash;just a callsign, DMR ID, and a connection to one of our master servers.</li>\r\n<li><strong>Learning Opportunities</strong>: It's a great platform to experiment and learn more about amateur radio and enhance your skills.</li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<p>If you're into amateur radio, this is a fantastic way to connect and grow!&nbsp; Need help? Please Call 888-944-4334 Ext. 103 for any help you need.</p>\r\n<p>&nbsp;</p>\r\n<p><em><sup>This listing is maintained by the Ham Radio Village.&nbsp; E-Mail ai0j@hamvillage.org with any questions or corrections.&nbsp;</sup></em></p>"
+   },
+   {
+    "network": "BM2222",
+    "slug": "bm2222",
+    "tglist": "https://dvref.com/api/v2/dmr/networks/bm2222/talkgroups/",
+    "url": "https://bm2222.dmrbrescia.it",
+    "sponsor": "dmrbrescia.it",
+    "servers": [],
+    "description": ""
+   },
+   {
+    "network": "DMRplus IPSC2 UK",
+    "slug": "dmrplus-ipsc2-uk",
+    "tglist": "https://dvref.com/api/v2/dmr/networks/dmrplus-ipsc2-uk/talkgroups/",
+    "url": "https://ipsc2.freestar.network/ipsc",
+    "sponsor": "FreeSTAR Network DMR+",
+    "servers": [
+     {
+      "server": "DMR+ United Kingdom",
+      "slug": "dmrplus-ipsc2-uk-server-dmr-united-kingdom",
+      "dns": "ipsc2.freestar.network/ipsc",
+      "ipv4": "185.169.252.213",
+      "ipv6": null,
+      "port": 55555,
+      "country": "GB"
+     }
+    ],
+    "description": "<p>The UK Official DMRplus IPSC2 Master for the United Kingdom.</p>"
+   },
+   {
+    "network": "FreeDMR Network",
+    "slug": "freedmr-network",
+    "tglist": "https://dvref.com/api/v2/dmr/networks/freedmr-network/talkgroups/",
+    "url": "https://www.freedmr.uk/index.php/server-status/",
+    "sponsor": "FreeDMR",
+    "servers": [
+     {
+      "server": "FreeDMR Cymru",
+      "slug": "freedmr-network-server-freedmr-cymru",
+      "dns": "cy.freedmr.cymru",
+      "ipv4": "44.31.91.234",
+      "ipv6": null,
+      "port": 62031,
+      "country": "GB"
+     },
+     {
+      "server": "FreeDMR EU",
+      "slug": "freedmr-network-server-freedmr-eu",
+      "dns": "freedmreu.gb7fr.org.uk",
+      "ipv4": null,
+      "ipv6": null,
+      "port": 62031,
+      "country": "FR"
+     },
+     {
+      "server": "FreeDMR Greece",
+      "slug": "freedmr-network-server-freedmr-greece",
+      "dns": "dmr.freedmr.gr",
+      "ipv4": "185.243.214.85",
+      "ipv6": null,
+      "port": 62031,
+      "country": "GR"
+     },
+     {
+      "server": "FreeDMR ITALY",
+      "slug": "freedmr-network-server-freedmr-italy",
+      "dns": "hotspot.freedmr.it",
+      "ipv4": "44.31.102.137",
+      "ipv6": null,
+      "port": 62031,
+      "country": "IT"
+     },
+     {
+      "server": "FreeDMR UK Offical",
+      "slug": "freedmr-network-server-freedmr-uk-offical",
+      "dns": "hotspots.freedmr.uk",
+      "ipv4": null,
+      "ipv6": null,
+      "port": 62031,
+      "country": "GB"
+     },
+     {
+      "server": "FreeDMR_Argentina",
+      "slug": "freedmr-network-server-freedmr_argentina",
+      "dns": "master.freedmr.com.ar",
+      "ipv4": null,
+      "ipv6": null,
+      "port": 62031,
+      "country": "AR"
+     },
+     {
+      "server": "FreeDMR_Australia-VK44NET",
+      "slug": "freedmr-network-server-freedmr_australia-vk44net",
+      "dns": "srv-dmr1.vk44.net",
+      "ipv4": null,
+      "ipv6": null,
+      "port": 62031,
+      "country": "AU"
+     },
+     {
+      "server": "FreeDMR_Brasil",
+      "slug": "freedmr-network-server-freedmr_brasil",
+      "dns": "freedmr.network365.com.br",
+      "ipv4": null,
+      "ipv6": null,
+      "port": 62031,
+      "country": "BR"
+     },
+     {
+      "server": "FreeDMR_Colombia",
+      "slug": "freedmr-network-server-freedmr_colombia",
+      "dns": "freedmr.hk4rau.com",
+      "ipv4": null,
+      "ipv6": null,
+      "port": 62031,
+      "country": "CO"
+     },
+     {
+      "server": "FreeDMR_Mexico",
+      "slug": "freedmr-network-server-freedmr_mexico",
+      "dns": "freedmr.xe1e.net",
+      "ipv4": null,
+      "ipv6": null,
+      "port": 62031,
+      "country": "MX"
+     },
+     {
+      "server": "FreeDMR_NewZealand",
+      "slug": "freedmr-network-server-freedmr_newzealand",
+      "dns": "freedmr.dvnz.nz",
+      "ipv4": null,
+      "ipv6": null,
+      "port": 62031,
+      "country": "NZ"
+     },
+     {
+      "server": "FreeDMR_Nicaragua",
+      "slug": "freedmr-network-server-freedmr_nicaragua",
+      "dns": "freedmr.gremnic.org",
+      "ipv4": null,
+      "ipv6": null,
+      "port": 62031,
+      "country": "NI"
+     },
+     {
+      "server": "FreeDMR_OZ-DMR-AUSTRALIA",
+      "slug": "freedmr-network-server-freedmr_oz-dmr-australia",
+      "dns": "australia.oz-dmr.network",
+      "ipv4": "172.105.188.159",
+      "ipv6": null,
+      "port": 62031,
+      "country": "AU"
+     },
+     {
+      "server": "FreeDMR_OZ-DMR-AUSTRALIA_REPEATER",
+      "slug": "freedmr-network-server-freedmr_oz-dmr-australia_repeater",
+      "dns": "repeater.australia.oz-dmr.network",
+      "ipv4": "172.105.187.182",
+      "ipv6": null,
+      "port": 62031,
+      "country": "AU"
+     },
+     {
+      "server": "FreeDMR_OZ-DMR-UNITED-KINGDOM",
+      "slug": "freedmr-network-server-freedmr_oz-dmr-united-kingdom",
+      "dns": "england.oz-dmr.network",
+      "ipv4": "212.71.252.50",
+      "ipv6": null,
+      "port": 62031,
+      "country": "GB"
+     },
+     {
+      "server": "FreeDMR_USA Central",
+      "slug": "freedmr-network-server-freedmr_usa-central",
+      "dns": "usacentral.ddns.net",
+      "ipv4": "161.35.6.182",
+      "ipv6": null,
+      "port": 62031,
+      "country": "US"
+     },
+     {
+      "server": "FreeDMR_USA-Florida",
+      "slug": "freedmr-network-server-freedmr_usa-florida",
+      "dns": "freedmr.dvswitch.org",
+      "ipv4": "129.158.217.141",
+      "ipv6": null,
+      "port": 62031,
+      "country": "US"
+     },
+     {
+      "server": "FreeDMR_UnitedKingdom-Scotland",
+      "slug": "freedmr-network-server-freedmr_unitedkingdom-scotland",
+      "dns": "scotland.freedmr.co.uk",
+      "ipv4": "44.32.96.51",
+      "ipv6": null,
+      "port": 62031,
+      "country": "GB"
+     },
+     {
+      "server": "FreeMR_Sardinia",
+      "slug": "freedmr-network-server-freemr_sardinia",
+      "dns": null,
+      "ipv4": "87.106.152.249",
+      "ipv6": null,
+      "port": null,
+      "country": "IT"
+     },
+     {
+      "server": "Freedmr_CN_JiangXi",
+      "slug": "freedmr-network-server-freedmr_cn_jiangxi",
+      "dns": "freedmr.jxham.cn",
+      "ipv4": null,
+      "ipv6": null,
+      "port": 62031,
+      "country": "CN"
+     }
+    ],
+    "description": "<h4>FreeDMR Network.</h4>\r\n<p>The FreeDMR Network is a group of independent servers running the FreeDMR Peer Server Software. The FreeDMR Peer Servers are connected via OpenBridge &ldquo;OPB&rdquo; connections in a Mesh topology to one another to redundantly and diversely share all available TalkGroups among all Servers. The FreeDMR Network, does NOT utilize a &ldquo;Master/Slave&rdquo; topology. All FreeDMR peer servers are seen as equal peers to each other just as all the individuals who run the servers are. We do not control when where, what how or who can use our software. Free means free as in speech and free as in beer!.</p>"
+   },
+   {
+    "network": "IPSC2-SWEDEN-@",
+    "slug": "ipsc2-sweden",
+    "tglist": "https://dvref.com/api/v2/dmr/networks/ipsc2-sweden/talkgroups/",
+    "url": "https://ipsc2.org/ipsc/index.html",
+    "sponsor": "SWEDEN Zone Net!  By SA7SVR",
+    "servers": [
+     {
+      "server": "IPSC2-SWEDEN-@",
+      "slug": "ipsc2-sweden-server-ipsc2-sweden",
+      "dns": "ipsc2.org",
+      "ipv4": null,
+      "ipv6": null,
+      "port": 55555,
+      "country": "SE"
+     }
+    ],
+    "description": "<p>Sysop: SA7SVR&nbsp; - Country: Sweden - E-mail: info@ipsc2.org - sa7svr@ssa.se</p>"
+   },
+   {
+    "network": "New England DMR",
+    "slug": "new-england-dmr",
+    "tglist": "https://dvref.com/api/v2/dmr/networks/new-england-dmr/talkgroups/",
+    "url": "http://monitor.newenglanddigitalradio.com/index.php",
+    "sponsor": "New England Digital Radio KC1VAX",
+    "servers": [
+     {
+      "server": "NEDMR",
+      "slug": "new-england-dmr-server-nedmr",
+      "dns": "nedmr.com",
+      "ipv4": "155.138.240.150",
+      "ipv6": null,
+      "port": 55555,
+      "country": "US"
+     }
+    ],
+    "description": "<p>This network has only 9 talkgroups, 10 - 18. Each talkgroup corresponds with modules A - I on the New England Digital Radio XLX097 Multimode reflector. All 9 talkgroups are static and on Timeslot 2.</p>"
+   },
+   {
+    "network": "SystemX",
+    "slug": "systemx",
+    "tglist": "https://dvref.com/api/v2/dmr/networks/systemx/talkgroups/",
+    "url": "https://freestar.network/systemx-dmr/",
+    "sponsor": "FreeSTAR Network",
+    "servers": [
+     {
+      "server": "SystemX Apollo",
+      "slug": "systemx-server-systemx-apollo",
+      "dns": "https://apollo.dmr.uk.pe/dashboard/",
+      "ipv4": null,
+      "ipv6": null,
+      "port": null,
+      "country": "GB"
+     },
+     {
+      "server": "SystemX Calafornia",
+      "slug": "systemx-server-systemx-calafornia",
+      "dns": "http://wx6d.mw-dmr.net/dashboard/index.php",
+      "ipv4": null,
+      "ipv6": null,
+      "port": null,
+      "country": "US"
+     },
+     {
+      "server": "SystemX Guatemala",
+      "slug": "systemx-server-systemx-guatemala",
+      "dns": "https://gt.freestar.network/dashboard/",
+      "ipv4": null,
+      "ipv6": null,
+      "port": null,
+      "country": "GT"
+     },
+     {
+      "server": "SystemX Mexico",
+      "slug": "systemx-server-systemx-mexico",
+      "dns": "https://mx.freestar.network/dashboard/",
+      "ipv4": null,
+      "ipv6": null,
+      "port": null,
+      "country": "MX"
+     },
+     {
+      "server": "SystemX New Zealand",
+      "slug": "systemx-server-systemx-new-zealand",
+      "dns": "https://nzdmr.freestar.network/dashboard/",
+      "ipv4": null,
+      "ipv6": null,
+      "port": null,
+      "country": "NZ"
+     },
+     {
+      "server": "SystemX Spain",
+      "slug": "systemx-server-systemx-spain",
+      "dns": "https://es.freestar.network/dashboard/",
+      "ipv4": null,
+      "ipv6": null,
+      "port": null,
+      "country": "ES"
+     },
+     {
+      "server": "SystemX UK",
+      "slug": "systemx-server-systemx-uk",
+      "dns": "https://dmr.freestar.network/dashboard/",
+      "ipv4": null,
+      "ipv6": null,
+      "port": null,
+      "country": "GB"
+     },
+     {
+      "server": "SystemX USA",
+      "slug": "systemx-server-systemx-usa",
+      "dns": "https://usa.freestar.network/dashboard/",
+      "ipv4": null,
+      "ipv6": null,
+      "port": null,
+      "country": "US"
+     }
+    ],
+    "description": "<p>SystemX is a DMR nework for the people and our policy is \"Freedom to Connect\". No stupid rules just a simple policy of Connect and Enjoy.</p>"
+   },
+   {
+    "network": "TGIF165",
+    "slug": "tgif165",
+    "tglist": "https://dvref.com/api/v2/dmr/networks/tgif165/talkgroups/",
+    "url": "https://tgif.network/tgprofile.php?id=165",
+    "sponsor": "SV2SNH",
+    "servers": [],
+    "description": ""
+   },
+   {
+    "network": "Digital Voice GREECE",
+    "slug": "digital-voice-greece",
+    "tglist": "https://dvref.com/api/v2/dmr/networks/digital-voice-greece/talkgroups/",
+    "url": "http://digital-voice.sv2snh.gr/",
+    "sponsor": "sv2snh.gr",
+    "servers": [
+     {
+      "server": "Digital Voice GREECE",
+      "slug": "digital-voice-greece-server-digital-voice-greece",
+      "dns": null,
+      "ipv4": "38.19.200.56",
+      "ipv6": "2001:a40:100:e:be24:11ff:feb3:b207",
+      "port": 62031,
+      "country": "GR"
+     }
+    ],
+    "description": "<p>Digital Voice GREECE</p>\r\n<p>Amateur Radio Network</p>"
+   },
+   {
+    "network": "03407",
+    "slug": "03407",
+    "tglist": "https://dvref.com/api/v2/dmr/networks/03407/talkgroups/",
+    "url": "https://74.207.225.205",
+    "sponsor": "XE2ERA",
+    "servers": [
+     {
+      "server": "BM_3341_Mexico",
+      "slug": "03407-server-bm_3341_mexico",
+      "dns": null,
+      "ipv4": "74.207.225.205",
+      "ipv6": null,
+      "port": 62030,
+      "country": "MX"
+     }
+    ],
+    "description": ""
+   }
+  ]
+ }
+}

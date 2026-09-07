@@ -175,6 +175,23 @@ class ReflectorRecord:
     source: str | None = None  # 'dvref' | 'xlx' — which importer produced this row
     synced_at: str | None = None  # ISO date of the upstream pull
 
+    # --- DMR only ------------------------------------------------------------------
+    # A DMR row is a MASTER SERVER, and a server alone does not say what you will talk
+    # on: that is a talkgroup, and a talkgroup number only means something inside one
+    # network. So `system` names the network the server belongs to, and `requires` says
+    # what the OPERATOR must supply that a public directory cannot. Every other network
+    # leaves all five unset.
+    system: str | None = None  # DMR network slug, e.g. 'freedmr-network'
+    requires: list[str] = field(default_factory=list)  # e.g. ['dmr_id', 'password']
+    talkgroups_url: str | None = None  # where that network publishes its talkgroups
+    # Reserved, and None on every row today: the build does not mirror talkgroups,
+    # because they live behind a per-network endpoint and 172 networks do not fit in a
+    # 60-request hourly budget (hdb-refl-dmrtg). The fields exist now so talkgroup rows
+    # can be added later without a schema bump — adding a field is not a bump, but a
+    # client can only ignore-what-it-does-not-know if the field is in the contract.
+    talkgroup: int | None = None
+    timeslot: int | None = None  # 1 or 2
+
     def __post_init__(self) -> None:
         # One choke point for redaction: doing it here rather than in each importer
         # means a future source cannot publish an address by forgetting a call, and it
@@ -207,7 +224,7 @@ DIAL_KINDS: dict[str, str] = {
     "nxdn": "nxdn",
     "p25": "p25",
     "urf": "urf",
-    "dmr": "mmdvm",  # contract only — no DMR source is wired up yet
+    "dmr": "mmdvm",  # DVRef's DMR networks, one row per master server
 }
 
 #: `dial.kind` -> the record fields it carries beyond `host` and `port`.
@@ -219,8 +236,11 @@ DIAL_FIELDS: dict[str, tuple[str, ...]] = {
     "p25": (),
     "urf": ("modules",),
     # A DMR master needs a per-user credential a public file cannot carry, so the
-    # variant says what the OPERATOR must supply instead of pretending otherwise.
-    "mmdvm": ("requires", "talkgroups_url"),
+    # variant says what the OPERATOR must supply instead of pretending otherwise. It
+    # also carries `system`, because a talkgroup number is only defined within one
+    # network — a master without its network is not enough to talk to anybody.
+    # `talkgroup`/`timeslot` are reserved and omitted while they are unset.
+    "mmdvm": ("system", "requires", "talkgroups_url", "talkgroup", "timeslot"),
 }
 
 #: Kinds whose port is genuinely unknown upstream, and therefore optional.
@@ -553,6 +573,26 @@ _DIAL_FIELD_PROPERTIES: dict[str, dict[str, object]] = {
         "type": "string",
         "description": "Where this master's talkgroup list is published.",
     },
+    "system": {
+        "type": "string",
+        "description": (
+            "Which DMR network this server belongs to — a talkgroup number means nothing "
+            "without it."
+        ),
+        "examples": ["freedmr-network"],
+    },
+    "talkgroup": {
+        "type": "integer",
+        "description": (
+            "Reserved. Absent on every published row today: the directory does not mirror "
+            "talkgroups, and `talkgroups_url` is where they live."
+        ),
+    },
+    "timeslot": {
+        "type": "integer",
+        "enum": [1, 2],
+        "description": "Reserved, and only meaningful alongside `talkgroup`.",
+    },
 }
 
 _KIND_DESCRIPTIONS: dict[str, str] = {
@@ -562,7 +602,10 @@ _KIND_DESCRIPTIONS: dict[str, str] = {
     "nxdn": "NXDN reflectors.",
     "p25": "P25 reflectors.",
     "urf": "URF reflectors (urfd). Multi-protocol, so upstream publishes no single port.",
-    "mmdvm": "MMDVM/DMR masters, which need per-user credentials the directory cannot carry.",
+    "mmdvm": (
+        "MMDVM/DMR master servers — one row per server, not per network — which need "
+        "per-user credentials the directory cannot carry."
+    ),
 }
 
 
@@ -913,7 +956,6 @@ def records_from_document(document: dict[str, object]) -> list[ReflectorRecord]:
             continue
         raw_dial = row.get("dial")
         dial: dict[str, object] = raw_dial if isinstance(raw_dial, dict) else {}
-        port = dial.get("port")
         out.append(
             ReflectorRecord(
                 id=str(row["id"]),
@@ -922,7 +964,7 @@ def records_from_document(document: dict[str, object]) -> list[ReflectorRecord]:
                 aliases=_str_list(row.get("aliases")),
                 callsign=_opt_str(dial.get("callsign")),
                 host=_opt_str(dial.get("host")),
-                port=port if isinstance(port, int) and not isinstance(port, bool) else None,
+                port=_opt_int(dial.get("port")),
                 modules=_str_list(dial.get("modules")),
                 country=_opt_str(row.get("country")),
                 sponsor=_opt_str(row.get("sponsor")),
@@ -930,6 +972,11 @@ def records_from_document(document: dict[str, object]) -> list[ReflectorRecord]:
                 dashboard=_opt_str(row.get("dashboard")),
                 source=_opt_str(row.get("source")),
                 synced_at=str(stamp) if stamp else None,
+                system=_opt_str(dial.get("system")),
+                requires=_str_list(dial.get("requires")),
+                talkgroups_url=_opt_str(dial.get("talkgroups_url")),
+                talkgroup=_opt_int(dial.get("talkgroup")),
+                timeslot=_opt_int(dial.get("timeslot")),
             )
         )
     return out
@@ -937,6 +984,10 @@ def records_from_document(document: dict[str, object]) -> list[ReflectorRecord]:
 
 def _opt_str(value: object) -> str | None:
     return str(value) if isinstance(value, str) and value else None
+
+
+def _opt_int(value: object) -> int | None:
+    return value if isinstance(value, int) and not isinstance(value, bool) else None
 
 
 def _str_list(value: object) -> list[str]:
