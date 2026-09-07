@@ -32,6 +32,8 @@ from __future__ import annotations
 
 import sqlite3
 from collections.abc import Iterable
+from dataclasses import MISSING
+from dataclasses import fields as dc_fields
 from pathlib import Path
 
 from hamcall_db.history import HISTORY_SCHEMA_COLUMNS, HistoryRow, _identity
@@ -55,6 +57,21 @@ _BOOL_COLUMNS: frozenset[str] = frozenset({"uses_lotw"})
 # so it is EXCLUDED from the scalar ``current`` table and instead normalized into a child
 # table keyed by the stable id (see _ALLSTAR_DDL below). hdb-8803.
 _SCALAR_COLUMNS: tuple[str, ...] = tuple(c for c in SCHEMA_COLUMNS if c != "allstar_nodes")
+
+# Schema-evolution tolerance for read_prior (hdb-relfix): a prior ``.db`` may have been
+# written by an OLDER version of this module, before a scalar column existed (e.g. the
+# LoTW / FCC-identity columns added after the 2026-06-18 release). Reading such a file
+# must not crash — it must treat the missing column as "unset", exactly the value a
+# freshly-constructed ``Record``/``HistoryRow`` carries for that field, so a column that
+# did not exist in the prior build can never register as a changed value (assign_ids's
+# identity check and any future history use of these columns stay honest). Built from the
+# dataclass field defaults themselves so this never drifts from ``Record``/``HistoryRow``.
+_RECORD_DEFAULTS: dict[str, object] = {
+    f.name: f.default for f in dc_fields(Record) if f.default is not MISSING
+}
+_HISTORY_DEFAULTS: dict[str, object] = {
+    f.name: f.default for f in dc_fields(HistoryRow) if f.default is not MISSING
+}
 
 
 def _col_def(name: str) -> str:
@@ -142,6 +159,21 @@ def read_prior(
     carried alongside, not on the slotted dataclass, so the high-water mark survives even
     after a callsign leaves ``current``). Returns empties when the file or tables are
     absent (the first-ever build path).
+
+    TOLERANT OF SCHEMA DRIFT IN BOTH DIRECTIONS (hdb-relfix): the prior ``.db`` may have
+    been written by an older or newer version of this module.
+
+      * A column this module now tracks but the prior file lacks (an older writer) reads
+        as that field's dataclass default — the value a fresh ``Record``/``HistoryRow``
+        carries for "unset" — never as a crash and never as a spurious value.
+      * A column the prior file has but this module no longer tracks (a newer writer, or
+        one that dropped a column) is simply ignored — only known columns are read.
+
+    Before this fix, ``row[c]`` on a ``sqlite3.Row`` raised ``IndexError`` for any tracked
+    column absent from the prior file, which is what broke every weekly Release run once
+    the schema grew columns (grant_date/effective_date/expired_date/frn/entity_type/
+    applicant_type/previous_callsign from hdb-f865, uses_lotw/lotw_last_activity from
+    hdb-fccf) past the last prior published on 2026-06-18.
     """
     path = Path(db_path)
     if not path.exists():
@@ -160,10 +192,17 @@ def read_prior(
             # allstar_nodes is not stored on ``current`` (it's the child table); the
             # reconstructed Record's allstar_nodes stays [], which is irrelevant to the id
             # ledger (it's excluded from holder identity / _TRACKED_FIELDS). hdb-8803.
-            for row in con.execute("SELECT * FROM current"):
-                values = {c: row[c] for c in _SCALAR_COLUMNS}
+            cur = con.execute("SELECT * FROM current")
+            present = {d[0] for d in cur.description}
+            for row in cur:
+                values = {
+                    c: (row[c] if c in present else _RECORD_DEFAULTS.get(c))
+                    for c in _SCALAR_COLUMNS
+                }
                 # Bool columns are stored 0/1; restore Python bools so a reconstructed
-                # Record matches a freshly-built one (hdb-fccf).
+                # Record matches a freshly-built one (hdb-fccf). A missing column already
+                # carries its Record default (False for uses_lotw, not None), so this is
+                # a no-op in that case.
                 for col in _BOOL_COLUMNS:
                     if values.get(col) is not None:
                         values[col] = bool(values[col])
@@ -172,8 +211,14 @@ def read_prior(
 
         prior_history: list[tuple[int | None, HistoryRow]] = []
         if "history" in tables:
-            for row in con.execute("SELECT * FROM history"):
-                hist = HistoryRow(**{c: row[c] for c in HISTORY_SCHEMA_COLUMNS})
+            cur = con.execute("SELECT * FROM history")
+            present = {d[0] for d in cur.description}
+            for row in cur:
+                values = {
+                    c: (row[c] if c in present else _HISTORY_DEFAULTS.get(c))
+                    for c in HISTORY_SCHEMA_COLUMNS
+                }
+                hist = HistoryRow(**values)
                 # Carry the stored id alongside the row (HistoryRow is slotted, so the id
                 # can't live on it) so the high-water mark survives.
                 prior_history.append((row["id"], hist))
