@@ -4,7 +4,7 @@ This file provides instructions and context for AI coding agents working on this
 
 ## What this repo is
 
-A Python build pipeline that aggregates free, openly-licensed amateur radio licensee data from multiple national regulators and DXCC reference files into a single normalized Parquet artifact, published weekly via GitHub Releases.
+A Python build pipeline that aggregates free, openly-licensed amateur radio licensee data from multiple national regulators and DXCC reference files into a single normalized Parquet artifact, published nightly via GitHub Releases.
 
 This repo produces the artifact. It does NOT consume it. The consumer side (autocomplete UI, QSO enrichment, etc.) lives in the downstream apps (e.g. `adif`). Keep this separation strict — no consumer-side opinions about storage or query patterns leak into the build code.
 

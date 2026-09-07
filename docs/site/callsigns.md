@@ -7,7 +7,7 @@ Unlike the [reflector directory](reflectors/index.md), this is **not served from
 this site** — it is far too large for a static host. It is published as Parquet
 and SQLite through
 [GitHub Releases](https://github.com/rcludwick/hamcall-db/releases), rebuilt
-weekly.
+nightly.
 
 ```bash
 gh release download latest --repo rcludwick/hamcall-db --pattern '*.parquet'

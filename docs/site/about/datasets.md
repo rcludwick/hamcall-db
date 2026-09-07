@@ -142,7 +142,7 @@ redistributed — only the derived grid sets are published.
 
 !!! warning "Currently indicative point grids"
 
-    The public weekly build runs without the build-time GIS dependency groups,
+    The public nightly build runs without the build-time GIS dependency groups,
     so the grid sets in the released artifacts are single-point fallbacks rather
     than real polygon coverage. Treat them as approximate until polygon coverage
     ships.
