@@ -2,7 +2,7 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 320,
+  "count": 319,
   "generated": "2026-09-07",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
@@ -4486,21 +4486,6 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "N6LKA"
-    },
-    {
-      "country": "US",
-      "dashboard": "http://www.n6jet.com/urfjet/",
-      "description": "<p>n6jet.com/urfjetpurpose.html</p>",
-      "dial": {
-        "host": "5.161.18.189",
-        "kind": "p25",
-        "port": 41000
-      },
-      "id": "9511",
-      "name": "URFJET",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "N6JET"
     },
     {
       "country": "AU",
