@@ -1,7 +1,7 @@
 {
   "api_version": "v1",
   "client_refresh_days": 7,
-  "count": 3416,
+  "count": 3415,
   "endpoints": {
     "all": "reflectors.json",
     "network": "reflectors/{network}.json",
@@ -20,10 +20,36 @@
         "name": "DVRef",
         "url": "https://dvref.com/api/v2/"
       },
+      "talkgroups": {
+        "01hamradiodx": {
+          "count": 1,
+          "fetched": "2026-09-07",
+          "generated": "2026-09-07",
+          "url": "reflectors/dmr/01hamradiodx/talkgroups.json"
+        },
+        "03407": {
+          "count": 1,
+          "fetched": "2026-09-07",
+          "generated": "2026-09-07",
+          "url": "reflectors/dmr/03407/talkgroups.json"
+        },
+        "26269de": {
+          "count": 1,
+          "fetched": "2026-09-07",
+          "generated": "2026-09-07",
+          "url": "reflectors/dmr/26269de/talkgroups.json"
+        },
+        "58906": {
+          "count": 2,
+          "fetched": "2026-09-07",
+          "generated": "2026-09-07",
+          "url": "reflectors/dmr/58906/talkgroups.json"
+        }
+      },
       "url": "reflectors/dmr.json"
     },
     "dstar": {
-      "count": 948,
+      "count": 947,
       "generated": "2026-09-07",
       "source": {
         "name": "XLX registry (LX1IQ) + Pi-Star DExtra hosts + Pi-Star DPlus/DCS names",
