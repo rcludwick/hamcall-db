@@ -458,6 +458,56 @@ def test_sqlite_write_is_idempotent(tmp_path: Path) -> None:
         con.close()
 
 
+def test_sqlite_write_replaces_a_stale_same_day_schema(tmp_path: Path) -> None:
+    # Regression for hdb-dbfresh: a same-day rebuild reuses the dist directory's file
+    # from an earlier run today. If that earlier run predates a schema change (here,
+    # the ``system``/``talkgroups`` columns), ``CREATE TABLE IF NOT EXISTS`` alone kept
+    # the OLD table and the INSERT below died with "table reflectors has no column
+    # named talkgroups" on the production nightly box on 2026-09-07. The writer must
+    # drop and recreate the table so a stale schema can never linger.
+    import sqlite3
+
+    from hamcall_db.sqlite_writer import write_reflectors_sqlite
+
+    db = tmp_path / "reflectors.db"
+
+    # Old-shaped schema: the reflectors table as it existed before ``system`` and
+    # ``talkgroups`` were added, plus a leftover row that must NOT survive the rebuild.
+    con = sqlite3.connect(db)
+    try:
+        con.execute(
+            "CREATE TABLE reflectors (\n"
+            "  id TEXT,\n"
+            "  network TEXT,\n"
+            "  name TEXT,\n"
+            "  callsign TEXT,\n"
+            "  host TEXT,\n"
+            "  PRIMARY KEY (network, id)\n"
+            ")"
+        )
+        con.execute(
+            "INSERT INTO reflectors (id, network, name, callsign, host) "
+            "VALUES ('STALE001', 'dstar', 'stale', 'STALE', '0.0.0.0')"
+        )
+        con.commit()
+    finally:
+        con.close()
+
+    written = write_reflectors_sqlite(_xlx_records(), db)
+    assert written == 3
+
+    con = sqlite3.connect(db)
+    try:
+        columns = {row[1] for row in con.execute("PRAGMA table_info(reflectors)")}
+        assert "system" in columns
+        assert "talkgroups" in columns
+        rows = {r[0] for r in con.execute("SELECT id FROM reflectors")}
+    finally:
+        con.close()
+    assert rows == {r.id for r in _xlx_records()}
+    assert "STALE001" not in rows
+
+
 def test_parquet_artifact_round_trips(tmp_path: Path) -> None:
     import polars as pl
 
