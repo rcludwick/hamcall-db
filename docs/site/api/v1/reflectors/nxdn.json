@@ -2,7 +2,7 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 297,
+  "count": 298,
   "generated": "2026-09-07",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
@@ -4145,9 +4145,21 @@
       "source": "dvref"
     },
     {
+      "country": "TH",
+      "dial": {
+        "host": "103.91.205.89",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "9449",
+      "name": "SISAKET THAILAND",
+      "network": "nxdn",
+      "source": "dvref"
+    },
+    {
       "country": "US",
       "dashboard": "http://www.n6jet.com/urfjet/",
-      "description": "<p>n6jet.com/urfjetpurpose.html</p>",
+      "description": "<p>n6jet.com/urfjetpurpose.html&nbsp; &nbsp; P25 9511 is not in use at this time.&nbsp;</p>",
       "dial": {
         "host": "5.161.18.189",
         "kind": "nxdn",
