@@ -492,6 +492,13 @@
           "sponsor": {
             "description": "Who runs it, as upstream words it.",
             "type": "string"
+          },
+          "system": {
+            "description": "Which DMR network a server belongs to; DMR only. Present on every `network: \"dmr\"` row and absent on every other network. Repeated in `dial.system` when the row is dialable \u2014 a talkgroup number means nothing without it, so a row that has no dial still has to carry it.",
+            "examples": [
+              "freedmr-network"
+            ],
+            "type": "string"
           }
         },
         "required": [

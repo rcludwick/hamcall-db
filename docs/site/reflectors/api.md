@@ -77,6 +77,7 @@ differs per protocol because the protocols genuinely differ.
 | `sponsor` | no | Who runs it. |
 | `dashboard` | no | Web dashboard URL. |
 | `source` | yes | Which importer produced the row (`xlx`, `dvref`, …). Provenance, for debugging a wrong entry. |
+| `system` | no | Which DMR network a server belongs to; **DMR only**. Present on every `dmr` row, absent on every other network. Repeated in `dial.system`. |
 | `dial` | no | How to connect. **Absent means listed-but-not-dialable** — see below. |
 
 ### `dial` variants
@@ -111,6 +112,12 @@ anybody: a talkgroup number is only defined *within* one network, so TG 235 on o
 system is not TG 235 on another. Treat `system` as part of the answer to "what did I
 just connect to", not as a label.
 
+It is published **twice**, on purpose: in the envelope on every `dmr` row, and again in
+`dial.system` when the row is dialable. The dial copy keeps a dial object
+self-contained for a client that switches on `kind` and reads nothing else; the envelope
+copy is the one that survives on a server with no dial at all (see below). They always
+agree.
+
 **Talkgroups are linked, not mirrored.** `talkgroups_url` points at DVRef's list for
 that network, reachable with a token or on their anonymous tier. This directory does
 not copy them: they live behind a per-network endpoint and there are 172 networks
@@ -127,9 +134,14 @@ is free text and is not always a host — several entries carry a dashboard URL
 (`https://apollo.dmr.uk.pe/dashboard/`) or a host with a path. Anything that is not a
 bare hostname or IP literal is refused, the numeric address is used instead, and if
 there is none the row is published with no `dial` at all rather than an address a client
-cannot resolve. Note the consequence: `system`, `requires` and `talkgroups_url` live
-*inside* `dial`, so such a row does not carry them — its `sponsor` and `dashboard` are
-what identify the network it belongs to.
+cannot resolve. Such a row still carries `system`, `name`, `sponsor`, `country` and
+`dashboard` — it is a place you can identify and read about, just not one this data can
+dial. `requires` and `talkgroups_url` are dial-only, because they are instructions for
+making a connection this row does not offer.
+
+**Descriptions are upstream HTML**, as for every DVRef network — they arrive as written
+on the network's own dashboard, tags, entities and all, with only email addresses
+removed.
 
 **`urf` is the one variant without a required `port`.** Upstream publishes none for any
 of the 89 URF reflectors, and a urfd speaks several protocols at once, so there is no

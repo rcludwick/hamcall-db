@@ -181,6 +181,12 @@ class ReflectorRecord:
     # network. So `system` names the network the server belongs to, and `requires` says
     # what the OPERATOR must supply that a public directory cannot. Every other network
     # leaves all five unset.
+    #
+    # `system` is published TWICE — in the envelope and in the dial — and that is
+    # deliberate. In the dial so a client that switches on `kind` and reads nothing else
+    # has everything it needs in one object; in the envelope because a server whose
+    # address upstream never published has no dial at all, and a row that cannot say
+    # which network it belongs to is not a directory entry.
     system: str | None = None  # DMR network slug, e.g. 'freedmr-network'
     requires: list[str] = field(default_factory=list)  # e.g. ['dmr_id', 'password']
     talkgroups_url: str | None = None  # where that network publishes its talkgroups
@@ -290,6 +296,11 @@ def _dial_json(record: ReflectorRecord) -> dict[str, object] | None:
 # be a trap for any client that caches rows individually.
 _ENVELOPE_FIELDS: tuple[str, ...] = (
     "network",
+    # DMR only, and on EVERY dmr row including the ones with no `dial`. It is also
+    # repeated inside the dial so a client reading only dials stays self-contained —
+    # but a server whose address upstream did not publish still has to say which
+    # network it belongs to, and the dial is exactly what such a row does not have.
+    "system",
     "id",
     "name",
     "aliases",
@@ -544,6 +555,16 @@ _ENVELOPE_PROPERTIES: dict[str, dict[str, object]] = {
         "type": "string",
         "description": "Which importer produced the row: provenance, for debugging a bad entry.",
         "examples": ["xlx", "dvref"],
+    },
+    "system": {
+        "type": "string",
+        "description": (
+            "Which DMR network a server belongs to; DMR only. Present on every "
+            '`network: "dmr"` row and absent on every other network. Repeated in '
+            "`dial.system` when the row is dialable — a talkgroup number means nothing "
+            "without it, so a row that has no dial still has to carry it."
+        ),
+        "examples": ["freedmr-network"],
     },
 }
 
@@ -972,7 +993,7 @@ def records_from_document(document: dict[str, object]) -> list[ReflectorRecord]:
                 dashboard=_opt_str(row.get("dashboard")),
                 source=_opt_str(row.get("source")),
                 synced_at=str(stamp) if stamp else None,
-                system=_opt_str(dial.get("system")),
+                system=_opt_str(row.get("system")) or _opt_str(dial.get("system")),
                 requires=_str_list(dial.get("requires")),
                 talkgroups_url=_opt_str(dial.get("talkgroups_url")),
                 talkgroup=_opt_int(dial.get("talkgroup")),

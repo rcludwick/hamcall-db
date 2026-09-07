@@ -339,6 +339,7 @@ def test_the_openapi_mmdvm_variant_documents_every_field_the_rows_carry() -> Non
     envelope = set(schemas["Reflector"]["properties"])
 
     assert variant["properties"]["kind"]["const"] == "mmdvm"
+    assert "system" in envelope  # published in both places, documented in both
     assert variant["properties"]["timeslot"]["enum"] == [1, 2]
     assert "port" in variant["required"]  # only URF dials without one
 
@@ -362,6 +363,7 @@ def test_a_dialable_row_survives_a_round_trip_through_the_document() -> None:
     # field that does not round-trip is a field those artifacts silently lose.
     rebuilt = {r.id: r for r in reflectors.records_from_document(_document())}
     assert len(rebuilt) == SERVERS_IN_FIXTURE
+    assert all(rebuilt[r.id].system == r.system for r in _records())  # dial or not
     for before in _records():
         if before.host is None or before.port is None:
             continue
@@ -373,20 +375,41 @@ def test_a_dialable_row_survives_a_round_trip_through_the_document() -> None:
         assert record.port == before.port
 
 
-def test_an_undialable_row_keeps_its_envelope_but_not_its_dial_fields() -> None:
-    # A consequence of `system`/`requires`/`talkgroups_url` living inside `dial`, which
-    # is where the schema puts them: a server with no usable address publishes no dial,
-    # so those three are not in its entry and do not come back from one. The row is
-    # still there and still attributable — name, sponsor, dashboard, country — and the
-    # dashboard is the network's, so the reader is not left with nothing.
+def test_an_undialable_row_still_says_which_network_it_belongs_to() -> None:
+    # `system` is on the ENVELOPE, not only inside `dial` — which is what makes it
+    # survive on the rows that have no dial. A SystemX server whose address upstream
+    # never published is still a SystemX server, and a row that could not say so would
+    # be unusable to a reader and null in the Parquet/SQLite `system` column.
+    entry = _by_id("systemx-server-systemx-apollo")
+    assert entry["system"] == "systemx"
+    assert "dial" not in entry
+
     rebuilt = {r.id: r for r in reflectors.records_from_document(_document())}
     record = rebuilt["systemx-server-systemx-apollo"]
-    assert record.system is None
-    assert record.requires == []
-    assert record.talkgroups_url is None
+    assert record.system == "systemx"
     assert record.name == "SystemX Apollo"
     assert record.sponsor == "FreeSTAR Network"
     assert record.dashboard == "https://freestar.network/systemx-dmr/"
+    # `requires` and `talkgroups_url` stay dial-only: they are instructions for making a
+    # connection, and this row offers none to make.
+    assert record.requires == []
+    assert record.talkgroups_url is None
+
+
+def test_every_dmr_row_carries_system_on_the_envelope() -> None:
+    entries = _entries()
+    assert all(entry.get("system") for entry in entries)
+    # And it agrees with the dial's copy wherever there is one to agree with.
+    assert all(e["dial"]["system"] == e["system"] for e in entries if "dial" in e)
+
+
+def test_system_is_a_dmr_field_and_no_other_network_emits_it() -> None:
+    # Envelope fields are shared across networks, so an optional one has to stay absent
+    # rather than turning up as null on 2900 D-Star, YSF and M17 rows.
+    other = reflectors.entry_json(
+        ReflectorRecord(id="00006", network="ysf", host="ysf.example.org", port=42000)
+    )
+    assert "system" not in other
 
 
 # --- the nightly build ------------------------------------------------------------
@@ -452,9 +475,9 @@ def test_the_nightly_build_publishes_dmr(tmp_path: Path, monkeypatch: pytest.Mon
 
     frame = pl.read_parquet(tmp_path / "dist" / f"hamcall-db-reflectors-{stamp}.parquet")
     assert frame.height == SERVERS_IN_FIXTURE
-    # The artifacts are rebuilt from the published documents, so `system` reaches them
-    # only on the rows that carry a dial — see the round-trip tests above.
-    assert frame["system"].drop_nulls().len() == DIALABLE_IN_FIXTURE
+    # `system` is on the envelope, so it reaches the artifacts for EVERY row, not only
+    # the dialable ones — see the round-trip tests above.
+    assert frame["system"].drop_nulls().len() == SERVERS_IN_FIXTURE
     assert frame["talkgroup"].drop_nulls().len() == 0
     assert frame.schema["talkgroup"] == pl.Int64
     assert frame.schema["requires"] == pl.List(pl.Utf8)

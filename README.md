@@ -68,10 +68,11 @@ reflector is listed as `XLX836` but a DExtra client must send `XRF836` in RPT1/R
 URF entries carry no port because upstream publishes none and a urfd speaks several
 protocols at once.
 
-**A DMR row is one master server, not one network.** `dial.system` names the DMR network
-it belongs to — a talkgroup number is only defined within one network, so the server alone
-is not enough — and `dial.talkgroups_url` links that network's talkgroup list rather than
-mirroring it. `dial.talkgroup` / `dial.timeslot` are in the contract and unset on every row
+**A DMR row is one master server, not one network.** `system` names the DMR network it
+belongs to — a talkgroup number is only defined within one network, so the server alone is
+not enough. It is on the envelope of every `dmr` row (and repeated in `dial.system`), so a
+server whose address upstream never published still says where it belongs.
+`dial.talkgroups_url` links that network's talkgroup list rather than mirroring it. `dial.talkgroup` / `dial.timeslot` are in the contract and unset on every row
 today. Upstream's `dns` column sometimes holds a dashboard URL instead of a host; those
 rows fall back to the numeric address, or publish no `dial` at all.
 

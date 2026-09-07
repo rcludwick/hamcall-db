@@ -153,13 +153,20 @@ ONE request a night for all 172 networks — and flattens networks-of-servers in
 published row per master server**; a network with no servers (61 of the 172) publishes
 nothing. `ReflectorRecord` grew `system`, `requires`, `talkgroups_url`, `talkgroup` and
 `timeslot`, all five in the `mmdvm` dial variant and in the generated `openapi.json`,
-and all five now Parquet and SQLite columns. `system` is the load-bearing one: a
-talkgroup number is only defined within one network.
+and all five now Parquet and SQLite columns. `system` is the load-bearing one — a
+talkgroup number is only defined within one network — so it is published TWICE: on the
+ENVELOPE of every `dmr` row, and again in `dial.system` where there is a dial. The dial
+copy keeps a dial self-contained; the envelope copy is what survives on a server with no
+usable address, which would otherwise be published unable to say which network it is on.
 
 Upstream's `dns` column is free text and is not always a host — SystemX fills it with
 dashboard URLs and publishes no port — so anything carrying a scheme, a path or
 whitespace is refused, the row falls back to `ipv4`/`ipv6`, and a server with no usable
 address is published WITHOUT a `dial` rather than with an address a client cannot
-resolve. Against the checked-in fixture: 44 servers, 35 of them dialable.
+resolve — but still with `system`, `name`, `sponsor`, `country` and `dashboard`. Against
+the checked-in fixture: 44 servers, 35 of them dialable.
+
+Descriptions are published as upstream HTML, exactly as they are for the other five
+DVRef networks; stripping tags would be a separate change across all six.
 
 Talkgroups are linked, not mirrored — that is hdb-refl-dmrtg above.
