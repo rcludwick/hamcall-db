@@ -1,21 +1,3701 @@
 {
   "api_version": "v1",
-  "attribution": "XLX reflector data from the XLX registry maintained by Luc Engelmann, LX1IQ (http://xlxapi.rlx.lu/).\nStandalone XRF reflector data from the Pi-Star DExtra host file (http://www.pistar.uk/downloads/DExtra_Hosts.txt).\nREF and DCS reflector names from the Pi-Star DPlus and DCS host files (http://www.pistar.uk/downloads/).\nReflector data provided by DVRef \u2014 https://dvref.com/",
+  "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/\nXLX reflector data from the XLX registry maintained by Luc Engelmann, LX1IQ (http://xlxapi.rlx.lu/).\nStandalone XRF reflector data from the Pi-Star DExtra host file (http://www.pistar.uk/downloads/DExtra_Hosts.txt).\nREF and DCS reflector names from the Pi-Star DPlus and DCS host files (http://www.pistar.uk/downloads/).",
   "client_refresh_days": 7,
-  "count": 3229,
-  "generated": "2026-09-06",
+  "count": 3415,
+  "generated": "2026-09-07",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
   "networks": {
-    "dstar": 950,
+    "dmr": 185,
+    "dstar": 947,
     "m17": 108,
     "nxdn": 297,
-    "p25": 323,
+    "p25": 320,
     "urf": 98,
-    "ysf": 1453
+    "ysf": 1460
   },
   "reflectors": [
+    {
+      "country": "ES",
+      "dashboard": "http://radiodigitalspain.ddns.net/dashboard",
+      "dial": {
+        "host": "radiodigitalspain.ddns.net",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "01hamradiodx",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/01hamradiodx/talkgroups/"
+      },
+      "id": "01hamradiodx-server-01hamradiodx",
+      "name": "01HAMRADIODX",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "01HAMRADIODX",
+      "system": "01hamradiodx"
+    },
+    {
+      "country": "MX",
+      "dashboard": "https://74.207.225.205",
+      "dial": {
+        "host": "74.207.225.205",
+        "kind": "mmdvm",
+        "port": 62030,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "03407",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/03407/talkgroups/"
+      },
+      "id": "03407-server-bm_3341_mexico",
+      "name": "BM_3341_Mexico",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "XE2ERA",
+      "system": "03407"
+    },
+    {
+      "country": "DE",
+      "dashboard": "https://urf269.26269.de",
+      "dial": {
+        "host": "urf269.26269.de",
+        "kind": "mmdvm",
+        "port": 62030,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "26269de",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/26269de/talkgroups/"
+      },
+      "id": "26269de-server-urf269",
+      "name": "URF269",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "DC9VQ",
+      "system": "26269de"
+    },
+    {
+      "country": "TH",
+      "dashboard": "http://44.32.81.143",
+      "dial": {
+        "host": "44.32.81.143",
+        "kind": "mmdvm",
+        "port": 62030,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "58906",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/58906/talkgroups/"
+      },
+      "id": "58906-server-58906",
+      "name": "58906",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "hamradio",
+      "system": "58906"
+    },
+    {
+      "country": "CN",
+      "dashboard": "http://47.109.149.230:8888/",
+      "dial": {
+        "host": "47.109.149.230",
+        "kind": "mmdvm",
+        "port": 8888,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "871",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/871/talkgroups/"
+      },
+      "id": "871-server-871",
+      "name": "871",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Rescue System",
+      "system": "871"
+    },
+    {
+      "country": "FR",
+      "dashboard": "https://2084.adn.systems",
+      "id": "adn-hauts-de-france-server-adn-hauts-de-france",
+      "name": "ADN Hauts de France",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "F4MZI",
+      "system": "adn-hauts-de-france"
+    },
+    {
+      "country": "CL",
+      "dashboard": "https://chile.adn.systems/index.php?p=systems",
+      "description": "<p>ADN Systems Chile</p>",
+      "id": "adn-systems-chile-server-chileadn",
+      "name": "Chile.ADN",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "ADN Chile - RedChile EchoLink",
+      "system": "adn-systems-chile"
+    },
+    {
+      "country": "CO",
+      "dashboard": "http://7321.adn.systems:8011/",
+      "dial": {
+        "host": "7321.adn.systems",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "adn-systems-colombia",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/adn-systems-colombia/talkgroups/"
+      },
+      "id": "adn-systems-colombia-server-adn_7321_colombia",
+      "name": "ADN_7321_Colombia",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "HUBNet REM52Hz",
+      "system": "adn-systems-colombia"
+    },
+    {
+      "country": "ES",
+      "dashboard": "http://2141.adn.systems:8090",
+      "description": "<p>Red ADN SYSTEMS ESPA&Ntilde;A</p>",
+      "dial": {
+        "host": "2141.adn.systems",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "adn-systems-espana",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/adn-systems-espana/talkgroups/"
+      },
+      "id": "adn-systems-espana-server-server-1-espana-adn-systems",
+      "name": "Server 1 Espa\u00f1a ADN-SYSTEMS",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "2141.adn.systems",
+      "system": "adn-systems-espana"
+    },
+    {
+      "country": "ES",
+      "dashboard": "http://2141.adn.systems:8090",
+      "description": "<p>Red ADN SYSTEMS ESPA&Ntilde;A</p>",
+      "dial": {
+        "host": "2142.adn.systems",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "adn-systems-espana",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/adn-systems-espana/talkgroups/"
+      },
+      "id": "adn-systems-espana-server-server-2-espana-adn-systems",
+      "name": "Server 2 Espa\u00f1a ADN-SYSTEMS",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "2141.adn.systems",
+      "system": "adn-systems-espana"
+    },
+    {
+      "country": "CH",
+      "dashboard": "http://2280.adn.systems",
+      "id": "adn-systems-switzerland-server-adn-systems-switzerland",
+      "name": "ADN Systems Switzerland",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "ADN Systems Switzerland",
+      "system": "adn-systems-switzerland"
+    },
+    {
+      "country": "UA",
+      "dashboard": "http://2551.adn.systems/",
+      "description": "<p>Odessa Radio Link</p>",
+      "dial": {
+        "host": "217.73.87.252",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "adn-ukraine",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/adn-ukraine/talkgroups/"
+      },
+      "id": "adn-ukraine-server-adn-ukraine",
+      "name": "ADN Ukraine",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "ORLink - Odessa Radio Link",
+      "system": "adn-ukraine"
+    },
+    {
+      "country": "GB",
+      "dashboard": "http://2341.adn.systems",
+      "description": "<p>This is ADNs UK server administered by&nbsp; the FreeSTAR Network.</p>",
+      "id": "adn-united-kingdom-server-adn-united-kingdom",
+      "name": "ADN United Kingdom",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "FreeStar UK",
+      "system": "adn-united-kingdom"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://amcomm.network",
+      "description": "<p>The <strong>AmComm DMR Networ</strong>k offers several compelling reasons for amateur radio enthusiasts to join:</p>\r\n<p>&nbsp;</p>\r\n<ul>\r\n<li><strong>Global Connectivity</strong>: With multiple interconnected servers worldwide, you can communicate seamlessly across continents.</li>\r\n<li><strong>Community Focus</strong>: It was created by ham radio operators who value respect and camaraderie, fostering a friendly and inclusive environment.</li>\r\n<li><strong>Ease of Use</strong>: No account is needed&mdash;just a callsign, DMR ID, and a connection to one of our master servers.</li>\r\n<li><strong>Learning Opportunities</strong>: It's a great platform to experiment and learn more about amateur radio and enhance your skills.</li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<p>If you're into amateur radio, this is a fantastic way to connect and grow!&nbsp; Need help? Please Call 888-944-4334 Ext. 103 for any help you need.</p>\r\n<p>&nbsp;</p>\r\n<p><em><sup>This listing is maintained by the Ham Radio Village.&nbsp; E-Mail [email removed] with any questions or corrections.&nbsp;</sup></em></p>",
+      "dial": {
+        "host": "3101.amcomm.network",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "amcomm",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/amcomm/talkgroups/"
+      },
+      "id": "amcomm-server-3101-alabama",
+      "name": "3101 - Alabama",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Amateur Communications Network",
+      "system": "amcomm"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://amcomm.network",
+      "description": "<p>The <strong>AmComm DMR Networ</strong>k offers several compelling reasons for amateur radio enthusiasts to join:</p>\r\n<p>&nbsp;</p>\r\n<ul>\r\n<li><strong>Global Connectivity</strong>: With multiple interconnected servers worldwide, you can communicate seamlessly across continents.</li>\r\n<li><strong>Community Focus</strong>: It was created by ham radio operators who value respect and camaraderie, fostering a friendly and inclusive environment.</li>\r\n<li><strong>Ease of Use</strong>: No account is needed&mdash;just a callsign, DMR ID, and a connection to one of our master servers.</li>\r\n<li><strong>Learning Opportunities</strong>: It's a great platform to experiment and learn more about amateur radio and enhance your skills.</li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<p>If you're into amateur radio, this is a fantastic way to connect and grow!&nbsp; Need help? Please Call 888-944-4334 Ext. 103 for any help you need.</p>\r\n<p>&nbsp;</p>\r\n<p><em><sup>This listing is maintained by the Ham Radio Village.&nbsp; E-Mail [email removed] with any questions or corrections.&nbsp;</sup></em></p>",
+      "dial": {
+        "host": "31010.amcomm.network",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "amcomm",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/amcomm/talkgroups/"
+      },
+      "id": "amcomm-server-31010-seattle",
+      "name": "31010 - Seattle",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Amateur Communications Network",
+      "system": "amcomm"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://amcomm.network",
+      "description": "<p>The <strong>AmComm DMR Networ</strong>k offers several compelling reasons for amateur radio enthusiasts to join:</p>\r\n<p>&nbsp;</p>\r\n<ul>\r\n<li><strong>Global Connectivity</strong>: With multiple interconnected servers worldwide, you can communicate seamlessly across continents.</li>\r\n<li><strong>Community Focus</strong>: It was created by ham radio operators who value respect and camaraderie, fostering a friendly and inclusive environment.</li>\r\n<li><strong>Ease of Use</strong>: No account is needed&mdash;just a callsign, DMR ID, and a connection to one of our master servers.</li>\r\n<li><strong>Learning Opportunities</strong>: It's a great platform to experiment and learn more about amateur radio and enhance your skills.</li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<p>If you're into amateur radio, this is a fantastic way to connect and grow!&nbsp; Need help? Please Call 888-944-4334 Ext. 103 for any help you need.</p>\r\n<p>&nbsp;</p>\r\n<p><em><sup>This listing is maintained by the Ham Radio Village.&nbsp; E-Mail [email removed] with any questions or corrections.&nbsp;</sup></em></p>",
+      "dial": {
+        "host": "31011.amcomm.network",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "amcomm",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/amcomm/talkgroups/"
+      },
+      "id": "amcomm-server-31011-alabama-hotspot",
+      "name": "31011 - Alabama Hotspot",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Amateur Communications Network",
+      "system": "amcomm"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://amcomm.network",
+      "description": "<p>The <strong>AmComm DMR Networ</strong>k offers several compelling reasons for amateur radio enthusiasts to join:</p>\r\n<p>&nbsp;</p>\r\n<ul>\r\n<li><strong>Global Connectivity</strong>: With multiple interconnected servers worldwide, you can communicate seamlessly across continents.</li>\r\n<li><strong>Community Focus</strong>: It was created by ham radio operators who value respect and camaraderie, fostering a friendly and inclusive environment.</li>\r\n<li><strong>Ease of Use</strong>: No account is needed&mdash;just a callsign, DMR ID, and a connection to one of our master servers.</li>\r\n<li><strong>Learning Opportunities</strong>: It's a great platform to experiment and learn more about amateur radio and enhance your skills.</li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<p>If you're into amateur radio, this is a fantastic way to connect and grow!&nbsp; Need help? Please Call 888-944-4334 Ext. 103 for any help you need.</p>\r\n<p>&nbsp;</p>\r\n<p><em><sup>This listing is maintained by the Ham Radio Village.&nbsp; E-Mail [email removed] with any questions or corrections.&nbsp;</sup></em></p>",
+      "dial": {
+        "host": "3102.amcomm.network",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "amcomm",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/amcomm/talkgroups/"
+      },
+      "id": "amcomm-server-3102-atlanta",
+      "name": "3102 - Atlanta",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Amateur Communications Network",
+      "system": "amcomm"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://amcomm.network",
+      "description": "<p>The <strong>AmComm DMR Networ</strong>k offers several compelling reasons for amateur radio enthusiasts to join:</p>\r\n<p>&nbsp;</p>\r\n<ul>\r\n<li><strong>Global Connectivity</strong>: With multiple interconnected servers worldwide, you can communicate seamlessly across continents.</li>\r\n<li><strong>Community Focus</strong>: It was created by ham radio operators who value respect and camaraderie, fostering a friendly and inclusive environment.</li>\r\n<li><strong>Ease of Use</strong>: No account is needed&mdash;just a callsign, DMR ID, and a connection to one of our master servers.</li>\r\n<li><strong>Learning Opportunities</strong>: It's a great platform to experiment and learn more about amateur radio and enhance your skills.</li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<p>If you're into amateur radio, this is a fantastic way to connect and grow!&nbsp; Need help? Please Call 888-944-4334 Ext. 103 for any help you need.</p>\r\n<p>&nbsp;</p>\r\n<p><em><sup>This listing is maintained by the Ham Radio Village.&nbsp; E-Mail [email removed] with any questions or corrections.&nbsp;</sup></em></p>",
+      "dial": {
+        "host": "3103.amcomm.network",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "amcomm",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/amcomm/talkgroups/"
+      },
+      "id": "amcomm-server-3103-chicago",
+      "name": "3103 - Chicago",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Amateur Communications Network",
+      "system": "amcomm"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://amcomm.network",
+      "description": "<p>The <strong>AmComm DMR Networ</strong>k offers several compelling reasons for amateur radio enthusiasts to join:</p>\r\n<p>&nbsp;</p>\r\n<ul>\r\n<li><strong>Global Connectivity</strong>: With multiple interconnected servers worldwide, you can communicate seamlessly across continents.</li>\r\n<li><strong>Community Focus</strong>: It was created by ham radio operators who value respect and camaraderie, fostering a friendly and inclusive environment.</li>\r\n<li><strong>Ease of Use</strong>: No account is needed&mdash;just a callsign, DMR ID, and a connection to one of our master servers.</li>\r\n<li><strong>Learning Opportunities</strong>: It's a great platform to experiment and learn more about amateur radio and enhance your skills.</li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<p>If you're into amateur radio, this is a fantastic way to connect and grow!&nbsp; Need help? Please Call 888-944-4334 Ext. 103 for any help you need.</p>\r\n<p>&nbsp;</p>\r\n<p><em><sup>This listing is maintained by the Ham Radio Village.&nbsp; E-Mail [email removed] with any questions or corrections.&nbsp;</sup></em></p>",
+      "dial": {
+        "host": "3104.amcomm.network",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "amcomm",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/amcomm/talkgroups/"
+      },
+      "id": "amcomm-server-3104-dallas",
+      "name": "3104 - Dallas",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Amateur Communications Network",
+      "system": "amcomm"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://amcomm.network",
+      "description": "<p>The <strong>AmComm DMR Networ</strong>k offers several compelling reasons for amateur radio enthusiasts to join:</p>\r\n<p>&nbsp;</p>\r\n<ul>\r\n<li><strong>Global Connectivity</strong>: With multiple interconnected servers worldwide, you can communicate seamlessly across continents.</li>\r\n<li><strong>Community Focus</strong>: It was created by ham radio operators who value respect and camaraderie, fostering a friendly and inclusive environment.</li>\r\n<li><strong>Ease of Use</strong>: No account is needed&mdash;just a callsign, DMR ID, and a connection to one of our master servers.</li>\r\n<li><strong>Learning Opportunities</strong>: It's a great platform to experiment and learn more about amateur radio and enhance your skills.</li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<p>If you're into amateur radio, this is a fantastic way to connect and grow!&nbsp; Need help? Please Call 888-944-4334 Ext. 103 for any help you need.</p>\r\n<p>&nbsp;</p>\r\n<p><em><sup>This listing is maintained by the Ham Radio Village.&nbsp; E-Mail [email removed] with any questions or corrections.&nbsp;</sup></em></p>",
+      "dial": {
+        "host": "3105.amcomm.network",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "amcomm",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/amcomm/talkgroups/"
+      },
+      "id": "amcomm-server-3105-los-angeles",
+      "name": "3105 - Los Angeles",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Amateur Communications Network",
+      "system": "amcomm"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://amcomm.network",
+      "description": "<p>The <strong>AmComm DMR Networ</strong>k offers several compelling reasons for amateur radio enthusiasts to join:</p>\r\n<p>&nbsp;</p>\r\n<ul>\r\n<li><strong>Global Connectivity</strong>: With multiple interconnected servers worldwide, you can communicate seamlessly across continents.</li>\r\n<li><strong>Community Focus</strong>: It was created by ham radio operators who value respect and camaraderie, fostering a friendly and inclusive environment.</li>\r\n<li><strong>Ease of Use</strong>: No account is needed&mdash;just a callsign, DMR ID, and a connection to one of our master servers.</li>\r\n<li><strong>Learning Opportunities</strong>: It's a great platform to experiment and learn more about amateur radio and enhance your skills.</li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<p>If you're into amateur radio, this is a fantastic way to connect and grow!&nbsp; Need help? Please Call 888-944-4334 Ext. 103 for any help you need.</p>\r\n<p>&nbsp;</p>\r\n<p><em><sup>This listing is maintained by the Ham Radio Village.&nbsp; E-Mail [email removed] with any questions or corrections.&nbsp;</sup></em></p>",
+      "dial": {
+        "host": "31051.amcomm.network",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "amcomm",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/amcomm/talkgroups/"
+      },
+      "id": "amcomm-server-31051-arkansas",
+      "name": "31051 - Arkansas",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Amateur Communications Network",
+      "system": "amcomm"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://amcomm.network",
+      "description": "<p>The <strong>AmComm DMR Networ</strong>k offers several compelling reasons for amateur radio enthusiasts to join:</p>\r\n<p>&nbsp;</p>\r\n<ul>\r\n<li><strong>Global Connectivity</strong>: With multiple interconnected servers worldwide, you can communicate seamlessly across continents.</li>\r\n<li><strong>Community Focus</strong>: It was created by ham radio operators who value respect and camaraderie, fostering a friendly and inclusive environment.</li>\r\n<li><strong>Ease of Use</strong>: No account is needed&mdash;just a callsign, DMR ID, and a connection to one of our master servers.</li>\r\n<li><strong>Learning Opportunities</strong>: It's a great platform to experiment and learn more about amateur radio and enhance your skills.</li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<p>If you're into amateur radio, this is a fantastic way to connect and grow!&nbsp; Need help? Please Call 888-944-4334 Ext. 103 for any help you need.</p>\r\n<p>&nbsp;</p>\r\n<p><em><sup>This listing is maintained by the Ham Radio Village.&nbsp; E-Mail [email removed] with any questions or corrections.&nbsp;</sup></em></p>",
+      "dial": {
+        "host": "3106.amcomm.network",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "amcomm",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/amcomm/talkgroups/"
+      },
+      "id": "amcomm-server-3106-miami",
+      "name": "3106 - Miami",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Amateur Communications Network",
+      "system": "amcomm"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://amcomm.network",
+      "description": "<p>The <strong>AmComm DMR Networ</strong>k offers several compelling reasons for amateur radio enthusiasts to join:</p>\r\n<p>&nbsp;</p>\r\n<ul>\r\n<li><strong>Global Connectivity</strong>: With multiple interconnected servers worldwide, you can communicate seamlessly across continents.</li>\r\n<li><strong>Community Focus</strong>: It was created by ham radio operators who value respect and camaraderie, fostering a friendly and inclusive environment.</li>\r\n<li><strong>Ease of Use</strong>: No account is needed&mdash;just a callsign, DMR ID, and a connection to one of our master servers.</li>\r\n<li><strong>Learning Opportunities</strong>: It's a great platform to experiment and learn more about amateur radio and enhance your skills.</li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<p>If you're into amateur radio, this is a fantastic way to connect and grow!&nbsp; Need help? Please Call 888-944-4334 Ext. 103 for any help you need.</p>\r\n<p>&nbsp;</p>\r\n<p><em><sup>This listing is maintained by the Ham Radio Village.&nbsp; E-Mail [email removed] with any questions or corrections.&nbsp;</sup></em></p>",
+      "dial": {
+        "host": "3108.amcomm.network",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "amcomm",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/amcomm/talkgroups/"
+      },
+      "id": "amcomm-server-3108-new-jersey",
+      "name": "3108 - New Jersey",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Amateur Communications Network",
+      "system": "amcomm"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://amcomm.network",
+      "description": "<p>The <strong>AmComm DMR Networ</strong>k offers several compelling reasons for amateur radio enthusiasts to join:</p>\r\n<p>&nbsp;</p>\r\n<ul>\r\n<li><strong>Global Connectivity</strong>: With multiple interconnected servers worldwide, you can communicate seamlessly across continents.</li>\r\n<li><strong>Community Focus</strong>: It was created by ham radio operators who value respect and camaraderie, fostering a friendly and inclusive environment.</li>\r\n<li><strong>Ease of Use</strong>: No account is needed&mdash;just a callsign, DMR ID, and a connection to one of our master servers.</li>\r\n<li><strong>Learning Opportunities</strong>: It's a great platform to experiment and learn more about amateur radio and enhance your skills.</li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<p>If you're into amateur radio, this is a fantastic way to connect and grow!&nbsp; Need help? Please Call 888-944-4334 Ext. 103 for any help you need.</p>\r\n<p>&nbsp;</p>\r\n<p><em><sup>This listing is maintained by the Ham Radio Village.&nbsp; E-Mail [email removed] with any questions or corrections.&nbsp;</sup></em></p>",
+      "dial": {
+        "host": "3109.amcomm.network",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "amcomm",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/amcomm/talkgroups/"
+      },
+      "id": "amcomm-server-3109-washington-dc",
+      "name": "3109 - Washington D.C.",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Amateur Communications Network",
+      "system": "amcomm"
+    },
+    {
+      "country": "TH",
+      "dashboard": "http://toptech.3bbddns.com:17077",
+      "id": "ar-norasingh-server-server-1",
+      "name": "Server 1",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "AR Norasingh",
+      "system": "ar-norasingh"
+    },
+    {
+      "country": "AU",
+      "dashboard": "https://xlx820.com",
+      "dial": {
+        "host": "172.105.180.77",
+        "kind": "mmdvm",
+        "port": 62030,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "au-central-qld",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/au-central-qld/talkgroups/"
+      },
+      "id": "au-central-qld-server-http17210518077",
+      "name": "http://172.105.180.77/",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "John VK4UE",
+      "system": "au-central-qld"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://ysfborikenct.ddns.net/",
+      "dial": {
+        "host": "192.168.1.226",
+        "kind": "mmdvm",
+        "port": 50000,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "boriken-memorial",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/boriken-memorial/talkgroups/"
+      },
+      "id": "boriken-memorial-server-http1921681226",
+      "name": "http://192.168.1.226/",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Boriken Memorial",
+      "system": "boriken-memorial"
+    },
+    {
+      "country": "CN",
+      "dashboard": "https://mmdvm.cc/",
+      "description": "<p>A handmade MMDVM HB and MOTO IPSC server with interconnection to BM network.&nbsp;</p>",
+      "dial": {
+        "host": "47.75.129.117",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "china-homebrew-dmr-bridge",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/china-homebrew-dmr-bridge/talkgroups/"
+      },
+      "id": "china-homebrew-dmr-bridge-server-cnhk",
+      "name": "CNHK",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "DRCC Team",
+      "system": "china-homebrew-dmr-bridge"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://dmr.cq-uk.uk",
+      "description": "<p>Sponsored by CQ-UK&nbsp;</p>",
+      "dial": {
+        "host": "dmr.cq-uk.uk",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "cq-uk-dmr-master",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/cq-uk-dmr-master/talkgroups/"
+      },
+      "id": "cq-uk-dmr-master-server-cq-uk-dmr-master",
+      "name": "CQ-UK DMR MASTER",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "CQ-UK WORLDWIDE",
+      "system": "cq-uk-dmr-master"
+    },
+    {
+      "country": "SE",
+      "dashboard": "https://cq.foxhost.org",
+      "description": "<p>Welcome to CQ Zone ADN Systems Server Enjoy Your Stay!</p>",
+      "id": "cq-zone-server-cq-zone",
+      "name": "CQ Zone",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "CQ Zone! - Member of ( HELLAS Zone Net )",
+      "system": "cq-zone"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://crhrc.org",
+      "dial": {
+        "host": "vpn.crhrc.org",
+        "kind": "mmdvm",
+        "port": 62030,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "crhrc",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/crhrc/talkgroups/"
+      },
+      "id": "crhrc-server-crhrc-hb-link-server-tg-11",
+      "name": "CRHRC HB-Link Server TG 11",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "CRHRC",
+      "system": "crhrc"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://crhrc.org",
+      "dial": {
+        "host": "vpn.crhrc.org",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "crhrc",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/crhrc/talkgroups/"
+      },
+      "id": "crhrc-server-crhrc-hb-link-server-tg-50",
+      "name": "CRHRC HB-Link Server TG 50",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "CRHRC",
+      "system": "crhrc"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://dmr.cumbriacq.com",
+      "dial": {
+        "host": "dmr.cumbriacq.com",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "cumbriacq-dmr-master",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/cumbriacq-dmr-master/talkgroups/"
+      },
+      "id": "cumbriacq-dmr-master-server-dmrcumbriacqcom",
+      "name": "dmr.cumbriacq.com",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "CumbriaCQ",
+      "system": "cumbriacq-dmr-master"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://urf001.cumbriacq.com",
+      "dial": {
+        "host": "urf001.cumbriacq.com",
+        "kind": "mmdvm",
+        "port": 62030,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "cumbriacqcom",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/cumbriacqcom/talkgroups/"
+      },
+      "id": "cumbriacqcom-server-urf-xlx929",
+      "name": "URF / XLX929",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "CUMBRIA CQ",
+      "system": "cumbriacqcom"
+    },
+    {
+      "country": "AU",
+      "dashboard": "https://dvdmr.org/",
+      "description": "<p>We&rsquo;re not just another DMR network; we&rsquo;re a community-driven platform that champions:</p>\r\n<p>&nbsp;</p>\r\n<ul>\r\n<li>Openness to Innovation: Have a unique idea for a talkgroup? Want to experiment with data modes? Digital Voice DMR provides a welcoming environment for you to try it out.</li>\r\n<li>&nbsp;</li>\r\n<li>Flexibility and Adaptability: Our infrastructure is designed to be nimble, allowing for quicker implementation of new features and protocols.</li>\r\n<li>&nbsp;</li>\r\n<li>A &ldquo;Try It and See&rdquo; Mentality: We encourage healthy experimentation, even if it means occasional bumps along the road. Learning and growth are paramount.</li>\r\n<li>&nbsp;</li>\r\n<li>Collaboration and Knowledge Sharing: We envision a vibrant community where users share their discoveries, troubleshoot challenges together, and collectively advance the capabilities of digital communications.</li>\r\n</ul>",
+      "dial": {
+        "host": "dmr.dvau.au",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "digital-voice-down-under-dvdu",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/digital-voice-down-under-dvdu/talkgroups/"
+      },
+      "id": "digital-voice-down-under-dvdu-server-dvdu-dvau",
+      "name": "DVDU DVAU",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "VK2WAY, VK3JED, VK5ZSH, ZL2RO",
+      "system": "digital-voice-down-under-dvdu"
+    },
+    {
+      "country": "NZ",
+      "dashboard": "https://dvdmr.org/",
+      "description": "<p>We&rsquo;re not just another DMR network; we&rsquo;re a community-driven platform that champions:</p>\r\n<p>&nbsp;</p>\r\n<ul>\r\n<li>Openness to Innovation: Have a unique idea for a talkgroup? Want to experiment with data modes? Digital Voice DMR provides a welcoming environment for you to try it out.</li>\r\n<li>&nbsp;</li>\r\n<li>Flexibility and Adaptability: Our infrastructure is designed to be nimble, allowing for quicker implementation of new features and protocols.</li>\r\n<li>&nbsp;</li>\r\n<li>A &ldquo;Try It and See&rdquo; Mentality: We encourage healthy experimentation, even if it means occasional bumps along the road. Learning and growth are paramount.</li>\r\n<li>&nbsp;</li>\r\n<li>Collaboration and Knowledge Sharing: We envision a vibrant community where users share their discoveries, troubleshoot challenges together, and collectively advance the capabilities of digital communications.</li>\r\n</ul>",
+      "dial": {
+        "host": "dmr.dvnz.nz",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "digital-voice-down-under-dvdu",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/digital-voice-down-under-dvdu/talkgroups/"
+      },
+      "id": "digital-voice-down-under-dvdu-server-dvdu-dvnz",
+      "name": "DVDU DVNZ",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "VK2WAY, VK3JED, VK5ZSH, ZL2RO",
+      "system": "digital-voice-down-under-dvdu"
+    },
+    {
+      "country": "AU",
+      "dashboard": "https://dvdmr.org/",
+      "description": "<p>We&rsquo;re not just another DMR network; we&rsquo;re a community-driven platform that champions:</p>\r\n<p>&nbsp;</p>\r\n<ul>\r\n<li>Openness to Innovation: Have a unique idea for a talkgroup? Want to experiment with data modes? Digital Voice DMR provides a welcoming environment for you to try it out.</li>\r\n<li>&nbsp;</li>\r\n<li>Flexibility and Adaptability: Our infrastructure is designed to be nimble, allowing for quicker implementation of new features and protocols.</li>\r\n<li>&nbsp;</li>\r\n<li>A &ldquo;Try It and See&rdquo; Mentality: We encourage healthy experimentation, even if it means occasional bumps along the road. Learning and growth are paramount.</li>\r\n<li>&nbsp;</li>\r\n<li>Collaboration and Knowledge Sharing: We envision a vibrant community where users share their discoveries, troubleshoot challenges together, and collectively advance the capabilities of digital communications.</li>\r\n</ul>",
+      "dial": {
+        "host": "dmr.vkradio.com",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "digital-voice-down-under-dvdu",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/digital-voice-down-under-dvdu/talkgroups/"
+      },
+      "id": "digital-voice-down-under-dvdu-server-dvdu-vkradio",
+      "name": "DVDU VKRadio",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "VK2WAY, VK3JED, VK5ZSH, ZL2RO",
+      "system": "digital-voice-down-under-dvdu"
+    },
+    {
+      "country": "GR",
+      "dashboard": "http://digital-voice.sv2snh.gr/",
+      "description": "<p>Digital Voice GREECE</p>\r\n<p>Amateur Radio Network</p>",
+      "dial": {
+        "host": "38.19.200.56",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "digital-voice-greece",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/digital-voice-greece/talkgroups/"
+      },
+      "id": "digital-voice-greece-server-digital-voice-greece",
+      "name": "Digital Voice GREECE",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "sv2snh.gr",
+      "system": "digital-voice-greece"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://hotspot.cbridge.net",
+      "dial": {
+        "host": "74.91.112.72",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "dmr-se-network",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/dmr-se-network/talkgroups/"
+      },
+      "id": "dmr-se-network-server-dmr-se2",
+      "name": "DMR-SE2",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "DMR-SE",
+      "system": "dmr-se-network"
+    },
+    {
+      "country": "BR",
+      "dashboard": "https://xlx026.net",
+      "description": "<p data-path-to-node=\"12,0\">Desenvolvido para inovar e ampliar as op&ccedil;&otilde;es de comunica&ccedil;&atilde;o digital no radioamadorismo, nosso servidor conecta o Brasil ao mundo atrav&eacute;s de uma infraestrutura de ponta.</p>\r\n<p data-path-to-node=\"12,1\"><strong data-path-to-node=\"12,1\" data-index-in-node=\"0\">Nossos Diferenciais:</strong></p>\r\n<ul data-path-to-node=\"12,2\">\r\n<li>\r\n<p data-path-to-node=\"12,2,0,0\"><strong data-path-to-node=\"12,2,0,0\" data-index-in-node=\"0\">Alta Estabilidade:</strong> Um ambiente independente e confi&aacute;vel para suas transmiss&otilde;es.</p>\r\n</li>\r\n<li>\r\n<p data-path-to-node=\"12,2,1,0\"><strong data-path-to-node=\"12,2,1,0\" data-index-in-node=\"0\">Integra&ccedil;&atilde;o Multiplataforma:</strong> Suporte completo e unificado para os sistemas <strong data-path-to-node=\"12,2,1,0\" data-index-in-node=\"74\">D-Star, DMR e YSF</strong>.</p>\r\n</li>\r\n<li>\r\n<p data-path-to-node=\"12,2,2,0\"><strong data-path-to-node=\"12,2,2,0\" data-index-in-node=\"0\">Conex&atilde;o Global:</strong> Foco em fortalecer a interconex&atilde;o e o interc&acirc;mbio de conhecimento entre radioamadores de todas as regi&otilde;es.</p>\r\n</li>\r\n</ul>\r\n<p data-start=\"218\" data-end=\"268\"><strong data-start=\"218\" data-end=\"261\"><br>XLX026&nbsp; (Multiprotocolo)</strong> \ud83c\udde7\ud83c\uddf7</p>\r\n<ul data-start=\"269\" data-end=\"496\">\r\n<li data-start=\"269\" data-end=\"305\">\r\n<p data-start=\"271\" data-end=\"305\"><strong data-start=\"271\" data-end=\"284\">Endere&ccedil;o: https://xlx026.net</strong></p>\r\n</li>\r\n<li data-start=\"306\" data-end=\"330\">\r\n<p data-start=\"308\" data-end=\"330\"><strong data-start=\"308\" data-end=\"322\">Porta DMR:</strong> 62030</p>\r\n</li>\r\n<li data-start=\"331\" data-end=\"352\">\r\n<p data-start=\"333\" data-end=\"352\"><strong data-start=\"333\" data-end=\"343\">Senha: passw0rd</strong></p>\r\n</li>\r\n<li data-start=\"353\" data-end=\"389\">\r\n<p data-start=\"355\" data-end=\"389\"><strong data-start=\"355\" data-end=\"370\">Protocolo:</strong> DMR</p>\r\n</li>\r\n<li data-start=\"390\" data-end=\"427\">\r\n<p data-start=\"392\" data-end=\"427\"><strong data-start=\"392\" data-end=\"411\">M&oacute;dulo ativo:</strong> C ( TG 4003) para falar usando radio configure o TG-6.</p>\r\n</li>\r\n</ul>",
+      "dial": {
+        "host": "xlx026.net",
+        "kind": "mmdvm",
+        "port": 62030,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "dmr-xlx026",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/dmr-xlx026/talkgroups/"
+      },
+      "id": "dmr-xlx026-server-dmr_xlx026",
+      "name": "DMR_XLX026",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "PU2PNY",
+      "system": "dmr-xlx026"
+    },
+    {
+      "country": "CN",
+      "dashboard": "http://tg46023.cn/",
+      "dial": {
+        "host": "tg46008.cn",
+        "kind": "mmdvm",
+        "port": 62030,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "dmr_china8",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/dmr_china8/talkgroups/"
+      },
+      "id": "dmr_china8-server-ckg",
+      "name": "ckg",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "[email removed]",
+      "system": "dmr_china8"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://ipsc2.freestar.network/ipsc",
+      "description": "<p>The UK Official DMRplus IPSC2 Master for the United Kingdom.</p>",
+      "dial": {
+        "host": "185.169.252.213",
+        "kind": "mmdvm",
+        "port": 55555,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "dmrplus-ipsc2-uk",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/dmrplus-ipsc2-uk/talkgroups/"
+      },
+      "id": "dmrplus-ipsc2-uk-server-dmr-united-kingdom",
+      "name": "DMR+ United Kingdom",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "FreeSTAR Network DMR+",
+      "system": "dmrplus-ipsc2-uk"
+    },
+    {
+      "country": "KR",
+      "dashboard": "http://ds3dif.iptime.org/",
+      "description": "<p>DS3DIF GeunJin Moon DVref DMR Network</p>",
+      "dial": {
+        "host": "220.123.96.162",
+        "kind": "mmdvm",
+        "port": 50000,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "ds3dif",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/ds3dif/talkgroups/"
+      },
+      "id": "ds3dif-server-dmr-network",
+      "name": "DMR Network",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "DS3DIF DV HAM Would",
+      "system": "ds3dif"
+    },
+    {
+      "country": "PH",
+      "dashboard": "http://armi.bolsademaria.com/",
+      "id": "dx1arm-server-515044",
+      "name": "515044",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "DV1ROY",
+      "system": "dx1arm"
+    },
+    {
+      "country": "PH",
+      "dashboard": "http://armi.bolsademaria.com/",
+      "id": "dx1arm-server-tg51518",
+      "name": "TG51518",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "DV1ROY",
+      "system": "dx1arm"
+    },
+    {
+      "country": "PH",
+      "dashboard": "http://172.237.71.216",
+      "description": "<p>Ref XLX598</p>",
+      "id": "dx6cn-server-cenarl",
+      "name": "CENARL",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "DU6PEW",
+      "system": "dx6cn"
+    },
+    {
+      "country": "VE",
+      "dashboard": "http://734650.adn-systems",
+      "description": "<p>Por El Gusto de Hacer Radio</p>",
+      "id": "el-verdadero-radio-aficionado-server-http734650adn-systems",
+      "name": "http://734650.adn-systems",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "734650",
+      "system": "el-verdadero-radio-aficionado"
+    },
+    {
+      "country": "VE",
+      "dashboard": "http://734650.adn-systems",
+      "description": "<p>Por El Gusto de Hacer Radio</p>",
+      "id": "el-verdadero-radio-aficionado-server-http734650adnsystems",
+      "name": "http://734650.adn.systems",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "734650",
+      "system": "el-verdadero-radio-aficionado"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://dmr.m0xfn.radio",
+      "description": "<p>The Extended Freedom Network is a Multimode Amateur Radio Network allowing a diverse range of Amateur Operators to come together via different and normally incompatible modes, with connections spanning the globe to bring people together making those QSO's happen.</p>\r\n<p>You can connect to the Extended Freedom Network via a number of ways. Our primary route is via the Allstar system, node no&rsquo;s. <strong>2195 &amp; 2197</strong>.</p>\r\n<p>We have connectivity using EchoLink, DMR, Yaesu Fusion (YSF), Teamspeak, Hamshack Hotline and our own VoIP Network Extended Freedom SIP.</p>",
+      "dial": {
+        "host": "dmr.m0xfn.radio",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "extended-freedom-network",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/extended-freedom-network/talkgroups/"
+      },
+      "id": "extended-freedom-network-server-xfreedom",
+      "name": "XFreedom",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Extended Freedom Network",
+      "system": "extended-freedom-network"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://dmr.m0xfn.radio",
+      "description": "<p>The Extended Freedom Network is a Multimode Amateur Radio Network allowing a diverse range of Amateur Operators to come together via different and normally incompatible modes, with connections spanning the globe to bring people together making those QSO's happen.</p>\r\n<p>You can connect to the Extended Freedom Network via a number of ways. Our primary route is via the Allstar system, node no&rsquo;s. <strong>2195 &amp; 2197</strong>.</p>\r\n<p>We have connectivity using EchoLink, DMR, Yaesu Fusion (YSF), Teamspeak, Hamshack Hotline and our own VoIP Network Extended Freedom SIP.</p>",
+      "dial": {
+        "host": "DMR-USA.m0xfn.radio",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "extended-freedom-network",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/extended-freedom-network/talkgroups/"
+      },
+      "id": "extended-freedom-network-server-xfreedom-usa",
+      "name": "XFreedom-USA",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Extended Freedom Network",
+      "system": "extended-freedom-network"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://fbdmr.network",
+      "description": "<p>Started off as a simple network for a few local hams.&nbsp; It is open to all who care to join.&nbsp; You can request a talk group if you like.</p>",
+      "dial": {
+        "host": "159.65.222.149",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "fb-dmr-network",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/fb-dmr-network/talkgroups/"
+      },
+      "id": "fb-dmr-network-server-digital-ocean",
+      "name": "Digital Ocean",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "N2MRH",
+      "system": "fb-dmr-network"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://93.90.205.46/",
+      "dial": {
+        "host": "93.90.205.46",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "fd_adn_22211_italy",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/fd_adn_22211_italy/talkgroups/"
+      },
+      "id": "fd_adn_22211_italy-server-fd_adn_22211_italy",
+      "name": "FD_ADN_22211_Italy",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "iw9gtr",
+      "system": "fd_adn_22211_italy"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://185.203.216.4/",
+      "dial": {
+        "host": "185.203.216.4",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "fd_adn_22212",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/fd_adn_22212/talkgroups/"
+      },
+      "id": "fd_adn_22212-server-fd_adn_22212_italy",
+      "name": "FD_ADN_22212_Italy",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "iw9gtr",
+      "system": "fd_adn_22212"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://2221.adn.systems/",
+      "dial": {
+        "host": "185.201.65.165",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "fd_adn_2221_italy",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/fd_adn_2221_italy/talkgroups/"
+      },
+      "id": "fd_adn_2221_italy-server-fd_adn_22211_italy",
+      "name": "FD_ADN_22211_Italy",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "ADN SYSTEMS",
+      "system": "fd_adn_2221_italy"
+    },
+    {
+      "country": "PA",
+      "dashboard": "http://fdmrpa.link",
+      "description": "<p>FreeDMR Central America is an independent regional DMR network connecting FreeDMR/HBLink servers and licensed amateur radio operators across Central America. The network operates 24/7 and provides regional, national, and international DMR connectivity through an interconnected infrastructure based on FreeDMR technology.</p>\r\n<p><br>The network is open to licensed amateur radio operators and promotes cooperation and interoperability between FreeDMR systems throughout Central America, while maintaining connectivity with international DMR networks.</p>",
+      "dial": {
+        "host": "fdmrpa.link",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "freedmr-central-america",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/freedmr-central-america/talkgroups/"
+      },
+      "id": "freedmr-central-america-server-freedmr-panama-network",
+      "name": "FreeDMR Panama Network",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "FreeDMR Central America",
+      "system": "freedmr-central-america"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://www.freedmr.uk/index.php/server-status/",
+      "description": "<h4>FreeDMR Network.</h4>\r\n<p>The FreeDMR Network is a group of independent servers running the FreeDMR Peer Server Software. The FreeDMR Peer Servers are connected via OpenBridge &ldquo;OPB&rdquo; connections in a Mesh topology to one another to redundantly and diversely share all available TalkGroups among all Servers. The FreeDMR Network, does NOT utilize a &ldquo;Master/Slave&rdquo; topology. All FreeDMR peer servers are seen as equal peers to each other just as all the individuals who run the servers are. We do not control when where, what how or who can use our software. Free means free as in speech and free as in beer!.</p>",
+      "dial": {
+        "host": "cy.freedmr.cymru",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "freedmr-network",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/freedmr-network/talkgroups/"
+      },
+      "id": "freedmr-network-server-freedmr-cymru",
+      "name": "FreeDMR Cymru",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "FreeDMR",
+      "system": "freedmr-network"
+    },
+    {
+      "country": "FR",
+      "dashboard": "https://www.freedmr.uk/index.php/server-status/",
+      "description": "<h4>FreeDMR Network.</h4>\r\n<p>The FreeDMR Network is a group of independent servers running the FreeDMR Peer Server Software. The FreeDMR Peer Servers are connected via OpenBridge &ldquo;OPB&rdquo; connections in a Mesh topology to one another to redundantly and diversely share all available TalkGroups among all Servers. The FreeDMR Network, does NOT utilize a &ldquo;Master/Slave&rdquo; topology. All FreeDMR peer servers are seen as equal peers to each other just as all the individuals who run the servers are. We do not control when where, what how or who can use our software. Free means free as in speech and free as in beer!.</p>",
+      "dial": {
+        "host": "freedmreu.gb7fr.org.uk",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "freedmr-network",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/freedmr-network/talkgroups/"
+      },
+      "id": "freedmr-network-server-freedmr-eu",
+      "name": "FreeDMR EU",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "FreeDMR",
+      "system": "freedmr-network"
+    },
+    {
+      "country": "GR",
+      "dashboard": "https://www.freedmr.uk/index.php/server-status/",
+      "description": "<h4>FreeDMR Network.</h4>\r\n<p>The FreeDMR Network is a group of independent servers running the FreeDMR Peer Server Software. The FreeDMR Peer Servers are connected via OpenBridge &ldquo;OPB&rdquo; connections in a Mesh topology to one another to redundantly and diversely share all available TalkGroups among all Servers. The FreeDMR Network, does NOT utilize a &ldquo;Master/Slave&rdquo; topology. All FreeDMR peer servers are seen as equal peers to each other just as all the individuals who run the servers are. We do not control when where, what how or who can use our software. Free means free as in speech and free as in beer!.</p>",
+      "dial": {
+        "host": "dmr.freedmr.gr",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "freedmr-network",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/freedmr-network/talkgroups/"
+      },
+      "id": "freedmr-network-server-freedmr-greece",
+      "name": "FreeDMR Greece",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "FreeDMR",
+      "system": "freedmr-network"
+    },
+    {
+      "country": "IT",
+      "dashboard": "https://www.freedmr.uk/index.php/server-status/",
+      "description": "<h4>FreeDMR Network.</h4>\r\n<p>The FreeDMR Network is a group of independent servers running the FreeDMR Peer Server Software. The FreeDMR Peer Servers are connected via OpenBridge &ldquo;OPB&rdquo; connections in a Mesh topology to one another to redundantly and diversely share all available TalkGroups among all Servers. The FreeDMR Network, does NOT utilize a &ldquo;Master/Slave&rdquo; topology. All FreeDMR peer servers are seen as equal peers to each other just as all the individuals who run the servers are. We do not control when where, what how or who can use our software. Free means free as in speech and free as in beer!.</p>",
+      "dial": {
+        "host": "hotspot.freedmr.it",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "freedmr-network",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/freedmr-network/talkgroups/"
+      },
+      "id": "freedmr-network-server-freedmr-italy",
+      "name": "FreeDMR ITALY",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "FreeDMR",
+      "system": "freedmr-network"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://www.freedmr.uk/index.php/server-status/",
+      "description": "<h4>FreeDMR Network.</h4>\r\n<p>The FreeDMR Network is a group of independent servers running the FreeDMR Peer Server Software. The FreeDMR Peer Servers are connected via OpenBridge &ldquo;OPB&rdquo; connections in a Mesh topology to one another to redundantly and diversely share all available TalkGroups among all Servers. The FreeDMR Network, does NOT utilize a &ldquo;Master/Slave&rdquo; topology. All FreeDMR peer servers are seen as equal peers to each other just as all the individuals who run the servers are. We do not control when where, what how or who can use our software. Free means free as in speech and free as in beer!.</p>",
+      "dial": {
+        "host": "hotspots.freedmr.uk",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "freedmr-network",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/freedmr-network/talkgroups/"
+      },
+      "id": "freedmr-network-server-freedmr-uk-offical",
+      "name": "FreeDMR UK Offical",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "FreeDMR",
+      "system": "freedmr-network"
+    },
+    {
+      "country": "AR",
+      "dashboard": "https://www.freedmr.uk/index.php/server-status/",
+      "description": "<h4>FreeDMR Network.</h4>\r\n<p>The FreeDMR Network is a group of independent servers running the FreeDMR Peer Server Software. The FreeDMR Peer Servers are connected via OpenBridge &ldquo;OPB&rdquo; connections in a Mesh topology to one another to redundantly and diversely share all available TalkGroups among all Servers. The FreeDMR Network, does NOT utilize a &ldquo;Master/Slave&rdquo; topology. All FreeDMR peer servers are seen as equal peers to each other just as all the individuals who run the servers are. We do not control when where, what how or who can use our software. Free means free as in speech and free as in beer!.</p>",
+      "dial": {
+        "host": "master.freedmr.com.ar",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "freedmr-network",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/freedmr-network/talkgroups/"
+      },
+      "id": "freedmr-network-server-freedmr_argentina",
+      "name": "FreeDMR_Argentina",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "FreeDMR",
+      "system": "freedmr-network"
+    },
+    {
+      "country": "AU",
+      "dashboard": "https://www.freedmr.uk/index.php/server-status/",
+      "description": "<h4>FreeDMR Network.</h4>\r\n<p>The FreeDMR Network is a group of independent servers running the FreeDMR Peer Server Software. The FreeDMR Peer Servers are connected via OpenBridge &ldquo;OPB&rdquo; connections in a Mesh topology to one another to redundantly and diversely share all available TalkGroups among all Servers. The FreeDMR Network, does NOT utilize a &ldquo;Master/Slave&rdquo; topology. All FreeDMR peer servers are seen as equal peers to each other just as all the individuals who run the servers are. We do not control when where, what how or who can use our software. Free means free as in speech and free as in beer!.</p>",
+      "dial": {
+        "host": "srv-dmr1.vk44.net",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "freedmr-network",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/freedmr-network/talkgroups/"
+      },
+      "id": "freedmr-network-server-freedmr_australia-vk44net",
+      "name": "FreeDMR_Australia-VK44NET",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "FreeDMR",
+      "system": "freedmr-network"
+    },
+    {
+      "country": "BR",
+      "dashboard": "https://www.freedmr.uk/index.php/server-status/",
+      "description": "<h4>FreeDMR Network.</h4>\r\n<p>The FreeDMR Network is a group of independent servers running the FreeDMR Peer Server Software. The FreeDMR Peer Servers are connected via OpenBridge &ldquo;OPB&rdquo; connections in a Mesh topology to one another to redundantly and diversely share all available TalkGroups among all Servers. The FreeDMR Network, does NOT utilize a &ldquo;Master/Slave&rdquo; topology. All FreeDMR peer servers are seen as equal peers to each other just as all the individuals who run the servers are. We do not control when where, what how or who can use our software. Free means free as in speech and free as in beer!.</p>",
+      "dial": {
+        "host": "freedmr.network365.com.br",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "freedmr-network",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/freedmr-network/talkgroups/"
+      },
+      "id": "freedmr-network-server-freedmr_brasil",
+      "name": "FreeDMR_Brasil",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "FreeDMR",
+      "system": "freedmr-network"
+    },
+    {
+      "country": "CN",
+      "dashboard": "https://www.freedmr.uk/index.php/server-status/",
+      "description": "<h4>FreeDMR Network.</h4>\r\n<p>The FreeDMR Network is a group of independent servers running the FreeDMR Peer Server Software. The FreeDMR Peer Servers are connected via OpenBridge &ldquo;OPB&rdquo; connections in a Mesh topology to one another to redundantly and diversely share all available TalkGroups among all Servers. The FreeDMR Network, does NOT utilize a &ldquo;Master/Slave&rdquo; topology. All FreeDMR peer servers are seen as equal peers to each other just as all the individuals who run the servers are. We do not control when where, what how or who can use our software. Free means free as in speech and free as in beer!.</p>",
+      "dial": {
+        "host": "freedmr.jxham.cn",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "freedmr-network",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/freedmr-network/talkgroups/"
+      },
+      "id": "freedmr-network-server-freedmr_cn_jiangxi",
+      "name": "Freedmr_CN_JiangXi",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "FreeDMR",
+      "system": "freedmr-network"
+    },
+    {
+      "country": "CO",
+      "dashboard": "https://www.freedmr.uk/index.php/server-status/",
+      "description": "<h4>FreeDMR Network.</h4>\r\n<p>The FreeDMR Network is a group of independent servers running the FreeDMR Peer Server Software. The FreeDMR Peer Servers are connected via OpenBridge &ldquo;OPB&rdquo; connections in a Mesh topology to one another to redundantly and diversely share all available TalkGroups among all Servers. The FreeDMR Network, does NOT utilize a &ldquo;Master/Slave&rdquo; topology. All FreeDMR peer servers are seen as equal peers to each other just as all the individuals who run the servers are. We do not control when where, what how or who can use our software. Free means free as in speech and free as in beer!.</p>",
+      "dial": {
+        "host": "freedmr.hk4rau.com",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "freedmr-network",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/freedmr-network/talkgroups/"
+      },
+      "id": "freedmr-network-server-freedmr_colombia",
+      "name": "FreeDMR_Colombia",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "FreeDMR",
+      "system": "freedmr-network"
+    },
+    {
+      "country": "MX",
+      "dashboard": "https://www.freedmr.uk/index.php/server-status/",
+      "description": "<h4>FreeDMR Network.</h4>\r\n<p>The FreeDMR Network is a group of independent servers running the FreeDMR Peer Server Software. The FreeDMR Peer Servers are connected via OpenBridge &ldquo;OPB&rdquo; connections in a Mesh topology to one another to redundantly and diversely share all available TalkGroups among all Servers. The FreeDMR Network, does NOT utilize a &ldquo;Master/Slave&rdquo; topology. All FreeDMR peer servers are seen as equal peers to each other just as all the individuals who run the servers are. We do not control when where, what how or who can use our software. Free means free as in speech and free as in beer!.</p>",
+      "dial": {
+        "host": "freedmr.xe1e.net",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "freedmr-network",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/freedmr-network/talkgroups/"
+      },
+      "id": "freedmr-network-server-freedmr_mexico",
+      "name": "FreeDMR_Mexico",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "FreeDMR",
+      "system": "freedmr-network"
+    },
+    {
+      "country": "NZ",
+      "dashboard": "https://www.freedmr.uk/index.php/server-status/",
+      "description": "<h4>FreeDMR Network.</h4>\r\n<p>The FreeDMR Network is a group of independent servers running the FreeDMR Peer Server Software. The FreeDMR Peer Servers are connected via OpenBridge &ldquo;OPB&rdquo; connections in a Mesh topology to one another to redundantly and diversely share all available TalkGroups among all Servers. The FreeDMR Network, does NOT utilize a &ldquo;Master/Slave&rdquo; topology. All FreeDMR peer servers are seen as equal peers to each other just as all the individuals who run the servers are. We do not control when where, what how or who can use our software. Free means free as in speech and free as in beer!.</p>",
+      "dial": {
+        "host": "freedmr.dvnz.nz",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "freedmr-network",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/freedmr-network/talkgroups/"
+      },
+      "id": "freedmr-network-server-freedmr_newzealand",
+      "name": "FreeDMR_NewZealand",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "FreeDMR",
+      "system": "freedmr-network"
+    },
+    {
+      "country": "NI",
+      "dashboard": "https://www.freedmr.uk/index.php/server-status/",
+      "description": "<h4>FreeDMR Network.</h4>\r\n<p>The FreeDMR Network is a group of independent servers running the FreeDMR Peer Server Software. The FreeDMR Peer Servers are connected via OpenBridge &ldquo;OPB&rdquo; connections in a Mesh topology to one another to redundantly and diversely share all available TalkGroups among all Servers. The FreeDMR Network, does NOT utilize a &ldquo;Master/Slave&rdquo; topology. All FreeDMR peer servers are seen as equal peers to each other just as all the individuals who run the servers are. We do not control when where, what how or who can use our software. Free means free as in speech and free as in beer!.</p>",
+      "dial": {
+        "host": "freedmr.gremnic.org",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "freedmr-network",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/freedmr-network/talkgroups/"
+      },
+      "id": "freedmr-network-server-freedmr_nicaragua",
+      "name": "FreeDMR_Nicaragua",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "FreeDMR",
+      "system": "freedmr-network"
+    },
+    {
+      "country": "AU",
+      "dashboard": "https://www.freedmr.uk/index.php/server-status/",
+      "description": "<h4>FreeDMR Network.</h4>\r\n<p>The FreeDMR Network is a group of independent servers running the FreeDMR Peer Server Software. The FreeDMR Peer Servers are connected via OpenBridge &ldquo;OPB&rdquo; connections in a Mesh topology to one another to redundantly and diversely share all available TalkGroups among all Servers. The FreeDMR Network, does NOT utilize a &ldquo;Master/Slave&rdquo; topology. All FreeDMR peer servers are seen as equal peers to each other just as all the individuals who run the servers are. We do not control when where, what how or who can use our software. Free means free as in speech and free as in beer!.</p>",
+      "dial": {
+        "host": "australia.oz-dmr.network",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "freedmr-network",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/freedmr-network/talkgroups/"
+      },
+      "id": "freedmr-network-server-freedmr_oz-dmr-australia",
+      "name": "FreeDMR_OZ-DMR-AUSTRALIA",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "FreeDMR",
+      "system": "freedmr-network"
+    },
+    {
+      "country": "AU",
+      "dashboard": "https://www.freedmr.uk/index.php/server-status/",
+      "description": "<h4>FreeDMR Network.</h4>\r\n<p>The FreeDMR Network is a group of independent servers running the FreeDMR Peer Server Software. The FreeDMR Peer Servers are connected via OpenBridge &ldquo;OPB&rdquo; connections in a Mesh topology to one another to redundantly and diversely share all available TalkGroups among all Servers. The FreeDMR Network, does NOT utilize a &ldquo;Master/Slave&rdquo; topology. All FreeDMR peer servers are seen as equal peers to each other just as all the individuals who run the servers are. We do not control when where, what how or who can use our software. Free means free as in speech and free as in beer!.</p>",
+      "dial": {
+        "host": "repeater.australia.oz-dmr.network",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "freedmr-network",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/freedmr-network/talkgroups/"
+      },
+      "id": "freedmr-network-server-freedmr_oz-dmr-australia_repeater",
+      "name": "FreeDMR_OZ-DMR-AUSTRALIA_REPEATER",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "FreeDMR",
+      "system": "freedmr-network"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://www.freedmr.uk/index.php/server-status/",
+      "description": "<h4>FreeDMR Network.</h4>\r\n<p>The FreeDMR Network is a group of independent servers running the FreeDMR Peer Server Software. The FreeDMR Peer Servers are connected via OpenBridge &ldquo;OPB&rdquo; connections in a Mesh topology to one another to redundantly and diversely share all available TalkGroups among all Servers. The FreeDMR Network, does NOT utilize a &ldquo;Master/Slave&rdquo; topology. All FreeDMR peer servers are seen as equal peers to each other just as all the individuals who run the servers are. We do not control when where, what how or who can use our software. Free means free as in speech and free as in beer!.</p>",
+      "dial": {
+        "host": "england.oz-dmr.network",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "freedmr-network",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/freedmr-network/talkgroups/"
+      },
+      "id": "freedmr-network-server-freedmr_oz-dmr-united-kingdom",
+      "name": "FreeDMR_OZ-DMR-UNITED-KINGDOM",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "FreeDMR",
+      "system": "freedmr-network"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://www.freedmr.uk/index.php/server-status/",
+      "description": "<h4>FreeDMR Network.</h4>\r\n<p>The FreeDMR Network is a group of independent servers running the FreeDMR Peer Server Software. The FreeDMR Peer Servers are connected via OpenBridge &ldquo;OPB&rdquo; connections in a Mesh topology to one another to redundantly and diversely share all available TalkGroups among all Servers. The FreeDMR Network, does NOT utilize a &ldquo;Master/Slave&rdquo; topology. All FreeDMR peer servers are seen as equal peers to each other just as all the individuals who run the servers are. We do not control when where, what how or who can use our software. Free means free as in speech and free as in beer!.</p>",
+      "dial": {
+        "host": "scotland.freedmr.co.uk",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "freedmr-network",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/freedmr-network/talkgroups/"
+      },
+      "id": "freedmr-network-server-freedmr_unitedkingdom-scotland",
+      "name": "FreeDMR_UnitedKingdom-Scotland",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "FreeDMR",
+      "system": "freedmr-network"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://www.freedmr.uk/index.php/server-status/",
+      "description": "<h4>FreeDMR Network.</h4>\r\n<p>The FreeDMR Network is a group of independent servers running the FreeDMR Peer Server Software. The FreeDMR Peer Servers are connected via OpenBridge &ldquo;OPB&rdquo; connections in a Mesh topology to one another to redundantly and diversely share all available TalkGroups among all Servers. The FreeDMR Network, does NOT utilize a &ldquo;Master/Slave&rdquo; topology. All FreeDMR peer servers are seen as equal peers to each other just as all the individuals who run the servers are. We do not control when where, what how or who can use our software. Free means free as in speech and free as in beer!.</p>",
+      "dial": {
+        "host": "usacentral.ddns.net",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "freedmr-network",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/freedmr-network/talkgroups/"
+      },
+      "id": "freedmr-network-server-freedmr_usa-central",
+      "name": "FreeDMR_USA Central",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "FreeDMR",
+      "system": "freedmr-network"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://www.freedmr.uk/index.php/server-status/",
+      "description": "<h4>FreeDMR Network.</h4>\r\n<p>The FreeDMR Network is a group of independent servers running the FreeDMR Peer Server Software. The FreeDMR Peer Servers are connected via OpenBridge &ldquo;OPB&rdquo; connections in a Mesh topology to one another to redundantly and diversely share all available TalkGroups among all Servers. The FreeDMR Network, does NOT utilize a &ldquo;Master/Slave&rdquo; topology. All FreeDMR peer servers are seen as equal peers to each other just as all the individuals who run the servers are. We do not control when where, what how or who can use our software. Free means free as in speech and free as in beer!.</p>",
+      "dial": {
+        "host": "freedmr.dvswitch.org",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "freedmr-network",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/freedmr-network/talkgroups/"
+      },
+      "id": "freedmr-network-server-freedmr_usa-florida",
+      "name": "FreeDMR_USA-Florida",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "FreeDMR",
+      "system": "freedmr-network"
+    },
+    {
+      "country": "IT",
+      "dashboard": "https://www.freedmr.uk/index.php/server-status/",
+      "description": "<h4>FreeDMR Network.</h4>\r\n<p>The FreeDMR Network is a group of independent servers running the FreeDMR Peer Server Software. The FreeDMR Peer Servers are connected via OpenBridge &ldquo;OPB&rdquo; connections in a Mesh topology to one another to redundantly and diversely share all available TalkGroups among all Servers. The FreeDMR Network, does NOT utilize a &ldquo;Master/Slave&rdquo; topology. All FreeDMR peer servers are seen as equal peers to each other just as all the individuals who run the servers are. We do not control when where, what how or who can use our software. Free means free as in speech and free as in beer!.</p>",
+      "id": "freedmr-network-server-freemr_sardinia",
+      "name": "FreeMR_Sardinia",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "FreeDMR",
+      "system": "freedmr-network"
+    },
+    {
+      "country": "RE",
+      "dashboard": "http://vmi946983.contaboserver.net",
+      "description": "<p>FREEDMR REUNION</p>",
+      "dial": {
+        "host": "185.205.244.154",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "freedmr-reunion",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/freedmr-reunion/talkgroups/"
+      },
+      "id": "freedmr-reunion-server-freedmr-reunion",
+      "name": "freedmr reunion",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "FR1LC",
+      "system": "freedmr-reunion"
+    },
+    {
+      "country": "DE",
+      "dashboard": "http://85.215.198.111:8970",
+      "dial": {
+        "host": "85.215.198.111",
+        "kind": "mmdvm",
+        "port": 62030,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "funknetz-celle",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/funknetz-celle/talkgroups/"
+      },
+      "id": "funknetz-celle-server-funknetz-celle",
+      "name": "Funknetz-Celle",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "DL2OAM",
+      "system": "funknetz-celle"
+    },
+    {
+      "country": "GR",
+      "dashboard": "http://svham.eu",
+      "description": "<p><strong>AETHER HELLAS</strong> is an experimental <strong>Greek</strong> DMR digital voice project.</p>\r\n<p>Initiated and currently operated by a licensed radio amateur,<br>it openly invites fellow system operators to interconnect and collaborate,<br>as well as licensed radio amateurs to connect via hotspots<br>for testing, experimentation and on-air communication.</p>\r\n<h5>What is \"Aether Hellas\"?</h5>\r\n<p>In Greek Mythology,&nbsp;<strong>Aether</strong>&nbsp;was the personification of the upper air breathed by the Gods. In early physics, it was believed to be the medium that fills the universe, allowing waves to propagate through space.<br>For us, <strong>Aether Hellas</strong> represents the \"invisible web\" that connects Greece to the world. It is our digital gateway that transforms the air into communication, bridging the distances between Rhodes, Thessaly, and Central Greece, uniting people and technology under a shared amateur radio vision.</p>\r\n<ul>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><span style=\"color: rgb(22, 145, 121);\"><strong><span class=\"\">Name:</span><span class=\"\">&nbsp;HB_GR_&Alpha;&Epsilon;&Tau;&Eta;&Epsilon;R HELLAS NET</span></strong></span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">ID:</span></strong><span class=\"\">&nbsp;0000</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Address/Host:</span></strong><span class=\"\">&nbsp;</span><a href=\"https://svham.eu/\" target=\"_blank\" rel=\"noopener noreferrer\"><span class=\"\">svham.eu</span></a><span class=\"\">&nbsp;(38.19.202.24)</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Password:</span></strong><span class=\"\">&nbsp;passw0rd</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Port:</span></strong><span class=\"\">&nbsp;53000</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Type:</span></strong><span class=\"\">&nbsp;HBLink</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Description:</span></strong><span class=\"\"> HB_GR_&Alpha;&Epsilon;&Tau;&Eta;&Epsilon;R HELLAS NET HBLINK DMR SERVER</span></p>\r\n</li>\r\n<li style=\"color: rgb(35, 111, 161); font-weight: bold;\"><span style=\"color: rgb(35, 111, 161);\"><strong><span class=\"\">The first independent HBLink DMR Server in Greece &ndash; AETHER HELLAS NET, dedicated to promoting digital voice communication and HBLink technology.</span></strong></span></li>\r\n</ul>\r\n<p>&nbsp;</p>",
+      "dial": {
+        "host": "svham.eu",
+        "kind": "mmdvm",
+        "port": 42012,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "gr-aether-hellas",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/gr-aether-hellas/talkgroups/"
+      },
+      "id": "gr-aether-hellas-server-c4fm-ysf-parrot-echo-voice-test-aether-hellas",
+      "name": "C4FM YSF PARROT ECHO VOICE TEST AETHER HELLAS",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "AETHER HELLAS NET",
+      "system": "gr-aether-hellas"
+    },
+    {
+      "country": "GR",
+      "dashboard": "http://svham.eu",
+      "description": "<p><strong>AETHER HELLAS</strong> is an experimental <strong>Greek</strong> DMR digital voice project.</p>\r\n<p>Initiated and currently operated by a licensed radio amateur,<br>it openly invites fellow system operators to interconnect and collaborate,<br>as well as licensed radio amateurs to connect via hotspots<br>for testing, experimentation and on-air communication.</p>\r\n<h5>What is \"Aether Hellas\"?</h5>\r\n<p>In Greek Mythology,&nbsp;<strong>Aether</strong>&nbsp;was the personification of the upper air breathed by the Gods. In early physics, it was believed to be the medium that fills the universe, allowing waves to propagate through space.<br>For us, <strong>Aether Hellas</strong> represents the \"invisible web\" that connects Greece to the world. It is our digital gateway that transforms the air into communication, bridging the distances between Rhodes, Thessaly, and Central Greece, uniting people and technology under a shared amateur radio vision.</p>\r\n<ul>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><span style=\"color: rgb(22, 145, 121);\"><strong><span class=\"\">Name:</span><span class=\"\">&nbsp;HB_GR_&Alpha;&Epsilon;&Tau;&Eta;&Epsilon;R HELLAS NET</span></strong></span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">ID:</span></strong><span class=\"\">&nbsp;0000</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Address/Host:</span></strong><span class=\"\">&nbsp;</span><a href=\"https://svham.eu/\" target=\"_blank\" rel=\"noopener noreferrer\"><span class=\"\">svham.eu</span></a><span class=\"\">&nbsp;(38.19.202.24)</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Password:</span></strong><span class=\"\">&nbsp;passw0rd</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Port:</span></strong><span class=\"\">&nbsp;53000</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Type:</span></strong><span class=\"\">&nbsp;HBLink</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Description:</span></strong><span class=\"\"> HB_GR_&Alpha;&Epsilon;&Tau;&Eta;&Epsilon;R HELLAS NET HBLINK DMR SERVER</span></p>\r\n</li>\r\n<li style=\"color: rgb(35, 111, 161); font-weight: bold;\"><span style=\"color: rgb(35, 111, 161);\"><strong><span class=\"\">The first independent HBLink DMR Server in Greece &ndash; AETHER HELLAS NET, dedicated to promoting digital voice communication and HBLink technology.</span></strong></span></li>\r\n</ul>\r\n<p>&nbsp;</p>",
+      "dial": {
+        "host": "digital-voice.sv2snh.gr",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "gr-aether-hellas",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/gr-aether-hellas/talkgroups/"
+      },
+      "id": "gr-aether-hellas-server-digital-voice-greece",
+      "name": "Digital Voice GREECE",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "AETHER HELLAS NET",
+      "system": "gr-aether-hellas"
+    },
+    {
+      "country": "GR",
+      "dashboard": "http://svham.eu",
+      "description": "<p><strong>AETHER HELLAS</strong> is an experimental <strong>Greek</strong> DMR digital voice project.</p>\r\n<p>Initiated and currently operated by a licensed radio amateur,<br>it openly invites fellow system operators to interconnect and collaborate,<br>as well as licensed radio amateurs to connect via hotspots<br>for testing, experimentation and on-air communication.</p>\r\n<h5>What is \"Aether Hellas\"?</h5>\r\n<p>In Greek Mythology,&nbsp;<strong>Aether</strong>&nbsp;was the personification of the upper air breathed by the Gods. In early physics, it was believed to be the medium that fills the universe, allowing waves to propagate through space.<br>For us, <strong>Aether Hellas</strong> represents the \"invisible web\" that connects Greece to the world. It is our digital gateway that transforms the air into communication, bridging the distances between Rhodes, Thessaly, and Central Greece, uniting people and technology under a shared amateur radio vision.</p>\r\n<ul>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><span style=\"color: rgb(22, 145, 121);\"><strong><span class=\"\">Name:</span><span class=\"\">&nbsp;HB_GR_&Alpha;&Epsilon;&Tau;&Eta;&Epsilon;R HELLAS NET</span></strong></span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">ID:</span></strong><span class=\"\">&nbsp;0000</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Address/Host:</span></strong><span class=\"\">&nbsp;</span><a href=\"https://svham.eu/\" target=\"_blank\" rel=\"noopener noreferrer\"><span class=\"\">svham.eu</span></a><span class=\"\">&nbsp;(38.19.202.24)</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Password:</span></strong><span class=\"\">&nbsp;passw0rd</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Port:</span></strong><span class=\"\">&nbsp;53000</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Type:</span></strong><span class=\"\">&nbsp;HBLink</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Description:</span></strong><span class=\"\"> HB_GR_&Alpha;&Epsilon;&Tau;&Eta;&Epsilon;R HELLAS NET HBLINK DMR SERVER</span></p>\r\n</li>\r\n<li style=\"color: rgb(35, 111, 161); font-weight: bold;\"><span style=\"color: rgb(35, 111, 161);\"><strong><span class=\"\">The first independent HBLink DMR Server in Greece &ndash; AETHER HELLAS NET, dedicated to promoting digital voice communication and HBLink technology.</span></strong></span></li>\r\n</ul>\r\n<p>&nbsp;</p>",
+      "dial": {
+        "host": "svham.eu",
+        "kind": "mmdvm",
+        "port": 42000,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "gr-aether-hellas",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/gr-aether-hellas/talkgroups/"
+      },
+      "id": "gr-aether-hellas-server-gr-aether-c4fm",
+      "name": "GR-AETHER-C4FM",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "AETHER HELLAS NET",
+      "system": "gr-aether-hellas"
+    },
+    {
+      "country": "GR",
+      "dashboard": "http://svham.eu",
+      "description": "<p><strong>AETHER HELLAS</strong> is an experimental <strong>Greek</strong> DMR digital voice project.</p>\r\n<p>Initiated and currently operated by a licensed radio amateur,<br>it openly invites fellow system operators to interconnect and collaborate,<br>as well as licensed radio amateurs to connect via hotspots<br>for testing, experimentation and on-air communication.</p>\r\n<h5>What is \"Aether Hellas\"?</h5>\r\n<p>In Greek Mythology,&nbsp;<strong>Aether</strong>&nbsp;was the personification of the upper air breathed by the Gods. In early physics, it was believed to be the medium that fills the universe, allowing waves to propagate through space.<br>For us, <strong>Aether Hellas</strong> represents the \"invisible web\" that connects Greece to the world. It is our digital gateway that transforms the air into communication, bridging the distances between Rhodes, Thessaly, and Central Greece, uniting people and technology under a shared amateur radio vision.</p>\r\n<ul>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><span style=\"color: rgb(22, 145, 121);\"><strong><span class=\"\">Name:</span><span class=\"\">&nbsp;HB_GR_&Alpha;&Epsilon;&Tau;&Eta;&Epsilon;R HELLAS NET</span></strong></span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">ID:</span></strong><span class=\"\">&nbsp;0000</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Address/Host:</span></strong><span class=\"\">&nbsp;</span><a href=\"https://svham.eu/\" target=\"_blank\" rel=\"noopener noreferrer\"><span class=\"\">svham.eu</span></a><span class=\"\">&nbsp;(38.19.202.24)</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Password:</span></strong><span class=\"\">&nbsp;passw0rd</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Port:</span></strong><span class=\"\">&nbsp;53000</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Type:</span></strong><span class=\"\">&nbsp;HBLink</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Description:</span></strong><span class=\"\"> HB_GR_&Alpha;&Epsilon;&Tau;&Eta;&Epsilon;R HELLAS NET HBLINK DMR SERVER</span></p>\r\n</li>\r\n<li style=\"color: rgb(35, 111, 161); font-weight: bold;\"><span style=\"color: rgb(35, 111, 161);\"><strong><span class=\"\">The first independent HBLink DMR Server in Greece &ndash; AETHER HELLAS NET, dedicated to promoting digital voice communication and HBLink technology.</span></strong></span></li>\r\n</ul>\r\n<p>&nbsp;</p>",
+      "dial": {
+        "host": "svham.eu",
+        "kind": "mmdvm",
+        "port": 53000,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "gr-aether-hellas",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/gr-aether-hellas/talkgroups/"
+      },
+      "id": "gr-aether-hellas-server-hblink-aether-hellas",
+      "name": "HBLINK AETHER HELLAS",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "AETHER HELLAS NET",
+      "system": "gr-aether-hellas"
+    },
+    {
+      "country": "GR",
+      "dashboard": "http://svham.eu",
+      "description": "<p><strong>AETHER HELLAS</strong> is an experimental <strong>Greek</strong> DMR digital voice project.</p>\r\n<p>Initiated and currently operated by a licensed radio amateur,<br>it openly invites fellow system operators to interconnect and collaborate,<br>as well as licensed radio amateurs to connect via hotspots<br>for testing, experimentation and on-air communication.</p>\r\n<h5>What is \"Aether Hellas\"?</h5>\r\n<p>In Greek Mythology,&nbsp;<strong>Aether</strong>&nbsp;was the personification of the upper air breathed by the Gods. In early physics, it was believed to be the medium that fills the universe, allowing waves to propagate through space.<br>For us, <strong>Aether Hellas</strong> represents the \"invisible web\" that connects Greece to the world. It is our digital gateway that transforms the air into communication, bridging the distances between Rhodes, Thessaly, and Central Greece, uniting people and technology under a shared amateur radio vision.</p>\r\n<ul>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><span style=\"color: rgb(22, 145, 121);\"><strong><span class=\"\">Name:</span><span class=\"\">&nbsp;HB_GR_&Alpha;&Epsilon;&Tau;&Eta;&Epsilon;R HELLAS NET</span></strong></span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">ID:</span></strong><span class=\"\">&nbsp;0000</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Address/Host:</span></strong><span class=\"\">&nbsp;</span><a href=\"https://svham.eu/\" target=\"_blank\" rel=\"noopener noreferrer\"><span class=\"\">svham.eu</span></a><span class=\"\">&nbsp;(38.19.202.24)</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Password:</span></strong><span class=\"\">&nbsp;passw0rd</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Port:</span></strong><span class=\"\">&nbsp;53000</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Type:</span></strong><span class=\"\">&nbsp;HBLink</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Description:</span></strong><span class=\"\"> HB_GR_&Alpha;&Epsilon;&Tau;&Eta;&Epsilon;R HELLAS NET HBLINK DMR SERVER</span></p>\r\n</li>\r\n<li style=\"color: rgb(35, 111, 161); font-weight: bold;\"><span style=\"color: rgb(35, 111, 161);\"><strong><span class=\"\">The first independent HBLink DMR Server in Greece &ndash; AETHER HELLAS NET, dedicated to promoting digital voice communication and HBLink technology.</span></strong></span></li>\r\n</ul>\r\n<p>&nbsp;</p>",
+      "dial": {
+        "host": "svham.eu",
+        "kind": "mmdvm",
+        "port": 41000,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "gr-aether-hellas",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/gr-aether-hellas/talkgroups/"
+      },
+      "id": "gr-aether-hellas-server-p25-aether-hellas",
+      "name": "P25 AETHER HELLAS",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "AETHER HELLAS NET",
+      "system": "gr-aether-hellas"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://3101.hamunited.com",
+      "description": "<p>Ham United 3101 DMR Network</p>",
+      "dial": {
+        "host": "3101.hamunited.com",
+        "kind": "mmdvm",
+        "port": 55560,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "ham-united-3101",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/ham-united-3101/talkgroups/"
+      },
+      "id": "ham-united-3101-server-3101",
+      "name": "3101",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Ham United",
+      "system": "ham-united-3101"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://3102.hamunited.com",
+      "description": "<p>Ham United 3102 DMR Server</p>",
+      "dial": {
+        "host": "3102.hamunited.com",
+        "kind": "mmdvm",
+        "port": 55561,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "ham-united-3102",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/ham-united-3102/talkgroups/"
+      },
+      "id": "ham-united-3102-server-3102",
+      "name": "3102",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Ham United",
+      "system": "ham-united-3102"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://3103.hamunited.com",
+      "description": "<p>Ham United 3103 DMR Server</p>",
+      "dial": {
+        "host": "3103.hamunited.com",
+        "kind": "mmdvm",
+        "port": 55563,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "ham-united-3103",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/ham-united-3103/talkgroups/"
+      },
+      "id": "ham-united-3103-server-3103",
+      "name": "3103",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Ham United",
+      "system": "ham-united-3103"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://hamunited.com",
+      "description": "<p>Ham United - Building a Brighter Network</p>",
+      "dial": {
+        "host": "104.251.223.142",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "ham-united-3104",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/ham-united-3104/talkgroups/"
+      },
+      "id": "ham-united-3104-server-3104",
+      "name": "3104",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Ham United",
+      "system": "ham-united-3104"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://hytera.hamunited.com",
+      "description": "<p>Ham United Hytera DMR Server</p>",
+      "dial": {
+        "host": "hytera.hamunited.com",
+        "kind": "mmdvm",
+        "port": 55564,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "ham-united-hytera",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/ham-united-hytera/talkgroups/"
+      },
+      "id": "ham-united-hytera-server-hytera",
+      "name": "Hytera",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Ham United",
+      "system": "ham-united-hytera"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://motorola.hamunited.com",
+      "description": "<p>Ham United Motorola DMR Server</p>",
+      "dial": {
+        "host": "motorola.hamunited.com",
+        "kind": "mmdvm",
+        "port": 62033,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "ham-united-motorola",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/ham-united-motorola/talkgroups/"
+      },
+      "id": "ham-united-motorola-server-motorola",
+      "name": "Motorola",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Ham United",
+      "system": "ham-united-motorola"
+    },
+    {
+      "country": "IT",
+      "dashboard": "https://hamthings.it/",
+      "description": "<p>&nbsp;</p>\r\n<h2>What is HamThings?</h2>\r\n<p>HamThings is a server platform designed to operate as part of a global, interconnected network of digital voice systems and analog system for amateur radio.</p>\r\n<ul>\r\n<li>If you're a ham radio operator using digital voice modes such as D-STAR, DMR, C4FM, or Analog Svxlink, or others (support varies by mode!!), there's no need to understand the internal workings of HamThings &mdash; connecting to and using the network is straightforward.</li>\r\n<li>If you manage a local repeater, you may want to explore how HamThings works in more depth and how your repeater can become part of the network.</li>\r\n</ul>",
+      "id": "hamthings-server-master-2221",
+      "name": "Master 2221",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "IU7MNA",
+      "system": "hamthings"
+    },
+    {
+      "country": "CN",
+      "dashboard": "https://hamclub.net/dv/",
+      "dial": {
+        "host": "47.104.177.248",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "hb_cn_ham-club",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/hb_cn_ham-club/talkgroups/"
+      },
+      "id": "hb_cn_ham-club-server-cn01",
+      "name": "CN01",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "HAMClub.net",
+      "system": "hb_cn_ham-club"
+    },
+    {
+      "country": "CN",
+      "dashboard": "http://dmr6.cn/",
+      "description": "<blockquote data-path-to-node=\"3\">\r\n<p data-path-to-node=\"3,0\"><strong data-path-to-node=\"3,0\" data-index-in-node=\"0\">DMR Interconnection for Henan Province (Zhongyuan), China. Powered by HBlink and hosted by BH6IDD. Supports TG&nbsp; 900.</strong></p>\r\n</blockquote>",
+      "dial": {
+        "host": "link.dmr6.cn",
+        "kind": "mmdvm",
+        "port": 55551,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "hb_cn_henan",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/hb_cn_henan/talkgroups/"
+      },
+      "id": "hb_cn_henan-server-hb_cn_henan",
+      "name": "HB_CN_Henan",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "BH6IDD",
+      "system": "hb_cn_henan"
+    },
+    {
+      "country": "FR",
+      "dashboard": "http://ctb2.ysf-france.fr:8080/",
+      "description": "<p>Serveur HBlink4 F1PTL</p>\r\n<p>TG20800 Interco avec YSF-France (YSF/DMR)</p>\r\n<p>TG20841 Interco avec YSF-DPT41 (YSF/DMR)</p>\r\n<p>TG20862 interco avec YSF-TG20862 (YSF/DMR)</p>\r\n<p>TG20892 interco OpenAI (YSF/DMR)</p>",
+      "dial": {
+        "host": "hb4.ysf-france.fr",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "hb_fr_f1ptl",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/hb_fr_f1ptl/talkgroups/"
+      },
+      "id": "hb_fr_f1ptl-server-hb_fr_f1ptl",
+      "name": "HB_FR_F1PTL",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "F1PTL Bruno",
+      "system": "hb_fr_f1ptl"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://hb-bat.duckdns.org:8844/",
+      "description": "<p>Server DMR SESTA PROVINCIA PUGLIESE BAT Barletta-Andria-Trani</p>\r\n<p>https://www.pistar.uk/downloads/DMR_Hosts.txt</p>",
+      "dial": {
+        "host": "hb-bat.duckdns.org",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "hb_it_bat",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/hb_it_bat/talkgroups/"
+      },
+      "id": "hb_it_bat-server-hb_it_bat",
+      "name": "HB_IT_BAT",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "IT-C4FM_BAT",
+      "system": "hb_it_bat"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://80.211.135.179:8090",
+      "description": "<p>HBLINK SERVER</p>",
+      "dial": {
+        "host": "80.211.135.179",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "hb_it_lecce",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/hb_it_lecce/talkgroups/"
+      },
+      "id": "hb_it_lecce-server-hb_it_lecce",
+      "name": "HB_IT_LECCE",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "IZ7KYS",
+      "system": "hb_it_lecce"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://hb-trani.ampr.org:8090/",
+      "description": "<p><strong>TG 8</strong> dell'HBLink &nbsp;&egrave; interconnesso con TGIF &nbsp;76125 &nbsp;e il TG 22276 &nbsp;di Tgif, FreeDMR, ADN<br><br>Collegabile anche con hotspot, essendo presente su:<br>http://www.pistar.uk/downloads/DMR_Hosts.txt<br><br><strong>TRANI Conference</strong> &egrave; altres&igrave; collegabile tramite il nodo ASL-556990,&nbsp; Echolink I7IGX-R, come interno 25003 di HoIP, come interno 7999 di HamPhone Italia&nbsp;<br><br>In DSTAR&nbsp; tramite il modulo E&nbsp; di&nbsp; XLX-718<br><br>In YSF&nbsp; tramite&nbsp; nodi&nbsp; #76125&nbsp; e&nbsp; #22276<br><br>Rete connessa anche&nbsp; ad&nbsp; M17-BAT&nbsp; e&nbsp; URF-BAT</p>",
+      "dial": {
+        "host": "aritrani.is-very-good.org",
+        "kind": "mmdvm",
+        "port": 55554,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "hb_it_trani_conference",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/hb_it_trani_conference/talkgroups/"
+      },
+      "id": "hb_it_trani_conference-server-trani-conference",
+      "name": "Trani Conference",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Sezione A.R.I.  di Trani    -   Italy",
+      "system": "hb_it_trani_conference"
+    },
+    {
+      "country": "MY",
+      "dashboard": "http://xlx.lucifernet.com:8082",
+      "description": "<p>HBLink 5021 Malaysia</p>\r\n<p>Link between all digital mode</p>",
+      "dial": {
+        "host": "xlx.lucifernet.com",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "hblink-5021-malaysia",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/hblink-5021-malaysia/talkgroups/"
+      },
+      "id": "hblink-5021-malaysia-server-hblink-5021",
+      "name": "HBLink 5021",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "HBLink 5021 Malaysia",
+      "system": "hblink-5021-malaysia"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://na9vy.us:44",
+      "description": "<p>Indiana Link - Covering areas of north central and northern Indiana. Several county nets are linked to the system during the evenings.<br><br>Linked to Brandmiester TG 31181, DMR XLX181 Module A, YSF31181/XLX181 Module A.</p>",
+      "dial": {
+        "host": "na9vy.us:44",
+        "kind": "mmdvm",
+        "port": 62030,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "indiana-link",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/indiana-link/talkgroups/"
+      },
+      "id": "indiana-link-server-dmr-mmdvm",
+      "name": "DMR-MMDVM",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Southern Indiana Network",
+      "system": "indiana-link"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://xlxils.w9ils.org",
+      "dial": {
+        "host": "66.42.118.123",
+        "kind": "mmdvm",
+        "port": 62030,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "indiana-w9ils",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/indiana-w9ils/talkgroups/"
+      },
+      "id": "indiana-w9ils-server-w9ils-indiana-ils",
+      "name": "W9ILS - Indiana ILS",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "W9ILS Digital Group",
+      "system": "indiana-w9ils"
+    },
+    {
+      "country": "ID",
+      "dashboard": "http://dvsmgl.ddns.net/",
+      "description": "<p>Indonesia DMR Talkgroup 51075 Linked to Indonesia P25 Reflector 51075</p>",
+      "id": "indonesia-tg-51075-server-indonesia-tg-51075",
+      "name": "Indonesia TG 51075",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "YG2BTP",
+      "system": "indonesia-tg-51075"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://digital.irn.radio",
+      "description": "<p>The International Radio Network&rsquo;s mission is to promote the amateur radio hobby to those interested in radio communications. We welcome licensed and non-licensed operators, giving those with an interest the opportunity to gain experience in radio communications, theory and technology, build fellowship, and have some fun along the way.</p>",
+      "dial": {
+        "host": "digital.irn.radio",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "international-radio-network",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/international-radio-network/talkgroups/"
+      },
+      "id": "international-radio-network-server-irn",
+      "name": "IRN",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "International Radio Network (IRN)",
+      "system": "international-radio-network"
+    },
+    {
+      "country": "DE",
+      "dashboard": "http://80.152.206.180/html/ipsc/index.html",
+      "dial": {
+        "host": "80.152.206.180",
+        "kind": "mmdvm",
+        "port": 55555,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "ipsc2-db0feu",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/ipsc2-db0feu/talkgroups/"
+      },
+      "id": "ipsc2-db0feu-server-ipsc2-db0feu",
+      "name": "IPSC2 DB0FEU",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "DC9NYC",
+      "system": "ipsc2-db0feu"
+    },
+    {
+      "country": "IT",
+      "dashboard": "https://ipsc2.dig-italia.it/",
+      "dial": {
+        "host": "ipsc2.dig-italia.it",
+        "kind": "mmdvm",
+        "port": 55555,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "ipsc2-dig-italia",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/ipsc2-dig-italia/talkgroups/"
+      },
+      "id": "ipsc2-dig-italia-server-ipsc2-dig-italia",
+      "name": "IPSC2-DIG-ITALIA",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "https://www.dig-italia.it/",
+      "system": "ipsc2-dig-italia"
+    },
+    {
+      "country": "DK",
+      "dashboard": "http://77.243.53.206/ipsc/index.html",
+      "dial": {
+        "host": "77.243.53.206",
+        "kind": "mmdvm",
+        "port": 55555,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "ipsc2-dk",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/ipsc2-dk/talkgroups/"
+      },
+      "id": "ipsc2-dk-server-ipsc2-dk",
+      "name": "IPSC2-DK",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "OZ1LNI",
+      "system": "ipsc2-dk"
+    },
+    {
+      "country": "DE",
+      "dashboard": "https://ipsc2-dl-hotspot.xreflector.net/",
+      "dial": {
+        "host": "91.132.144.235",
+        "kind": "mmdvm",
+        "port": 55555,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "ipsc2-dl-hotspot",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/ipsc2-dl-hotspot/talkgroups/"
+      },
+      "id": "ipsc2-dl-hotspot-server-ipsc2-dl-hotspot",
+      "name": "IPSC2 DL-HOTSPOT",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "DG9FFM",
+      "system": "ipsc2-dl-hotspot"
+    },
+    {
+      "country": "DE",
+      "dashboard": "http://176.10.105.252/ipsc/index.html",
+      "dial": {
+        "host": "176.10.105.252",
+        "kind": "mmdvm",
+        "port": 55555,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "ipsc2-dl-nord",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/ipsc2-dl-nord/talkgroups/"
+      },
+      "id": "ipsc2-dl-nord-server-ipsc2-dl-nord",
+      "name": "IPSC2-DL-NORD",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "DL1BH",
+      "system": "ipsc2-dl-nord"
+    },
+    {
+      "country": "DE",
+      "dashboard": "https://ipsc2-dl-rptr.xreflector.net",
+      "dial": {
+        "host": "152.89.107.65",
+        "kind": "mmdvm",
+        "port": 55555,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "ipsc2-dl-rptr",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/ipsc2-dl-rptr/talkgroups/"
+      },
+      "id": "ipsc2-dl-rptr-server-ipsc2-dl-rptr",
+      "name": "IPSC2-DL-RPTR",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "DG9FFM",
+      "system": "ipsc2-dl-rptr"
+    },
+    {
+      "country": "DE",
+      "dashboard": "http://ipsc.dmr-dl.net/ipsc/",
+      "dial": {
+        "host": "5.28.41.138",
+        "kind": "mmdvm",
+        "port": 55555,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "ipsc2-dmr-dl",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/ipsc2-dmr-dl/talkgroups/"
+      },
+      "id": "ipsc2-dmr-dl-server-ipsc2-dmr-dl",
+      "name": "IPSC2 DMR-DL",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "DG3JKB",
+      "system": "ipsc2-dmr-dl"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://dvsph.net/uk-dmr-last-heard",
+      "dial": {
+        "host": "dvsph-a.dvsph.net",
+        "kind": "mmdvm",
+        "port": 55555,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "ipsc2-dvsph",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/ipsc2-dvsph/talkgroups/"
+      },
+      "id": "ipsc2-dvsph-server-ipsc2-dvsph-a",
+      "name": "IPSC2-DVSPh-A",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "DVSPh",
+      "system": "ipsc2-dvsph"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://dvsph.net/uk-dmr-last-heard",
+      "dial": {
+        "host": "dvsph-f.dvsph.net",
+        "kind": "mmdvm",
+        "port": 55555,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "ipsc2-dvsph",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/ipsc2-dvsph/talkgroups/"
+      },
+      "id": "ipsc2-dvsph-server-ipsc2-dvsph-f",
+      "name": "IPSC2-DVSPh-F",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "DVSPh",
+      "system": "ipsc2-dvsph"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://dvsph.net/uk-dmr-last-heard",
+      "dial": {
+        "host": "dvsph-k.dvsph.net",
+        "kind": "mmdvm",
+        "port": 55555,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "ipsc2-dvsph",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/ipsc2-dvsph/talkgroups/"
+      },
+      "id": "ipsc2-dvsph-server-ipsc2-dvsph-k",
+      "name": "IPSC2-DVSPh-K",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "DVSPh",
+      "system": "ipsc2-dvsph"
+    },
+    {
+      "country": "FR",
+      "dashboard": "http://ipsc2fr.radio-amat.fr/ipsc",
+      "id": "ipsc2-france-3-server-ipsc2-france-3",
+      "name": "IPSC2 FRANCE 3",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "None",
+      "system": "ipsc2-france-3"
+    },
+    {
+      "country": "NZ",
+      "dashboard": "http://ipsc2.arec.info",
+      "description": "<p>DMR+ New Zealand server and gateway to AREC ZL TRBO DMR MARC affiliated cBridge that connects major fixed DMR repeaters in New Zealand.&nbsp;<br><br></p>\r\n<p>Transcoded audio is not permitted on ZK (TS1 TG8) and ZL (TS2 TG530) talkgroups.</p>\r\n<p>&nbsp;</p>",
+      "dial": {
+        "host": "ipsc2.arec.info",
+        "kind": "mmdvm",
+        "port": 55555,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "ipsc2-new-zealand",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/ipsc2-new-zealand/talkgroups/"
+      },
+      "id": "ipsc2-new-zealand-server-ipsc2-new-zealand",
+      "name": "IPSC2 New Zealand",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "ZL4JY",
+      "system": "ipsc2-new-zealand"
+    },
+    {
+      "country": "PL",
+      "dashboard": "http://88.220.250.55/ipsc/",
+      "id": "ipsc2-poland-server-ipsc2-poland",
+      "name": "IPSC2-Poland",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "SP4XKB",
+      "system": "ipsc2-poland"
+    },
+    {
+      "country": "PT",
+      "dashboard": "http://ipsc2.from-ct.com/",
+      "dial": {
+        "host": "ipsc2.from-ct.com",
+        "kind": "mmdvm",
+        "port": 55555,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "ipsc2-portugal",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/ipsc2-portugal/talkgroups/"
+      },
+      "id": "ipsc2-portugal-server-ipsc2-portugal",
+      "name": "IPSC2-Portugal",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "BrandMeister PT",
+      "system": "ipsc2-portugal"
+    },
+    {
+      "country": "AT",
+      "dashboard": "http://bmaster-eu.xreflector.net/bmaster+",
+      "description": "<p>Central Srever - bMaster+&nbsp;</p>",
+      "id": "ipsc2-server-ipsc2-oe-dmo",
+      "name": "IPSC2-OE-DMO",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "\u00d6VSV",
+      "system": "ipsc2"
+    },
+    {
+      "country": "AT",
+      "dashboard": "http://bmaster-eu.xreflector.net/bmaster+",
+      "description": "<p>Central Srever - bMaster+&nbsp;</p>",
+      "id": "ipsc2-server-ipsc2-oe-master",
+      "name": "IPSC2-OE-MASTER",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "\u00d6VSV",
+      "system": "ipsc2"
+    },
+    {
+      "country": "SE",
+      "dashboard": "https://ipsc2.org/ipsc/index.html",
+      "description": "<p>Sysop: SA7SVR&nbsp; - Country: Sweden - E-mail: [email removed] - [email removed]</p>",
+      "dial": {
+        "host": "ipsc2.org",
+        "kind": "mmdvm",
+        "port": 55555,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "ipsc2-sweden",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/ipsc2-sweden/talkgroups/"
+      },
+      "id": "ipsc2-sweden-server-ipsc2-sweden",
+      "name": "IPSC2-SWEDEN-@",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "SWEDEN Zone Net!  By SA7SVR",
+      "system": "ipsc2-sweden"
+    },
+    {
+      "country": "GB",
+      "dashboard": "http://wiki.ipsc3.net",
+      "dial": {
+        "host": "ipsc3.freedmr.uk",
+        "kind": "mmdvm",
+        "port": 55555,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "ipsc3",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/ipsc3/talkgroups/"
+      },
+      "id": "ipsc3-server-ipsc3-freedmr-uk-55555",
+      "name": "ipsc3-freedmr-uk 55555",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Matt Perkins",
+      "system": "ipsc3"
+    },
+    {
+      "country": "GB",
+      "dashboard": "http://wiki.ipsc3.net",
+      "dial": {
+        "host": "ipsc3.freedmr.uk",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "ipsc3",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/ipsc3/talkgroups/"
+      },
+      "id": "ipsc3-server-ipsc3-freedmr-uk-62031",
+      "name": "ipsc3-freedmr-uk 62031",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Matt Perkins",
+      "system": "ipsc3"
+    },
+    {
+      "country": "GB",
+      "dashboard": "http://wiki.ipsc3.net",
+      "dial": {
+        "host": "uk.ipsc3.net",
+        "kind": "mmdvm",
+        "port": 55555,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "ipsc3",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/ipsc3/talkgroups/"
+      },
+      "id": "ipsc3-server-ipsc3-uk-55555",
+      "name": "ipsc3-uk 55555",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Matt Perkins",
+      "system": "ipsc3"
+    },
+    {
+      "country": "GB",
+      "dashboard": "http://wiki.ipsc3.net",
+      "dial": {
+        "host": "uk.ipsc3.net",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "ipsc3",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/ipsc3/talkgroups/"
+      },
+      "id": "ipsc3-server-ipsc3-uk-62031",
+      "name": "ipsc3-uk 62031",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Matt Perkins",
+      "system": "ipsc3"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://wiki.ipsc3.net",
+      "dial": {
+        "host": "us.ipsc3.net",
+        "kind": "mmdvm",
+        "port": 55555,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "ipsc3",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/ipsc3/talkgroups/"
+      },
+      "id": "ipsc3-server-ipsc3-us-55555",
+      "name": "ipsc3-us 55555",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Matt Perkins",
+      "system": "ipsc3"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://wiki.ipsc3.net",
+      "dial": {
+        "host": "us.ipsc3.net",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "ipsc3",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/ipsc3/talkgroups/"
+      },
+      "id": "ipsc3-server-ipsc3-us-62031",
+      "name": "ipsc3-us 62031",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Matt Perkins",
+      "system": "ipsc3"
+    },
+    {
+      "country": "AU",
+      "dashboard": "http://wiki.ipsc3.net",
+      "dial": {
+        "host": "ipsc3.vkdmr.com",
+        "kind": "mmdvm",
+        "port": 55555,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "ipsc3",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/ipsc3/talkgroups/"
+      },
+      "id": "ipsc3-server-ipsc3-vkdmr-55555",
+      "name": "ipsc3-vkdmr 55555",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Matt Perkins",
+      "system": "ipsc3"
+    },
+    {
+      "country": "NZ",
+      "dashboard": "http://wiki.ipsc3.net",
+      "dial": {
+        "host": "zl.ipsc3.net",
+        "kind": "mmdvm",
+        "port": 55555,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "ipsc3",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/ipsc3/talkgroups/"
+      },
+      "id": "ipsc3-server-ipsc3-zl-55555",
+      "name": "ipsc3-zl 55555",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Matt Perkins",
+      "system": "ipsc3"
+    },
+    {
+      "country": "NZ",
+      "dashboard": "http://wiki.ipsc3.net",
+      "dial": {
+        "host": "zl.ipsc3.net",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "ipsc3",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/ipsc3/talkgroups/"
+      },
+      "id": "ipsc3-server-ipsc3-zl-62031",
+      "name": "ipsc3-zl 62031",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Matt Perkins",
+      "system": "ipsc3"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://xlx068.ircddb.it:8888/",
+      "description": "<p>ACCESS SYSTEMS FOR DMR NETWORK IT-MULTIPROTOCOL-NETWORK.</p>\r\n<p>SR-1 SERVER TG-222995 MULTIPROTOCOL.</p>",
+      "dial": {
+        "host": "it-multiprotocol-network.dyndns.org",
+        "kind": "mmdvm",
+        "port": 55570,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "it-multinet-sr1-access-systems",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/it-multinet-sr1-access-systems/talkgroups/"
+      },
+      "id": "it-multinet-sr1-access-systems-server-hb_it_multi_net_dmo_1",
+      "name": "HB_IT_MULTI_NET_DMO_1",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "IT-MULTIPROTOCOL-NETWORK",
+      "system": "it-multinet-sr1-access-systems"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://xlx068.ircddb.it:8888/",
+      "description": "<p>ACCESS SYSTEMS FOR DMR NETWORK IT-MULTIPROTOCOL-NETWORK.</p>\r\n<p>SR-1 SERVER TG-222995 MULTIPROTOCOL.</p>",
+      "dial": {
+        "host": "it-multiprotocol-network.dyndns.org",
+        "kind": "mmdvm",
+        "port": 55571,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "it-multinet-sr1-access-systems",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/it-multinet-sr1-access-systems/talkgroups/"
+      },
+      "id": "it-multinet-sr1-access-systems-server-hb_it_multi_net_dmo_2",
+      "name": "HB_IT_MULTI_NET_DMO_2",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "IT-MULTIPROTOCOL-NETWORK",
+      "system": "it-multinet-sr1-access-systems"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://xlx068.ircddb.it:8888/",
+      "description": "<p>ACCESS SYSTEMS FOR DMR NETWORK IT-MULTIPROTOCOL-NETWORK.</p>\r\n<p>SR-1 SERVER TG-222995 MULTIPROTOCOL.</p>",
+      "dial": {
+        "host": "it-multiprotocol-network.dyndns.org",
+        "kind": "mmdvm",
+        "port": 55572,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "it-multinet-sr1-access-systems",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/it-multinet-sr1-access-systems/talkgroups/"
+      },
+      "id": "it-multinet-sr1-access-systems-server-hb_it_multi_net_dmo_3",
+      "name": "HB_IT_MULTI_NET_DMO_3",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "IT-MULTIPROTOCOL-NETWORK",
+      "system": "it-multinet-sr1-access-systems"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://xlx068.ircddb.it:8888/",
+      "description": "<p>ACCESS SYSTEMS FOR DMR NETWORK IT-MULTIPROTOCOL-NETWORK.</p>\r\n<p>SR-1 SERVER TG-222995 MULTIPROTOCOL.</p>",
+      "dial": {
+        "host": "it-multiprotocol-network.dyndns.org",
+        "kind": "mmdvm",
+        "port": 55573,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "it-multinet-sr1-access-systems",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/it-multinet-sr1-access-systems/talkgroups/"
+      },
+      "id": "it-multinet-sr1-access-systems-server-hb_it_multi_net_dmo_4",
+      "name": "HB_IT_MULTI_NET_DMO_4",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "IT-MULTIPROTOCOL-NETWORK",
+      "system": "it-multinet-sr1-access-systems"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://xlx068.ircddb.it:8888/",
+      "description": "<p>ACCESS SYSTEMS FOR DMR NETWORK IT-MULTIPROTOCOL-NETWORK.</p>\r\n<p>SR-1 SERVER TG-222995 MULTIPROTOCOL.</p>",
+      "dial": {
+        "host": "it-multiprotocol-network.dyndns.org",
+        "kind": "mmdvm",
+        "port": 55574,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "it-multinet-sr1-access-systems",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/it-multinet-sr1-access-systems/talkgroups/"
+      },
+      "id": "it-multinet-sr1-access-systems-server-hb_it_multi_net_dmo_5",
+      "name": "HB_IT_MULTI_NET_DMO_5",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "IT-MULTIPROTOCOL-NETWORK",
+      "system": "it-multinet-sr1-access-systems"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://xlx068.ircddb.it:8888/",
+      "description": "<p>ACCESS SYSTEMS FOR DMR NETWORK IT-MULTIPROTOCOL-NETWORK.</p>\r\n<p>SR-1 SERVER TG-222995 MULTIPROTOCOL.</p>",
+      "dial": {
+        "host": "it-multiprotocol-network.dyndns.org",
+        "kind": "mmdvm",
+        "port": 55575,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "it-multinet-sr1-access-systems",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/it-multinet-sr1-access-systems/talkgroups/"
+      },
+      "id": "it-multinet-sr1-access-systems-server-hb_it_multi_net_dmo_6",
+      "name": "HB_IT_MULTI_NET_DMO_6",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "IT-MULTIPROTOCOL-NETWORK",
+      "system": "it-multinet-sr1-access-systems"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://xlx068.ircddb.it:8888/",
+      "description": "<p>ACCESS SYSTEMS FOR DMR NETWORK IT-MULTIPROTOCOL-NETWORK.</p>\r\n<p>SR-1 SERVER TG-222995 MULTIPROTOCOL.</p>",
+      "dial": {
+        "host": "it-multiprotocol-network.dyndns.org",
+        "kind": "mmdvm",
+        "port": 55576,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "it-multinet-sr1-access-systems",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/it-multinet-sr1-access-systems/talkgroups/"
+      },
+      "id": "it-multinet-sr1-access-systems-server-hb_it_multi_net_dmo_7",
+      "name": "HB_IT_MULTI_NET_DMO_7",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "IT-MULTIPROTOCOL-NETWORK",
+      "system": "it-multinet-sr1-access-systems"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://xlx068.ircddb.it:8888/",
+      "description": "<p>ACCESS SYSTEMS FOR DMR NETWORK IT-MULTIPROTOCOL-NETWORK.</p>\r\n<p>SR-1 SERVER TG-222995 MULTIPROTOCOL.</p>",
+      "dial": {
+        "host": "it-multiprotocol-network.dyndns.org",
+        "kind": "mmdvm",
+        "port": 55577,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "it-multinet-sr1-access-systems",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/it-multinet-sr1-access-systems/talkgroups/"
+      },
+      "id": "it-multinet-sr1-access-systems-server-hb_it_multi_net_dmo_8",
+      "name": "HB_IT_MULTI_NET_DMO_8",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "IT-MULTIPROTOCOL-NETWORK",
+      "system": "it-multinet-sr1-access-systems"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://xlx068.ircddb.it:8888/",
+      "description": "<p>ACCESS SYSTEMS FOR DMR NETWORK IT-MULTIPROTOCOL-NETWORK.</p>\r\n<p>SR-1 SERVER TG-222995 MULTIPROTOCOL.</p>",
+      "dial": {
+        "host": "it-multiprotocol-network.dyndns.org",
+        "kind": "mmdvm",
+        "port": 55578,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "it-multinet-sr1-access-systems",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/it-multinet-sr1-access-systems/talkgroups/"
+      },
+      "id": "it-multinet-sr1-access-systems-server-hb_it_multi_net_dup_1",
+      "name": "HB_IT_MULTI_NET_DUP_1",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "IT-MULTIPROTOCOL-NETWORK",
+      "system": "it-multinet-sr1-access-systems"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://xlx068.ircddb.it:8888/",
+      "description": "<p>ACCESS SYSTEMS FOR DMR NETWORK IT-MULTIPROTOCOL-NETWORK.</p>\r\n<p>SR-1 SERVER TG-222995 MULTIPROTOCOL.</p>",
+      "dial": {
+        "host": "it-multiprotocol-network.dyndns.org",
+        "kind": "mmdvm",
+        "port": 55579,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "it-multinet-sr1-access-systems",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/it-multinet-sr1-access-systems/talkgroups/"
+      },
+      "id": "it-multinet-sr1-access-systems-server-hb_it_multi_net_dup_2",
+      "name": "HB_IT_MULTI_NET_DUP_2",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "IT-MULTIPROTOCOL-NETWORK",
+      "system": "it-multinet-sr1-access-systems"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://xlx068.ircddb.it:8888/",
+      "description": "<p>ACCESS SYSTEMS FOR DMR NETWORK IT-MULTIPROTOCOL-NETWORK.</p>\r\n<p>SR-1 SERVER TG-222995 MULTIPROTOCOL.</p>",
+      "dial": {
+        "host": "it-multiprotocol-network.dyndns.org",
+        "kind": "mmdvm",
+        "port": 55580,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "it-multinet-sr1-access-systems",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/it-multinet-sr1-access-systems/talkgroups/"
+      },
+      "id": "it-multinet-sr1-access-systems-server-hb_it_multi_net_dup_3",
+      "name": "HB_IT_MULTI_NET_DUP_3",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "IT-MULTIPROTOCOL-NETWORK",
+      "system": "it-multinet-sr1-access-systems"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://xlx068.ircddb.it:8888/",
+      "description": "<p>ACCESS SYSTEMS FOR DMR NETWORK IT-MULTIPROTOCOL-NETWORK.</p>\r\n<p>SR-1 SERVER TG-222995 MULTIPROTOCOL.</p>",
+      "dial": {
+        "host": "it-multiprotocol-network.dyndns.org",
+        "kind": "mmdvm",
+        "port": 55581,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "it-multinet-sr1-access-systems",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/it-multinet-sr1-access-systems/talkgroups/"
+      },
+      "id": "it-multinet-sr1-access-systems-server-hb_it_multi_net_dup_4",
+      "name": "HB_IT_MULTI_NET_DUP_4",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "IT-MULTIPROTOCOL-NETWORK",
+      "system": "it-multinet-sr1-access-systems"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://xlx068.ircddb.it:8888/",
+      "description": "<p>ACCESS SYSTEMS FOR DMR NETWORK IT-MULTIPROTOCOL-NETWORK.</p>\r\n<p>SR-1 SERVER TG-222995 MULTIPROTOCOL.</p>",
+      "dial": {
+        "host": "it-multiprotocol-network.dyndns.org",
+        "kind": "mmdvm",
+        "port": 55582,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "it-multinet-sr1-access-systems",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/it-multinet-sr1-access-systems/talkgroups/"
+      },
+      "id": "it-multinet-sr1-access-systems-server-hb_it_multi_net_dup_5",
+      "name": "HB_IT_MULTI_NET_DUP_5",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "IT-MULTIPROTOCOL-NETWORK",
+      "system": "it-multinet-sr1-access-systems"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://xlx068.ircddb.it:8888/",
+      "description": "<p>ACCESS SYSTEMS FOR DMR NETWORK IT-MULTIPROTOCOL-NETWORK.</p>\r\n<p>SR-1 SERVER TG-222995 MULTIPROTOCOL.</p>",
+      "dial": {
+        "host": "it-multiprotocol-network.dyndns.org",
+        "kind": "mmdvm",
+        "port": 55583,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "it-multinet-sr1-access-systems",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/it-multinet-sr1-access-systems/talkgroups/"
+      },
+      "id": "it-multinet-sr1-access-systems-server-hb_it_multi_net_dup_6",
+      "name": "HB_IT_MULTI_NET_DUP_6",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "IT-MULTIPROTOCOL-NETWORK",
+      "system": "it-multinet-sr1-access-systems"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://w8lrk-xlx947.duckdns.org/",
+      "description": "<h4>LIVINGSTON AMATEUR RADIO KLUB - YSF / DMR networked DR-2x repeaters around Livingston county Michigan</h4>",
+      "dial": {
+        "host": "w8lrk-xlx947.duckdns.org",
+        "kind": "mmdvm",
+        "port": 62030,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "lark",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/lark/talkgroups/"
+      },
+      "id": "lark-server-w8lrk-xlx947ddnsfreecom",
+      "name": "w8lrk-xlx947.ddnsfree.com",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "LIVINGSTON AMATEUR RADIO KLUB",
+      "system": "lark"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://www.mntrbo.net/",
+      "description": "<p>I am part of the DMRPlus DMR Network.&nbsp; (WWW.DMRPLUS.NET)</p>\r\n<p>The DMRPLUS C-bridge is now hosting all the old DMRX TAC Talkgroups.&nbsp;&nbsp;</p>\r\n<p>If you have a network that is not connected with Brandmeister and would like to get linked in, please let me know.&nbsp;&nbsp;</p>",
+      "dial": {
+        "host": "ipsc2.mntrbo.net",
+        "kind": "mmdvm",
+        "port": 55555,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "mntrbo",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/mntrbo/talkgroups/"
+      },
+      "id": "mntrbo-server-ipsc2-minnesota",
+      "name": "IPSC2-MINNESOTA",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "MNRADIO.NET",
+      "system": "mntrbo"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://monitor.newenglanddigitalradio.com/index.php",
+      "description": "<p>This network has only 9 talkgroups, 10 - 18. Each talkgroup corresponds with modules A - I on the New England Digital Radio XLX097 Multimode reflector. All 9 talkgroups are static and on Timeslot 2.</p>",
+      "dial": {
+        "host": "xlx097.newenglanddigitalradio.com",
+        "kind": "mmdvm",
+        "port": 62030,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "nedmr",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/nedmr/talkgroups/"
+      },
+      "id": "nedmr-server-ma-1",
+      "name": "MA 1",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "New England Digital Radio",
+      "system": "nedmr"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://monitor.newenglanddigitalradio.com/index.php",
+      "description": "<p>This network has only 9 talkgroups, 10 - 18. Each talkgroup corresponds with modules A - I on the New England Digital Radio XLX097 Multimode reflector. All 9 talkgroups are static and on Timeslot 2.</p>",
+      "dial": {
+        "host": "nedmr.com",
+        "kind": "mmdvm",
+        "port": 55555,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "new-england-dmr",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/new-england-dmr/talkgroups/"
+      },
+      "id": "new-england-dmr-server-nedmr",
+      "name": "NEDMR",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "New England Digital Radio KC1VAX",
+      "system": "new-england-dmr"
+    },
+    {
+      "country": "CN",
+      "dashboard": "https://dmr.nrlptt.com",
+      "description": "<div class=\"kv-row\">IP <strong>110.42.107.105</strong></div>\r\n<div class=\"kv-row\">Moto IPSC <strong>55005</strong></div>\r\n<div class=\"kv-row\">Hytera P2P <strong>50000</strong></div>\r\n<div class=\"kv-row\">Hytera DMR <strong>50001</strong></div>\r\n<div class=\"kv-row\">Hytera RDAC <strong>50002</strong></div>\r\n<div class=\"kv-row\">MMDVM <strong>62031</strong></div>\r\n<div class=\"kv-row\">HyTalk <strong>50283</strong></div>",
+      "dial": {
+        "host": "dmr.nrlptt.com",
+        "kind": "mmdvm",
+        "port": 60231,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "nrl",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/nrl/talkgroups/"
+      },
+      "id": "nrl-server-nrldmr",
+      "name": "NRLDMR",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "BH4TIH",
+      "system": "nrl"
+    },
+    {
+      "country": "NL",
+      "dashboard": "http://dmr.pa7lim.nl",
+      "dial": {
+        "host": "dmr.pa7lim.nl",
+        "kind": "mmdvm",
+        "port": 55555,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "pa7lim-dmr-network",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/pa7lim-dmr-network/talkgroups/"
+      },
+      "id": "pa7lim-dmr-network-server-httpdmrpa7limnl",
+      "name": "http://dmr.pa7lim.nl",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "David PA7LIM",
+      "system": "pa7lim-dmr-network"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://openquad.net",
+      "description": "<p>QuadNet&nbsp; DMR Network</p>\r\n<p>Connect to our robust network of DMR servers. Find talkgroups, check server status, and get connected with the global digital mobile radio community.</p>",
+      "dial": {
+        "host": "dmr.openquad.net",
+        "kind": "mmdvm",
+        "port": 55555,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "quadnet-dmr-network",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/quadnet-dmr-network/talkgroups/"
+      },
+      "id": "quadnet-dmr-network-server-ipsc2-quadnet",
+      "name": "IPSC2-QuadNet",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Mike-W3XPT Will-W4WWM",
+      "system": "quadnet-dmr-network"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://openquad.net",
+      "description": "<p>QuadNet&nbsp; DMR Network</p>\r\n<p>Connect to our robust network of DMR servers. Find talkgroups, check server status, and get connected with the global digital mobile radio community.</p>",
+      "dial": {
+        "host": "quadnet.ddns.net",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "quadnet-dmr-network",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/quadnet-dmr-network/talkgroups/"
+      },
+      "id": "quadnet-dmr-network-server-quadnet-atlanta-georgia",
+      "name": "QuadNet Atlanta Georgia",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Mike-W3XPT Will-W4WWM",
+      "system": "quadnet-dmr-network"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://openquad.net",
+      "description": "<p>QuadNet&nbsp; DMR Network</p>\r\n<p>Connect to our robust network of DMR servers. Find talkgroups, check server status, and get connected with the global digital mobile radio community.</p>",
+      "dial": {
+        "host": "quadnet2.ddns.net",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "quadnet-dmr-network",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/quadnet-dmr-network/talkgroups/"
+      },
+      "id": "quadnet-dmr-network-server-quadnet-cincinnati-ohio",
+      "name": "QuadNet Cincinnati Ohio",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Mike-W3XPT Will-W4WWM",
+      "system": "quadnet-dmr-network"
+    },
+    {
+      "country": "ES",
+      "dashboard": "https://radiomakutospain.es",
+      "description": "<p>GRUPO DE AMIGOS RADIOAFICIONADOS, AMANTES DE LA RADIO ANAL&Oacute;GICA Y DIGITAL TG-21483 DMR</p>\r\n<p>Tenemos enlace a Zello canal RADIO MAKUTO ESPA&Ntilde;A</p>",
+      "dial": {
+        "host": "84.232.5.113",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "radio-makuto-espana",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/radio-makuto-espana/talkgroups/"
+      },
+      "id": "radio-makuto-espana-server-masterspain-dmres",
+      "name": "master.spain-dmr.es",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "BrandMeister",
+      "system": "radio-makuto-espana"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://scotland.cq-uk.uk",
+      "description": "<p>System-X Dmr Server</p>",
+      "dial": {
+        "host": "scotland.cq-uk.uk",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "scotland",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/scotland/talkgroups/"
+      },
+      "id": "scotland-server-scotland",
+      "name": "Scotland",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "CQ-UK WORLDWIDE",
+      "system": "scotland"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://xlx.w9winxlx.us//",
+      "description": "<p>Part of the W9WIN Digital System talkgroup 31188</p>",
+      "dial": {
+        "host": "64.112.234.163",
+        "kind": "mmdvm",
+        "port": 62030,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "southern-indiana-link",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/southern-indiana-link/talkgroups/"
+      },
+      "id": "southern-indiana-link-server-dmr-mmdvm",
+      "name": "DMR-MMDVM",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Southern Indiana Network",
+      "system": "southern-indiana-link"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://freestar.network/systemx-dmr/",
+      "description": "<p>SystemX is a DMR nework for the people and our policy is \"Freedom to Connect\". No stupid rules just a simple policy of Connect and Enjoy.</p>",
+      "id": "systemx-server-systemx-apollo",
+      "name": "SystemX Apollo",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "FreeSTAR Network",
+      "system": "systemx"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://freestar.network/systemx-dmr/",
+      "description": "<p>SystemX is a DMR nework for the people and our policy is \"Freedom to Connect\". No stupid rules just a simple policy of Connect and Enjoy.</p>",
+      "id": "systemx-server-systemx-calafornia",
+      "name": "SystemX Calafornia",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "FreeSTAR Network",
+      "system": "systemx"
+    },
+    {
+      "country": "GT",
+      "dashboard": "https://freestar.network/systemx-dmr/",
+      "description": "<p>SystemX is a DMR nework for the people and our policy is \"Freedom to Connect\". No stupid rules just a simple policy of Connect and Enjoy.</p>",
+      "id": "systemx-server-systemx-guatemala",
+      "name": "SystemX Guatemala",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "FreeSTAR Network",
+      "system": "systemx"
+    },
+    {
+      "country": "MX",
+      "dashboard": "https://freestar.network/systemx-dmr/",
+      "description": "<p>SystemX is a DMR nework for the people and our policy is \"Freedom to Connect\". No stupid rules just a simple policy of Connect and Enjoy.</p>",
+      "id": "systemx-server-systemx-mexico",
+      "name": "SystemX Mexico",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "FreeSTAR Network",
+      "system": "systemx"
+    },
+    {
+      "country": "NZ",
+      "dashboard": "https://freestar.network/systemx-dmr/",
+      "description": "<p>SystemX is a DMR nework for the people and our policy is \"Freedom to Connect\". No stupid rules just a simple policy of Connect and Enjoy.</p>",
+      "id": "systemx-server-systemx-new-zealand",
+      "name": "SystemX New Zealand",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "FreeSTAR Network",
+      "system": "systemx"
+    },
+    {
+      "country": "ES",
+      "dashboard": "https://freestar.network/systemx-dmr/",
+      "description": "<p>SystemX is a DMR nework for the people and our policy is \"Freedom to Connect\". No stupid rules just a simple policy of Connect and Enjoy.</p>",
+      "id": "systemx-server-systemx-spain",
+      "name": "SystemX Spain",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "FreeSTAR Network",
+      "system": "systemx"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://freestar.network/systemx-dmr/",
+      "description": "<p>SystemX is a DMR nework for the people and our policy is \"Freedom to Connect\". No stupid rules just a simple policy of Connect and Enjoy.</p>",
+      "id": "systemx-server-systemx-uk",
+      "name": "SystemX UK",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "FreeSTAR Network",
+      "system": "systemx"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://freestar.network/systemx-dmr/",
+      "description": "<p>SystemX is a DMR nework for the people and our policy is \"Freedom to Connect\". No stupid rules just a simple policy of Connect and Enjoy.</p>",
+      "id": "systemx-server-systemx-usa",
+      "name": "SystemX USA",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "FreeSTAR Network",
+      "system": "systemx"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://www.lhroseto.ddns.net",
+      "dial": {
+        "host": "2224.adn.systems",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "tg22267",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/tg22267/talkgroups/"
+      },
+      "id": "tg22267-server-adn-2224",
+      "name": "ADN 2224",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Mimmo",
+      "system": "tg22267"
+    },
+    {
+      "country": "TR",
+      "dashboard": "https://2861.adn.systems",
+      "description": "<p>T&uuml;rk Amat&ouml;r Dijital A\u011f\u0131 ADN T&uuml;rkiye Sunucular\u0131</p>",
+      "dial": {
+        "host": "2861.adn.systems",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "turk-amator-dijital-ag",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/turk-amator-dijital-ag/talkgroups/"
+      },
+      "id": "turk-amator-dijital-ag-server-turk-amator-dijital-ag",
+      "name": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131",
+      "system": "turk-amator-dijital-ag"
+    },
+    {
+      "country": "TR",
+      "dashboard": "https://dvs.pistar.com.tr/",
+      "description": "<p data-path-to-node=\"1\">De\u011ferli Amat&ouml;r Telsizciler,</p>\r\n<p data-path-to-node=\"2\">T&uuml;rkiye'deki amat&ouml;r telsizcilik faaliyetlerine destek olmak ve dijital haberle\u015fmeyi daha eri\u015filebilir k\u0131lmak amac\u0131yla, camiam\u0131za <strong data-path-to-node=\"2\" data-index-in-node=\"129\">tamamen &uuml;cretsiz ve kesintisiz</strong> hizmet verecek yeni nesil DMR a\u011f\u0131m\u0131z\u0131 duyurmaktan b&uuml;y&uuml;k bir heyecan duyuyoruz!</p>\r\n<p data-path-to-node=\"3\">Hi&ccedil;bir ticari kayg\u0131 g&uuml;tmeden, dayan\u0131\u015fma ve teknolojik geli\u015fim oda\u011f\u0131yla kurulan bu sistemin kalbinde <strong data-path-to-node=\"3\" data-index-in-node=\"100\">DMRHub</strong> altyap\u0131s\u0131 yat\u0131yor.</p>\r\n<h3 data-path-to-node=\"4\">Neden Bizim A\u011f\u0131m\u0131z\u0131 Tercih Etmelisiniz?</h3>\r\n<p data-path-to-node=\"5\">A\u011f\u0131m\u0131z, amat&ouml;r telsizcilerin ihtiya&ccedil;lar\u0131na y&ouml;nelik olarak &ouml;zel olarak yap\u0131land\u0131r\u0131lm\u0131\u015f modern bir teknik altyap\u0131ya sahiptir:</p>\r\n<ul data-path-to-node=\"6\">\r\n<li>\r\n<p data-path-to-node=\"6,0,0\"><strong data-path-to-node=\"6,0,0\" data-index-in-node=\"0\">A&ccedil;\u0131k Kaynak G&uuml;c&uuml; (DMRHub):</strong> Sistemimiz, a&ccedil;\u0131k kaynak kodlu (open-source) bir DMR a\u011f sunucusu olan DMRHub temel al\u0131narak in\u015fa edilmi\u015ftir. \u015eeffaf ve s&uuml;rekli geli\u015ftirilebilir bir yap\u0131 sunar.</p>\r\n</li>\r\n<li>\r\n<p data-path-to-node=\"6,1,0\"><strong data-path-to-node=\"6,1,0\" data-index-in-node=\"0\">MMDVM ve Homebrew Uyumlulu\u011fu:</strong> Homebrew r&ouml;le protokol&uuml;n&uuml; (repeater protocol) kullanan a\u011f\u0131m\u0131z, sahip oldu\u011funuz t&uuml;m MMDVM ve benzeri hotspot/r&ouml;le cihazlar\u0131yla do\u011frudan ve kusursuz bir \u015fekilde uyumlu &ccedil;al\u0131\u015f\u0131r.</p>\r\n</li>\r\n<li>\r\n<p data-path-to-node=\"6,2,0\"><strong data-path-to-node=\"6,2,0\" data-index-in-node=\"0\">Kullan\u0131c\u0131 Dostu, G&uuml;&ccedil;l&uuml; Bir Alternatif:</strong> BrandMeister ve TGIF gibi mevcut k&uuml;resel a\u011flar\u0131n karma\u015f\u0131kl\u0131\u011f\u0131ndan uzak; a&ccedil;\u0131k kaynakl\u0131 ve kullan\u0131m\u0131 &ccedil;ok daha kolay bir alternatif sunma fikriyle yola &ccedil;\u0131kt\u0131k.</p>\r\n</li>\r\n<li>\r\n<p data-path-to-node=\"6,3,0\"><strong data-path-to-node=\"6,3,0\" data-index-in-node=\"0\">Yerel ve Ba\u011f\u0131ms\u0131z Haberle\u015fme (AREDN Mesh):</strong> A\u011f\u0131m\u0131z, &ouml;zellikle <strong data-path-to-node=\"6,3,0\" data-index-in-node=\"61\">AREDN mesh</strong> gibi yerel haberle\u015fme a\u011flar\u0131 &uuml;zerinden kesintisiz ve ba\u011f\u0131ms\u0131z bir \u015fekilde &ccedil;al\u0131\u015fmak &uuml;zere tasarlanm\u0131\u015ft\u0131r. Bu sayede, hem g&uuml;nl&uuml;k yerel QSO'lar\u0131n\u0131zda hem de afet/acil durum haberle\u015fmelerinde yerel (local) ileti\u015fim ortamlar\u0131nda maksimum verim al\u0131rs\u0131n\u0131z.</p>\r\n</li>\r\n</ul>\r\n<h3 data-path-to-node=\"7\">Hedefimiz Nedir?</h3>\r\n<p data-path-to-node=\"8\">Amac\u0131m\u0131z, T&uuml;rk amat&ouml;r telsiz camias\u0131ndaki her operat&ouml;r&uuml;n, y&uuml;ksek kaliteli bir dijital ses deneyimine hi&ccedil;bir &uuml;cret &ouml;demeden, kolayca ula\u015fabilmesidir. \u0130ster yeni bir lisansl\u0131 operat&ouml;r olun ister y\u0131llar\u0131n\u0131 bu hobiye vermi\u015f bir usta; bu a\u011f hepimizin ortak bulu\u015fma noktas\u0131 olmak i&ccedil;in tasarland\u0131.</p>\r\n<p data-path-to-node=\"9\">Cihazlar\u0131n\u0131z\u0131 ayarlay\u0131n, MMDVM sistemlerinizi y&ouml;nlendirin ve bu a&ccedil;\u0131k kaynakl\u0131, yerel ve g&uuml;&ccedil;l&uuml; a\u011f\u0131n bir par&ccedil;as\u0131 olun!</p>\r\n<p data-path-to-node=\"10\">Havada g&ouml;r&uuml;\u015fmek dile\u011fiyle... <strong data-path-to-node=\"10\" data-index-in-node=\"29\">73!</strong></p>",
+      "dial": {
+        "host": "tonguc.org",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "turkiye-dmr",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/turkiye-dmr/talkgroups/"
+      },
+      "id": "turkiye-dmr-server-turk-preppers-dmr-network",
+      "name": "Turk Preppers DMR Network",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "T\u00fcrkiye Digital Group",
+      "system": "turkiye-dmr"
+    },
+    {
+      "country": "TR",
+      "dashboard": "https://dvs.pistar.com.tr/",
+      "description": "<p data-path-to-node=\"1\">De\u011ferli Amat&ouml;r Telsizciler,</p>\r\n<p data-path-to-node=\"2\">T&uuml;rkiye'deki amat&ouml;r telsizcilik faaliyetlerine destek olmak ve dijital haberle\u015fmeyi daha eri\u015filebilir k\u0131lmak amac\u0131yla, camiam\u0131za <strong data-path-to-node=\"2\" data-index-in-node=\"129\">tamamen &uuml;cretsiz ve kesintisiz</strong> hizmet verecek yeni nesil DMR a\u011f\u0131m\u0131z\u0131 duyurmaktan b&uuml;y&uuml;k bir heyecan duyuyoruz!</p>\r\n<p data-path-to-node=\"3\">Hi&ccedil;bir ticari kayg\u0131 g&uuml;tmeden, dayan\u0131\u015fma ve teknolojik geli\u015fim oda\u011f\u0131yla kurulan bu sistemin kalbinde <strong data-path-to-node=\"3\" data-index-in-node=\"100\">DMRHub</strong> altyap\u0131s\u0131 yat\u0131yor.</p>\r\n<h3 data-path-to-node=\"4\">Neden Bizim A\u011f\u0131m\u0131z\u0131 Tercih Etmelisiniz?</h3>\r\n<p data-path-to-node=\"5\">A\u011f\u0131m\u0131z, amat&ouml;r telsizcilerin ihtiya&ccedil;lar\u0131na y&ouml;nelik olarak &ouml;zel olarak yap\u0131land\u0131r\u0131lm\u0131\u015f modern bir teknik altyap\u0131ya sahiptir:</p>\r\n<ul data-path-to-node=\"6\">\r\n<li>\r\n<p data-path-to-node=\"6,0,0\"><strong data-path-to-node=\"6,0,0\" data-index-in-node=\"0\">A&ccedil;\u0131k Kaynak G&uuml;c&uuml; (DMRHub):</strong> Sistemimiz, a&ccedil;\u0131k kaynak kodlu (open-source) bir DMR a\u011f sunucusu olan DMRHub temel al\u0131narak in\u015fa edilmi\u015ftir. \u015eeffaf ve s&uuml;rekli geli\u015ftirilebilir bir yap\u0131 sunar.</p>\r\n</li>\r\n<li>\r\n<p data-path-to-node=\"6,1,0\"><strong data-path-to-node=\"6,1,0\" data-index-in-node=\"0\">MMDVM ve Homebrew Uyumlulu\u011fu:</strong> Homebrew r&ouml;le protokol&uuml;n&uuml; (repeater protocol) kullanan a\u011f\u0131m\u0131z, sahip oldu\u011funuz t&uuml;m MMDVM ve benzeri hotspot/r&ouml;le cihazlar\u0131yla do\u011frudan ve kusursuz bir \u015fekilde uyumlu &ccedil;al\u0131\u015f\u0131r.</p>\r\n</li>\r\n<li>\r\n<p data-path-to-node=\"6,2,0\"><strong data-path-to-node=\"6,2,0\" data-index-in-node=\"0\">Kullan\u0131c\u0131 Dostu, G&uuml;&ccedil;l&uuml; Bir Alternatif:</strong> BrandMeister ve TGIF gibi mevcut k&uuml;resel a\u011flar\u0131n karma\u015f\u0131kl\u0131\u011f\u0131ndan uzak; a&ccedil;\u0131k kaynakl\u0131 ve kullan\u0131m\u0131 &ccedil;ok daha kolay bir alternatif sunma fikriyle yola &ccedil;\u0131kt\u0131k.</p>\r\n</li>\r\n<li>\r\n<p data-path-to-node=\"6,3,0\"><strong data-path-to-node=\"6,3,0\" data-index-in-node=\"0\">Yerel ve Ba\u011f\u0131ms\u0131z Haberle\u015fme (AREDN Mesh):</strong> A\u011f\u0131m\u0131z, &ouml;zellikle <strong data-path-to-node=\"6,3,0\" data-index-in-node=\"61\">AREDN mesh</strong> gibi yerel haberle\u015fme a\u011flar\u0131 &uuml;zerinden kesintisiz ve ba\u011f\u0131ms\u0131z bir \u015fekilde &ccedil;al\u0131\u015fmak &uuml;zere tasarlanm\u0131\u015ft\u0131r. Bu sayede, hem g&uuml;nl&uuml;k yerel QSO'lar\u0131n\u0131zda hem de afet/acil durum haberle\u015fmelerinde yerel (local) ileti\u015fim ortamlar\u0131nda maksimum verim al\u0131rs\u0131n\u0131z.</p>\r\n</li>\r\n</ul>\r\n<h3 data-path-to-node=\"7\">Hedefimiz Nedir?</h3>\r\n<p data-path-to-node=\"8\">Amac\u0131m\u0131z, T&uuml;rk amat&ouml;r telsiz camias\u0131ndaki her operat&ouml;r&uuml;n, y&uuml;ksek kaliteli bir dijital ses deneyimine hi&ccedil;bir &uuml;cret &ouml;demeden, kolayca ula\u015fabilmesidir. \u0130ster yeni bir lisansl\u0131 operat&ouml;r olun ister y\u0131llar\u0131n\u0131 bu hobiye vermi\u015f bir usta; bu a\u011f hepimizin ortak bulu\u015fma noktas\u0131 olmak i&ccedil;in tasarland\u0131.</p>\r\n<p data-path-to-node=\"9\">Cihazlar\u0131n\u0131z\u0131 ayarlay\u0131n, MMDVM sistemlerinizi y&ouml;nlendirin ve bu a&ccedil;\u0131k kaynakl\u0131, yerel ve g&uuml;&ccedil;l&uuml; a\u011f\u0131n bir par&ccedil;as\u0131 olun!</p>\r\n<p data-path-to-node=\"10\">Havada g&ouml;r&uuml;\u015fmek dile\u011fiyle... <strong data-path-to-node=\"10\" data-index-in-node=\"29\">73!</strong></p>",
+      "dial": {
+        "host": "dvs.pistar.com.tr",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "turkiye-dmr",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/turkiye-dmr/talkgroups/"
+      },
+      "id": "turkiye-dmr-server-turkiye-dmr",
+      "name": "T\u00fcrkiye DMR",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "T\u00fcrkiye Digital Group",
+      "system": "turkiye-dmr"
+    },
+    {
+      "country": "AR",
+      "dashboard": "https://bellville-link.tplinkdns.com/urf/",
+      "description": "<p>\"Reflector experimental de Bell Ville, C&oacute;rdoba, ARGENTINA. Laboratorio abierto sin fines de lucro para pruebas de equipos, ajustes y QSOs. &iexcl;Todos los colegas son bienvenidos a utilizar y experimentar en el sistema!\"</p>",
+      "dial": {
+        "host": "ysf-bellville-link.cloudns.cl",
+        "kind": "mmdvm",
+        "port": 62030,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "urfarg-bell-ville",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/urfarg-bell-ville/talkgroups/"
+      },
+      "id": "urfarg-bell-ville-server-bell-ville-node",
+      "name": "Bell Ville Node",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "LW2HAH - Bell Ville",
+      "system": "urfarg-bell-ville"
+    },
+    {
+      "country": "UY",
+      "dashboard": "http://uruguaynet1.2mydns.net",
+      "dial": {
+        "host": "uruguaynet1.2mydns.net",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "uruguaynet",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/uruguaynet/talkgroups/"
+      },
+      "id": "uruguaynet-server-uruguaynet",
+      "name": "URUGUAY.NET",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "CX3DW",
+      "system": "uruguaynet"
+    },
+    {
+      "country": "CA",
+      "dashboard": "https://dmr.ve2sus.com",
+      "dial": {
+        "host": "ref.ve2sus.com",
+        "kind": "mmdvm",
+        "port": 62030,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "ve2sus-dmr",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/ve2sus-dmr/talkgroups/"
+      },
+      "id": "ve2sus-dmr-server-ve2sus-dmr",
+      "name": "VE2SUS DMR",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "VE2SUS DMR",
+      "system": "ve2sus-dmr"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://urf493.w0chp.radio",
+      "dial": {
+        "host": "urf493.w0chp.radio",
+        "kind": "mmdvm",
+        "port": 62030,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "w0chpradio-network",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/w0chpradio-network/talkgroups/"
+      },
+      "id": "w0chpradio-network-server-urf494",
+      "name": "URF494",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "W0CHP",
+      "system": "w0chpradio-network"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://vm2.dyb.com:8080",
+      "dial": {
+        "host": "vm2.dyb.com",
+        "kind": "mmdvm",
+        "port": 62030,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "w2db",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/w2db/talkgroups/"
+      },
+      "id": "w2db-server-vm2dybcom",
+      "name": "vm2.dyb.com",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "W2DB",
+      "system": "w2db"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://kr9rk.hopto.org/ipsc",
+      "dial": {
+        "host": "kr9rk.hopto.org",
+        "kind": "mmdvm",
+        "port": 55555,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "wisconsin-dmr",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/wisconsin-dmr/talkgroups/"
+      },
+      "id": "wisconsin-dmr-server-httpkr9rkhoptoorgipsc",
+      "name": "http://kr9rk.hopto.org/ipsc",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "N9OIG",
+      "system": "wisconsin-dmr"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://xlx004.kb8zgl.net",
+      "description": "<p>Multi-bridge XLX004 - see status page for more details! &nbsp;Has AMBE transcoding on most TGs.</p>",
+      "dial": {
+        "host": "xlx004.kb8zgl.net",
+        "kind": "mmdvm",
+        "port": 10002,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "xlx004",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/xlx004/talkgroups/"
+      },
+      "id": "xlx004-server-xlx004",
+      "name": "xlx004",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "W8MW",
+      "system": "xlx004"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://ag5aa.com",
+      "id": "xlx034-server-ag5aacom",
+      "name": "ag5aa.com",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "AG5AA",
+      "system": "xlx034"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://www.raw.usk4lls.com",
+      "dial": {
+        "host": "167.71.95.160",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "xlx205",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/xlx205/talkgroups/"
+      },
+      "id": "xlx205-server-qthlatinosham-club",
+      "name": "QTHLatinos.Ham Club",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "BROWARD ENGINEERING Tm.",
+      "system": "xlx205"
+    },
+    {
+      "country": "GB",
+      "dashboard": "http://xlx.jl-networking.co.uk",
+      "id": "xlx279-server-xlx279",
+      "name": "XLX279",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "G1INC Derek",
+      "system": "xlx279"
+    },
+    {
+      "country": "JP",
+      "dashboard": "https://xlx296.h-sol.jp/",
+      "dial": {
+        "host": "xlx296.h-sol.jp",
+        "kind": "mmdvm",
+        "port": 62030,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "xlx296",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/xlx296/talkgroups/"
+      },
+      "id": "xlx296-server-xlx296",
+      "name": "XLX296",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "JG1XWV",
+      "system": "xlx296"
+    },
+    {
+      "country": "NL",
+      "dashboard": "http://51.83.46.75:35000/",
+      "description": "<p>NL YSF DMR DSTAR C4FM Multi-mode Reflector Owner PD2VDY</p>",
+      "dial": {
+        "host": "51.83.46.75",
+        "kind": "mmdvm",
+        "port": 8880,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "xlx444",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/xlx444/talkgroups/"
+      },
+      "id": "xlx444-server-dutch-server-xlx444",
+      "name": "Dutch server XLX444",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "PD2VDY",
+      "system": "xlx444"
+    },
+    {
+      "country": "DE",
+      "dashboard": "https://xlx456.de",
+      "dial": {
+        "host": "54.37.205.183",
+        "kind": "mmdvm",
+        "port": 62030,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "xlx456-z",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/xlx456-z/talkgroups/"
+      },
+      "id": "xlx456-z-server-xlx456-z",
+      "name": "XLX456-Z",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "DO5YAM",
+      "system": "xlx456-z"
+    },
+    {
+      "country": "DE",
+      "dashboard": "https://xlx-owl.de/",
+      "id": "xlx508-dmr-access-server-xlx508",
+      "name": "XLX508",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "HB9GFX",
+      "system": "xlx508-dmr-access"
+    },
+    {
+      "country": "CN",
+      "dashboard": "http://8.137.165.149",
+      "dial": {
+        "host": "8.137.165.149",
+        "kind": "mmdvm",
+        "port": 8880,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "xlx564-yunnanham",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/xlx564-yunnanham/talkgroups/"
+      },
+      "id": "xlx564-yunnanham-server-xlx564_yunnanham",
+      "name": "XLX564_YunnanHam",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "BI8SPS, BH8UXN, BH8UOU.",
+      "system": "xlx564-yunnanham"
+    },
+    {
+      "country": "BG",
+      "dashboard": "https://lz3sam.ddns.net/",
+      "description": "<p>JustForFun! '73! de LZ3SAM (owner)</p>",
+      "dial": {
+        "host": "130.204.64.244",
+        "kind": "mmdvm",
+        "port": 4002,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "xlx696",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/xlx696/talkgroups/"
+      },
+      "id": "xlx696-server-xlx696",
+      "name": "XLX696",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "LZ3SAM",
+      "system": "xlx696"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://kd2qqv.ddns.net",
+      "description": "<p>TGIF 4005 ALLSTAR 680541 Bridge Connect</p>",
+      "dial": {
+        "host": "kd2qqv.ddns.net",
+        "kind": "mmdvm",
+        "port": 62030,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "xlx823",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/xlx823/talkgroups/"
+      },
+      "id": "xlx823-server-xlx823",
+      "name": "XLX823",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "KD2QQV",
+      "system": "xlx823"
+    },
+    {
+      "country": "KZ",
+      "dashboard": "http://un1eak.svx03.kz:999/",
+      "description": "<p>Bridge to Brandmeister TG-401</p>",
+      "dial": {
+        "host": "un1eak.svx03.kz",
+        "kind": "mmdvm",
+        "port": 62030,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "xlx888-a",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/xlx888-a/talkgroups/"
+      },
+      "id": "xlx888-a-server-un1eaksvx03kz",
+      "name": "un1eak.svx03.kz",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "UN1EAK",
+      "system": "xlx888-a"
+    },
+    {
+      "country": "GB",
+      "dashboard": "http://xlx942.mb6ds.ampr.org",
+      "description": "<p>XLX942 Multimode DStar/DMR/NXDN/YSF etc<br>Powered by AMBE3003</p>",
+      "id": "xlx942-server-xlx942mb6dsamprorg",
+      "name": "xlx942.mb6ds.ampr.org",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "mb6ds",
+      "system": "xlx942"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://digital-america.org/",
+      "description": "<p>XLXDAM \"Dgital-America\" is link with XLXTEN\"Tennessee Reflector System\" https://tnrs.net/</p>",
+      "dial": {
+        "host": "15.204.116.55",
+        "kind": "mmdvm",
+        "port": 62030,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "xlxdam",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/xlxdam/talkgroups/"
+      },
+      "id": "xlxdam-server-xlxdam",
+      "name": "XLXDAM",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "KR4EMG",
+      "system": "xlxdam"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://dmrdash.m0xyn.radio",
+      "description": "<p>This Is The YorkshireDMR Server Part of the Yorkshire Net UK</p>",
+      "dial": {
+        "host": "dmr.m0xyn.radio",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "yorkshiredmr",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/yorkshiredmr/talkgroups/"
+      },
+      "id": "yorkshiredmr-server-yorkshiredmr",
+      "name": "YorkshireDMR",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Yorkshire Net UK",
+      "system": "yorkshiredmr"
+    },
     {
       "aliases": [
         "XRF000",
@@ -855,8 +4535,8 @@
         "DCS045"
       ],
       "country": "USA",
-      "dashboard": "http://urf045.pennlinkgroup.com:8082/urfd",
-      "description": "PennLink Group URF045",
+      "dashboard": "http://xlx045.pennlinkgroup.com/xlxd/",
+      "description": "Penn-Link - info.pennlinkgroup.com - DSTAR/DMR/YSF/P25/NXDN/Wires-X",
       "dial": {
         "callsign": "XRF045",
         "host": "70.44.20.24",
@@ -2704,7 +6384,7 @@
       "description": "D-STAR Elite Italian Reflector",
       "dial": {
         "callsign": "XRF143",
-        "host": "79.20.135.81",
+        "host": "82.88.127.168",
         "kind": "dextra",
         "port": 30001
       },
@@ -3858,8 +7538,8 @@
         "DCS208"
       ],
       "country": "France",
-      "dashboard": "http://xlx208.f5kav.fr",
-      "description": "French D-Star XLX Multiprotocol Reflector and Smart Group Server, brought to you by F5KAV",
+      "dashboard": "http://urf208.f5kav.fr",
+      "description": "French Multimode Reflector, brought to you by F5KAV Club",
       "dial": {
         "callsign": "XRF208",
         "host": "213.186.34.50",
@@ -4321,7 +8001,7 @@
       "description": "Multiprotocol Reflector D-STAR G3 - BM TG 22232",
       "dial": {
         "callsign": "XRF232",
-        "host": "79.21.112.245",
+        "host": "82.59.234.147",
         "kind": "dextra",
         "port": 30001
       },
@@ -4694,7 +8374,7 @@
         "DCS252"
       ],
       "country": "Greece",
-      "dashboard": "http://51.195.107.129",
+      "dashboard": "http://xlx252.ddns.net",
       "description": "Hellas Europe Group",
       "dial": {
         "callsign": "XRF252",
@@ -6981,6 +10661,26 @@
     },
     {
       "aliases": [
+        "XRF394",
+        "REF394",
+        "DCS394"
+      ],
+      "country": "Nicolas ON4VK",
+      "dashboard": "http://xlx394.ddns.net",
+      "description": "XLX394 Multiprotocol Reflector by ON4VK, info: [email removed]",
+      "dial": {
+        "callsign": "XRF394",
+        "host": "80.201.168.212",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLX394",
+      "name": "XLX394",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "aliases": [
         "XRF395",
         "REF395",
         "DCS395"
@@ -7784,9 +11484,9 @@
         "REF437",
         "DCS437"
       ],
-      "country": "your_country",
+      "country": "USA",
       "dashboard": "http://109.172.7.162/xlxd",
-      "description": "your_comment",
+      "description": "FIJI_comment",
       "dial": {
         "callsign": "XRF437",
         "host": "109.172.7.162",
@@ -8423,9 +12123,9 @@
         "REF479",
         "DCS479"
       ],
-      "country": "USA",
-      "dashboard": "http://n9ink.net/db",
-      "description": "Welcome to Ozark Digital",
+      "country": "United States",
+      "dashboard": "http://imrs.amcomm.network",
+      "description": "AmComm Network IMRS",
       "dial": {
         "callsign": "XRF479",
         "host": "198.58.106.10",
@@ -9386,7 +13086,7 @@
       "description": "XLX546 DMR/D-Star/YSF/NXDN/POCSAG",
       "dial": {
         "callsign": "XRF546",
-        "host": "153.66.87.239",
+        "host": "71.91.41.20",
         "kind": "dextra",
         "port": 30001
       },
@@ -10343,7 +14043,7 @@
       "description": "Latvian multi-mode reflector. Bridged to TG24706 in BrandMeister.",
       "dial": {
         "callsign": "XRF636",
-        "host": "188.112.182.232",
+        "host": "188.112.179.108",
         "kind": "dextra",
         "port": 30001
       },
@@ -11410,6 +15110,10 @@
       "source": "xlx"
     },
     {
+      "aliases": [
+        "REFPNY",
+        "DCSPNY"
+      ],
       "country": "Brazil",
       "dashboard": "https://dstarbrasil.com.br",
       "description": "XLX724 Multiprotocol Reflector by PU2PNY, info: [email removed]",
@@ -13100,26 +16804,6 @@
     },
     {
       "aliases": [
-        "XRF855",
-        "REF855",
-        "DCS855"
-      ],
-      "country": "Germany",
-      "dashboard": "http://dmr.ax25.de",
-      "description": "Testsystem",
-      "dial": {
-        "callsign": "XRF855",
-        "host": "159.69.22.137",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLX855",
-      "name": "XLX855",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "aliases": [
         "XRF858",
         "REF858",
         "DCS858"
@@ -13399,26 +17083,6 @@
     },
     {
       "aliases": [
-        "XRF890",
-        "REF890",
-        "DCS890"
-      ],
-      "country": "Germany",
-      "dashboard": "http://xlx890.goip.de",
-      "description": "XLX890 Region Neumarkt, YSF 26390 (DE-Neumarkt) by DL2NJM, info: [email removed]",
-      "dial": {
-        "callsign": "XRF890",
-        "host": "217.154.223.138",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLX890",
-      "name": "XLX890",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "aliases": [
         "XRF892",
         "REF892",
         "DCS892"
@@ -13507,7 +17171,7 @@
       "description": "XLX Wallonia (DMR-DSTAR-C4FM)",
       "dial": {
         "callsign": "XRF898",
-        "host": "212.68.220.53",
+        "host": "109.88.51.65",
         "kind": "dextra",
         "port": 30001
       },
@@ -14166,7 +17830,7 @@
       "description": "G3BRG - Brundall Radio Group",
       "dial": {
         "callsign": "XRF938",
-        "host": "86.169.57.75",
+        "host": "95.146.183.211",
         "kind": "dextra",
         "port": 30001
       },
@@ -16392,26 +20056,6 @@
     },
     {
       "aliases": [
-        "XRFLXF",
-        "REFLXF",
-        "DCSLXF"
-      ],
-      "country": "Austria",
-      "dashboard": "http://XLXLXF.la-x.info/xlx",
-      "description": "Breitenwaida",
-      "dial": {
-        "callsign": "XRFLXF",
-        "host": "193.238.156.232",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLXLXF",
-      "name": "XLXLXF",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "aliases": [
         "XRFMDM",
         "REFMDM",
         "DCSMDM"
@@ -16471,12 +20115,17 @@
       "source": "xlx"
     },
     {
+      "aliases": [
+        "XRFMMG",
+        "REFMMG",
+        "DCSMMG"
+      ],
       "country": "United States",
       "dashboard": "http://xlxmmg.nemmg.club",
       "description": "New England MultiMode Group",
       "dial": {
         "callsign": "XRFMMG",
-        "host": "137.103.112.175",
+        "host": "172.56.198.157",
         "kind": "dextra",
         "port": 30001
       },
@@ -16507,26 +20156,6 @@
     },
     {
       "aliases": [
-        "XRFNAI",
-        "REFNAI",
-        "DCSNAI"
-      ],
-      "country": "United States of America",
-      "dashboard": "http://wx4alaimrs.radiotechnology.xyz",
-      "description": "WX4ALA Dashboard",
-      "dial": {
-        "callsign": "XRFNAI",
-        "host": "45.32.172.166",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLXNAI",
-      "name": "XLXNAI",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "aliases": [
         "XRFNFL",
         "REFNFL",
         "DCSNFL"
@@ -16551,9 +20180,9 @@
         "REFNLD",
         "DCSNLD"
       ],
-      "country": "Netherlands",
+      "country": "The Netherlands",
       "dashboard": "http://dstarnld.pa7lim.nl",
-      "description": "Dutch DSTAR Central",
+      "description": "Dutch Reflector by David PA7LIM",
       "dial": {
         "callsign": "XRFNLD",
         "host": "90.145.156.214",
@@ -16660,6 +20289,26 @@
       },
       "id": "XLXPNW",
       "name": "XLXPNW",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "aliases": [
+        "XRFPNY",
+        "REFPNY",
+        "DCSPNY"
+      ],
+      "country": "Brazil",
+      "dashboard": "https://dstarbrasil.com.br",
+      "description": "XLXPNY Multiprotocol Reflector by PU2PNY, info: [email removed]",
+      "dial": {
+        "callsign": "XRFPNY",
+        "host": "82.152.174.236",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLXPNY",
+      "name": "XLXPNY",
       "network": "dstar",
       "source": "xlx"
     },
@@ -18417,22 +22066,6 @@
       },
       "id": "XRF988",
       "name": "XRF988",
-      "network": "dstar",
-      "source": "dextra"
-    },
-    {
-      "aliases": [
-        "REFMMG",
-        "DCSMMG"
-      ],
-      "dial": {
-        "callsign": "XRFMMG",
-        "host": "172.56.198.157",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XRFMMG",
-      "name": "XRFMMG",
       "network": "dstar",
       "source": "dextra"
     },
@@ -29015,10 +32648,10 @@
     },
     {
       "country": "US",
-      "dashboard": "http://georgia900p25.us/tg554",
+      "dashboard": "http://vps1.georgia900p25.us/tg554",
       "description": "<h2>Georgia 900 P25 Backup Reflector</h2>\r\n<h4>This TG serves as a backup for 555. Repeaters are not normally connected to 554 unless 555 is out-of-service. Please feel free to use it when 555 is busy.</h4>\r\n<p>Gateways:W4NOC_MCDN=927.1375, W4NOC_NBRN=927.7375, W9KLS_MCDN=442.125,&nbsp; K1KC-CNYR=Lithonia 927.1125, KI4FVI_MCD=146.715, WA4ASI=444.8, 419764ASX=Node419764-X-TG777, 1998ASLx=PrivateNode1998-X-TG554, 419762ASLx=Node419762-X-TG555.</p>",
       "dial": {
-        "host": "georgia900p25.us",
+        "host": "vps1.georgia900p25.us",
         "kind": "p25",
         "port": 41003
       },
@@ -29111,48 +32744,6 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "MCRC"
-    },
-    {
-      "country": "US",
-      "dashboard": "https://digital.whocaresradio.com",
-      "dial": {
-        "host": "digital.whocaresradio.com",
-        "kind": "p25",
-        "port": 41002
-      },
-      "id": "60606",
-      "name": "W8VD New Haven, MI",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "W8VD"
-    },
-    {
-      "country": "US",
-      "dashboard": "https://digital.whocaresradio.com",
-      "dial": {
-        "host": "digital.whocaresradio.com",
-        "kind": "p25",
-        "port": 41001
-      },
-      "id": "60777",
-      "name": "US-WHOCARES",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "Who Cares ARG"
-    },
-    {
-      "country": "US",
-      "dashboard": "https://digital.whocaresradio.com",
-      "dial": {
-        "host": "digital.whocaresradio.com",
-        "kind": "p25",
-        "port": 41003
-      },
-      "id": "60888",
-      "name": "Zombie Alert - Metro Detroit MI",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "AA8GK N8ZA W8SOX"
     },
     {
       "country": "US",
@@ -30219,7 +33810,14 @@
       "description": "<p data-path-to-node=\"12,0\">Otimizado para o protocolo D-Star, nosso servidor garante a melhor experi&ecirc;ncia em comunica&ccedil;&atilde;o digital no radioamadorismo, conectando voc&ecirc; ao mundo.</p>\r\n<p data-path-to-node=\"12,1\"><strong data-path-to-node=\"12,1\" data-index-in-node=\"0\">Nossos Diferenciais no D-Star:</strong></p>\r\n<ul data-path-to-node=\"12,2\">\r\n<li>\r\n<p data-path-to-node=\"12,2,0,0\"><strong data-path-to-node=\"12,2,0,0\" data-index-in-node=\"0\">Qualidade de &Aacute;udio:</strong> Infraestrutura otimizada para transmiss&otilde;es claras e precisas.</p>\r\n</li>\r\n<li>\r\n<p data-path-to-node=\"12,2,1,0\"><strong data-path-to-node=\"12,2,1,0\" data-index-in-node=\"0\">Roteamento Eficiente:</strong> Conex&atilde;o direta e &aacute;gil com a rede global de radioamadores.</p>\r\n</li>\r\n<li>\r\n<p data-path-to-node=\"12,2,2,0\"><strong data-path-to-node=\"12,2,2,0\" data-index-in-node=\"0\">Alta Disponibilidade:</strong> Servidor est&aacute;vel e independente para garantir que seu QSO nunca caia.</p>\r\n</li>\r\n</ul>",
       "dial": {
         "host": "xlx026.net",
-        "kind": "urf"
+        "kind": "urf",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ]
       },
       "id": "026",
       "name": "XLX026",
@@ -30573,6 +34171,7 @@
         "kind": "urf",
         "modules": [
           "A",
+          "D",
           "E",
           "G",
           "K",
@@ -32372,6 +35971,20 @@
       "source": "dvref"
     },
     {
+      "country": "ES",
+      "dashboard": "https://www.qsobox.com",
+      "description": "QSO Box YSF",
+      "dial": {
+        "host": "212.237.6.15",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00045",
+      "name": "QSOBOX",
+      "network": "ysf",
+      "source": "dvref"
+    },
+    {
       "country": "US",
       "dashboard": "http://xlx049.dyndns.org",
       "description": "XLX049 NE Refl",
@@ -33111,6 +36724,21 @@
       "sponsor": "Rick Page"
     },
     {
+      "country": "JP",
+      "dashboard": "https://xlx245.sub.h-sol.jp/",
+      "description": "HItach",
+      "dial": {
+        "host": "www.sub.h-sol.jp",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00194",
+      "name": "URF245",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "JS1YTG"
+    },
+    {
       "country": "GR",
       "dashboard": "http://dmr.freedmr.gr/",
       "description": "GR-GREECE-DV",
@@ -33317,6 +36945,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "JS1YTG"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://xlx.oz-dmr.network/",
+      "description": "OZ-DMR NET",
+      "dial": {
+        "host": "xlx.oz-dmr.network",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00247",
+      "name": "XLX247",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "OZ-DMR NETWORK"
     },
     {
       "country": "GB",
@@ -34505,7 +38148,7 @@
     },
     {
       "country": "US",
-      "dashboard": "http://xlxcloverradio.digital",
+      "dashboard": "https://xlxcloverradio.digital",
       "description": "XLX reflector",
       "dial": {
         "host": "xlxcloverradio.digital",
@@ -34520,7 +38163,7 @@
     },
     {
       "country": "US",
-      "dashboard": "http://cloverxlxham.digital",
+      "dashboard": "https://cloverxlxham.digital",
       "description": "XLX reflector",
       "dial": {
         "host": "cloverxlxham.digital",
@@ -36522,6 +40165,34 @@
     },
     {
       "country": "RU",
+      "dashboard": "http://176.109.101.61/ysf_1/",
+      "description": "VW mode ONLY",
+      "dial": {
+        "host": "176.109.101.61",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "07701",
+      "name": "RoIP DV",
+      "network": "ysf",
+      "source": "dvref"
+    },
+    {
+      "country": "RU",
+      "dashboard": "http://176.109.101.61/ysf_2/",
+      "description": "VW mode ONLY",
+      "dial": {
+        "host": "176.109.101.61",
+        "kind": "ysf",
+        "port": 42001
+      },
+      "id": "07702",
+      "name": "RoIP MIX",
+      "network": "ysf",
+      "source": "dvref"
+    },
+    {
+      "country": "RU",
       "dashboard": "http://176.109.101.61/ysf_3/",
       "description": "VW mode ONLY",
       "dial": {
@@ -37845,6 +41516,20 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "HL5FZG"
+    },
+    {
+      "country": "ES",
+      "dashboard": "http://188.213.170.172/ysf",
+      "description": "CORDOBA YSF",
+      "dial": {
+        "host": "188.213.170.172",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "14520",
+      "name": "CORDOBA",
+      "network": "ysf",
+      "source": "dvref"
     },
     {
       "country": "GB",
@@ -40356,7 +44041,7 @@
         "port": 42000
       },
       "id": "22890",
-      "name": "22890",
+      "name": "CONF. ITALIA",
       "network": "ysf",
       "source": "dvref"
     },
@@ -42128,7 +45813,7 @@
         "port": 42000
       },
       "id": "28374",
-      "name": "28374",
+      "name": "A.M.R.S.",
       "network": "ysf",
       "source": "dvref"
     },
@@ -44030,6 +47715,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "FreeDMR IT"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://44.27.129.147/",
+      "description": "Tidewater",
+      "dial": {
+        "host": "44.27.129.147",
+        "kind": "ysf",
+        "port": 41500
+      },
+      "id": "34150",
+      "name": "SE Virginia",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "KE4DV"
     },
     {
       "country": "US",
@@ -53082,12 +56782,12 @@
   "schema_version": 1,
   "sources": [
     {
-      "name": "XLX registry (LX1IQ) + Pi-Star DExtra hosts + Pi-Star DPlus/DCS names",
-      "url": "http://xlxapi.rlx.lu/api.php?do=GetReflectorList"
-    },
-    {
       "name": "DVRef",
       "url": "https://dvref.com/api/v2/"
+    },
+    {
+      "name": "XLX registry (LX1IQ) + Pi-Star DExtra hosts + Pi-Star DPlus/DCS names",
+      "url": "http://xlxapi.rlx.lu/api.php?do=GetReflectorList"
     }
   ]
 }

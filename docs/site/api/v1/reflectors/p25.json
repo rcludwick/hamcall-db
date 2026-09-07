@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 323,
-  "generated": "2026-09-06",
+  "count": 320,
+  "generated": "2026-09-07",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -3471,10 +3471,10 @@
     },
     {
       "country": "US",
-      "dashboard": "http://georgia900p25.us/tg554",
+      "dashboard": "http://vps1.georgia900p25.us/tg554",
       "description": "<h2>Georgia 900 P25 Backup Reflector</h2>\r\n<h4>This TG serves as a backup for 555. Repeaters are not normally connected to 554 unless 555 is out-of-service. Please feel free to use it when 555 is busy.</h4>\r\n<p>Gateways:W4NOC_MCDN=927.1375, W4NOC_NBRN=927.7375, W9KLS_MCDN=442.125,&nbsp; K1KC-CNYR=Lithonia 927.1125, KI4FVI_MCD=146.715, WA4ASI=444.8, 419764ASX=Node419764-X-TG777, 1998ASLx=PrivateNode1998-X-TG554, 419762ASLx=Node419762-X-TG555.</p>",
       "dial": {
-        "host": "georgia900p25.us",
+        "host": "vps1.georgia900p25.us",
         "kind": "p25",
         "port": 41003
       },
@@ -3567,48 +3567,6 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "MCRC"
-    },
-    {
-      "country": "US",
-      "dashboard": "https://digital.whocaresradio.com",
-      "dial": {
-        "host": "digital.whocaresradio.com",
-        "kind": "p25",
-        "port": 41002
-      },
-      "id": "60606",
-      "name": "W8VD New Haven, MI",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "W8VD"
-    },
-    {
-      "country": "US",
-      "dashboard": "https://digital.whocaresradio.com",
-      "dial": {
-        "host": "digital.whocaresradio.com",
-        "kind": "p25",
-        "port": 41001
-      },
-      "id": "60777",
-      "name": "US-WHOCARES",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "Who Cares ARG"
-    },
-    {
-      "country": "US",
-      "dashboard": "https://digital.whocaresradio.com",
-      "dial": {
-        "host": "digital.whocaresradio.com",
-        "kind": "p25",
-        "port": 41003
-      },
-      "id": "60888",
-      "name": "Zombie Alert - Metro Detroit MI",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "AA8GK N8ZA W8SOX"
     },
     {
       "country": "US",

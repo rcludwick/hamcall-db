@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 98,
-  "generated": "2026-09-06",
+  "generated": "2026-09-07",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -81,7 +81,14 @@
       "description": "<p data-path-to-node=\"12,0\">Otimizado para o protocolo D-Star, nosso servidor garante a melhor experi&ecirc;ncia em comunica&ccedil;&atilde;o digital no radioamadorismo, conectando voc&ecirc; ao mundo.</p>\r\n<p data-path-to-node=\"12,1\"><strong data-path-to-node=\"12,1\" data-index-in-node=\"0\">Nossos Diferenciais no D-Star:</strong></p>\r\n<ul data-path-to-node=\"12,2\">\r\n<li>\r\n<p data-path-to-node=\"12,2,0,0\"><strong data-path-to-node=\"12,2,0,0\" data-index-in-node=\"0\">Qualidade de &Aacute;udio:</strong> Infraestrutura otimizada para transmiss&otilde;es claras e precisas.</p>\r\n</li>\r\n<li>\r\n<p data-path-to-node=\"12,2,1,0\"><strong data-path-to-node=\"12,2,1,0\" data-index-in-node=\"0\">Roteamento Eficiente:</strong> Conex&atilde;o direta e &aacute;gil com a rede global de radioamadores.</p>\r\n</li>\r\n<li>\r\n<p data-path-to-node=\"12,2,2,0\"><strong data-path-to-node=\"12,2,2,0\" data-index-in-node=\"0\">Alta Disponibilidade:</strong> Servidor est&aacute;vel e independente para garantir que seu QSO nunca caia.</p>\r\n</li>\r\n</ul>",
       "dial": {
         "host": "xlx026.net",
-        "kind": "urf"
+        "kind": "urf",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ]
       },
       "id": "026",
       "name": "XLX026",
@@ -435,6 +442,7 @@
         "kind": "urf",
         "modules": [
           "A",
+          "D",
           "E",
           "G",
           "K",

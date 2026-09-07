@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1453,
-  "generated": "2026-09-06",
+  "count": 1460,
+  "generated": "2026-09-07",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -541,6 +541,20 @@
       },
       "id": "00044",
       "name": "LinkBridgeUK",
+      "network": "ysf",
+      "source": "dvref"
+    },
+    {
+      "country": "ES",
+      "dashboard": "https://www.qsobox.com",
+      "description": "QSO Box YSF",
+      "dial": {
+        "host": "212.237.6.15",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00045",
+      "name": "QSOBOX",
       "network": "ysf",
       "source": "dvref"
     },
@@ -1284,6 +1298,21 @@
       "sponsor": "Rick Page"
     },
     {
+      "country": "JP",
+      "dashboard": "https://xlx245.sub.h-sol.jp/",
+      "description": "HItach",
+      "dial": {
+        "host": "www.sub.h-sol.jp",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00194",
+      "name": "URF245",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "JS1YTG"
+    },
+    {
       "country": "GR",
       "dashboard": "http://dmr.freedmr.gr/",
       "description": "GR-GREECE-DV",
@@ -1490,6 +1519,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "JS1YTG"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://xlx.oz-dmr.network/",
+      "description": "OZ-DMR NET",
+      "dial": {
+        "host": "xlx.oz-dmr.network",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00247",
+      "name": "XLX247",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "OZ-DMR NETWORK"
     },
     {
       "country": "GB",
@@ -2678,7 +2722,7 @@
     },
     {
       "country": "US",
-      "dashboard": "http://xlxcloverradio.digital",
+      "dashboard": "https://xlxcloverradio.digital",
       "description": "XLX reflector",
       "dial": {
         "host": "xlxcloverradio.digital",
@@ -2693,7 +2737,7 @@
     },
     {
       "country": "US",
-      "dashboard": "http://cloverxlxham.digital",
+      "dashboard": "https://cloverxlxham.digital",
       "description": "XLX reflector",
       "dial": {
         "host": "cloverxlxham.digital",
@@ -4695,6 +4739,34 @@
     },
     {
       "country": "RU",
+      "dashboard": "http://176.109.101.61/ysf_1/",
+      "description": "VW mode ONLY",
+      "dial": {
+        "host": "176.109.101.61",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "07701",
+      "name": "RoIP DV",
+      "network": "ysf",
+      "source": "dvref"
+    },
+    {
+      "country": "RU",
+      "dashboard": "http://176.109.101.61/ysf_2/",
+      "description": "VW mode ONLY",
+      "dial": {
+        "host": "176.109.101.61",
+        "kind": "ysf",
+        "port": 42001
+      },
+      "id": "07702",
+      "name": "RoIP MIX",
+      "network": "ysf",
+      "source": "dvref"
+    },
+    {
+      "country": "RU",
       "dashboard": "http://176.109.101.61/ysf_3/",
       "description": "VW mode ONLY",
       "dial": {
@@ -6018,6 +6090,20 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "HL5FZG"
+    },
+    {
+      "country": "ES",
+      "dashboard": "http://188.213.170.172/ysf",
+      "description": "CORDOBA YSF",
+      "dial": {
+        "host": "188.213.170.172",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "14520",
+      "name": "CORDOBA",
+      "network": "ysf",
+      "source": "dvref"
     },
     {
       "country": "GB",
@@ -8529,7 +8615,7 @@
         "port": 42000
       },
       "id": "22890",
-      "name": "22890",
+      "name": "CONF. ITALIA",
       "network": "ysf",
       "source": "dvref"
     },
@@ -10301,7 +10387,7 @@
         "port": 42000
       },
       "id": "28374",
-      "name": "28374",
+      "name": "A.M.R.S.",
       "network": "ysf",
       "source": "dvref"
     },
@@ -12203,6 +12289,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "FreeDMR IT"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://44.27.129.147/",
+      "description": "Tidewater",
+      "dial": {
+        "host": "44.27.129.147",
+        "kind": "ysf",
+        "port": 41500
+      },
+      "id": "34150",
+      "name": "SE Virginia",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "KE4DV"
     },
     {
       "country": "US",
