@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 298,
-  "generated": "2026-09-07",
+  "generated": "2026-09-08",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1725,7 +1725,6 @@
     {
       "country": "PL",
       "dashboard": "http://waw01.kg5a.us",
-      "description": "<p style=\"text-align: center;\"><strong class=\"Yjhzub\" style=\"font-family: Google Sans, Arial, sans-serif; font-size: 16px; font-weight: 600; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\" data-sfc-root=\"c\" data-sfc-cb=\"\" data-complete=\"true\" data-copy-service-computed-style=\"font-family: Google Sans, Arial, sans-serif; font-size: 16px; font-weight: 600; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\">Warsaw NXDN Reflector 26512 is permanently linked to YSF PL-26512WawaNXDN &amp; tGIF.network DMR TG:26512</strong></p>\r\n<p style=\"text-align: center;\"><em class=\"eujQNb\" style=\"font-family: Google Sans, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\" data-sfc-root=\"c\" data-sfc-cb=\"\" data-complete=\"true\" aria-owns=\"action-menu-parent-container\" data-copy-service-computed-style=\"font-family: Google Sans, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\">Warszawski Reflektor NXDN 26512 jest na sta\u0142e po\u0142\u0105czony z </em><em><span class=\"eujQNb\" style=\"font-family: Google Sans, Arial, sans-serif; font-size: 16px; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\"><span class=\"Yjhzub\" style=\"font-family: Google Sans, Arial, sans-serif; font-size: 16px; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\">YSF PL-26512WawaNXDN</span></span></em><em class=\"eujQNb\" style=\"font-family: Google Sans, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\" data-sfc-root=\"c\" data-sfc-cb=\"\" data-complete=\"true\" aria-owns=\"action-menu-parent-container\" data-copy-service-computed-style=\"font-family: Google Sans, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(230, 232, 240);\"> oraz TG:26512 DMR w sieci tGIF.network</em></p>",
       "dial": {
         "host": "94.177.202.207",
         "kind": "nxdn",
@@ -1811,10 +1810,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28200",
+      "dashboard": "http://ptt.pistar.com.tr:28200",
       "description": "<p>NXDN Turkiye Genel Reflector - YM2KG</p>",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "ptt.pistar.com.tr",
         "kind": "nxdn",
         "port": 41400
       },
@@ -4146,6 +4145,7 @@
     },
     {
       "country": "TH",
+      "dashboard": "https://103.91.205.89/html/100watts.html",
       "dial": {
         "host": "103.91.205.89",
         "kind": "nxdn",
@@ -4154,7 +4154,8 @@
       "id": "9449",
       "name": "SISAKET THAILAND",
       "network": "nxdn",
-      "source": "dvref"
+      "source": "dvref",
+      "sponsor": "HS3SXW"
     },
     {
       "country": "US",

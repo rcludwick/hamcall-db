@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 185,
-  "generated": "2026-09-07",
+  "generated": "2026-09-08",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -28,7 +28,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "01HAMRADIODX",
-      "system": "01hamradiodx"
+      "system": "01hamradiodx",
+      "talkgroups": "reflectors/dmr/01hamradiodx/talkgroups.json"
     },
     {
       "country": "MX",
@@ -49,7 +50,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "XE2ERA",
-      "system": "03407"
+      "system": "03407",
+      "talkgroups": "reflectors/dmr/03407/talkgroups.json"
     },
     {
       "country": "DE",
@@ -70,7 +72,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "DC9VQ",
-      "system": "26269de"
+      "system": "26269de",
+      "talkgroups": "reflectors/dmr/26269de/talkgroups.json"
     },
     {
       "country": "TH",
@@ -91,7 +94,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "hamradio",
-      "system": "58906"
+      "system": "58906",
+      "talkgroups": "reflectors/dmr/58906/talkgroups.json"
     },
     {
       "country": "CN",
@@ -112,7 +116,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "Rescue System",
-      "system": "871"
+      "system": "871",
+      "talkgroups": "reflectors/dmr/871/talkgroups.json"
     },
     {
       "country": "FR",
@@ -122,7 +127,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "F4MZI",
-      "system": "adn-hauts-de-france"
+      "system": "adn-hauts-de-france",
+      "talkgroups": "reflectors/dmr/adn-hauts-de-france/talkgroups.json"
     },
     {
       "country": "CL",
@@ -133,7 +139,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "ADN Chile - RedChile EchoLink",
-      "system": "adn-systems-chile"
+      "system": "adn-systems-chile",
+      "talkgroups": "reflectors/dmr/adn-systems-chile/talkgroups.json"
     },
     {
       "country": "CO",
@@ -154,7 +161,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "HUBNet REM52Hz",
-      "system": "adn-systems-colombia"
+      "system": "adn-systems-colombia",
+      "talkgroups": "reflectors/dmr/adn-systems-colombia/talkgroups.json"
     },
     {
       "country": "ES",

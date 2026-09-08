@@ -1,0 +1,51 @@
+{
+  "api_version": "v1",
+  "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
+  "client_refresh_days": 7,
+  "count": 8,
+  "generated": "2026-09-08",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
+  "network": "dmr",
+  "schema_version": 1,
+  "source": {
+    "name": "DVRef",
+    "url": "https://dvref.com/api/v2/dmr/networks/adn-systems-chile/talkgroups/"
+  },
+  "system": "adn-systems-chile",
+  "talkgroups": [
+    {
+      "name": "DMR Chile",
+      "tg": 730
+    },
+    {
+      "name": "Zona CE1",
+      "tg": 7301
+    },
+    {
+      "name": "Zona CE2",
+      "tg": 7302
+    },
+    {
+      "name": "Zona CE3",
+      "tg": 7303
+    },
+    {
+      "name": "Zona CE4",
+      "tg": 7304
+    },
+    {
+      "name": "Zona CE5",
+      "tg": 7305
+    },
+    {
+      "name": "ADN Systems Chile bridge YSF and WiresX 51028-73010-81510",
+      "tg": 73010
+    },
+    {
+      "name": "Bridge to RedChile EchoLink",
+      "tg": 730170
+    }
+  ]
+}

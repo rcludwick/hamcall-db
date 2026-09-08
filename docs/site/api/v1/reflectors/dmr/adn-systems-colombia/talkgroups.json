@@ -1,0 +1,79 @@
+{
+  "api_version": "v1",
+  "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
+  "client_refresh_days": 7,
+  "count": 15,
+  "generated": "2026-09-08",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
+  "network": "dmr",
+  "schema_version": 1,
+  "source": {
+    "name": "DVRef",
+    "url": "https://dvref.com/api/v2/dmr/networks/adn-systems-colombia/talkgroups/"
+  },
+  "system": "adn-systems-colombia",
+  "talkgroups": [
+    {
+      "name": "Colombia",
+      "tg": 732
+    },
+    {
+      "name": "Colombia - TAC Zona 0",
+      "tg": 7320
+    },
+    {
+      "name": "Colombia - TAC Zona 1",
+      "tg": 7321
+    },
+    {
+      "name": "Colombia - TAC Zona 2",
+      "tg": 7322
+    },
+    {
+      "name": "Colombia - TAC Zona 3",
+      "tg": 7323
+    },
+    {
+      "name": "Colombia - TAC Zona 4",
+      "tg": 7324
+    },
+    {
+      "name": "Colombia - TAC Zona 5",
+      "tg": 7325
+    },
+    {
+      "name": "Colombia - TAC Zona 6",
+      "tg": 7326
+    },
+    {
+      "name": "Colombia - TAC Zona 7",
+      "tg": 7327
+    },
+    {
+      "name": "Colombia - TAC Zona 8",
+      "tg": 7328
+    },
+    {
+      "name": "Colombia - TAC Zona 9",
+      "tg": 7329
+    },
+    {
+      "name": "HUBNet REM52Hz",
+      "tg": 73237
+    },
+    {
+      "name": "Radioaficionados Unidos R.A.U. - HK4RAU",
+      "tg": 73241
+    },
+    {
+      "name": "Liga Ibagu\u00e9 de Radioaficionados - LIRA",
+      "tg": 73261
+    },
+    {
+      "name": "EMCOMM - Emergencias Colombia",
+      "tg": 732911
+    }
+  ]
+}
