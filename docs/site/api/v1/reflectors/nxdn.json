@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 298,
-  "generated": "2026-09-08",
+  "count": 299,
+  "generated": "2026-09-09",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -468,7 +468,7 @@
     },
     {
       "country": "GR",
-      "dashboard": "https://202nxdn.foxhost.org",
+      "dashboard": "https://202nxdn.hamzone.org",
       "description": "<p>NXDN - TG202&nbsp; HELLAS Zone Net!</p>",
       "dial": {
         "host": "foxhost.org",
@@ -1451,6 +1451,19 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "LY5LM"
+    },
+    {
+      "country": "LV",
+      "dial": {
+        "host": "24706.ham.lv",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "24706",
+      "name": "MultiMode",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "YL3IM"
     },
     {
       "country": "US",
@@ -3203,6 +3216,20 @@
       "sponsor": "VK5ZSH"
     },
     {
+      "country": "AU",
+      "dashboard": "https://australia.oz-dmr.network",
+      "dial": {
+        "host": "australia.oz-dmr.network",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "50595",
+      "name": "OZ-DMR",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "OZ-DMR NETWORK"
+    },
+    {
       "country": "US",
       "dial": {
         "host": "w8lrk-mmdvm.duckdns.org",
@@ -3389,19 +3416,6 @@
       "sponsor": "KC3YGF"
     },
     {
-      "country": "LV",
-      "dial": {
-        "host": "xlx.ham.lv",
-        "kind": "nxdn",
-        "port": 41400
-      },
-      "id": "63600",
-      "name": "63600",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "YL3IM"
-    },
-    {
       "country": "US",
       "dashboard": "http://urf045.pennlinkgroup.com:8082/urfd/",
       "description": "<p>This Reflector offers a connection to Brandmeister DMR on Module A. &nbsp;For more information see https://info.pennlinkgroup.com</p>",
@@ -3544,6 +3558,8 @@
     },
     {
       "country": "US",
+      "dashboard": "https://nxdn.n2fed.net",
+      "description": "<p>https://n2fed.net</p>",
       "dial": {
         "host": "96.225.96.169",
         "kind": "nxdn",
@@ -3553,7 +3569,7 @@
       "name": "N2FED",
       "network": "nxdn",
       "source": "dvref",
-      "sponsor": "N2FED Repeater System"
+      "sponsor": "N2FED Multi-Mode Repeater System"
     },
     {
       "country": "US",

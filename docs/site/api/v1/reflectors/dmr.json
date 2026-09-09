@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 185,
-  "generated": "2026-09-08",
+  "generated": "2026-09-09",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -184,7 +184,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "2141.adn.systems",
-      "system": "adn-systems-espana"
+      "system": "adn-systems-espana",
+      "talkgroups": "reflectors/dmr/adn-systems-espana/talkgroups.json"
     },
     {
       "country": "ES",
@@ -206,7 +207,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "2141.adn.systems",
-      "system": "adn-systems-espana"
+      "system": "adn-systems-espana",
+      "talkgroups": "reflectors/dmr/adn-systems-espana/talkgroups.json"
     },
     {
       "country": "CH",
@@ -216,7 +218,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "ADN Systems Switzerland",
-      "system": "adn-systems-switzerland"
+      "system": "adn-systems-switzerland",
+      "talkgroups": "reflectors/dmr/adn-systems-switzerland/talkgroups.json"
     },
     {
       "country": "UA",
@@ -238,7 +241,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "ORLink - Odessa Radio Link",
-      "system": "adn-ukraine"
+      "system": "adn-ukraine",
+      "talkgroups": "reflectors/dmr/adn-ukraine/talkgroups.json"
     },
     {
       "country": "GB",
@@ -249,7 +253,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "FreeStar UK",
-      "system": "adn-united-kingdom"
+      "system": "adn-united-kingdom",
+      "talkgroups": "reflectors/dmr/adn-united-kingdom/talkgroups.json"
     },
     {
       "country": "US",
@@ -591,7 +596,7 @@
     },
     {
       "country": "SE",
-      "dashboard": "https://cq.foxhost.org",
+      "dashboard": "https://cq.hamzone.org",
       "description": "<p>Welcome to CQ Zone ADN Systems Server Enjoy Your Stay!</p>",
       "id": "cq-zone-server-cq-zone",
       "name": "CQ Zone",

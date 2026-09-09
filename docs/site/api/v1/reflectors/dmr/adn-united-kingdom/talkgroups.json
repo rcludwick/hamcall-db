@@ -1,0 +1,47 @@
+{
+  "api_version": "v1",
+  "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
+  "client_refresh_days": 7,
+  "count": 7,
+  "generated": "2026-09-09",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
+  "network": "dmr",
+  "schema_version": 1,
+  "source": {
+    "name": "DVRef",
+    "url": "https://dvref.com/api/v2/dmr/networks/adn-united-kingdom/talkgroups/"
+  },
+  "system": "adn-united-kingdom",
+  "talkgroups": [
+    {
+      "name": "235 Alive",
+      "tg": 235
+    },
+    {
+      "name": "UK Chatterbox",
+      "tg": 2350
+    },
+    {
+      "name": "CQ-UK",
+      "tg": 2351
+    },
+    {
+      "name": "UK Chatterbox 2",
+      "tg": 2352
+    },
+    {
+      "name": "UK Chatterbox 3",
+      "tg": 2353
+    },
+    {
+      "name": "Digital England",
+      "tg": 2358
+    },
+    {
+      "name": "Freestar UK",
+      "tg": 23426
+    }
+  ]
+}

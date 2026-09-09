@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 319,
-  "generated": "2026-09-08",
+  "count": 318,
+  "generated": "2026-09-09",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -699,7 +699,7 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://202p25.foxhost.org",
+      "dashboard": "https://202p25.hamzone.org",
       "description": "<p>P25 - TG202&nbsp; HELLAS Zone Net!</p>",
       "dial": {
         "host": "foxhost.org",
@@ -1204,6 +1204,20 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "LY4NS"
+    },
+    {
+      "country": "LV",
+      "dashboard": "https://xlx.ham.lv/p25/",
+      "dial": {
+        "host": "24706.ham.lv",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "24706",
+      "name": "MultiMode",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "YL3IM"
     },
     {
       "country": "US",
@@ -2976,19 +2990,6 @@
       "sponsor": "bg8lak"
     },
     {
-      "country": "BD",
-      "dashboard": "http://44.27.133.131",
-      "dial": {
-        "host": "44.27.133.131",
-        "kind": "p25",
-        "port": 41001
-      },
-      "id": "47070",
-      "name": "S21ALT P25 74070 Test",
-      "network": "p25",
-      "source": "dvref"
-    },
-    {
       "country": "US",
       "description": "<p>Virginia Statewide Operations</p>",
       "dial": {
@@ -3627,20 +3628,6 @@
       "sponsor": "KC3YGF"
     },
     {
-      "country": "LV",
-      "dashboard": "https://xlx.ham.lv/p25/",
-      "dial": {
-        "host": "xlx.ham.lv",
-        "kind": "p25",
-        "port": 41000
-      },
-      "id": "63600",
-      "name": "63600",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "YL3IM"
-    },
-    {
       "country": "US",
       "dashboard": "http://urf045.pennlinkgroup.com:8082/urfd/",
       "description": "<p>This Reflector offers a connection to Brandmeister DMR on Module A. &nbsp;For more information see https://info.pennlinkgroup.com</p>",
@@ -3712,6 +3699,7 @@
     },
     {
       "country": "AU",
+      "dashboard": "https://vk2ym.vk44.net/",
       "dial": {
         "host": "p25.vk2ym.com.au",
         "kind": "p25",
@@ -3754,7 +3742,8 @@
     },
     {
       "country": "US",
-      "description": "<p>N2FED Repeater</p>",
+      "dashboard": "https://p25.n2fed.net",
+      "description": "<p>https://n2fed.net</p>",
       "dial": {
         "host": "96.225.96.169",
         "kind": "p25",
@@ -3764,7 +3753,7 @@
       "name": "N2FED",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "N2FED Repeater System"
+      "sponsor": "N2FED Multi-Mode Repeater System"
     },
     {
       "country": "US",

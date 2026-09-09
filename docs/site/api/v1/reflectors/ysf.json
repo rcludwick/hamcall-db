@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1470,
-  "generated": "2026-09-08",
+  "count": 1472,
+  "generated": "2026-09-09",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -101,7 +101,7 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://qrz.cqnet.org:88",
+      "dashboard": "http://qrz.hamzone.org",
       "description": "QRZ  Net",
       "dial": {
         "host": "46.59.68.211",
@@ -2499,7 +2499,8 @@
     },
     {
       "country": "US",
-      "description": "N2FED Repeater",
+      "dashboard": "https://ysf.n2fed.net",
+      "description": "<p>https://n2fed.net</p>",
       "dial": {
         "host": "96.225.96.169",
         "kind": "ysf",
@@ -2509,7 +2510,7 @@
       "name": "N2FED",
       "network": "ysf",
       "source": "dvref",
-      "sponsor": "N2FED Repeater System"
+      "sponsor": "N2FED Multi-Mode Repeater System"
     },
     {
       "country": "ES",
@@ -3226,7 +3227,8 @@
       "id": "00940",
       "name": "XLX940",
       "network": "ysf",
-      "source": "dvref"
+      "source": "dvref",
+      "sponsor": "VK2YM"
     },
     {
       "country": "GB",
@@ -7997,6 +7999,20 @@
       "sponsor": "YT7ALE"
     },
     {
+      "country": "US",
+      "description": "YSF Echo Test",
+      "dial": {
+        "host": "24.229.253.31",
+        "kind": "ysf",
+        "port": 42101
+      },
+      "id": "22022",
+      "name": "PA Parrot",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "W3NTZ"
+    },
+    {
       "country": "RS",
       "description": "Free talk",
       "dial": {
@@ -9346,6 +9362,20 @@
       "name": "G6DSG",
       "network": "ysf",
       "source": "dvref"
+    },
+    {
+      "country": "LV",
+      "dashboard": "https://xlx.ham.lv",
+      "dial": {
+        "host": "24706.ham.lv",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "24706",
+      "name": "MultiMode",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "YL3IM"
     },
     {
       "country": "IT",
@@ -16307,6 +16337,20 @@
       "source": "dvref"
     },
     {
+      "country": "JP",
+      "description": "JJ2ZAS YSF REF",
+      "dial": {
+        "host": "ja2wsm.aa0.netvolante.jp",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "58123",
+      "name": "JJ2ZAS",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "JA2WSM"
+    },
+    {
       "country": "PH",
       "dashboard": "http://107.152.46.236/ysf",
       "description": "PARC Inc",
@@ -17122,21 +17166,6 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "KQ4VAM"
-    },
-    {
-      "country": "LV",
-      "dashboard": "https://xlx.ham.lv",
-      "description": "LV MultiMode",
-      "dial": {
-        "host": "xlx.ham.lv",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "63600",
-      "name": "LV MultiMode",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "YL3IM"
     },
     {
       "country": "US",
