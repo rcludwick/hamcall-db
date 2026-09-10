@@ -1,0 +1,999 @@
+{
+  "api_version": "v1",
+  "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
+  "client_refresh_days": 7,
+  "count": 245,
+  "generated": "2026-09-10",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
+  "network": "dmr",
+  "schema_version": 1,
+  "source": {
+    "name": "DVRef",
+    "url": "https://dvref.com/api/v2/dmr/networks/amcomm/talkgroups/"
+  },
+  "system": "amcomm",
+  "talkgroups": [
+    {
+      "name": "Canada Wide",
+      "tg": 302
+    },
+    {
+      "name": "N. A. TAC 1",
+      "tg": 310
+    },
+    {
+      "name": "N. A. TAC 2",
+      "tg": 311
+    },
+    {
+      "name": "N. A. TAC 3",
+      "tg": 312
+    },
+    {
+      "name": "N. A. TAC 4",
+      "tg": 313
+    },
+    {
+      "name": "N. A. TAC 5",
+      "tg": 314
+    },
+    {
+      "name": "N. A. TAC 6",
+      "tg": 315
+    },
+    {
+      "name": "N. A. TAC 7",
+      "tg": 316
+    },
+    {
+      "name": "N. A. TAC 8",
+      "tg": 317
+    },
+    {
+      "name": "N. A. TAC 9",
+      "tg": 318
+    },
+    {
+      "name": "N. A. TAC 10",
+      "tg": 319
+    },
+    {
+      "name": "QuadNet Array",
+      "tg": 320
+    },
+    {
+      "name": "QuadNet Tech Chat",
+      "tg": 321
+    },
+    {
+      "name": "FireSide Radio Network",
+      "tg": 326
+    },
+    {
+      "name": "Special K XLX-303-k",
+      "tg": 420
+    },
+    {
+      "name": "Devil Dogs",
+      "tg": 666
+    },
+    {
+      "name": "Rocket City Alabama",
+      "tg": 805
+    },
+    {
+      "name": "WDRG Cymru",
+      "tg": 2356
+    },
+    {
+      "name": "Newfoundland & Labrador & P.E.I.",
+      "tg": 3020
+    },
+    {
+      "name": "Nova Scotia",
+      "tg": 3021
+    },
+    {
+      "name": "Quebec",
+      "tg": 3022
+    },
+    {
+      "name": "Ontario",
+      "tg": 3023
+    },
+    {
+      "name": "Manitoba",
+      "tg": 3024
+    },
+    {
+      "name": "Saskatchewan",
+      "tg": 3025
+    },
+    {
+      "name": "Alberta",
+      "tg": 3026
+    },
+    {
+      "name": "British Columbia",
+      "tg": 3027
+    },
+    {
+      "name": "Nunavut Yukon & NWT",
+      "tg": 3028
+    },
+    {
+      "name": "New Brunswick",
+      "tg": 3029
+    },
+    {
+      "name": "USA Nationwide",
+      "tg": 3100
+    },
+    {
+      "name": "Alabama State Wide",
+      "tg": 3101
+    },
+    {
+      "name": "Alaska State Wide",
+      "tg": 3102
+    },
+    {
+      "name": "Arizona State Wide",
+      "tg": 3104
+    },
+    {
+      "name": "Arkansas State Wide",
+      "tg": 3105
+    },
+    {
+      "name": "California State Wide",
+      "tg": 3106
+    },
+    {
+      "name": "Colorado State Wide",
+      "tg": 3108
+    },
+    {
+      "name": "Connecticut State Wide",
+      "tg": 3109
+    },
+    {
+      "name": "Delaware State Wide",
+      "tg": 3110
+    },
+    {
+      "name": "District of Columbia",
+      "tg": 3111
+    },
+    {
+      "name": "Florida State Wide",
+      "tg": 3112
+    },
+    {
+      "name": "Georgia State Wide",
+      "tg": 3113
+    },
+    {
+      "name": "Hawai",
+      "tg": 3115
+    },
+    {
+      "name": "Idaho State Wide",
+      "tg": 3116
+    },
+    {
+      "name": "Illinois State Wide",
+      "tg": 3117
+    },
+    {
+      "name": "Indiana State Wide",
+      "tg": 3118
+    },
+    {
+      "name": "Iowa State Wide",
+      "tg": 3119
+    },
+    {
+      "name": "Kansas State Wide",
+      "tg": 3120
+    },
+    {
+      "name": "Kentucky State Wide",
+      "tg": 3121
+    },
+    {
+      "name": "Louisiana State Wide",
+      "tg": 3122
+    },
+    {
+      "name": "Maine State Wide",
+      "tg": 3123
+    },
+    {
+      "name": "Maryland State Wide",
+      "tg": 3124
+    },
+    {
+      "name": "Massachusetts State Wide",
+      "tg": 3125
+    },
+    {
+      "name": "Michigan State Wide",
+      "tg": 3126
+    },
+    {
+      "name": "Minnesota State Wide",
+      "tg": 3127
+    },
+    {
+      "name": "Mississippi State Wide",
+      "tg": 3128
+    },
+    {
+      "name": "Missouri State Wide",
+      "tg": 3129
+    },
+    {
+      "name": "Montana State Wide",
+      "tg": 3130
+    },
+    {
+      "name": "Nebraska State Wide",
+      "tg": 3131
+    },
+    {
+      "name": "Nevada State Wide",
+      "tg": 3132
+    },
+    {
+      "name": "New Hampshire State Wide",
+      "tg": 3133
+    },
+    {
+      "name": "New Jersey State Wide",
+      "tg": 3134
+    },
+    {
+      "name": "New Mexico State Wide",
+      "tg": 3135
+    },
+    {
+      "name": "New York State Wide",
+      "tg": 3136
+    },
+    {
+      "name": "North Carolina State Wide",
+      "tg": 3137
+    },
+    {
+      "name": "North Dakota State Wide",
+      "tg": 3138
+    },
+    {
+      "name": "Ohio State Wide",
+      "tg": 3139
+    },
+    {
+      "name": "Oklahoma State Wide",
+      "tg": 3140
+    },
+    {
+      "name": "Oregon State Wide",
+      "tg": 3141
+    },
+    {
+      "name": "Pennsylvania State Wide",
+      "tg": 3142
+    },
+    {
+      "name": "Puerto Rico",
+      "tg": 3143
+    },
+    {
+      "name": "Rhode Island State Wide",
+      "tg": 3144
+    },
+    {
+      "name": "South Carolina State Wide",
+      "tg": 3145
+    },
+    {
+      "name": "South Dakota State Wide",
+      "tg": 3146
+    },
+    {
+      "name": "Tennessee State Wide",
+      "tg": 3147
+    },
+    {
+      "name": "Texas State Wide",
+      "tg": 3148
+    },
+    {
+      "name": "Utah State Wide",
+      "tg": 3149
+    },
+    {
+      "name": "Vermont State Wide",
+      "tg": 3150
+    },
+    {
+      "name": "Virginia State Wide",
+      "tg": 3151
+    },
+    {
+      "name": "Virgin Islands",
+      "tg": 3152
+    },
+    {
+      "name": "Washington State Wide",
+      "tg": 3153
+    },
+    {
+      "name": "West Virginia State Wide",
+      "tg": 3154
+    },
+    {
+      "name": "Wisconsin State Wide",
+      "tg": 3155
+    },
+    {
+      "name": "Wyoming State Wide",
+      "tg": 3156
+    },
+    {
+      "name": "Crossroads-USA Reflector",
+      "tg": 3160
+    },
+    {
+      "name": "New England",
+      "tg": 3161
+    },
+    {
+      "name": "La Isla",
+      "tg": 3162
+    },
+    {
+      "name": "USA SOUTHEAST",
+      "tg": 3165
+    },
+    {
+      "name": "DVSwitch",
+      "tg": 3166
+    },
+    {
+      "name": "DX-LINK SYSTEM",
+      "tg": 3177
+    },
+    {
+      "name": "Public Safety Amateur Radio Group",
+      "tg": 4101
+    },
+    {
+      "name": "U.S. Ragchew Network",
+      "tg": 6487
+    },
+    {
+      "name": "East Coast Reflector",
+      "tg": 9050
+    },
+    {
+      "name": "AmComm D-APRS",
+      "tg": 9059
+    },
+    {
+      "name": "Yorkshire Link",
+      "tg": 23530
+    },
+    {
+      "name": "BR-549",
+      "tg": 27549
+    },
+    {
+      "name": "NorCal",
+      "tg": 30639
+    },
+    {
+      "name": "US Severe Weather",
+      "tg": 31000
+    },
+    {
+      "name": "USA CERT - Community Emergency Response Teams",
+      "tg": 31001
+    },
+    {
+      "name": "Alabama Link",
+      "tg": 31010
+    },
+    {
+      "name": "Gulf Coast DMR",
+      "tg": 31011
+    },
+    {
+      "name": "Quadnet",
+      "tg": 31012
+    },
+    {
+      "name": "ALERT K4NWS",
+      "tg": 31013
+    },
+    {
+      "name": "HSV \u2013 Huntsville",
+      "tg": 31014
+    },
+    {
+      "name": "Central Alabama",
+      "tg": 31015
+    },
+    {
+      "name": "NW Alabama",
+      "tg": 31016
+    },
+    {
+      "name": "Alabama East",
+      "tg": 31017
+    },
+    {
+      "name": "Lake Martin",
+      "tg": 31018
+    },
+    {
+      "name": "Alabama TAC",
+      "tg": 31019
+    },
+    {
+      "name": "Arkansas TAC",
+      "tg": 31050
+    },
+    {
+      "name": "Arkansas WX",
+      "tg": 31051
+    },
+    {
+      "name": "Arkansas ARES",
+      "tg": 31052
+    },
+    {
+      "name": "Hell on the Border",
+      "tg": 31053
+    },
+    {
+      "name": "Crossett",
+      "tg": 31054
+    },
+    {
+      "name": "North Central AR",
+      "tg": 31055
+    },
+    {
+      "name": "Anemoi Incident Response",
+      "tg": 31056
+    },
+    {
+      "name": "Arkansas Statewide YSF-31051 Reflector\"",
+      "tg": 31057
+    },
+    {
+      "name": "Northwest Arkansas",
+      "tg": 31058
+    },
+    {
+      "name": "SoCalDigiTalk",
+      "tg": 31061
+    },
+    {
+      "name": "Sun City ARG",
+      "tg": 31064
+    },
+    {
+      "name": "Bay Area Digital - California",
+      "tg": 31069
+    },
+    {
+      "name": "Mountain Man ComTech",
+      "tg": 31080
+    },
+    {
+      "name": "The Digital Learning Net",
+      "tg": 31081
+    },
+    {
+      "name": "Castle Rock Repeater Group",
+      "tg": 31082
+    },
+    {
+      "name": "Colorado Digital",
+      "tg": 31088
+    },
+    {
+      "name": "Florida Keys",
+      "tg": 31120
+    },
+    {
+      "name": "Florida CERT - Community Emergency Response Teams",
+      "tg": 31122
+    },
+    {
+      "name": "CSRA Talk",
+      "tg": 31134
+    },
+    {
+      "name": "Georgia Digital",
+      "tg": 31138
+    },
+    {
+      "name": "Catoosa and Walker County Georgia",
+      "tg": 31139
+    },
+    {
+      "name": "DSARC",
+      "tg": 31161
+    },
+    {
+      "name": "Latah County EmComm",
+      "tg": 31162
+    },
+    {
+      "name": "North Central Idaho",
+      "tg": 31163
+    },
+    {
+      "name": "Tri State-IL",
+      "tg": 31171
+    },
+    {
+      "name": "Campfires and Callsigns",
+      "tg": 31172
+    },
+    {
+      "name": "WESDIG Western US Digital Group",
+      "tg": 31177
+    },
+    {
+      "name": "Dr. Parrot's Office",
+      "tg": 31182
+    },
+    {
+      "name": "Indiana Link South",
+      "tg": 31188
+    },
+    {
+      "name": "Iowa Chat",
+      "tg": 31190
+    },
+    {
+      "name": "Com Center",
+      "tg": 31191
+    },
+    {
+      "name": "NW Iowa Severe Weather",
+      "tg": 31192
+    },
+    {
+      "name": "Iowa NW 3",
+      "tg": 31193
+    },
+    {
+      "name": "TGIF-Sunflower State",
+      "tg": 31204
+    },
+    {
+      "name": "NW KY/SW IN",
+      "tg": 31211
+    },
+    {
+      "name": "Louisiana TAC",
+      "tg": 31220
+    },
+    {
+      "name": "SELCOM",
+      "tg": 31221
+    },
+    {
+      "name": "LA AuxComm",
+      "tg": 31222
+    },
+    {
+      "name": "Louisiana Region 6 ARES",
+      "tg": 31223
+    },
+    {
+      "name": "Airline Pilots",
+      "tg": 31224
+    },
+    {
+      "name": "Southeast Louisiana",
+      "tg": 31225
+    },
+    {
+      "name": "World Wide Chat (MULTI-MODES)",
+      "tg": 31226
+    },
+    {
+      "name": "Acadiana",
+      "tg": 31227
+    },
+    {
+      "name": "VOIPWX",
+      "tg": 31228
+    },
+    {
+      "name": "ArkLaTex",
+      "tg": 31229
+    },
+    {
+      "name": "UFB New England",
+      "tg": 31230
+    },
+    {
+      "name": "ZOMBIE Alert USA / XLX240B",
+      "tg": 31260
+    },
+    {
+      "name": "S.E. Michigan Link",
+      "tg": 31261
+    },
+    {
+      "name": "Who Cares ARG",
+      "tg": 31262
+    },
+    {
+      "name": "NA Talk Box",
+      "tg": 31290
+    },
+    {
+      "name": "Secret Squirrel",
+      "tg": 31330
+    },
+    {
+      "name": "Ocean County NJ TAC",
+      "tg": 31340
+    },
+    {
+      "name": "South Jersey",
+      "tg": 31341
+    },
+    {
+      "name": "North Jersey",
+      "tg": 31342
+    },
+    {
+      "name": "NY-NJ-PA TriState",
+      "tg": 31360
+    },
+    {
+      "name": "Upstate-NY",
+      "tg": 31361
+    },
+    {
+      "name": "South Wales DMR",
+      "tg": 31362
+    },
+    {
+      "name": "Coast 2 Coast",
+      "tg": 31363
+    },
+    {
+      "name": "85 Ragchew Net",
+      "tg": 31364
+    },
+    {
+      "name": "85 Ragchew Net 2",
+      "tg": 31365
+    },
+    {
+      "name": "Monroe County",
+      "tg": 31369
+    },
+    {
+      "name": "Carolina 440",
+      "tg": 31370
+    },
+    {
+      "name": "East NC",
+      "tg": 31373
+    },
+    {
+      "name": "Southern Tier NY",
+      "tg": 31376
+    },
+    {
+      "name": "OBX",
+      "tg": 31377
+    },
+    {
+      "name": "Piedmont Triad",
+      "tg": 31379
+    },
+    {
+      "name": "W8LOW West Central Ohio HUB",
+      "tg": 31390
+    },
+    {
+      "name": "Torcon WX",
+      "tg": 31391
+    },
+    {
+      "name": "Ohio Link Network",
+      "tg": 31399
+    },
+    {
+      "name": "Del City Radio Club",
+      "tg": 31405
+    },
+    {
+      "name": "AMComm Information",
+      "tg": 31411
+    },
+    {
+      "name": "KC2ABV Digital Repeater System",
+      "tg": 31420
+    },
+    {
+      "name": "Palmetto DMR",
+      "tg": 31451
+    },
+    {
+      "name": "N1RCW DMR to ASL Bridge",
+      "tg": 31452
+    },
+    {
+      "name": "Phoenix",
+      "tg": 31453
+    },
+    {
+      "name": "Charleston",
+      "tg": 31454
+    },
+    {
+      "name": "South Dakota Digital",
+      "tg": 31466
+    },
+    {
+      "name": "Tyler Net",
+      "tg": 31470
+    },
+    {
+      "name": "SWIFT (Severe Weather Information for TN)",
+      "tg": 31471
+    },
+    {
+      "name": "TN Comms Network",
+      "tg": 31472
+    },
+    {
+      "name": "TARA-Main",
+      "tg": 31473
+    },
+    {
+      "name": "Fayetteville AR",
+      "tg": 31479
+    },
+    {
+      "name": "Canton Area Radio Emerg. Serv",
+      "tg": 31480
+    },
+    {
+      "name": "Bible Talk Group",
+      "tg": 31481
+    },
+    {
+      "name": "Texas DMR",
+      "tg": 31482
+    },
+    {
+      "name": "S.E. Texas",
+      "tg": 31484
+    },
+    {
+      "name": "Houston Texas",
+      "tg": 31487
+    },
+    {
+      "name": "UTAH link",
+      "tg": 31490
+    },
+    {
+      "name": "Little Rock Metro AR",
+      "tg": 31501
+    },
+    {
+      "name": "SWVA-METCOMM",
+      "tg": 31511
+    },
+    {
+      "name": "Scanner Junkies",
+      "tg": 31517
+    },
+    {
+      "name": "Buffalo Group",
+      "tg": 31543
+    },
+    {
+      "name": "DUNoW (Digital User Network of Wisconsin)",
+      "tg": 31551
+    },
+    {
+      "name": "Bald Rock Amateur Radio Club",
+      "tg": 31570
+    },
+    {
+      "name": "NXDN Florida",
+      "tg": 31571
+    },
+    {
+      "name": "Pell City Ares",
+      "tg": 31572
+    },
+    {
+      "name": "NC4ES Chat 2",
+      "tg": 31602
+    },
+    {
+      "name": "NC4ES AUXCOMM",
+      "tg": 31603
+    },
+    {
+      "name": "NC4ES RF Link",
+      "tg": 31604
+    },
+    {
+      "name": "NC4ES EHPC",
+      "tg": 31605
+    },
+    {
+      "name": "N. Alabama 610 Group",
+      "tg": 31610
+    },
+    {
+      "name": "XPR Pinoy Network",
+      "tg": 31611
+    },
+    {
+      "name": "Ham Radio Crash Course",
+      "tg": 31621
+    },
+    {
+      "name": "N. Alabama 650 Group",
+      "tg": 31650
+    },
+    {
+      "name": "Blind Hams",
+      "tg": 31679
+    },
+    {
+      "name": "East coast DMR",
+      "tg": 31699
+    },
+    {
+      "name": "Starfleet ARG-Trek Talk",
+      "tg": 31701
+    },
+    {
+      "name": "Airline Pilots",
+      "tg": 31767
+    },
+    {
+      "name": "DX-LINK",
+      "tg": 31777
+    },
+    {
+      "name": "Florida Panhandle Ragchew",
+      "tg": 31850
+    },
+    {
+      "name": "Arkansas Round Table",
+      "tg": 31870
+    },
+    {
+      "name": "Southeast Emergency Network",
+      "tg": 31911
+    },
+    {
+      "name": "CW Ops / CW Academy",
+      "tg": 32103
+    },
+    {
+      "name": "Net Talk",
+      "tg": 33581
+    },
+    {
+      "name": "The Blindsphere",
+      "tg": 35244
+    },
+    {
+      "name": "Central Alabama Allstar Hub",
+      "tg": 36064
+    },
+    {
+      "name": "White Lightning",
+      "tg": 36093
+    },
+    {
+      "name": "Doghouse",
+      "tg": 36940
+    },
+    {
+      "name": "Southeast Link",
+      "tg": 43389
+    },
+    {
+      "name": "Boredom Breaker Net",
+      "tg": 49562
+    },
+    {
+      "name": "W4NQ Troy",
+      "tg": 310108
+    },
+    {
+      "name": "WNY Finger Lakes DMR",
+      "tg": 310799
+    },
+    {
+      "name": "The Darksiders",
+      "tg": 311293
+    },
+    {
+      "name": "Genesee Valley",
+      "tg": 311898
+    },
+    {
+      "name": "Rougarou",
+      "tg": 312201
+    },
+    {
+      "name": "Blues Rock and Jazz Musician Group",
+      "tg": 312211
+    },
+    {
+      "name": "KV4S Link",
+      "tg": 312264
+    },
+    {
+      "name": "Alexander City",
+      "tg": 312572
+    },
+    {
+      "name": "Tallapoosa County",
+      "tg": 312584
+    },
+    {
+      "name": "KB3HJC YSF/ALLSTAR HUB",
+      "tg": 313468
+    },
+    {
+      "name": "Memphis Weather",
+      "tg": 314431
+    },
+    {
+      "name": "Memphis Metro",
+      "tg": 314706
+    },
+    {
+      "name": "Tennessee-TEN (West TN Cluster)",
+      "tg": 314710
+    },
+    {
+      "name": "Pearl League",
+      "tg": 314992
+    },
+    {
+      "name": "YSF16512 US-WA-PNW",
+      "tg": 316601
+    },
+    {
+      "name": "Ham Radio Village",
+      "tg": 3177826
+    },
+    {
+      "name": "Central Alabama AllStar Hub",
+      "tg": 3194067
+    },
+    {
+      "name": "Kelly Family",
+      "tg": 3208478
+    }
+  ]
+}

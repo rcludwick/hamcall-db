@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 299,
-  "generated": "2026-09-09",
+  "count": 300,
+  "generated": "2026-09-10",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -175,6 +175,21 @@
       "name": "URFJSS",
       "network": "nxdn",
       "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://www.kg4trv.ddns.net",
+      "description": "<p>We are a group of friends who are passionate about digital radio, its numerous modes, networks and services.</p>\r\n<p>Somos un grupo de amigos que tenemos pasion por la radio digital, sus numerosas modalidades, redes y servicios</p>",
+      "dial": {
+        "host": "104.5.243.93",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "11520",
+      "name": "US D Friends",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "KG4TRV"
     },
     {
       "country": "GB",
@@ -2502,6 +2517,20 @@
     },
     {
       "country": "US",
+      "description": "<p>Missouri Digital Calling Netwrok</p>",
+      "dial": {
+        "host": "nxdn.ddns.me",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "31947",
+      "name": "Missouri Digital Calling Network",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "K0MGS"
+    },
+    {
+      "country": "US",
       "dashboard": "https://NXDNReflector31983.K8JTK.org/",
       "description": "<div>DVMIS: Ham Radio Digital VoIP Multimode Interlink System ... Bridged to:</div>\r\n<div>\r\n<ul>\r\n<li>AllStar Link: 50394</li>\r\n<li>AmateurWire: 90004</li>\r\n<li>EchoLink: *DVMIS* 600008</li>\r\n<li>Hams Over IP: 15010</li>\r\n<li>DMR: HB_US_K8JTK-HUB-DVMIS_DMO talkgroup 31983 timeslot 2</li>\r\n<li>DMR: BrandMeister talkgroup 3172783</li>\r\n<li>DMR: TGIF talkgroup 31983</li>\r\n<li>D-STAR: XLX/DCS983A</li>\r\n<li>M17: M17-983A</li>\r\n<li>NXDN: TG 31983</li>\r\n<li>P25: TG 31983</li>\r\n<li>YSF: K8JTK-Hub 31983</li>\r\n<li>Wires-X: K8JTK-ROOM 40680</li>\r\n</ul>\r\n</div>",
       "dial": {
@@ -2895,21 +2924,6 @@
       "sponsor": "JA2CCV"
     },
     {
-      "country": "JP",
-      "dashboard": "http://xrf298.mydns.jp:8070/",
-      "description": "<p>YSF-NAGOYA-2/TGIF TG-310 / WIRES-X 42314 / XLX298 Y /XLX098 H /M17-LIM L /PEANUT XLX561 P</p>",
-      "dial": {
-        "host": "122.132.48.86",
-        "kind": "nxdn",
-        "port": 41400
-      },
-      "id": "44155",
-      "name": "NXDN-NAGOYA",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "JF2ANH"
-    },
-    {
       "country": "KR",
       "dashboard": "http://45000nxdn.dvham.com/nxdn/index.php",
       "dial": {
@@ -3072,9 +3086,9 @@
     },
     {
       "country": "BD",
-      "dashboard": "http://44.27.136.201",
+      "dashboard": "http://44.27.133.131/nxdn",
       "dial": {
-        "host": "44.27.136.201",
+        "host": "44.27.133.131",
         "kind": "nxdn",
         "port": 41401
       },

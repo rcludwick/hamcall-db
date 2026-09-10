@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 185,
-  "generated": "2026-09-09",
+  "generated": "2026-09-10",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -276,7 +276,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "Amateur Communications Network",
-      "system": "amcomm"
+      "system": "amcomm",
+      "talkgroups": "reflectors/dmr/amcomm/talkgroups.json"
     },
     {
       "country": "US",
@@ -298,7 +299,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "Amateur Communications Network",
-      "system": "amcomm"
+      "system": "amcomm",
+      "talkgroups": "reflectors/dmr/amcomm/talkgroups.json"
     },
     {
       "country": "US",
@@ -320,7 +322,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "Amateur Communications Network",
-      "system": "amcomm"
+      "system": "amcomm",
+      "talkgroups": "reflectors/dmr/amcomm/talkgroups.json"
     },
     {
       "country": "US",
@@ -342,7 +345,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "Amateur Communications Network",
-      "system": "amcomm"
+      "system": "amcomm",
+      "talkgroups": "reflectors/dmr/amcomm/talkgroups.json"
     },
     {
       "country": "US",
@@ -364,7 +368,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "Amateur Communications Network",
-      "system": "amcomm"
+      "system": "amcomm",
+      "talkgroups": "reflectors/dmr/amcomm/talkgroups.json"
     },
     {
       "country": "US",
@@ -386,7 +391,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "Amateur Communications Network",
-      "system": "amcomm"
+      "system": "amcomm",
+      "talkgroups": "reflectors/dmr/amcomm/talkgroups.json"
     },
     {
       "country": "US",
@@ -408,7 +414,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "Amateur Communications Network",
-      "system": "amcomm"
+      "system": "amcomm",
+      "talkgroups": "reflectors/dmr/amcomm/talkgroups.json"
     },
     {
       "country": "US",
@@ -430,7 +437,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "Amateur Communications Network",
-      "system": "amcomm"
+      "system": "amcomm",
+      "talkgroups": "reflectors/dmr/amcomm/talkgroups.json"
     },
     {
       "country": "US",
@@ -452,7 +460,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "Amateur Communications Network",
-      "system": "amcomm"
+      "system": "amcomm",
+      "talkgroups": "reflectors/dmr/amcomm/talkgroups.json"
     },
     {
       "country": "US",
@@ -474,7 +483,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "Amateur Communications Network",
-      "system": "amcomm"
+      "system": "amcomm",
+      "talkgroups": "reflectors/dmr/amcomm/talkgroups.json"
     },
     {
       "country": "US",
@@ -496,7 +506,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "Amateur Communications Network",
-      "system": "amcomm"
+      "system": "amcomm",
+      "talkgroups": "reflectors/dmr/amcomm/talkgroups.json"
     },
     {
       "country": "TH",
@@ -506,7 +517,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "AR Norasingh",
-      "system": "ar-norasingh"
+      "system": "ar-norasingh",
+      "talkgroups": "reflectors/dmr/ar-norasingh/talkgroups.json"
     },
     {
       "country": "AU",
@@ -527,7 +539,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "John VK4UE",
-      "system": "au-central-qld"
+      "system": "au-central-qld",
+      "talkgroups": "reflectors/dmr/au-central-qld/talkgroups.json"
     },
     {
       "country": "US",
@@ -548,7 +561,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "Boriken Memorial",
-      "system": "boriken-memorial"
+      "system": "boriken-memorial",
+      "talkgroups": "reflectors/dmr/boriken-memorial/talkgroups.json"
     },
     {
       "country": "CN",

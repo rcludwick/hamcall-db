@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 318,
-  "generated": "2026-09-09",
+  "count": 320,
+  "generated": "2026-09-10",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -2282,6 +2282,20 @@
     },
     {
       "country": "US",
+      "description": "<p>Missouri Digital Calling Network</p>",
+      "dial": {
+        "host": "p25.ddns.me",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "31947",
+      "name": "Missouri Digital Calling Network",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "K0MGS"
+    },
+    {
+      "country": "US",
       "dashboard": "https://P25Reflector31983.K8JTK.org/",
       "description": "<div>DVMIS: Ham Radio Digital VoIP Multimode Interlink System ... Bridged to:</div>\r\n<div>\r\n<ul>\r\n<li>AllStar Link: 50394</li>\r\n<li>AmateurWire: 90004</li>\r\n<li>EchoLink: *DVMIS* 600008</li>\r\n<li>Hams Over IP: 15010</li>\r\n<li>DMR: HB_US_K8JTK-HUB-DVMIS_DMO talkgroup 31983 timeslot 2</li>\r\n<li>DMR: BrandMeister talkgroup 3172783</li>\r\n<li>DMR: TGIF talkgroup 31983</li>\r\n<li>D-STAR: XLX/DCS983A</li>\r\n<li>M17: M17-983A</li>\r\n<li>NXDN: TG 31983</li>\r\n<li>P25: TG 31983</li>\r\n<li>YSF: US-DVMIS 31983</li>\r\n<li>Wires-X: K8JTK-ROOM 40680</li>\r\n</ul>\r\n<p>System details: http://www.k8jtk.org/ham-radio/k8jtk-hub-digital-voip-mutimode-interlink-system/</p>\r\n</div>",
       "dial": {
@@ -2990,6 +3004,19 @@
       "sponsor": "bg8lak"
     },
     {
+      "country": "BD",
+      "dashboard": "http://44.27.133.131/p25",
+      "dial": {
+        "host": "44.27.133.131",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "47070",
+      "name": "S21ALT P25 74070 Test",
+      "network": "p25",
+      "source": "dvref"
+    },
+    {
       "country": "US",
       "description": "<p>Virginia Statewide Operations</p>",
       "dial": {
@@ -3472,7 +3499,7 @@
     },
     {
       "country": "US",
-      "dashboard": "http://vps1.georgia900p25.us/tg554",
+      "dashboard": "http://vps1.georgia900p25.us",
       "description": "<h2>Georgia 900 P25 Backup Reflector</h2>\r\n<h4>This TG serves as a backup for 555. Repeaters are not normally connected to 554 unless 555 is out-of-service. Please feel free to use it when 555 is busy.</h4>\r\n<p>Gateways:W4NOC_MCDN=927.1375, W4NOC_NBRN=927.7375, W9KLS_MCDN=442.125,&nbsp; K1KC-CNYR=Lithonia 927.1125, KI4FVI_MCD=146.715, WA4ASI=444.8, 419764ASX=Node419764-X-TG777, 1998ASLx=PrivateNode1998-X-TG554, 419762ASLx=Node419762-X-TG555.</p>",
       "dial": {
         "host": "vps1.georgia900p25.us",
@@ -4147,21 +4174,6 @@
       "sponsor": "WMRA"
     },
     {
-      "country": "CA",
-      "dashboard": "http://ve2nbz.ddns.net:90",
-      "description": "<p>P25 MAURICIE</p>",
-      "dial": {
-        "host": "70.55.87.40",
-        "kind": "p25",
-        "port": 41000
-      },
-      "id": "819",
-      "name": "P25 Mauricie et Centre du Qu\u00e9bec",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "VE2NBZ/VE2RVU"
-    },
-    {
       "country": "CN",
       "dial": {
         "host": "zhongwan.myDS.me",
@@ -4475,6 +4487,20 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "N6LKA"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://www.n6jet.com/p25jet.php",
+      "dial": {
+        "host": "5.161.18.189",
+        "kind": "p25",
+        "port": 41100
+      },
+      "id": "9512",
+      "name": "P25-JET",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "N6JET"
     },
     {
       "country": "AU",
