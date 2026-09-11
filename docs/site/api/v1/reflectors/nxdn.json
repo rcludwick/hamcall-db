@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 300,
-  "generated": "2026-09-10",
+  "count": 301,
+  "generated": "2026-09-11",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1563,6 +1563,20 @@
       "source": "dvref"
     },
     {
+      "country": "BY",
+      "dashboard": "https://xlx375.bfrr.by",
+      "dial": {
+        "host": "xlx375.bfrr.by",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "25701",
+      "name": "BY MultiMode",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "EW1EM"
+    },
+    {
       "country": "PL",
       "dashboard": "http://185.174.14.75/",
       "description": "<p>&nbsp;</p>\r\n<div id=\"sconnect-is-installed\" style=\"display: none;\">2.14.0.0</div>",
@@ -1849,14 +1863,14 @@
       "name": "NXDN Turkiye Genel",
       "network": "nxdn",
       "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+      "sponsor": "YM2KG"
     },
     {
       "country": "TR",
       "dashboard": "http://dmr.pistar.com.tr:28301/",
       "description": "<p>NXDN Adana Reflector - YM2KG</p>",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "ptt.pistar.com.tr",
         "kind": "nxdn",
         "port": 41401
       },
@@ -1864,14 +1878,14 @@
       "name": "NXDN Adana",
       "network": "nxdn",
       "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+      "sponsor": "YM2KG"
     },
     {
       "country": "TR",
       "dashboard": "http://dmr.pistar.com.tr:28303/",
       "description": "<p>NXDN Afyon Reflector - YM2KG</p>",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "ptt.pistar.com.tr",
         "kind": "nxdn",
         "port": 41403
       },
@@ -1879,14 +1893,14 @@
       "name": "NXDN Afyon",
       "network": "nxdn",
       "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+      "sponsor": "YM2KG"
     },
     {
       "country": "TR",
       "dashboard": "http://dmr.pistar.com.tr:28306/",
       "description": "<p>NXDN Ankara Reflector - YM2KG</p>",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "ptt.pistar.com.tr",
         "kind": "nxdn",
         "port": 41406
       },
@@ -1894,14 +1908,14 @@
       "name": "NXDN Ankara",
       "network": "nxdn",
       "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+      "sponsor": "YM2KG"
     },
     {
       "country": "TR",
       "dashboard": "http://dmr.pistar.com.tr:28307/",
       "description": "<p>NXDN Antalya Reflector - YM2KG</p>",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "ptt.pistar.com.tr",
         "kind": "nxdn",
         "port": 41407
       },
@@ -1909,14 +1923,14 @@
       "name": "NXDN Antalya",
       "network": "nxdn",
       "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+      "sponsor": "YM2KG"
     },
     {
       "country": "TR",
       "dashboard": "http://dmr.pistar.com.tr:28334/",
       "description": "<p>NXDN Istanbul Reflector - YM2KG</p>",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "ptt.pistar.com.tr",
         "kind": "nxdn",
         "port": 41434
       },
@@ -1924,14 +1938,14 @@
       "name": "NXDN Istanbul",
       "network": "nxdn",
       "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+      "sponsor": "YM2KG"
     },
     {
       "country": "TR",
       "dashboard": "http://dmr.pistar.com.tr:28335/",
       "description": "<p>NXDN Izmir Reflector - YM2KG</p>",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "ptt.pistar.com.tr",
         "kind": "nxdn",
         "port": 41435
       },
@@ -1939,14 +1953,14 @@
       "name": "NXDN Izmir",
       "network": "nxdn",
       "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+      "sponsor": "YM2KG"
     },
     {
       "country": "TR",
       "dashboard": "http://dmr.pistar.com.tr:28348/",
       "description": "<p>NXDN Mugla Reflector - YM2KG</p>",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "ptt.pistar.com.tr",
         "kind": "nxdn",
         "port": 41448
       },
@@ -1954,22 +1968,7 @@
       "name": "NXDN Mugla",
       "network": "nxdn",
       "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "dashboard": "https://dmr.pistar.com.tr:28381",
-      "description": "<p>NXDN Duzce Reflector - YM2KG</p>",
-      "dial": {
-        "host": "dmr.pistar.com.tr",
-        "kind": "nxdn",
-        "port": 41481
-      },
-      "id": "28681",
-      "name": "NXDN Duzce",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+      "sponsor": "YM2KG"
     },
     {
       "country": "TR",
@@ -2572,6 +2571,20 @@
       "sponsor": "K6HP"
     },
     {
+      "country": "US",
+      "dashboard": "http://66492.ip.hamvoip.org",
+      "dial": {
+        "host": "66492.ip.hamvoip.org",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "3241",
+      "name": "URF324",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "KQ4HPI"
+    },
+    {
       "country": "MX",
       "dashboard": "http://89.117.61.236",
       "description": "<p>NXDN-3341 TGIF</p>",
@@ -2686,19 +2699,6 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "KB2IDX"
-    },
-    {
-      "country": "BY",
-      "dial": {
-        "host": "xlx375.bfrr.by",
-        "kind": "nxdn",
-        "port": 41400
-      },
-      "id": "37500",
-      "name": "37500",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "YL3IM"
     },
     {
       "country": "TH",
@@ -3612,6 +3612,21 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "KN4EWT"
+    },
+    {
+      "country": "NL",
+      "dashboard": "http://xlx.pd3rfr.nl",
+      "description": "<p>Experimental Reflector of PD3RFR</p>",
+      "dial": {
+        "host": "PD3RFR.myasustor.com",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "700",
+      "name": "URF700",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "PD3RFR"
     },
     {
       "country": "US",

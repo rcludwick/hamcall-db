@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1473,
-  "generated": "2026-09-10",
+  "count": 1481,
+  "generated": "2026-09-11",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1764,10 +1764,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "https://dmr.pistar.com.tr:28400",
+      "dashboard": "https://ptt.pistar.com.tr:28400",
       "description": "Turkiye Genel",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "ptt.pistar.com.tr",
         "kind": "ysf",
         "port": 42000
       },
@@ -6278,6 +6278,21 @@
       "sponsor": "DVSPh"
     },
     {
+      "country": "US",
+      "dashboard": "http://xlxnettalk.dyndns.org",
+      "description": "URF470",
+      "dial": {
+        "host": "xlxnettalk.dyndns.org",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "14927",
+      "name": "URF470",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "K6HP"
+    },
+    {
       "country": "CH",
       "dashboard": "http://xlx115.hb9vd.ch",
       "description": "CH-VD-SWISS",
@@ -7616,6 +7631,21 @@
     },
     {
       "country": "ES",
+      "dashboard": "http://203.88.124.105/ea7/",
+      "description": "Distrito-7",
+      "dial": {
+        "host": "203.88.124.105",
+        "kind": "ysf",
+        "port": 42002
+      },
+      "id": "21417",
+      "name": "DISTRITO-7",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "xreflector"
+    },
+    {
+      "country": "ES",
       "dashboard": "https://ysf.ysf.es",
       "description": "TG-21418",
       "dial": {
@@ -7851,6 +7881,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "UW0WU"
+    },
+    {
+      "country": "ES",
+      "dashboard": "https://murcia.ysf.es/",
+      "description": "MURCIA",
+      "dial": {
+        "host": "203.88.124.105",
+        "kind": "ysf",
+        "port": 42001
+      },
+      "id": "21491",
+      "name": "MURCIA",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "xreflector"
     },
     {
       "country": "US",
@@ -9581,6 +9626,20 @@
       "sponsor": "Home"
     },
     {
+      "country": "BY",
+      "dashboard": "https://xlx375.bfrr.by",
+      "dial": {
+        "host": "xlx375.bfrr.by",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "25701",
+      "name": "BY MultiMode",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "EW1EM"
+    },
+    {
       "country": "RU",
       "dashboard": "https://xlxspb.qth.spb.ru",
       "description": "URFSPB",
@@ -10504,6 +10563,36 @@
       "sponsor": "radioclubcimebianche.it"
     },
     {
+      "country": "ES",
+      "dashboard": "https://sala-andalucia.es/2",
+      "description": "ORIGINAL",
+      "dial": {
+        "host": "sala-andalucia.es",
+        "kind": "ysf",
+        "port": 42350
+      },
+      "id": "28128",
+      "name": "SALAANDALUCIA",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "xreflector"
+    },
+    {
+      "country": "ES",
+      "dashboard": "https://sala-andalucia.es/2",
+      "description": "ORIGINAL",
+      "dial": {
+        "host": "sala-andalucia.es",
+        "kind": "ysf",
+        "port": 42356
+      },
+      "id": "28228",
+      "name": "SALA-ADALUCIA",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "xreflector"
+    },
+    {
       "country": "IT",
       "dashboard": "http://5.189.177.8:3020",
       "description": "ras sardegna",
@@ -10708,7 +10797,7 @@
       "dashboard": "http://dmr.pistar.com.tr:28401",
       "description": "YSF Adana",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "ptt.pistar.com.tr",
         "kind": "ysf",
         "port": 42001
       },
@@ -10716,14 +10805,14 @@
       "name": "YSF Adana",
       "network": "ysf",
       "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+      "sponsor": "YM2KW"
     },
     {
       "country": "TR",
       "dashboard": "http://dmr.pistar.com.tr:28400",
       "description": "YSF Afyon",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "ptt.pistar.com.tr",
         "kind": "ysf",
         "port": 42003
       },
@@ -10731,14 +10820,14 @@
       "name": "YSF Afyon",
       "network": "ysf",
       "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+      "sponsor": "YM2KW"
     },
     {
       "country": "TR",
       "dashboard": "http://dmr.pistar.com.tr:28406",
       "description": "YSF Ankara",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "ptt.pistar.com.tr",
         "kind": "ysf",
         "port": 42006
       },
@@ -10746,14 +10835,14 @@
       "name": "YSF Ankara",
       "network": "ysf",
       "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+      "sponsor": "YM2KW"
     },
     {
       "country": "TR",
       "dashboard": "http://dmr.pistar.com.tr:28407",
       "description": "YSF Antalya",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "ptt.pistar.com.tr",
         "kind": "ysf",
         "port": 42007
       },
@@ -10761,14 +10850,14 @@
       "name": "YSF Antalya",
       "network": "ysf",
       "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+      "sponsor": "YM2KW"
     },
     {
       "country": "TR",
       "dashboard": "http://dmr.pistar.com.tr:28434",
       "description": "YSF Istanbul",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "ptt.pistar.com.tr",
         "kind": "ysf",
         "port": 42034
       },
@@ -10776,14 +10865,14 @@
       "name": "YSF Istanbul",
       "network": "ysf",
       "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+      "sponsor": "YM2KW"
     },
     {
       "country": "TR",
       "dashboard": "http://dmr.pistar.com.tr:28435",
       "description": "YSF Izmir",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "ptt.pistar.com.tr",
         "kind": "ysf",
         "port": 42035
       },
@@ -10791,14 +10880,14 @@
       "name": "YSF Izmir",
       "network": "ysf",
       "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+      "sponsor": "YM2KW"
     },
     {
       "country": "TR",
       "dashboard": "http://dmr.pistar.com.tr:28448",
       "description": "YSF Mugla",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "ptt.pistar.com.tr",
         "kind": "ysf",
         "port": 42048
       },
@@ -10806,7 +10895,7 @@
       "name": "YSF Mugla",
       "network": "ysf",
       "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+      "sponsor": "YM2KW"
     },
     {
       "country": "US",
@@ -12199,6 +12288,21 @@
     },
     {
       "country": "US",
+      "dashboard": "http://66492.ip.hamvoip.org",
+      "description": "URF324",
+      "dial": {
+        "host": "66492.ip.hamvoip.org",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "32410",
+      "name": "URF324",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "KQ4HPI"
+    },
+    {
+      "country": "US",
       "dashboard": "http://ysf.kansascitywide.com/",
       "description": "KansasCityWide",
       "dial": {
@@ -12793,21 +12897,6 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "Roaring Fork Amateur Radio Club"
-    },
-    {
-      "country": "BY",
-      "dashboard": "https://xlx375.bfrr.by",
-      "description": "BY MultiMode",
-      "dial": {
-        "host": "xlx375.bfrr.by",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "37500",
-      "name": "BY MultiMode",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "YL3IM"
     },
     {
       "country": "IT",
@@ -14664,6 +14753,20 @@
       "sponsor": "VE2BQA"
     },
     {
+      "country": "BD",
+      "dashboard": "http://44.27.136.201/ysf",
+      "description": "47070",
+      "dial": {
+        "host": "44.27.136.201",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "47070",
+      "name": "S21ALT47070",
+      "network": "ysf",
+      "source": "dvref"
+    },
+    {
       "country": "CH",
       "dashboard": "http://212.237.33.114:3020/main.php",
       "description": "Gruppo HB9CSR",
@@ -15540,6 +15643,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "DV1ZEJ"
+    },
+    {
+      "country": "GB",
+      "dashboard": "http://192.168.1.230",
+      "description": "GB-H1L8RE",
+      "dial": {
+        "host": "h1l8re.ddns.net",
+        "kind": "ysf",
+        "port": 42002
+      },
+      "id": "51866",
+      "name": "H1L8RE",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "G7NIR"
     },
     {
       "country": "PH",

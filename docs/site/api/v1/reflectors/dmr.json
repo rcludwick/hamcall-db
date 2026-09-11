@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 185,
-  "generated": "2026-09-10",
+  "count": 186,
+  "generated": "2026-09-11",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -584,7 +584,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "DRCC Team",
-      "system": "china-homebrew-dmr-bridge"
+      "system": "china-homebrew-dmr-bridge",
+      "talkgroups": "reflectors/dmr/china-homebrew-dmr-bridge/talkgroups.json"
     },
     {
       "country": "GB",
@@ -606,7 +607,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "CQ-UK WORLDWIDE",
-      "system": "cq-uk-dmr-master"
+      "system": "cq-uk-dmr-master",
+      "talkgroups": "reflectors/dmr/cq-uk-dmr-master/talkgroups.json"
     },
     {
       "country": "SE",
@@ -617,7 +619,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "CQ Zone! - Member of ( HELLAS Zone Net )",
-      "system": "cq-zone"
+      "system": "cq-zone",
+      "talkgroups": "reflectors/dmr/cq-zone/talkgroups.json"
     },
     {
       "country": "US",
@@ -638,7 +641,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "CRHRC",
-      "system": "crhrc"
+      "system": "crhrc",
+      "talkgroups": "reflectors/dmr/crhrc/talkgroups.json"
     },
     {
       "country": "US",
@@ -659,7 +663,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "CRHRC",
-      "system": "crhrc"
+      "system": "crhrc",
+      "talkgroups": "reflectors/dmr/crhrc/talkgroups.json"
     },
     {
       "country": "GB",
@@ -1873,7 +1878,7 @@
     },
     {
       "country": "FR",
-      "dashboard": "http://ctb2.ysf-france.fr:8080/",
+      "dashboard": "http://ctb1.ysf-france.fr:8086/",
       "description": "<p>Serveur HBlink4 F1PTL</p>\r\n<p>TG20800 Interco avec YSF-France (YSF/DMR)</p>\r\n<p>TG20841 Interco avec YSF-DPT41 (YSF/DMR)</p>\r\n<p>TG20862 interco avec YSF-TG20862 (YSF/DMR)</p>\r\n<p>TG20892 interco OpenAI (YSF/DMR)</p>",
       "dial": {
         "host": "hb4.ysf-france.fr",
@@ -3262,8 +3267,29 @@
       "name": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131",
       "network": "dmr",
       "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131",
+      "sponsor": "YM2KB / TA2BBE",
       "system": "turk-amator-dijital-ag"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://ptt.pistar.com.tr/",
+      "dial": {
+        "host": "ptt.pistar.com.tr",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "turk-dmr",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/turk-dmr/talkgroups/"
+      },
+      "id": "turk-dmr-server-turk-dmr",
+      "name": "T\u00fcrk DMR",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "YM2KB / TA2BBE",
+      "system": "turk-dmr"
     },
     {
       "country": "TR",
@@ -3284,7 +3310,7 @@
       "name": "Turk Preppers DMR Network",
       "network": "dmr",
       "source": "dvref",
-      "sponsor": "T\u00fcrkiye Digital Group",
+      "sponsor": "YM2KB / TA2BBE",
       "system": "turkiye-dmr"
     },
     {
@@ -3306,7 +3332,7 @@
       "name": "T\u00fcrkiye DMR",
       "network": "dmr",
       "source": "dvref",
-      "sponsor": "T\u00fcrkiye Digital Group",
+      "sponsor": "YM2KB / TA2BBE",
       "system": "turkiye-dmr"
     },
     {

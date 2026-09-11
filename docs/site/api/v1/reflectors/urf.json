@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 99,
-  "generated": "2026-09-10",
+  "count": 103,
+  "generated": "2026-09-11",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -766,6 +766,19 @@
       "sponsor": "KQ4HPI"
     },
     {
+      "country": "US",
+      "dashboard": "http://66492.ip.hamvoip.org",
+      "dial": {
+        "host": "66492.ip.hamvoip.org",
+        "kind": "urf"
+      },
+      "id": "324",
+      "name": "Amerinet US",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "KQ4HPI"
+    },
+    {
       "country": "PR",
       "dashboard": "http://wp4nnz.ddns.net/index.php",
       "description": "<p>dstar coamo</p>",
@@ -910,6 +923,22 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "DG1JP"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://xlxnettalk.dyndns.org",
+      "dial": {
+        "host": "xlxnettalk.dyndns.org",
+        "kind": "urf",
+        "modules": [
+          "A"
+        ]
+      },
+      "id": "470",
+      "name": "XLX470",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "K6HP"
     },
     {
       "country": "FR",
@@ -1064,6 +1093,25 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "Windy City Amateur Radio Society"
+    },
+    {
+      "country": "NL",
+      "dashboard": "http://xlx.pd3rfr.nl",
+      "description": "<p>Experimental Reflector of PD3RFR</p>",
+      "dial": {
+        "host": "PD3RFR.myasustor.com",
+        "kind": "urf",
+        "modules": [
+          "B",
+          "D",
+          "N"
+        ]
+      },
+      "id": "700",
+      "name": "XLX-Reflector of PD3RFR",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "PD3RFR"
     },
     {
       "country": "US",
@@ -1702,6 +1750,19 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "SQ5AC"
+    },
+    {
+      "country": "US",
+      "description": "<p>URF-WIL is a multi-mode amateur-radio reflector supporting DMR/YSF/P25/NXDN/M17 with transcoding.</p>\r\n<p>The reflector is part of KE7WIL virtual AllStarLink node hub 641890.</p>",
+      "dial": {
+        "host": "node64189.ddns.net",
+        "kind": "urf"
+      },
+      "id": "WIL",
+      "name": "URFWIL Multi-Mode Reflector",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "KE7WIL"
     },
     {
       "country": "TR",

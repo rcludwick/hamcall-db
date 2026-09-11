@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 320,
-  "generated": "2026-09-10",
+  "count": 321,
+  "generated": "2026-09-11",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1274,6 +1274,20 @@
       "sponsor": "rn6ljt"
     },
     {
+      "country": "BY",
+      "dashboard": "https://xlx375.bfrr.by/p25",
+      "dial": {
+        "host": "xlx375.bfrr.by",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "25701",
+      "name": "BY MultiMode",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "EW1EM"
+    },
+    {
       "country": "PL",
       "dashboard": "http://80.211.195.50/",
       "description": "<p>Polski Reflektor P25</p>\r\n<div id=\"sconnect-is-installed\" style=\"display: none;\">2.14.0.0</div>\r\n<div id=\"sconnect-is-installed\" style=\"display: none;\">2.14.0.0</div>\r\n<div id=\"sconnect-is-installed\" style=\"display: none;\">2.14.0.0</div>\r\n<div id=\"sconnect-is-installed\" style=\"display: none;\">2.14.0.0</div>",
@@ -1430,10 +1444,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28200",
+      "dashboard": "http://ptt.pistar.com.tr:28200",
       "description": "<p>P25 Turkiye Genel Reflector - YM2KT</p>",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "ptt.pistar.com.tr",
         "kind": "p25",
         "port": 41000
       },
@@ -1441,14 +1455,14 @@
       "name": "P25 Turkiye",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+      "sponsor": "YM2KT"
     },
     {
       "country": "TR",
       "dashboard": "http://2861.adn.systems:28201",
       "description": "<p>P25 Adana Reflector - YM2KT</p>",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "ptt.pistar.com.tr",
         "kind": "p25",
         "port": 41001
       },
@@ -1456,14 +1470,14 @@
       "name": "P25 Adana",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+      "sponsor": "YM2KT"
     },
     {
       "country": "TR",
       "dashboard": "http://dmr.pistar.com.tr:28203",
       "description": "<p>P25 Afyon Reflector - YM2KT</p>",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "ptt.pistar.com.tr",
         "kind": "p25",
         "port": 41003
       },
@@ -1471,14 +1485,14 @@
       "name": "P25 Afyon",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+      "sponsor": "YM2KT"
     },
     {
       "country": "TR",
       "dashboard": "http://dmr.pistar.com.tr:28206",
       "description": "<p>P25 Ankara Reflector - YM2KT</p>",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "ptt.pistar.com.tr",
         "kind": "p25",
         "port": 41006
       },
@@ -1486,14 +1500,14 @@
       "name": "P25 Ankara",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+      "sponsor": "YM2KT"
     },
     {
       "country": "TR",
       "dashboard": "http://dmr.pistar.com.tr:28207",
       "description": "<p>P25 Antalya Reflector - YM2KT</p>",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "ptt.pistar.com.tr",
         "kind": "p25",
         "port": 41007
       },
@@ -1501,14 +1515,14 @@
       "name": "P25 Antalya",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+      "sponsor": "YM2KT"
     },
     {
       "country": "TR",
       "dashboard": "http://dmr.pistar.com.tr:28234",
       "description": "<p>P25 Istanbul Reflector - YM2KT</p>",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "ptt.pistar.com.tr",
         "kind": "p25",
         "port": 41034
       },
@@ -1516,14 +1530,14 @@
       "name": "P25 Istanbul",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+      "sponsor": "YM2KT"
     },
     {
       "country": "TR",
       "dashboard": "http://dmr.pistar.com.tr:28235",
       "description": "<p>P25 Izmir Reflector - YM2KT</p>",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "ptt.pistar.com.tr",
         "kind": "p25",
         "port": 41035
       },
@@ -1531,14 +1545,14 @@
       "name": "P25 Izmir",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+      "sponsor": "YM2KT"
     },
     {
       "country": "TR",
       "dashboard": "http://2861.adn.systems:28248",
       "description": "<p>P25 Mugla Reflector - YM2KT</p>",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "ptt.pistar.com.tr",
         "kind": "p25",
         "port": 41048
       },
@@ -1546,7 +1560,7 @@
       "name": "P25 Mugla",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+      "sponsor": "YM2KT"
     },
     {
       "country": "AU",
@@ -2368,6 +2382,20 @@
       "sponsor": "KN4YDL"
     },
     {
+      "country": "US",
+      "dashboard": "http://66492.ip.hamvoip.org",
+      "dial": {
+        "host": "66492.ip.hamvoip.org",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "3241",
+      "name": "URF324",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KQ4HPI"
+    },
+    {
       "country": "MX",
       "dashboard": "http://89.117.61.236",
       "description": "<p>P25-XE1JMB</p>",
@@ -2510,20 +2538,6 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "PennLink Group"
-    },
-    {
-      "country": "BY",
-      "dashboard": "https://xlx375.bfrr.by/p25/",
-      "dial": {
-        "host": "xlx375.bfrr.by",
-        "kind": "p25",
-        "port": 41000
-      },
-      "id": "37500",
-      "name": "37500",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "YL3IM"
     },
     {
       "country": "TH",
