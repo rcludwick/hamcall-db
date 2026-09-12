@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 107,
-  "generated": "2026-09-11",
+  "generated": "2026-09-12",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -2507,10 +2507,10 @@
     {
       "country": "BR",
       "dashboard": "https://m17-digitalvoice.dns.army",
-      "description": "<p>REDE LINKADA SLB BRASIL</p>",
+      "description": "<p>* REDE LINKADA BRASIL</p>",
       "dial": {
         "callsign": "M17-SLB",
-        "host": "165.73.249.152",
+        "host": "155.117.46.188",
         "kind": "m17",
         "modules": [
           "A",

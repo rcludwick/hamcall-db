@@ -1,0 +1,79 @@
+{
+  "api_version": "v1",
+  "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
+  "client_refresh_days": 7,
+  "count": 15,
+  "generated": "2026-09-12",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
+  "network": "dmr",
+  "schema_version": 1,
+  "source": {
+    "name": "DVRef",
+    "url": "https://dvref.com/api/v2/dmr/networks/digital-voice-greece/talkgroups/"
+  },
+  "system": "digital-voice-greece",
+  "talkgroups": [
+    {
+      "name": "\u0394\u03b9\u03b5\u03b8\u03bd\u03ad\u03c2 \u0395\u03bb\u03bb\u03ac\u03b4\u03b1",
+      "tg": 202
+    },
+    {
+      "name": "\u03a0\u03b5\u03c1\u03b9\u03bf\u03c7\u03ae 1 \u0395\u03b8\u03bd\u03b9\u03ba\u03ae",
+      "tg": 2021
+    },
+    {
+      "name": "\u03a0\u03b5\u03c1\u03b9\u03bf\u03c7\u03ae 2 \u0395\u03b8\u03bd\u03b9\u03ba\u03ae",
+      "tg": 2022
+    },
+    {
+      "name": "\u03a0\u03b5\u03c1\u03b9\u03bf\u03c7\u03ae 3 \u0395\u03b8\u03bd\u03b9\u03ba\u03ae",
+      "tg": 2023
+    },
+    {
+      "name": "\u03a0\u03b5\u03c1\u03b9\u03bf\u03c7\u03ae 4 \u0395\u03b8\u03bd\u03b9\u03ba\u03ae",
+      "tg": 2024
+    },
+    {
+      "name": "\u03a0\u03b5\u03c1\u03b9\u03bf\u03c7\u03ae 6 \u0395\u03b8\u03bd\u03b9\u03ba\u03ae",
+      "tg": 2026
+    },
+    {
+      "name": "\u03a0\u03b5\u03c1\u03b9\u03bf\u03c7\u03ae 7 \u0395\u03b8\u03bd\u03b9\u03ba\u03ae",
+      "tg": 2027
+    },
+    {
+      "name": "\u03a0\u03b5\u03c1\u03b9\u03bf\u03c7\u03ae 8 \u0395\u03b8\u03bd\u03b9\u03ba\u03ae",
+      "tg": 2028
+    },
+    {
+      "name": "\u03a0\u03b5\u03c1\u03b9\u03bf\u03c7\u03ae 9 \u0395\u03b8\u03bd\u03b9\u03ba\u03ae",
+      "tg": 2029
+    },
+    {
+      "name": "YSF 21009",
+      "tg": 20209
+    },
+    {
+      "name": "XLX165",
+      "tg": 20265
+    },
+    {
+      "name": "YSF 91117",
+      "tg": 202117
+    },
+    {
+      "name": "XLX165",
+      "tg": 202165
+    },
+    {
+      "name": "DV-GR ECHOLINK",
+      "tg": 202166
+    },
+    {
+      "name": "ASL 565570",
+      "tg": 202570
+    }
+  ]
+}

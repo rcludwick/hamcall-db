@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 186,
-  "generated": "2026-09-11",
+  "count": 184,
+  "generated": "2026-09-12",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -685,7 +685,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "CumbriaCQ",
-      "system": "cumbriacq-dmr-master"
+      "system": "cumbriacq-dmr-master",
+      "talkgroups": "reflectors/dmr/cumbriacq-dmr-master/talkgroups.json"
     },
     {
       "country": "GB",
@@ -706,7 +707,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "CUMBRIA CQ",
-      "system": "cumbriacqcom"
+      "system": "cumbriacqcom",
+      "talkgroups": "reflectors/dmr/cumbriacqcom/talkgroups.json"
     },
     {
       "country": "AU",
@@ -728,7 +730,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "VK2WAY, VK3JED, VK5ZSH, ZL2RO",
-      "system": "digital-voice-down-under-dvdu"
+      "system": "digital-voice-down-under-dvdu",
+      "talkgroups": "reflectors/dmr/digital-voice-down-under-dvdu/talkgroups.json"
     },
     {
       "country": "NZ",
@@ -750,7 +753,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "VK2WAY, VK3JED, VK5ZSH, ZL2RO",
-      "system": "digital-voice-down-under-dvdu"
+      "system": "digital-voice-down-under-dvdu",
+      "talkgroups": "reflectors/dmr/digital-voice-down-under-dvdu/talkgroups.json"
     },
     {
       "country": "AU",
@@ -772,7 +776,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "VK2WAY, VK3JED, VK5ZSH, ZL2RO",
-      "system": "digital-voice-down-under-dvdu"
+      "system": "digital-voice-down-under-dvdu",
+      "talkgroups": "reflectors/dmr/digital-voice-down-under-dvdu/talkgroups.json"
     },
     {
       "country": "GR",
@@ -794,7 +799,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "sv2snh.gr",
-      "system": "digital-voice-greece"
+      "system": "digital-voice-greece",
+      "talkgroups": "reflectors/dmr/digital-voice-greece/talkgroups.json"
     },
     {
       "country": "US",
@@ -2416,48 +2422,6 @@
       },
       "id": "ipsc3-server-ipsc3-freedmr-uk-62031",
       "name": "ipsc3-freedmr-uk 62031",
-      "network": "dmr",
-      "source": "dvref",
-      "sponsor": "Matt Perkins",
-      "system": "ipsc3"
-    },
-    {
-      "country": "GB",
-      "dashboard": "http://wiki.ipsc3.net",
-      "dial": {
-        "host": "uk.ipsc3.net",
-        "kind": "mmdvm",
-        "port": 55555,
-        "requires": [
-          "dmr_id",
-          "password"
-        ],
-        "system": "ipsc3",
-        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/ipsc3/talkgroups/"
-      },
-      "id": "ipsc3-server-ipsc3-uk-55555",
-      "name": "ipsc3-uk 55555",
-      "network": "dmr",
-      "source": "dvref",
-      "sponsor": "Matt Perkins",
-      "system": "ipsc3"
-    },
-    {
-      "country": "GB",
-      "dashboard": "http://wiki.ipsc3.net",
-      "dial": {
-        "host": "uk.ipsc3.net",
-        "kind": "mmdvm",
-        "port": 62031,
-        "requires": [
-          "dmr_id",
-          "password"
-        ],
-        "system": "ipsc3",
-        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/ipsc3/talkgroups/"
-      },
-      "id": "ipsc3-server-ipsc3-uk-62031",
-      "name": "ipsc3-uk 62031",
       "network": "dmr",
       "source": "dvref",
       "sponsor": "Matt Perkins",

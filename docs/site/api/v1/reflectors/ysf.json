@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1481,
-  "generated": "2026-09-11",
+  "count": 1493,
+  "generated": "2026-09-12",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -4922,6 +4922,21 @@
       "source": "dvref"
     },
     {
+      "country": "JP",
+      "dashboard": "https://xlx00b.mydns.jp",
+      "description": "Kachimaru",
+      "dial": {
+        "host": "xlx00b.mydns.jp",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "07761",
+      "name": "XLX00B",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "JE4CDI"
+    },
+    {
       "country": "US",
       "description": "HighestPower",
       "dial": {
@@ -8284,16 +8299,16 @@
     {
       "country": "IT",
       "dashboard": "http://rudinet.giize.com",
-      "description": "YSF XLX232",
       "dial": {
         "host": "rudinet.giize.com",
         "kind": "ysf",
-        "port": 42000
+        "port": 42100
       },
       "id": "22232",
       "name": "XLX232",
       "network": "ysf",
-      "source": "dvref"
+      "source": "dvref",
+      "sponsor": "IW3HWH"
     },
     {
       "country": "IT",
@@ -9426,6 +9441,7 @@
     {
       "country": "LV",
       "dashboard": "https://xlx.ham.lv",
+      "description": "LV MultiMode",
       "dial": {
         "host": "24706.ham.lv",
         "kind": "ysf",
@@ -9628,13 +9644,14 @@
     {
       "country": "BY",
       "dashboard": "https://xlx375.bfrr.by",
+      "description": "BY MultiMode",
       "dial": {
         "host": "xlx375.bfrr.by",
         "kind": "ysf",
         "port": 42000
       },
       "id": "25701",
-      "name": "BY MultiMode",
+      "name": "MultiMode",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "EW1EM"
@@ -10013,7 +10030,7 @@
       "dashboard": "https://ysf.hobby-room.app/",
       "description": "FM-Nuernberg",
       "dial": {
-        "host": "fm-ysf.dynv6.net",
+        "host": "fm07.dedyn.io",
         "kind": "ysf",
         "port": 42000
       },
@@ -10854,6 +10871,104 @@
     },
     {
       "country": "TR",
+      "description": "YSF Aydin",
+      "dial": {
+        "host": "ptt.pistar.com.tr",
+        "kind": "ysf",
+        "port": 42009
+      },
+      "id": "28609",
+      "name": "YSF Aydin",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "YM2KW"
+    },
+    {
+      "country": "TR",
+      "description": "YSF Balikesir",
+      "dial": {
+        "host": "ptt.pistar.com.tr",
+        "kind": "ysf",
+        "port": 42010
+      },
+      "id": "28610",
+      "name": "YSF Balikesir",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "YM2KW"
+    },
+    {
+      "country": "TR",
+      "description": "YSF Bursa",
+      "dial": {
+        "host": "ptt.pistar.com.tr",
+        "kind": "ysf",
+        "port": 42016
+      },
+      "id": "28616",
+      "name": "YSF Bursa",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "YM2KW"
+    },
+    {
+      "country": "TR",
+      "description": "YSF Canakkale",
+      "dial": {
+        "host": "ptt.pistar.com.tr",
+        "kind": "ysf",
+        "port": 42017
+      },
+      "id": "28617",
+      "name": "YSF Canakkale",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "YM2KW"
+    },
+    {
+      "country": "TR",
+      "description": "YSF Denizli",
+      "dial": {
+        "host": "ptt.pistar.com.tr",
+        "kind": "ysf",
+        "port": 42020
+      },
+      "id": "28620",
+      "name": "YSF Denizli",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "YM2KW"
+    },
+    {
+      "country": "TR",
+      "description": "YSF Eskisehir",
+      "dial": {
+        "host": "ptt.pistar.com.tr",
+        "kind": "ysf",
+        "port": 42026
+      },
+      "id": "28626",
+      "name": "YSF Eskisehir",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "YM2KW"
+    },
+    {
+      "country": "TR",
+      "description": "YSF Mersin",
+      "dial": {
+        "host": "ptt.pistar.com.tr",
+        "kind": "ysf",
+        "port": 42033
+      },
+      "id": "28633",
+      "name": "YSF Mersin",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "YM2KW"
+    },
+    {
+      "country": "TR",
       "dashboard": "http://dmr.pistar.com.tr:28434",
       "description": "YSF Istanbul",
       "dial": {
@@ -10878,6 +10993,48 @@
       },
       "id": "28635",
       "name": "YSF Izmir",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "YM2KW"
+    },
+    {
+      "country": "TR",
+      "description": "YSF Kocaeli",
+      "dial": {
+        "host": "ptt.pistar.com.tr",
+        "kind": "ysf",
+        "port": 42041
+      },
+      "id": "28641",
+      "name": "YSF Kocaeli",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "YM2KW"
+    },
+    {
+      "country": "TR",
+      "description": "YSF Konya",
+      "dial": {
+        "host": "ptt.pistar.com.tr",
+        "kind": "ysf",
+        "port": 42042
+      },
+      "id": "28642",
+      "name": "YSF Konya",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "YM2KW"
+    },
+    {
+      "country": "TR",
+      "description": "YSF Malatya",
+      "dial": {
+        "host": "ptt.pistar.com.tr",
+        "kind": "ysf",
+        "port": 42044
+      },
+      "id": "28644",
+      "name": "YSF Malatya",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "YM2KW"
@@ -10940,6 +11097,20 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "TA2KW"
+    },
+    {
+      "country": "TR",
+      "description": "YSF Duzce",
+      "dial": {
+        "host": "ptt.pistar.com.tr",
+        "kind": "ysf",
+        "port": 42081
+      },
+      "id": "28681",
+      "name": "YSF Duzce",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "YM2KW"
     },
     {
       "country": "US",
@@ -14116,7 +14287,6 @@
     },
     {
       "country": "US",
-      "dashboard": "http://windycity.duckdns.org:8080",
       "dial": {
         "host": "windycity.duckdns.org",
         "kind": "ysf",
@@ -14155,7 +14325,6 @@
     },
     {
       "country": "US",
-      "dashboard": "http://windycity.duckdns.org/index.php",
       "description": "windy_city",
       "dial": {
         "host": "windycity.duckdns.org",
@@ -18700,7 +18869,7 @@
         "port": 42002
       },
       "id": "73411",
-      "name": "RVR Red SRV",
+      "name": "RVR Red Serv",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "YV4YY"

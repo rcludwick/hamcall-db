@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 301,
-  "generated": "2026-09-11",
+  "count": 317,
+  "generated": "2026-09-12",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -247,6 +247,20 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "IK3DNV"
+    },
+    {
+      "country": "NL",
+      "dashboard": "http://pd0poh.ddns.net",
+      "dial": {
+        "host": "87.212.135.150",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "1224",
+      "name": "PI1DAF Almere",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "2The Experience"
     },
     {
       "country": "ES",
@@ -988,6 +1002,20 @@
     },
     {
       "country": "IT",
+      "dashboard": "http://rudinet.giize.com/nxdn/",
+      "dial": {
+        "host": "rudinet.giize.com",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "22232",
+      "name": "IT-XLX232 Multi-mode AMBE",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "IW3HWH"
+    },
+    {
+      "country": "IT",
       "dashboard": "http://nxdn.ddns.net",
       "dial": {
         "host": "nxdn.ddns.net",
@@ -1339,6 +1367,20 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "FreeSTAR UK"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://www.qsos.uk",
+      "dial": {
+        "host": "77.68.126.26",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "23450",
+      "name": "YorkshireNetUK",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "M0XYN"
     },
     {
       "country": "GB",
@@ -1927,6 +1969,104 @@
     },
     {
       "country": "TR",
+      "description": "TurkLINK NXDN 09 Reflektor Odasi",
+      "dial": {
+        "host": "ptt.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41409
+      },
+      "id": "28609",
+      "name": "NXDN Aydin",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "YM2KG"
+    },
+    {
+      "country": "TR",
+      "description": "TurkLINK NXDN 10 Reflektor Odasi",
+      "dial": {
+        "host": "ptt.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41410
+      },
+      "id": "28610",
+      "name": "NXDN Balikesir",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "YM2KG"
+    },
+    {
+      "country": "TR",
+      "description": "TurkLINK NXDN 16 Reflektor Odasi",
+      "dial": {
+        "host": "ptt.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41416
+      },
+      "id": "28616",
+      "name": "NXDN Bursa",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "YM2KG"
+    },
+    {
+      "country": "TR",
+      "description": "TurkLINK NXDN 17 Reflektor Odasi",
+      "dial": {
+        "host": "ptt.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41417
+      },
+      "id": "28617",
+      "name": "NXDN Canakkale",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "YM2KG"
+    },
+    {
+      "country": "TR",
+      "description": "TurkLINK NXDN 20 Reflektor Odasi",
+      "dial": {
+        "host": "ptt.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41420
+      },
+      "id": "28620",
+      "name": "NXDN Denizli",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "YM2KG"
+    },
+    {
+      "country": "TR",
+      "description": "TurkLINK NXDN 26 Reflektor Odasi",
+      "dial": {
+        "host": "ptt.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41426
+      },
+      "id": "28626",
+      "name": "NXDN Eskisehir",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "YM2KG"
+    },
+    {
+      "country": "TR",
+      "description": "TurkLINK NXDN 33 Reflektor Odasi",
+      "dial": {
+        "host": "ptt.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41433
+      },
+      "id": "28633",
+      "name": "NXDN Mersin",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "YM2KG"
+    },
+    {
+      "country": "TR",
       "dashboard": "http://dmr.pistar.com.tr:28334/",
       "description": "<p>NXDN Istanbul Reflector - YM2KG</p>",
       "dial": {
@@ -1957,6 +2097,48 @@
     },
     {
       "country": "TR",
+      "description": "TurkLINK NXDN 41 Reflektor Odasi",
+      "dial": {
+        "host": "ptt.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41441
+      },
+      "id": "28641",
+      "name": "NXDN Kocaeli",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "YM2KG"
+    },
+    {
+      "country": "TR",
+      "description": "TurkLINK NXDN 42 Reflektor Odasi",
+      "dial": {
+        "host": "ptt.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41442
+      },
+      "id": "28642",
+      "name": "NXDN Konya",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "YM2KG"
+    },
+    {
+      "country": "TR",
+      "description": "TurkLINK NXDN 44 Reflektor Odasi",
+      "dial": {
+        "host": "ptt.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41444
+      },
+      "id": "28644",
+      "name": "NXDN Malatya",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "YM2KG"
+    },
+    {
+      "country": "TR",
       "dashboard": "http://dmr.pistar.com.tr:28348/",
       "description": "<p>NXDN Mugla Reflector - YM2KG</p>",
       "dial": {
@@ -1966,6 +2148,35 @@
       },
       "id": "28648",
       "name": "NXDN Mugla",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "YM2KG"
+    },
+    {
+      "country": "TR",
+      "description": "TurkLINK NXDN 59 Reflektor Odasi",
+      "dial": {
+        "host": "ptt.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41459
+      },
+      "id": "28659",
+      "name": "NXDN Tekirdag",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "YM2KG"
+    },
+    {
+      "country": "TR",
+      "dashboard": "https://dmr.pistar.com.tr:28381",
+      "description": "TurkLINK NXDN 81 Reflektor Odasi",
+      "dial": {
+        "host": "ptt.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41481
+      },
+      "id": "28681",
+      "name": "NXDN Duzce",
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "YM2KG"
@@ -2924,6 +3135,21 @@
       "sponsor": "JA2CCV"
     },
     {
+      "country": "JP",
+      "dashboard": "http://xrf298.mydns.jp:8070/",
+      "description": "<p>YSF-NAGOYA-2/TGIF TG-310 / WIRES-X 42314 / XLX298 Y /XLX098 H /M17-LIM L /PEANUT XLX561 P</p>",
+      "dial": {
+        "host": "122.133.239.109",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "44155",
+      "name": "NXDN-NAGOYA",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "JF2ANH"
+    },
+    {
       "country": "KR",
       "dashboard": "http://45000nxdn.dvham.com/nxdn/index.php",
       "dial": {
@@ -3744,9 +3970,9 @@
     {
       "country": "BR",
       "dashboard": "https://pu4ron.dynv6.net/nxdn",
-      "description": "<p>7245&nbsp; Multiprotocolo - Super Link Brasil</p>",
+      "description": "<p>* 7245&nbsp; Multiprotocolo - Super Link Brasil</p>",
       "dial": {
-        "host": "165.73.249.152",
+        "host": "155.117.46.188",
         "kind": "nxdn",
         "port": 41400
       },

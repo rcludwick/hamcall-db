@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 321,
-  "generated": "2026-09-11",
+  "count": 333,
+  "generated": "2026-09-12",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -773,7 +773,7 @@
     },
     {
       "country": "US",
-      "dashboard": "http://137.184.68.241",
+      "dashboard": "http://137.184.68.241:4000",
       "dial": {
         "host": "137.184.68.241",
         "kind": "p25",
@@ -1519,6 +1519,104 @@
     },
     {
       "country": "TR",
+      "description": "TurkLINK P25 09 Reflektor Odasi",
+      "dial": {
+        "host": "ptt.pistar.com.tr",
+        "kind": "p25",
+        "port": 41009
+      },
+      "id": "28609",
+      "name": "P25 Aydin",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "YM2KT"
+    },
+    {
+      "country": "TR",
+      "description": "TurkLINK P25 10 Reflektor Odasi",
+      "dial": {
+        "host": "ptt.pistar.com.tr",
+        "kind": "p25",
+        "port": 41010
+      },
+      "id": "28610",
+      "name": "P25 Balikesir",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "YM2KT"
+    },
+    {
+      "country": "TR",
+      "description": "TurkLINK P25 16 Reflektor Odasi",
+      "dial": {
+        "host": "ptt.pistar.com.tr",
+        "kind": "p25",
+        "port": 41016
+      },
+      "id": "28616",
+      "name": "P25 Bursa",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "YM2KT"
+    },
+    {
+      "country": "TR",
+      "description": "TurkLINK P25 17 Reflektor Odasi",
+      "dial": {
+        "host": "ptt.pistar.com.tr",
+        "kind": "p25",
+        "port": 41017
+      },
+      "id": "28617",
+      "name": "P25 Canakkale",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "YM2KT"
+    },
+    {
+      "country": "TR",
+      "description": "TurkLINK P25 20 Reflektor Odasi",
+      "dial": {
+        "host": "ptt.pistar.com.tr",
+        "kind": "p25",
+        "port": 41020
+      },
+      "id": "28620",
+      "name": "P25 Denizli",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "YM2KT"
+    },
+    {
+      "country": "TR",
+      "description": "TurkLINK P25 26 Reflektor Odasi",
+      "dial": {
+        "host": "ptt.pistar.com.tr",
+        "kind": "p25",
+        "port": 41026
+      },
+      "id": "28626",
+      "name": "P25 Eskisehir",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "YM2KT"
+    },
+    {
+      "country": "TR",
+      "description": "TurkLINK P25 33 Reflektor Odasi",
+      "dial": {
+        "host": "ptt.pistar.com.tr",
+        "kind": "p25",
+        "port": 41033
+      },
+      "id": "28633",
+      "name": "P25 Mersin",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "YM2KT"
+    },
+    {
+      "country": "TR",
       "dashboard": "http://dmr.pistar.com.tr:28234",
       "description": "<p>P25 Istanbul Reflector - YM2KT</p>",
       "dial": {
@@ -1549,6 +1647,48 @@
     },
     {
       "country": "TR",
+      "description": "TurkLINK P25 41 Reflektor Odasi",
+      "dial": {
+        "host": "ptt.pistar.com.tr",
+        "kind": "p25",
+        "port": 41041
+      },
+      "id": "28641",
+      "name": "P25 Kocaeli",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "YM2KT"
+    },
+    {
+      "country": "TR",
+      "description": "TurkLINK P25 42 Reflektor Odasi",
+      "dial": {
+        "host": "ptt.pistar.com.tr",
+        "kind": "p25",
+        "port": 41042
+      },
+      "id": "28642",
+      "name": "P25 Konya",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "YM2KT"
+    },
+    {
+      "country": "TR",
+      "description": "TurkLINK P25 44 Reflektor Odasi",
+      "dial": {
+        "host": "ptt.pistar.com.tr",
+        "kind": "p25",
+        "port": 41044
+      },
+      "id": "28644",
+      "name": "P25 Malatya",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "YM2KT"
+    },
+    {
+      "country": "TR",
       "dashboard": "http://2861.adn.systems:28248",
       "description": "<p>P25 Mugla Reflector - YM2KT</p>",
       "dial": {
@@ -1558,6 +1698,34 @@
       },
       "id": "28648",
       "name": "P25 Mugla",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "YM2KT"
+    },
+    {
+      "country": "TR",
+      "description": "TurkLINK P25 59 Reflektor Odasi",
+      "dial": {
+        "host": "ptt.pistar.com.tr",
+        "kind": "p25",
+        "port": 41059
+      },
+      "id": "28659",
+      "name": "P25 Tekirdag",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "YM2KT"
+    },
+    {
+      "country": "TR",
+      "description": "TurkLINK P25 81 Reflektor Odasi",
+      "dial": {
+        "host": "ptt.pistar.com.tr",
+        "kind": "p25",
+        "port": 41081
+      },
+      "id": "28681",
+      "name": "P25 Duzce",
       "network": "p25",
       "source": "dvref",
       "sponsor": "YM2KT"
@@ -3981,9 +4149,9 @@
     {
       "country": "BR",
       "dashboard": "https://pu4ron.dynv6.net/p25",
-      "description": "<p>7245 Multiprotocolo - Super Link Brasil</p>",
+      "description": "<p>* 7245 Multiprotocolo&nbsp;</p>",
       "dial": {
-        "host": "165.73.249.152",
+        "host": "155.117.46.188",
         "kind": "p25",
         "port": 41000
       },
