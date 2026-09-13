@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 333,
-  "generated": "2026-09-12",
+  "count": 334,
+  "generated": "2026-09-13",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1729,6 +1729,20 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "YM2KT"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://xlx043.pauldingares.com",
+      "dial": {
+        "host": "147.182.219.238",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "30043",
+      "name": "URF043 P25",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Paulding Emergency Communications Group"
     },
     {
       "country": "AU",
@@ -3868,16 +3882,17 @@
     },
     {
       "country": "US",
-      "description": "<p>Personal P25 reflector operated by KE7WIL for direct connections and coordinated amateur-radio use. Not intended as a general-purpose traffic reflector.</p>",
+      "description": "<p>URF-WIL is a multi-mode amateur-radio reflector supporting DMR/YSF/P25/NXDN/M17 with transcoding.</p>\r\n<p>The reflector is part of KE7WIL virtual AllStarLink node hub 641890.</p>",
       "dial": {
         "host": "node64189.ddns.net",
         "kind": "p25",
         "port": 41010
       },
       "id": "64189",
-      "name": "KE7WIL Personal P25 Reflector",
+      "name": "URFWIL",
       "network": "p25",
-      "source": "dvref"
+      "source": "dvref",
+      "sponsor": "KE7WIL"
     },
     {
       "country": "US",

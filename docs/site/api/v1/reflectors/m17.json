@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 107,
-  "generated": "2026-09-12",
+  "generated": "2026-09-13",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -916,27 +916,6 @@
     },
     {
       "country": "PL",
-      "dashboard": "https://xlx474.duckdns.org/",
-      "description": "<p>KAB Amateur Radio Club/ SP5PA</p>",
-      "dial": {
-        "callsign": "M17-474",
-        "host": "xlx474.duckdns.org",
-        "kind": "m17",
-        "modules": [
-          "A",
-          "B",
-          "C"
-        ],
-        "port": 17000
-      },
-      "id": "M17-474",
-      "name": "KAB Amateur Radio Club",
-      "network": "m17",
-      "source": "dvref",
-      "sponsor": "SP5PA"
-    },
-    {
-      "country": "PL",
       "dashboard": "http://waw01.kg5a.us",
       "description": "<p>M17 - TG512 Warsaw Reflector Poland</p>",
       "dial": {
@@ -1824,6 +1803,28 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "N6JET"
+    },
+    {
+      "country": "PL",
+      "dashboard": "https://xlx474.duckdns.org/",
+      "description": "<p>KAB Amateur Radio Club. Modules A&ndash;D. Module D is intended for a planned interlink with M17-POL D; the interlink is not active yet.</p>",
+      "dial": {
+        "callsign": "M17-KAB",
+        "host": "xlx474.duckdns.org",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "port": 17000
+      },
+      "id": "M17-KAB",
+      "name": "KAB Amateur Radio Club",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "SP5PA"
     },
     {
       "country": "US",

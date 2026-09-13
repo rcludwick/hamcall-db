@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 317,
-  "generated": "2026-09-12",
+  "generated": "2026-09-13",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -427,14 +427,14 @@
     },
     {
       "country": "US",
-      "description": "<p>Personal NXDN reflector operated by KE7WIL.</p>",
+      "description": "<p>URF-WIL is a multi-mode amateur-radio reflector supporting DMR/YSF/P25/NXDN/M17 with transcoding.</p>\r\n<p>The reflector is part of KE7WIL virtual AllStarLink node hub 641890.</p>",
       "dial": {
         "host": "node64189.ddns.net",
         "kind": "nxdn",
         "port": 41400
       },
       "id": "15846",
-      "name": "KE7WIL Personal NXDN Reflector",
+      "name": "URFWIL",
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "KE7WIL"
