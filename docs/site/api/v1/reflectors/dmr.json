@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 186,
-  "generated": "2026-09-13",
+  "generated": "2026-09-14",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -912,7 +912,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "DS3DIF DV HAM Would",
-      "system": "ds3dif"
+      "system": "ds3dif",
+      "talkgroups": "reflectors/dmr/ds3dif/talkgroups.json"
     },
     {
       "country": "PH",
@@ -922,7 +923,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "DV1ROY",
-      "system": "dx1arm"
+      "system": "dx1arm",
+      "talkgroups": "reflectors/dmr/dx1arm/talkgroups.json"
     },
     {
       "country": "PH",
@@ -932,7 +934,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "DV1ROY",
-      "system": "dx1arm"
+      "system": "dx1arm",
+      "talkgroups": "reflectors/dmr/dx1arm/talkgroups.json"
     },
     {
       "country": "PH",
@@ -943,7 +946,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "DU6PEW",
-      "system": "dx6cn"
+      "system": "dx6cn",
+      "talkgroups": "reflectors/dmr/dx6cn/talkgroups.json"
     },
     {
       "country": "VE",
@@ -954,7 +958,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "734650",
-      "system": "el-verdadero-radio-aficionado"
+      "system": "el-verdadero-radio-aficionado",
+      "talkgroups": "reflectors/dmr/el-verdadero-radio-aficionado/talkgroups.json"
     },
     {
       "country": "VE",
@@ -965,7 +970,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "734650",
-      "system": "el-verdadero-radio-aficionado"
+      "system": "el-verdadero-radio-aficionado",
+      "talkgroups": "reflectors/dmr/el-verdadero-radio-aficionado/talkgroups.json"
     },
     {
       "country": "GB",

@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 103,
-  "generated": "2026-09-13",
+  "generated": "2026-09-14",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -593,7 +593,7 @@
     {
       "country": "TR",
       "dashboard": "http://xlx286.dmrturkiye.com",
-      "description": "<p><br><strong>http://xlx286.dmrturkiye.com</strong> T&Uuml;RK\u0130YE'nin ilk multimode digital sunucusudur,&nbsp;<br><span style=\"color: rgb(224, 62, 45);\"><strong>DMR YSF D-STAR</strong></span> digital modlar\u0131 destekler.<br><strong><span style=\"color: rgb(241, 196, 15);\">D mod&uuml;l&uuml; B.M TG28600 linklidir.</span></strong><br><strong><span style=\"color: rgb(53, 152, 219);\">ICOM-Terminal support.<br><br><span style=\"color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);\">XLX286 http://xlx286.dmrturkiye.com</span><br></span><span style=\"background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);\">NXDN 286 https://nxdn.ta2kw.keenetic.pro</span></strong><br><span style=\"background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);\"><strong>P25 286 &nbsp;https://p25.ta2kw.keenetic.pro<br>XLXYLV https://xlxylv.ta2kw.keenetic.pro<br><br>YSF 28677<br>YSF 28600</strong></span><br><br>https://www.dmrturkiye.com&nbsp;<br>https://www.facebook.com/groups/dmrturkiye<br><br><strong>TA2KW 73</strong></p>",
+      "description": "<p>T&Uuml;RK\u0130YE Multi-Mode Reflector DMR YSF D-STAR NXDN P25<br><br></p>",
       "dial": {
         "host": "xlx286.dmrturkiye.com",
         "kind": "urf",
@@ -605,7 +605,7 @@
         ]
       },
       "id": "286",
-      "name": "T\u00dcRK\u0130YE Multi-Mode Reflector XLX286",
+      "name": "T\u00dcRK\u0130YE Multi-Mode Reflector",
       "network": "urf",
       "source": "dvref",
       "sponsor": "DMR T\u00dcRK\u0130YE"

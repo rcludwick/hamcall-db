@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1494,
-  "generated": "2026-09-13",
+  "count": 1495,
+  "generated": "2026-09-14",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1376,6 +1376,20 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "DC9VQ"
+    },
+    {
+      "country": "JP",
+      "description": "SETAGAYA JAPAN",
+      "dial": {
+        "host": "27.91.233.142",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00172",
+      "name": "YSF172",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "JS1YRW"
     },
     {
       "country": "US",
@@ -2924,7 +2938,7 @@
     {
       "country": "US",
       "dashboard": "https://kd2qqv.ddns.net",
-      "description": "YSF REFLECTOR",
+      "description": "YSF RELECTOR",
       "dial": {
         "host": "kd2qqv.ddns.net",
         "kind": "ysf",
@@ -5932,7 +5946,7 @@
       "dashboard": "http://mrn-network.duckdns.org/",
       "description": "US Texas MRN",
       "dial": {
-        "host": "71.11.197.90",
+        "host": "66.52.202.127",
         "kind": "ysf",
         "port": 42000
       },
@@ -8335,21 +8349,6 @@
       },
       "id": "22240",
       "name": "XLXEMO",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "Emilia Ovest Multiprotocol Team"
-    },
-    {
-      "country": "IT",
-      "dashboard": "http://ik4nzd.ns0.it:8080",
-      "description": "Emilia Ovest",
-      "dial": {
-        "host": "ik4nzd.ns0.it",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "22243",
-      "name": "XLXEMI",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "Emilia Ovest Multiprotocol Team"
@@ -12268,6 +12267,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "Ko4axl"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://192.168.0.83/index.php",
+      "description": "N7YMM",
+      "dial": {
+        "host": "96.19.67.130",
+        "kind": "ysf",
+        "port": 42002
+      },
+      "id": "31683",
+      "name": "Prescott",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "PRESCOTT"
     },
     {
       "country": "US",
@@ -19338,7 +19352,7 @@
       "dashboard": "http://xlx.mrn.mywire.org/",
       "description": "MRN REF-1",
       "dial": {
-        "host": "71.11.197.90",
+        "host": "66.52.202.127",
         "kind": "ysf",
         "port": 42384
       },

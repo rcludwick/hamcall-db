@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 317,
-  "generated": "2026-09-13",
+  "generated": "2026-09-14",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1372,7 +1372,7 @@
       "country": "GB",
       "dashboard": "https://www.qsos.uk",
       "dial": {
-        "host": "77.68.126.26",
+        "host": "185.109.168.75",
         "kind": "nxdn",
         "port": 41400
       },
