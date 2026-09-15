@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1495,
-  "generated": "2026-09-14",
+  "count": 1498,
+  "generated": "2026-09-15",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1348,6 +1348,20 @@
       "sponsor": "JQ1ZVS"
     },
     {
+      "country": "RU",
+      "dashboard": "https://xlx.clubfm.org",
+      "description": "RND Reflector",
+      "dial": {
+        "host": "xlx.clubfm.org",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00161",
+      "name": "CLUBFM",
+      "network": "ysf",
+      "source": "dvref"
+    },
+    {
       "country": "GR",
       "dashboard": "http://xlx365.sv2snh.gr",
       "description": "URF365",
@@ -1837,7 +1851,7 @@
     },
     {
       "country": "AU",
-      "dashboard": "https://vk1kcm.vk44.net",
+      "dashboard": "https://xlx301.vk44.net",
       "description": "URF301",
       "dial": {
         "host": "xlx301.stagecraft.cx",
@@ -5797,6 +5811,19 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "W7DJS"
+    },
+    {
+      "country": "ES",
+      "description": "Sala EA1-Soria",
+      "dial": {
+        "host": "soriac4fm.duckdns.org",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "12067",
+      "name": "SORIA C4FM",
+      "network": "ysf",
+      "source": "dvref"
     },
     {
       "country": "CW",
@@ -14630,6 +14657,20 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "BA8AQQ"
+    },
+    {
+      "country": "CN",
+      "dashboard": "http://120.27.213.225:551/",
+      "dial": {
+        "host": "120.27.213.225",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "46034",
+      "name": "AH-ADEC",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "BI6AN"
     },
     {
       "country": "CN",

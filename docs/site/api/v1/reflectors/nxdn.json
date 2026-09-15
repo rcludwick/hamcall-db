@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 317,
-  "generated": "2026-09-14",
+  "count": 318,
+  "generated": "2026-09-15",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -4090,6 +4090,21 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "MID SOUTH MULTIMODE"
+    },
+    {
+      "country": "UY",
+      "dashboard": "https://nxdn.uruguay-link.com/",
+      "description": "<p>Uruguay Link NXDN Reflector for Uruguay<br>Operated by CX4AE<br>Talkgroup 7487 Uruguay International<br>FQDN nxdn.uruguay-link.com</p>",
+      "dial": {
+        "host": "nxdn.uruguay-link.com",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "7487",
+      "name": "Uruguay Link NXDN",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "Uruguay Link"
     },
     {
       "country": "ES",

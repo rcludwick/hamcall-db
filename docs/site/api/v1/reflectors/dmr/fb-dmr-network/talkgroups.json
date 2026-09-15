@@ -1,0 +1,47 @@
+{
+  "api_version": "v1",
+  "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
+  "client_refresh_days": 7,
+  "count": 7,
+  "generated": "2026-09-15",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
+  "network": "dmr",
+  "schema_version": 1,
+  "source": {
+    "name": "DVRef",
+    "url": "https://dvref.com/api/v2/dmr/networks/fb-dmr-network/talkgroups/"
+  },
+  "system": "fb-dmr-network",
+  "talkgroups": [
+    {
+      "name": "Main TG on Server",
+      "tg": 210
+    },
+    {
+      "name": "Admin Dave W1NOC",
+      "tg": 211
+    },
+    {
+      "name": "This TG is for testing.",
+      "tg": 212
+    },
+    {
+      "name": "World Wide MultiMode via P25/TG-609, WiresX via Reflector YSF08005 & TG 310 on the FB DMR Server",
+      "tg": 310
+    },
+    {
+      "name": "TG 411 For Emergency Traffic during bad weather or any other local events",
+      "tg": 411
+    },
+    {
+      "name": "This talk group has been created for Hams living in Southern New Jersey. All are welcome. This Talk Group is also linked to the KA2DMR DMR repeater and utilized by ARES when needed",
+      "tg": 609
+    },
+    {
+      "name": "TG 43710 host Happy Hour weekdays 3PM - 5PM Eastern Time. This Talk Group is used as a alternative to when WiresX Room 43710 belonging to K3ZA is experiencing network problems.",
+      "tg": 43710
+    }
+  ]
+}

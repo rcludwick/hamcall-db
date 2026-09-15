@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 186,
-  "generated": "2026-09-14",
+  "count": 188,
+  "generated": "2026-09-15",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -510,6 +510,28 @@
       "talkgroups": "reflectors/dmr/amcomm/talkgroups.json"
     },
     {
+      "country": "CN",
+      "dashboard": "http://dmr.zper.org.cn/",
+      "dial": {
+        "host": "60.173.209.129",
+        "kind": "mmdvm",
+        "port": 55551,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "anhui-digital-integrated-emergency-communication",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/anhui-digital-integrated-emergency-communication/talkgroups/"
+      },
+      "id": "anhui-digital-integrated-emergency-communication-server-anhui-digital-integrated-emergency-communication",
+      "name": "Anhui Digital-Integrated Emergency Communication",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "BI6AN",
+      "system": "anhui-digital-integrated-emergency-communication",
+      "talkgroups": "reflectors/dmr/anhui-digital-integrated-emergency-communication/talkgroups.json"
+    },
+    {
       "country": "TH",
       "dashboard": "http://toptech.3bbddns.com:17077",
       "id": "ar-norasingh-server-server-1",
@@ -993,7 +1015,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "Extended Freedom Network",
-      "system": "extended-freedom-network"
+      "system": "extended-freedom-network",
+      "talkgroups": "reflectors/dmr/extended-freedom-network/talkgroups.json"
     },
     {
       "country": "US",
@@ -1015,7 +1038,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "Extended Freedom Network",
-      "system": "extended-freedom-network"
+      "system": "extended-freedom-network",
+      "talkgroups": "reflectors/dmr/extended-freedom-network/talkgroups.json"
     },
     {
       "country": "US",
@@ -1037,7 +1061,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "N2MRH",
-      "system": "fb-dmr-network"
+      "system": "fb-dmr-network",
+      "talkgroups": "reflectors/dmr/fb-dmr-network/talkgroups.json"
     },
     {
       "country": "IT",
@@ -1058,7 +1083,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "iw9gtr",
-      "system": "fd_adn_22211_italy"
+      "system": "fd_adn_22211_italy",
+      "talkgroups": "reflectors/dmr/fd_adn_22211_italy/talkgroups.json"
     },
     {
       "country": "IT",
@@ -1848,6 +1874,27 @@
       "source": "dvref",
       "sponsor": "IU7MNA",
       "system": "hamthings"
+    },
+    {
+      "country": "CN",
+      "dashboard": "http://dmr.zper.org.cn/",
+      "dial": {
+        "host": "60.173.209.129",
+        "kind": "mmdvm",
+        "port": 55552,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "hb_cn_adec",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/hb_cn_adec/talkgroups/"
+      },
+      "id": "hb_cn_adec-server-hb_cn_adec",
+      "name": "HB_CN_ADEC",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "BI6AN",
+      "system": "hb_cn_adec"
     },
     {
       "country": "CN",

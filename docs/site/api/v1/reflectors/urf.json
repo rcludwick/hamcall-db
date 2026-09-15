@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 103,
-  "generated": "2026-09-14",
+  "generated": "2026-09-15",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -667,8 +667,7 @@
     },
     {
       "country": "AU",
-      "dashboard": "https://vk1kcm.vk44.net",
-      "description": "<p>This is the Canberra XLX/URFd reflector. &nbsp;It's a replacement/continuation of the old xlx301 run by Rob, VK2HR. &nbsp;Sadly Rob is no longer able to run the old one, so this one is here to continue its job!</p>\r\n<p>Module C is the most likely to have activity.</p>",
+      "dashboard": "https://xlx301.vk44.net",
       "dial": {
         "host": "xlx301.stagecraft.cx",
         "kind": "urf"

@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 334,
-  "generated": "2026-09-14",
+  "count": 336,
+  "generated": "2026-09-15",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1746,8 +1746,7 @@
     },
     {
       "country": "AU",
-      "dashboard": "https://vk1kcm.vk44.net",
-      "description": "<p>This is the Canberra XLX/URFd reflector. &nbsp;It's a replacement/continuation of the old xlx301 run by Rob, VK2HR. &nbsp;Sadly Rob is no longer able to run the old one, so this one is here to continue its job!</p>\r\n<p>Module C is the most likely to have activity.</p>",
+      "dashboard": "https://xlx301.vk44.net",
       "dial": {
         "host": "xlx301.stagecraft.cx",
         "kind": "p25",
@@ -4221,6 +4220,21 @@
     },
     {
       "country": "UY",
+      "dashboard": "https://p25.uruguay-link.com/",
+      "description": "<p>Uruguay-Link P25 reflector for amateur radio operators in Uruguay. Operated by CX4AE. TG 7487. UDP port 41000.</p>",
+      "dial": {
+        "host": "p25.uruguay-link.com",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "7487",
+      "name": "Uruguay-Link P25",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Uruguay Link"
+    },
+    {
+      "country": "UY",
       "dashboard": "http://uruguaynet.2mydns.net",
       "dial": {
         "host": "198.245.55.26",
@@ -4369,6 +4383,21 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "WMRA"
+    },
+    {
+      "country": "CA",
+      "dashboard": "http://ve2nbz.ddns.net:90",
+      "description": "<p>P25 MAURICIE</p>",
+      "dial": {
+        "host": "76.71.232.202",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "819",
+      "name": "P25 Mauricie et Centre du Qu\u00e9bec",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "VE2NBZ/VE2RVU"
     },
     {
       "country": "CN",
