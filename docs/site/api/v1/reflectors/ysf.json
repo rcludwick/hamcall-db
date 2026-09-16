@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1498,
-  "generated": "2026-09-15",
+  "count": 1504,
+  "generated": "2026-09-16",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1835,6 +1835,21 @@
       "sponsor": "jg1xwv"
     },
     {
+      "country": "JP",
+      "dashboard": "http://xlx297.duckdns.org/",
+      "description": "Kanazawa",
+      "dial": {
+        "host": "xlx297.duckdns.org",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00297",
+      "name": "XLX297",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "JA9HYM"
+    },
+    {
       "country": "BR",
       "dashboard": "https://xlx300.net",
       "description": "BR300",
@@ -2480,6 +2495,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "PY2KO"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://xlx.somberjp.com",
+      "description": "URF607",
+      "dial": {
+        "host": "srf.somberjp.com",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00607",
+      "name": "URF607",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "KK7QAS"
     },
     {
       "country": "JP",
@@ -5439,7 +5469,7 @@
       "dashboard": "https://dvswitch.org/Modern/?conf=YSF_NA_Reflector",
       "description": "North America",
       "dial": {
-        "host": "ysf.dvswitch.org",
+        "host": "44.15.64.51",
         "kind": "ysf",
         "port": 42000
       },
@@ -6817,7 +6847,7 @@
       "name": "XLX211",
       "network": "ysf",
       "source": "dvref",
-      "sponsor": "E4EJV"
+      "sponsor": "EA4EJV"
     },
     {
       "country": "HU",
@@ -7698,7 +7728,7 @@
       "name": "DISTRITO-7",
       "network": "ysf",
       "source": "dvref",
-      "sponsor": "xreflector"
+      "sponsor": "EA7JBK"
     },
     {
       "country": "ES",
@@ -7876,6 +7906,21 @@
       },
       "id": "21453",
       "name": "ES-EA5RCZ",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "xreflector"
+    },
+    {
+      "country": "ES",
+      "dashboard": "https://xlx214.xreflector.es/yfsmulti",
+      "description": "EA-5",
+      "dial": {
+        "host": "xlx214.xreflector.es",
+        "kind": "ysf",
+        "port": 42004
+      },
+      "id": "21454",
+      "name": "EA-4",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "xreflector"
@@ -12679,7 +12724,7 @@
       "dashboard": "http://wp4nnz.ddns.net/index.php",
       "description": "Coamo WP4NNZ",
       "dial": {
-        "host": "64.237.214.46",
+        "host": "173.215.225.88",
         "kind": "ysf",
         "port": 42002
       },
@@ -12761,6 +12806,20 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "WP4SKH"
+    },
+    {
+      "country": "DE",
+      "description": "DARC OV Teuto",
+      "dial": {
+        "host": "feargewinnt.ddns.net",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "33790",
+      "name": "TEUTO-N02",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "DN9SGE"
     },
     {
       "country": "CL",
@@ -14273,14 +14332,15 @@
     },
     {
       "country": "GB",
-      "description": "UK SW Cluster",
+      "dashboard": "http://zorba1970.no-ip.biz:8007",
+      "description": "Soccer Chat",
       "dial": {
         "host": "zorba1970.no-ip.biz",
         "kind": "ysf",
-        "port": 42007
+        "port": 42006
       },
-      "id": "44206",
-      "name": "SW-Cluster",
+      "id": "44200",
+      "name": "Soccer",
       "network": "ysf",
       "source": "dvref"
     },
@@ -14946,6 +15006,20 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "BH5HWP"
+    },
+    {
+      "country": "CN",
+      "description": "DMRISGOOD",
+      "dial": {
+        "host": "tg460677.cn",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "46666",
+      "name": "BI4KVT-46666",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "BI4KVT"
     },
     {
       "country": "CN",
@@ -17961,6 +18035,20 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "KN4EWT / Netoholics Network"
+    },
+    {
+      "country": "GB",
+      "dashboard": "http://m0usr.net",
+      "dial": {
+        "host": "m0usr.net",
+        "kind": "ysf",
+        "port": 42002
+      },
+      "id": "67762",
+      "name": "m0usr-room",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "me"
     },
     {
       "country": "GB",

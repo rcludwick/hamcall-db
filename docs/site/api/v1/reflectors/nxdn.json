@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 318,
-  "generated": "2026-09-15",
+  "count": 319,
+  "generated": "2026-09-16",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -28,7 +28,7 @@
       "dashboard": "https://dvswitch.org/Modern/?conf=NXDN_NA_Reflector",
       "description": "<p>NXDN North America</p>",
       "dial": {
-        "host": "nxdn.dvswitch.org",
+        "host": "44.15.64.51",
         "kind": "nxdn",
         "port": 42400
       },
@@ -1441,20 +1441,6 @@
       "source": "dvref"
     },
     {
-      "country": "GB",
-      "dashboard": "https://england.oz-dmr.network/",
-      "dial": {
-        "host": "england.oz-dmr.network",
-        "kind": "nxdn",
-        "port": 41400
-      },
-      "id": "23595",
-      "name": "23595",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "OZ-DMR NETWORK"
-    },
-    {
       "country": "US",
       "description": "<p>Southwest Florida NXDN Reflector (239) - Part of the SWFL-Link system sponsored by Fort Myers Amateur Radio Club.</p>\r\n<p>&nbsp;</p>",
       "dial": {
@@ -2240,6 +2226,20 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "S55ML, S56IAR"
+    },
+    {
+      "country": "JP",
+      "dashboard": "http://xlx297.duckdns.org/",
+      "dial": {
+        "host": "xlx297.duckdns.org",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "297",
+      "name": "URF297",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "JA9HYM"
     },
     {
       "country": "CL",
@@ -3294,6 +3294,19 @@
       "name": "NXDN to DMR TG46601",
       "network": "nxdn",
       "source": "dvref"
+    },
+    {
+      "country": "CN",
+      "dial": {
+        "host": "tg460677.cn",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "46666",
+      "name": "DMRISGOOD",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "BI4KVT"
     },
     {
       "country": "US",

@@ -1,0 +1,63 @@
+{
+  "api_version": "v1",
+  "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
+  "client_refresh_days": 7,
+  "count": 11,
+  "generated": "2026-09-16",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
+  "network": "dmr",
+  "schema_version": 1,
+  "source": {
+    "name": "DVRef",
+    "url": "https://dvref.com/api/v2/dmr/networks/freedmr-network/talkgroups/"
+  },
+  "system": "freedmr-network",
+  "talkgroups": [
+    {
+      "name": "Mexico National",
+      "tg": 334
+    },
+    {
+      "name": "Argentina",
+      "tg": 722
+    },
+    {
+      "name": "DVSwitch",
+      "tg": 3166
+    },
+    {
+      "name": "AllSTar<>TGIF<>Echolink<>M17",
+      "tg": 3340
+    },
+    {
+      "name": "XE1 Mexico",
+      "tg": 3341
+    },
+    {
+      "name": "XE2 Mexico",
+      "tg": 3342
+    },
+    {
+      "name": "XE3 Mexico",
+      "tg": 3343
+    },
+    {
+      "name": "Red Delta Victor",
+      "tg": 7221
+    },
+    {
+      "name": "FreeDMR IT",
+      "tg": 22200
+    },
+    {
+      "name": "Extended Freedom Network",
+      "tg": 23525
+    },
+    {
+      "name": "Experimentation Mexico",
+      "tg": 33455
+    }
+  ]
+}

@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 188,
-  "generated": "2026-09-15",
+  "generated": "2026-09-16",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1105,7 +1105,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "iw9gtr",
-      "system": "fd_adn_22212"
+      "system": "fd_adn_22212",
+      "talkgroups": "reflectors/dmr/fd_adn_22212/talkgroups.json"
     },
     {
       "country": "IT",
@@ -1126,7 +1127,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "ADN SYSTEMS",
-      "system": "fd_adn_2221_italy"
+      "system": "fd_adn_2221_italy",
+      "talkgroups": "reflectors/dmr/fd_adn_2221_italy/talkgroups.json"
     },
     {
       "country": "PA",
@@ -1148,7 +1150,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "FreeDMR Central America",
-      "system": "freedmr-central-america"
+      "system": "freedmr-central-america",
+      "talkgroups": "reflectors/dmr/freedmr-central-america/talkgroups.json"
     },
     {
       "country": "GB",
@@ -1170,7 +1173,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "FreeDMR",
-      "system": "freedmr-network"
+      "system": "freedmr-network",
+      "talkgroups": "reflectors/dmr/freedmr-network/talkgroups.json"
     },
     {
       "country": "FR",
@@ -1192,7 +1196,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "FreeDMR",
-      "system": "freedmr-network"
+      "system": "freedmr-network",
+      "talkgroups": "reflectors/dmr/freedmr-network/talkgroups.json"
     },
     {
       "country": "GR",
@@ -1214,7 +1219,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "FreeDMR",
-      "system": "freedmr-network"
+      "system": "freedmr-network",
+      "talkgroups": "reflectors/dmr/freedmr-network/talkgroups.json"
     },
     {
       "country": "IT",
@@ -1236,7 +1242,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "FreeDMR",
-      "system": "freedmr-network"
+      "system": "freedmr-network",
+      "talkgroups": "reflectors/dmr/freedmr-network/talkgroups.json"
     },
     {
       "country": "GB",
@@ -1258,7 +1265,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "FreeDMR",
-      "system": "freedmr-network"
+      "system": "freedmr-network",
+      "talkgroups": "reflectors/dmr/freedmr-network/talkgroups.json"
     },
     {
       "country": "AR",
@@ -1280,7 +1288,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "FreeDMR",
-      "system": "freedmr-network"
+      "system": "freedmr-network",
+      "talkgroups": "reflectors/dmr/freedmr-network/talkgroups.json"
     },
     {
       "country": "AU",
@@ -1302,7 +1311,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "FreeDMR",
-      "system": "freedmr-network"
+      "system": "freedmr-network",
+      "talkgroups": "reflectors/dmr/freedmr-network/talkgroups.json"
     },
     {
       "country": "BR",
@@ -1324,7 +1334,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "FreeDMR",
-      "system": "freedmr-network"
+      "system": "freedmr-network",
+      "talkgroups": "reflectors/dmr/freedmr-network/talkgroups.json"
     },
     {
       "country": "CN",
@@ -1346,7 +1357,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "FreeDMR",
-      "system": "freedmr-network"
+      "system": "freedmr-network",
+      "talkgroups": "reflectors/dmr/freedmr-network/talkgroups.json"
     },
     {
       "country": "CO",
@@ -1368,7 +1380,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "FreeDMR",
-      "system": "freedmr-network"
+      "system": "freedmr-network",
+      "talkgroups": "reflectors/dmr/freedmr-network/talkgroups.json"
     },
     {
       "country": "MX",
@@ -1390,7 +1403,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "FreeDMR",
-      "system": "freedmr-network"
+      "system": "freedmr-network",
+      "talkgroups": "reflectors/dmr/freedmr-network/talkgroups.json"
     },
     {
       "country": "NZ",
@@ -1412,7 +1426,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "FreeDMR",
-      "system": "freedmr-network"
+      "system": "freedmr-network",
+      "talkgroups": "reflectors/dmr/freedmr-network/talkgroups.json"
     },
     {
       "country": "NI",
@@ -1434,7 +1449,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "FreeDMR",
-      "system": "freedmr-network"
+      "system": "freedmr-network",
+      "talkgroups": "reflectors/dmr/freedmr-network/talkgroups.json"
     },
     {
       "country": "AU",
@@ -1456,7 +1472,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "FreeDMR",
-      "system": "freedmr-network"
+      "system": "freedmr-network",
+      "talkgroups": "reflectors/dmr/freedmr-network/talkgroups.json"
     },
     {
       "country": "AU",
@@ -1478,7 +1495,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "FreeDMR",
-      "system": "freedmr-network"
+      "system": "freedmr-network",
+      "talkgroups": "reflectors/dmr/freedmr-network/talkgroups.json"
     },
     {
       "country": "GB",
@@ -1500,7 +1518,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "FreeDMR",
-      "system": "freedmr-network"
+      "system": "freedmr-network",
+      "talkgroups": "reflectors/dmr/freedmr-network/talkgroups.json"
     },
     {
       "country": "GB",
@@ -1522,7 +1541,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "FreeDMR",
-      "system": "freedmr-network"
+      "system": "freedmr-network",
+      "talkgroups": "reflectors/dmr/freedmr-network/talkgroups.json"
     },
     {
       "country": "US",
@@ -1544,7 +1564,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "FreeDMR",
-      "system": "freedmr-network"
+      "system": "freedmr-network",
+      "talkgroups": "reflectors/dmr/freedmr-network/talkgroups.json"
     },
     {
       "country": "US",
@@ -1566,7 +1587,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "FreeDMR",
-      "system": "freedmr-network"
+      "system": "freedmr-network",
+      "talkgroups": "reflectors/dmr/freedmr-network/talkgroups.json"
     },
     {
       "country": "IT",
@@ -1577,7 +1599,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "FreeDMR",
-      "system": "freedmr-network"
+      "system": "freedmr-network",
+      "talkgroups": "reflectors/dmr/freedmr-network/talkgroups.json"
     },
     {
       "country": "RE",

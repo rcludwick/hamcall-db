@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 336,
-  "generated": "2026-09-15",
+  "count": 338,
+  "generated": "2026-09-16",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -87,7 +87,7 @@
       "dashboard": "https://dvswitch.org/Modern/?conf=P25_NA_Reflector",
       "description": "<p>P25 North America</p>",
       "dial": {
-        "host": "p25.dvswitch.org",
+        "host": "44.15.64.51",
         "kind": "p25",
         "port": 41000
       },
@@ -102,7 +102,7 @@
       "dashboard": "https://dvswitch.org/Modern/?conf=P25_TAC1_Reflector",
       "description": "<p>P25 NA TAC 1</p>",
       "dial": {
-        "host": "p25.dvswitch.org",
+        "host": "44.15.64.51",
         "kind": "p25",
         "port": 41010
       },
@@ -1731,6 +1731,20 @@
       "sponsor": "YM2KT"
     },
     {
+      "country": "JP",
+      "dashboard": "http://xlx297.duckdns.org/",
+      "dial": {
+        "host": "xlx297.duckdns.org",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "297",
+      "name": "URF297",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "JA9HYM"
+    },
+    {
       "country": "US",
       "dashboard": "http://xlx043.pauldingares.com",
       "dial": {
@@ -3183,6 +3197,19 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "BH3UYQ"
+    },
+    {
+      "country": "CN",
+      "dial": {
+        "host": "tg460677.cn",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "46666",
+      "name": "DMRISGOOD",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "BI4KVT"
     },
     {
       "country": "CN",
