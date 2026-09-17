@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1504,
-  "generated": "2026-09-16",
+  "count": 1502,
+  "generated": "2026-09-17",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1706,7 +1706,7 @@
     {
       "country": "GB",
       "dashboard": "https://xlx.oz-dmr.network/",
-      "description": "OZ-DMR NET",
+      "description": "OZ-DMR NETWORK",
       "dial": {
         "host": "xlx.oz-dmr.network",
         "kind": "ysf",
@@ -1854,7 +1854,7 @@
       "dashboard": "https://xlx300.net",
       "description": "BR300",
       "dial": {
-        "host": "xlx300.net",
+        "host": "93.95.227.114",
         "kind": "ysf",
         "port": 42300
       },
@@ -2510,6 +2510,19 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "KK7QAS"
+    },
+    {
+      "country": "RU",
+      "dial": {
+        "host": "ysf.tplinkdns.com",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00618",
+      "name": "618",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "R2AZW"
     },
     {
       "country": "JP",
@@ -4297,7 +4310,7 @@
       "country": "US",
       "description": "DARC-WAYNECONY",
       "dial": {
-        "host": "98.3.107.74",
+        "host": "98.3.98.141",
         "kind": "ysf",
         "port": 42003
       },
@@ -4404,7 +4417,7 @@
         "port": 42505
       },
       "id": "05050",
-      "name": "FD-VK-TG505",
+      "name": "FD-TG505",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "OZ-DMR NETWORK"
@@ -6439,7 +6452,7 @@
     },
     {
       "country": "ES",
-      "dashboard": "http://ysfreflector-rem.spdns.org/",
+      "dashboard": "http://ysfreflector-rem.spdns.org/main.php",
       "description": "YSF Reflector",
       "dial": {
         "host": "80.211.163.139",
@@ -6471,7 +6484,7 @@
       "dashboard": "https://xrf098.mydns.jp:8030/",
       "description": "YSF-NAGOYA",
       "dial": {
-        "host": "125.198.85.43",
+        "host": "118.109.150.22",
         "kind": "ysf",
         "port": 42000
       },
@@ -8028,6 +8041,21 @@
       "sponsor": "xreflector.es"
     },
     {
+      "country": "ES",
+      "dashboard": "https://xlx214.xreflector.es/yfsmulti",
+      "description": "EA-DISTRITO",
+      "dial": {
+        "host": "xlx214.xreflector.es",
+        "kind": "ysf",
+        "port": 42001
+      },
+      "id": "21500",
+      "name": "EA-DISTRITO",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "xreflector"
+    },
+    {
       "country": "US",
       "dashboard": "http://kv4sysf.radiotechnology.xyz",
       "description": "KV4S",
@@ -9300,7 +9328,7 @@
         "port": 42000
       },
       "id": "23595",
-      "name": "OZ-DMR",
+      "name": "OZ-DMR (UK)",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "OZ-DMR NETWORK"
@@ -13379,7 +13407,7 @@
       "dashboard": "http://fortiga.ddns.net:42180",
       "description": "SCANIA TEAM",
       "dial": {
-        "host": "85.73.210.100",
+        "host": "79.131.81.139",
         "kind": "ysf",
         "port": 42007
       },
@@ -14687,21 +14715,6 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "BD7PET"
-    },
-    {
-      "country": "CN",
-      "dashboard": "http://47.109.55.52/",
-      "description": "YSF_BM_TG46023",
-      "dial": {
-        "host": "47.109.55.52",
-        "kind": "ysf",
-        "port": 42005
-      },
-      "id": "46023",
-      "name": "CKG-TG46023",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "[email removed]"
     },
     {
       "country": "CN",
@@ -16970,7 +16983,7 @@
       "dashboard": "http://xrf098.mydns.jp",
       "description": "XLX reflector",
       "dial": {
-        "host": "125.198.85.43",
+        "host": "118.109.150.22",
         "kind": "ysf",
         "port": 42001
       },
@@ -17451,8 +17464,8 @@
     },
     {
       "country": "ES",
-      "dashboard": "http://ysfdistrito4.xreflector.es/",
-      "description": "YSF Distrito 4",
+      "dashboard": "http://ysfdistrito4.xreflector.es/main.php",
+      "description": "DISTRITO 4",
       "dial": {
         "host": "212.237.0.67",
         "kind": "ysf",
@@ -17462,7 +17475,7 @@
       "name": "EA-Distrito-4",
       "network": "ysf",
       "source": "dvref",
-      "sponsor": "xreflector.es"
+      "sponsor": "Radio Club REM"
     },
     {
       "country": "US",
@@ -17507,50 +17520,6 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "xreflector.es"
-    },
-    {
-      "country": "CN",
-      "description": "YSF2P25-46005",
-      "dial": {
-        "host": "47.109.24.90",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "63305",
-      "name": "C4P25-TG46005",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "[email removed]"
-    },
-    {
-      "country": "CN",
-      "dashboard": "http://47.109.55.52",
-      "description": "YSF_BM_TG46001",
-      "dial": {
-        "host": "47.109.55.52",
-        "kind": "ysf",
-        "port": 42006
-      },
-      "id": "63306",
-      "name": "CKG-TG46001",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "[email removed]"
-    },
-    {
-      "country": "CN",
-      "dashboard": "http://47.109.55.52/",
-      "description": "DGID_Multi_BM",
-      "dial": {
-        "host": "47.109.55.52",
-        "kind": "ysf",
-        "port": 42002
-      },
-      "id": "63307",
-      "name": "CKG-DGID",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "[email removed]"
     },
     {
       "country": "CN",
@@ -19260,7 +19229,7 @@
       "dashboard": "http://xrf098.mydns.jp:8050",
       "description": "YSF-NAGOYA-2",
       "dial": {
-        "host": "125.198.85.43",
+        "host": "118.109.150.22",
         "kind": "ysf",
         "port": 42002
       },
@@ -19479,7 +19448,7 @@
     {
       "country": "US",
       "dashboard": "http://xlx.mrn.mywire.org/",
-      "description": "MRN REF-1",
+      "description": "Texas-MRN",
       "dial": {
         "host": "66.52.202.127",
         "kind": "ysf",
@@ -21587,7 +21556,7 @@
       "dashboard": "http://xrf298.mydns.jp",
       "description": "XLX reflector",
       "dial": {
-        "host": "122.133.239.109",
+        "host": "60.236.33.182",
         "kind": "ysf",
         "port": 42000
       },

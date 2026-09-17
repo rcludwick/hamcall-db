@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 319,
-  "generated": "2026-09-16",
+  "count": 322,
+  "generated": "2026-09-17",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1439,6 +1439,20 @@
       "name": "NXDN Scotland",
       "network": "nxdn",
       "source": "dvref"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://england.oz-dmr.network/",
+      "dial": {
+        "host": "england.oz-dmr.network",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "23595",
+      "name": "OZ-DMR NETWORK (UK)",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "OZ-DMR NETWORK"
     },
     {
       "country": "US",
@@ -3139,7 +3153,7 @@
       "dashboard": "http://xrf298.mydns.jp:8070/",
       "description": "<p>YSF-NAGOYA-2/TGIF TG-310 / WIRES-X 42314 / XLX298 Y /XLX098 H /M17-LIM L /PEANUT XLX561 P</p>",
       "dial": {
-        "host": "122.133.239.109",
+        "host": "60.236.33.182",
         "kind": "nxdn",
         "port": 41400
       },
@@ -3755,6 +3769,20 @@
       "sponsor": "2007 DX GRoup"
     },
     {
+      "country": "US",
+      "dashboard": "http://45.33.22.225:4000/",
+      "dial": {
+        "host": "45.33.22.225",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "65123",
+      "name": "TEXAS-MRN NXDN",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "Murphy Radio Network (MRN)"
+    },
+    {
       "country": "IT",
       "dial": {
         "host": "ysf365.mooo.com",
@@ -4268,6 +4296,21 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "Chandler Ham Radio Club"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://urf865.k1lnx.net/",
+      "description": "<p>Modules in use (no transcoding):<br><br>A - DMR MAIN *<br>B - DMR TAC-1<br>C - DMR TAC-2<br>D - NXDN MAIN<br>E - P25 MAIN **<br><br>* Also linked fulltime to TGIF talkgroup 865<br>** Currently experimenting with patching to my DVM core, available for use otherwise</p>",
+      "dial": {
+        "host": "urf865.k1lnx.net",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "865",
+      "name": "URF865",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "Stephen Brown - K1LNX"
     },
     {
       "country": "US",

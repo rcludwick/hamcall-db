@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 188,
-  "generated": "2026-09-16",
+  "generated": "2026-09-17",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1622,7 +1622,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "FR1LC",
-      "system": "freedmr-reunion"
+      "system": "freedmr-reunion",
+      "talkgroups": "reflectors/dmr/freedmr-reunion/talkgroups.json"
     },
     {
       "country": "DE",
@@ -1643,7 +1644,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "DL2OAM",
-      "system": "funknetz-celle"
+      "system": "funknetz-celle",
+      "talkgroups": "reflectors/dmr/funknetz-celle/talkgroups.json"
     },
     {
       "country": "GR",
@@ -1665,7 +1667,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "AETHER HELLAS NET",
-      "system": "gr-aether-hellas"
+      "system": "gr-aether-hellas",
+      "talkgroups": "reflectors/dmr/gr-aether-hellas/talkgroups.json"
     },
     {
       "country": "GR",
@@ -1687,7 +1690,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "AETHER HELLAS NET",
-      "system": "gr-aether-hellas"
+      "system": "gr-aether-hellas",
+      "talkgroups": "reflectors/dmr/gr-aether-hellas/talkgroups.json"
     },
     {
       "country": "GR",
@@ -1709,7 +1713,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "AETHER HELLAS NET",
-      "system": "gr-aether-hellas"
+      "system": "gr-aether-hellas",
+      "talkgroups": "reflectors/dmr/gr-aether-hellas/talkgroups.json"
     },
     {
       "country": "GR",
@@ -1731,7 +1736,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "AETHER HELLAS NET",
-      "system": "gr-aether-hellas"
+      "system": "gr-aether-hellas",
+      "talkgroups": "reflectors/dmr/gr-aether-hellas/talkgroups.json"
     },
     {
       "country": "GR",
@@ -1753,7 +1759,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "AETHER HELLAS NET",
-      "system": "gr-aether-hellas"
+      "system": "gr-aether-hellas",
+      "talkgroups": "reflectors/dmr/gr-aether-hellas/talkgroups.json"
     },
     {
       "country": "US",
@@ -1775,7 +1782,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "Ham United",
-      "system": "ham-united-3101"
+      "system": "ham-united-3101",
+      "talkgroups": "reflectors/dmr/ham-united-3101/talkgroups.json"
     },
     {
       "country": "US",

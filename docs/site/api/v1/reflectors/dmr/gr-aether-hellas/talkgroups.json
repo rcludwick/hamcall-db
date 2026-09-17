@@ -1,0 +1,71 @@
+{
+  "api_version": "v1",
+  "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
+  "client_refresh_days": 7,
+  "count": 13,
+  "generated": "2026-09-17",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
+  "network": "dmr",
+  "schema_version": 1,
+  "source": {
+    "name": "DVRef",
+    "url": "https://dvref.com/api/v2/dmr/networks/gr-aether-hellas/talkgroups/"
+  },
+  "system": "gr-aether-hellas",
+  "talkgroups": [
+    {
+      "name": "WORLDWIDE AETHER HELLAS",
+      "tg": 91
+    },
+    {
+      "name": "AETHER HELLAS",
+      "tg": 202
+    },
+    {
+      "name": "ATHENS AETHER HELLAS",
+      "tg": 2021
+    },
+    {
+      "name": "CENTRAL & WEST MACEDONIA AETHER HELLAS",
+      "tg": 2022
+    },
+    {
+      "name": "PELOPONNESE AETHER HELLAS",
+      "tg": 2023
+    },
+    {
+      "name": "THESSALY CENTRAL AETHER HELLAS",
+      "tg": 2024
+    },
+    {
+      "name": "DODECANESE RHODOS ISLANDS AETHER HELLAS",
+      "tg": 2025
+    },
+    {
+      "name": "EPIRUS AETHER HELLAS",
+      "tg": 2026
+    },
+    {
+      "name": "THRACE AND EAST MACEDONIA AETHER HELLAS",
+      "tg": 2027
+    },
+    {
+      "name": "ALL ISLANDS AETHER HELLAS",
+      "tg": 2028
+    },
+    {
+      "name": "CRETE AETHER HELLAS",
+      "tg": 2029
+    },
+    {
+      "name": "ECHO TEST VOICE - AETHER HELLAS",
+      "tg": 9990
+    },
+    {
+      "name": "D-APRS AETHER HELLAS",
+      "tg": 900999
+    }
+  ]
+}

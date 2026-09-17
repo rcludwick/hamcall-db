@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 105,
-  "generated": "2026-09-16",
+  "count": 108,
+  "generated": "2026-09-17",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -557,6 +557,19 @@
       "sponsor": "9Y4C - DXHAMS Amateur Radio Group"
     },
     {
+      "country": "JP",
+      "dashboard": "http://xlx274.duckdns.org/",
+      "dial": {
+        "host": "xlx274.duckdns.org",
+        "kind": "urf"
+      },
+      "id": "274",
+      "name": "URF274",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "JG1LKT"
+    },
+    {
       "country": "US",
       "dashboard": "https://xlx277.bitbybithams.com",
       "description": "<p>Bit By Bit Hams 277, part of the larger Bit By Bit Hams transoding network.</p>\r\n<p>&nbsp;</p>",
@@ -662,7 +675,7 @@
       "country": "BR",
       "dashboard": "https://xlx300.net/",
       "dial": {
-        "host": "xlx300.net",
+        "host": "93.95.227.114",
         "kind": "urf",
         "modules": [
           "A",
@@ -1279,6 +1292,20 @@
     },
     {
       "country": "US",
+      "dashboard": "http://urf865.k1lnx.net/",
+      "description": "<p>Modules in use (no transcoding):<br><br>A - DMR MAIN *<br>B - DMR TAC-1<br>C - DMR TAC-2<br>D - NXDN MAIN<br>E - P25 MAIN **<br><br>* Also linked fulltime to TGIF talkgroup 865<br>** Currently experimenting with patching to my DVM core, available for use otherwise</p>",
+      "dial": {
+        "host": "urf865.k1lnx.net",
+        "kind": "urf"
+      },
+      "id": "865",
+      "name": "KNXDVHUB",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "Stephen Brown - K1LNX"
+    },
+    {
+      "country": "US",
       "dashboard": "http://urfd.dvswitch.org/urf",
       "description": "<p>DVSwitch test</p>",
       "dial": {
@@ -1697,6 +1724,28 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "G6PHF"
+    },
+    {
+      "country": "MY",
+      "dashboard": "http://xlx.hamsup.my/urf",
+      "dial": {
+        "host": "xlx.hamsup.my",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "D",
+          "M",
+          "N",
+          "P",
+          "S",
+          "X"
+        ]
+      },
+      "id": "MYR",
+      "name": "URFMYR",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "9W2KHN"
     },
     {
       "country": "US",
