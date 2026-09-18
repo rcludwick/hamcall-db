@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 108,
-  "generated": "2026-09-17",
+  "generated": "2026-09-18",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -675,7 +675,7 @@
       "country": "BR",
       "dashboard": "https://xlx300.net/",
       "dial": {
-        "host": "93.95.227.114",
+        "host": "xlx300.net",
         "kind": "urf",
         "modules": [
           "A",
@@ -983,17 +983,17 @@
     },
     {
       "country": "US",
-      "dashboard": "https://urf493.w0chp.radio",
-      "description": "<p>DMR and YSF modes supported. More modes coming soon.</p>\r\n<p>Module E is the WPSD Chat, and is bridged with BrandMeister TG 3170603. Module E is the default YSF module. See&nbsp;<a href=\"https://w0chp.radio/xlx493-reflector/\">the URF/XLX 493 info Page for details.</a></p>",
+      "dashboard": "https://vex.w0chp.radio",
+      "description": "<p>DMR, YSF and NXDN modes supported. More modes coming...eventually. :)</p>\n<p>Default Module E is the WPSD Chat... bridged with DMR and NXDN TG493.</p>",
       "dial": {
-        "host": "urf493.w0chp.radio",
+        "host": "vex.w0chp.radio",
         "kind": "urf",
         "modules": [
           "E"
         ]
       },
       "id": "493",
-      "name": "URF493 by W0CHP",
+      "name": "VEX493 by W0CHP",
       "network": "urf",
       "source": "dvref",
       "sponsor": "W0CHP"
@@ -1519,6 +1519,7 @@
     {
       "country": "CZ",
       "dashboard": "http://128.0.182.6",
+      "description": "<p>XLXD - Multi-Mode-Reflector</p>",
       "dial": {
         "host": "128.0.182.6",
         "kind": "urf",

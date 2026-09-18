@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1502,
-  "generated": "2026-09-17",
+  "count": 1511,
+  "generated": "2026-09-18",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1854,7 +1854,7 @@
       "dashboard": "https://xlx300.net",
       "description": "BR300",
       "dial": {
-        "host": "93.95.227.114",
+        "host": "xlx300.net",
         "kind": "ysf",
         "port": 42300
       },
@@ -2324,14 +2324,14 @@
     {
       "country": "US",
       "dashboard": "https://urf493.w0chp.radio",
-      "description": "URF/XLX493",
+      "description": "VEX493",
       "dial": {
-        "host": "urf493.w0chp.radio",
+        "host": "vex.w0chp.radio",
         "kind": "ysf",
         "port": 42000
       },
       "id": "00493",
-      "name": "URF493",
+      "name": "VEX493",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "W0CHP"
@@ -2439,6 +2439,156 @@
       "sponsor": "Jan, DG3YJB"
     },
     {
+      "country": "AR",
+      "dashboard": "http://80.211.236.208/",
+      "description": "QsoBox ARG",
+      "dial": {
+        "host": "80.211.236.208",
+        "kind": "ysf",
+        "port": 42100
+      },
+      "id": "00520",
+      "name": "ARGENTINA-QB",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "QsoBox"
+    },
+    {
+      "country": "CL",
+      "dashboard": "http://80.211.236.208/",
+      "description": "QsoBox CHILE",
+      "dial": {
+        "host": "80.211.236.208",
+        "kind": "ysf",
+        "port": 42101
+      },
+      "id": "00521",
+      "name": "CHILE-QB",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "QsoBox"
+    },
+    {
+      "country": "CL",
+      "dashboard": "http://80.211.236.208/",
+      "description": "QsoBox COLOMB",
+      "dial": {
+        "host": "80.211.236.208",
+        "kind": "ysf",
+        "port": 42102
+      },
+      "id": "00522",
+      "name": "COLOMBIA-QB",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "QsoBox"
+    },
+    {
+      "country": "EC",
+      "dashboard": "http://80.211.236.208/",
+      "description": "QsoBox ECUADOR",
+      "dial": {
+        "host": "80.211.236.208",
+        "kind": "ysf",
+        "port": 42103
+      },
+      "id": "00523",
+      "name": "ECUADOR-QB",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "QsoBox"
+    },
+    {
+      "country": "MX",
+      "dashboard": "http://80.211.236.208/",
+      "description": "QsoBox MEXICO",
+      "dial": {
+        "host": "80.211.236.208",
+        "kind": "ysf",
+        "port": 42104
+      },
+      "id": "00524",
+      "name": "MEXICO-QB",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "QsoBox"
+    },
+    {
+      "country": "PE",
+      "dashboard": "http://80.211.236.208/",
+      "description": "QsoBox PERU",
+      "dial": {
+        "host": "80.211.236.208",
+        "kind": "ysf",
+        "port": 42105
+      },
+      "id": "00525",
+      "name": "PERU",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "QsoBox"
+    },
+    {
+      "country": "PR",
+      "dashboard": "http://80.211.236.208/",
+      "description": "QsoBox PR",
+      "dial": {
+        "host": "80.211.236.208",
+        "kind": "ysf",
+        "port": 42106
+      },
+      "id": "00526",
+      "name": "PUERTO RICO-Q",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "QsoBox"
+    },
+    {
+      "country": "UY",
+      "dashboard": "http://80.211.236.208/",
+      "description": "QsoBox URUG",
+      "dial": {
+        "host": "80.211.236.208",
+        "kind": "ysf",
+        "port": 42107
+      },
+      "id": "00527",
+      "name": "URUGUAY-QB",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "QsoBox"
+    },
+    {
+      "country": "VE",
+      "dashboard": "http://80.211.236.208/",
+      "description": "QsoBox VZLA",
+      "dial": {
+        "host": "80.211.236.208",
+        "kind": "ysf",
+        "port": 42108
+      },
+      "id": "00528",
+      "name": "VENEZUELA-QB",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "QsoBox"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://80.211.236.208/",
+      "description": "QsoBox MIAMI",
+      "dial": {
+        "host": "80.211.236.208",
+        "kind": "ysf",
+        "port": 42109
+      },
+      "id": "00529",
+      "name": "MIAMI-QB",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "QsoBox"
+    },
+    {
       "country": "AU",
       "description": "<p>Bridged to DVNZ DMR 530</p>",
       "dial": {
@@ -2510,19 +2660,6 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "KK7QAS"
-    },
-    {
-      "country": "RU",
-      "dial": {
-        "host": "ysf.tplinkdns.com",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "00618",
-      "name": "618",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "R2AZW"
     },
     {
       "country": "JP",
@@ -4737,7 +4874,7 @@
         "port": 42000
       },
       "id": "07220",
-      "name": "RMDV-7220",
+      "name": "RMDV",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "LU3IBM"
@@ -7790,7 +7927,7 @@
     },
     {
       "country": "ES",
-      "dashboard": "http://xixona.c4fm.es/",
+      "dashboard": "https://c4fm.es/xixona/",
       "description": "C4FM-XIXONA",
       "dial": {
         "host": "217.154.97.237",
@@ -12839,7 +12976,7 @@
       "country": "DE",
       "description": "DARC OV Teuto",
       "dial": {
-        "host": "feargewinnt.ddns.net",
+        "host": "195.90.222.217",
         "kind": "ysf",
         "port": 42000
       },
@@ -14227,6 +14364,20 @@
       "source": "dvref"
     },
     {
+      "country": "US",
+      "description": "OH-KD8USF",
+      "dial": {
+        "host": "kd8mst.org",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "43701",
+      "name": "OH-KD8USF",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "KD8MST"
+    },
+    {
       "country": "KZ",
       "dashboard": "http://un1eak.svx03.kz:999/",
       "description": "XLX reflector",
@@ -14480,21 +14631,6 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "W9TRO"
-    },
-    {
-      "country": "CZ",
-      "dashboard": "http://128.0.182.6",
-      "description": "URFCZS",
-      "dial": {
-        "host": "128.0.182.6",
-        "kind": "ysf",
-        "port": 42200
-      },
-      "id": "44600",
-      "name": "URFCZS",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "OK1IGO"
     },
     {
       "country": "JP",
@@ -19753,15 +19889,15 @@
     },
     {
       "country": "US",
-      "dashboard": "https://urf493.w0chp.radio",
-      "description": "URF/XLX493",
+      "dashboard": "https://vex.w0chp.radio",
+      "description": "VEX493",
       "dial": {
-        "host": "xlx493.w0chp.radio",
+        "host": "vex.w0chp.radio",
         "kind": "ysf",
         "port": 42000
       },
       "id": "80364",
-      "name": "XLX493",
+      "name": "VEX493",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "W0CHP"

@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 322,
-  "generated": "2026-09-17",
+  "count": 323,
+  "generated": "2026-09-18",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -3378,6 +3378,21 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "KA8SCP"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://vex.w0chp.radio",
+      "description": "<p>Bridged with DMR (XLX493 Module E) and YSF00493/YSF80364</p>",
+      "dial": {
+        "host": "vex.w0chp.radio",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "493",
+      "name": "WPSD Chat",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "W0CHP"
     },
     {
       "country": "US",
