@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 188,
-  "generated": "2026-09-18",
+  "count": 186,
+  "generated": "2026-09-19",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -74,28 +74,6 @@
       "sponsor": "DC9VQ",
       "system": "26269de",
       "talkgroups": "reflectors/dmr/26269de/talkgroups.json"
-    },
-    {
-      "country": "TH",
-      "dashboard": "http://44.32.81.143",
-      "dial": {
-        "host": "44.32.81.143",
-        "kind": "mmdvm",
-        "port": 62030,
-        "requires": [
-          "dmr_id",
-          "password"
-        ],
-        "system": "58906",
-        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/58906/talkgroups/"
-      },
-      "id": "58906-server-58906",
-      "name": "58906",
-      "network": "dmr",
-      "source": "dvref",
-      "sponsor": "hamradio",
-      "system": "58906",
-      "talkgroups": "reflectors/dmr/58906/talkgroups.json"
     },
     {
       "country": "CN",
@@ -220,29 +198,6 @@
       "sponsor": "ADN Systems Switzerland",
       "system": "adn-systems-switzerland",
       "talkgroups": "reflectors/dmr/adn-systems-switzerland/talkgroups.json"
-    },
-    {
-      "country": "UA",
-      "dashboard": "http://2551.adn.systems/",
-      "description": "<p>Odessa Radio Link</p>",
-      "dial": {
-        "host": "217.73.87.252",
-        "kind": "mmdvm",
-        "port": 62031,
-        "requires": [
-          "dmr_id",
-          "password"
-        ],
-        "system": "adn-ukraine",
-        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/adn-ukraine/talkgroups/"
-      },
-      "id": "adn-ukraine-server-adn-ukraine",
-      "name": "ADN Ukraine",
-      "network": "dmr",
-      "source": "dvref",
-      "sponsor": "ORLink - Odessa Radio Link",
-      "system": "adn-ukraine",
-      "talkgroups": "reflectors/dmr/adn-ukraine/talkgroups.json"
     },
     {
       "country": "GB",
@@ -1897,7 +1852,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "Ham United",
-      "system": "ham-united-motorola"
+      "system": "ham-united-motorola",
+      "talkgroups": "reflectors/dmr/ham-united-motorola/talkgroups.json"
     },
     {
       "country": "IT",
@@ -1908,7 +1864,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "IU7MNA",
-      "system": "hamthings"
+      "system": "hamthings",
+      "talkgroups": "reflectors/dmr/hamthings/talkgroups.json"
     },
     {
       "country": "CN",
@@ -1929,7 +1886,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "BI6AN",
-      "system": "hb_cn_adec"
+      "system": "hb_cn_adec",
+      "talkgroups": "reflectors/dmr/hb_cn_adec/talkgroups.json"
     },
     {
       "country": "CN",
@@ -1950,7 +1908,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "HAMClub.net",
-      "system": "hb_cn_ham-club"
+      "system": "hb_cn_ham-club",
+      "talkgroups": "reflectors/dmr/hb_cn_ham-club/talkgroups.json"
     },
     {
       "country": "CN",
@@ -3499,9 +3458,9 @@
     },
     {
       "country": "US",
-      "dashboard": "https://urf493.w0chp.radio",
+      "dashboard": "https://vex.w0chp.radio",
       "dial": {
-        "host": "urf493.w0chp.radio",
+        "host": "vex.w0chp.radio",
         "kind": "mmdvm",
         "port": 62030,
         "requires": [
@@ -3511,8 +3470,8 @@
         "system": "w0chpradio-network",
         "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/w0chpradio-network/talkgroups/"
       },
-      "id": "w0chpradio-network-server-urf494",
-      "name": "URF494",
+      "id": "w0chpradio-network-server-vex493",
+      "name": "VEX493",
       "network": "dmr",
       "source": "dvref",
       "sponsor": "W0CHP",

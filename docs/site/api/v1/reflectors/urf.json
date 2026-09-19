@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 108,
-  "generated": "2026-09-18",
+  "count": 109,
+  "generated": "2026-09-19",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -281,7 +281,7 @@
         "kind": "urf"
       },
       "id": "162",
-      "name": "M17-Thailand-E29SZE",
+      "name": "all mode",
       "network": "urf",
       "source": "dvref",
       "sponsor": "ham radio"
@@ -493,6 +493,20 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "2021_ADN_SYSTEMS_GREECE"
+    },
+    {
+      "country": "UA",
+      "dashboard": "https://xrf256.swl.in.ua/",
+      "description": "<p>URF256 is a multimode digital voice reflector operated by Odessa Radio Link in Ukraine. Supports D-Star, DMR, YSF, M17, NXDN and P25. Part of the ORLink and PTT Voice infrastructure.</p>",
+      "dial": {
+        "host": "xrf256.swl.in.ua",
+        "kind": "urf"
+      },
+      "id": "256",
+      "name": "URF256 Odessa Radio Link",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "Odessa Radio Link"
     },
     {
       "country": "RU",
@@ -984,16 +998,16 @@
     {
       "country": "US",
       "dashboard": "https://vex.w0chp.radio",
-      "description": "<p>DMR, YSF and NXDN modes supported. More modes coming...eventually. :)</p>\n<p>Default Module E is the WPSD Chat... bridged with DMR and NXDN TG493.</p>",
+      "description": "<p>DMR, YSF and NXDN modes supported. More modes coming...eventually. :)</p>\r\n<p>Module E is the WPSD Chat... bridged with YSF: YSF00493/YSF80364 and NXDN TG493.</p>",
       "dial": {
-        "host": "vex.w0chp.radio",
+        "host": "urf493.w0chp.radio",
         "kind": "urf",
         "modules": [
           "E"
         ]
       },
       "id": "493",
-      "name": "VEX493 by W0CHP",
+      "name": "URF493 by W0CHP",
       "network": "urf",
       "source": "dvref",
       "sponsor": "W0CHP"

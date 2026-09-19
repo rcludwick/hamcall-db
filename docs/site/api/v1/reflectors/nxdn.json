@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 323,
-  "generated": "2026-09-18",
+  "count": 324,
+  "generated": "2026-09-19",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1537,6 +1537,21 @@
     },
     {
       "country": "UA",
+      "dashboard": "https://xrf256.swl.in.ua/",
+      "description": "<p>URF256 is a multimode digital voice reflector operated by Odessa Radio Link in Ukraine. Supports D-Star, DMR, YSF, M17, NXDN and P25. Part of the ORLink and PTT Voice infrastructure.</p>",
+      "dial": {
+        "host": "xrf256.swl.in.ua",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "255",
+      "name": "URF256",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "Odessa Radio Link"
+    },
+    {
+      "country": "UA",
       "dashboard": "http://134.249.84.243:85/nxdn/",
       "dial": {
         "host": "134.249.84.243",
@@ -2853,20 +2868,6 @@
       "sponsor": "K6HP"
     },
     {
-      "country": "US",
-      "dashboard": "http://reflector.3400digital.net/nxdn/",
-      "dial": {
-        "host": "reflector.3400digital.net",
-        "kind": "nxdn",
-        "port": 41400
-      },
-      "id": "3400",
-      "name": "3400-Digital",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "Boonton ARC"
-    },
-    {
       "country": "IT",
       "dashboard": "https://urf.iv3scp.it",
       "dial": {
@@ -3089,7 +3090,8 @@
       "id": "4302",
       "name": "URF162",
       "network": "nxdn",
-      "source": "dvref"
+      "source": "dvref",
+      "sponsor": "ham radio"
     },
     {
       "country": "US",
@@ -3596,6 +3598,20 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "HS3TDI"
+    },
+    {
+      "country": "TH",
+      "dashboard": "https://e25la.tplinkdns.com",
+      "dial": {
+        "host": "e25la.tplinkdns.com",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "52521",
+      "name": "NXDN 52521 By HS1DMM",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "HS8AS  Suratthani amateur Radio association"
     },
     {
       "country": "NZ",

@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 107,
-  "generated": "2026-09-18",
+  "count": 108,
+  "generated": "2026-09-19",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1573,6 +1573,33 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "HS1AB"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://m17fmt.net:80",
+      "description": "<p>M17-FMT M17 reflector in Fremont, CA maintained by w6vs.</p>",
+      "dial": {
+        "callsign": "M17-FMT",
+        "host": "m17fmt.net",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-FMT",
+      "name": "W6VS Fremont, CA.",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "w6vs"
     },
     {
       "country": "GB",

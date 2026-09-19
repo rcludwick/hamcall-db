@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1511,
-  "generated": "2026-09-18",
+  "count": 1516,
+  "generated": "2026-09-19",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -2326,7 +2326,7 @@
       "dashboard": "https://urf493.w0chp.radio",
       "description": "VEX493",
       "dial": {
-        "host": "vex.w0chp.radio",
+        "host": "urf493.w0chp.radio",
         "kind": "ysf",
         "port": 42000
       },
@@ -6147,6 +6147,21 @@
       "name": "KP3AV-Systems",
       "network": "ysf",
       "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://45.33.22.225:4000/",
+      "description": "MRN",
+      "dial": {
+        "host": "45.33.22.225",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "13041",
+      "name": "TEXAS-MRN-X",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "Murphy Radio Network (MRN)"
     },
     {
       "country": "US",
@@ -10441,7 +10456,7 @@
     },
     {
       "country": "DE",
-      "dashboard": "http://ysf.ighamspirit.de:8000/",
+      "dashboard": "http://ysf.dm0igh.de",
       "description": "IGHamspirit eV",
       "dial": {
         "host": "88.99.161.205",
@@ -10452,7 +10467,7 @@
       "name": "ighamspirit",
       "network": "ysf",
       "source": "dvref",
-      "sponsor": "IGH e.V."
+      "sponsor": "IGHamspirit e.V."
     },
     {
       "country": "DE",
@@ -11396,7 +11411,7 @@
     {
       "country": "GB",
       "dashboard": "https://nwfg.info/home/",
-      "description": "NWFG5",
+      "description": "NWMG",
       "dial": {
         "host": "154.61.61.38",
         "kind": "ysf",
@@ -11916,7 +11931,7 @@
     },
     {
       "country": "US",
-      "dashboard": "http://floridakeys.c4fm.es/",
+      "dashboard": "https://c4fm.es/florida",
       "description": "Keys-MIAMI",
       "dial": {
         "host": "217.154.97.237",
@@ -16841,6 +16856,51 @@
       "sponsor": "E27GAQ"
     },
     {
+      "country": "DE",
+      "dashboard": "http://dm8bjf.dyndns.org:42080",
+      "description": "YSF-Reflektor",
+      "dial": {
+        "host": "dm8bjf.dyndns.org",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "57288",
+      "name": "Falkensee",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "DM8BJF"
+    },
+    {
+      "country": "DE",
+      "dashboard": "http://dm8bjf.dyndns.org:42080",
+      "description": "YSF-Reflektor",
+      "dial": {
+        "host": "dm8bjf.dyndns.org",
+        "kind": "ysf",
+        "port": 42032
+      },
+      "id": "57289",
+      "name": "Falkensee2",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "DM8BJF"
+    },
+    {
+      "country": "DE",
+      "dashboard": "http://dm8bjf.dyndns.org:42080",
+      "description": "YSF-Reflektor",
+      "dial": {
+        "host": "dm8bjf.dyndns.org",
+        "kind": "ysf",
+        "port": 42033
+      },
+      "id": "57290",
+      "name": "Falkensee3",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "DM8BJF"
+    },
+    {
       "country": "US",
       "dashboard": "https://ysf.kspillane.net/",
       "description": "Testing YSFRef",
@@ -17017,6 +17077,7 @@
     {
       "country": "TH",
       "dashboard": "http://44.32.81.27",
+      "description": "URF162",
       "dial": {
         "host": "44.32.81.27",
         "kind": "ysf",
@@ -17921,6 +17982,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "Moreno Valley Amateur Radio Association"
+    },
+    {
+      "country": "UA",
+      "dashboard": "https://xrf256.swl.in.ua/",
+      "description": "URF256",
+      "dial": {
+        "host": "xrf256.swl.in.ua",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "65123",
+      "name": "URF256",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "Odessa Radio Link"
     },
     {
       "country": "US",
@@ -20008,7 +20084,7 @@
       "dashboard": "https://ysf.9y4c.com/",
       "description": "MULTIMODE",
       "dial": {
-        "host": "dxhams.9y4c.com",
+        "host": "multibridge.9y4c.com",
         "kind": "ysf",
         "port": 42100
       },
