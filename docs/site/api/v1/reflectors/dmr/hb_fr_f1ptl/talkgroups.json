@@ -1,0 +1,43 @@
+{
+  "api_version": "v1",
+  "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
+  "client_refresh_days": 7,
+  "count": 6,
+  "generated": "2026-09-20",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
+  "network": "dmr",
+  "schema_version": 1,
+  "source": {
+    "name": "DVRef",
+    "url": "https://dvref.com/api/v2/dmr/networks/hb_fr_f1ptl/talkgroups/"
+  },
+  "system": "hb_fr_f1ptl",
+  "talkgroups": [
+    {
+      "name": "TS1_TG8",
+      "tg": 8
+    },
+    {
+      "name": "TS2_TG9",
+      "tg": 9
+    },
+    {
+      "name": "TS2_TG20800",
+      "tg": 20800
+    },
+    {
+      "name": "TS2_TG20841",
+      "tg": 20841
+    },
+    {
+      "name": "TS2_TG20862",
+      "tg": 20862
+    },
+    {
+      "name": "TS2_TG20892",
+      "tg": 20892
+    }
+  ]
+}

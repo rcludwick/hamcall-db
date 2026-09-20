@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1516,
-  "generated": "2026-09-19",
+  "count": 1515,
+  "generated": "2026-09-20",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -4374,15 +4374,15 @@
     },
     {
       "country": "US",
-      "dashboard": "http://reflector.3400digital.net/ysf/",
-      "description": "3400 Digital",
+      "dashboard": "http://reflector.boontonarc.com",
+      "description": "BoontonARC",
       "dial": {
-        "host": "reflector.3400digital.net",
+        "host": "ysf.boontonarc.com",
         "kind": "ysf",
         "port": 42000
       },
       "id": "03400",
-      "name": "3400-Digital",
+      "name": "BoontonARC",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "Boonton ARC"
@@ -14807,21 +14807,6 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "bg4iaj"
-    },
-    {
-      "country": "CN",
-      "dashboard": "http://125.91.17.122:8090/ysf/",
-      "description": "YSF BI7JTA",
-      "dial": {
-        "host": "125.91.17.122",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "46007",
-      "name": "China-9",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "BI7JTA"
     },
     {
       "country": "CN",

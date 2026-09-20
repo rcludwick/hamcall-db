@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 186,
-  "generated": "2026-09-19",
+  "generated": "2026-09-20",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1931,7 +1931,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "BH6IDD",
-      "system": "hb_cn_henan"
+      "system": "hb_cn_henan",
+      "talkgroups": "reflectors/dmr/hb_cn_henan/talkgroups.json"
     },
     {
       "country": "FR",
@@ -1953,7 +1954,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "F1PTL Bruno",
-      "system": "hb_fr_f1ptl"
+      "system": "hb_fr_f1ptl",
+      "talkgroups": "reflectors/dmr/hb_fr_f1ptl/talkgroups.json"
     },
     {
       "country": "IT",
@@ -1975,7 +1977,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "IT-C4FM_BAT",
-      "system": "hb_it_bat"
+      "system": "hb_it_bat",
+      "talkgroups": "reflectors/dmr/hb_it_bat/talkgroups.json"
     },
     {
       "country": "IT",
@@ -1997,7 +2000,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "IZ7KYS",
-      "system": "hb_it_lecce"
+      "system": "hb_it_lecce",
+      "talkgroups": "reflectors/dmr/hb_it_lecce/talkgroups.json"
     },
     {
       "country": "IT",

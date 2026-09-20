@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 340,
-  "generated": "2026-09-19",
+  "count": 339,
+  "generated": "2026-09-20",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -322,21 +322,6 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "VK2HK"
-    },
-    {
-      "country": "CN",
-      "dashboard": "http://125.91.17.122:8090/p25",
-      "description": "<p dir=\"auto\">Link YSF CN9, DMR BM TG46001</p>\r\n<p dir=\"auto\">Maintain by BI7JTA</p>",
-      "dial": {
-        "host": "125.91.17.122",
-        "kind": "p25",
-        "port": 42020
-      },
-      "id": "10405",
-      "name": "P25 China BI7JTA",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "BI7JTA"
     },
     {
       "country": "CN",
