@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 339,
-  "generated": "2026-09-20",
+  "generated": "2026-09-21",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1443,10 +1443,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "https://xlxylv.ta2kw.keenetic.pro",
+      "dashboard": "https://xlx286.dmrturkiye.com",
       "description": "<p>P25 T&Uuml;RK\u0130YE 286</p>",
       "dial": {
-        "host": "xlxylv.ta2kw.keenetic.pro",
+        "host": "xlx286.dmrturkiye.com",
         "kind": "p25",
         "port": 41000
       },
@@ -3949,6 +3949,7 @@
     },
     {
       "country": "AU",
+      "dashboard": "https://p25.vk2ym.com.au",
       "dial": {
         "host": "p25.vk2ym.com.au",
         "kind": "p25",

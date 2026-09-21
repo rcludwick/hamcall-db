@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 109,
-  "generated": "2026-09-20",
+  "count": 110,
+  "generated": "2026-09-21",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -2054,6 +2054,26 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "Quadnet Amateur Radio Network"
+    },
+    {
+      "country": "US",
+      "dial": {
+        "callsign": "M17-MEM",
+        "host": "99.94.135.115",
+        "kind": "m17",
+        "modules": [
+          "B",
+          "C",
+          "W",
+          "X"
+        ],
+        "port": 17000
+      },
+      "id": "M17-MEM",
+      "name": "Memphis Metro",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "K0RET"
     },
     {
       "country": "MX",

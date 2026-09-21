@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 324,
-  "generated": "2026-09-20",
+  "generated": "2026-09-21",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1894,10 +1894,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "https://xlxylv.ta2kw.keenetic.pro",
+      "dashboard": "https://xlx286.dmrturkiye.com",
       "description": "<p>NXDN T&Uuml;RK\u0130YE 286<br><br>DMR2NXDN TG7000286&nbsp; TS2<br><br></p>",
       "dial": {
-        "host": "xlxylv.ta2kw.keenetic.pro",
+        "host": "xlx286.dmrturkiye.com",
         "kind": "nxdn",
         "port": 41400
       },
@@ -3601,7 +3601,7 @@
     },
     {
       "country": "TH",
-      "dashboard": "https://e25la.tplinkdns.com",
+      "dashboard": "http://e25la.tplinkdns.com",
       "dial": {
         "host": "e25la.tplinkdns.com",
         "kind": "nxdn",

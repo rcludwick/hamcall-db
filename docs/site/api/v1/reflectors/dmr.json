@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 186,
-  "generated": "2026-09-20",
+  "generated": "2026-09-21",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -2023,7 +2023,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "Sezione A.R.I.  di Trani    -   Italy",
-      "system": "hb_it_trani_conference"
+      "system": "hb_it_trani_conference",
+      "talkgroups": "reflectors/dmr/hb_it_trani_conference/talkgroups.json"
     },
     {
       "country": "MY",
@@ -2045,7 +2046,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "HBLink 5021 Malaysia",
-      "system": "hblink-5021-malaysia"
+      "system": "hblink-5021-malaysia",
+      "talkgroups": "reflectors/dmr/hblink-5021-malaysia/talkgroups.json"
     },
     {
       "country": "US",
@@ -2067,7 +2069,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "Southern Indiana Network",
-      "system": "indiana-link"
+      "system": "indiana-link",
+      "talkgroups": "reflectors/dmr/indiana-link/talkgroups.json"
     },
     {
       "country": "US",
@@ -2088,7 +2091,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "W9ILS Digital Group",
-      "system": "indiana-w9ils"
+      "system": "indiana-w9ils",
+      "talkgroups": "reflectors/dmr/indiana-w9ils/talkgroups.json"
     },
     {
       "country": "ID",

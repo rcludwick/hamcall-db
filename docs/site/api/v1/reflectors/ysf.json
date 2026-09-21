@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1515,
-  "generated": "2026-09-20",
+  "count": 1516,
+  "generated": "2026-09-21",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -21136,6 +21136,18 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "KB1NE"
+    },
+    {
+      "country": "RU",
+      "dial": {
+        "host": "ysf.tplinkdns.com",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "90000",
+      "name": "YSF Russia",
+      "network": "ysf",
+      "source": "dvref"
     },
     {
       "country": "IT",
