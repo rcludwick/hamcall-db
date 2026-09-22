@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 186,
-  "generated": "2026-09-21",
+  "count": 185,
+  "generated": "2026-09-22",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -498,6 +498,29 @@
       "talkgroups": "reflectors/dmr/ar-norasingh/talkgroups.json"
     },
     {
+      "country": "CN",
+      "dashboard": "https://arch.hljrsa.cn/status/",
+      "description": "<p>ARCH FreeDMR HomeBrew master. Harbin, Heilongjiang, China. TS1 TG460451, TS2 TG46002.</p>",
+      "dial": {
+        "host": "hljrsa.cn",
+        "kind": "mmdvm",
+        "port": 62030,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "arch-dmr",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/arch-dmr/talkgroups/"
+      },
+      "id": "arch-dmr-server-arch-hlj",
+      "name": "ARCH-HLJ",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "BG2GA",
+      "system": "arch-dmr",
+      "talkgroups": "reflectors/dmr/arch-dmr/talkgroups.json"
+    },
+    {
       "country": "AU",
       "dashboard": "https://xlx820.com",
       "dial": {
@@ -823,28 +846,6 @@
       "sponsor": "PU2PNY",
       "system": "dmr-xlx026",
       "talkgroups": "reflectors/dmr/dmr-xlx026/talkgroups.json"
-    },
-    {
-      "country": "CN",
-      "dashboard": "http://tg46023.cn/",
-      "dial": {
-        "host": "tg46008.cn",
-        "kind": "mmdvm",
-        "port": 62030,
-        "requires": [
-          "dmr_id",
-          "password"
-        ],
-        "system": "dmr_china8",
-        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/dmr_china8/talkgroups/"
-      },
-      "id": "dmr_china8-server-ckg",
-      "name": "ckg",
-      "network": "dmr",
-      "source": "dvref",
-      "sponsor": "[email removed]",
-      "system": "dmr_china8",
-      "talkgroups": "reflectors/dmr/dmr_china8/talkgroups.json"
     },
     {
       "country": "GB",
@@ -1891,6 +1892,28 @@
     },
     {
       "country": "CN",
+      "dashboard": "http://47.109.55.52/",
+      "dial": {
+        "host": "47.109.47.36",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "hb_cn_guangzhou",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/hb_cn_guangzhou/talkgroups/"
+      },
+      "id": "hb_cn_guangzhou-server-tg46020",
+      "name": "TG46020",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "BD7PET",
+      "system": "hb_cn_guangzhou",
+      "talkgroups": "reflectors/dmr/hb_cn_guangzhou/talkgroups.json"
+    },
+    {
+      "country": "CN",
       "dashboard": "https://hamclub.net/dv/",
       "dial": {
         "host": "47.104.177.248",
@@ -2103,14 +2126,14 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "YG2BTP",
-      "system": "indonesia-tg-51075"
+      "system": "indonesia-tg-51075",
+      "talkgroups": "reflectors/dmr/indonesia-tg-51075/talkgroups.json"
     },
     {
       "country": "US",
-      "dashboard": "http://digital.irn.radio",
-      "description": "<p>The International Radio Network&rsquo;s mission is to promote the amateur radio hobby to those interested in radio communications. We welcome licensed and non-licensed operators, giving those with an interest the opportunity to gain experience in radio communications, theory and technology, build fellowship, and have some fun along the way.</p>",
+      "dashboard": "http://irn.m0xfn.radio",
       "dial": {
-        "host": "digital.irn.radio",
+        "host": "irn.m0xfn.radio",
         "kind": "mmdvm",
         "port": 62031,
         "requires": [
@@ -2120,12 +2143,13 @@
         "system": "international-radio-network",
         "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/international-radio-network/talkgroups/"
       },
-      "id": "international-radio-network-server-irn",
-      "name": "IRN",
+      "id": "international-radio-network-server-fd_us_irn",
+      "name": "FD_US_IRN",
       "network": "dmr",
       "source": "dvref",
-      "sponsor": "International Radio Network (IRN)",
-      "system": "international-radio-network"
+      "sponsor": "International Radio Network",
+      "system": "international-radio-network",
+      "talkgroups": "reflectors/dmr/international-radio-network/talkgroups.json"
     },
     {
       "country": "DE",
@@ -2481,48 +2505,6 @@
       },
       "id": "ipsc3-server-ipsc3-freedmr-uk-62031",
       "name": "ipsc3-freedmr-uk 62031",
-      "network": "dmr",
-      "source": "dvref",
-      "sponsor": "Matt Perkins",
-      "system": "ipsc3"
-    },
-    {
-      "country": "GB",
-      "dashboard": "http://wiki.ipsc3.net",
-      "dial": {
-        "host": "uk.ipsc3.net",
-        "kind": "mmdvm",
-        "port": 55555,
-        "requires": [
-          "dmr_id",
-          "password"
-        ],
-        "system": "ipsc3",
-        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/ipsc3/talkgroups/"
-      },
-      "id": "ipsc3-server-ipsc3-uk-55555",
-      "name": "ipsc3-uk 55555",
-      "network": "dmr",
-      "source": "dvref",
-      "sponsor": "Matt Perkins",
-      "system": "ipsc3"
-    },
-    {
-      "country": "GB",
-      "dashboard": "http://wiki.ipsc3.net",
-      "dial": {
-        "host": "uk.ipsc3.net",
-        "kind": "mmdvm",
-        "port": 62031,
-        "requires": [
-          "dmr_id",
-          "password"
-        ],
-        "system": "ipsc3",
-        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/ipsc3/talkgroups/"
-      },
-      "id": "ipsc3-server-ipsc3-uk-62031",
-      "name": "ipsc3-uk 62031",
       "network": "dmr",
       "source": "dvref",
       "sponsor": "Matt Perkins",

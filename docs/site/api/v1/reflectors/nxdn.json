@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 324,
-  "generated": "2026-09-21",
+  "count": 325,
+  "generated": "2026-09-22",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -427,7 +427,7 @@
     },
     {
       "country": "US",
-      "description": "<p>URF-WIL is a multi-mode amateur-radio reflector supporting DMR/YSF/P25/NXDN/M17 with transcoding.</p>\r\n<p>The reflector is part of KE7WIL virtual AllStarLink node hub 641890.</p>",
+      "description": "<p>URF-WIL is a multi-mode amateur-radio reflector supporting DMR/P25/NXDN/M17 with transcoding.</p>\r\n<p>The reflector is part of KE7WIL virtual AllStarLink node hub 641890.</p>",
       "dial": {
         "host": "node64189.ddns.net",
         "kind": "nxdn",
@@ -467,19 +467,6 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "VK3JED"
-    },
-    {
-      "country": "US",
-      "dial": {
-        "host": "108.203.211.67",
-        "kind": "nxdn",
-        "port": 41400
-      },
-      "id": "17352",
-      "name": "NXDN K4SID GA",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "K4SID"
     },
     {
       "country": "AT",
@@ -1863,6 +1850,20 @@
       "sponsor": "KP4OO"
     },
     {
+      "country": "JP",
+      "dashboard": "http://xlx274.duckdns.org/",
+      "dial": {
+        "host": "60.37.69.6",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "274",
+      "name": "URF274",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "JG1LKT"
+    },
+    {
       "country": "US",
       "dashboard": "http://arcnxdn.duckdns.org:83",
       "description": "<p>America Ragchew</p>",
@@ -3205,6 +3206,20 @@
       "name": "46001",
       "network": "nxdn",
       "source": "dvref"
+    },
+    {
+      "country": "CN",
+      "dashboard": "https://arch.hljrsa.cn/status/",
+      "dial": {
+        "host": "39.96.117.224",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "46002",
+      "name": "ARCH-46002-HLJ",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "BG2GA"
     },
     {
       "country": "CN",

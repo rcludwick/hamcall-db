@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 339,
-  "generated": "2026-09-21",
+  "count": 340,
+  "generated": "2026-09-22",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1402,7 +1402,7 @@
       "country": "JP",
       "dashboard": "http://xlx274.duckdns.org/",
       "dial": {
-        "host": "xlx274.duckdns.org",
+        "host": "60.37.69.6",
         "kind": "p25",
         "port": 41000
       },
@@ -3087,6 +3087,20 @@
     },
     {
       "country": "CN",
+      "dashboard": "https://arch.hljrsa.cn/status/",
+      "dial": {
+        "host": "39.96.117.224",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "46002",
+      "name": "ARCH-46002-HLJ",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "BG2GA"
+    },
+    {
+      "country": "CN",
       "description": "<p>&nbsp;TG46005,China</p>",
       "dial": {
         "host": "47.109.24.90",
@@ -3908,7 +3922,7 @@
     },
     {
       "country": "US",
-      "description": "<p>URF-WIL is a multi-mode amateur-radio reflector supporting DMR/YSF/P25/NXDN/M17 with transcoding.</p>\r\n<p>The reflector is part of KE7WIL virtual AllStarLink node hub 641890.</p>",
+      "description": "<p>URF-WIL is a multi-mode amateur-radio reflector supporting DMR/P25/NXDN/M17 with transcoding.</p>\r\n<p>The reflector is part of KE7WIL virtual AllStarLink node hub 641890.</p>",
       "dial": {
         "host": "node64189.ddns.net",
         "kind": "p25",

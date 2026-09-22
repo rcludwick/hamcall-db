@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1516,
-  "generated": "2026-09-21",
+  "count": 1520,
+  "generated": "2026-09-22",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -3761,6 +3761,21 @@
     },
     {
       "country": "GB",
+      "dashboard": "http://maythorn.uk",
+      "description": "XLX Reflector",
+      "dial": {
+        "host": "44.27.138.44",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "01525",
+      "name": "XLX278",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "G1INC"
+    },
+    {
+      "country": "GB",
       "dashboard": "http://xlx.jl-networking.co.uk",
       "description": "WRC Reflector",
       "dial": {
@@ -4986,10 +5001,10 @@
     },
     {
       "country": "CA",
-      "dashboard": "http://70.55.209.101:8080",
+      "dashboard": "http://ve2mrc.ddns.net:8080",
       "description": "Montreal - Fr",
       "dial": {
-        "host": "70.55.209.101",
+        "host": "ve2mrc.ddns.net",
         "kind": "ysf",
         "port": 42003
       },
@@ -5645,6 +5660,21 @@
       "sponsor": "it9ijy"
     },
     {
+      "country": "JP",
+      "dashboard": "http://xlx274.duckdns.org/",
+      "description": "FunasssyLand",
+      "dial": {
+        "host": "60.37.69.6",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "10274",
+      "name": "XLX274",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "JG1LKT"
+    },
+    {
       "country": "GB",
       "description": "Warrington ARC",
       "dial": {
@@ -5705,7 +5735,7 @@
       "country": "RO",
       "description": "YO5KAW-Radio c",
       "dial": {
-        "host": "86.126.2.175",
+        "host": "188.27.182.24",
         "kind": "ysf",
         "port": 42002
       },
@@ -6497,6 +6527,21 @@
       "name": "CORDOBA",
       "network": "ysf",
       "source": "dvref"
+    },
+    {
+      "country": "PH",
+      "dashboard": "http://130.51.21.177/ysf/",
+      "description": "COMPASS",
+      "dial": {
+        "host": "130.51.21.177",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "14556",
+      "name": "DX1CI",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "DU1AJ"
     },
     {
       "country": "GB",
@@ -7852,7 +7897,7 @@
     },
     {
       "country": "ES",
-      "dashboard": "http://www.ysf.es/",
+      "dashboard": "https://dcs214.xreflector.net/2142/",
       "description": "YSF-214",
       "dial": {
         "host": "212.227.87.198",
@@ -10278,7 +10323,7 @@
     },
     {
       "country": "DE",
-      "dashboard": "https://ysf.hobby-room.app/",
+      "dashboard": "https://fm07.dedyn.io/ysf/",
       "description": "FM-Nuernberg",
       "dial": {
         "host": "fm07.dedyn.io",
@@ -10774,10 +10819,10 @@
     },
     {
       "country": "RU",
-      "dashboard": "http://128.0.132.69",
+      "dashboard": "http://msk.clubfm.org",
       "description": "MOSCOW",
       "dial": {
-        "host": "128.0.132.69",
+        "host": "msk.clubfm.org",
         "kind": "ysf",
         "port": 42000
       },
@@ -11418,7 +11463,7 @@
         "port": 42000
       },
       "id": "28804",
-      "name": "NWFG5",
+      "name": "NWMG",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "NWFG"
@@ -12106,18 +12151,15 @@
     },
     {
       "country": "US",
-      "dashboard": "https://digital.irn.radio/ysf.php",
-      "description": "IRN",
       "dial": {
-        "host": "digital.irn.radio",
+        "host": "irn.m0xfn.radio",
         "kind": "ysf",
         "port": 42000
       },
       "id": "31320",
       "name": "IRN",
       "network": "ysf",
-      "source": "dvref",
-      "sponsor": "International Radio Network"
+      "source": "dvref"
     },
     {
       "country": "US",
@@ -13000,6 +13042,20 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "DN9SGE"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://lwra.duckdns.org",
+      "description": "www.lwra.us",
+      "dial": {
+        "host": "35.143.231.6",
+        "kind": "ysf",
+        "port": 42002
+      },
+      "id": "33884",
+      "name": "LWRA_YSF",
+      "network": "ysf",
+      "source": "dvref"
     },
     {
       "country": "CL",
@@ -17777,14 +17833,14 @@
     },
     {
       "country": "US",
-      "description": "URFWIL",
+      "description": "KE7WIL YSF",
       "dial": {
         "host": "node64189.ddns.net",
         "kind": "ysf",
         "port": 42000
       },
       "id": "64189",
-      "name": "URFWIL",
+      "name": "KE7WIL",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "KE7WIL"
@@ -21139,6 +21195,7 @@
     },
     {
       "country": "RU",
+      "description": "Moscow",
       "dial": {
         "host": "ysf.tplinkdns.com",
         "kind": "ysf",
