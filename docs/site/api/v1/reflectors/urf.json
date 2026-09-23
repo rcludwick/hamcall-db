@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 110,
-  "generated": "2026-09-22",
+  "count": 111,
+  "generated": "2026-09-23",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1657,6 +1657,19 @@
       "sponsor": "AL8T"
     },
     {
+      "country": "CN",
+      "dashboard": "https://arch.hljrsa.cn/status/",
+      "dial": {
+        "host": "39.96.117.224",
+        "kind": "urf"
+      },
+      "id": "HLJ",
+      "name": "46002",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "BG2GA"
+    },
+    {
       "country": "IT",
       "dashboard": "https://urfita.freedmr.it",
       "dial": {
@@ -1879,7 +1892,7 @@
     {
       "country": "TR",
       "dashboard": "https://xlxylv.ta2kw.keenetic.pro",
-      "description": "<p><strong>Module A: DMR &lt;&gt; C4FM YSF&nbsp;</strong><br><strong>Module B: D-PRS/RESiM</strong><br><strong>Module C: D-STAR</strong><br><strong>Module D: ECHO TEST&nbsp;</strong><br><strong><br><br><br>XLXYLV T&Uuml;RK\u0130YE</strong></p>",
+      "description": "<p><strong>Module A: DMR &lt;&gt; C4FM YSF&nbsp;</strong><br><strong>Module B: D-PRS/RESiM</strong><br><strong>Module C: D-STAR</strong><br><strong>Module D: ECHO TEST&nbsp;</strong><br><strong><br><br><br>XLXYLV YALOVA T&Uuml;RK\u0130YE</strong></p>",
       "dial": {
         "host": "xlxylv.ta2kw.keenetic.pro",
         "kind": "urf",
@@ -1894,7 +1907,7 @@
       "name": "XLXYLV T\u00dcRK\u0130YE YALOVA",
       "network": "urf",
       "source": "dvref",
-      "sponsor": "TA2KW"
+      "sponsor": "DMR T\u00dcRK\u0130YE"
     }
   ],
   "schema_version": 1,

@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 185,
-  "generated": "2026-09-22",
+  "count": 187,
+  "generated": "2026-09-23",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -74,6 +74,29 @@
       "sponsor": "DC9VQ",
       "system": "26269de",
       "talkgroups": "reflectors/dmr/26269de/talkgroups.json"
+    },
+    {
+      "country": "CN",
+      "dashboard": "https://arch.hljrsa.cn/status/",
+      "description": "<p>ARCH DMR 46002</p>\r\n<p>Server: srv2.hljrsa.cn:62030</p>\r\n<p>Talkgroup: 46002</p>",
+      "dial": {
+        "host": "srv2.hljrsa.cn",
+        "kind": "mmdvm",
+        "port": 62030,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "46002",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/46002/talkgroups/"
+      },
+      "id": "46002-server-srv2hljrsacn",
+      "name": "srv2.hljrsa.cn",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "BG2GA",
+      "system": "46002",
+      "talkgroups": "reflectors/dmr/46002/talkgroups.json"
     },
     {
       "country": "CN",
@@ -496,29 +519,6 @@
       "sponsor": "AR Norasingh",
       "system": "ar-norasingh",
       "talkgroups": "reflectors/dmr/ar-norasingh/talkgroups.json"
-    },
-    {
-      "country": "CN",
-      "dashboard": "https://arch.hljrsa.cn/status/",
-      "description": "<p>ARCH FreeDMR HomeBrew master. Harbin, Heilongjiang, China. TS1 TG460451, TS2 TG46002.</p>",
-      "dial": {
-        "host": "hljrsa.cn",
-        "kind": "mmdvm",
-        "port": 62030,
-        "requires": [
-          "dmr_id",
-          "password"
-        ],
-        "system": "arch-dmr",
-        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/arch-dmr/talkgroups/"
-      },
-      "id": "arch-dmr-server-arch-hlj",
-      "name": "ARCH-HLJ",
-      "network": "dmr",
-      "source": "dvref",
-      "sponsor": "BG2GA",
-      "system": "arch-dmr",
-      "talkgroups": "reflectors/dmr/arch-dmr/talkgroups.json"
     },
     {
       "country": "AU",
@@ -2170,7 +2170,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "DC9NYC",
-      "system": "ipsc2-db0feu"
+      "system": "ipsc2-db0feu",
+      "talkgroups": "reflectors/dmr/ipsc2-db0feu/talkgroups.json"
     },
     {
       "country": "IT",
@@ -2191,7 +2192,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "https://www.dig-italia.it/",
-      "system": "ipsc2-dig-italia"
+      "system": "ipsc2-dig-italia",
+      "talkgroups": "reflectors/dmr/ipsc2-dig-italia/talkgroups.json"
     },
     {
       "country": "DK",
@@ -2433,7 +2435,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "\u00d6VSV",
-      "system": "ipsc2"
+      "system": "ipsc2",
+      "talkgroups": "reflectors/dmr/ipsc2/talkgroups.json"
     },
     {
       "country": "AT",
@@ -2444,7 +2447,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "\u00d6VSV",
-      "system": "ipsc2"
+      "system": "ipsc2",
+      "talkgroups": "reflectors/dmr/ipsc2/talkgroups.json"
     },
     {
       "country": "SE",
@@ -2505,6 +2509,48 @@
       },
       "id": "ipsc3-server-ipsc3-freedmr-uk-62031",
       "name": "ipsc3-freedmr-uk 62031",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Matt Perkins",
+      "system": "ipsc3"
+    },
+    {
+      "country": "GB",
+      "dashboard": "http://wiki.ipsc3.net",
+      "dial": {
+        "host": "uk.ipsc3.net",
+        "kind": "mmdvm",
+        "port": 55555,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "ipsc3",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/ipsc3/talkgroups/"
+      },
+      "id": "ipsc3-server-ipsc3-uk-55555",
+      "name": "ipsc3-uk 55555",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "Matt Perkins",
+      "system": "ipsc3"
+    },
+    {
+      "country": "GB",
+      "dashboard": "http://wiki.ipsc3.net",
+      "dial": {
+        "host": "uk.ipsc3.net",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "ipsc3",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/ipsc3/talkgroups/"
+      },
+      "id": "ipsc3-server-ipsc3-uk-62031",
+      "name": "ipsc3-uk 62031",
       "network": "dmr",
       "source": "dvref",
       "sponsor": "Matt Perkins",

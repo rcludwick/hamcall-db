@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1520,
-  "generated": "2026-09-22",
+  "count": 1524,
+  "generated": "2026-09-23",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -764,6 +764,21 @@
       "sponsor": "IW0HKS"
     },
     {
+      "country": "ES",
+      "dashboard": "http://es.xreflector.es",
+      "description": "XREFLECTOR",
+      "dial": {
+        "host": "es.xreflector.es",
+        "kind": "ysf",
+        "port": 42001
+      },
+      "id": "00080",
+      "name": "XREFLECTOR",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "xreflector"
+    },
+    {
       "country": "US",
       "dashboard": "https://xlx082.hamradio.services",
       "description": "XLX082",
@@ -955,6 +970,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "LW6EMN"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://es.xreflector.es",
+      "description": "US-AMERICA",
+      "dial": {
+        "host": "es.xreflector.es",
+        "kind": "ysf",
+        "port": 42012
+      },
+      "id": "00112",
+      "name": "AMERICA",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "xreflector"
     },
     {
       "country": "GB",
@@ -2326,7 +2356,7 @@
       "dashboard": "https://urf493.w0chp.radio",
       "description": "VEX493",
       "dial": {
-        "host": "urf493.w0chp.radio",
+        "host": "vex.w0chp.radio",
         "kind": "ysf",
         "port": 42000
       },
@@ -3053,6 +3083,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "Covey Hill Amateur Radio Club (VE2CYH)"
+    },
+    {
+      "country": "JP",
+      "dashboard": "http://xrf776.mydns.jp",
+      "description": "Kawaguchi776",
+      "dial": {
+        "host": "xrf776.mydns.jp",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00776",
+      "name": "XLX776",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "JQ1ZUY"
     },
     {
       "country": "US",
@@ -5469,14 +5514,14 @@
     {
       "country": "CL",
       "dashboard": "http://sdradio.cl/clysf/",
-      "description": "CHILE-LINK",
+      "description": "YSF to TG73099",
       "dial": {
         "host": "sdradio.cl",
         "kind": "ysf",
         "port": 42002
       },
       "id": "09627",
-      "name": "YSF",
+      "name": "YSF-TG73099",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "CA6JAU"
@@ -5664,7 +5709,7 @@
       "dashboard": "http://xlx274.duckdns.org/",
       "description": "FunasssyLand",
       "dial": {
-        "host": "60.37.69.6",
+        "host": "xlx274.duckdns.org",
         "kind": "ysf",
         "port": 42000
       },
@@ -5997,7 +6042,7 @@
       "dashboard": "http://2061.adn.systems:8084",
       "description": "YSF Belgium",
       "dial": {
-        "host": "173.212.223.187",
+        "host": "89.117.57.161",
         "kind": "ysf",
         "port": 42002
       },
@@ -11407,7 +11452,7 @@
       "name": "URFYLV",
       "network": "ysf",
       "source": "dvref",
-      "sponsor": "TA2KW"
+      "sponsor": "DMR T\u00dcRK\u0130YE"
     },
     {
       "country": "TR",
@@ -14848,6 +14893,21 @@
       "name": "C4FM-TG46001",
       "network": "ysf",
       "source": "dvref"
+    },
+    {
+      "country": "CN",
+      "dashboard": "https://arch.hljrsa.cn/status/",
+      "description": "ARCH 46002",
+      "dial": {
+        "host": "39.96.117.224",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "46002",
+      "name": "46002",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "BG2GA"
     },
     {
       "country": "CN",
@@ -18803,14 +18863,14 @@
     {
       "country": "CL",
       "dashboard": "http://sdradio.cl/chile/",
-      "description": "YSF to TG730",
+      "description": "YSF to TG73073",
       "dial": {
         "host": "sdradio.cl",
         "kind": "ysf",
         "port": 42000
       },
       "id": "72350",
-      "name": "CHILE",
+      "name": "TG73073",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "CA6JAU"
@@ -21197,7 +21257,7 @@
       "country": "RU",
       "description": "Moscow",
       "dial": {
-        "host": "ysf.tplinkdns.com",
+        "host": "157.228.138.240",
         "kind": "ysf",
         "port": 42000
       },
