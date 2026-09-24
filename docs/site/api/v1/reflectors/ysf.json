@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1524,
-  "generated": "2026-09-23",
+  "count": 1527,
+  "generated": "2026-09-24",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -779,6 +779,21 @@
       "sponsor": "xreflector"
     },
     {
+      "country": "ES",
+      "dashboard": "http://es.xreflector.es",
+      "description": "XREFLECTOR",
+      "dial": {
+        "host": "es.xreflector.es",
+        "kind": "ysf",
+        "port": 42002
+      },
+      "id": "00081",
+      "name": "XREFLECTOR",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "xreflector"
+    },
+    {
       "country": "US",
       "dashboard": "https://xlx082.hamradio.services",
       "description": "XLX082",
@@ -1512,10 +1527,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://dmr.freedmr.gr/",
+      "dashboard": "http://reflector.freedmr.gr/",
       "description": "GR-GREECE-DV",
       "dial": {
-        "host": "dmr.freedmr.gr",
+        "host": "reflector.freedmr.gr",
         "kind": "ysf",
         "port": 42000
       },
@@ -5351,6 +5366,20 @@
       "sponsor": "iu0NDT"
     },
     {
+      "country": "CA",
+      "description": "Private",
+      "dial": {
+        "host": "myhdd.ddns.net",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "08806",
+      "name": "VE2IBN",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "Gilles Letourneau"
+    },
+    {
       "country": "FR",
       "dashboard": "http://51.38.186.55:8000/",
       "description": "YSF MAYENNE",
@@ -7472,10 +7501,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://dmr.freedmr.gr/",
+      "dashboard": "https://reflector.freedmr.gr/",
       "description": "GR-KERKYRA-DV",
       "dial": {
-        "host": "dmr.freedmr.gr",
+        "host": "reflector.freedmr.gr",
         "kind": "ysf",
         "port": 42002
       },
@@ -9309,6 +9338,20 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "\u00d6VSV"
+    },
+    {
+      "country": "DE",
+      "description": "DA1SR",
+      "dial": {
+        "host": "93.245.180.5",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "23278",
+      "name": "DA1SR",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "DA1SR"
     },
     {
       "country": "GB",
@@ -13346,19 +13389,6 @@
       },
       "id": "36318",
       "name": "N8PWM-MIOMI",
-      "network": "ysf",
-      "source": "dvref"
-    },
-    {
-      "country": "US",
-      "description": "RPT 147.240",
-      "dial": {
-        "host": "k9ruf.duckdns.org",
-        "kind": "ysf",
-        "port": 42002
-      },
-      "id": "36633",
-      "name": "K9RUF Repeatr",
       "network": "ysf",
       "source": "dvref"
     },
@@ -20874,6 +20904,19 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "dmrbrescia.it"
+    },
+    {
+      "country": "US",
+      "description": "My node",
+      "dial": {
+        "host": "98.144.10.82",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "87282",
+      "name": "N9VJYsnode",
+      "network": "ysf",
+      "source": "dvref"
     },
     {
       "country": "CN",

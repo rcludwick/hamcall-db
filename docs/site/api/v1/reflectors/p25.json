@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 341,
-  "generated": "2026-09-23",
+  "count": 342,
+  "generated": "2026-09-24",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1931,6 +1931,20 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "DMR-SE"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://p25.socaldigitalk.com/index.php",
+      "dial": {
+        "host": "172.236.242.168",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "31061",
+      "name": "SoCalDigiTalk",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "N/A"
     },
     {
       "country": "US",
