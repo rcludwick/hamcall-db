@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 187,
-  "generated": "2026-09-24",
+  "generated": "2026-09-25",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -2302,7 +2302,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "DG3JKB",
-      "system": "ipsc2-dmr-dl"
+      "system": "ipsc2-dmr-dl",
+      "talkgroups": "reflectors/dmr/ipsc2-dmr-dl/talkgroups.json"
     },
     {
       "country": "GB",
@@ -2323,7 +2324,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "DVSPh",
-      "system": "ipsc2-dvsph"
+      "system": "ipsc2-dvsph",
+      "talkgroups": "reflectors/dmr/ipsc2-dvsph/talkgroups.json"
     },
     {
       "country": "GB",
@@ -2344,7 +2346,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "DVSPh",
-      "system": "ipsc2-dvsph"
+      "system": "ipsc2-dvsph",
+      "talkgroups": "reflectors/dmr/ipsc2-dvsph/talkgroups.json"
     },
     {
       "country": "GB",
@@ -2365,7 +2368,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "DVSPh",
-      "system": "ipsc2-dvsph"
+      "system": "ipsc2-dvsph",
+      "talkgroups": "reflectors/dmr/ipsc2-dvsph/talkgroups.json"
     },
     {
       "country": "FR",
@@ -2375,7 +2379,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "None",
-      "system": "ipsc2-france-3"
+      "system": "ipsc2-france-3",
+      "talkgroups": "reflectors/dmr/ipsc2-france-3/talkgroups.json"
     },
     {
       "country": "NZ",
@@ -2397,7 +2402,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "ZL4JY",
-      "system": "ipsc2-new-zealand"
+      "system": "ipsc2-new-zealand",
+      "talkgroups": "reflectors/dmr/ipsc2-new-zealand/talkgroups.json"
     },
     {
       "country": "PL",

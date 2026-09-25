@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 110,
-  "generated": "2026-09-24",
+  "count": 111,
+  "generated": "2026-09-25",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -2626,6 +2626,28 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "PU4RON"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://82.165.165.43:4000",
+      "dial": {
+        "callsign": "M17-SVD",
+        "host": "82.165.165.43",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "port": 17000
+      },
+      "id": "M17-SVD",
+      "name": "Savona Network M17",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "CISAR Sezione di Genova"
     },
     {
       "country": "GB",

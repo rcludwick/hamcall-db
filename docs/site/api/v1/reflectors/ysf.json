@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 1527,
-  "generated": "2026-09-24",
+  "generated": "2026-09-25",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1630,21 +1630,6 @@
       "sponsor": "Chaverim Radio Club"
     },
     {
-      "country": "AR",
-      "dashboard": "https://cqlaplata.ddns.net/",
-      "description": "Reflector XLX",
-      "dial": {
-        "host": "cqlaplata.ddns.net",
-        "kind": "ysf",
-        "port": 42006
-      },
-      "id": "00221",
-      "name": "CQ La Plata",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "LW6DMG"
-    },
-    {
       "country": "BH",
       "dashboard": "http://172.233.145.145",
       "description": "AGDX",
@@ -3131,10 +3116,10 @@
     },
     {
       "country": "US",
-      "dashboard": "https://xlxcloverradio.digital",
+      "dashboard": "https://xlx803.com",
       "description": "XLX reflector",
       "dial": {
-        "host": "xlxcloverradio.digital",
+        "host": "xlx803.com",
         "kind": "ysf",
         "port": 42000
       },
@@ -3146,10 +3131,10 @@
     },
     {
       "country": "US",
-      "dashboard": "https://cloverxlxham.digital",
+      "dashboard": "https://xlx804.com",
       "description": "XLX reflector",
       "dial": {
-        "host": "cloverxlxham.digital",
+        "host": "xlx804.com",
         "kind": "ysf",
         "port": 42000
       },
@@ -11195,7 +11180,7 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://xlx286.dmrturkiye.com",
+      "dashboard": "https://xlx286.dmrturkiye.com",
       "description": "URF286",
       "dial": {
         "host": "xlx286.dmrturkiye.com",
@@ -17629,6 +17614,19 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "W6DAD"
+    },
+    {
+      "country": "US",
+      "description": "K1NIC",
+      "dial": {
+        "host": "ysfmisfits.duckdns.org",
+        "kind": "ysf",
+        "port": 42002
+      },
+      "id": "62114",
+      "name": "Misfits",
+      "network": "ysf",
+      "source": "dvref"
     },
     {
       "country": "US",
