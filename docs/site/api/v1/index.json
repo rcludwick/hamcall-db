@@ -7,15 +7,15 @@
     "network": "reflectors/{network}.json",
     "openapi": "openapi.json"
   },
-  "expires_hint": "2026-10-02",
-  "generated": "2026-09-25",
+  "expires_hint": "2026-10-03",
+  "generated": "2026-09-26",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
   "networks": {
     "dmr": {
       "count": 187,
-      "generated": "2026-09-25",
+      "generated": "2026-09-26",
       "source": {
         "name": "DVRef",
         "url": "https://dvref.com/api/v2/"
@@ -476,13 +476,37 @@
           "fetched": "2026-09-25",
           "generated": "2026-09-25",
           "url": "reflectors/dmr/ipsc2-new-zealand/talkgroups.json"
+        },
+        "ipsc2-poland": {
+          "count": 0,
+          "fetched": "2026-09-26",
+          "generated": "2026-09-26",
+          "url": "reflectors/dmr/ipsc2-poland/talkgroups.json"
+        },
+        "ipsc2-portugal": {
+          "count": 6,
+          "fetched": "2026-09-26",
+          "generated": "2026-09-26",
+          "url": "reflectors/dmr/ipsc2-portugal/talkgroups.json"
+        },
+        "ipsc2-sweden": {
+          "count": 1,
+          "fetched": "2026-09-26",
+          "generated": "2026-09-26",
+          "url": "reflectors/dmr/ipsc2-sweden/talkgroups.json"
+        },
+        "ipsc3": {
+          "count": 1120,
+          "fetched": "2026-09-26",
+          "generated": "2026-09-26",
+          "url": "reflectors/dmr/ipsc3/talkgroups.json"
         }
       },
       "url": "reflectors/dmr.json"
     },
     "dstar": {
-      "count": 949,
-      "generated": "2026-09-25",
+      "count": 946,
+      "generated": "2026-09-26",
       "source": {
         "name": "XLX registry (LX1IQ) + Pi-Star DExtra hosts + Pi-Star DPlus/DCS names",
         "url": "http://xlxapi.rlx.lu/api.php?do=GetReflectorList"
@@ -490,8 +514,8 @@
       "url": "reflectors/dstar.json"
     },
     "m17": {
-      "count": 111,
-      "generated": "2026-09-25",
+      "count": 112,
+      "generated": "2026-09-26",
       "source": {
         "name": "DVRef",
         "url": "https://dvref.com/api/v2/"
@@ -499,8 +523,8 @@
       "url": "reflectors/m17.json"
     },
     "nxdn": {
-      "count": 326,
-      "generated": "2026-09-25",
+      "count": 327,
+      "generated": "2026-09-26",
       "source": {
         "name": "DVRef",
         "url": "https://dvref.com/api/v2/"
@@ -508,8 +532,8 @@
       "url": "reflectors/nxdn.json"
     },
     "p25": {
-      "count": 342,
-      "generated": "2026-09-25",
+      "count": 343,
+      "generated": "2026-09-26",
       "source": {
         "name": "DVRef",
         "url": "https://dvref.com/api/v2/"
@@ -518,7 +542,7 @@
     },
     "urf": {
       "count": 111,
-      "generated": "2026-09-25",
+      "generated": "2026-09-26",
       "source": {
         "name": "DVRef",
         "url": "https://dvref.com/api/v2/"
@@ -527,7 +551,7 @@
     },
     "ysf": {
       "count": 1527,
-      "generated": "2026-09-25",
+      "generated": "2026-09-26",
       "source": {
         "name": "DVRef",
         "url": "https://dvref.com/api/v2/"

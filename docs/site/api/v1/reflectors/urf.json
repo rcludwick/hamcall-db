@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 111,
-  "generated": "2026-09-25",
+  "generated": "2026-09-26",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -278,7 +278,14 @@
       "dashboard": "http://44.32.81.27",
       "dial": {
         "host": "44.32.81.27",
-        "kind": "urf"
+        "kind": "urf",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "R"
+        ]
       },
       "id": "162",
       "name": "all mode",
@@ -499,7 +506,7 @@
       "dashboard": "https://xrf256.swl.in.ua/",
       "description": "<p>URF256 is a multimode digital voice reflector operated by Odessa Radio Link in Ukraine. Supports D-Star, DMR, YSF, M17, NXDN and P25. Part of the ORLink and PTT Voice infrastructure.</p>",
       "dial": {
-        "host": "xrf256.swl.in.ua",
+        "host": "178.136.97.107",
         "kind": "urf"
       },
       "id": "256",

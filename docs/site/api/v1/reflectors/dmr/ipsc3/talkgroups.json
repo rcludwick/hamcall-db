@@ -1,0 +1,4499 @@
+{
+  "api_version": "v1",
+  "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
+  "client_refresh_days": 7,
+  "count": 1120,
+  "generated": "2026-09-26",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
+  "network": "dmr",
+  "schema_version": 1,
+  "source": {
+    "name": "DVRef",
+    "url": "https://dvref.com/api/v2/dmr/networks/ipsc3/talkgroups/"
+  },
+  "system": "ipsc3",
+  "talkgroups": [
+    {
+      "name": "World Wide",
+      "tg": 1
+    },
+    {
+      "name": "NET/Broadcast",
+      "tg": 5
+    },
+    {
+      "name": "Chat",
+      "tg": 53
+    },
+    {
+      "name": "UK Wide 1",
+      "tg": 80
+    },
+    {
+      "name": "UK Wide 2",
+      "tg": 81
+    },
+    {
+      "name": "UK Chat 4",
+      "tg": 83
+    },
+    {
+      "name": "Talkgroup",
+      "tg": 88
+    },
+    {
+      "name": "WorldWide",
+      "tg": 91
+    },
+    {
+      "name": "TAC English",
+      "tg": 113
+    },
+    {
+      "name": "TGIF 116",
+      "tg": 116
+    },
+    {
+      "name": "Technology First",
+      "tg": 198
+    },
+    {
+      "name": "Greece DV - YSF 00202",
+      "tg": 202
+    },
+    {
+      "name": "Nederlands-National",
+      "tg": 204
+    },
+    {
+      "name": "Belgium-National",
+      "tg": 206
+    },
+    {
+      "name": "Monaco",
+      "tg": 212
+    },
+    {
+      "name": "Andorra",
+      "tg": 213
+    },
+    {
+      "name": "National Spain (P)",
+      "tg": 214
+    },
+    {
+      "name": "Hungary",
+      "tg": 216
+    },
+    {
+      "name": "Bosnia and Herzegovina",
+      "tg": 218
+    },
+    {
+      "name": "Croatia",
+      "tg": 219
+    },
+    {
+      "name": "Serbia",
+      "tg": 220
+    },
+    {
+      "name": "Italy",
+      "tg": 222
+    },
+    {
+      "name": "Romania National",
+      "tg": 226
+    },
+    {
+      "name": "Switzerland",
+      "tg": 228
+    },
+    {
+      "name": "Czech Republic",
+      "tg": 230
+    },
+    {
+      "name": "Slovakia",
+      "tg": 231
+    },
+    {
+      "name": "Austria",
+      "tg": 232
+    },
+    {
+      "name": "235",
+      "tg": 235
+    },
+    {
+      "name": "Denmark",
+      "tg": 238
+    },
+    {
+      "name": "Sweden Call",
+      "tg": 240
+    },
+    {
+      "name": "Norway call",
+      "tg": 242
+    },
+    {
+      "name": "Finland",
+      "tg": 244
+    },
+    {
+      "name": "Hitachi Digipeater",
+      "tg": 245
+    },
+    {
+      "name": "Lithuania",
+      "tg": 246
+    },
+    {
+      "name": "Latvia",
+      "tg": 247
+    },
+    {
+      "name": "Estonia",
+      "tg": 248
+    },
+    {
+      "name": "Russian Federation",
+      "tg": 250
+    },
+    {
+      "name": "Ukraine",
+      "tg": 255
+    },
+    {
+      "name": "Belarus",
+      "tg": 257
+    },
+    {
+      "name": "Moldova",
+      "tg": 259
+    },
+    {
+      "name": "Poland HBLink",
+      "tg": 260
+    },
+    {
+      "name": "DL National",
+      "tg": 262
+    },
+    {
+      "name": "Gibraltar",
+      "tg": 266
+    },
+    {
+      "name": "Portugal Nacional",
+      "tg": 268
+    },
+    {
+      "name": "Luxembourg",
+      "tg": 270
+    },
+    {
+      "name": "Ireland",
+      "tg": 272
+    },
+    {
+      "name": "Iceland",
+      "tg": 274
+    },
+    {
+      "name": "Albania",
+      "tg": 276
+    },
+    {
+      "name": "Malta",
+      "tg": 278
+    },
+    {
+      "name": "Cyprus DV - YSF 00280 / NXDN 280",
+      "tg": 280
+    },
+    {
+      "name": "Georgia",
+      "tg": 282
+    },
+    {
+      "name": "Armenia",
+      "tg": 283
+    },
+    {
+      "name": "BG National",
+      "tg": 284
+    },
+    {
+      "name": "Turkey",
+      "tg": 286
+    },
+    {
+      "name": "Faroe Islands",
+      "tg": 288
+    },
+    {
+      "name": "San Marino",
+      "tg": 292
+    },
+    {
+      "name": "Slovenia",
+      "tg": 293
+    },
+    {
+      "name": "Macedonia",
+      "tg": 294
+    },
+    {
+      "name": "Liechtenstein",
+      "tg": 295
+    },
+    {
+      "name": "Montenegro",
+      "tg": 297
+    },
+    {
+      "name": "Canada Wide",
+      "tg": 302
+    },
+    {
+      "name": "United States of America",
+      "tg": 310
+    },
+    {
+      "name": "TAC 311",
+      "tg": 311
+    },
+    {
+      "name": "TAC 312",
+      "tg": 312
+    },
+    {
+      "name": "TAC 313",
+      "tg": 313
+    },
+    {
+      "name": "TAC 314",
+      "tg": 314
+    },
+    {
+      "name": "TAC 315",
+      "tg": 315
+    },
+    {
+      "name": "TAC 316",
+      "tg": 316
+    },
+    {
+      "name": "TAC 317",
+      "tg": 317
+    },
+    {
+      "name": "TAC 318",
+      "tg": 318
+    },
+    {
+      "name": "TAC 319",
+      "tg": 319
+    },
+    {
+      "name": "Quadnet 1",
+      "tg": 320
+    },
+    {
+      "name": "Quadnet 2",
+      "tg": 321
+    },
+    {
+      "name": "Astronomy Event Channel",
+      "tg": 322
+    },
+    {
+      "name": "KB3TEM-R/EchoLink/AllStar",
+      "tg": 323
+    },
+    {
+      "name": "Fireside Radio Network",
+      "tg": 326
+    },
+    {
+      "name": "National",
+      "tg": 330
+    },
+    {
+      "name": "United States Virgin Islands",
+      "tg": 332
+    },
+    {
+      "name": "MEXICO National",
+      "tg": 334
+    },
+    {
+      "name": "Jamaica",
+      "tg": 338
+    },
+    {
+      "name": "Barbados",
+      "tg": 342
+    },
+    {
+      "name": "Antigua and Barbuda",
+      "tg": 344
+    },
+    {
+      "name": "Cayman Islands",
+      "tg": 346
+    },
+    {
+      "name": "British Virgin Islands",
+      "tg": 348
+    },
+    {
+      "name": "Bermuda",
+      "tg": 350
+    },
+    {
+      "name": "Grenada",
+      "tg": 352
+    },
+    {
+      "name": "Montserrat",
+      "tg": 354
+    },
+    {
+      "name": "Saint Kitts and Nevis",
+      "tg": 356
+    },
+    {
+      "name": "Saint Lucia",
+      "tg": 358
+    },
+    {
+      "name": "Saint Vincent and the Grenadines",
+      "tg": 360
+    },
+    {
+      "name": "Aruba",
+      "tg": 363
+    },
+    {
+      "name": "Bahamas",
+      "tg": 364
+    },
+    {
+      "name": "Anguilla",
+      "tg": 365
+    },
+    {
+      "name": "Dominica",
+      "tg": 366
+    },
+    {
+      "name": "Cuba",
+      "tg": 368
+    },
+    {
+      "name": "Fusion Radio Group",
+      "tg": 369
+    },
+    {
+      "name": "DR National",
+      "tg": 370
+    },
+    {
+      "name": "Haiti",
+      "tg": 372
+    },
+    {
+      "name": "Trinidad and Tobago",
+      "tg": 374
+    },
+    {
+      "name": "Turks and Caicos Islands",
+      "tg": 376
+    },
+    {
+      "name": "Hangup",
+      "tg": 400
+    },
+    {
+      "name": "Kazakhstan",
+      "tg": 401
+    },
+    {
+      "name": "India",
+      "tg": 404
+    },
+    {
+      "name": "DMR Net",
+      "tg": 410
+    },
+    {
+      "name": "Afghanistan",
+      "tg": 412
+    },
+    {
+      "name": "Sri Lanka",
+      "tg": 413
+    },
+    {
+      "name": "Myanmar",
+      "tg": 414
+    },
+    {
+      "name": "Lebanon",
+      "tg": 415
+    },
+    {
+      "name": "Jordan",
+      "tg": 416
+    },
+    {
+      "name": "Syria",
+      "tg": 417
+    },
+    {
+      "name": "Iraq",
+      "tg": 418
+    },
+    {
+      "name": "Kuwait",
+      "tg": 419
+    },
+    {
+      "name": "Special K XLX-303-K",
+      "tg": 420
+    },
+    {
+      "name": "Oman",
+      "tg": 422
+    },
+    {
+      "name": "United Arab Emirates",
+      "tg": 424
+    },
+    {
+      "name": "Israel",
+      "tg": 425
+    },
+    {
+      "name": "Bahrain",
+      "tg": 426
+    },
+    {
+      "name": "Qatar",
+      "tg": 427
+    },
+    {
+      "name": "Mongolia",
+      "tg": 428
+    },
+    {
+      "name": "Nepal",
+      "tg": 429
+    },
+    {
+      "name": "Iran",
+      "tg": 432
+    },
+    {
+      "name": "Uzbekistan",
+      "tg": 434
+    },
+    {
+      "name": "Tajikistan",
+      "tg": 436
+    },
+    {
+      "name": "Kyrgyzstan",
+      "tg": 437
+    },
+    {
+      "name": "Turkmenistan",
+      "tg": 438
+    },
+    {
+      "name": "Call-QSY",
+      "tg": 440
+    },
+    {
+      "name": "Korea South",
+      "tg": 450
+    },
+    {
+      "name": "Vietnam",
+      "tg": 452
+    },
+    {
+      "name": "Hong Kong",
+      "tg": 454
+    },
+    {
+      "name": "Macau",
+      "tg": 455
+    },
+    {
+      "name": "Cambodia",
+      "tg": 456
+    },
+    {
+      "name": "Laos",
+      "tg": 457
+    },
+    {
+      "name": "China",
+      "tg": 460
+    },
+    {
+      "name": "Taiwan",
+      "tg": 466
+    },
+    {
+      "name": "Korea North",
+      "tg": 467
+    },
+    {
+      "name": "Bangladesh",
+      "tg": 470
+    },
+    {
+      "name": "Maldives",
+      "tg": 472
+    },
+    {
+      "name": "Welcome500",
+      "tg": 500
+    },
+    {
+      "name": "Malaysia",
+      "tg": 502
+    },
+    {
+      "name": "VKDMR Call Channel",
+      "tg": 505
+    },
+    {
+      "name": "Indonesia",
+      "tg": 510
+    },
+    {
+      "name": "East Timor",
+      "tg": 514
+    },
+    {
+      "name": "Philippines",
+      "tg": 515
+    },
+    {
+      "name": "RadioSC",
+      "tg": 517
+    },
+    {
+      "name": "Thailand Nation Wide [ call ]",
+      "tg": 520
+    },
+    {
+      "name": "Singapore",
+      "tg": 525
+    },
+    {
+      "name": "Brunei",
+      "tg": 528
+    },
+    {
+      "name": "530 NZ Wide",
+      "tg": 530
+    },
+    {
+      "name": "Nauru",
+      "tg": 536
+    },
+    {
+      "name": "Papua New Guinea",
+      "tg": 537
+    },
+    {
+      "name": "Tonga",
+      "tg": 539
+    },
+    {
+      "name": "Solomon Islands",
+      "tg": 540
+    },
+    {
+      "name": "Vanuatu",
+      "tg": 541
+    },
+    {
+      "name": "Fiji",
+      "tg": 542
+    },
+    {
+      "name": "American Samoa",
+      "tg": 544
+    },
+    {
+      "name": "Kiribati",
+      "tg": 545
+    },
+    {
+      "name": "Cook Islands",
+      "tg": 548
+    },
+    {
+      "name": "Samoa",
+      "tg": 549
+    },
+    {
+      "name": "Micronesia Federated",
+      "tg": 550
+    },
+    {
+      "name": "Marshall Islands",
+      "tg": 551
+    },
+    {
+      "name": "Palau",
+      "tg": 552
+    },
+    {
+      "name": "Tuvalu",
+      "tg": 553
+    },
+    {
+      "name": "Egypt",
+      "tg": 602
+    },
+    {
+      "name": "Algeria",
+      "tg": 603
+    },
+    {
+      "name": "Morocco-National",
+      "tg": 604
+    },
+    {
+      "name": "Tunisia",
+      "tg": 605
+    },
+    {
+      "name": "Libya",
+      "tg": 606
+    },
+    {
+      "name": "Gambia",
+      "tg": 607
+    },
+    {
+      "name": "Senegal",
+      "tg": 608
+    },
+    {
+      "name": "Mauritania",
+      "tg": 609
+    },
+    {
+      "name": "Mali",
+      "tg": 610
+    },
+    {
+      "name": "Guinea",
+      "tg": 611
+    },
+    {
+      "name": "Burkina Faso",
+      "tg": 613
+    },
+    {
+      "name": "Niger",
+      "tg": 614
+    },
+    {
+      "name": "Togo",
+      "tg": 615
+    },
+    {
+      "name": "Benin",
+      "tg": 616
+    },
+    {
+      "name": "Mauritius",
+      "tg": 617
+    },
+    {
+      "name": "Liberia",
+      "tg": 618
+    },
+    {
+      "name": "Sierra Leone",
+      "tg": 619
+    },
+    {
+      "name": "Ghana",
+      "tg": 620
+    },
+    {
+      "name": "Nigeria",
+      "tg": 621
+    },
+    {
+      "name": "Chad",
+      "tg": 622
+    },
+    {
+      "name": "Central African Republic",
+      "tg": 623
+    },
+    {
+      "name": "Cameroon",
+      "tg": 624
+    },
+    {
+      "name": "Cape Verde",
+      "tg": 625
+    },
+    {
+      "name": "Sao Tome and Principe",
+      "tg": 626
+    },
+    {
+      "name": "Equatorial Guinea",
+      "tg": 627
+    },
+    {
+      "name": "Gabon",
+      "tg": 628
+    },
+    {
+      "name": "Angola",
+      "tg": 631
+    },
+    {
+      "name": "Guinea-Bissau",
+      "tg": 632
+    },
+    {
+      "name": "Seychelles",
+      "tg": 633
+    },
+    {
+      "name": "Sudan",
+      "tg": 634
+    },
+    {
+      "name": "Rwanda",
+      "tg": 635
+    },
+    {
+      "name": "Ethiopia",
+      "tg": 636
+    },
+    {
+      "name": "Somalia",
+      "tg": 637
+    },
+    {
+      "name": "Djibouti",
+      "tg": 638
+    },
+    {
+      "name": "Kenya",
+      "tg": 639
+    },
+    {
+      "name": "Tanzania",
+      "tg": 640
+    },
+    {
+      "name": "Uganda",
+      "tg": 641
+    },
+    {
+      "name": "Burundi",
+      "tg": 642
+    },
+    {
+      "name": "Mozambique",
+      "tg": 643
+    },
+    {
+      "name": "Madagascar",
+      "tg": 646
+    },
+    {
+      "name": "Reunion",
+      "tg": 647
+    },
+    {
+      "name": "Namibia",
+      "tg": 649
+    },
+    {
+      "name": "Malawi",
+      "tg": 650
+    },
+    {
+      "name": "Lesotho",
+      "tg": 651
+    },
+    {
+      "name": "Botswana",
+      "tg": 652
+    },
+    {
+      "name": "Eswatini",
+      "tg": 653
+    },
+    {
+      "name": "Comoros",
+      "tg": 654
+    },
+    {
+      "name": "South Africa",
+      "tg": 655
+    },
+    {
+      "name": "Eritrea",
+      "tg": 657
+    },
+    {
+      "name": "C-AMERICA",
+      "tg": 701
+    },
+    {
+      "name": "Belize",
+      "tg": 702
+    },
+    {
+      "name": "Guatemala",
+      "tg": 704
+    },
+    {
+      "name": "El Salvador",
+      "tg": 706
+    },
+    {
+      "name": "Honduras",
+      "tg": 708
+    },
+    {
+      "name": "YN-Nacional",
+      "tg": 710
+    },
+    {
+      "name": "Costa Rica",
+      "tg": 712
+    },
+    {
+      "name": "Panama",
+      "tg": 714
+    },
+    {
+      "name": "Peru",
+      "tg": 716
+    },
+    {
+      "name": "Argentina",
+      "tg": 722
+    },
+    {
+      "name": "Brasil National",
+      "tg": 724
+    },
+    {
+      "name": "CHILE - Nacional",
+      "tg": 730
+    },
+    {
+      "name": "Rep\u00fablica de Colombia",
+      "tg": 732
+    },
+    {
+      "name": "MCC VENEZUELA - EUROPELINK",
+      "tg": 734
+    },
+    {
+      "name": "Bolivia",
+      "tg": 736
+    },
+    {
+      "name": "Guyana",
+      "tg": 738
+    },
+    {
+      "name": "Ecuador",
+      "tg": 740
+    },
+    {
+      "name": "Paraguay",
+      "tg": 744
+    },
+    {
+      "name": "Suriname",
+      "tg": 746
+    },
+    {
+      "name": "Uruguay",
+      "tg": 748
+    },
+    {
+      "name": "Ham Radio Life",
+      "tg": 756
+    },
+    {
+      "name": "Scan",
+      "tg": 777
+    },
+    {
+      "name": "Rocket City Alabama",
+      "tg": 805
+    },
+    {
+      "name": "NWMG",
+      "tg": 825
+    },
+    {
+      "name": "Long Island DMR Network",
+      "tg": 852
+    },
+    {
+      "name": "JOTA JOTI YOTA",
+      "tg": 907
+    },
+    {
+      "name": "Hispano",
+      "tg": 914
+    },
+    {
+      "name": "CQ-UK WIRES X",
+      "tg": 922
+    },
+    {
+      "name": "French Language FRANCOPHONIE",
+      "tg": 937
+    },
+    {
+      "name": "SW Cluster",
+      "tg": 950
+    },
+    {
+      "name": "Worldwide PRIDE (Allstar 56108)",
+      "tg": 969
+    },
+    {
+      "name": "POTA",
+      "tg": 970
+    },
+    {
+      "name": "SOTA",
+      "tg": 973
+    },
+    {
+      "name": "Greece Wide Chat",
+      "tg": 2020
+    },
+    {
+      "name": "Central Greece",
+      "tg": 2021
+    },
+    {
+      "name": "Central & West Macedonia",
+      "tg": 2022
+    },
+    {
+      "name": "Peloponnese",
+      "tg": 2023
+    },
+    {
+      "name": "Thessaly",
+      "tg": 2024
+    },
+    {
+      "name": "Dodecanese Islands",
+      "tg": 2025
+    },
+    {
+      "name": "Epirus",
+      "tg": 2026
+    },
+    {
+      "name": "Thrace and East Macedonia",
+      "tg": 2027
+    },
+    {
+      "name": "All Greek islands",
+      "tg": 2028
+    },
+    {
+      "name": "Crete DV - YSF 02029",
+      "tg": 2029
+    },
+    {
+      "name": "Belgium-North",
+      "tg": 2061
+    },
+    {
+      "name": "Belgium-South",
+      "tg": 2062
+    },
+    {
+      "name": "Belgium-East",
+      "tg": 2063
+    },
+    {
+      "name": "Belgium-On Demand",
+      "tg": 2064
+    },
+    {
+      "name": "Belgium-On Demand",
+      "tg": 2065
+    },
+    {
+      "name": "Belgium-On Demand",
+      "tg": 2066
+    },
+    {
+      "name": "Belgium-On Demand",
+      "tg": 2067
+    },
+    {
+      "name": "Belgium-On Demand",
+      "tg": 2068
+    },
+    {
+      "name": "Belgium-On Demand",
+      "tg": 2069
+    },
+    {
+      "name": "France Urgence",
+      "tg": 2080
+    },
+    {
+      "name": "France IDF",
+      "tg": 2081
+    },
+    {
+      "name": "France Sud-Est",
+      "tg": 2082
+    },
+    {
+      "name": "France",
+      "tg": 2083
+    },
+    {
+      "name": "France Est",
+      "tg": 2084
+    },
+    {
+      "name": "France",
+      "tg": 2085
+    },
+    {
+      "name": "France",
+      "tg": 2086
+    },
+    {
+      "name": "DMR Francophone TG7",
+      "tg": 2087
+    },
+    {
+      "name": "France",
+      "tg": 2088
+    },
+    {
+      "name": "Dom Tom",
+      "tg": 2089
+    },
+    {
+      "name": "ZONE 1 EA",
+      "tg": 2141
+    },
+    {
+      "name": "ZONE 2 EA",
+      "tg": 2142
+    },
+    {
+      "name": "ZONE 3 EA",
+      "tg": 2143
+    },
+    {
+      "name": "ZONE 4 EA",
+      "tg": 2144
+    },
+    {
+      "name": "ZONE 5 EA",
+      "tg": 2145
+    },
+    {
+      "name": "ZONE 6 EA",
+      "tg": 2146
+    },
+    {
+      "name": "ZONE 7 EA",
+      "tg": 2147
+    },
+    {
+      "name": "ZONE 8 EA",
+      "tg": 2148
+    },
+    {
+      "name": "ZONE 9 EA",
+      "tg": 2149
+    },
+    {
+      "name": "Romania Chatter",
+      "tg": 2260
+    },
+    {
+      "name": "Romania District YO2",
+      "tg": 2262
+    },
+    {
+      "name": "Romania District YO3",
+      "tg": 2263
+    },
+    {
+      "name": "Romania District YO4",
+      "tg": 2264
+    },
+    {
+      "name": "Romania District YO5",
+      "tg": 2265
+    },
+    {
+      "name": "Romania District YO6",
+      "tg": 2266
+    },
+    {
+      "name": "Romania District YO7",
+      "tg": 2267
+    },
+    {
+      "name": "Romania District YO8",
+      "tg": 2268
+    },
+    {
+      "name": "Romania District YO9",
+      "tg": 2269
+    },
+    {
+      "name": "Swiss German",
+      "tg": 2280
+    },
+    {
+      "name": "Suisse Romande",
+      "tg": 2281
+    },
+    {
+      "name": "Valais",
+      "tg": 2282
+    },
+    {
+      "name": "Bern Capital",
+      "tg": 2283
+    },
+    {
+      "name": "Basilea",
+      "tg": 2284
+    },
+    {
+      "name": "Argovia / Swiss central",
+      "tg": 2285
+    },
+    {
+      "name": "Ticino",
+      "tg": 2286
+    },
+    {
+      "name": "Grigioni",
+      "tg": 2287
+    },
+    {
+      "name": "Zurich",
+      "tg": 2288
+    },
+    {
+      "name": "Oriental Swiss",
+      "tg": 2289
+    },
+    {
+      "name": "ASL Bridge",
+      "tg": 2345
+    },
+    {
+      "name": "Sherwood Observatory ARC",
+      "tg": 2348
+    },
+    {
+      "name": "UK Central",
+      "tg": 2350
+    },
+    {
+      "name": "UK Calling",
+      "tg": 2351
+    },
+    {
+      "name": "UK Chat 2",
+      "tg": 2352
+    },
+    {
+      "name": "UK Chat 3",
+      "tg": 2353
+    },
+    {
+      "name": "UK Chat 4",
+      "tg": 2354
+    },
+    {
+      "name": "UK Chat 5",
+      "tg": 2355
+    },
+    {
+      "name": "UK Chat 6",
+      "tg": 2356
+    },
+    {
+      "name": "Isle of Man",
+      "tg": 2357
+    },
+    {
+      "name": "London",
+      "tg": 2358
+    },
+    {
+      "name": "Kernow & Jersey",
+      "tg": 2359
+    },
+    {
+      "name": "Denmark Nordjylland",
+      "tg": 2381
+    },
+    {
+      "name": "Denmark Midtjylland",
+      "tg": 2382
+    },
+    {
+      "name": "Denmark Syddanmark",
+      "tg": 2383
+    },
+    {
+      "name": "Denmark Copenhagen",
+      "tg": 2384
+    },
+    {
+      "name": "Denmark Sjaelland",
+      "tg": 2385
+    },
+    {
+      "name": "Sweden chat 1",
+      "tg": 2401
+    },
+    {
+      "name": "Sweden chat 2",
+      "tg": 2402
+    },
+    {
+      "name": "Sweden chat 3",
+      "tg": 2403
+    },
+    {
+      "name": "Sweden chat 4",
+      "tg": 2404
+    },
+    {
+      "name": "Sweden chat 5",
+      "tg": 2405
+    },
+    {
+      "name": "Sachsen-Anhalt/Mecklenburg-Vorpommern",
+      "tg": 2620
+    },
+    {
+      "name": "Berlin/Brandenburg",
+      "tg": 2621
+    },
+    {
+      "name": "Hamburg/Schleswig-Holstein",
+      "tg": 2622
+    },
+    {
+      "name": "Niedersachsen/Bremen",
+      "tg": 2623
+    },
+    {
+      "name": "Nordrhein-Westfalen",
+      "tg": 2624
+    },
+    {
+      "name": "Rheinland-Pfalz/Saarland",
+      "tg": 2625
+    },
+    {
+      "name": "Hessen",
+      "tg": 2626
+    },
+    {
+      "name": "Baden-Wuerttemberg",
+      "tg": 2627
+    },
+    {
+      "name": "Bayern",
+      "tg": 2628
+    },
+    {
+      "name": "Sachsen/Thueringen",
+      "tg": 2629
+    },
+    {
+      "name": "Portugal Norte",
+      "tg": 2681
+    },
+    {
+      "name": "Portugal Centro",
+      "tg": 2682
+    },
+    {
+      "name": "Portugal Capital",
+      "tg": 2683
+    },
+    {
+      "name": "Portugal Alentejo",
+      "tg": 2684
+    },
+    {
+      "name": "Portugal Algarve",
+      "tg": 2685
+    },
+    {
+      "name": "Azores Is.",
+      "tg": 2686
+    },
+    {
+      "name": "Madeira Is.",
+      "tg": 2687
+    },
+    {
+      "name": "PT - FreeDMR <=> EchoLink \u2022 ETR",
+      "tg": 2688
+    },
+    {
+      "name": "PT - FreeDMR <=> AllStar/YSF02689 Azores",
+      "tg": 2689
+    },
+    {
+      "name": "Ireland 0",
+      "tg": 2720
+    },
+    {
+      "name": "Ireland 1",
+      "tg": 2721
+    },
+    {
+      "name": "Ireland Calling",
+      "tg": 2722
+    },
+    {
+      "name": "Ireland Chat",
+      "tg": 2723
+    },
+    {
+      "name": "Cyprus Chat",
+      "tg": 2801
+    },
+    {
+      "name": "Cyprus - Nicosia",
+      "tg": 2802
+    },
+    {
+      "name": "Cyprus  - Famagusta",
+      "tg": 2803
+    },
+    {
+      "name": "Cyprus - Larnaca",
+      "tg": 2804
+    },
+    {
+      "name": "Cyprus - Limassol",
+      "tg": 2805
+    },
+    {
+      "name": "Cyprus - Paphos",
+      "tg": 2806
+    },
+    {
+      "name": "Newfoundland & Labrador & P.E.I.",
+      "tg": 3020
+    },
+    {
+      "name": "Nova Scotia",
+      "tg": 3021
+    },
+    {
+      "name": "Quebec",
+      "tg": 3022
+    },
+    {
+      "name": "Ontario",
+      "tg": 3023
+    },
+    {
+      "name": "Manitoba",
+      "tg": 3024
+    },
+    {
+      "name": "Saskatchewan",
+      "tg": 3025
+    },
+    {
+      "name": "Alberta Link(QuadNet, SystemX ,TGIF,DMR+)",
+      "tg": 3026
+    },
+    {
+      "name": "British Columbia",
+      "tg": 3027
+    },
+    {
+      "name": "Nunavut Yukon & NWT",
+      "tg": 3028
+    },
+    {
+      "name": "New Brunswick",
+      "tg": 3029
+    },
+    {
+      "name": "US Call Channel",
+      "tg": 3100
+    },
+    {
+      "name": "Alabama State Wide",
+      "tg": 3101
+    },
+    {
+      "name": "Alaska State Wide",
+      "tg": 3102
+    },
+    {
+      "name": "Arizona State Wide",
+      "tg": 3104
+    },
+    {
+      "name": "Arkansas State Wide",
+      "tg": 3105
+    },
+    {
+      "name": "California State Wide",
+      "tg": 3106
+    },
+    {
+      "name": "Colorado State Wide",
+      "tg": 3108
+    },
+    {
+      "name": "Connecticut State Wide",
+      "tg": 3109
+    },
+    {
+      "name": "Delaware State Wide",
+      "tg": 3110
+    },
+    {
+      "name": "District of Columbia State Wide",
+      "tg": 3111
+    },
+    {
+      "name": "Florida State Wide",
+      "tg": 3112
+    },
+    {
+      "name": "Georgia State Wide",
+      "tg": 3113
+    },
+    {
+      "name": "Hawai State Wide",
+      "tg": 3115
+    },
+    {
+      "name": "Idaho State Wide",
+      "tg": 3116
+    },
+    {
+      "name": "Illinois State Wide",
+      "tg": 3117
+    },
+    {
+      "name": "Indiana State Wide",
+      "tg": 3118
+    },
+    {
+      "name": "Iowa State Wide",
+      "tg": 3119
+    },
+    {
+      "name": "Kansas State Wide",
+      "tg": 3120
+    },
+    {
+      "name": "Kentucky State Wide",
+      "tg": 3121
+    },
+    {
+      "name": "Louisiana State Wide",
+      "tg": 3122
+    },
+    {
+      "name": "Maine State Wide",
+      "tg": 3123
+    },
+    {
+      "name": "Maryland State Wide",
+      "tg": 3124
+    },
+    {
+      "name": "Massachusetts State Wide",
+      "tg": 3125
+    },
+    {
+      "name": "Michigan State Wide",
+      "tg": 3126
+    },
+    {
+      "name": "Minnesota State Wide",
+      "tg": 3127
+    },
+    {
+      "name": "Mississippi State Wide",
+      "tg": 3128
+    },
+    {
+      "name": "Missouri State Wide",
+      "tg": 3129
+    },
+    {
+      "name": "Montana State Wide",
+      "tg": 3130
+    },
+    {
+      "name": "Nebraska State Wide",
+      "tg": 3131
+    },
+    {
+      "name": "Nevada State Wide",
+      "tg": 3132
+    },
+    {
+      "name": "CC-Link/New Hampshire State Wide",
+      "tg": 3133
+    },
+    {
+      "name": "New Jersey State Wide",
+      "tg": 3134
+    },
+    {
+      "name": "New Mexico State Wide",
+      "tg": 3135
+    },
+    {
+      "name": "New York State Wide",
+      "tg": 3136
+    },
+    {
+      "name": "North Carolina State Wide",
+      "tg": 3137
+    },
+    {
+      "name": "North Dakota State Wide",
+      "tg": 3138
+    },
+    {
+      "name": "Ohio State Wide",
+      "tg": 3139
+    },
+    {
+      "name": "Oklahoma State Wide",
+      "tg": 3140
+    },
+    {
+      "name": "Oregon State Wide",
+      "tg": 3141
+    },
+    {
+      "name": "Pennsylvania State Wide",
+      "tg": 3142
+    },
+    {
+      "name": "Puerto Rico Territory Wide",
+      "tg": 3143
+    },
+    {
+      "name": "Rhode Island State Wide",
+      "tg": 3144
+    },
+    {
+      "name": "South Carolina State Wide",
+      "tg": 3145
+    },
+    {
+      "name": "South Dakota State Wide",
+      "tg": 3146
+    },
+    {
+      "name": "Tennessee State Wide",
+      "tg": 3147
+    },
+    {
+      "name": "Texas State Wide",
+      "tg": 3148
+    },
+    {
+      "name": "Utah State Wide",
+      "tg": 3149
+    },
+    {
+      "name": "Vermont State Wide",
+      "tg": 3150
+    },
+    {
+      "name": "Virginia State Wide",
+      "tg": 3151
+    },
+    {
+      "name": "Virgin Islands Territory Wide",
+      "tg": 3152
+    },
+    {
+      "name": "Washington State Wide",
+      "tg": 3153
+    },
+    {
+      "name": "West Virginia State Wide",
+      "tg": 3154
+    },
+    {
+      "name": "Wisconsin State Wide",
+      "tg": 3155
+    },
+    {
+      "name": "Wyoming State Wide",
+      "tg": 3156
+    },
+    {
+      "name": "North Florida Amateur Radio",
+      "tg": 3158
+    },
+    {
+      "name": "Crossroads-USA Reflector",
+      "tg": 3160
+    },
+    {
+      "name": "Unified Radios",
+      "tg": 3161
+    },
+    {
+      "name": "La Isla",
+      "tg": 3162
+    },
+    {
+      "name": "USA SOUTHEAST",
+      "tg": 3165
+    },
+    {
+      "name": "DVSwitch",
+      "tg": 3166
+    },
+    {
+      "name": "Link-System",
+      "tg": 3177
+    },
+    {
+      "name": "New England",
+      "tg": 3181
+    },
+    {
+      "name": "WM CONNECT",
+      "tg": 3192
+    },
+    {
+      "name": "PR00",
+      "tg": 3300
+    },
+    {
+      "name": "PR02",
+      "tg": 3302
+    },
+    {
+      "name": "PR03",
+      "tg": 3303
+    },
+    {
+      "name": "PR04",
+      "tg": 3304
+    },
+    {
+      "name": "PR05",
+      "tg": 3305
+    },
+    {
+      "name": "PR06",
+      "tg": 3306
+    },
+    {
+      "name": "North Wind Link",
+      "tg": 3307
+    },
+    {
+      "name": "PR08",
+      "tg": 3308
+    },
+    {
+      "name": "PR09",
+      "tg": 3309
+    },
+    {
+      "name": "XE1 Zone",
+      "tg": 3341
+    },
+    {
+      "name": "XE2 Zone",
+      "tg": 3342
+    },
+    {
+      "name": "XE3 Zone",
+      "tg": 3343
+    },
+    {
+      "name": "Dunstable Downs RC",
+      "tg": 3372
+    },
+    {
+      "name": "El Kiosko",
+      "tg": 3700
+    },
+    {
+      "name": "DR Zone 1",
+      "tg": 3701
+    },
+    {
+      "name": "DR Zone 2",
+      "tg": 3702
+    },
+    {
+      "name": "DR Zone 3",
+      "tg": 3703
+    },
+    {
+      "name": "DR Zone 4",
+      "tg": 3704
+    },
+    {
+      "name": "DR Zone 5",
+      "tg": 3705
+    },
+    {
+      "name": "DR Zone 6",
+      "tg": 3706
+    },
+    {
+      "name": "DR Zone 7",
+      "tg": 3707
+    },
+    {
+      "name": "DR Zone 8",
+      "tg": 3708
+    },
+    {
+      "name": "Chat Group 3801",
+      "tg": 3801
+    },
+    {
+      "name": "Chat Group 3802",
+      "tg": 3802
+    },
+    {
+      "name": "Chat Group 3803",
+      "tg": 3803
+    },
+    {
+      "name": "Chat Group 3804",
+      "tg": 3804
+    },
+    {
+      "name": "Chat Group 3805",
+      "tg": 3805
+    },
+    {
+      "name": "Chat Group 3806",
+      "tg": 3806
+    },
+    {
+      "name": "Chat Group 3807",
+      "tg": 3807
+    },
+    {
+      "name": "Chat Group 3808",
+      "tg": 3808
+    },
+    {
+      "name": "Chat Group 3809",
+      "tg": 3809
+    },
+    {
+      "name": "Chat Group 3810",
+      "tg": 3810
+    },
+    {
+      "name": "Public Safety Amatuer Radio Group",
+      "tg": 4101
+    },
+    {
+      "name": "Palestine",
+      "tg": 4251
+    },
+    {
+      "name": "Chat 1",
+      "tg": 4401
+    },
+    {
+      "name": "Chat 2",
+      "tg": 4402
+    },
+    {
+      "name": "Chat 3",
+      "tg": 4403
+    },
+    {
+      "name": "Chat 4",
+      "tg": 4404
+    },
+    {
+      "name": "Chat 5",
+      "tg": 4405
+    },
+    {
+      "name": "4409",
+      "tg": 4409
+    },
+    {
+      "name": "Australia - News Nets and Ragchews",
+      "tg": 5050
+    },
+    {
+      "name": "Australia - Eastern States",
+      "tg": 5052
+    },
+    {
+      "name": "Australia - Central States",
+      "tg": 5055
+    },
+    {
+      "name": "Australia - Western States",
+      "tg": 5056
+    },
+    {
+      "name": "Zamboanga Peninsula",
+      "tg": 5158
+    },
+    {
+      "name": "Reserved",
+      "tg": 5201
+    },
+    {
+      "name": "CHAT 2",
+      "tg": 5202
+    },
+    {
+      "name": "CHAT 3",
+      "tg": 5203
+    },
+    {
+      "name": "P25 [TG-52072]",
+      "tg": 5204
+    },
+    {
+      "name": "ASL TG-550911 [XLX822A]",
+      "tg": 5205
+    },
+    {
+      "name": "ZL 1 Region",
+      "tg": 5301
+    },
+    {
+      "name": "ZL 2 Regional",
+      "tg": 5302
+    },
+    {
+      "name": "ZL 3 Region",
+      "tg": 5303
+    },
+    {
+      "name": "ZL 4 Region",
+      "tg": 5304
+    },
+    {
+      "name": "XLX530-D",
+      "tg": 5306
+    },
+    {
+      "name": "BrandMeister 505 VK",
+      "tg": 5505
+    },
+    {
+      "name": "Cross Mode DMR = ANALOGUE",
+      "tg": 6041
+    },
+    {
+      "name": "US Ragchew Network",
+      "tg": 6487
+    },
+    {
+      "name": "GREMCA",
+      "tg": 7000
+    },
+    {
+      "name": "GREMSAL",
+      "tg": 7065
+    },
+    {
+      "name": "GREMHR",
+      "tg": 7085
+    },
+    {
+      "name": "Zona YN2",
+      "tg": 7102
+    },
+    {
+      "name": "Zona YN3",
+      "tg": 7103
+    },
+    {
+      "name": "Zona YN4",
+      "tg": 7104
+    },
+    {
+      "name": "GREMNIC",
+      "tg": 7105
+    },
+    {
+      "name": "CREN-SER Echolink",
+      "tg": 7107
+    },
+    {
+      "name": "YSF51642 NICA",
+      "tg": 7108
+    },
+    {
+      "name": "GREMCRC",
+      "tg": 7125
+    },
+    {
+      "name": "Panama WiresX",
+      "tg": 7143
+    },
+    {
+      "name": "Chiriqui Link Panama",
+      "tg": 7144
+    },
+    {
+      "name": "GREMPA",
+      "tg": 7145
+    },
+    {
+      "name": "UPRA",
+      "tg": 7146
+    },
+    {
+      "name": "Radio Club Panama",
+      "tg": 7148
+    },
+    {
+      "name": "Panam\u00e1 Scouts",
+      "tg": 7149
+    },
+    {
+      "name": "Peru Digital / XLX716 C",
+      "tg": 7160
+    },
+    {
+      "name": "Blue-Net",
+      "tg": 7220
+    },
+    {
+      "name": "ARGENTINA FREE",
+      "tg": 7221
+    },
+    {
+      "name": "*ARG DIGITAL*  TG 7225 *",
+      "tg": 7225
+    },
+    {
+      "name": "Norte",
+      "tg": 7241
+    },
+    {
+      "name": "Nordeste",
+      "tg": 7242
+    },
+    {
+      "name": "Centro-Oeste",
+      "tg": 7243
+    },
+    {
+      "name": "Sudeste",
+      "tg": 7244
+    },
+    {
+      "name": "Sul",
+      "tg": 7245
+    },
+    {
+      "name": "CE0 Zona0 Chile Insular",
+      "tg": 7300
+    },
+    {
+      "name": "CE1 Zona1 Arica - Atacama",
+      "tg": 7301
+    },
+    {
+      "name": "CE2 Zona2 Coquimbo -Valparaiso",
+      "tg": 7302
+    },
+    {
+      "name": "CE3 Zona3 Metropolitana",
+      "tg": 7303
+    },
+    {
+      "name": "CE4 Zona4 O'Higgins - \u00d1uble",
+      "tg": 7304
+    },
+    {
+      "name": "CE5 Zona5 BioBio",
+      "tg": 7305
+    },
+    {
+      "name": "CE6 Zona6 Araucania y Los Rios",
+      "tg": 7306
+    },
+    {
+      "name": "CE7 Zona7 Los Lagos - Aysen",
+      "tg": 7307
+    },
+    {
+      "name": "CE8 Zona8 Magallanes",
+      "tg": 7308
+    },
+    {
+      "name": "CE9 Zona9 U.Esperanza - Antartica",
+      "tg": 7309
+    },
+    {
+      "name": "HK0 Atlantico",
+      "tg": 7320
+    },
+    {
+      "name": "HK1 Cesar",
+      "tg": 7321
+    },
+    {
+      "name": "HK2 Bogot\u00e1",
+      "tg": 7322
+    },
+    {
+      "name": "HK3 Antioquia",
+      "tg": 7323
+    },
+    {
+      "name": "HK4 Cauca",
+      "tg": 7324
+    },
+    {
+      "name": "HK5 Caldas",
+      "tg": 7325
+    },
+    {
+      "name": "HK6 Arauca",
+      "tg": 7326
+    },
+    {
+      "name": "HK7 Caquet\u00e1",
+      "tg": 7327
+    },
+    {
+      "name": "HK8 Amazonas",
+      "tg": 7328
+    },
+    {
+      "name": "HK9 Malpelo",
+      "tg": 7329
+    },
+    {
+      "name": "(YV1) Zona 1",
+      "tg": 7341
+    },
+    {
+      "name": "(YV2) Zona 2",
+      "tg": 7342
+    },
+    {
+      "name": "(YV3) Zona 3",
+      "tg": 7343
+    },
+    {
+      "name": "(YV4) Zona 4",
+      "tg": 7344
+    },
+    {
+      "name": "(YV5) Zona 5",
+      "tg": 7345
+    },
+    {
+      "name": "(YV6) Zona 6",
+      "tg": 7346
+    },
+    {
+      "name": "(YV7) Zona 7",
+      "tg": 7347
+    },
+    {
+      "name": "(YV8) Zona 8",
+      "tg": 7348
+    },
+    {
+      "name": "(YV9) Zona 9",
+      "tg": 7349
+    },
+    {
+      "name": "Ecuador HC3 Loja",
+      "tg": 7401
+    },
+    {
+      "name": "RADE ECUADOR",
+      "tg": 7406
+    },
+    {
+      "name": "Uruguay Link",
+      "tg": 7487
+    },
+    {
+      "name": "Jesus Saves",
+      "tg": 7770
+    },
+    {
+      "name": "CQ UK",
+      "tg": 8409
+    },
+    {
+      "name": "East Coast Reflector",
+      "tg": 9050
+    },
+    {
+      "name": "QuadNet D-APRS",
+      "tg": 9059
+    },
+    {
+      "name": "Tac 1  JOTA  YOTA",
+      "tg": 9071
+    },
+    {
+      "name": "Tac 2  JOTA  YOTA",
+      "tg": 9072
+    },
+    {
+      "name": "Tac 3  JOTA  YOTA",
+      "tg": 9073
+    },
+    {
+      "name": "Tac 4  JOTA  YOTA",
+      "tg": 9074
+    },
+    {
+      "name": "Tac 5  JOTA  YOTA",
+      "tg": 9075
+    },
+    {
+      "name": "Tac 6  JOTA  YOTA",
+      "tg": 9076
+    },
+    {
+      "name": "Tac 7  JOTA  YOTA",
+      "tg": 9077
+    },
+    {
+      "name": "Tac 8  JOTA  YOTA",
+      "tg": 9078
+    },
+    {
+      "name": "Emcom EU",
+      "tg": 9112
+    },
+    {
+      "name": "M17-M17 Module C",
+      "tg": 9517
+    },
+    {
+      "name": "Parrot",
+      "tg": 9990
+    },
+    {
+      "name": "Data",
+      "tg": 9998
+    },
+    {
+      "name": "US-AMSAT",
+      "tg": 11689
+    },
+    {
+      "name": "Emergency Radio Long Island",
+      "tg": 11710
+    },
+    {
+      "name": "Link",
+      "tg": 14054
+    },
+    {
+      "name": "Hotspot & Repeater Testing",
+      "tg": 20210
+    },
+    {
+      "name": "Lamia DV - YSF 20211",
+      "tg": 20211
+    },
+    {
+      "name": "SZ2EDE - Radio Club of Edessa",
+      "tg": 20221
+    },
+    {
+      "name": "Hellas FRN - Ham 4",
+      "tg": 20222
+    },
+    {
+      "name": "GR-KERKYRA-DV",
+      "tg": 20281
+    },
+    {
+      "name": "Ionian Islands DV - YSF 20282",
+      "tg": 20282
+    },
+    {
+      "name": "Corfu Island",
+      "tg": 20285
+    },
+    {
+      "name": "Crete 9",
+      "tg": 20299
+    },
+    {
+      "name": "Nederlands-Gateway",
+      "tg": 20400
+    },
+    {
+      "name": "Nederlands-Drenthe",
+      "tg": 20401
+    },
+    {
+      "name": "Nederlands-Flevoland",
+      "tg": 20402
+    },
+    {
+      "name": "Nederlands-Friesland",
+      "tg": 20403
+    },
+    {
+      "name": "Nederlands-Gelderland",
+      "tg": 20404
+    },
+    {
+      "name": "Nederlands-Groningen",
+      "tg": 20405
+    },
+    {
+      "name": "Nederlands-Limburg",
+      "tg": 20406
+    },
+    {
+      "name": "Nederlands-Noord Brabant",
+      "tg": 20407
+    },
+    {
+      "name": "Nederlands-Noord Holland",
+      "tg": 20408
+    },
+    {
+      "name": "Nederlands-Overijssel",
+      "tg": 20409
+    },
+    {
+      "name": "Nederlands-Zuid Holland",
+      "tg": 20410
+    },
+    {
+      "name": "Nederlands-Utrecht",
+      "tg": 20411
+    },
+    {
+      "name": "Belgium-Liege & Multiprotocols",
+      "tg": 20600
+    },
+    {
+      "name": "Belgium-Namur",
+      "tg": 20601
+    },
+    {
+      "name": "Belgium-Luxembourg",
+      "tg": 20602
+    },
+    {
+      "name": "Belgium-Hainaut",
+      "tg": 20603
+    },
+    {
+      "name": "Belgium-Brussels",
+      "tg": 20604
+    },
+    {
+      "name": "Belgium-Brabant Wallon",
+      "tg": 20605
+    },
+    {
+      "name": "Belgium-Vlaams Brabant",
+      "tg": 20606
+    },
+    {
+      "name": "Belgium-Limburg",
+      "tg": 20607
+    },
+    {
+      "name": "Belgium-Antwerpen",
+      "tg": 20608
+    },
+    {
+      "name": "Belgium-Oost-Vlaanderen",
+      "tg": 20609
+    },
+    {
+      "name": "Belgium-West-Vlaanderen",
+      "tg": 20610
+    },
+    {
+      "name": "Belgium-Waasland",
+      "tg": 20612
+    },
+    {
+      "name": "Belgium-XLX Pictures",
+      "tg": 20613
+    },
+    {
+      "name": "Belgium-Francophonie",
+      "tg": 20698
+    },
+    {
+      "name": "Belgium - Link ASL",
+      "tg": 20699
+    },
+    {
+      "name": "YSF-France ID 58617",
+      "tg": 20800
+    },
+    {
+      "name": "Corse DMR+",
+      "tg": 20811
+    },
+    {
+      "name": "Corse",
+      "tg": 20820
+    },
+    {
+      "name": "Gironde",
+      "tg": 20833
+    },
+    {
+      "name": "Is\u00e8re",
+      "tg": 20838
+    },
+    {
+      "name": "Loire-Atlanique",
+      "tg": 20844
+    },
+    {
+      "name": "Mayenne",
+      "tg": 20853
+    },
+    {
+      "name": "Moselle",
+      "tg": 20857
+    },
+    {
+      "name": "LinuxFR TG20859",
+      "tg": 20859
+    },
+    {
+      "name": "Salon NORD DMR-C4FM",
+      "tg": 20862
+    },
+    {
+      "name": "Pyreness-Onrientales",
+      "tg": 20866
+    },
+    {
+      "name": "Bas-Rhin",
+      "tg": 20867
+    },
+    {
+      "name": "Lyon et Rhone",
+      "tg": 20869
+    },
+    {
+      "name": "Saone-et-Loire",
+      "tg": 20871
+    },
+    {
+      "name": "Yvelines",
+      "tg": 20878
+    },
+    {
+      "name": "Limousin",
+      "tg": 20887
+    },
+    {
+      "name": "Val d''Oise'",
+      "tg": 20895
+    },
+    {
+      "name": "Reseau ARA Auv. Rhone-Alpes",
+      "tg": 20898
+    },
+    {
+      "name": "France Multi-Protocoles",
+      "tg": 20899
+    },
+    {
+      "name": "URE SEC.COMARCAL  S.FERNANDO CADIZ",
+      "tg": 21411
+    },
+    {
+      "name": "CERT-SPAIN",
+      "tg": 21460
+    },
+    {
+      "name": "Multiprotocol DMR / NXDN / FUSION / DSTAR / P25",
+      "tg": 21461
+    },
+    {
+      "name": "RADIOENLACES-HAM",
+      "tg": 21462
+    },
+    {
+      "name": "REM",
+      "tg": 21463
+    },
+    {
+      "name": "ADER",
+      "tg": 21465
+    },
+    {
+      "name": "RADIO MONTA\u00d1A PIRINEOS",
+      "tg": 21470
+    },
+    {
+      "name": "CAMINO DE SANTIAGO",
+      "tg": 21471
+    },
+    {
+      "name": "LA CAMPA (The Camp)SPAIN ADN Network",
+      "tg": 21472
+    },
+    {
+      "name": "NAVARLIK RADIO EMERGENCIAS NAVARRA",
+      "tg": 21475
+    },
+    {
+      "name": "Radioaficionados ARAGON",
+      "tg": 21499
+    },
+    {
+      "name": "MP FreeDMR IT",
+      "tg": 22200
+    },
+    {
+      "name": "Lazio",
+      "tg": 22201
+    },
+    {
+      "name": "Sardegna",
+      "tg": 22202
+    },
+    {
+      "name": "Umbria",
+      "tg": 22203
+    },
+    {
+      "name": "Liguria",
+      "tg": 22211
+    },
+    {
+      "name": "Piemonte",
+      "tg": 22212
+    },
+    {
+      "name": "Valle D'Aosta",
+      "tg": 22213
+    },
+    {
+      "name": "M.Protocollo",
+      "tg": 22214
+    },
+    {
+      "name": "Multi Protocollo",
+      "tg": 22215
+    },
+    {
+      "name": "Multi Protocollo",
+      "tg": 22216
+    },
+    {
+      "name": "ASL node 501841",
+      "tg": 22217
+    },
+    {
+      "name": "ASL Node 547491",
+      "tg": 22218
+    },
+    {
+      "name": "2007-DXGROUP",
+      "tg": 22219
+    },
+    {
+      "name": "ItalyNet Conference",
+      "tg": 22220
+    },
+    {
+      "name": "Lombardia",
+      "tg": 22221
+    },
+    {
+      "name": "FreeSTAR Italiano",
+      "tg": 22226
+    },
+    {
+      "name": "Friuli Venezia Giulia",
+      "tg": 22231
+    },
+    {
+      "name": "Trentino-Alto Adige",
+      "tg": 22232
+    },
+    {
+      "name": "Veneto",
+      "tg": 22233
+    },
+    {
+      "name": "Emilia Romagna",
+      "tg": 22241
+    },
+    {
+      "name": "Toscana",
+      "tg": 22251
+    },
+    {
+      "name": "Abruzzo",
+      "tg": 22261
+    },
+    {
+      "name": "Marche",
+      "tg": 22262
+    },
+    {
+      "name": "Puglia",
+      "tg": 22271
+    },
+    {
+      "name": "TRANI (BT) Conference",
+      "tg": 22276
+    },
+    {
+      "name": "Basilicata",
+      "tg": 22281
+    },
+    {
+      "name": "Calabria",
+      "tg": 22282
+    },
+    {
+      "name": "Campania",
+      "tg": 22283
+    },
+    {
+      "name": "Molise",
+      "tg": 22284
+    },
+    {
+      "name": "Sicilia",
+      "tg": 22291
+    },
+    {
+      "name": "UA 1",
+      "tg": 22801
+    },
+    {
+      "name": "UA 2",
+      "tg": 22802
+    },
+    {
+      "name": "UA 3",
+      "tg": 22803
+    },
+    {
+      "name": "UA 4",
+      "tg": 22804
+    },
+    {
+      "name": "HB9-BM-WIRESX (Node 27628)",
+      "tg": 22810
+    },
+    {
+      "name": "VAUD WIRESX HB9VD-ROOM (Node 27095) YSF",
+      "tg": 22811
+    },
+    {
+      "name": "Geneve",
+      "tg": 22812
+    },
+    {
+      "name": "Alpes Vaudoises",
+      "tg": 22813
+    },
+    {
+      "name": "Alpes Valaisannes",
+      "tg": 22814
+    },
+    {
+      "name": "Neuchatel",
+      "tg": 22815
+    },
+    {
+      "name": "Fribourg",
+      "tg": 22817
+    },
+    {
+      "name": "XLX229 modulo D",
+      "tg": 22822
+    },
+    {
+      "name": "XLX229 modulo G",
+      "tg": 22823
+    },
+    {
+      "name": "AllStar 538451",
+      "tg": 22824
+    },
+    {
+      "name": "Multiprotocollo CH WIRES-X (room 44156)und YSF  (room 47247",
+      "tg": 22825
+    },
+    {
+      "name": "WIRESX HB9T (Node 47052)",
+      "tg": 22826
+    },
+    {
+      "name": "Poschiavo",
+      "tg": 22877
+    },
+    {
+      "name": "400 Club",
+      "tg": 23416
+    },
+    {
+      "name": "FreeSTAR UK",
+      "tg": 23426
+    },
+    {
+      "name": "Dial-a-Node FreeDMR UK AllStar 29177",
+      "tg": 23427
+    },
+    {
+      "name": "Yorkshire Net UK",
+      "tg": 23450
+    },
+    {
+      "name": "Christ with Us",
+      "tg": 23458
+    },
+    {
+      "name": "East Anglia",
+      "tg": 23490
+    },
+    {
+      "name": "South West",
+      "tg": 23500
+    },
+    {
+      "name": "YSF Bridge",
+      "tg": 23501
+    },
+    {
+      "name": "South East",
+      "tg": 23510
+    },
+    {
+      "name": "North West",
+      "tg": 23520
+    },
+    {
+      "name": "ASL Bridge",
+      "tg": 23522
+    },
+    {
+      "name": "HubNet UK",
+      "tg": 23525
+    },
+    {
+      "name": "Yorkshire",
+      "tg": 23530
+    },
+    {
+      "name": "N. Ireland Chat",
+      "tg": 23540
+    },
+    {
+      "name": "Scotland Chat",
+      "tg": 23550
+    },
+    {
+      "name": "Scotland East",
+      "tg": 23557
+    },
+    {
+      "name": "Scotland Highland & Islands",
+      "tg": 23558
+    },
+    {
+      "name": "Scotland West",
+      "tg": 23559
+    },
+    {
+      "name": "North East",
+      "tg": 23560
+    },
+    {
+      "name": "GetOnAir DV",
+      "tg": 23561
+    },
+    {
+      "name": "South Wales Digital",
+      "tg": 23566
+    },
+    {
+      "name": "Wales Chat",
+      "tg": 23570
+    },
+    {
+      "name": "OARC",
+      "tg": 23578
+    },
+    {
+      "name": "West Midland",
+      "tg": 23580
+    },
+    {
+      "name": "East Midlands",
+      "tg": 23590
+    },
+    {
+      "name": "OZ-DMR NEWS & CHAT",
+      "tg": 23595
+    },
+    {
+      "name": "AUS-REPEATER-NETWORK",
+      "tg": 24160
+    },
+    {
+      "name": "Norway chat 1",
+      "tg": 24201
+    },
+    {
+      "name": "Norway chat 2",
+      "tg": 24202
+    },
+    {
+      "name": "Norway chat 3",
+      "tg": 24203
+    },
+    {
+      "name": "Norway chat 4",
+      "tg": 24204
+    },
+    {
+      "name": "Norway chat 5",
+      "tg": 24205
+    },
+    {
+      "name": "Techniczna",
+      "tg": 26000
+    },
+    {
+      "name": "TAC1",
+      "tg": 26200
+    },
+    {
+      "name": "DE-Kusel",
+      "tg": 26257
+    },
+    {
+      "name": "DE-RAMSES",
+      "tg": 26281
+    },
+    {
+      "name": "DE-Franken",
+      "tg": 26284
+    },
+    {
+      "name": "DE-Jura",
+      "tg": 26285
+    },
+    {
+      "name": "DE-Neumarkt",
+      "tg": 26290
+    },
+    {
+      "name": "TAC2",
+      "tg": 26299
+    },
+    {
+      "name": "PT - FreeDMR <=> TETRA",
+      "tg": 26810
+    },
+    {
+      "name": "PT - FreeDMR <=> EchoLink \u2022 LUSOFONA",
+      "tg": 26811
+    },
+    {
+      "name": "PT - FreeDMR <=> BlindHamsNet",
+      "tg": 26812
+    },
+    {
+      "name": "BR-549",
+      "tg": 27549
+    },
+    {
+      "name": "549 Group",
+      "tg": 27622
+    },
+    {
+      "name": "Louisanna Nation Wide",
+      "tg": 28100
+    },
+    {
+      "name": "BG HamNet",
+      "tg": 28415
+    },
+    {
+      "name": "Alantic Canada",
+      "tg": 30205
+    },
+    {
+      "name": "Southern Ontario",
+      "tg": 30230
+    },
+    {
+      "name": "Texas CHT",
+      "tg": 30236
+    },
+    {
+      "name": "BC Vancouver Island",
+      "tg": 30273
+    },
+    {
+      "name": "NorCal",
+      "tg": 30639
+    },
+    {
+      "name": "Severe Weather Link",
+      "tg": 31000
+    },
+    {
+      "name": "N.A. TAC 1",
+      "tg": 31001
+    },
+    {
+      "name": "N.A. TAC 2",
+      "tg": 31002
+    },
+    {
+      "name": "N.A. TAC 3",
+      "tg": 31003
+    },
+    {
+      "name": "N.A. TAC 4",
+      "tg": 31004
+    },
+    {
+      "name": "N.A. TAC 5",
+      "tg": 31005
+    },
+    {
+      "name": "N.A. TAC 6",
+      "tg": 31006
+    },
+    {
+      "name": "N.A. TAC 7",
+      "tg": 31007
+    },
+    {
+      "name": "N.A. TAC 8",
+      "tg": 31008
+    },
+    {
+      "name": "N.A. TAC 9",
+      "tg": 31009
+    },
+    {
+      "name": "Alabama Link",
+      "tg": 31010
+    },
+    {
+      "name": "QuadNet DMR to M17 on URF587 H",
+      "tg": 31011
+    },
+    {
+      "name": "QuadNet DMR to 10m/VHF Dstar - Madison AL",
+      "tg": 31012
+    },
+    {
+      "name": "Alert K4NWS",
+      "tg": 31013
+    },
+    {
+      "name": "HSV-Huntsville",
+      "tg": 31014
+    },
+    {
+      "name": "Central Alabama",
+      "tg": 31015
+    },
+    {
+      "name": "NW Alabama",
+      "tg": 31016
+    },
+    {
+      "name": "Alabama East",
+      "tg": 31017
+    },
+    {
+      "name": "Lake Martin",
+      "tg": 31018
+    },
+    {
+      "name": "Alabama TAC",
+      "tg": 31019
+    },
+    {
+      "name": "Free Speech Radio",
+      "tg": 31021
+    },
+    {
+      "name": "BAYOU State Exam",
+      "tg": 31049
+    },
+    {
+      "name": "Arkansas TAC",
+      "tg": 31050
+    },
+    {
+      "name": "Little Rock Metro",
+      "tg": 31051
+    },
+    {
+      "name": "W5JDW Link",
+      "tg": 31052
+    },
+    {
+      "name": "Hell On The Border/YSF-74132",
+      "tg": 31053
+    },
+    {
+      "name": "Arkansas State YSF-31051 Reflector",
+      "tg": 31057
+    },
+    {
+      "name": "NW_Arkansas",
+      "tg": 31058
+    },
+    {
+      "name": "Arkansas YSF Reflector",
+      "tg": 31059
+    },
+    {
+      "name": "California Link",
+      "tg": 31060
+    },
+    {
+      "name": "SoCalDigiTalk",
+      "tg": 31061
+    },
+    {
+      "name": "Mountain West",
+      "tg": 31062
+    },
+    {
+      "name": "Sun City ARG",
+      "tg": 31064
+    },
+    {
+      "name": "Hemet Multi Mode",
+      "tg": 31065
+    },
+    {
+      "name": "MCRC Chat",
+      "tg": 31066
+    },
+    {
+      "name": "NorCal",
+      "tg": 31068
+    },
+    {
+      "name": "Bay Area Digital - California",
+      "tg": 31069
+    },
+    {
+      "name": "The Digital Learning Net",
+      "tg": 31081
+    },
+    {
+      "name": "Castle Rock Repeater Group",
+      "tg": 31082
+    },
+    {
+      "name": "Colorado Digital",
+      "tg": 31088
+    },
+    {
+      "name": "Florida Keys",
+      "tg": 31120
+    },
+    {
+      "name": "Gulf of America Radio Network",
+      "tg": 31128
+    },
+    {
+      "name": "Atlanta Metro State Wide",
+      "tg": 31131
+    },
+    {
+      "name": "CSRA TALK",
+      "tg": 31134
+    },
+    {
+      "name": "Georgia Digital",
+      "tg": 31138
+    },
+    {
+      "name": "Star Idaho",
+      "tg": 31161
+    },
+    {
+      "name": "USA TriState IL-IN-WI",
+      "tg": 31171
+    },
+    {
+      "name": "WESDIG Western US Digital Group",
+      "tg": 31177
+    },
+    {
+      "name": "Patoka Lake DMR",
+      "tg": 31181
+    },
+    {
+      "name": "Dr. Parrot's Office",
+      "tg": 31182
+    },
+    {
+      "name": "AMERICA- All 50 States",
+      "tg": 31183
+    },
+    {
+      "name": "Indiana Link South",
+      "tg": 31188
+    },
+    {
+      "name": "KB3TEM Jenkins/Pittston Repeater",
+      "tg": 31201
+    },
+    {
+      "name": "Luzurne County PA WIDE",
+      "tg": 31202
+    },
+    {
+      "name": "AMERICA- All 50 States",
+      "tg": 31203
+    },
+    {
+      "name": "Lackwanna County PA WIDE",
+      "tg": 31204
+    },
+    {
+      "name": "Luzerne County Emergency Traffic",
+      "tg": 31205
+    },
+    {
+      "name": "Lackawanna County Emergency Traffic",
+      "tg": 31206
+    },
+    {
+      "name": "Luzerne/Lackawanna PA Search and Rescue",
+      "tg": 31207
+    },
+    {
+      "name": "Louisiana Tac",
+      "tg": 31220
+    },
+    {
+      "name": "LA AuxComm",
+      "tg": 31222
+    },
+    {
+      "name": "Southeast Louisiana",
+      "tg": 31225
+    },
+    {
+      "name": "World Wide Chat USA",
+      "tg": 31226
+    },
+    {
+      "name": "VOIPWX",
+      "tg": 31228
+    },
+    {
+      "name": "UFB NEW ENGLAND",
+      "tg": 31230
+    },
+    {
+      "name": "ZOMBIE Alert USA / XLX240B",
+      "tg": 31260
+    },
+    {
+      "name": "YARC-WX",
+      "tg": 31261
+    },
+    {
+      "name": "Who Cares ARG",
+      "tg": 31262
+    },
+    {
+      "name": "Minnesota TAC",
+      "tg": 31270
+    },
+    {
+      "name": "NA TALK BOX",
+      "tg": 31290
+    },
+    {
+      "name": "Law Enforcement Officers World Wide",
+      "tg": 31291
+    },
+    {
+      "name": "Kansas City WIDE",
+      "tg": 31299
+    },
+    {
+      "name": "International Radio Network",
+      "tg": 31320
+    },
+    {
+      "name": "US Law Enforcement",
+      "tg": 31325
+    },
+    {
+      "name": "Secret Squirrel",
+      "tg": 31330
+    },
+    {
+      "name": "South Jersey",
+      "tg": 31341
+    },
+    {
+      "name": "North Jersey",
+      "tg": 31342
+    },
+    {
+      "name": "Rockingham County ARC",
+      "tg": 31345
+    },
+    {
+      "name": "NY-NJ-PA TriState",
+      "tg": 31360
+    },
+    {
+      "name": "Upstate-NY",
+      "tg": 31361
+    },
+    {
+      "name": "South Wales DMR",
+      "tg": 31362
+    },
+    {
+      "name": "Coast to Coast",
+      "tg": 31363
+    },
+    {
+      "name": "85 Ragchew Net",
+      "tg": 31364
+    },
+    {
+      "name": "85 Ragchew Net2",
+      "tg": 31365
+    },
+    {
+      "name": "Rochester Area Digital",
+      "tg": 31366
+    },
+    {
+      "name": "TrueDMR",
+      "tg": 31367
+    },
+    {
+      "name": "Monroe County",
+      "tg": 31369
+    },
+    {
+      "name": "East NC",
+      "tg": 31373
+    },
+    {
+      "name": "South Wake ARC",
+      "tg": 31374
+    },
+    {
+      "name": "Southern Tier NY",
+      "tg": 31376
+    },
+    {
+      "name": "OBX",
+      "tg": 31377
+    },
+    {
+      "name": "OPEN TG",
+      "tg": 31378
+    },
+    {
+      "name": "Piedmont Triad",
+      "tg": 31379
+    },
+    {
+      "name": "Torcon WX",
+      "tg": 31391
+    },
+    {
+      "name": "Ohio Link Network",
+      "tg": 31399
+    },
+    {
+      "name": "CC-link Oaklahoma Link",
+      "tg": 31403
+    },
+    {
+      "name": "AI Voice Assistant",
+      "tg": 31411
+    },
+    {
+      "name": "South East Carolina Network 440",
+      "tg": 31440
+    },
+    {
+      "name": "Palmetto DMR",
+      "tg": 31451
+    },
+    {
+      "name": "N1RCW Link System-WX Alerts",
+      "tg": 31452
+    },
+    {
+      "name": "N1RCW ASL<>DMR Bridge",
+      "tg": 31453
+    },
+    {
+      "name": "Charlston, South Carolina",
+      "tg": 31454
+    },
+    {
+      "name": "-----",
+      "tg": 31455
+    },
+    {
+      "name": "---------",
+      "tg": 31458
+    },
+    {
+      "name": "S.D Digital",
+      "tg": 31466
+    },
+    {
+      "name": "Tyler Net",
+      "tg": 31470
+    },
+    {
+      "name": "TN COMMS Network",
+      "tg": 31472
+    },
+    {
+      "name": "TARA-Main",
+      "tg": 31473
+    },
+    {
+      "name": "Phoenix",
+      "tg": 31474
+    },
+    {
+      "name": "Fayetteville AR",
+      "tg": 31479
+    },
+    {
+      "name": "Canton Area Radio Emerg. Serv",
+      "tg": 31480
+    },
+    {
+      "name": "Bible Talk Group",
+      "tg": 31481
+    },
+    {
+      "name": "Texas Chat",
+      "tg": 31483
+    },
+    {
+      "name": "US-TEXAS-MRN",
+      "tg": 31486
+    },
+    {
+      "name": "Houston Texas",
+      "tg": 31487
+    },
+    {
+      "name": "Texas-DFW",
+      "tg": 31488
+    },
+    {
+      "name": "Utah Link",
+      "tg": 31490
+    },
+    {
+      "name": "Little Rock Metro",
+      "tg": 31501
+    },
+    {
+      "name": "SWVA-METCOMM",
+      "tg": 31511
+    },
+    {
+      "name": "Scanner Junkies",
+      "tg": 31517
+    },
+    {
+      "name": "Buffalo Group",
+      "tg": 31543
+    },
+    {
+      "name": "Digital User Network of Wisconsin",
+      "tg": 31551
+    },
+    {
+      "name": "Wisconsin-DMR",
+      "tg": 31555
+    },
+    {
+      "name": "Bald Rock Amateur Radio",
+      "tg": 31570
+    },
+    {
+      "name": "Pell City Ares",
+      "tg": 31572
+    },
+    {
+      "name": "Lutheran Early Response Team Communications",
+      "tg": 31578
+    },
+    {
+      "name": "NC4ES Chat 1",
+      "tg": 31601
+    },
+    {
+      "name": "NC4ES Chat 2",
+      "tg": 31602
+    },
+    {
+      "name": "NC4ES AUXCOMM",
+      "tg": 31603
+    },
+    {
+      "name": "NC4ES RF Link",
+      "tg": 31604
+    },
+    {
+      "name": "NC4ES EHPC",
+      "tg": 31605
+    },
+    {
+      "name": "N. Alabama 610 Group",
+      "tg": 31610
+    },
+    {
+      "name": "XPR Pinoy Network",
+      "tg": 31611
+    },
+    {
+      "name": "N. Alabama 650 Group",
+      "tg": 31650
+    },
+    {
+      "name": "Venture Overland",
+      "tg": 31655
+    },
+    {
+      "name": "America Link",
+      "tg": 31656
+    },
+    {
+      "name": "TGIF-Main",
+      "tg": 31665
+    },
+    {
+      "name": "Old Friends",
+      "tg": 31667
+    },
+    {
+      "name": "Blind Hams Group",
+      "tg": 31679
+    },
+    {
+      "name": "Tri State DMR",
+      "tg": 31691
+    },
+    {
+      "name": "Trek Talk",
+      "tg": 31701
+    },
+    {
+      "name": "Sheridon County ARC",
+      "tg": 31765
+    },
+    {
+      "name": "Airline Pilots",
+      "tg": 31767
+    },
+    {
+      "name": "DX-LINK SYSTEM",
+      "tg": 31777
+    },
+    {
+      "name": "Chaverim Radio Club",
+      "tg": 31818
+    },
+    {
+      "name": "KD2QQV-XLX823 Hub",
+      "tg": 31823
+    },
+    {
+      "name": "Florida Panhandle RagChew",
+      "tg": 31850
+    },
+    {
+      "name": "Arkansas Round Table",
+      "tg": 31870
+    },
+    {
+      "name": "DC-MD-VA",
+      "tg": 31910
+    },
+    {
+      "name": "SouthEast Emergency Network",
+      "tg": 31911
+    },
+    {
+      "name": "Handi-Hams",
+      "tg": 31990
+    },
+    {
+      "name": "CW Ops/ CW Academy",
+      "tg": 32103
+    },
+    {
+      "name": "Kansas City Wide",
+      "tg": 32453
+    },
+    {
+      "name": "PR10",
+      "tg": 33010
+    },
+    {
+      "name": "PR11",
+      "tg": 33011
+    },
+    {
+      "name": "PR12",
+      "tg": 33012
+    },
+    {
+      "name": "PR13",
+      "tg": 33013
+    },
+    {
+      "name": "PR14",
+      "tg": 33014
+    },
+    {
+      "name": "PR15",
+      "tg": 33015
+    },
+    {
+      "name": "PR16",
+      "tg": 33016
+    },
+    {
+      "name": "PRNet",
+      "tg": 33017
+    },
+    {
+      "name": "PR018",
+      "tg": 33018
+    },
+    {
+      "name": "PR019",
+      "tg": 33019
+    },
+    {
+      "name": "PR020",
+      "tg": 33020
+    },
+    {
+      "name": "Hispanos",
+      "tg": 33041
+    },
+    {
+      "name": "Experimentation",
+      "tg": 33455
+    },
+    {
+      "name": "Net Talk",
+      "tg": 33581
+    },
+    {
+      "name": "BlindSphere",
+      "tg": 35244
+    },
+    {
+      "name": "White Lightning",
+      "tg": 36093
+    },
+    {
+      "name": "DogHouse",
+      "tg": 36940
+    },
+    {
+      "name": "DR Net",
+      "tg": 37022
+    },
+    {
+      "name": "Skynet",
+      "tg": 37030
+    },
+    {
+      "name": "DR Multiprotocolo",
+      "tg": 37040
+    },
+    {
+      "name": "DR Tech",
+      "tg": 37050
+    },
+    {
+      "name": "US TAC 1",
+      "tg": 38001
+    },
+    {
+      "name": "US TAC 2",
+      "tg": 38002
+    },
+    {
+      "name": "FM Network",
+      "tg": 41033
+    },
+    {
+      "name": "Southeast Link",
+      "tg": 43389
+    },
+    {
+      "name": "Waffle Group",
+      "tg": 44544
+    },
+    {
+      "name": "CN 46001 National Wide Talkgroup",
+      "tg": 46001
+    },
+    {
+      "name": "CN 46010 Talkgroup of Bejing",
+      "tg": 46010
+    },
+    {
+      "name": "CN 46516 Talkgroup of XuZhou",
+      "tg": 46516
+    },
+    {
+      "name": "Taiwan",
+      "tg": 46600
+    },
+    {
+      "name": "Boredom Breaker Net",
+      "tg": 49562
+    },
+    {
+      "name": "Malaysia Net",
+      "tg": 50210
+    },
+    {
+      "name": "VK-OzHUB",
+      "tg": 50524
+    },
+    {
+      "name": "ANZEL",
+      "tg": 50556
+    },
+    {
+      "name": "OZ-DMR Australia News & Chat",
+      "tg": 50595
+    },
+    {
+      "name": "DX8WMG MOARC",
+      "tg": 51500
+    },
+    {
+      "name": "Cavite ACE",
+      "tg": 51502
+    },
+    {
+      "name": "DX1CC CAVCOM",
+      "tg": 51507
+    },
+    {
+      "name": "DX1E Elite Hamster Club",
+      "tg": 51510
+    },
+    {
+      "name": "DX2AFP 701st PHILCOM SBN ARE",
+      "tg": 51525
+    },
+    {
+      "name": "HARP USA",
+      "tg": 51526
+    },
+    {
+      "name": "KAPIHAN Network",
+      "tg": 51547
+    },
+    {
+      "name": "DX8H HARC GenSan",
+      "tg": 51595
+    },
+    {
+      "name": "FreeDMR PHIL",
+      "tg": 51598
+    },
+    {
+      "name": "Thailand Regian 1",
+      "tg": 52010
+    },
+    {
+      "name": "Thailand Regian 2",
+      "tg": 52020
+    },
+    {
+      "name": "Thailand Regian 3",
+      "tg": 52030
+    },
+    {
+      "name": "Thailand Regian 4",
+      "tg": 52040
+    },
+    {
+      "name": "Thailand Regian 5",
+      "tg": 52050
+    },
+    {
+      "name": "Thailand Regian 6",
+      "tg": 52060
+    },
+    {
+      "name": "Thailand Regian 7",
+      "tg": 52070
+    },
+    {
+      "name": "Thailand Regian 8",
+      "tg": 52080
+    },
+    {
+      "name": "Thailand Regian 9",
+      "tg": 52090
+    },
+    {
+      "name": "XLX299-K",
+      "tg": 53029
+    },
+    {
+      "name": "ANZEL Echolink Network",
+      "tg": 53056
+    },
+    {
+      "name": "R.O.A.R  (Rotarians)",
+      "tg": 53080
+    },
+    {
+      "name": "Caribbean-TG969",
+      "tg": 53096
+    },
+    {
+      "name": "DMR-MAROC",
+      "tg": 60401
+    },
+    {
+      "name": "EL Jadida",
+      "tg": 60410
+    },
+    {
+      "name": "Netoholics Network",
+      "tg": 67498
+    },
+    {
+      "name": "Adelaide 10G",
+      "tg": 69159
+    },
+    {
+      "name": "XLX051-J",
+      "tg": 70600
+    },
+    {
+      "name": "YS-INTERLINK",
+      "tg": 70601
+    },
+    {
+      "name": "Zona YS2",
+      "tg": 70602
+    },
+    {
+      "name": "Zona YS3",
+      "tg": 70603
+    },
+    {
+      "name": "Eventos",
+      "tg": 70604
+    },
+    {
+      "name": "CRAS",
+      "tg": 70605
+    },
+    {
+      "name": "Burning the Moonlight",
+      "tg": 70606
+    },
+    {
+      "name": "Trx West",
+      "tg": 71410
+    },
+    {
+      "name": "Brazil",
+      "tg": 72407
+    },
+    {
+      "name": "YSF Maceio 75666",
+      "tg": 72410
+    },
+    {
+      "name": "Sao Paulo",
+      "tg": 72411
+    },
+    {
+      "name": "GRAAL",
+      "tg": 72413
+    },
+    {
+      "name": "YSF-NET",
+      "tg": 72416
+    },
+    {
+      "name": "Rio de Janeiro",
+      "tg": 72421
+    },
+    {
+      "name": "Espirito Santo",
+      "tg": 72427
+    },
+    {
+      "name": "Minas Gerais",
+      "tg": 72431
+    },
+    {
+      "name": "Parana",
+      "tg": 72441
+    },
+    {
+      "name": "Santa Catarina",
+      "tg": 72448
+    },
+    {
+      "name": "Rio Grande do Sul",
+      "tg": 72451
+    },
+    {
+      "name": "Brasilia",
+      "tg": 72461
+    },
+    {
+      "name": "Goias",
+      "tg": 72462
+    },
+    {
+      "name": "Tocantins",
+      "tg": 72463
+    },
+    {
+      "name": "Mato Grosso",
+      "tg": 72465
+    },
+    {
+      "name": "Mato Grosso do Sul",
+      "tg": 72467
+    },
+    {
+      "name": "Acre",
+      "tg": 72468
+    },
+    {
+      "name": "Rondonia",
+      "tg": 72469
+    },
+    {
+      "name": "Bahia",
+      "tg": 72471
+    },
+    {
+      "name": "Sergipe",
+      "tg": 72479
+    },
+    {
+      "name": "Pernambuco",
+      "tg": 72481
+    },
+    {
+      "name": "Alagoas",
+      "tg": 72482
+    },
+    {
+      "name": "Paraiba",
+      "tg": 72483
+    },
+    {
+      "name": "Rio Grande do Norte",
+      "tg": 72484
+    },
+    {
+      "name": "Ceara",
+      "tg": 72485
+    },
+    {
+      "name": "Piaui",
+      "tg": 72486
+    },
+    {
+      "name": "Desbravadores",
+      "tg": 72490
+    },
+    {
+      "name": "Para",
+      "tg": 72491
+    },
+    {
+      "name": "Amazonas",
+      "tg": 72492
+    },
+    {
+      "name": "Roraima",
+      "tg": 72495
+    },
+    {
+      "name": "Amapa",
+      "tg": 72496
+    },
+    {
+      "name": "Maranhao",
+      "tg": 72498
+    },
+    {
+      "name": "CL-Link YSF51028-wrX81510",
+      "tg": 73010
+    },
+    {
+      "name": "CL-Link XLX200",
+      "tg": 73020
+    },
+    {
+      "name": "La Serena-Coquimbo-VHF",
+      "tg": 73021
+    },
+    {
+      "name": "Valparaiso-VHF",
+      "tg": 73022
+    },
+    {
+      "name": "Valparaiso-UHF",
+      "tg": 73023
+    },
+    {
+      "name": "Los Andes-VHF",
+      "tg": 73024
+    },
+    {
+      "name": "Santiago-UHF",
+      "tg": 73031
+    },
+    {
+      "name": "Pelluhue-VHF",
+      "tg": 73041
+    },
+    {
+      "name": "Constitucion-VHF",
+      "tg": 73042
+    },
+    {
+      "name": "Chillan-VHF",
+      "tg": 73043
+    },
+    {
+      "name": "Chillan-UHF",
+      "tg": 73044
+    },
+    {
+      "name": "San Fernando VHF",
+      "tg": 73045
+    },
+    {
+      "name": "San Fernando UHF",
+      "tg": 73046
+    },
+    {
+      "name": "Concepcion-VHF",
+      "tg": 73051
+    },
+    {
+      "name": "Los Angeles-VHF",
+      "tg": 73052
+    },
+    {
+      "name": "Los Angeles-UHF",
+      "tg": 73053
+    },
+    {
+      "name": "Yumbel",
+      "tg": 73059
+    },
+    {
+      "name": "Villarrica-Pucon VHF",
+      "tg": 73061
+    },
+    {
+      "name": "Villarrica-Pucon UHF",
+      "tg": 73062
+    },
+    {
+      "name": "CE4YLC Yankee Lima Chile",
+      "tg": 73088
+    },
+    {
+      "name": "Caldero Net",
+      "tg": 73230
+    },
+    {
+      "name": "Red Vzlana de Rad.Afic.YV5RVR",
+      "tg": 73411
+    },
+    {
+      "name": "Net.Dig.Venezuela - WORLDLINK",
+      "tg": 73440
+    },
+    {
+      "name": "Red DMR Digital Los Teques",
+      "tg": 73451
+    },
+    {
+      "name": "ARV-SSLC-YV5ARV",
+      "tg": 73458
+    },
+    {
+      "name": "GRUPO DX RORAIMA",
+      "tg": 73461
+    },
+    {
+      "name": "ARV WARAO DEL DELTA YV8WDD",
+      "tg": 73481
+    },
+    {
+      "name": "CARCHI-IMBABURA-PICHINCHA",
+      "tg": 74001
+    },
+    {
+      "name": "GUAYAS LOS RIOS",
+      "tg": 74002
+    },
+    {
+      "name": "LOJA - EL ORO",
+      "tg": 74003
+    },
+    {
+      "name": "MANBI - ESMERALDAS",
+      "tg": 74004
+    },
+    {
+      "name": "CHIMBORAZO- CA\u00d1AR-AZUAY",
+      "tg": 74005
+    },
+    {
+      "name": "COTOPAXI- TUNGURAHUA - BOLIVAR",
+      "tg": 74006
+    },
+    {
+      "name": "ZAMORA CHINCHIPE- MORONA SANTIAGO-NAPO- PASTAZA- SUCUMBIOS",
+      "tg": 74007
+    },
+    {
+      "name": "GALAPAGOS",
+      "tg": 74008
+    },
+    {
+      "name": "EMERGENCY",
+      "tg": 74800
+    },
+    {
+      "name": "Montevideo",
+      "tg": 74801
+    },
+    {
+      "name": "Montevideo",
+      "tg": 74802
+    },
+    {
+      "name": "Artigas",
+      "tg": 74803
+    },
+    {
+      "name": "Canelones",
+      "tg": 74804
+    },
+    {
+      "name": "Cerro Largo",
+      "tg": 74805
+    },
+    {
+      "name": "Colonia",
+      "tg": 74806
+    },
+    {
+      "name": "Durazno",
+      "tg": 74807
+    },
+    {
+      "name": "Flores",
+      "tg": 74808
+    },
+    {
+      "name": "Florida",
+      "tg": 74809
+    },
+    {
+      "name": "Lavalleja",
+      "tg": 74810
+    },
+    {
+      "name": "Maldonado",
+      "tg": 74811
+    },
+    {
+      "name": "Paysand\u00fa",
+      "tg": 74812
+    },
+    {
+      "name": "Rio Negro",
+      "tg": 74813
+    },
+    {
+      "name": "Rivera",
+      "tg": 74814
+    },
+    {
+      "name": "Rocha",
+      "tg": 74815
+    },
+    {
+      "name": "Salto",
+      "tg": 74816
+    },
+    {
+      "name": "San Jos\u00e9",
+      "tg": 74817
+    },
+    {
+      "name": "Soriano",
+      "tg": 74818
+    },
+    {
+      "name": "Tacuaremb\u00f3",
+      "tg": 74819
+    },
+    {
+      "name": "Treinta y Tres",
+      "tg": 74820
+    },
+    {
+      "name": "CXUA1",
+      "tg": 74830
+    },
+    {
+      "name": "CXUA2",
+      "tg": 74840
+    },
+    {
+      "name": "CXUA3",
+      "tg": 74850
+    },
+    {
+      "name": "CXUA4",
+      "tg": 74860
+    },
+    {
+      "name": "Cumbria CQ",
+      "tg": 89134
+    },
+    {
+      "name": "Hamfurs",
+      "tg": 98002
+    },
+    {
+      "name": "Nederlands-Emergency",
+      "tg": 204112
+    },
+    {
+      "name": "Belgium-Emergency",
+      "tg": 206112
+    },
+    {
+      "name": "YSF France-Wide ID 64879",
+      "tg": 208000
+    },
+    {
+      "name": "Passerelle Dstar-France",
+      "tg": 208933
+    },
+    {
+      "name": "ARSA-CNP",
+      "tg": 214091
+    },
+    {
+      "name": "EMERGENCY",
+      "tg": 214112
+    },
+    {
+      "name": "Cluster RAD",
+      "tg": 222958
+    },
+    {
+      "name": "Echolink Sicily Conference",
+      "tg": 222994
+    },
+    {
+      "name": "Multi Bridge",
+      "tg": 222995
+    },
+    {
+      "name": "EmComm Suisse (Emergency Communication)",
+      "tg": 228112
+    },
+    {
+      "name": "Chojnice",
+      "tg": 260201
+    },
+    {
+      "name": "ChojniceII",
+      "tg": 260202
+    },
+    {
+      "name": "Bydgoszcz",
+      "tg": 260203
+    },
+    {
+      "name": "Bia\u0142ystok",
+      "tg": 260401
+    },
+    {
+      "name": "Warszawa",
+      "tg": 260501
+    },
+    {
+      "name": "Kadzid\u0142o",
+      "tg": 260525
+    },
+    {
+      "name": "Wroc\u0142aw",
+      "tg": 260601
+    },
+    {
+      "name": "\u0141\u00f3d\u017a",
+      "tg": 260701
+    },
+    {
+      "name": "Kutno",
+      "tg": 260778
+    },
+    {
+      "name": "Tarn\u00f3w",
+      "tg": 260901
+    },
+    {
+      "name": "Krak\u00f3w",
+      "tg": 260902
+    },
+    {
+      "name": "Zakopane",
+      "tg": 260903
+    },
+    {
+      "name": "Silesia",
+      "tg": 260909
+    },
+    {
+      "name": "Jastrz\u0119bie Zdr\u00f3j",
+      "tg": 260911
+    },
+    {
+      "name": "Orzesze",
+      "tg": 260928
+    },
+    {
+      "name": "South East Bulgaria",
+      "tg": 284016
+    },
+    {
+      "name": "Okanagan",
+      "tg": 302020
+    },
+    {
+      "name": "Canada's TAC",
+      "tg": 302310
+    },
+    {
+      "name": "Canada Encryption Test Key - 00AB (zero zero AB)",
+      "tg": 302610
+    },
+    {
+      "name": "Canada Wide National disaster",
+      "tg": 302911
+    },
+    {
+      "name": "ECHO EAST",
+      "tg": 310001
+    },
+    {
+      "name": "San Diego",
+      "tg": 310014
+    },
+    {
+      "name": "WNY-DIGITAL.network (TAC2)",
+      "tg": 310040
+    },
+    {
+      "name": "WNY-DIGITAL.network (TAC3)",
+      "tg": 310096
+    },
+    {
+      "name": "North Alabama Digital Group",
+      "tg": 310122
+    },
+    {
+      "name": "KC2ABV REPEATER SYSTEM",
+      "tg": 310188
+    },
+    {
+      "name": "WNY-DIGITAL.network (TAC4)",
+      "tg": 310393
+    },
+    {
+      "name": "WNY-DIGITAL.network (PRI)",
+      "tg": 310441
+    },
+    {
+      "name": "WNY-DIGITAL.network (TAC5)",
+      "tg": 310784
+    },
+    {
+      "name": "WNY-DIGITAL.network (TAC6)",
+      "tg": 311090
+    },
+    {
+      "name": "The DarkSiders",
+      "tg": 311293
+    },
+    {
+      "name": "WNY-DIGITAL.network (TAC7)",
+      "tg": 311419
+    },
+    {
+      "name": "WNY-DIGITAL.network (TAC8)",
+      "tg": 311421
+    },
+    {
+      "name": "Genesee Valley",
+      "tg": 311898
+    },
+    {
+      "name": "SWLA-Link",
+      "tg": 311995
+    },
+    {
+      "name": "WNY-DIGITAL.network (EMCOMM)",
+      "tg": 312079
+    },
+    {
+      "name": "Rougarou",
+      "tg": 312201
+    },
+    {
+      "name": "D-Warn",
+      "tg": 312202
+    },
+    {
+      "name": "Beauregard Amateur Radio Group",
+      "tg": 312212
+    },
+    {
+      "name": "KV4S Link",
+      "tg": 312264
+    },
+    {
+      "name": "Alexander City",
+      "tg": 312572
+    },
+    {
+      "name": "Tallapoosa County",
+      "tg": 312584
+    },
+    {
+      "name": "Lucedale Mississippi",
+      "tg": 312801
+    },
+    {
+      "name": "Utah High Desert Amateur Radio Club",
+      "tg": 313040
+    },
+    {
+      "name": "KB3HJC/YSF/ALLSTAR HUB",
+      "tg": 313468
+    },
+    {
+      "name": "Pearl League",
+      "tg": 314299
+    },
+    {
+      "name": "Tennesee-Ten",
+      "tg": 314710
+    },
+    {
+      "name": "Utah Ragchew - 1",
+      "tg": 314900
+    },
+    {
+      "name": "Utah Ragchew - 2",
+      "tg": 314901
+    },
+    {
+      "name": "Utah Ecomm",
+      "tg": 314905
+    },
+    {
+      "name": "GLDN DMR",
+      "tg": 315510
+    },
+    {
+      "name": "Worldwide Network",
+      "tg": 316501
+    },
+    {
+      "name": "YSF16512 US-WA-PNW",
+      "tg": 316601
+    },
+    {
+      "name": "DX2ACV",
+      "tg": 515025
+    },
+    {
+      "name": "Emergencias",
+      "tg": 706911
+    },
+    {
+      "name": "Punto de Encuentro Interno",
+      "tg": 710411
+    },
+    {
+      "name": "YN - Red Nacional De Emergencias",
+      "tg": 710911
+    },
+    {
+      "name": "Emergencia Panama",
+      "tg": 714911
+    },
+    {
+      "name": "D-APRS 714999",
+      "tg": 714999
+    },
+    {
+      "name": "*REDCHILE* Echolink",
+      "tg": 730170
+    },
+    {
+      "name": "JOTA-Chile",
+      "tg": 730907
+    },
+    {
+      "name": "EMMCOM Chile",
+      "tg": 730911
+    },
+    {
+      "name": "FRACOL",
+      "tg": 732075
+    },
+    {
+      "name": "EMCOMM YV",
+      "tg": 734911
+    },
+    {
+      "name": "EMERGENCIAS",
+      "tg": 740911
+    },
+    {
+      "name": "Marconi Activities(IMDetc.)",
+      "tg": 748230
+    },
+    {
+      "name": "CampNet",
+      "tg": 2267638
+    },
+    {
+      "name": "Ham Radio Village",
+      "tg": 3177826
+    },
+    {
+      "name": "Central Alabama AllSTAR Hub",
+      "tg": 3194067
+    },
+    {
+      "name": "New England Digital",
+      "tg": 3208773
+    },
+    {
+      "name": "GREMPA-CCBICA",
+      "tg": 7149112
+    }
+  ]
+}

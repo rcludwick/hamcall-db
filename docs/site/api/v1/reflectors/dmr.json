@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 187,
-  "generated": "2026-09-25",
+  "generated": "2026-09-26",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -2413,7 +2413,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "SP4XKB",
-      "system": "ipsc2-poland"
+      "system": "ipsc2-poland",
+      "talkgroups": "reflectors/dmr/ipsc2-poland/talkgroups.json"
     },
     {
       "country": "PT",
@@ -2434,7 +2435,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "BrandMeister PT",
-      "system": "ipsc2-portugal"
+      "system": "ipsc2-portugal",
+      "talkgroups": "reflectors/dmr/ipsc2-portugal/talkgroups.json"
     },
     {
       "country": "AT",
@@ -2480,7 +2482,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "SWEDEN Zone Net!  By SA7SVR",
-      "system": "ipsc2-sweden"
+      "system": "ipsc2-sweden",
+      "talkgroups": "reflectors/dmr/ipsc2-sweden/talkgroups.json"
     },
     {
       "country": "GB",
@@ -2501,7 +2504,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "Matt Perkins",
-      "system": "ipsc3"
+      "system": "ipsc3",
+      "talkgroups": "reflectors/dmr/ipsc3/talkgroups.json"
     },
     {
       "country": "GB",
@@ -2522,7 +2526,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "Matt Perkins",
-      "system": "ipsc3"
+      "system": "ipsc3",
+      "talkgroups": "reflectors/dmr/ipsc3/talkgroups.json"
     },
     {
       "country": "GB",
@@ -2543,7 +2548,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "Matt Perkins",
-      "system": "ipsc3"
+      "system": "ipsc3",
+      "talkgroups": "reflectors/dmr/ipsc3/talkgroups.json"
     },
     {
       "country": "GB",
@@ -2564,7 +2570,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "Matt Perkins",
-      "system": "ipsc3"
+      "system": "ipsc3",
+      "talkgroups": "reflectors/dmr/ipsc3/talkgroups.json"
     },
     {
       "country": "US",
@@ -2585,7 +2592,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "Matt Perkins",
-      "system": "ipsc3"
+      "system": "ipsc3",
+      "talkgroups": "reflectors/dmr/ipsc3/talkgroups.json"
     },
     {
       "country": "US",
@@ -2606,7 +2614,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "Matt Perkins",
-      "system": "ipsc3"
+      "system": "ipsc3",
+      "talkgroups": "reflectors/dmr/ipsc3/talkgroups.json"
     },
     {
       "country": "AU",
@@ -2627,7 +2636,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "Matt Perkins",
-      "system": "ipsc3"
+      "system": "ipsc3",
+      "talkgroups": "reflectors/dmr/ipsc3/talkgroups.json"
     },
     {
       "country": "NZ",
@@ -2648,7 +2658,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "Matt Perkins",
-      "system": "ipsc3"
+      "system": "ipsc3",
+      "talkgroups": "reflectors/dmr/ipsc3/talkgroups.json"
     },
     {
       "country": "NZ",
@@ -2669,7 +2680,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "Matt Perkins",
-      "system": "ipsc3"
+      "system": "ipsc3",
+      "talkgroups": "reflectors/dmr/ipsc3/talkgroups.json"
     },
     {
       "country": "IT",

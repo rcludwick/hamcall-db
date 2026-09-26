@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 1527,
-  "generated": "2026-09-25",
+  "generated": "2026-09-26",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -101,7 +101,7 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://qrz.hamzone.org",
+      "dashboard": "https://qrz.hamzone.org",
       "description": "QRZ  Net",
       "dial": {
         "host": "46.59.68.211",
@@ -1810,7 +1810,7 @@
       "dashboard": "http://c4fmfun.ddns.net:2800",
       "description": "CYPRUS C4FM",
       "dial": {
-        "host": "2.86.32.12",
+        "host": "2.86.35.1",
         "kind": "ysf",
         "port": 42006
       },
@@ -4504,20 +4504,6 @@
       "source": "dvref"
     },
     {
-      "country": "US",
-      "description": "DARC-WAYNECONY",
-      "dial": {
-        "host": "98.3.98.141",
-        "kind": "ysf",
-        "port": 42003
-      },
-      "id": "03732",
-      "name": "DRUMLINSARC",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "DRUMLINS AMATEUR RADIO CLUB"
-    },
-    {
       "country": "IT",
       "description": "new refle",
       "dial": {
@@ -4609,7 +4595,7 @@
       "dashboard": "https://australia.oz-dmr.network",
       "description": "FD TG 505 CALL",
       "dial": {
-        "host": "australia.oz-dmr.network",
+        "host": "repeater.australia.oz-dmr.network",
         "kind": "ysf",
         "port": 42505
       },
@@ -7848,6 +7834,19 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "C31AG"
+    },
+    {
+      "country": "BR",
+      "description": "Brazilian Talk",
+      "dial": {
+        "host": "180.199.21.130",
+        "kind": "ysf",
+        "port": 42395
+      },
+      "id": "21321",
+      "name": "BRAZIL-X",
+      "network": "ysf",
+      "source": "dvref"
     },
     {
       "country": "US",
@@ -13379,6 +13378,19 @@
     },
     {
       "country": "US",
+      "description": "RPT 147.240",
+      "dial": {
+        "host": "k9ruf.duckdns.org",
+        "kind": "ysf",
+        "port": 42002
+      },
+      "id": "36633",
+      "name": "K9RUF Repeatr",
+      "network": "ysf",
+      "source": "dvref"
+    },
+    {
+      "country": "US",
       "dashboard": "https://reflector.kb2idx.com",
       "description": "Dr.Parrots",
       "dial": {
@@ -13746,7 +13758,7 @@
       "country": "IT",
       "description": "C4FM TEAM",
       "dial": {
-        "host": "2.86.32.12",
+        "host": "2.86.35.1",
         "kind": "ysf",
         "port": 42008
       },
@@ -15728,7 +15740,7 @@
       "dashboard": "https://australia.oz-dmr.network/",
       "description": "OZ-DMR NETWORK",
       "dial": {
-        "host": "australia.oz-dmr.network",
+        "host": "repeater.australia.oz-dmr.network",
         "kind": "ysf",
         "port": 42595
       },
@@ -16236,21 +16248,6 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "DV1ZEJ"
-    },
-    {
-      "country": "GB",
-      "dashboard": "http://192.168.1.230",
-      "description": "GB-H1L8RE",
-      "dial": {
-        "host": "h1l8re.ddns.net",
-        "kind": "ysf",
-        "port": 42002
-      },
-      "id": "51866",
-      "name": "H1L8RE",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "G7NIR"
     },
     {
       "country": "PH",
@@ -17033,7 +17030,6 @@
     },
     {
       "country": "FR",
-      "dashboard": "https://f4hdb.fr",
       "description": "Room F4HDB",
       "dial": {
         "host": "31.70.91.119",
@@ -18117,7 +18113,7 @@
       "dashboard": "https://xrf256.swl.in.ua/",
       "description": "URF256",
       "dial": {
-        "host": "xrf256.swl.in.ua",
+        "host": "178.136.97.107",
         "kind": "ysf",
         "port": 42000
       },
@@ -20079,15 +20075,15 @@
     },
     {
       "country": "US",
-      "dashboard": "https://ysf.contracostafusion.network",
+      "dashboard": "https://norcal-link.org/?conf=YSFReflector",
       "description": "Wires-X 80280",
       "dial": {
-        "host": "ysf.contracostafusion.network",
+        "host": "ysf.norcal-link.org",
         "kind": "ysf",
         "port": 42000
       },
       "id": "80280",
-      "name": "Contra-Costa",
+      "name": "NorCal-Link",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "K6BIV"
