@@ -1,0 +1,55 @@
+{
+  "api_version": "v1",
+  "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
+  "client_refresh_days": 7,
+  "count": 9,
+  "generated": "2026-09-27",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
+  "network": "dmr",
+  "schema_version": 1,
+  "source": {
+    "name": "DVRef",
+    "url": "https://dvref.com/api/v2/dmr/networks/new-england-dmr/talkgroups/"
+  },
+  "system": "new-england-dmr",
+  "talkgroups": [
+    {
+      "name": "General Access",
+      "tg": 10
+    },
+    {
+      "name": "Wolf Den",
+      "tg": 11
+    },
+    {
+      "name": "Massachusetts",
+      "tg": 12
+    },
+    {
+      "name": "Rhode Island",
+      "tg": 13
+    },
+    {
+      "name": "Echo / Parrot",
+      "tg": 14
+    },
+    {
+      "name": "Connecticut",
+      "tg": 15
+    },
+    {
+      "name": "New Hampshire",
+      "tg": 16
+    },
+    {
+      "name": "Vermont",
+      "tg": 17
+    },
+    {
+      "name": "Maine",
+      "tg": 18
+    }
+  ]
+}

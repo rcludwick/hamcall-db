@@ -2,13 +2,28 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 343,
-  "generated": "2026-09-26",
+  "count": 344,
+  "generated": "2026-09-27",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
   "network": "p25",
   "reflectors": [
+    {
+      "country": "US",
+      "dashboard": "http://xlx.dmr-marc.net",
+      "description": "<p>Motorola Alumni, system installers, and tech talk.</p>\r\n<p>DMR-MARC TG100</p>\r\n<p>DMR+ REF 4500</p>\r\n<p>AmComm TG100</p>\r\n<p>P25 REF100</p>",
+      "dial": {
+        "host": "192.241.160.183",
+        "kind": "p25",
+        "port": 41001
+      },
+      "id": "100",
+      "name": "Motorola BatChat",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "DMR-MARC"
+    },
     {
       "country": "GR",
       "dashboard": "http://svham.eu:89",
@@ -1949,7 +1964,7 @@
       "country": "US",
       "dashboard": "https://www.norcal-link.org/index.php?conf=P25Reflector",
       "dial": {
-        "host": "p25.norcal-link.org",
+        "host": "norcal-link.org",
         "kind": "p25",
         "port": 41000
       },
@@ -3777,8 +3792,8 @@
     },
     {
       "country": "US",
-      "dashboard": "http://vps1.georgia900p25.us",
-      "description": "<h2>Georgia 900 P25 Backup Reflector</h2>\r\n<h4>This TG serves as a backup for 555. Repeaters are not normally connected to 554 unless 555 is out-of-service. Please feel free to use it when 555 is busy.</h4>\r\n<p>Gateways:W4NOC_MCDN=927.1375, W4NOC_NBRN=927.7375, W9KLS_MCDN=442.125,&nbsp; K1KC-CNYR=Lithonia 927.1125, KI4FVI_MCD=146.715, WA4ASI=444.8, 419764ASX=Node419764-X-TG777, 1998ASLx=PrivateNode1998-X-TG554, 419762ASLx=Node419762-X-TG555.</p>",
+      "dashboard": "https://vps1.georgia900p25.us",
+      "description": "<h2>Georgia 900 P25 Backup Reflector</h2>\r\n<h4>This TG serves as a backup for 555. Repeaters are not normally connected to 554 unless 555 is out-of-service. Please feel free to use it when 555 is busy.</h4>\r\n<p>&nbsp;</p>",
       "dial": {
         "host": "vps1.georgia900p25.us",
         "kind": "p25",
@@ -3792,8 +3807,8 @@
     },
     {
       "country": "US",
-      "dashboard": "http://georgia900p25.us/",
-      "description": "<h2>Georgia 900 P25 Reflector</h2>\r\n<p>Home of the Conyers 927.1125, McDonough 927.1375, Newborn 927.7375, Covington 442.8, and McDonough 442.125, 146.715, repeaters.</p>\r\n<p>W4NOC_MCDN=927.1375, W4NOC_NBRN=927.7375, W9KLS_MCDN=442.125, KI4FVI_MCD=146.715, K1KC_CNYR=927.1125,&nbsp;<a href=\"https://sites.google.com/site/wa4asirepeater/home\" target=\"_blank\" rel=\"noopener noreferrer\">WA4ASI= 444.8 Covington Ga,</a> <a href=\"http://vps1.georgia900p25.us/419762/index.php\" target=\"_blank\" rel=\"noopener noreferrer\">419762ASLx=Node419762-X-TG555</a>.</p>",
+      "dashboard": "https://georgia900p25.us/",
+      "description": "<h2>Georgia 900 P25 Reflector</h2>\r\n<p>Home of the Conyers 927.1125, McDonough 927.1375, 442.125, 444.875, 146.715, Newborn 927.7375, and the Covington 444.8 repeaters.</p>\r\n<p>&nbsp;</p>",
       "dial": {
         "host": "georgia900p25.us",
         "kind": "p25",

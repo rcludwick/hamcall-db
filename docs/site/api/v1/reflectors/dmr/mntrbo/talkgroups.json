@@ -1,0 +1,187 @@
+{
+  "api_version": "v1",
+  "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
+  "client_refresh_days": 7,
+  "count": 42,
+  "generated": "2026-09-27",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
+  "network": "dmr",
+  "schema_version": 1,
+  "source": {
+    "name": "DVRef",
+    "url": "https://dvref.com/api/v2/dmr/networks/mntrbo/talkgroups/"
+  },
+  "system": "mntrbo",
+  "talkgroups": [
+    {
+      "name": "Worldwide (DMR-MARC)",
+      "tg": 1
+    },
+    {
+      "name": "North America (DMR-MARC)",
+      "tg": 3
+    },
+    {
+      "name": "Worldwide English (DMR-MARC)",
+      "tg": 13
+    },
+    {
+      "name": "North America English (DMR-MARC)",
+      "tg": 33
+    },
+    {
+      "name": "Worldwide English - UA113 (UA English 1) (DMR-MARC)",
+      "tg": 113
+    },
+    {
+      "name": "Worldwide English - UA123 (UA English 2) (DMR-MARC)",
+      "tg": 123
+    },
+    {
+      "name": "USA (DMR-MARC)",
+      "tg": 133
+    },
+    {
+      "name": "Worldwide English - UK (DMR-MARC)",
+      "tg": 143
+    },
+    {
+      "name": "Worldwide English - S. Pacific (DMR-MARC)",
+      "tg": 153
+    },
+    {
+      "name": "TAC 310",
+      "tg": 310
+    },
+    {
+      "name": "TAC 311",
+      "tg": 311
+    },
+    {
+      "name": "TAC 312",
+      "tg": 312
+    },
+    {
+      "name": "ARERT - Weather related Chat and Hurricane Nets",
+      "tg": 1008
+    },
+    {
+      "name": "TAC 101 (Bridged from TGIF.NETWORK)",
+      "tg": 1101
+    },
+    {
+      "name": "Tac 102 (Bridged from TGIF.NETWORK)",
+      "tg": 1102
+    },
+    {
+      "name": "TAC 103 (Bridged from TGIF.NETWORK)",
+      "tg": 1103
+    },
+    {
+      "name": "TAC 104 (Bridged from TGIF.NETWORK)",
+      "tg": 1104
+    },
+    {
+      "name": "TAC 105 (Bridged from TGIF.NETWORK)",
+      "tg": 1105
+    },
+    {
+      "name": "DigiComm Cafe 203 (Bridged from TGIF.NETWORK)",
+      "tg": 1203
+    },
+    {
+      "name": "CQ-UK",
+      "tg": 1235
+    },
+    {
+      "name": "America-Ragchew (Bridged from C4FM Network)",
+      "tg": 1285
+    },
+    {
+      "name": "America-Link (Bridged from C4FM Network)",
+      "tg": 1290
+    },
+    {
+      "name": "Rural Minnesota (Bridged from TGIF.NETWORK)",
+      "tg": 1707
+    },
+    {
+      "name": "Free Speech Radio (Bridged from TGIF.NETWORK)",
+      "tg": 2021
+    },
+    {
+      "name": "The Bridge",
+      "tg": 3100
+    },
+    {
+      "name": "GA State",
+      "tg": 3113
+    },
+    {
+      "name": "IL State",
+      "tg": 3117
+    },
+    {
+      "name": "MN State",
+      "tg": 3127
+    },
+    {
+      "name": "HANDIHAMS",
+      "tg": 3141
+    },
+    {
+      "name": "WI State",
+      "tg": 3155
+    },
+    {
+      "name": "Midwest (DMR-MARC)",
+      "tg": 3169
+    },
+    {
+      "name": "Northeast (DMR-MARC)",
+      "tg": 3172
+    },
+    {
+      "name": "Mid Atlantic (DMR-MARC)",
+      "tg": 3173
+    },
+    {
+      "name": "Southeast Region (DMR-MARC)",
+      "tg": 3174
+    },
+    {
+      "name": "South Plains Region (DMR-MARC)",
+      "tg": 3175
+    },
+    {
+      "name": "Southwest Region (DMR-MARC)",
+      "tg": 3176
+    },
+    {
+      "name": "Mountain (DMR-MARC)",
+      "tg": 3177
+    },
+    {
+      "name": "Mudducks (Bridged from TGIF.NETWORK)",
+      "tg": 3255
+    },
+    {
+      "name": "Talk-Tech-Trivia (Bridged from TGIF.NETWORK)",
+      "tg": 7435
+    },
+    {
+      "name": "WI DMR",
+      "tg": 31555
+    },
+    {
+      "name": "TGIF MotherShip (Bridged from TGIF.NETWORK)",
+      "tg": 31665
+    },
+    {
+      "name": "HANDIHAMS",
+      "tg": 31990
+    }
+  ]
+}

@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1527,
-  "generated": "2026-09-26",
+  "count": 1532,
+  "generated": "2026-09-27",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -3868,7 +3868,7 @@
       "country": "US",
       "description": "11 meter men",
       "dial": {
-        "host": "24.184.217.209",
+        "host": "24.184.216.253",
         "kind": "ysf",
         "port": 42002
       },
@@ -4502,6 +4502,20 @@
       "name": "HAYABUSA3",
       "network": "ysf",
       "source": "dvref"
+    },
+    {
+      "country": "US",
+      "description": "DARC-WAYNECONY",
+      "dial": {
+        "host": "98.3.98.141",
+        "kind": "ysf",
+        "port": 42003
+      },
+      "id": "03732",
+      "name": "DRUMLINSARC",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "DRUMLINS AMATEUR RADIO CLUB"
     },
     {
       "country": "IT",
@@ -6069,6 +6083,7 @@
     },
     {
       "country": "ES",
+      "dashboard": "https://timber-wonderful-function-directed.trycloudflare.com/ysf/",
       "description": "Sala EA1-Soria",
       "dial": {
         "host": "soriac4fm.duckdns.org",
@@ -6111,10 +6126,10 @@
     },
     {
       "country": "US",
-      "dashboard": "http://24.184.217.209:42000/",
+      "dashboard": "http://24.184.216.253:42000/",
       "description": "RIP Koda",
       "dial": {
-        "host": "24.184.217.209",
+        "host": "24.184.216.253",
         "kind": "ysf",
         "port": 42000
       },
@@ -6459,6 +6474,21 @@
       "sponsor": "xreflector.es"
     },
     {
+      "country": "US",
+      "dashboard": "http://www.w5jdw.freeddns.org",
+      "description": "www.w5jdw.com",
+      "dial": {
+        "host": "205.147.75.67",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "14054",
+      "name": "W5JDW LINK",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "W5JDW LINK"
+    },
+    {
       "country": "HR",
       "dashboard": "http://ysf.dmrbrescia.it",
       "description": "CRO-OFFICIAL",
@@ -6740,7 +6770,7 @@
       "country": "US",
       "description": "Club Reflector",
       "dial": {
-        "host": "24.184.217.209",
+        "host": "24.184.216.253",
         "kind": "ysf",
         "port": 42001
       },
@@ -10245,6 +10275,20 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "DH6MBT & DL5RFK"
+    },
+    {
+      "country": "DE",
+      "description": "F49 Bridge",
+      "dial": {
+        "host": "ysf-deutschland.de",
+        "kind": "ysf",
+        "port": 42346
+      },
+      "id": "26249",
+      "name": "F49",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "DL3EL"
     },
     {
       "country": "DE",
@@ -16250,6 +16294,21 @@
       "sponsor": "DV1ZEJ"
     },
     {
+      "country": "GB",
+      "dashboard": "http://192.168.1.230",
+      "description": "GB-H1L8RE",
+      "dial": {
+        "host": "h1l8re.ddns.net",
+        "kind": "ysf",
+        "port": 42002
+      },
+      "id": "51866",
+      "name": "H1L8RE",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "G7NIR"
+    },
+    {
       "country": "PH",
       "dashboard": "https://www.na7lv.net",
       "description": "NA7LV",
@@ -16781,7 +16840,7 @@
     },
     {
       "country": "US",
-      "dashboard": "http://vps1.georgia900p25.us",
+      "dashboard": "https://vps1.georgia900p25.us",
       "description": "GA900",
       "dial": {
         "host": "vps1.georgia900p25.us",
@@ -17030,6 +17089,7 @@
     },
     {
       "country": "FR",
+      "dashboard": "https://fusion.f4hdb.fr/",
       "description": "Room F4HDB",
       "dial": {
         "host": "31.70.91.119",
@@ -20075,14 +20135,29 @@
     },
     {
       "country": "US",
-      "dashboard": "https://norcal-link.org/?conf=YSFReflector",
+      "dashboard": "http://contracostafusion.network/",
       "description": "Wires-X 80280",
       "dial": {
-        "host": "ysf.norcal-link.org",
+        "host": "contracostafusion.network",
         "kind": "ysf",
         "port": 42000
       },
       "id": "80280",
+      "name": "Contra-Costa",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "K6BIV"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://www.norcal-link.org/",
+      "description": "Multi-Mode",
+      "dial": {
+        "host": "norcal-link.org",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "80281",
       "name": "NorCal-Link",
       "network": "ysf",
       "source": "dvref",

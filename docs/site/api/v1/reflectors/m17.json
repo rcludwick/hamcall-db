@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 112,
-  "generated": "2026-09-26",
+  "generated": "2026-09-27",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -2624,14 +2624,19 @@
     {
       "country": "US",
       "dashboard": "https://www.norcal-link.org/index.php?conf=M17Reflector",
+      "description": "<p>DescriptionA=All Modes<br>DescriptionD=DMR Chat<br>DescriptionE=Echo<br>DescriptionM=M17 Chat<br>DescriptionS=DStar Chat<br>DescriptionZ=Temp Meeting</p>",
       "dial": {
         "callsign": "M17-SFO",
-        "host": "m17.norcal-link.org",
+        "host": "norcal-link.org",
         "kind": "m17",
         "modules": [
           "A",
           "B",
-          "C"
+          "D",
+          "E",
+          "M",
+          "S",
+          "Z"
         ],
         "port": 17000
       },

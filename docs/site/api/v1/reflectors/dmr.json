@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 187,
-  "generated": "2026-09-26",
+  "generated": "2026-09-27",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -2051,8 +2051,8 @@
     },
     {
       "country": "MY",
-      "dashboard": "http://xlx.lucifernet.com:8082",
-      "description": "<p>HBLink 5021 Malaysia</p>\r\n<p>Link between all digital mode</p>",
+      "dashboard": "http://hblink.lucifernet.com/",
+      "description": "<p>HBLink 5021 Malaysia</p>",
       "dial": {
         "host": "xlx.lucifernet.com",
         "kind": "mmdvm",
@@ -2703,7 +2703,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "IT-MULTIPROTOCOL-NETWORK",
-      "system": "it-multinet-sr1-access-systems"
+      "system": "it-multinet-sr1-access-systems",
+      "talkgroups": "reflectors/dmr/it-multinet-sr1-access-systems/talkgroups.json"
     },
     {
       "country": "IT",
@@ -2725,7 +2726,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "IT-MULTIPROTOCOL-NETWORK",
-      "system": "it-multinet-sr1-access-systems"
+      "system": "it-multinet-sr1-access-systems",
+      "talkgroups": "reflectors/dmr/it-multinet-sr1-access-systems/talkgroups.json"
     },
     {
       "country": "IT",
@@ -2747,7 +2749,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "IT-MULTIPROTOCOL-NETWORK",
-      "system": "it-multinet-sr1-access-systems"
+      "system": "it-multinet-sr1-access-systems",
+      "talkgroups": "reflectors/dmr/it-multinet-sr1-access-systems/talkgroups.json"
     },
     {
       "country": "IT",
@@ -2769,7 +2772,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "IT-MULTIPROTOCOL-NETWORK",
-      "system": "it-multinet-sr1-access-systems"
+      "system": "it-multinet-sr1-access-systems",
+      "talkgroups": "reflectors/dmr/it-multinet-sr1-access-systems/talkgroups.json"
     },
     {
       "country": "IT",
@@ -2791,7 +2795,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "IT-MULTIPROTOCOL-NETWORK",
-      "system": "it-multinet-sr1-access-systems"
+      "system": "it-multinet-sr1-access-systems",
+      "talkgroups": "reflectors/dmr/it-multinet-sr1-access-systems/talkgroups.json"
     },
     {
       "country": "IT",
@@ -2813,7 +2818,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "IT-MULTIPROTOCOL-NETWORK",
-      "system": "it-multinet-sr1-access-systems"
+      "system": "it-multinet-sr1-access-systems",
+      "talkgroups": "reflectors/dmr/it-multinet-sr1-access-systems/talkgroups.json"
     },
     {
       "country": "IT",
@@ -2835,7 +2841,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "IT-MULTIPROTOCOL-NETWORK",
-      "system": "it-multinet-sr1-access-systems"
+      "system": "it-multinet-sr1-access-systems",
+      "talkgroups": "reflectors/dmr/it-multinet-sr1-access-systems/talkgroups.json"
     },
     {
       "country": "IT",
@@ -2857,7 +2864,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "IT-MULTIPROTOCOL-NETWORK",
-      "system": "it-multinet-sr1-access-systems"
+      "system": "it-multinet-sr1-access-systems",
+      "talkgroups": "reflectors/dmr/it-multinet-sr1-access-systems/talkgroups.json"
     },
     {
       "country": "IT",
@@ -2879,7 +2887,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "IT-MULTIPROTOCOL-NETWORK",
-      "system": "it-multinet-sr1-access-systems"
+      "system": "it-multinet-sr1-access-systems",
+      "talkgroups": "reflectors/dmr/it-multinet-sr1-access-systems/talkgroups.json"
     },
     {
       "country": "IT",
@@ -2901,7 +2910,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "IT-MULTIPROTOCOL-NETWORK",
-      "system": "it-multinet-sr1-access-systems"
+      "system": "it-multinet-sr1-access-systems",
+      "talkgroups": "reflectors/dmr/it-multinet-sr1-access-systems/talkgroups.json"
     },
     {
       "country": "IT",
@@ -2923,7 +2933,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "IT-MULTIPROTOCOL-NETWORK",
-      "system": "it-multinet-sr1-access-systems"
+      "system": "it-multinet-sr1-access-systems",
+      "talkgroups": "reflectors/dmr/it-multinet-sr1-access-systems/talkgroups.json"
     },
     {
       "country": "IT",
@@ -2945,7 +2956,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "IT-MULTIPROTOCOL-NETWORK",
-      "system": "it-multinet-sr1-access-systems"
+      "system": "it-multinet-sr1-access-systems",
+      "talkgroups": "reflectors/dmr/it-multinet-sr1-access-systems/talkgroups.json"
     },
     {
       "country": "IT",
@@ -2967,7 +2979,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "IT-MULTIPROTOCOL-NETWORK",
-      "system": "it-multinet-sr1-access-systems"
+      "system": "it-multinet-sr1-access-systems",
+      "talkgroups": "reflectors/dmr/it-multinet-sr1-access-systems/talkgroups.json"
     },
     {
       "country": "IT",
@@ -2989,7 +3002,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "IT-MULTIPROTOCOL-NETWORK",
-      "system": "it-multinet-sr1-access-systems"
+      "system": "it-multinet-sr1-access-systems",
+      "talkgroups": "reflectors/dmr/it-multinet-sr1-access-systems/talkgroups.json"
     },
     {
       "country": "US",
@@ -3011,7 +3025,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "LIVINGSTON AMATEUR RADIO KLUB",
-      "system": "lark"
+      "system": "lark",
+      "talkgroups": "reflectors/dmr/lark/talkgroups.json"
     },
     {
       "country": "US",
@@ -3033,7 +3048,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "MNRADIO.NET",
-      "system": "mntrbo"
+      "system": "mntrbo",
+      "talkgroups": "reflectors/dmr/mntrbo/talkgroups.json"
     },
     {
       "country": "US",
@@ -3055,7 +3071,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "New England Digital Radio",
-      "system": "nedmr"
+      "system": "nedmr",
+      "talkgroups": "reflectors/dmr/nedmr/talkgroups.json"
     },
     {
       "country": "US",
@@ -3077,7 +3094,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "New England Digital Radio KC1VAX",
-      "system": "new-england-dmr"
+      "system": "new-england-dmr",
+      "talkgroups": "reflectors/dmr/new-england-dmr/talkgroups.json"
     },
     {
       "country": "CN",
