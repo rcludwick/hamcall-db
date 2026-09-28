@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 187,
-  "generated": "2026-09-27",
+  "generated": "2026-09-28",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -3117,7 +3117,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "BH4TIH",
-      "system": "nrl"
+      "system": "nrl",
+      "talkgroups": "reflectors/dmr/nrl/talkgroups.json"
     },
     {
       "country": "NL",
@@ -3138,7 +3139,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "David PA7LIM",
-      "system": "pa7lim-dmr-network"
+      "system": "pa7lim-dmr-network",
+      "talkgroups": "reflectors/dmr/pa7lim-dmr-network/talkgroups.json"
     },
     {
       "country": "US",
@@ -3160,7 +3162,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "Mike-W3XPT Will-W4WWM",
-      "system": "quadnet-dmr-network"
+      "system": "quadnet-dmr-network",
+      "talkgroups": "reflectors/dmr/quadnet-dmr-network/talkgroups.json"
     },
     {
       "country": "US",
@@ -3182,7 +3185,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "Mike-W3XPT Will-W4WWM",
-      "system": "quadnet-dmr-network"
+      "system": "quadnet-dmr-network",
+      "talkgroups": "reflectors/dmr/quadnet-dmr-network/talkgroups.json"
     },
     {
       "country": "US",
@@ -3204,7 +3208,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "Mike-W3XPT Will-W4WWM",
-      "system": "quadnet-dmr-network"
+      "system": "quadnet-dmr-network",
+      "talkgroups": "reflectors/dmr/quadnet-dmr-network/talkgroups.json"
     },
     {
       "country": "ES",
@@ -3226,7 +3231,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "BrandMeister",
-      "system": "radio-makuto-espana"
+      "system": "radio-makuto-espana",
+      "talkgroups": "reflectors/dmr/radio-makuto-espana/talkgroups.json"
     },
     {
       "country": "GB",

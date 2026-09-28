@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1532,
-  "generated": "2026-09-27",
+  "count": 1537,
+  "generated": "2026-09-28",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -549,14 +549,29 @@
       "dashboard": "https://www.qsobox.com",
       "description": "QSO Box YSF",
       "dial": {
-        "host": "212.237.6.15",
+        "host": "188.213.170.172",
         "kind": "ysf",
-        "port": 42000
+        "port": 42009
       },
       "id": "00045",
       "name": "QSOBOX",
       "network": "ysf",
       "source": "dvref"
+    },
+    {
+      "country": "ES",
+      "dashboard": "http://188.213.170.172/main.php",
+      "description": "Tertulia C4FM",
+      "dial": {
+        "host": "188.213.170.172",
+        "kind": "ysf",
+        "port": 42002
+      },
+      "id": "00046",
+      "name": "TERTULIA",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "QsoBox"
     },
     {
       "country": "US",
@@ -734,6 +749,36 @@
       "sponsor": "PY4EI"
     },
     {
+      "country": "ES",
+      "dashboard": "http://188.213.170.172/main.php",
+      "description": "Confer. C4FM",
+      "dial": {
+        "host": "188.213.170.172",
+        "kind": "ysf",
+        "port": 42004
+      },
+      "id": "00072",
+      "name": "CONFERENCIAS",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "QsoBox"
+    },
+    {
+      "country": "ES",
+      "dashboard": "http://188.213.170.172/main.php",
+      "description": "Parrot / test",
+      "dial": {
+        "host": "188.213.170.172",
+        "kind": "ysf",
+        "port": 42008
+      },
+      "id": "00074",
+      "name": "PARROT-QB",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "QsoBox"
+    },
+    {
       "country": "US",
       "dashboard": "http://xe1dvi.crabdance.com/db/index.php",
       "description": "USA - MEX",
@@ -747,6 +792,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "W6DVI"
+    },
+    {
+      "country": "ES",
+      "dashboard": "http://188.213.170.172/main.php",
+      "description": "SSTV Imagenes",
+      "dial": {
+        "host": "188.213.170.172",
+        "kind": "ysf",
+        "port": 42010
+      },
+      "id": "00078",
+      "name": "SSTV",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "QsoBox"
     },
     {
       "country": "CZ",
@@ -1132,6 +1192,21 @@
       "name": "RadioHUB",
       "network": "ysf",
       "source": "dvref"
+    },
+    {
+      "country": "ES",
+      "dashboard": "http://188.213.170.172/main.php",
+      "description": "Radioaficion",
+      "dial": {
+        "host": "188.213.170.172",
+        "kind": "ysf",
+        "port": 42003
+      },
+      "id": "00130",
+      "name": "TELEGRAFIA",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "QsoBox"
     },
     {
       "country": "US",
@@ -8755,7 +8830,7 @@
     },
     {
       "country": "IT",
-      "dashboard": "http://ysfgdo.duckdns.org/dashboard.php",
+      "dashboard": "http://ysfgdo.duckdns.org/ysf/",
       "description": "Valdossola",
       "dial": {
         "host": "ysfgdo.duckdns.org",
@@ -11625,6 +11700,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "Wolf Pack Network"
+    },
+    {
+      "country": "ES",
+      "dashboard": "http://188.213.170.172/main.php",
+      "description": "Malaga C4FM",
+      "dial": {
+        "host": "188.213.170.172",
+        "kind": "ysf",
+        "port": 42011
+      },
+      "id": "29001",
+      "name": "MALAGA-QB",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "QsoBox"
     },
     {
       "country": "PH",
@@ -16294,21 +16384,6 @@
       "sponsor": "DV1ZEJ"
     },
     {
-      "country": "GB",
-      "dashboard": "http://192.168.1.230",
-      "description": "GB-H1L8RE",
-      "dial": {
-        "host": "h1l8re.ddns.net",
-        "kind": "ysf",
-        "port": 42002
-      },
-      "id": "51866",
-      "name": "H1L8RE",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "G7NIR"
-    },
-    {
       "country": "PH",
       "dashboard": "https://www.na7lv.net",
       "description": "NA7LV",
@@ -18009,7 +18084,7 @@
       "dashboard": "http://arcysf.duckdns.org",
       "description": "Longer QSO'S",
       "dial": {
-        "host": "24.1.186.5",
+        "host": "24.14.165.246",
         "kind": "ysf",
         "port": 42000
       },

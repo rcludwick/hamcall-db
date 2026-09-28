@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 327,
-  "generated": "2026-09-27",
+  "count": 329,
+  "generated": "2026-09-28",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -22,6 +22,20 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "GR-Kenwood NXDN"
+    },
+    {
+      "country": "GB",
+      "dashboard": "http://maythorn.uk",
+      "dial": {
+        "host": "44.27.138.44",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "101",
+      "name": "XLX278",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "G1INC"
     },
     {
       "country": "US",
@@ -1882,7 +1896,7 @@
       "dashboard": "http://arcnxdn.duckdns.org:83",
       "description": "<p>America Ragchew</p>",
       "dial": {
-        "host": "24.1.186.5",
+        "host": "24.14.165.246",
         "kind": "nxdn",
         "port": 41400
       },
@@ -2380,7 +2394,7 @@
         "port": 41400
       },
       "id": "31068",
-      "name": "NorCal  Talk Group",
+      "name": "NXDN NorCal  Talk Group",
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "K6BIV"
@@ -3453,6 +3467,21 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "W0CHP"
+    },
+    {
+      "country": "MY",
+      "dashboard": "https://tencent.nightfall.monster/nxdn/",
+      "description": "<p>Malaysia NXDN Reflector</p>",
+      "dial": {
+        "host": "43.156.121.49",
+        "kind": "nxdn",
+        "port": 41401
+      },
+      "id": "50210",
+      "name": "Malaysia NXDN Reflector",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "9W4GKH"
     },
     {
       "country": "US",

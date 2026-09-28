@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 344,
-  "generated": "2026-09-27",
+  "count": 345,
+  "generated": "2026-09-28",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1446,7 +1446,7 @@
       "dashboard": "http://arcp25.duckdns.org:82",
       "description": "<p>America Ragchew</p>",
       "dial": {
-        "host": "24.1.186.5",
+        "host": "24.14.165.246",
         "kind": "p25",
         "port": 41001
       },
@@ -1818,15 +1818,15 @@
     },
     {
       "country": "US",
-      "dashboard": "http://georgia900p25.us/tg304",
-      "description": "<p>WEST VIRGINIA</p>\r\n<p>Appalachian Repeater Association</p>\r\n<p>&nbsp;</p>",
+      "dashboard": "https://georgia900p25.us/tg304",
+      "description": "<p>WEST VIRGINIA&nbsp;</p>\r\n<p>&nbsp;</p>",
       "dial": {
-        "host": "209.46.123.48",
+        "host": "wv777p25.ddns.net",
         "kind": "p25",
         "port": 41004
       },
       "id": "304",
-      "name": "Appalachian Repeater Association West Virginia",
+      "name": "West Virginia",
       "network": "p25",
       "source": "dvref",
       "sponsor": "W4NOC / KC8PRG"
@@ -3128,6 +3128,18 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "N0OBA"
+    },
+    {
+      "country": "HK",
+      "dial": {
+        "host": "hkreflectors.duckdns.org",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "45401",
+      "name": "45401 P25 To DMR Bridge",
+      "network": "p25",
+      "source": "dvref"
     },
     {
       "country": "CN",
@@ -4443,15 +4455,15 @@
     },
     {
       "country": "US",
-      "dashboard": "http://wv777p25.ddns.net/tg777/",
-      "description": "<p>West Virginia &nbsp;777 &nbsp;primary Talk Group for the southern region of WV Bluestone Amature Radio. As dangerous as the currents on the New River 443.900<br><br></p>\r\n<p>this talkgroup is associated wth the Georgia900 network&nbsp;</p>",
+      "dashboard": "https://georgia900p25.us/tg777",
+      "description": "<p>777 &nbsp;primary Talk Group for the southern region of WV Bluestone Amature Radio. As dangerous as the currents on the New River 443.900<br><br></p>\r\n<p>this talkgroup is associated wth the Georgia900 network&nbsp;</p>",
       "dial": {
         "host": "wv777p25.ddns.net",
         "kind": "p25",
         "port": 41005
       },
       "id": "777",
-      "name": "WV Almost Heaven",
+      "name": "WV Almost Heaven BLUESTONE ARC",
       "network": "p25",
       "source": "dvref",
       "sponsor": "W4NOC / KC8PRG"

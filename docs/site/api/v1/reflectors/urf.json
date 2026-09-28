@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 111,
-  "generated": "2026-09-27",
+  "count": 112,
+  "generated": "2026-09-28",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1276,6 +1276,23 @@
       "name": "Chiriqui Link Panama",
       "network": "urf",
       "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://xlx760.ddns.net",
+      "description": "<p>URF760</p>\r\n<p>With a <strong>Halo Halo Network</strong>, it celebrates diversity and connection, mixing voices and cultures like the famous Filipino dessert: colorful, layered, and always refreshing. Add in the <strong>XPR Pinoy spirit</strong>, and you get a reflector that&rsquo;s proudly community\u2011driven, welcoming operators worldwide while keeping a strong Pinoy identity at its core.</p>\r\n<p><strong>In short:</strong> URF isn&rsquo;t just about linking modes&mdash;it&rsquo;s about linking people, networks, and cultures into one vibrant digital space.</p>",
+      "dial": {
+        "host": "xlx760.ddns.net",
+        "kind": "urf",
+        "modules": [
+          "A"
+        ]
+      },
+      "id": "760",
+      "name": "URF-760",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "K6KWB"
     },
     {
       "country": "AU",
