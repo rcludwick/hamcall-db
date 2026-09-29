@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 329,
-  "generated": "2026-09-28",
+  "count": 330,
+  "generated": "2026-09-29",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -24,20 +24,6 @@
       "sponsor": "GR-Kenwood NXDN"
     },
     {
-      "country": "GB",
-      "dashboard": "http://maythorn.uk",
-      "dial": {
-        "host": "44.27.138.44",
-        "kind": "nxdn",
-        "port": 41400
-      },
-      "id": "101",
-      "name": "XLX278",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "G1INC"
-    },
-    {
       "country": "US",
       "dashboard": "https://dvswitch.org/Modern/?conf=NXDN_NA_Reflector",
       "description": "<p>NXDN North America</p>",
@@ -55,6 +41,7 @@
     {
       "country": "US",
       "dashboard": "http://10201.dyndns.org",
+      "description": "<p>N.A. Tac - NXDN</p>",
       "dial": {
         "host": "10201.dyndns.org",
         "kind": "nxdn",
@@ -234,6 +221,20 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "Emergency Radio Long Island"
+    },
+    {
+      "country": "ES",
+      "dashboard": "https://reflector.nxdn.es/",
+      "dial": {
+        "host": "reflector.nxdn.es",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "12",
+      "name": "TG12 SPAIN LOCAL",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "xreflector"
     },
     {
       "country": "AU",
@@ -2345,6 +2346,7 @@
     {
       "country": "US",
       "dashboard": "http://nfonorcalnxdn.dyndns.org",
+      "description": "<p>NorCal - NXDN</p>",
       "dial": {
         "host": "nfonorcalnxdn.dyndns.org",
         "kind": "nxdn",
@@ -2857,6 +2859,7 @@
     {
       "country": "US",
       "dashboard": "http://cwopsnxdn.dyndns.org",
+      "description": "<p>CW Ops - NXDN</p>",
       "dial": {
         "host": "cwopsnxdn.dyndns.org",
         "kind": "nxdn",
@@ -2914,6 +2917,7 @@
     {
       "country": "US",
       "dashboard": "http://nettalknxdn.dyndns.org",
+      "description": "<p>Net Talk - NXDN</p>",
       "dial": {
         "host": "nettalknxdn.dyndns.org",
         "kind": "nxdn",
@@ -3251,6 +3255,18 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "DS5QDR DV HAM World"
+    },
+    {
+      "country": "HK",
+      "dial": {
+        "host": "hkreflectors.duckdns.org",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "45401",
+      "name": "TG-45401 Hong Kong",
+      "network": "nxdn",
+      "source": "dvref"
     },
     {
       "country": "CN",

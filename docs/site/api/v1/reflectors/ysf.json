@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1537,
-  "generated": "2026-09-28",
+  "count": 1538,
+  "generated": "2026-09-29",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -6042,6 +6042,21 @@
     },
     {
       "country": "US",
+      "dashboard": "https://ysf.hamfusion.com",
+      "description": "Wires-X 21335",
+      "dial": {
+        "host": "ysf.hamfusion.com",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "11335",
+      "name": "WM Connect 2",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "West Michigan System Fusion"
+    },
+    {
+      "country": "US",
       "dashboard": "http://www.kg4trv.ddns.net",
       "description": "Digi amigos",
       "dial": {
@@ -7944,7 +7959,7 @@
       "country": "BR",
       "description": "Brazilian Talk",
       "dial": {
-        "host": "180.199.21.130",
+        "host": "180.199.39.49",
         "kind": "ysf",
         "port": 42395
       },
@@ -16384,6 +16399,21 @@
       "sponsor": "DV1ZEJ"
     },
     {
+      "country": "GB",
+      "dashboard": "http://192.168.1.230",
+      "description": "GB-H1L8RE",
+      "dial": {
+        "host": "h1l8re.ddns.net",
+        "kind": "ysf",
+        "port": 42002
+      },
+      "id": "51866",
+      "name": "H1L8RE",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "G7NIR"
+    },
+    {
       "country": "PH",
       "dashboard": "https://www.na7lv.net",
       "description": "NA7LV",
@@ -17755,7 +17785,7 @@
         "port": 42002
       },
       "id": "62114",
-      "name": "Misfits",
+      "name": "MISFITS",
       "network": "ysf",
       "source": "dvref"
     },
@@ -20210,21 +20240,6 @@
     },
     {
       "country": "US",
-      "dashboard": "http://contracostafusion.network/",
-      "description": "Wires-X 80280",
-      "dial": {
-        "host": "contracostafusion.network",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "80280",
-      "name": "Contra-Costa",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "K6BIV"
-    },
-    {
-      "country": "US",
       "dashboard": "https://www.norcal-link.org/",
       "description": "Multi-Mode",
       "dial": {
@@ -21442,14 +21457,14 @@
     },
     {
       "country": "RU",
-      "description": "Moscow",
+      "description": "Moscow,Tushino",
       "dial": {
         "host": "157.228.138.240",
         "kind": "ysf",
         "port": 42000
       },
       "id": "90000",
-      "name": "YSF Russia",
+      "name": "Club 618",
       "network": "ysf",
       "source": "dvref"
     },

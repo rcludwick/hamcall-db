@@ -1,0 +1,103 @@
+{
+  "api_version": "v1",
+  "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
+  "client_refresh_days": 7,
+  "count": 21,
+  "generated": "2026-09-29",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
+  "network": "dmr",
+  "schema_version": 1,
+  "source": {
+    "name": "DVRef",
+    "url": "https://dvref.com/api/v2/dmr/networks/systemx/talkgroups/"
+  },
+  "system": "systemx",
+  "talkgroups": [
+    {
+      "name": "CQ North West UK",
+      "tg": 69
+    },
+    {
+      "name": "Chat 1",
+      "tg": 80
+    },
+    {
+      "name": "Chat 2",
+      "tg": 81
+    },
+    {
+      "name": "Chat 3",
+      "tg": 82
+    },
+    {
+      "name": "Blind Hams",
+      "tg": 87
+    },
+    {
+      "name": "Digital NorthEast",
+      "tg": 121
+    },
+    {
+      "name": "Digital ScotWest",
+      "tg": 122
+    },
+    {
+      "name": "Technology First",
+      "tg": 198
+    },
+    {
+      "name": "235 Alive",
+      "tg": 235
+    },
+    {
+      "name": "Quadnet Array",
+      "tg": 320
+    },
+    {
+      "name": "Do Dropin",
+      "tg": 326
+    },
+    {
+      "name": "Uruguay Link",
+      "tg": 748
+    },
+    {
+      "name": "13 Colonies",
+      "tg": 2013
+    },
+    {
+      "name": "UK Chatterbox",
+      "tg": 2350
+    },
+    {
+      "name": "CQ-UK",
+      "tg": 2351
+    },
+    {
+      "name": "UK Chatterbox 2",
+      "tg": 2352
+    },
+    {
+      "name": "UK Chatterbox 3",
+      "tg": 2353
+    },
+    {
+      "name": "Digital England",
+      "tg": 2358
+    },
+    {
+      "name": "Southern Fusion",
+      "tg": 2359
+    },
+    {
+      "name": "FreeSTAR UK",
+      "tg": 23426
+    },
+    {
+      "name": "CUMBRIA CQ",
+      "tg": 89134
+    }
+  ]
+}
