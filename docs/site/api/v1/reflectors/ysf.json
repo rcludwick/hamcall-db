@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1538,
-  "generated": "2026-09-29",
+  "count": 1542,
+  "generated": "2026-09-30",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -4494,12 +4494,12 @@
     },
     {
       "country": "MX",
-      "dashboard": "http://89.117.61.236:8104",
+      "dashboard": "http://89.117.61.236:8012",
       "description": "XE1JMB",
       "dial": {
         "host": "89.117.61.236",
         "kind": "ysf",
-        "port": 41300
+        "port": 42000
       },
       "id": "03341",
       "name": "XE1JMB",
@@ -9886,6 +9886,21 @@
       "sponsor": "xreflector.es"
     },
     {
+      "country": "US",
+      "dashboard": "http://74.208.174.230",
+      "description": "KJ4OHN Room",
+      "dial": {
+        "host": "74.208.174.230",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "24598",
+      "name": "KJ4OHN",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "KJ4OHN"
+    },
+    {
       "country": "LT",
       "dashboard": "https://d-star.lt",
       "description": "D-Star LT",
@@ -9940,6 +9955,18 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "YL3IM"
+    },
+    {
+      "country": "EE",
+      "dial": {
+        "host": "www.dmr.ee",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "24800",
+      "name": "DMR248",
+      "network": "ysf",
+      "source": "dvref"
     },
     {
       "country": "IT",
@@ -12047,6 +12074,21 @@
       "sponsor": "py4arr"
     },
     {
+      "country": "US",
+      "dashboard": "http://192.155.88.85/configuracion.php",
+      "description": "grupo latinos",
+      "dial": {
+        "host": "192.155.88.85",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "30555",
+      "name": "REPDOM#1",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "miguel jerez"
+    },
+    {
       "country": "GB",
       "dashboard": "http://dmr.m0xca.co.uk",
       "description": "Bracknell-ARC",
@@ -12369,6 +12411,20 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "LU2CSG"
+    },
+    {
+      "country": "US",
+      "description": "BM TG 31311",
+      "dial": {
+        "host": "103.89.15.147",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "31311",
+      "name": "NEBRASKA-HUB",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "WM0L"
     },
     {
       "country": "US",
@@ -16399,21 +16455,6 @@
       "sponsor": "DV1ZEJ"
     },
     {
-      "country": "GB",
-      "dashboard": "http://192.168.1.230",
-      "description": "GB-H1L8RE",
-      "dial": {
-        "host": "h1l8re.ddns.net",
-        "kind": "ysf",
-        "port": 42002
-      },
-      "id": "51866",
-      "name": "H1L8RE",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "G7NIR"
-    },
-    {
       "country": "PH",
       "dashboard": "https://www.na7lv.net",
       "description": "NA7LV",
@@ -17778,6 +17819,7 @@
     },
     {
       "country": "US",
+      "dashboard": "http://192.168.0.74/",
       "description": "K1NIC",
       "dial": {
         "host": "ysfmisfits.duckdns.org",
@@ -19818,6 +19860,21 @@
     },
     {
       "country": "US",
+      "dashboard": "https://ysf.n5ba.net",
+      "description": "N5BA Texas",
+      "dial": {
+        "host": "ysf-rf.n5ba.net",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "75309",
+      "name": "N5BA-YSF",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "N5BA"
+    },
+    {
+      "country": "US",
       "dashboard": "http://txi35hams.com",
       "description": "Texas i35 Hams",
       "dial": {
@@ -20240,14 +20297,14 @@
     },
     {
       "country": "US",
-      "dashboard": "https://www.norcal-link.org/",
-      "description": "Multi-Mode",
+      "dashboard": "https://norcal-link.org/?conf=YSFReflector",
+      "description": "Wires-X 80280",
       "dial": {
         "host": "norcal-link.org",
         "kind": "ysf",
         "port": 42000
       },
-      "id": "80281",
+      "id": "80280",
       "name": "NorCal-Link",
       "network": "ysf",
       "source": "dvref",
@@ -21457,14 +21514,14 @@
     },
     {
       "country": "RU",
-      "description": "Moscow,Tushino",
+      "description": "XLX995",
       "dial": {
         "host": "157.228.138.240",
         "kind": "ysf",
         "port": 42000
       },
       "id": "90000",
-      "name": "Club 618",
+      "name": "Club-618",
       "network": "ysf",
       "source": "dvref"
     },

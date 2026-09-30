@@ -1,0 +1,351 @@
+{
+  "api_version": "v1",
+  "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
+  "client_refresh_days": 7,
+  "count": 83,
+  "generated": "2026-09-30",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
+  "network": "dmr",
+  "schema_version": 1,
+  "source": {
+    "name": "DVRef",
+    "url": "https://dvref.com/api/v2/dmr/networks/turk-amator-dijital-ag/talkgroups/"
+  },
+  "system": "turk-amator-dijital-ag",
+  "talkgroups": [
+    {
+      "name": "T\u00fcrk Konferans",
+      "tg": 286
+    },
+    {
+      "name": "T\u00fcrkiye Genel",
+      "tg": 28600
+    },
+    {
+      "name": "Adana",
+      "tg": 28601
+    },
+    {
+      "name": "Ad\u0131yaman",
+      "tg": 28602
+    },
+    {
+      "name": "Afyonkarahisar",
+      "tg": 28603
+    },
+    {
+      "name": "A\u011fr\u0131",
+      "tg": 28604
+    },
+    {
+      "name": "Amasya",
+      "tg": 28605
+    },
+    {
+      "name": "Ankara",
+      "tg": 28606
+    },
+    {
+      "name": "Antalya",
+      "tg": 28607
+    },
+    {
+      "name": "Artvin",
+      "tg": 28608
+    },
+    {
+      "name": "Ayd\u0131n",
+      "tg": 28609
+    },
+    {
+      "name": "Bal\u0131kesir",
+      "tg": 28610
+    },
+    {
+      "name": "Bilecik",
+      "tg": 28611
+    },
+    {
+      "name": "Bing\u00f6l",
+      "tg": 28612
+    },
+    {
+      "name": "Bitlis",
+      "tg": 28613
+    },
+    {
+      "name": "Bolu",
+      "tg": 28614
+    },
+    {
+      "name": "Burdur",
+      "tg": 28615
+    },
+    {
+      "name": "Bursa",
+      "tg": 28616
+    },
+    {
+      "name": "\u00c7anakkale",
+      "tg": 28617
+    },
+    {
+      "name": "\u00c7ank\u0131r\u0131",
+      "tg": 28618
+    },
+    {
+      "name": "\u00c7orum",
+      "tg": 28619
+    },
+    {
+      "name": "Denizli",
+      "tg": 28620
+    },
+    {
+      "name": "Diyarbak\u0131r",
+      "tg": 28621
+    },
+    {
+      "name": "Edirne",
+      "tg": 28622
+    },
+    {
+      "name": "Elaz\u0131\u011f",
+      "tg": 28623
+    },
+    {
+      "name": "Erzincan",
+      "tg": 28624
+    },
+    {
+      "name": "Erzurum",
+      "tg": 28625
+    },
+    {
+      "name": "Eski\u015fehir",
+      "tg": 28626
+    },
+    {
+      "name": "Gaziantep",
+      "tg": 28627
+    },
+    {
+      "name": "Giresun",
+      "tg": 28628
+    },
+    {
+      "name": "G\u00fcm\u00fc\u015fhane",
+      "tg": 28629
+    },
+    {
+      "name": "Hakkari",
+      "tg": 28630
+    },
+    {
+      "name": "Hatay",
+      "tg": 28631
+    },
+    {
+      "name": "Isparta",
+      "tg": 28632
+    },
+    {
+      "name": "Mersin",
+      "tg": 28633
+    },
+    {
+      "name": "\u0130stanbul",
+      "tg": 28634
+    },
+    {
+      "name": "\u0130zmir",
+      "tg": 28635
+    },
+    {
+      "name": "Kars",
+      "tg": 28636
+    },
+    {
+      "name": "Kastamonu",
+      "tg": 28637
+    },
+    {
+      "name": "Kayseri",
+      "tg": 28638
+    },
+    {
+      "name": "K\u0131rklareli",
+      "tg": 28639
+    },
+    {
+      "name": "K\u0131r\u015fehir",
+      "tg": 28640
+    },
+    {
+      "name": "Kocaeli",
+      "tg": 28641
+    },
+    {
+      "name": "Konya",
+      "tg": 28642
+    },
+    {
+      "name": "K\u00fctahya",
+      "tg": 28643
+    },
+    {
+      "name": "Malatya",
+      "tg": 28644
+    },
+    {
+      "name": "Manisa",
+      "tg": 28645
+    },
+    {
+      "name": "Kahramanmara\u015f",
+      "tg": 28646
+    },
+    {
+      "name": "Mardin",
+      "tg": 28647
+    },
+    {
+      "name": "Mu\u011fla",
+      "tg": 28648
+    },
+    {
+      "name": "Mu\u015f",
+      "tg": 28649
+    },
+    {
+      "name": "Nev\u015fehir",
+      "tg": 28650
+    },
+    {
+      "name": "Ni\u011fde",
+      "tg": 28651
+    },
+    {
+      "name": "Ordu",
+      "tg": 28652
+    },
+    {
+      "name": "Rize",
+      "tg": 28653
+    },
+    {
+      "name": "Sakarya",
+      "tg": 28654
+    },
+    {
+      "name": "Samsun",
+      "tg": 28655
+    },
+    {
+      "name": "Siirt",
+      "tg": 28656
+    },
+    {
+      "name": "Sinop",
+      "tg": 28657
+    },
+    {
+      "name": "Sivas",
+      "tg": 28658
+    },
+    {
+      "name": "Tekirda\u011f",
+      "tg": 28659
+    },
+    {
+      "name": "Tokat",
+      "tg": 28660
+    },
+    {
+      "name": "Trabzon",
+      "tg": 28661
+    },
+    {
+      "name": "Tunceli",
+      "tg": 28662
+    },
+    {
+      "name": "\u015eanl\u0131urfa",
+      "tg": 28663
+    },
+    {
+      "name": "U\u015fak",
+      "tg": 28664
+    },
+    {
+      "name": "Van",
+      "tg": 28665
+    },
+    {
+      "name": "Yozgat",
+      "tg": 28666
+    },
+    {
+      "name": "Zonguldak",
+      "tg": 28667
+    },
+    {
+      "name": "Aksaray",
+      "tg": 28668
+    },
+    {
+      "name": "Bayburt",
+      "tg": 28669
+    },
+    {
+      "name": "Karaman",
+      "tg": 28670
+    },
+    {
+      "name": "K\u0131r\u0131kkale",
+      "tg": 28671
+    },
+    {
+      "name": "Batman",
+      "tg": 28672
+    },
+    {
+      "name": "\u015e\u0131rnak",
+      "tg": 28673
+    },
+    {
+      "name": "Bart\u0131n",
+      "tg": 28674
+    },
+    {
+      "name": "Ardahan",
+      "tg": 28675
+    },
+    {
+      "name": "I\u011fd\u0131r",
+      "tg": 28676
+    },
+    {
+      "name": "Yalova",
+      "tg": 28677
+    },
+    {
+      "name": "Karab\u00fck",
+      "tg": 28678
+    },
+    {
+      "name": "Kilis",
+      "tg": 28679
+    },
+    {
+      "name": "Osmaniye",
+      "tg": 28680
+    },
+    {
+      "name": "D\u00fczce",
+      "tg": 28681
+    }
+  ]
+}
