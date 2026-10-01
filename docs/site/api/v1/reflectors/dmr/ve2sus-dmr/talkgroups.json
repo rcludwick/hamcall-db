@@ -1,0 +1,31 @@
+{
+  "api_version": "v1",
+  "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
+  "client_refresh_days": 7,
+  "count": 3,
+  "generated": "2026-10-01",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
+  "network": "dmr",
+  "schema_version": 1,
+  "source": {
+    "name": "DVRef",
+    "url": "https://dvref.com/api/v2/dmr/networks/ve2sus-dmr/talkgroups/"
+  },
+  "system": "ve2sus-dmr",
+  "talkgroups": [
+    {
+      "name": "Local (linked to ASL 659450 and XLX420)",
+      "tg": 9
+    },
+    {
+      "name": "DAPRS",
+      "tg": 6969697
+    },
+    {
+      "name": "Parrot",
+      "tg": 6969699
+    }
+  ]
+}

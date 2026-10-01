@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 187,
-  "generated": "2026-09-30",
+  "generated": "2026-10-01",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -3531,7 +3531,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "CX3DW",
-      "system": "uruguaynet"
+      "system": "uruguaynet",
+      "talkgroups": "reflectors/dmr/uruguaynet/talkgroups.json"
     },
     {
       "country": "CA",
@@ -3552,7 +3553,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "VE2SUS DMR",
-      "system": "ve2sus-dmr"
+      "system": "ve2sus-dmr",
+      "talkgroups": "reflectors/dmr/ve2sus-dmr/talkgroups.json"
     },
     {
       "country": "US",
@@ -3573,7 +3575,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "W0CHP",
-      "system": "w0chpradio-network"
+      "system": "w0chpradio-network",
+      "talkgroups": "reflectors/dmr/w0chpradio-network/talkgroups.json"
     },
     {
       "country": "US",
@@ -3594,7 +3597,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "W2DB",
-      "system": "w2db"
+      "system": "w2db",
+      "talkgroups": "reflectors/dmr/w2db/talkgroups.json"
     },
     {
       "country": "US",

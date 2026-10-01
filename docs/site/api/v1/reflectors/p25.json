@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 345,
-  "generated": "2026-09-30",
+  "count": 348,
+  "generated": "2026-10-01",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -596,6 +596,20 @@
       "sponsor": "P25 138 XLX138 XNexus Thailand"
     },
     {
+      "country": "ES",
+      "dashboard": "http://p25.xreflector.es/tg14",
+      "dial": {
+        "host": "p25.xreflector.es",
+        "kind": "p25",
+        "port": 41004
+      },
+      "id": "14",
+      "name": "14",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "xreflector"
+    },
+    {
       "country": "US",
       "description": "<p>This is an installation of DVSwitch and P25Reflector. It links to Allstar Node 483561, which is connected to 483560 on our local 146.790 repeater. This bridge is meant to open a new avenue to our local repeater for remote users.&nbsp;</p>\r\n<p>The 146.790 repeater is located in Greenville, Ohio, and is sponsored by the Treaty City Amateur Radio Association, W8UMD. Adam, W8FLH is our repeater trustee.</p>\r\n<p>Our local Darke County ARES net meets every Monday evening at 7:00 PM ET on 146.790. Feel free to join us! For more info, see http://w8flh.net</p>",
       "dial": {
@@ -858,6 +872,20 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "EA2RE"
+    },
+    {
+      "country": "ES",
+      "dashboard": "http://p25.xreflector.es/tg2147",
+      "dial": {
+        "host": "p25.xreflector.es",
+        "kind": "p25",
+        "port": 41002
+      },
+      "id": "2147",
+      "name": "TG2147",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "xreflector"
     },
     {
       "country": "US",
@@ -2430,6 +2458,21 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "N9JSF"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://205.121.52.125:8081",
+      "description": "<p>UPNS 00 - Fallback</p>\r\n<hr>\r\n<p>UPNS Associated Repeaters Automatically Fallback to this Talkgroup</p>",
+      "dial": {
+        "host": "205.121.52.125",
+        "kind": "p25",
+        "port": 41001
+      },
+      "id": "31590",
+      "name": "UPNS 00",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "UPNS"
     },
     {
       "country": "US",
@@ -4650,11 +4693,11 @@
     },
     {
       "country": "ES",
-      "dashboard": "http://fcs701.xreflector.net/p91/",
+      "dashboard": "http://p25.xreflector.es/tg91/",
       "dial": {
-        "host": "fcs701.xreflector.net",
+        "host": "p25.xreflector.es",
         "kind": "p25",
-        "port": 41002
+        "port": 41003
       },
       "id": "91",
       "name": "World Wide",

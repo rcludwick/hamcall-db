@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 112,
-  "generated": "2026-09-30",
+  "count": 115,
+  "generated": "2026-10-01",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -894,6 +894,22 @@
     },
     {
       "country": "US",
+      "dashboard": "http://nfoxlxnorcal.dyndns.org",
+      "dial": {
+        "host": "nfoxlxnorcal.dyndns.org",
+        "kind": "urf",
+        "modules": [
+          "A"
+        ]
+      },
+      "id": "379",
+      "name": "XLX379A",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "K6HP"
+    },
+    {
+      "country": "US",
       "dashboard": "https://xlx.foxhole.radio",
       "description": "<p>Foxhole Bridge Networks</p>\r\n<p>https://foxhole.radio</p>",
       "dial": {
@@ -984,6 +1000,22 @@
       },
       "id": "470",
       "name": "XLX470",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "K6HP"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://xlxcwops.dyndns.org",
+      "dial": {
+        "host": "xlxcwops.dyndns.org",
+        "kind": "urf",
+        "modules": [
+          "A"
+        ]
+      },
+      "id": "483",
+      "name": "XLX483",
       "network": "urf",
       "source": "dvref",
       "sponsor": "K6HP"
@@ -1410,6 +1442,22 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "Brundall Radio Group"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://xlxlist.dyndns.org",
+      "dial": {
+        "host": "xlxlist.dyndns.org",
+        "kind": "urf",
+        "modules": [
+          "A"
+        ]
+      },
+      "id": "960",
+      "name": "White Channel",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "K6HP"
     },
     {
       "country": "US",

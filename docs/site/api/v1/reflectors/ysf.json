@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1542,
-  "generated": "2026-09-30",
+  "count": 1546,
+  "generated": "2026-10-01",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1705,6 +1705,21 @@
       "sponsor": "Chaverim Radio Club"
     },
     {
+      "country": "AR",
+      "dashboard": "https://cqlaplata.ddns.net/ysf",
+      "description": "YSF La Plata",
+      "dial": {
+        "host": "cqlaplata.ddns.net",
+        "kind": "ysf",
+        "port": 42006
+      },
+      "id": "00221",
+      "name": "CQ La Plata",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "LW6DMG"
+    },
+    {
       "country": "BH",
       "dashboard": "http://172.233.145.145",
       "description": "AGDX",
@@ -1885,7 +1900,7 @@
       "dashboard": "http://c4fmfun.ddns.net:2800",
       "description": "CYPRUS C4FM",
       "dial": {
-        "host": "2.86.35.1",
+        "host": "2.86.36.123",
         "kind": "ysf",
         "port": 42006
       },
@@ -4392,10 +4407,10 @@
     },
     {
       "country": "US",
-      "dashboard": "http://68.116.240.91:8000/",
+      "dashboard": "http://47.229.44.102:8000/",
       "description": "PhilippineLink",
       "dial": {
-        "host": "68.116.240.91",
+        "host": "47.229.44.102",
         "kind": "ysf",
         "port": 42000
       },
@@ -5394,6 +5409,20 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "N2MRH and the FB DMR TEAM"
+    },
+    {
+      "country": "US",
+      "description": "TEXAS-DFW",
+      "dial": {
+        "host": "44.27.135.30",
+        "kind": "ysf",
+        "port": 42002
+      },
+      "id": "08180",
+      "name": "TEXAS-DFW",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "TEXAS-DFW Linked Systems"
     },
     {
       "country": "CN",
@@ -9663,6 +9692,21 @@
       "source": "dvref"
     },
     {
+      "country": "GB",
+      "dashboard": "https://digital.cumbriacq.com/live/",
+      "description": "CumbriaCQ",
+      "dial": {
+        "host": "57.128.190.202",
+        "kind": "ysf",
+        "port": 42100
+      },
+      "id": "23534",
+      "name": "Cumbria CQ",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "cumbriacq.com"
+    },
+    {
       "country": "JP",
       "dashboard": "http://takshino-2.mydns.jp:8080",
       "description": "JA2FYO YSF",
@@ -9895,7 +9939,7 @@
         "port": 42000
       },
       "id": "24598",
-      "name": "KJ4OHN",
+      "name": "24598",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "KJ4OHN"
@@ -12414,9 +12458,8 @@
     },
     {
       "country": "US",
-      "description": "BM TG 31311",
       "dial": {
-        "host": "103.89.15.147",
+        "host": "104.129.131.150",
         "kind": "ysf",
         "port": 42000
       },
@@ -12846,10 +12889,10 @@
       "dial": {
         "host": "96.19.67.130",
         "kind": "ysf",
-        "port": 42002
+        "port": 42000
       },
       "id": "31683",
-      "name": "Prescott",
+      "name": "PRESCOTT",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "PRESCOTT"
@@ -14154,6 +14197,21 @@
       "name": "42001hamshack",
       "network": "ysf",
       "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://easternhamclub.hopto.org/",
+      "description": "Tri State Area",
+      "dial": {
+        "host": "n2spy.ddnsfree.com",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "42002",
+      "name": "EastCoastHams",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "N2SPY"
     },
     {
       "country": "IT",
@@ -17819,7 +17877,6 @@
     },
     {
       "country": "US",
-      "dashboard": "http://192.168.0.74/",
       "description": "K1NIC",
       "dial": {
         "host": "ysfmisfits.duckdns.org",

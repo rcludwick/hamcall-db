@@ -2,19 +2,19 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/\nXLX reflector data from the XLX registry maintained by Luc Engelmann, LX1IQ (http://xlxapi.rlx.lu/).\nStandalone XRF reflector data from the Pi-Star DExtra host file (http://www.pistar.uk/downloads/DExtra_Hosts.txt).\nREF and DCS reflector names from the Pi-Star DPlus and DCS host files (http://www.pistar.uk/downloads/).",
   "client_refresh_days": 7,
-  "count": 3579,
-  "generated": "2026-09-30",
+  "count": 3591,
+  "generated": "2026-10-01",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
   "networks": {
     "dmr": 187,
-    "dstar": 950,
+    "dstar": 951,
     "m17": 113,
-    "nxdn": 330,
-    "p25": 345,
-    "urf": 112,
-    "ysf": 1542
+    "nxdn": 331,
+    "p25": 348,
+    "urf": 115,
+    "ysf": 1546
   },
   "reflectors": [
     {
@@ -3539,7 +3539,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "CX3DW",
-      "system": "uruguaynet"
+      "system": "uruguaynet",
+      "talkgroups": "reflectors/dmr/uruguaynet/talkgroups.json"
     },
     {
       "country": "CA",
@@ -3560,7 +3561,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "VE2SUS DMR",
-      "system": "ve2sus-dmr"
+      "system": "ve2sus-dmr",
+      "talkgroups": "reflectors/dmr/ve2sus-dmr/talkgroups.json"
     },
     {
       "country": "US",
@@ -3581,7 +3583,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "W0CHP",
-      "system": "w0chpradio-network"
+      "system": "w0chpradio-network",
+      "talkgroups": "reflectors/dmr/w0chpradio-network/talkgroups.json"
     },
     {
       "country": "US",
@@ -3602,7 +3605,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "W2DB",
-      "system": "w2db"
+      "system": "w2db",
+      "talkgroups": "reflectors/dmr/w2db/talkgroups.json"
     },
     {
       "country": "US",
@@ -3903,6 +3907,26 @@
       "source": "dvref",
       "sponsor": "Yorkshire Net UK",
       "system": "yorkshiredmr"
+    },
+    {
+      "aliases": [
+        "XRF000",
+        "DCS000",
+        "DCS017"
+      ],
+      "country": "Brazil",
+      "dashboard": "http://xlx000.dmr.net.br",
+      "description": "AMRASE - Rio de Janeiro, Brazil",
+      "dial": {
+        "callsign": "XRF000",
+        "host": "201.62.48.60",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLX000",
+      "name": "XLX000",
+      "network": "dstar",
+      "source": "xlx"
     },
     {
       "aliases": [
@@ -7699,7 +7723,7 @@
         "REF207",
         "DCS207"
       ],
-      "country": "Bedford United Kingdom",
+      "country": "Bedford UK",
       "dashboard": "http://dash-xlx207.duckdns.org",
       "description": "TheBlackSheep Pub Radio Club Ambed Server",
       "dial": {
@@ -7720,8 +7744,8 @@
         "DCS208"
       ],
       "country": "France",
-      "dashboard": "http://urf208.f5kav.fr",
-      "description": "French Multimode Reflector, brought to you by F5KAV Club",
+      "dashboard": "http://xlx208.f5kav.fr",
+      "description": "French D-Star XLX Multiprotocol Reflector and Smart Group Server, brought to you by F5KAV",
       "dial": {
         "callsign": "XRF208",
         "host": "213.186.34.50",
@@ -8473,6 +8497,26 @@
     },
     {
       "aliases": [
+        "XRF247",
+        "REF247",
+        "DCS247"
+      ],
+      "country": "United Kingdom",
+      "dashboard": "http://xlx.oz-dmr.network",
+      "description": "OZ-DMR NETWORK - Digital Voice Your Way - Connected to UK IPSC3 Soon",
+      "dial": {
+        "callsign": "XRF247",
+        "host": "44.31.91.236",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLX247",
+      "name": "XLX247",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "aliases": [
         "XRF248",
         "REF248",
         "DCS248"
@@ -9176,7 +9220,7 @@
       "description": "XLX288 / YSF IT-URF288 #22250",
       "dial": {
         "callsign": "XRF288",
-        "host": "87.4.108.117",
+        "host": "82.48.61.252",
         "kind": "dextra",
         "port": 30001
       },
@@ -9582,26 +9626,6 @@
       },
       "id": "XLX314",
       "name": "XLX314",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "aliases": [
-        "XRF315",
-        "REF315",
-        "DCS315"
-      ],
-      "country": "Chicago, IL., USA",
-      "dashboard": "http://arcxlx.duckdns.org:81",
-      "description": "America Ragchew XLX",
-      "dial": {
-        "callsign": "XRF315",
-        "host": "24.14.165.246",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLX315",
-      "name": "XLX315",
       "network": "dstar",
       "source": "xlx"
     },
@@ -10773,7 +10797,7 @@
       "description": "XLX Multiprotocol Gateway Reflector TG 22206",
       "dial": {
         "callsign": "XRF390",
-        "host": "213.45.174.115",
+        "host": "79.26.177.138",
         "kind": "dextra",
         "port": 30001
       },
@@ -10799,26 +10823,6 @@
       },
       "id": "XLX393",
       "name": "XLX393",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "aliases": [
-        "XRF394",
-        "REF394",
-        "DCS394"
-      ],
-      "country": "Nicolas ON4VK",
-      "dashboard": "http://xlx394.ddns.net",
-      "description": "XLX394 Multiprotocol Reflector by ON4VK, info: [email removed]",
-      "dial": {
-        "callsign": "XRF394",
-        "host": "80.201.168.212",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLX394",
-      "name": "XLX394",
       "network": "dstar",
       "source": "xlx"
     },
@@ -13205,8 +13209,8 @@
         "DCS545"
       ],
       "country": "USA",
-      "dashboard": "http://xlx545.pennlinkgroup.com/xlxd/",
-      "description": "info.pennlinkgroup.com - G3 Terminal Serices - DMR/DSTAR/Fusion/P25/NXDN - Module B",
+      "dashboard": "http://xlx545.pennlinkgroup.com/xlx/",
+      "description": "info.pennlinkgroup.com - G3 Terminal Services - DSTAR/DMR/Fusion/P25/NXDN (module B)",
       "dial": {
         "callsign": "XRF545",
         "host": "3.215.215.169",
@@ -14267,7 +14271,7 @@
       "description": "XLX647 : REF647, DMR TG52007, YSF 55191, M17-647 Operate by HS5BLO",
       "dial": {
         "callsign": "XRF647",
-        "host": "58.8.185.126",
+        "host": "171.101.233.53",
         "kind": "dextra",
         "port": 30001
       },
@@ -16309,6 +16313,26 @@
     },
     {
       "aliases": [
+        "XRF808",
+        "REF808",
+        "DCS808"
+      ],
+      "country": "RU Moscow",
+      "dashboard": "http://xlx808.tplinkdns.com",
+      "description": "XLX808 Multiprotocol Reflector by RY3ABM, info: [email removed]",
+      "dial": {
+        "callsign": "XRF808",
+        "host": "45.8.250.91",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLX808",
+      "name": "XLX808",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "aliases": [
         "XRF810",
         "REF810",
         "DCS810"
@@ -16669,26 +16693,6 @@
     },
     {
       "aliases": [
-        "XRF830",
-        "REF830",
-        "DCS830"
-      ],
-      "country": "USA",
-      "dashboard": "http://lonestarlinksystem.com/STARLINK/db/",
-      "description": "LONE STAR LINK SYSTEM: D-STAR / P25 / DMR / YSF",
-      "dial": {
-        "callsign": "XRF830",
-        "host": "216.128.136.176",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLX830",
-      "name": "XLX830",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "aliases": [
         "XRF831",
         "REF831",
         "DCS831"
@@ -16935,7 +16939,7 @@
       ],
       "country": "Germany",
       "dashboard": "http://xlx850.bm262.de",
-      "description": "MultiMode: BM-TG263<>YSF: DE-Germany<>Wires-X: DL-WIRESX-BM263 <> Tetra",
+      "description": "MultiMode DV: BM-TG263<=>YSF: DE-Germany<=>Wires-X: DL-WIRESX-BM263",
       "dial": {
         "callsign": "XRF850",
         "host": "116.203.56.12",
@@ -17114,7 +17118,7 @@
         "DCS878"
       ],
       "country": "Japan",
-      "dashboard": "http://xrf878.xreflector-jp.org/",
+      "dashboard": "http://http://xrf878.xreflector-jp.org/",
       "description": "Hosted by JR1LKL in Ota-ku Tokyo.",
       "dial": {
         "callsign": "XRF878",
@@ -18509,7 +18513,7 @@
         "DCS978"
       ],
       "country": "USA",
-      "dashboard": "https://xlx978.dyndns.org",
+      "dashboard": "http://xlx978.dyndns.org",
       "description": "New England Reflector - G3 enabled - ne-dstar.org sponsored",
       "dial": {
         "callsign": "XRF978",
@@ -18573,7 +18577,7 @@
       "description": "Livingston Amateur Radio Klub (IMRS Only)",
       "dial": {
         "callsign": "XRF981",
-        "host": "172.56.124.205",
+        "host": "172.58.123.185",
         "kind": "dextra",
         "port": 30001
       },
@@ -19012,7 +19016,7 @@
       "description": "XLX Transcode",
       "dial": {
         "callsign": "XRFBAS",
-        "host": "79.18.115.15",
+        "host": "82.57.246.133",
         "kind": "dextra",
         "port": 30001
       },
@@ -20320,11 +20324,6 @@
       "source": "xlx"
     },
     {
-      "aliases": [
-        "XRFMMG",
-        "REFMMG",
-        "DCSMMG"
-      ],
       "country": "United States",
       "dashboard": "http://xlxmmg.nemmg.club",
       "description": "New England MultiMode Group",
@@ -20365,9 +20364,9 @@
         "REFNLD",
         "DCSNLD"
       ],
-      "country": "The Netherlands",
+      "country": "Netherlands",
       "dashboard": "http://dstarnld.pa7lim.nl",
-      "description": "Dutch Reflector by David PA7LIM",
+      "description": "Dutch DSTAR Central",
       "dial": {
         "callsign": "XRFNLD",
         "host": "90.145.156.214",
@@ -20914,26 +20913,6 @@
       },
       "id": "XLXTRK",
       "name": "XLXTRK",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "aliases": [
-        "XRFTUR",
-        "REFTUR",
-        "DCSTUR"
-      ],
-      "country": "Turkiye",
-      "dashboard": "http://dmr.pistar.com.tr:28586",
-      "description": "Turkiye Multiprotocol Reflector",
-      "dial": {
-        "callsign": "XRFTUR",
-        "host": "31.57.33.9",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLXTUR",
-      "name": "XLXTUR",
       "network": "dstar",
       "source": "xlx"
     },
@@ -21676,6 +21655,26 @@
       "source": "xlx"
     },
     {
+      "aliases": [
+        "XRFZVU",
+        "REFZVU",
+        "DCSZVU"
+      ],
+      "country": "FR",
+      "dashboard": "http://xlxzvu.chappat.fr",
+      "description": "XLXZVU Multiprotocol Reflector by F4HWB, info: [email removed]",
+      "dial": {
+        "callsign": "XRFZVU",
+        "host": "176.128.229.6",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLXZVU",
+      "name": "XLXZVU",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
       "dial": {
         "callsign": "XRF002",
         "host": "52.36.45.107",
@@ -21738,7 +21737,7 @@
     {
       "dial": {
         "callsign": "XRF014",
-        "host": "172.67.201.108",
+        "host": "104.21.21.239",
         "kind": "dextra",
         "port": 30001
       },
@@ -21993,7 +21992,7 @@
     {
       "dial": {
         "callsign": "XRF321",
-        "host": "172.67.163.225",
+        "host": "104.21.57.126",
         "kind": "dextra",
         "port": 30001
       },
@@ -22053,7 +22052,7 @@
     {
       "dial": {
         "callsign": "XRF555",
-        "host": "178.107.232.205",
+        "host": "178.107.232.203",
         "kind": "dextra",
         "port": 30001
       },
@@ -22307,6 +22306,22 @@
       },
       "id": "XRF988",
       "name": "XRF988",
+      "network": "dstar",
+      "source": "dextra"
+    },
+    {
+      "aliases": [
+        "REFMMG",
+        "DCSMMG"
+      ],
+      "dial": {
+        "callsign": "XRFMMG",
+        "host": "137.103.112.175",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XRFMMG",
+      "name": "XRFMMG",
       "network": "dstar",
       "source": "dextra"
     },
@@ -25358,6 +25373,20 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "GR-Kenwood NXDN"
+    },
+    {
+      "country": "GB",
+      "dashboard": "http://maythorn.uk",
+      "dial": {
+        "host": "44.27.138.44",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "101",
+      "name": "XLX278",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "G1INC"
     },
     {
       "country": "US",
@@ -30631,6 +30660,20 @@
       "sponsor": "P25 138 XLX138 XNexus Thailand"
     },
     {
+      "country": "ES",
+      "dashboard": "http://p25.xreflector.es/tg14",
+      "dial": {
+        "host": "p25.xreflector.es",
+        "kind": "p25",
+        "port": 41004
+      },
+      "id": "14",
+      "name": "14",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "xreflector"
+    },
+    {
       "country": "US",
       "description": "<p>This is an installation of DVSwitch and P25Reflector. It links to Allstar Node 483561, which is connected to 483560 on our local 146.790 repeater. This bridge is meant to open a new avenue to our local repeater for remote users.&nbsp;</p>\r\n<p>The 146.790 repeater is located in Greenville, Ohio, and is sponsored by the Treaty City Amateur Radio Association, W8UMD. Adam, W8FLH is our repeater trustee.</p>\r\n<p>Our local Darke County ARES net meets every Monday evening at 7:00 PM ET on 146.790. Feel free to join us! For more info, see http://w8flh.net</p>",
       "dial": {
@@ -30893,6 +30936,20 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "EA2RE"
+    },
+    {
+      "country": "ES",
+      "dashboard": "http://p25.xreflector.es/tg2147",
+      "dial": {
+        "host": "p25.xreflector.es",
+        "kind": "p25",
+        "port": 41002
+      },
+      "id": "2147",
+      "name": "TG2147",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "xreflector"
     },
     {
       "country": "US",
@@ -32465,6 +32522,21 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "N9JSF"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://205.121.52.125:8081",
+      "description": "<p>UPNS 00 - Fallback</p>\r\n<hr>\r\n<p>UPNS Associated Repeaters Automatically Fallback to this Talkgroup</p>",
+      "dial": {
+        "host": "205.121.52.125",
+        "kind": "p25",
+        "port": 41001
+      },
+      "id": "31590",
+      "name": "UPNS 00",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "UPNS"
     },
     {
       "country": "US",
@@ -34685,11 +34757,11 @@
     },
     {
       "country": "ES",
-      "dashboard": "http://fcs701.xreflector.net/p91/",
+      "dashboard": "http://p25.xreflector.es/tg91/",
       "dial": {
-        "host": "fcs701.xreflector.net",
+        "host": "p25.xreflector.es",
         "kind": "p25",
-        "port": 41002
+        "port": 41003
       },
       "id": "91",
       "name": "World Wide",
@@ -35832,6 +35904,22 @@
     },
     {
       "country": "US",
+      "dashboard": "http://nfoxlxnorcal.dyndns.org",
+      "dial": {
+        "host": "nfoxlxnorcal.dyndns.org",
+        "kind": "urf",
+        "modules": [
+          "A"
+        ]
+      },
+      "id": "379",
+      "name": "XLX379A",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "K6HP"
+    },
+    {
+      "country": "US",
       "dashboard": "https://xlx.foxhole.radio",
       "description": "<p>Foxhole Bridge Networks</p>\r\n<p>https://foxhole.radio</p>",
       "dial": {
@@ -35922,6 +36010,22 @@
       },
       "id": "470",
       "name": "XLX470",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "K6HP"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://xlxcwops.dyndns.org",
+      "dial": {
+        "host": "xlxcwops.dyndns.org",
+        "kind": "urf",
+        "modules": [
+          "A"
+        ]
+      },
+      "id": "483",
+      "name": "XLX483",
       "network": "urf",
       "source": "dvref",
       "sponsor": "K6HP"
@@ -36348,6 +36452,22 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "Brundall Radio Group"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://xlxlist.dyndns.org",
+      "dial": {
+        "host": "xlxlist.dyndns.org",
+        "kind": "urf",
+        "modules": [
+          "A"
+        ]
+      },
+      "id": "960",
+      "name": "White Channel",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "K6HP"
     },
     {
       "country": "US",
@@ -38567,6 +38687,21 @@
       "sponsor": "Chaverim Radio Club"
     },
     {
+      "country": "AR",
+      "dashboard": "https://cqlaplata.ddns.net/ysf",
+      "description": "YSF La Plata",
+      "dial": {
+        "host": "cqlaplata.ddns.net",
+        "kind": "ysf",
+        "port": 42006
+      },
+      "id": "00221",
+      "name": "CQ La Plata",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "LW6DMG"
+    },
+    {
       "country": "BH",
       "dashboard": "http://172.233.145.145",
       "description": "AGDX",
@@ -38747,7 +38882,7 @@
       "dashboard": "http://c4fmfun.ddns.net:2800",
       "description": "CYPRUS C4FM",
       "dial": {
-        "host": "2.86.35.1",
+        "host": "2.86.36.123",
         "kind": "ysf",
         "port": 42006
       },
@@ -41254,10 +41389,10 @@
     },
     {
       "country": "US",
-      "dashboard": "http://68.116.240.91:8000/",
+      "dashboard": "http://47.229.44.102:8000/",
       "description": "PhilippineLink",
       "dial": {
-        "host": "68.116.240.91",
+        "host": "47.229.44.102",
         "kind": "ysf",
         "port": 42000
       },
@@ -42256,6 +42391,20 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "N2MRH and the FB DMR TEAM"
+    },
+    {
+      "country": "US",
+      "description": "TEXAS-DFW",
+      "dial": {
+        "host": "44.27.135.30",
+        "kind": "ysf",
+        "port": 42002
+      },
+      "id": "08180",
+      "name": "TEXAS-DFW",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "TEXAS-DFW Linked Systems"
     },
     {
       "country": "CN",
@@ -46525,6 +46674,21 @@
       "source": "dvref"
     },
     {
+      "country": "GB",
+      "dashboard": "https://digital.cumbriacq.com/live/",
+      "description": "CumbriaCQ",
+      "dial": {
+        "host": "57.128.190.202",
+        "kind": "ysf",
+        "port": 42100
+      },
+      "id": "23534",
+      "name": "Cumbria CQ",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "cumbriacq.com"
+    },
+    {
       "country": "JP",
       "dashboard": "http://takshino-2.mydns.jp:8080",
       "description": "JA2FYO YSF",
@@ -46757,7 +46921,7 @@
         "port": 42000
       },
       "id": "24598",
-      "name": "KJ4OHN",
+      "name": "24598",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "KJ4OHN"
@@ -49276,9 +49440,8 @@
     },
     {
       "country": "US",
-      "description": "BM TG 31311",
       "dial": {
-        "host": "103.89.15.147",
+        "host": "104.129.131.150",
         "kind": "ysf",
         "port": 42000
       },
@@ -49708,10 +49871,10 @@
       "dial": {
         "host": "96.19.67.130",
         "kind": "ysf",
-        "port": 42002
+        "port": 42000
       },
       "id": "31683",
-      "name": "Prescott",
+      "name": "PRESCOTT",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "PRESCOTT"
@@ -51016,6 +51179,21 @@
       "name": "42001hamshack",
       "network": "ysf",
       "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://easternhamclub.hopto.org/",
+      "description": "Tri State Area",
+      "dial": {
+        "host": "n2spy.ddnsfree.com",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "42002",
+      "name": "EastCoastHams",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "N2SPY"
     },
     {
       "country": "IT",
@@ -54681,7 +54859,6 @@
     },
     {
       "country": "US",
-      "dashboard": "http://192.168.0.74/",
       "description": "K1NIC",
       "dial": {
         "host": "ysfmisfits.duckdns.org",
