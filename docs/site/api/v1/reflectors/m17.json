@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 113,
-  "generated": "2026-10-01",
+  "generated": "2026-10-02",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -724,7 +724,7 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://xlx286.dmrturkiye.com",
+      "dashboard": "https://xlx286.dmrturkiye.com",
       "description": "<p>286 M17 T&Uuml;RK\u0130YE</p>",
       "dial": {
         "callsign": "M17-286",

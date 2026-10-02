@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1546,
-  "generated": "2026-10-01",
+  "count": 1547,
+  "generated": "2026-10-02",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -9476,7 +9476,7 @@
       "country": "DE",
       "description": "DA1SR",
       "dial": {
-        "host": "93.245.180.5",
+        "host": "93.245.21.108",
         "kind": "ysf",
         "port": 42000
       },
@@ -14006,7 +14006,7 @@
       "country": "IT",
       "description": "C4FM TEAM",
       "dial": {
-        "host": "2.86.35.1",
+        "host": "2.86.36.123",
         "kind": "ysf",
         "port": 42008
       },
@@ -14524,7 +14524,7 @@
     },
     {
       "country": "PR",
-      "dashboard": "http://prboriken.ddns.net",
+      "dashboard": "https://prboriken.ddns.net",
       "description": "BorikenNetwork",
       "dial": {
         "host": "prboriken.ddns.net",
@@ -16513,6 +16513,21 @@
       "sponsor": "DV1ZEJ"
     },
     {
+      "country": "GB",
+      "dashboard": "http://192.168.1.230",
+      "description": "GB-H1L8RE",
+      "dial": {
+        "host": "h1l8re.ddns.net",
+        "kind": "ysf",
+        "port": 42002
+      },
+      "id": "51866",
+      "name": "H1L8RE",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "G7NIR"
+    },
+    {
       "country": "PH",
       "dashboard": "https://www.na7lv.net",
       "description": "NA7LV",
@@ -17660,7 +17675,7 @@
       "country": "GB",
       "description": "GB3AG YSF Link",
       "dial": {
-        "host": "92.21.56.205",
+        "host": "2.103.231.74",
         "kind": "ysf",
         "port": 42002
       },
@@ -19589,10 +19604,10 @@
     },
     {
       "country": "VE",
-      "dashboard": "http://64.112.43.174:81",
+      "dashboard": "http://15.204.242.27:81",
       "description": "REPORTE GEN",
       "dial": {
-        "host": "64.112.43.174",
+        "host": "15.204.242.27",
         "kind": "ysf",
         "port": 42002
       },
@@ -19604,10 +19619,10 @@
     },
     {
       "country": "VE",
-      "dashboard": "http://64.112.43.174:83",
+      "dashboard": "http://15.204.242.27:83",
       "description": "REPORTE GEN",
       "dial": {
-        "host": "64.112.43.174",
+        "host": "15.204.242.27",
         "kind": "ysf",
         "port": 42001
       },

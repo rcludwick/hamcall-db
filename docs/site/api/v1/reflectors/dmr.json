@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 187,
-  "generated": "2026-10-01",
+  "generated": "2026-10-02",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -3619,7 +3619,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "N9OIG",
-      "system": "wisconsin-dmr"
+      "system": "wisconsin-dmr",
+      "talkgroups": "reflectors/dmr/wisconsin-dmr/talkgroups.json"
     },
     {
       "country": "US",
@@ -3641,7 +3642,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "W8MW",
-      "system": "xlx004"
+      "system": "xlx004",
+      "talkgroups": "reflectors/dmr/xlx004/talkgroups.json"
     },
     {
       "country": "US",
@@ -3651,7 +3653,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "AG5AA",
-      "system": "xlx034"
+      "system": "xlx034",
+      "talkgroups": "reflectors/dmr/xlx034/talkgroups.json"
     },
     {
       "country": "US",
@@ -3672,7 +3675,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "BROWARD ENGINEERING Tm.",
-      "system": "xlx205"
+      "system": "xlx205",
+      "talkgroups": "reflectors/dmr/xlx205/talkgroups.json"
     },
     {
       "country": "GB",

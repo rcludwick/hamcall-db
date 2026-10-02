@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 331,
-  "generated": "2026-10-01",
+  "count": 332,
+  "generated": "2026-10-02",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -2228,7 +2228,7 @@
     {
       "country": "TR",
       "dashboard": "https://nxdn.ta2kw.keenetic.pro",
-      "description": "<p>Talkgroup 28677 NXDN YALOVA T&Uuml;RK\u0130YE<br><br></p>",
+      "description": "<p>Talkgroup 28677 NXDN YALOVA T&Uuml;RK\u0130YE<br><br>DMR T&Uuml;RK\u0130YE<br><br></p>",
       "dial": {
         "host": "nxdn.ta2kw.keenetic.pro",
         "kind": "nxdn",
@@ -2238,7 +2238,7 @@
       "name": "NXDN YALOVA T\u00dcRK\u0130YE",
       "network": "nxdn",
       "source": "dvref",
-      "sponsor": "DMR T\u00dcRK\u0130YE"
+      "sponsor": "NXDN YALOVA T\u00dcRK\u0130YE"
     },
     {
       "country": "TR",
@@ -2269,6 +2269,20 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "QRV73.COM"
+    },
+    {
+      "country": "TR",
+      "dashboard": "https://dvs.pistar.com.tr",
+      "dial": {
+        "host": "141.144.206.211",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "28699",
+      "name": "URFTRK",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "SI",
@@ -4212,10 +4226,10 @@
     },
     {
       "country": "VE",
-      "dashboard": "http://64.112.43.174:84",
+      "dashboard": "http://15.204.242.27:84",
       "description": "<p>Unificando protocolos en nuestro MCC ADNs</p>",
       "dial": {
-        "host": "64.112.43.174",
+        "host": "15.204.242.27",
         "kind": "nxdn",
         "port": 41400
       },

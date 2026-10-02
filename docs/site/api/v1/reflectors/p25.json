@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 348,
-  "generated": "2026-10-01",
+  "count": 351,
+  "generated": "2026-10-02",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -287,7 +287,7 @@
       "dial": {
         "host": "51.83.98.154",
         "kind": "p25",
-        "port": 41000
+        "port": 41001
       },
       "id": "10363",
       "name": "REM-ESP P25Reflector",
@@ -492,6 +492,20 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "KK6RQ"
+    },
+    {
+      "country": "ES",
+      "dashboard": "https://fcs701.xreflector.net/p25",
+      "dial": {
+        "host": "fcs701.xreflector.net",
+        "kind": "p25",
+        "port": 41002
+      },
+      "id": "112",
+      "name": "EMERGENCIAS",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "xreflector"
     },
     {
       "country": "US",
@@ -861,6 +875,20 @@
     },
     {
       "country": "ES",
+      "dashboard": "http://p25.xreflector.es/tg2140",
+      "dial": {
+        "host": "p25.xreflector.es",
+        "kind": "p25",
+        "port": 41005
+      },
+      "id": "2140",
+      "name": "Multiprotocoll",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "xreflector"
+    },
+    {
+      "country": "ES",
       "description": "<p>Somos un grupo de amigos que tenemos pasi&oacute;n por la radio digital, sus numerosas modalidades, redes y servicios</p>",
       "dial": {
         "host": "62.84.187.225",
@@ -1052,7 +1080,7 @@
       "dial": {
         "host": "fcs701.xreflector.net",
         "kind": "p25",
-        "port": 41000
+        "port": 41004
       },
       "id": "224",
       "name": "P25 224",
@@ -1776,7 +1804,7 @@
     {
       "country": "TR",
       "dashboard": "https://p25.ta2kw.keenetic.pro",
-      "description": "<p>Talkgroup 28677 P25 YALOVA T&Uuml;RK\u0130YE</p>",
+      "description": "<p>Talkgroup 28677 P25 YALOVA T&Uuml;RK\u0130YE<br><br>DMR T&Uuml;RK\u0130YE</p>",
       "dial": {
         "host": "p25.ta2kw.keenetic.pro",
         "kind": "p25",
@@ -1786,7 +1814,7 @@
       "name": "P25 YALOVA T\u00dcRK\u0130YE",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "DMR T\u00dcRK\u0130YE"
+      "sponsor": "P25 YALOVA T\u00dcRK\u0130YE"
     },
     {
       "country": "TR",
@@ -1801,6 +1829,20 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "YM2KT"
+    },
+    {
+      "country": "TR",
+      "dashboard": "https://dvs.pistar.com.tr",
+      "dial": {
+        "host": "141.144.206.211",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "28699",
+      "name": "URFTRK",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "JP",

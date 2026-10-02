@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 115,
-  "generated": "2026-10-01",
+  "count": 116,
+  "generated": "2026-10-02",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1917,6 +1917,19 @@
       "sponsor": "RA1AO"
     },
     {
+      "country": "TR",
+      "dashboard": "https://dvs.pistar.com.tr",
+      "dial": {
+        "host": "141.144.206.211",
+        "kind": "urf"
+      },
+      "id": "TRK",
+      "name": "Turkiye ADN Multimod",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
       "country": "US",
       "description": "Reflector cafe test",
       "dial": {
@@ -1964,7 +1977,7 @@
     {
       "country": "TR",
       "dashboard": "https://xlxylv.ta2kw.keenetic.pro",
-      "description": "<p><strong>Module A: DMR &lt;&gt; C4FM YSF&nbsp;</strong><br><strong>Module B: D-PRS/RESiM</strong><br><strong>Module C: D-STAR</strong><br><strong>Module D: ECHO TEST&nbsp;</strong><br><strong><br><br><br>XLXYLV YALOVA T&Uuml;RK\u0130YE</strong></p>",
+      "description": "<p><strong>Module A: DMR &lt;&gt; C4FM YSF&nbsp;</strong><br><strong>Module B: D-PRS/RESiM</strong><br><strong>Module C: D-STAR</strong><br><strong>Module D: ECHO TEST&nbsp;</strong><br><strong><br><br>XLXYLV YALOVA T&Uuml;RK\u0130YE<br><br>DMR T&Uuml;RK\u0130YE<br></strong></p>",
       "dial": {
         "host": "xlxylv.ta2kw.keenetic.pro",
         "kind": "urf",
