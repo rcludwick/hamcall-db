@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 116,
-  "generated": "2026-10-02",
+  "count": 117,
+  "generated": "2026-10-03",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1083,7 +1083,7 @@
       "country": "US",
       "dashboard": "http://xlx517.radiosc.net",
       "dial": {
-        "host": "67.212.42.234",
+        "host": "66.153.152.203",
         "kind": "urf",
         "modules": [
           "A",
@@ -1645,6 +1645,23 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "2021_ADN_SYSTEMS_GREECE"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://iz7ddc.duckdns.org/urf/",
+      "description": "<p>TEST</p>",
+      "dial": {
+        "host": "iz7ddc.duckdns.org",
+        "kind": "urf",
+        "modules": [
+          "D"
+        ]
+      },
+      "id": "DDC",
+      "name": "URF IZ7DDC",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "IZ7DDC"
     },
     {
       "country": "US",

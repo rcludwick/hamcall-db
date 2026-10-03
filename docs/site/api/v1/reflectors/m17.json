@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 113,
-  "generated": "2026-10-02",
+  "count": 115,
+  "generated": "2026-10-03",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1087,6 +1087,26 @@
       "sponsor": "HS5BLO"
     },
     {
+      "country": "US",
+      "dashboard": "https://m17.n2fed.net",
+      "description": "<p>https://n2fed.net</p>",
+      "dial": {
+        "callsign": "M17-654",
+        "host": "m17.n2fed.net",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B"
+        ],
+        "port": 17000
+      },
+      "id": "M17-654",
+      "name": "M17-654",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "N2FED Multi-Mode Repeater System"
+    },
+    {
       "country": "GB",
       "dashboard": "http://xlx-672-dash.pistar.uk",
       "dial": {
@@ -2098,6 +2118,49 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "Quadnet Amateur Radio Network"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://45.32.193.131/m17/index.php",
+      "dial": {
+        "callsign": "M17-MCH",
+        "host": "45.32.193.131",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-MCH",
+      "name": "K8LRC M17-MCH Reflector",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "K8LRC"
     },
     {
       "country": "US",

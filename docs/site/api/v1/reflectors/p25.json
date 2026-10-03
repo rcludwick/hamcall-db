@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 351,
-  "generated": "2026-10-02",
+  "count": 352,
+  "generated": "2026-10-03",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -3505,6 +3505,20 @@
       "sponsor": "ne-dstar"
     },
     {
+      "country": "US",
+      "dashboard": "https://vex.w0chp.radio",
+      "dial": {
+        "host": "vex.w0chp.radio",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "493",
+      "name": "VEX493",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "W0CHP"
+    },
+    {
       "country": "MY",
       "dashboard": "https://edone.lucifernet.com:8002/p25dash/",
       "description": "<table class=\"wikitable table table-striped table-bordered\">\r\n<tbody>\r\n<tr>\r\n<td>Malaysia-NET Wires-X Room 24060 &amp; YSF Bridge (#59331 #11714 #18807) &amp; DSTAR XLX/DCS/REF/XRF 522D &amp; P25 TG50210</td>\r\n</tr>\r\n</tbody>\r\n</table>",
@@ -3761,7 +3775,7 @@
       "country": "US",
       "dashboard": "http://xlx517.radiosc.net",
       "dial": {
-        "host": "67.212.42.234",
+        "host": "66.153.152.203",
         "kind": "p25",
         "port": 41000
       },

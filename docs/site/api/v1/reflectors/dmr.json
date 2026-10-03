@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 187,
-  "generated": "2026-10-02",
+  "generated": "2026-10-03",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -3686,7 +3686,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "G1INC Derek",
-      "system": "xlx279"
+      "system": "xlx279",
+      "talkgroups": "reflectors/dmr/xlx279/talkgroups.json"
     },
     {
       "country": "JP",
@@ -3707,7 +3708,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "JG1XWV",
-      "system": "xlx296"
+      "system": "xlx296",
+      "talkgroups": "reflectors/dmr/xlx296/talkgroups.json"
     },
     {
       "country": "NL",
@@ -3729,7 +3731,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "PD2VDY",
-      "system": "xlx444"
+      "system": "xlx444",
+      "talkgroups": "reflectors/dmr/xlx444/talkgroups.json"
     },
     {
       "country": "DE",
@@ -3750,7 +3753,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "DO5YAM",
-      "system": "xlx456-z"
+      "system": "xlx456-z",
+      "talkgroups": "reflectors/dmr/xlx456-z/talkgroups.json"
     },
     {
       "country": "DE",
