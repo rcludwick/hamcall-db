@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 117,
-  "generated": "2026-10-03",
+  "count": 119,
+  "generated": "2026-10-04",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -591,6 +591,22 @@
       "sponsor": "JG1LKT"
     },
     {
+      "country": "GB",
+      "dashboard": "http://linf.co.uk",
+      "dial": {
+        "host": "44.27.138.102",
+        "kind": "urf",
+        "modules": [
+          "A"
+        ]
+      },
+      "id": "276",
+      "name": "G1INC",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "G1INC"
+    },
+    {
       "country": "US",
       "dashboard": "https://xlx277.bitbybithams.com",
       "description": "<p>Bit By Bit Hams 277, part of the larger Bit By Bit Hams transoding network.</p>\r\n<p>&nbsp;</p>",
@@ -987,6 +1003,20 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "DG1JP"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://xlx461.kb0lsm.com/",
+      "description": "<p>YSF Reflector for the W0NH repeater in St. Joseph, MO</p>",
+      "dial": {
+        "host": "xlx461.kb0lsm.com",
+        "kind": "urf"
+      },
+      "id": "461",
+      "name": "Missouri Valley Amateur Radio Club St. Joseph, MO",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "KB0LSM Repeater Group"
     },
     {
       "country": "US",

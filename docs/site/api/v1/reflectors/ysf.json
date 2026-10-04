@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1547,
-  "generated": "2026-10-03",
+  "count": 1549,
+  "generated": "2026-10-04",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1705,21 +1705,6 @@
       "sponsor": "Chaverim Radio Club"
     },
     {
-      "country": "AR",
-      "dashboard": "https://cqlaplata.ddns.net/ysf",
-      "description": "YSF La Plata",
-      "dial": {
-        "host": "cqlaplata.ddns.net",
-        "kind": "ysf",
-        "port": 42006
-      },
-      "id": "00221",
-      "name": "CQ La Plata",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "LW6DMG"
-    },
-    {
       "country": "BH",
       "dashboard": "http://172.233.145.145",
       "description": "AGDX",
@@ -1968,6 +1953,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "JA9HYM"
+    },
+    {
+      "country": "NZ",
+      "dashboard": "https://xlx299.nz",
+      "description": "DVNZ XLX299",
+      "dial": {
+        "host": "xlx299.nz",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00299",
+      "name": "XLX299",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "Digital Voice New Zealand"
     },
     {
       "country": "BR",
@@ -3882,6 +3882,21 @@
     },
     {
       "country": "GB",
+      "dashboard": "http://linf.co.uk",
+      "description": "URF276",
+      "dial": {
+        "host": "44.27.138.102",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "01523",
+      "name": "URF276",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "G1INC"
+    },
+    {
+      "country": "GB",
       "dashboard": "http://xlx.lancs.fm/",
       "description": "LancsReflector",
       "dial": {
@@ -4134,7 +4149,7 @@
     },
     {
       "country": "GB",
-      "dashboard": "http://m0adm.dragon-net.pl",
+      "dashboard": "https://m0adm.co.uk/",
       "description": "Raynet_Liv",
       "dial": {
         "host": "67.208.54.142",
@@ -4606,6 +4621,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "DRUMLINS AMATEUR RADIO CLUB"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://xlx461.kb0lsm.com/",
+      "description": "W0NH Repeater",
+      "dial": {
+        "host": "ysf.kb0lsm.com",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "03793",
+      "name": "STJMO",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "KB0LSM Repeater Group"
     },
     {
       "country": "IT",
@@ -5441,10 +5471,10 @@
     },
     {
       "country": "IT",
-      "dashboard": "https://515930.asnode.org/db/",
+      "dashboard": "https://718xlx.ddns.net/db/",
       "description": "xlx718_Ysf",
       "dial": {
-        "host": "515930.asnode.org",
+        "host": "718xlx.ddns.net",
         "kind": "ysf",
         "port": 42200
       },
@@ -7296,6 +7326,20 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "W9DMC"
+    },
+    {
+      "country": "SV",
+      "dashboard": "http://72.18.83.92:82",
+      "description": "YSF-YS1AHL",
+      "dial": {
+        "host": "72.18.83.92",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "19650",
+      "name": "YS1AHL",
+      "network": "ysf",
+      "source": "dvref"
     },
     {
       "country": "US",
@@ -13935,7 +13979,7 @@
       "dashboard": "http://fortiga.ddns.net:42180",
       "description": "SCANIA TEAM",
       "dial": {
-        "host": "79.131.81.139",
+        "host": "79.131.82.172",
         "kind": "ysf",
         "port": 42007
       },
@@ -15275,7 +15319,6 @@
     },
     {
       "country": "CN",
-      "dashboard": "http://120.27.213.225:551/",
       "dial": {
         "host": "120.27.213.225",
         "kind": "ysf",
@@ -18854,20 +18897,6 @@
     },
     {
       "country": "US",
-      "description": "NOVARS Bridge",
-      "dial": {
-        "host": "dvref.novars.space",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "69420",
-      "name": "NOVARS-YSF",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "Northwest Ohio VHF Amateur Radio Society"
-    },
-    {
-      "country": "US",
       "dashboard": "http://38.18.68.3:42600",
       "description": "Phoenix AZ",
       "dial": {
@@ -19105,7 +19134,7 @@
     },
     {
       "country": "AR",
-      "dashboard": "https://digitaleslaplata.ddns.net/",
+      "dashboard": "https://cqlaplata.ddns.net/ysf",
       "description": "Id. 72234",
       "dial": {
         "host": "77.237.239.118",
@@ -19113,7 +19142,7 @@
         "port": 42008
       },
       "id": "72234",
-      "name": "La-Plata",
+      "name": "Digi-La-Plata",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "LW6DMG"

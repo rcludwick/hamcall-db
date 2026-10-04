@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 352,
-  "generated": "2026-10-03",
+  "count": 354,
+  "generated": "2026-10-04",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -666,6 +666,20 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "HS3TDI"
+    },
+    {
+      "country": "GB",
+      "dashboard": "http://linf.co.uk",
+      "dial": {
+        "host": "44.27.138.102",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "1523",
+      "name": "URF276",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "G1INC"
     },
     {
       "country": "US",
@@ -3100,6 +3114,21 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "UN1EAK"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://skynetp25hub.ddns.net/",
+      "description": "<p>444.475 +5 131.8 PL NAC 293-Painesville, OH</p>\r\n<p>443.3375 +5 131.8 PL NAC 293-Thompson, OH</p>\r\n<p>444.2875 + 131.8 PL NAC 293-Wayne, Ohio</p>",
+      "dial": {
+        "host": "74.136.238.59",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "440",
+      "name": "Skynet RPT System-NE Ohio",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Skynet Repeater System"
     },
     {
       "country": "JP",

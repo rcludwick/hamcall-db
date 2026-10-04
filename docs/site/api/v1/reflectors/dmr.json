@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 187,
-  "generated": "2026-10-03",
+  "generated": "2026-10-04",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -3764,7 +3764,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "HB9GFX",
-      "system": "xlx508-dmr-access"
+      "system": "xlx508-dmr-access",
+      "talkgroups": "reflectors/dmr/xlx508-dmr-access/talkgroups.json"
     },
     {
       "country": "CN",
@@ -3785,7 +3786,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "BI8SPS, BH8UXN, BH8UOU.",
-      "system": "xlx564-yunnanham"
+      "system": "xlx564-yunnanham",
+      "talkgroups": "reflectors/dmr/xlx564-yunnanham/talkgroups.json"
     },
     {
       "country": "BG",
@@ -3807,7 +3809,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "LZ3SAM",
-      "system": "xlx696"
+      "system": "xlx696",
+      "talkgroups": "reflectors/dmr/xlx696/talkgroups.json"
     },
     {
       "country": "US",
@@ -3829,7 +3832,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "KD2QQV",
-      "system": "xlx823"
+      "system": "xlx823",
+      "talkgroups": "reflectors/dmr/xlx823/talkgroups.json"
     },
     {
       "country": "KZ",
