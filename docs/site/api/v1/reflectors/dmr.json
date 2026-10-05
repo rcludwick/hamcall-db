@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 187,
-  "generated": "2026-10-04",
+  "count": 188,
+  "generated": "2026-10-05",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -3602,6 +3602,29 @@
     },
     {
       "country": "US",
+      "dashboard": "https://dmr.kg5a.us",
+      "description": "<p>This is the bridge for West TN DMR linked repeater system. On all repeaters we use a single, static a talkgroup per each time slot. On TS2 we use West TN Talk (TN10) and this is externally linked as 314710 and on TS1 we use West TN Mutual Aid (WTMA). This is eternally 314448. For more info on the RF repeaters check out the info page at http://kg5a.us or the dashboard at https://dmr.kg5a.us .</p>",
+      "dial": {
+        "host": "dmr.kg5a.us",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "west-tn-dmr",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/west-tn-dmr/talkgroups/"
+      },
+      "id": "west-tn-dmr-server-dmrkg5aus",
+      "name": "dmr.kg5a.us",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "FALCON - KG5A",
+      "system": "west-tn-dmr",
+      "talkgroups": "reflectors/dmr/west-tn-dmr/talkgroups.json"
+    },
+    {
+      "country": "US",
       "dashboard": "http://kr9rk.hopto.org/ipsc",
       "dial": {
         "host": "kr9rk.hopto.org",
@@ -3855,7 +3878,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "UN1EAK",
-      "system": "xlx888-a"
+      "system": "xlx888-a",
+      "talkgroups": "reflectors/dmr/xlx888-a/talkgroups.json"
     },
     {
       "country": "GB",
@@ -3866,7 +3890,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "mb6ds",
-      "system": "xlx942"
+      "system": "xlx942",
+      "talkgroups": "reflectors/dmr/xlx942/talkgroups.json"
     },
     {
       "country": "US",
@@ -3888,7 +3913,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "KR4EMG",
-      "system": "xlxdam"
+      "system": "xlxdam",
+      "talkgroups": "reflectors/dmr/xlxdam/talkgroups.json"
     },
     {
       "country": "GB",

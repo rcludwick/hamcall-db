@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1549,
-  "generated": "2026-10-04",
+  "count": 1552,
+  "generated": "2026-10-05",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1897,10 +1897,9 @@
     },
     {
       "country": "TR",
-      "dashboard": "https://ptt.pistar.com.tr:28400",
       "description": "Turkiye Genel",
       "dial": {
-        "host": "ptt.pistar.com.tr",
+        "host": "2861.adn.systems",
         "kind": "ysf",
         "port": 42000
       },
@@ -2088,6 +2087,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "West Michigan System Fusion"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://xlx341.duckdns.org",
+      "description": "XLX341",
+      "dial": {
+        "host": "xlx341.duckdns.org",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00341",
+      "name": "XLX341",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "W6CB"
     },
     {
       "country": "US",
@@ -11745,6 +11759,21 @@
       "sponsor": "YM2KW"
     },
     {
+      "country": "TR",
+      "dashboard": "http://159.223.16.101",
+      "description": "ARC Reflector",
+      "dial": {
+        "host": "159.223.16.101",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "28686",
+      "name": "ARC",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "TA2GBO"
+    },
+    {
       "country": "US",
       "dashboard": "https://xlx910.mywire.org/",
       "description": "XLX910",
@@ -12090,6 +12119,21 @@
       "name": "K3IHI RPT",
       "network": "ysf",
       "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://xlx.ara.radio",
+      "description": "URFARA",
+      "dial": {
+        "host": "44.27.129.246",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "30421",
+      "name": "URFARA",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "Appalachian Repeater Association"
     },
     {
       "country": "CL",
@@ -14815,6 +14859,19 @@
     },
     {
       "country": "US",
+      "description": "KB7DFP",
+      "dial": {
+        "host": "quark.mywire.org",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "43672",
+      "name": "KB7DFP",
+      "network": "ysf",
+      "source": "dvref"
+    },
+    {
+      "country": "US",
       "description": "OH-KD8USF",
       "dial": {
         "host": "kd8mst.org",
@@ -16524,21 +16581,6 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "Jefferson County Amateur Radio Club"
-    },
-    {
-      "country": "US",
-      "dashboard": "http://xlx517.radiosc.net",
-      "description": "RadioSC",
-      "dial": {
-        "host": "67.212.42.234",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "51700",
-      "name": "URF517",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "RadioSC"
     },
     {
       "country": "PH",
@@ -19135,7 +19177,7 @@
     {
       "country": "AR",
       "dashboard": "https://cqlaplata.ddns.net/ysf",
-      "description": "Id. 72234",
+      "description": "ID 72234",
       "dial": {
         "host": "77.237.239.118",
         "kind": "ysf",

@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 119,
-  "generated": "2026-10-04",
+  "generated": "2026-10-05",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1006,20 +1006,6 @@
     },
     {
       "country": "US",
-      "dashboard": "https://xlx461.kb0lsm.com/",
-      "description": "<p>YSF Reflector for the W0NH repeater in St. Joseph, MO</p>",
-      "dial": {
-        "host": "xlx461.kb0lsm.com",
-        "kind": "urf"
-      },
-      "id": "461",
-      "name": "Missouri Valley Amateur Radio Club St. Joseph, MO",
-      "network": "urf",
-      "source": "dvref",
-      "sponsor": "KB0LSM Repeater Group"
-    },
-    {
-      "country": "US",
       "dashboard": "http://xlxnettalk.dyndns.org",
       "dial": {
         "host": "xlxnettalk.dyndns.org",
@@ -1539,6 +1525,20 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "Ure C\u00f3rdoba"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://xlx.ara.radio",
+      "description": "<p>Digital side of the Appalachian Repeater Association</p>",
+      "dial": {
+        "host": "44.27.129.246",
+        "kind": "urf"
+      },
+      "id": "ARA",
+      "name": "Appalachian Repeater Association",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "Appalachian Repeater Association"
     },
     {
       "country": "AR",

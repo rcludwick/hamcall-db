@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 354,
-  "generated": "2026-10-04",
+  "generated": "2026-10-05",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1543,10 +1543,9 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://ptt.pistar.com.tr:28200",
       "description": "<p>P25 Turkiye Genel Reflector - YM2KT</p>",
       "dial": {
-        "host": "ptt.pistar.com.tr",
+        "host": "2861.adn.systems",
         "kind": "p25",
         "port": 41000
       },
@@ -1554,7 +1553,7 @@
       "name": "P25 Turkiye",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "YM2KT"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -1914,6 +1913,21 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "W4NOC / KC8PRG"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://xlx.ara.radio",
+      "description": "<p>Digital side of the Appalachian Repeater Association</p>",
+      "dial": {
+        "host": "44.27.129.246",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "30421",
+      "name": "URFARA",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Appalachian Repeater Association"
     },
     {
       "country": "CL",
@@ -3114,21 +3128,6 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "UN1EAK"
-    },
-    {
-      "country": "US",
-      "dashboard": "http://skynetp25hub.ddns.net/",
-      "description": "<p>444.475 +5 131.8 PL NAC 293-Painesville, OH</p>\r\n<p>443.3375 +5 131.8 PL NAC 293-Thompson, OH</p>\r\n<p>444.2875 + 131.8 PL NAC 293-Wayne, Ohio</p>",
-      "dial": {
-        "host": "74.136.238.59",
-        "kind": "p25",
-        "port": 41000
-      },
-      "id": "440",
-      "name": "Skynet RPT System-NE Ohio",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "Skynet Repeater System"
     },
     {
       "country": "JP",
