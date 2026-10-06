@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 336,
-  "generated": "2026-10-05",
+  "count": 338,
+  "generated": "2026-10-06",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -379,6 +379,19 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "NXDN SPAIN"
+    },
+    {
+      "country": "TR",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "1453",
+      "name": "URFTUR",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TH",
@@ -1483,6 +1496,21 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "Extended Freedom Network"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://dvhub.2e0lxy.uk/",
+      "description": "Yorkshire Link NXDN reflector on talkgroup 23530.",
+      "dial": {
+        "host": "dvhub.2e0lxy.uk",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "23530",
+      "name": "Yorkshire Link",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "2E0LXY"
     },
     {
       "country": "GB",

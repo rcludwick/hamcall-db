@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 188,
-  "generated": "2026-10-05",
+  "count": 189,
+  "generated": "2026-10-06",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -3918,6 +3918,29 @@
     },
     {
       "country": "GB",
+      "dashboard": "https://dvhub.2e0lxy.uk/",
+      "description": "Yorkshire Link Hub public DMR HomeBrew master. Connect to dvhub.2e0lxy.uk on UDP 62030 and use talkgroup 23530 (Yorkshire Link). Clients must use a valid RadioID DMR ID, a unique ESSID, and the Yorkshire Link master password supplied by the operator; the BrandMeister Hotspot Security password is not used here. Dashboard and system status: https://dvhub.2e0lxy.uk/. Standard MMDVM/HomeBrew client authentication is supported, with interconnection to the hub\u2019s supported amateur-radio digital voice modes.",
+      "dial": {
+        "host": "dvhub.2e0lxy.uk",
+        "kind": "mmdvm",
+        "port": 62030,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "yorkshire-link",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/yorkshire-link/talkgroups/"
+      },
+      "id": "yorkshire-link-server-yorkshire-link-hub",
+      "name": "Yorkshire Link Hub",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "2E0LXY",
+      "system": "yorkshire-link",
+      "talkgroups": "reflectors/dmr/yorkshire-link/talkgroups.json"
+    },
+    {
+      "country": "GB",
       "dashboard": "https://dmrdash.m0xyn.radio",
       "description": "<p>This Is The YorkshireDMR Server Part of the Yorkshire Net UK</p>",
       "dial": {
@@ -3936,7 +3959,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "Yorkshire Net UK",
-      "system": "yorkshiredmr"
+      "system": "yorkshiredmr",
+      "talkgroups": "reflectors/dmr/yorkshiredmr/talkgroups.json"
     }
   ],
   "schema_version": 1,

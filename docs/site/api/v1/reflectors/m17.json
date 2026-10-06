@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 115,
-  "generated": "2026-10-05",
+  "count": 116,
+  "generated": "2026-10-06",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -3076,6 +3076,25 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "JJ1YEG Sotobo Amateu Radio Club"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://dvhub.2e0lxy.uk/",
+      "description": "Yorkshire Link M17 reflector module A, connected to the shared TG23530 conference.",
+      "dial": {
+        "callsign": "M17-YLH",
+        "host": "dvhub.2e0lxy.uk",
+        "kind": "m17",
+        "modules": [
+          "A"
+        ],
+        "port": 17000
+      },
+      "id": "M17-YLH",
+      "name": "Yorkshire Link M17",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "2E0LXY"
     },
     {
       "country": "US",

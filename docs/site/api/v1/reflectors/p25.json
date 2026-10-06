@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 354,
-  "generated": "2026-10-05",
+  "count": 360,
+  "generated": "2026-10-06",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -622,6 +622,19 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "xreflector"
+    },
+    {
+      "country": "TR",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "1453",
+      "name": "URFTUR",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "US",
@@ -1246,6 +1259,21 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "M0UPM"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://dvhub.2e0lxy.uk/",
+      "description": "Yorkshire Link P25 reflector mapped to the shared TG23530 conference.",
+      "dial": {
+        "host": "dvhub.2e0lxy.uk",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "23530",
+      "name": "Yorkshire Link P25",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "2E0LXY"
     },
     {
       "country": "US",
@@ -2776,6 +2804,20 @@
     },
     {
       "country": "MX",
+      "dashboard": "http://p25.xreflector.es/tg334",
+      "dial": {
+        "host": "p25.xreflector.es",
+        "kind": "p25",
+        "port": 41008
+      },
+      "id": "334",
+      "name": "MEXICO",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "xreflector"
+    },
+    {
+      "country": "MX",
       "dashboard": "http://89.117.61.236",
       "description": "<p>P25-XE1JMB</p>",
       "dial": {
@@ -3128,6 +3170,21 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "UN1EAK"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://skynetp25hub.ddns.net/",
+      "description": "<p>444.475 +5 131.8 PL NAC 293-Painesville, OH</p>\r\n<p>443.3375 +5 131.8 PL NAC 293-Thompson, OH</p>\r\n<p>444.2875 + 131.8 PL NAC 293-Wayne, Ohio</p>",
+      "dial": {
+        "host": "74.136.238.59",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "440",
+      "name": "Skynet RPT System-NE Ohio",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Skynet Repeater System"
     },
     {
       "country": "JP",
@@ -4314,6 +4371,20 @@
       "sponsor": "KD0IOE"
     },
     {
+      "country": "AR",
+      "dashboard": "http://p25.xreflector.es/tg708",
+      "dial": {
+        "host": "p25.xreflector.es",
+        "kind": "p25",
+        "port": 41007
+      },
+      "id": "708",
+      "name": "HONDURAS",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "xreflector"
+    },
+    {
       "country": "PA",
       "dashboard": "http://p25-hp3.dnsup.net/",
       "dial": {
@@ -4352,6 +4423,20 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "iu0NDT"
+    },
+    {
+      "country": "AR",
+      "dashboard": "http://p25.xreflector.es/tg722",
+      "dial": {
+        "host": "p25.xreflector.es",
+        "kind": "p25",
+        "port": 41006
+      },
+      "id": "722",
+      "name": "ARGENTINA",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "xreflector"
     },
     {
       "country": "AR",

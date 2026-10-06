@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 1552,
-  "generated": "2026-10-05",
+  "generated": "2026-10-06",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -12813,14 +12813,14 @@
     {
       "country": "US",
       "dashboard": "http://3103.amcomm.network:8080",
-      "description": "GLDN Reflctr",
+      "description": "GLDN Reflector",
       "dial": {
         "host": "3103.amcomm.network",
         "kind": "ysf",
         "port": 42001
       },
       "id": "31551",
-      "name": "DUNoW",
+      "name": "GLDN",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "GLDN"
@@ -16894,10 +16894,10 @@
     },
     {
       "country": "PH",
-      "dashboard": "http://162.212.152.20/ysf",
+      "dashboard": "http://34.173.218.171/ysf",
       "description": "CUERA INC",
       "dial": {
-        "host": "162.212.152.20",
+        "host": "34.173.218.171",
         "kind": "ysf",
         "port": 42000
       },
