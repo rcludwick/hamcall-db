@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 189,
-  "generated": "2026-10-06",
+  "count": 190,
+  "generated": "2026-10-07",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1085,6 +1085,29 @@
       "sponsor": "ADN SYSTEMS",
       "system": "fd_adn_2221_italy",
       "talkgroups": "reflectors/dmr/fd_adn_2221_italy/talkgroups.json"
+    },
+    {
+      "country": "FI",
+      "dashboard": "https://5.61.88.113",
+      "description": "<p>FI-DMRLINK is a small self-hosted DMR network in Finland run by OH7NFC. It is a standalone server with no link to BrandMeister or other networks. Hotspots connect with the Homebrew protocol (MMDVMHost, Pi-Star, WPSD) or the SharkRF IP Connector protocol (openSPOT). Talkgroup 9 is a cross-mode bridge: DMR calls are converted to Fusion (YSF 244) and NXDN (TG 244) and back, so DMR, Fusion and NXDN users can talk to each other. A Parrot echo test is on private call 9990.<br>Server: 5.61.88.113. Homebrew: UDP 62031. SharkRF: UDP 65100. Password: passw0rd</p>",
+      "dial": {
+        "host": "5.61.88.113",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "fi-dmrlink",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/fi-dmrlink/talkgroups/"
+      },
+      "id": "fi-dmrlink-server-fi-dmrlink",
+      "name": "FI-DMRLINK",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "OH7NFC",
+      "system": "fi-dmrlink",
+      "talkgroups": "reflectors/dmr/fi-dmrlink/talkgroups.json"
     },
     {
       "country": "PA",

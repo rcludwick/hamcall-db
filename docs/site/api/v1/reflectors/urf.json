@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 120,
-  "generated": "2026-10-06",
+  "generated": "2026-10-07",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -51,7 +51,7 @@
     },
     {
       "country": "IT",
-      "dashboard": "http://82.165.165.43:4000",
+      "dashboard": "http://82.165.165.43:80",
       "dial": {
         "host": "82.165.165.43",
         "kind": "urf"
@@ -612,10 +612,7 @@
       "dashboard": "http://linf.co.uk",
       "dial": {
         "host": "44.27.138.102",
-        "kind": "urf",
-        "modules": [
-          "A"
-        ]
+        "kind": "urf"
       },
       "id": "276",
       "name": "G1INC",

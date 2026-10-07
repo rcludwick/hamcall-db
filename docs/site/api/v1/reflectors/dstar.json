@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "XLX reflector data from the XLX registry maintained by Luc Engelmann, LX1IQ (http://xlxapi.rlx.lu/).\nStandalone XRF reflector data from the Pi-Star DExtra host file (http://www.pistar.uk/downloads/DExtra_Hosts.txt).\nREF and DCS reflector names from the Pi-Star DPlus and DCS host files (http://www.pistar.uk/downloads/).",
   "client_refresh_days": 7,
-  "count": 956,
-  "generated": "2026-10-06",
+  "count": 958,
+  "generated": "2026-10-07",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -2333,7 +2333,7 @@
       "description": "Verona Reflector [DSTAR] - [C4FM Transcoded DMR]",
       "dial": {
         "callsign": "XRF121",
-        "host": "79.51.202.50",
+        "host": "95.248.61.99",
         "kind": "dextra",
         "port": 30001
       },
@@ -3307,7 +3307,7 @@
       ],
       "country": "Buxton, GB",
       "dashboard": "https://xlx.buxton.radio",
-      "description": "URF178 - Buxton Radio Amateurs - Connected to GB3HH, AllStar 621821, Echolink G4BUX-L, Peanut XLX178A and TGIF 178. Supports DStar, DMR, YSF, AP/Term Mode.",
+      "description": "URF178 - Buxton Radio Amateurs - Connected to GB3HH, AllStar 621821, Echolink G4BUX-L, Peanut XLX178A and TGIF 178. Supports DMR, DStar, G3, M17, NXDN, P25 and YSF.",
       "dial": {
         "callsign": "XRF178",
         "host": "80.229.161.124",
@@ -4060,6 +4060,26 @@
     },
     {
       "aliases": [
+        "XRF219",
+        "REF219",
+        "DCS219"
+      ],
+      "country": "USA",
+      "dashboard": "http://xlx219.k2ej.com",
+      "description": "K2EJ Reflector Empire",
+      "dial": {
+        "callsign": "XRF219",
+        "host": "108.61.87.174",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLX219",
+      "name": "XLX219",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "aliases": [
         "XRF220",
         "REF220",
         "DCS220"
@@ -4527,7 +4547,7 @@
       "description": "Hitachi Digipeater (DMR-SFR)",
       "dial": {
         "callsign": "XRF245",
-        "host": "153.211.169.43",
+        "host": "153.211.172.167",
         "kind": "dextra",
         "port": 30001
       },
@@ -5801,7 +5821,7 @@
       "description": "Multiprotocolo Extremadura by EA4GRR",
       "dial": {
         "callsign": "XRF320",
-        "host": "81.43.2.24",
+        "host": "81.43.10.190",
         "kind": "dextra",
         "port": 30001
       },
@@ -7024,6 +7044,26 @@
       },
       "id": "XLX398",
       "name": "XLX398",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "aliases": [
+        "XRF399",
+        "REF399",
+        "DCS399"
+      ],
+      "country": "Spain",
+      "dashboard": "http://ea3rks.ddns.net",
+      "description": "XLX399 Multiprotocol Reflector by URE Sabadell",
+      "dial": {
+        "callsign": "XRF399",
+        "host": "83.50.40.217",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLX399",
+      "name": "XLX399",
       "network": "dstar",
       "source": "xlx"
     },
@@ -8962,26 +9002,6 @@
       },
       "id": "XLX512",
       "name": "XLX512",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "aliases": [
-        "XRF513",
-        "REF513",
-        "DCS513"
-      ],
-      "country": "USA",
-      "dashboard": "http://ysfzone.ddns.net",
-      "description": "XLX513 Multiprotocol Reflector",
-      "dial": {
-        "callsign": "XRF513",
-        "host": "98.28.196.189",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLX513",
-      "name": "XLX513",
       "network": "dstar",
       "source": "xlx"
     },
@@ -12181,7 +12201,7 @@
         "DCS781"
       ],
       "country": "Japan",
-      "dashboard": "http://xrf781.xreflector-jp.org",
+      "dashboard": "http://xrf781.xreflector-jp.org/",
       "description": "Welcome to XLX781 Reflector Tosa-Kochi Japan by Tosachou Bousai Ham Club.",
       "dial": {
         "callsign": "XRF781",
@@ -13081,7 +13101,7 @@
       ],
       "country": "Germany",
       "dashboard": "http://xlx850.bm262.de",
-      "description": "MultiMode: BM-TG263<>YSF: DE-Germany<>Wires-X: DL-WIRESX-BM263 <> Tetra",
+      "description": "MultiMode DV: BM-TG263<=>YSF: DE-Germany<=>Wires-X: DL-WIRESX-BM263",
       "dial": {
         "callsign": "XRF850",
         "host": "116.203.56.12",
@@ -13110,26 +13130,6 @@
       },
       "id": "XLX858",
       "name": "XLX858",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "aliases": [
-        "XRF859",
-        "REF859",
-        "DCS859"
-      ],
-      "country": "USA",
-      "dashboard": "http://n4jes.ddns.net",
-      "description": "Gateway Repeater Group, Mount Sterling, Kentucky",
-      "dial": {
-        "callsign": "XRF859",
-        "host": "71.150.187.242",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLX859",
-      "name": "XLX859",
       "network": "dstar",
       "source": "xlx"
     },
@@ -13469,6 +13469,26 @@
       },
       "id": "XLX900",
       "name": "XLX900",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "aliases": [
+        "XRF901",
+        "REF901",
+        "DCS901"
+      ],
+      "country": "CATALUNYA",
+      "dashboard": "http://urcat-xlx2.ddns.net:81",
+      "description": "Benvingut al reflector XLX DStar catala",
+      "dial": {
+        "callsign": "XRF901",
+        "host": "81.184.224.189",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLX901",
+      "name": "XLX901",
       "network": "dstar",
       "source": "xlx"
     },
@@ -15084,6 +15104,26 @@
       },
       "id": "XLXACP",
       "name": "XLXACP",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "aliases": [
+        "XRFARA",
+        "REFARA",
+        "DCSARA"
+      ],
+      "country": "UNITED STATES",
+      "dashboard": "http://xlx.ara.radio",
+      "description": "XLXARA \u2014 Appalachian Repeater Association | Operated by Big Daddy Porker, WV8T",
+      "dial": {
+        "callsign": "XRFARA",
+        "host": "74.43.160.142",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLXARA",
+      "name": "XLXARA",
       "network": "dstar",
       "source": "xlx"
     },
@@ -17966,7 +18006,7 @@
     {
       "dial": {
         "callsign": "XRF014",
-        "host": "172.67.201.108",
+        "host": "104.21.21.239",
         "kind": "dextra",
         "port": 30001
       },
@@ -18221,7 +18261,7 @@
     {
       "dial": {
         "callsign": "XRF321",
-        "host": "172.67.163.225",
+        "host": "104.21.57.126",
         "kind": "dextra",
         "port": 30001
       },
@@ -18281,7 +18321,7 @@
     {
       "dial": {
         "callsign": "XRF555",
-        "host": "178.107.232.204",
+        "host": "178.107.232.205",
         "kind": "dextra",
         "port": 30001
       },

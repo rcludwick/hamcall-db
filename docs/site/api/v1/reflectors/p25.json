@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 360,
-  "generated": "2026-10-06",
+  "generated": "2026-10-07",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -812,6 +812,20 @@
       "sponsor": "PD2VDY"
     },
     {
+      "country": "BE",
+      "dashboard": "https://vex.on6dp.be",
+      "dial": {
+        "host": "vex.on6dp.be",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "2061",
+      "name": "VEX-BEL-P25",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "UBA-LGE"
+    },
+    {
       "country": "FR",
       "dashboard": "https://francemultiprotocole.fr",
       "description": "<p>RI49 - Francemultiprotocole</p>",
@@ -959,7 +973,7 @@
     },
     {
       "country": "IT",
-      "dashboard": "http://82.165.165.43:4000",
+      "dashboard": "http://82.165.165.43:80",
       "dial": {
         "host": "82.165.165.43",
         "kind": "p25",
@@ -4705,21 +4719,6 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "WMRA"
-    },
-    {
-      "country": "CA",
-      "dashboard": "http://ve2nbz.ddns.net:90",
-      "description": "<p>P25 MAURICIE</p>",
-      "dial": {
-        "host": "76.71.232.202",
-        "kind": "p25",
-        "port": 41000
-      },
-      "id": "819",
-      "name": "P25 Mauricie et Centre du Qu\u00e9bec",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "VE2NBZ/VE2RVU"
     },
     {
       "country": "CN",

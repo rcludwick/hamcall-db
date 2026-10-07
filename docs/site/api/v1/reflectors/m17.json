@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 116,
-  "generated": "2026-10-06",
+  "count": 118,
+  "generated": "2026-10-07",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -484,6 +484,50 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "ham radio"
+    },
+    {
+      "country": "GR",
+      "dashboard": "http://m17-165.ddns.net:8055",
+      "description": "<p>M17-165 is a Reflector&nbsp; of Network \"Digital-Voice-GREEC\"</p>",
+      "dial": {
+        "callsign": "M17-165",
+        "host": "m17-165.ddns.net",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-165",
+      "name": "Digital Voice Greece",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "Digital Voice GREECE"
     },
     {
       "country": "KR",
@@ -1344,6 +1388,29 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "Sez. ARI di Trani"
+    },
+    {
+      "country": "BE",
+      "dashboard": "http://adn2061.be:3000",
+      "dial": {
+        "callsign": "M17-BEL",
+        "host": "89.117.57.161",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ],
+        "port": 17000
+      },
+      "id": "M17-BEL",
+      "name": "M17-BEL",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "UBA-LGE"
     },
     {
       "country": "IT",
@@ -2761,7 +2828,7 @@
     },
     {
       "country": "IT",
-      "dashboard": "http://82.165.165.43:4000",
+      "dashboard": "http://82.165.165.43:8080",
       "dial": {
         "callsign": "M17-SVD",
         "host": "82.165.165.43",

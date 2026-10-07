@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1552,
-  "generated": "2026-10-06",
+  "count": 1554,
+  "generated": "2026-10-07",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1792,6 +1792,20 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "DH9YAP"
+    },
+    {
+      "country": "FI",
+      "description": "Cross-mode",
+      "dial": {
+        "host": "5.61.88.113",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00244",
+      "name": "DMRLINK",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "OH7NFC"
     },
     {
       "country": "JP",
@@ -3954,21 +3968,6 @@
       "sponsor": "G1INC Derek"
     },
     {
-      "country": "GB",
-      "dashboard": "http://maythorn.myddns.me",
-      "description": "Home reflector",
-      "dial": {
-        "host": "maythorn.myddns.me",
-        "kind": "ysf",
-        "port": 42002
-      },
-      "id": "01528",
-      "name": "G1INC",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "G1INC Derek"
-    },
-    {
       "country": "DO",
       "dashboard": "http://172.105.158.111/",
       "description": "YSF DOMREP",
@@ -4694,6 +4693,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "DX1CC"
+    },
+    {
+      "country": "CA",
+      "dashboard": "https://xlx690.solosoft.ca",
+      "description": "VA3ODC XLX REF",
+      "dial": {
+        "host": "xlx.solosoft.ca",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "04200",
+      "name": "VA3ODC - YSF",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "VA3ODC - Ontario Digital Club"
     },
     {
       "country": "GB",
@@ -6246,7 +6260,6 @@
     },
     {
       "country": "ES",
-      "dashboard": "https://timber-wonderful-function-directed.trycloudflare.com/ysf/",
       "description": "Sala EA1-Soria",
       "dial": {
         "host": "soriac4fm.duckdns.org",
@@ -8056,21 +8069,6 @@
       "source": "dvref"
     },
     {
-      "country": "US",
-      "dashboard": "http://bakysf.hamfusion.com/",
-      "description": "Wires-X 21335",
-      "dial": {
-        "host": "bakysf.hamfusion.com",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "21335",
-      "name": "WM Connect",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "West Michigan System Fusion"
-    },
-    {
       "country": "ES",
       "dashboard": "https://ysf.ysf.es",
       "description": "LORO",
@@ -9738,6 +9736,21 @@
     },
     {
       "country": "GB",
+      "dashboard": "https://194.146.49.25/ysf-status.html",
+      "description": "YORKSHIRE HUB",
+      "dial": {
+        "host": "194.146.49.25",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "23530",
+      "name": "YORKSHIRELINK",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "2E0LXY"
+    },
+    {
+      "country": "GB",
       "description": "RAYNET-UK",
       "dial": {
         "host": "raynet.m0guy.com",
@@ -9994,10 +10007,10 @@
       "dial": {
         "host": "74.208.174.230",
         "kind": "ysf",
-        "port": 42000
+        "port": 42395
       },
       "id": "24598",
-      "name": "24598",
+      "name": "KJ4OHN-24598",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "KJ4OHN"
@@ -12684,6 +12697,19 @@
       "sponsor": "AD8G"
     },
     {
+      "country": "US",
+      "description": "FL AllStar",
+      "dial": {
+        "host": "162.35.185.221",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "31400",
+      "name": "WP3D Florida",
+      "network": "ysf",
+      "source": "dvref"
+    },
+    {
       "country": "ES",
       "description": "CANARIAS-TENER",
       "dial": {
@@ -14023,7 +14049,7 @@
       "dashboard": "http://fortiga.ddns.net:42180",
       "description": "SCANIA TEAM",
       "dial": {
-        "host": "79.131.82.172",
+        "host": "79.131.82.81",
         "kind": "ysf",
         "port": 42007
       },
@@ -16894,10 +16920,10 @@
     },
     {
       "country": "PH",
-      "dashboard": "http://34.173.218.171/ysf",
+      "dashboard": "http://192.236.152.16/",
       "description": "CUERA INC",
       "dial": {
-        "host": "34.173.218.171",
+        "host": "192.236.152.16",
         "kind": "ysf",
         "port": 42000
       },
@@ -19528,11 +19554,12 @@
     },
     {
       "country": "CO",
+      "dashboard": "http://44.27.137.172/",
       "description": "HUBNet REM52Hz",
       "dial": {
-        "host": "181.143.174.154",
+        "host": "44.27.137.172",
         "kind": "ysf",
-        "port": 42052
+        "port": 42037
       },
       "id": "73237",
       "name": "HUBNETREM52HZ",
@@ -20119,7 +20146,7 @@
     },
     {
       "country": "JP",
-      "dashboard": "http://jh1blt.net:40080/dashboard/",
+      "dashboard": "http://jh1blt.net:40080/xlxd/index.php",
       "description": "XLX-Reflector",
       "dial": {
         "host": "219.117.204.205",

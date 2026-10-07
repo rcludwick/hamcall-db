@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 338,
-  "generated": "2026-10-06",
+  "count": 339,
+  "generated": "2026-10-07",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1567,6 +1567,20 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "WG5EEK"
+    },
+    {
+      "country": "FI",
+      "description": "<p>Cross-mode NXDN reflector for Finland, bridged to DMR and Fusion. NXDN group calls to TG 244 are converted to DMR TG 9 and Fusion (YSF 00244) and back, so NXDN, DMR and Fusion users can talk to each other. Open reflector, no password. Host 5.61.88.113, port 41400.</p>",
+      "dial": {
+        "host": "5.61.88.113",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "244",
+      "name": "Cross-mode DMR link",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "OH7NFC"
     },
     {
       "country": "LT",
