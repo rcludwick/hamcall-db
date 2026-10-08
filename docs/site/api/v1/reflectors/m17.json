@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 118,
-  "generated": "2026-10-07",
+  "count": 120,
+  "generated": "2026-10-08",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -487,7 +487,7 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://m17-165.ddns.net:8055",
+      "dashboard": "http://m17-165.ddns.net:97",
       "description": "<p>M17-165 is a Reflector&nbsp; of Network \"Digital-Voice-GREEC\"</p>",
       "dial": {
         "callsign": "M17-165",
@@ -680,6 +680,25 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "C31AG"
+    },
+    {
+      "country": "ES",
+      "dashboard": "http://163.47.133.70/",
+      "dial": {
+        "callsign": "M17-214",
+        "host": "163.47.133.70",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B"
+        ],
+        "port": 17000
+      },
+      "id": "M17-214",
+      "name": "SPAIN",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "xreflector"
     },
     {
       "country": "US",
@@ -1324,6 +1343,36 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "E20AE Club Station"
+    },
+    {
+      "country": "ES",
+      "dashboard": "https://ea8ee.c4fm.es/m17ref",
+      "dial": {
+        "callsign": "M17-914",
+        "host": "ea8ee.c4fm.es",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N"
+        ],
+        "port": 17000
+      },
+      "id": "M17-914",
+      "name": "HISPANO",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "EA8EE"
     },
     {
       "country": "TH",

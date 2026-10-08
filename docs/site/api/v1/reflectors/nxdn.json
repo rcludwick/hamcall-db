@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 339,
-  "generated": "2026-10-07",
+  "count": 340,
+  "generated": "2026-10-08",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1144,6 +1144,21 @@
     },
     {
       "country": "IT",
+      "dashboard": "http://iz7ddc.duckdns.org/urf/",
+      "description": "<p>TEST</p>",
+      "dial": {
+        "host": "iz7ddc.duckdns.org",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "22270",
+      "name": "URFDDC",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "IZ7DDC"
+    },
+    {
+      "country": "IT",
       "dashboard": "http://c4fmbat.duckdns.org:7144/",
       "description": "<p>Reflector NXDN connesso al multiprotocollo IT-C4FM_BAT</p>\r\n<p><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\">TG 22273 citt&agrave; di Barletta&nbsp;</span></span></p>",
       "dial": {
@@ -1570,6 +1585,7 @@
     },
     {
       "country": "FI",
+      "dashboard": "https://5.61.88.113/dashboard/",
       "description": "<p>Cross-mode NXDN reflector for Finland, bridged to DMR and Fusion. NXDN group calls to TG 244 are converted to DMR TG 9 and Fusion (YSF 00244) and back, so NXDN, DMR and Fusion users can talk to each other. Open reflector, no password. Host 5.61.88.113, port 41400.</p>",
       "dial": {
         "host": "5.61.88.113",
@@ -2999,7 +3015,7 @@
     },
     {
       "country": "MX",
-      "dashboard": "http://89.117.61.236",
+      "dashboard": "http://89.117.61.236:8102",
       "description": "<p>NXDN-3341 TGIF</p>",
       "dial": {
         "host": "89.117.61.236",

@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 360,
-  "generated": "2026-10-07",
+  "count": 370,
+  "generated": "2026-10-08",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -379,6 +379,21 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "dl-nordwest.com"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://155.138.217.111/p25/",
+      "description": "<p>K8LRC Pioneer, OH &mdash; AllStar 1930 / hub 42121</p>",
+      "dial": {
+        "host": "155.138.217.111",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "10428",
+      "name": "P25-LRC",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "K8LRC"
     },
     {
       "country": "CN",
@@ -972,6 +987,20 @@
       "sponsor": "KJ7OMO"
     },
     {
+      "country": "US",
+      "description": "<p>P25 Echo Test with Report.</p>",
+      "dial": {
+        "host": "24.229.253.31",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "22022",
+      "name": "US-PA Parrot",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "W3NTZ"
+    },
+    {
       "country": "IT",
       "dashboard": "http://82.165.165.43:80",
       "dial": {
@@ -1071,6 +1100,21 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "IT-MULTIPROTOCOL-NETWORK"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://iz7ddc.duckdns.org/urf/",
+      "description": "<p>TEST</p>",
+      "dial": {
+        "host": "iz7ddc.duckdns.org",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "22270",
+      "name": "URFDDC",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "IZ7DDC"
     },
     {
       "country": "IT",
@@ -1944,14 +1988,14 @@
     {
       "country": "US",
       "dashboard": "https://georgia900p25.us/tg304",
-      "description": "<p>WEST VIRGINIA&nbsp;</p>\r\n<p>&nbsp;</p>",
+      "description": "<p>WEST VIRGINIA ARA</p>\r\n<p>&nbsp;</p>",
       "dial": {
         "host": "wv777p25.ddns.net",
         "kind": "p25",
         "port": 41004
       },
       "id": "304",
-      "name": "West Virginia",
+      "name": "West Virginia ARA",
       "network": "p25",
       "source": "dvref",
       "sponsor": "W4NOC / KC8PRG"
@@ -2573,8 +2617,23 @@
     },
     {
       "country": "US",
+      "dashboard": "http://upns.kk7gkg.com:8080",
+      "description": "<p>UPNS SW<br>ALL UPNS AFFILIATED REPEATERS FALLBACK HERE</p>",
+      "dial": {
+        "host": "upns.kk7gkg.com",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "3159",
+      "name": "UPNS SW",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "UPNS"
+    },
+    {
+      "country": "US",
       "dashboard": "http://205.121.52.125:8081",
-      "description": "<p>UPNS 00 - Fallback</p>\r\n<hr>\r\n<p>UPNS Associated Repeaters Automatically Fallback to this Talkgroup</p>",
+      "description": "<p>UPNS TECH</p>",
       "dial": {
         "host": "205.121.52.125",
         "kind": "p25",
@@ -2582,6 +2641,81 @@
       },
       "id": "31590",
       "name": "UPNS 00",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "UPNS"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://upns.kk7gkg.com:8081",
+      "description": "<p>UPNS NORTH</p>",
+      "dial": {
+        "host": "upns.kk7gkg.com",
+        "kind": "p25",
+        "port": 41001
+      },
+      "id": "31591",
+      "name": "UPNS NORTH",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "UPNS"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://upns.kk7gkg.com:8082",
+      "description": "<p>UPNS CENTRAL</p>",
+      "dial": {
+        "host": "upns.kk7gkg.com",
+        "kind": "p25",
+        "port": 41002
+      },
+      "id": "31592",
+      "name": "UPNS CENTRAL",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "UPNS"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://upns.kk7gkg.com:8083",
+      "description": "<p>UPNS SOUTH</p>",
+      "dial": {
+        "host": "upns.kk7gkg.com",
+        "kind": "p25",
+        "port": 41003
+      },
+      "id": "31593",
+      "name": "UPNS SOUTH",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "UPNS"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://upns.kk7gkg.com:8084",
+      "description": "<p>UPNS EVENT</p>",
+      "dial": {
+        "host": "upns.kk7gkg.com",
+        "kind": "p25",
+        "port": 41004
+      },
+      "id": "31594",
+      "name": "UPNS EVENT",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "UPNS"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://upns.kk7gkg.com:8085",
+      "description": "<p>UPNS IT</p>",
+      "dial": {
+        "host": "upns.kk7gkg.com",
+        "kind": "p25",
+        "port": 41005
+      },
+      "id": "31595",
+      "name": "UPNS IT",
       "network": "p25",
       "source": "dvref",
       "sponsor": "UPNS"
@@ -2832,7 +2966,7 @@
     },
     {
       "country": "MX",
-      "dashboard": "http://89.117.61.236",
+      "dashboard": "http://89.117.61.236:8103",
       "description": "<p>P25-XE1JMB</p>",
       "dial": {
         "host": "89.117.61.236",
@@ -3184,21 +3318,6 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "UN1EAK"
-    },
-    {
-      "country": "US",
-      "dashboard": "http://skynetp25hub.ddns.net/",
-      "description": "<p>444.475 +5 131.8 PL NAC 293-Painesville, OH</p>\r\n<p>443.3375 +5 131.8 PL NAC 293-Thompson, OH</p>\r\n<p>444.2875 + 131.8 PL NAC 293-Wayne, Ohio</p>",
-      "dial": {
-        "host": "74.136.238.59",
-        "kind": "p25",
-        "port": 41000
-      },
-      "id": "440",
-      "name": "Skynet RPT System-NE Ohio",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "Skynet Repeater System"
     },
     {
       "country": "JP",
@@ -4342,6 +4461,21 @@
       "sponsor": "W8FLH"
     },
     {
+      "country": "CA",
+      "dashboard": "https://xlx690.solosoft.ca/p25/",
+      "description": "<p>Welcome to the VA3ODC Multi-Protocol Repeater System.&nbsp;</p>",
+      "dial": {
+        "host": "xlx.solosoft.ca",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "690",
+      "name": "VA3ODC - P25 Network",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "VA3ODC - Ontario Digital Club"
+    },
+    {
       "country": "US",
       "dial": {
         "host": "dvref.novars.space",
@@ -4353,6 +4487,21 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "Northwest Ohio VHF Amateur Radio Society"
+    },
+    {
+      "country": "NL",
+      "dashboard": "http://xlx.pd3rfr.nl",
+      "description": "<p>Experimental Reflector of PD3RFR</p>",
+      "dial": {
+        "host": "PD3RFR.myasustor.com",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "700",
+      "name": "URF700",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "PD3RFR"
     },
     {
       "country": "US",

@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 190,
-  "generated": "2026-10-07",
+  "count": 191,
+  "generated": "2026-10-08",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1089,7 +1089,7 @@
     {
       "country": "FI",
       "dashboard": "https://5.61.88.113",
-      "description": "<p>FI-DMRLINK is a small self-hosted DMR network in Finland run by OH7NFC. It is a standalone server with no link to BrandMeister or other networks. Hotspots connect with the Homebrew protocol (MMDVMHost, Pi-Star, WPSD) or the SharkRF IP Connector protocol (openSPOT). Talkgroup 9 is a cross-mode bridge: DMR calls are converted to Fusion (YSF 244) and NXDN (TG 244) and back, so DMR, Fusion and NXDN users can talk to each other. A Parrot echo test is on private call 9990.<br>Server: 5.61.88.113. Homebrew: UDP 62031. SharkRF: UDP 65100. Password: passw0rd</p>",
+      "description": "<p>FI-DMRLINK is a small self-hosted DMR network in Finland run by OH7NFC. It is a standalone server with no link to BrandMeister or other DMR networks. Hotspots connect with the Homebrew protocol (MMDVMHost, Pi-Star, WPSD) or the SharkRF IP Connector protocol (openSPOT). Talkgroup 9 is a cross-mode bridge: DMR calls are converted to Fusion (YSF 244) and NXDN (TG 244) and back, so DMR, Fusion and NXDN users can talk to each other. A Parrot echo test is on private call 9990.</p>",
       "dial": {
         "host": "5.61.88.113",
         "kind": "mmdvm",
@@ -3667,6 +3667,29 @@
       "sponsor": "N9OIG",
       "system": "wisconsin-dmr",
       "talkgroups": "reflectors/dmr/wisconsin-dmr/talkgroups.json"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://www.qrz.com/db/WP3D",
+      "description": "<p>WP3D DMR 31401, Florida USA<br>Server: 162.35.185.221:62031<br>Talkgroup: 31401 (timeslot 2)<br>Linked to AllStarLink hub 566412 and YSF reflector 31400</p>",
+      "dial": {
+        "host": "162.35.185.221",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "wp3d-florida",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/wp3d-florida/talkgroups/"
+      },
+      "id": "wp3d-florida-server-wp3d-florida",
+      "name": "WP3D Florida",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "WP3D",
+      "system": "wp3d-florida",
+      "talkgroups": "reflectors/dmr/wp3d-florida/talkgroups.json"
     },
     {
       "country": "US",

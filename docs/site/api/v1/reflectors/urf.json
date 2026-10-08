@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 120,
-  "generated": "2026-10-07",
+  "count": 122,
+  "generated": "2026-10-08",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -178,6 +178,19 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "AETHER HELLAS NET"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://xlx.k0spy.com",
+      "description": "<p>MUTLTIMODE</p>\r\n<p>MUTLILINKED</p>\r\n<p>REFELCTOR</p>\r\n<p>K0SPY</p>",
+      "dial": {
+        "host": "xlx.k0spy.com",
+        "kind": "urf"
+      },
+      "id": "079",
+      "name": "K0SPY",
+      "network": "urf",
+      "source": "dvref"
     },
     {
       "country": "US",
@@ -1233,7 +1246,8 @@
         "modules": [
           "B",
           "D",
-          "N"
+          "N",
+          "P"
         ]
       },
       "id": "700",
@@ -1689,6 +1703,23 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "2021_ADN_SYSTEMS_GREECE"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://iz7ddc.duckdns.org/urf/",
+      "description": "<p>TEST</p>",
+      "dial": {
+        "host": "iz7ddc.duckdns.org",
+        "kind": "urf",
+        "modules": [
+          "D"
+        ]
+      },
+      "id": "DDC",
+      "name": "URF IZ7DDC",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "IZ7DDC"
     },
     {
       "country": "US",

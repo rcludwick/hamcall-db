@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 1554,
-  "generated": "2026-10-07",
+  "generated": "2026-10-08",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1482,21 +1482,6 @@
       "source": "dvref"
     },
     {
-      "country": "GR",
-      "dashboard": "http://xlx365.sv2snh.gr",
-      "description": "URF365",
-      "dial": {
-        "host": "xlx365.sv2snh.gr",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "00165",
-      "name": "URF365",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "Digital Voice GREECE"
-    },
-    {
       "country": "DE",
       "dashboard": "https://xlx169.26269.de/xlx/",
       "description": "XLX169",
@@ -1795,6 +1780,7 @@
     },
     {
       "country": "FI",
+      "dashboard": "https://5.61.88.113/dashboard/",
       "description": "Cross-mode",
       "dial": {
         "host": "5.61.88.113",
@@ -9048,6 +9034,21 @@
     },
     {
       "country": "IT",
+      "dashboard": "http://iz7ddc.duckdns.org/urf/",
+      "description": "URFDDC",
+      "dial": {
+        "host": "iz7ddc.duckdns.org",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "22270",
+      "name": "URFDDC",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "IZ7DDC"
+    },
+    {
+      "country": "IT",
       "dashboard": "http://aritrani.is-very-good.org/ysf/main.php",
       "description": "Puglia room",
       "dial": {
@@ -12698,6 +12699,7 @@
     },
     {
       "country": "US",
+      "dashboard": "http://162.35.185.221:8000",
       "description": "FL AllStar",
       "dial": {
         "host": "162.35.185.221",
@@ -21684,7 +21686,6 @@
     },
     {
       "country": "RU",
-      "description": "XLX995",
       "dial": {
         "host": "157.228.138.240",
         "kind": "ysf",
