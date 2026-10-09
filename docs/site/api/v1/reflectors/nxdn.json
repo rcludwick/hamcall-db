@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 340,
-  "generated": "2026-10-08",
+  "generated": "2026-10-09",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -382,6 +382,7 @@
     },
     {
       "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:82/",
       "dial": {
         "host": "dmr.pistar.com.tr",
         "kind": "nxdn",
@@ -523,6 +524,21 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "VK3JED"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://xlx.buxton.radio/",
+      "description": "<p>Recently upgraded from XLXd, our reflector is now based in URFd and supports all available modes.</p>\r\n<p>It is also linked to ASL-621821, TGIF TG178, EchoLink G4BUX-L, Peanut XLX178A and GB3HH.</p>\r\n<p>We are currently implementing a \"Live Stream\" but it has only just gone live and in a very early testing phase.</p>",
+      "dial": {
+        "host": "xlx.buxton.radio",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "178",
+      "name": "URF178",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "Buxton Radio Amateurs"
     },
     {
       "country": "AT",
@@ -2056,7 +2072,7 @@
       "dashboard": "http://dmr.pistar.com.tr:28301/",
       "description": "<p>NXDN Adana Reflector - YM2KG</p>",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "ptt.pistar.com.tr",
         "kind": "nxdn",
         "port": 41401
       },
@@ -2071,7 +2087,7 @@
       "dashboard": "http://dmr.pistar.com.tr:28303/",
       "description": "<p>NXDN Afyon Reflector - YM2KG</p>",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "ptt.pistar.com.tr",
         "kind": "nxdn",
         "port": 41403
       },
@@ -2086,7 +2102,7 @@
       "dashboard": "http://dmr.pistar.com.tr:28306/",
       "description": "<p>NXDN Ankara Reflector - YM2KG</p>",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "ptt.pistar.com.tr",
         "kind": "nxdn",
         "port": 41406
       },
@@ -2109,7 +2125,7 @@
       "name": "NXDN Antalya",
       "network": "nxdn",
       "source": "dvref",
-      "sponsor": "YM2KG"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -2123,7 +2139,7 @@
       "name": "NXDN Aydin",
       "network": "nxdn",
       "source": "dvref",
-      "sponsor": "YM2KG"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -2137,7 +2153,7 @@
       "name": "NXDN Balikesir",
       "network": "nxdn",
       "source": "dvref",
-      "sponsor": "YM2KG"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -2151,7 +2167,7 @@
       "name": "NXDN Bursa",
       "network": "nxdn",
       "source": "dvref",
-      "sponsor": "YM2KG"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -2165,7 +2181,7 @@
       "name": "NXDN Canakkale",
       "network": "nxdn",
       "source": "dvref",
-      "sponsor": "YM2KG"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -2179,7 +2195,7 @@
       "name": "NXDN Denizli",
       "network": "nxdn",
       "source": "dvref",
-      "sponsor": "YM2KG"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -2193,7 +2209,7 @@
       "name": "NXDN Eskisehir",
       "network": "nxdn",
       "source": "dvref",
-      "sponsor": "YM2KG"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -2207,7 +2223,7 @@
       "name": "NXDN Mersin",
       "network": "nxdn",
       "source": "dvref",
-      "sponsor": "YM2KG"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -2222,7 +2238,7 @@
       "name": "NXDN Istanbul",
       "network": "nxdn",
       "source": "dvref",
-      "sponsor": "YM2KG"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -2237,7 +2253,7 @@
       "name": "NXDN Izmir",
       "network": "nxdn",
       "source": "dvref",
-      "sponsor": "YM2KG"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -2251,7 +2267,7 @@
       "name": "NXDN Kocaeli",
       "network": "nxdn",
       "source": "dvref",
-      "sponsor": "YM2KG"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -2265,7 +2281,7 @@
       "name": "NXDN Konya",
       "network": "nxdn",
       "source": "dvref",
-      "sponsor": "YM2KG"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -2279,7 +2295,7 @@
       "name": "NXDN Malatya",
       "network": "nxdn",
       "source": "dvref",
-      "sponsor": "YM2KG"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -2294,7 +2310,7 @@
       "name": "NXDN Mugla",
       "network": "nxdn",
       "source": "dvref",
-      "sponsor": "YM2KG"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -2308,7 +2324,7 @@
       "name": "NXDN Tekirdag",
       "network": "nxdn",
       "source": "dvref",
-      "sponsor": "YM2KG"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -2338,7 +2354,7 @@
       "name": "NXDN Duzce",
       "network": "nxdn",
       "source": "dvref",
-      "sponsor": "YM2KG"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -2898,20 +2914,6 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "SFARG"
-    },
-    {
-      "country": "US",
-      "dashboard": "http://144.202.37.96:4000/",
-      "dial": {
-        "host": "144.202.37.96",
-        "kind": "nxdn",
-        "port": 41400
-      },
-      "id": "3175",
-      "name": "The Fog Multi mode system XLX073",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "Future Orientated Gateway"
     },
     {
       "country": "US",

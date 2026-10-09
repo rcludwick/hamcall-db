@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 120,
-  "generated": "2026-10-08",
+  "count": 121,
+  "generated": "2026-10-09",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -2647,6 +2647,32 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "DS5QDR DV HAM World"
+    },
+    {
+      "country": "ES",
+      "dashboard": "http://xlxrem.xreflector.es/m17ref/",
+      "dial": {
+        "callsign": "M17-REM",
+        "host": "51.83.98.154",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I"
+        ],
+        "port": 17000
+      },
+      "id": "M17-REM",
+      "name": "Asociaci\u00f3n de Radio Amateur REM",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "REM"
     },
     {
       "country": "PT",

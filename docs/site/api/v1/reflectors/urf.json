@@ -2,13 +2,26 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 122,
-  "generated": "2026-10-08",
+  "count": 126,
+  "generated": "2026-10-09",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
   "network": "urf",
   "reflectors": [
+    {
+      "country": "ES",
+      "dashboard": "http://ycs722.xreflector.net/ref/",
+      "dial": {
+        "host": "ycs722.xreflector.net",
+        "kind": "urf"
+      },
+      "id": "000",
+      "name": "XRF00",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "xreflector"
+    },
     {
       "country": "ES",
       "dashboard": "https://ea8ee.c4fm.es/ref/",
@@ -168,7 +181,7 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://svham.eu:82/xlxd",
+      "dashboard": "http://svham.eu:82",
       "dial": {
         "host": "38.19.202.24",
         "kind": "urf"
@@ -182,7 +195,7 @@
     {
       "country": "US",
       "dashboard": "https://xlx.k0spy.com",
-      "description": "<p>MUTLTIMODE</p>\r\n<p>MUTLILINKED</p>\r\n<p>REFELCTOR</p>\r\n<p>K0SPY</p>",
+      "description": "<p>MUTLTIMODE</p>\r\n<p>MUTLILINKED</p>\r\n<p>REFELCTOR</p>\r\n<p>K0SPY</p>\r\n<p>~GEORGE</p>",
       "dial": {
         "host": "xlx.k0spy.com",
         "kind": "urf"
@@ -190,7 +203,21 @@
       "id": "079",
       "name": "K0SPY",
       "network": "urf",
-      "source": "dvref"
+      "source": "dvref",
+      "sponsor": "K0SPY"
+    },
+    {
+      "country": "ES",
+      "dashboard": "http://xrf091.dstar.es/",
+      "dial": {
+        "host": "163.47.133.70",
+        "kind": "urf"
+      },
+      "id": "091",
+      "name": "XRF091",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "xreflector"
     },
     {
       "country": "US",
@@ -348,6 +375,20 @@
       "name": "URF177",
       "network": "urf",
       "source": "dvref"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://xlx.buxton.radio/",
+      "description": "<p>Recently upgraded from XLXd, our reflector is now based in URFd and supports all available modes.</p>\r\n<p>It is also linked to ASL-621821, TGIF TG178, EchoLink G4BUX-L, Peanut XLX178A and GB3HH.</p>\r\n<p>We are currently implementing a \"Live Stream\" but it has only just gone live and in a very early testing phase.</p>",
+      "dial": {
+        "host": "xlx.buxton.radio",
+        "kind": "urf"
+      },
+      "id": "178",
+      "name": "URF178 - Buxton Radio Amateurs",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "Buxton Radio Amateurs"
     },
     {
       "country": "FR",
@@ -1555,6 +1596,18 @@
       "sponsor": "Ure C\u00f3rdoba"
     },
     {
+      "country": "RU",
+      "dashboard": "http://157.228.138.240/",
+      "dial": {
+        "host": "157.228.138.240",
+        "kind": "urf"
+      },
+      "id": "995",
+      "name": "Club-618",
+      "network": "urf",
+      "source": "dvref"
+    },
+    {
       "country": "US",
       "dashboard": "https://xlx.ara.radio",
       "description": "<p>Digital side of the Appalachian Repeater Association</p>",
@@ -2006,6 +2059,7 @@
     },
     {
       "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:82/",
       "dial": {
         "host": "dmr.pistar.com.tr",
         "kind": "urf"

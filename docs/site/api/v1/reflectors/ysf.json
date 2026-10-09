@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1554,
-  "generated": "2026-10-08",
+  "count": 1561,
+  "generated": "2026-10-09",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1509,6 +1509,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "JS1YRW"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://xlx.buxton.radio/",
+      "description": "URF178",
+      "dial": {
+        "host": "xlx.buxton.radio",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00178",
+      "name": "URF178",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "Buxton Radio Amateurs"
     },
     {
       "country": "US",
@@ -5396,6 +5411,21 @@
     },
     {
       "country": "US",
+      "dashboard": "https://xlx.k0spy.com",
+      "description": "URF079",
+      "dial": {
+        "host": "xlx.k0spy.com",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "07900",
+      "name": "URF079",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "K0SPY"
+    },
+    {
+      "country": "US",
       "dashboard": "https://xlx545.pennlinkgroup.com/ysfG",
       "description": "Wires-X Gate",
       "dial": {
@@ -5852,6 +5882,21 @@
       "sponsor": "DVSwitch"
     },
     {
+      "country": "GR",
+      "dashboard": "http://svham.eu:83",
+      "description": "AETHER-CQ-ECHO",
+      "dial": {
+        "host": "svham.eu",
+        "kind": "ysf",
+        "port": 42012
+      },
+      "id": "10202",
+      "name": "AETHER-ECHO",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "AETHER HELLAS NET! By SV4JYD"
+    },
+    {
       "country": "IT",
       "dashboard": "http://italynet.duckdns.org/main.php",
       "description": "Bridge to ADN",
@@ -5942,7 +5987,7 @@
       "country": "RO",
       "description": "YO5KAW-Radio c",
       "dial": {
-        "host": "188.27.182.24",
+        "host": "188.27.180.146",
         "kind": "ysf",
         "port": 42002
       },
@@ -6135,7 +6180,7 @@
       "dial": {
         "host": "104.5.243.93",
         "kind": "ysf",
-        "port": 42000
+        "port": 42001
       },
       "id": "11520",
       "name": "D-Friends",
@@ -9533,7 +9578,7 @@
       "country": "DE",
       "description": "DA1SR",
       "dial": {
-        "host": "93.245.21.108",
+        "host": "93.244.49.191",
         "kind": "ysf",
         "port": 42000
       },
@@ -11138,8 +11183,6 @@
     },
     {
       "country": "AU",
-      "dashboard": "https://www.scaninternational.org/",
-      "description": "SCAN-I",
       "dial": {
         "host": "103.236.163.81",
         "kind": "ysf",
@@ -11482,7 +11525,7 @@
       "name": "YSF Adana",
       "network": "ysf",
       "source": "dvref",
-      "sponsor": "YM2KW"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -11497,7 +11540,7 @@
       "name": "YSF Afyon",
       "network": "ysf",
       "source": "dvref",
-      "sponsor": "YM2KW"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -11512,7 +11555,7 @@
       "name": "YSF Ankara",
       "network": "ysf",
       "source": "dvref",
-      "sponsor": "YM2KW"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -11527,7 +11570,7 @@
       "name": "YSF Antalya",
       "network": "ysf",
       "source": "dvref",
-      "sponsor": "YM2KW"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -11541,7 +11584,7 @@
       "name": "YSF Aydin",
       "network": "ysf",
       "source": "dvref",
-      "sponsor": "YM2KW"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -11555,7 +11598,7 @@
       "name": "YSF Balikesir",
       "network": "ysf",
       "source": "dvref",
-      "sponsor": "YM2KW"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -11569,7 +11612,7 @@
       "name": "YSF Bursa",
       "network": "ysf",
       "source": "dvref",
-      "sponsor": "YM2KW"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -11583,7 +11626,7 @@
       "name": "YSF Canakkale",
       "network": "ysf",
       "source": "dvref",
-      "sponsor": "YM2KW"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -11597,7 +11640,7 @@
       "name": "YSF Denizli",
       "network": "ysf",
       "source": "dvref",
-      "sponsor": "YM2KW"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -11611,7 +11654,7 @@
       "name": "YSF Eskisehir",
       "network": "ysf",
       "source": "dvref",
-      "sponsor": "YM2KW"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -11625,7 +11668,7 @@
       "name": "YSF Mersin",
       "network": "ysf",
       "source": "dvref",
-      "sponsor": "YM2KW"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -11640,7 +11683,7 @@
       "name": "YSF Istanbul",
       "network": "ysf",
       "source": "dvref",
-      "sponsor": "YM2KW"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -11655,7 +11698,7 @@
       "name": "YSF Izmir",
       "network": "ysf",
       "source": "dvref",
-      "sponsor": "YM2KW"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -11669,7 +11712,7 @@
       "name": "YSF Kocaeli",
       "network": "ysf",
       "source": "dvref",
-      "sponsor": "YM2KW"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -11683,7 +11726,7 @@
       "name": "YSF Konya",
       "network": "ysf",
       "source": "dvref",
-      "sponsor": "YM2KW"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -11697,7 +11740,7 @@
       "name": "YSF Malatya",
       "network": "ysf",
       "source": "dvref",
-      "sponsor": "YM2KW"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -11712,7 +11755,7 @@
       "name": "YSF Mugla",
       "network": "ysf",
       "source": "dvref",
-      "sponsor": "YM2KW"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "US",
@@ -11770,11 +11813,11 @@
       "name": "YSF Duzce",
       "network": "ysf",
       "source": "dvref",
-      "sponsor": "YM2KW"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
-      "dashboard": "http://159.223.16.101",
+      "dashboard": "https://ysf.hammade.net",
       "description": "ARC Reflector",
       "dial": {
         "host": "159.223.16.101",
@@ -13784,6 +13827,20 @@
       "sponsor": "KN1B"
     },
     {
+      "country": "DO",
+      "description": "RD AllStar",
+      "dial": {
+        "host": "44.27.136.172",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "37000",
+      "name": "REDOEN YSF",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "HI4R"
+    },
+    {
       "country": "ES",
       "dashboard": "http://149.22.108.192/YSFReflector-Dashboard/index.php",
       "description": "YSF SALAMANCA",
@@ -13960,6 +14017,20 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "JQ1ZJP"
+    },
+    {
+      "country": "GB",
+      "dashboard": "http://xlx101.ddns.net:8080/db/",
+      "description": "Coggeshall UK",
+      "dial": {
+        "host": "xlx101.ddns.net",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "39444",
+      "name": "XLX101",
+      "network": "ysf",
+      "source": "dvref"
     },
     {
       "country": "FR",
@@ -17680,6 +17751,21 @@
       "source": "dvref"
     },
     {
+      "country": "US",
+      "dashboard": "http://XLX748.dyndns.org",
+      "description": "7248 Buckroo's",
+      "dial": {
+        "host": "xlx748.dyndns.org",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "59607",
+      "name": "XLX748",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "K6FED"
+    },
+    {
       "country": "JP",
       "dashboard": "http://xrf098.mydns.jp",
       "description": "XLX reflector",
@@ -18234,6 +18320,20 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "xreflector.es"
+    },
+    {
+      "country": "CN",
+      "description": "DGID_ENABLE",
+      "dial": {
+        "host": "47.109.55.52",
+        "kind": "ysf",
+        "port": 42002
+      },
+      "id": "63307",
+      "name": "CKG-DGID",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "bg8ioi"
     },
     {
       "country": "CN",
@@ -21686,6 +21786,7 @@
     },
     {
       "country": "RU",
+      "dashboard": "http://157.228.138.240/",
       "dial": {
         "host": "157.228.138.240",
         "kind": "ysf",

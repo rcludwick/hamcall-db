@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 370,
-  "generated": "2026-10-08",
+  "count": 371,
+  "generated": "2026-10-09",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -393,7 +393,7 @@
       "name": "P25-LRC",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "K8LRC"
+      "sponsor": "K8LRC Bridged to Allstar Hub 42121/IRLP 0087"
     },
     {
       "country": "CN",
@@ -640,6 +640,7 @@
     },
     {
       "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:82/",
       "dial": {
         "host": "dmr.pistar.com.tr",
         "kind": "p25",
@@ -755,6 +756,21 @@
       "sponsor": "SV2SNH"
     },
     {
+      "country": "GB",
+      "dashboard": "https://xlx.buxton.radio/",
+      "description": "<p>Recently upgraded from XLXd, our reflector is now based in URFd and supports all available modes.</p>\r\n<p>It is also linked to ASL-621821, TGIF TG178, EchoLink G4BUX-L, Peanut XLX178A and GB3HH.</p>\r\n<p>We are currently implementing a \"Live Stream\" but it has only just gone live and in a very early testing phase.</p>",
+      "dial": {
+        "host": "xlx.buxton.radio",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "178",
+      "name": "URF178",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Buxton Radio Amateurs"
+    },
+    {
       "country": "US",
       "dial": {
         "host": "73.120.108.193",
@@ -814,14 +830,14 @@
     {
       "country": "NL",
       "dashboard": "http://51.83.46.75:38000/p25/",
-      "description": "<p>2044 / P25 The Netherlands Main Reflector</p>",
+      "description": "<p>2044 / P25 NL-Oost Reflector</p>",
       "dial": {
         "host": "51.83.46.75",
         "kind": "p25",
         "port": 41000
       },
       "id": "2044",
-      "name": "2044",
+      "name": "P25 NL-Oost Reflector",
       "network": "p25",
       "source": "dvref",
       "sponsor": "PD2VDY"
@@ -1654,7 +1670,7 @@
       "name": "P25 Adana",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "YM2KT"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -1669,7 +1685,7 @@
       "name": "P25 Afyon",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "YM2KT"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -1684,7 +1700,7 @@
       "name": "P25 Ankara",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "YM2KT"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -1699,7 +1715,7 @@
       "name": "P25 Antalya",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "YM2KT"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -1713,7 +1729,7 @@
       "name": "P25 Aydin",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "YM2KT"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -1727,7 +1743,7 @@
       "name": "P25 Balikesir",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "YM2KT"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -1741,7 +1757,7 @@
       "name": "P25 Bursa",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "YM2KT"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -1755,7 +1771,7 @@
       "name": "P25 Canakkale",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "YM2KT"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -1769,7 +1785,7 @@
       "name": "P25 Denizli",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "YM2KT"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -1783,7 +1799,7 @@
       "name": "P25 Eskisehir",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "YM2KT"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -1797,7 +1813,7 @@
       "name": "P25 Mersin",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "YM2KT"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -1812,7 +1828,7 @@
       "name": "P25 Istanbul",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "YM2KT"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -1827,7 +1843,7 @@
       "name": "P25 Izmir",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "YM2KT"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -1841,7 +1857,7 @@
       "name": "P25 Kocaeli",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "YM2KT"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -1855,7 +1871,7 @@
       "name": "P25 Konya",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "YM2KT"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -1869,7 +1885,7 @@
       "name": "P25 Malatya",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "YM2KT"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -1884,7 +1900,7 @@
       "name": "P25 Mugla",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "YM2KT"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -1898,7 +1914,7 @@
       "name": "P25 Tekirdag",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "YM2KT"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -1927,7 +1943,7 @@
       "name": "P25 Duzce",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "YM2KT"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
