@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 126,
-  "generated": "2026-10-09",
+  "generated": "2026-10-10",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -382,7 +382,10 @@
       "description": "<p>Recently upgraded from XLXd, our reflector is now based in URFd and supports all available modes.</p>\r\n<p>It is also linked to ASL-621821, TGIF TG178, EchoLink G4BUX-L, Peanut XLX178A and GB3HH.</p>\r\n<p>We are currently implementing a \"Live Stream\" but it has only just gone live and in a very early testing phase.</p>",
       "dial": {
         "host": "xlx.buxton.radio",
-        "kind": "urf"
+        "kind": "urf",
+        "modules": [
+          "A"
+        ]
       },
       "id": "178",
       "name": "URF178 - Buxton Radio Amateurs",
