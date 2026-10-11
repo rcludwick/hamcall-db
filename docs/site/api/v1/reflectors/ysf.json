@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1563,
-  "generated": "2026-10-10",
+  "count": 1565,
+  "generated": "2026-10-11",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -9430,6 +9430,21 @@
       "sponsor": "UW0WU"
     },
     {
+      "country": "RO",
+      "dashboard": "https://ysf.tetralink.ro",
+      "description": "FusionYSF Core",
+      "dial": {
+        "host": "ysf.tetralink.ro",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "22633",
+      "name": "YSF Core Net",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "YO3TCO"
+    },
+    {
       "country": "CH",
       "description": "Reseau HB9FG",
       "dial": {
@@ -10079,7 +10094,7 @@
     {
       "country": "US",
       "dashboard": "http://74.208.174.230",
-      "description": "KJ4OHN Room",
+      "description": "KJ4OHN Ragchew",
       "dial": {
         "host": "74.208.174.230",
         "kind": "ysf",
@@ -13870,6 +13885,7 @@
     },
     {
       "country": "DO",
+      "dashboard": "http://162.35.29.92/ysf/",
       "description": "RD AllStar",
       "dial": {
         "host": "162.35.29.92",
@@ -16767,6 +16783,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "K6NIC"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://radiox.network",
+      "description": "radiox.network",
+      "dial": {
+        "host": "ysf-reflector.ddns.net",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "52375",
+      "name": "RadioX",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "John Ambros"
     },
     {
       "country": "DE",
