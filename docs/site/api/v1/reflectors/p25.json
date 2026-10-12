@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 434,
-  "generated": "2026-10-11",
+  "count": 437,
+  "generated": "2026-10-12",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -568,15 +568,45 @@
     },
     {
       "country": "US",
-      "dashboard": "http://p25.kd9fuw.com:4000/",
-      "description": "<p>CENTRAL WISCONSIN P25 REFLECTOR &ndash; WAUSAU, WI</p>\r\n<p>WHILE THIS SERVER HOSTS MULTIPLE MODES, THEY ARE NOT LINKED AT THIS TIME.</p>\r\n<p>IF YOU HAVE ANY QUESTIONS, PLEASE EMAIL: <a href=\"mailto:[email removed]\">[email removed]</a></p>\r\n<p>&nbsp;</p>",
+      "dashboard": "http://p25.kd9fuw.com:4001/",
+      "description": "<p>Central Wisconsin Digital Network - Call 1</p>\r\n<p>Linked to XLX131 Module A</p>\r\n<p>Email me if you have any questions - [email removed]</p>",
       "dial": {
         "host": "p25.kd9fuw.com",
         "kind": "p25",
         "port": 41000
       },
       "id": "131",
-      "name": "CenWisP25",
+      "name": "CenWis Call 1",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KD9FUW"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://tac1.kd9fuw.com:4002",
+      "description": "<p>Central Wisconsin Digital Network - Tac 1</p>\r\n<p>Linked to XLX131 Module B</p>\r\n<p>Email me if you have any questions - [email removed]</p>",
+      "dial": {
+        "host": "tac1.kd9fuw.com",
+        "kind": "p25",
+        "port": 41001
+      },
+      "id": "1311",
+      "name": "CenWis Tac 1",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KD9FUW"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://tac2.kd9fuw.com:4003",
+      "description": "<p>Central Wisconsin Digital Network - Tac 2</p>\r\n<p>Linked to XLX131 Module C</p>\r\n<p>Email me if you have any questions - [email removed]</p>",
+      "dial": {
+        "host": "tac2.kd9fuw.com",
+        "kind": "p25",
+        "port": 41002
+      },
+      "id": "1312",
+      "name": "CenWis Tac 2",
       "network": "p25",
       "source": "dvref",
       "sponsor": "KD9FUW"
@@ -5482,6 +5512,20 @@
       "name": "GREMPA",
       "network": "p25",
       "source": "dvref"
+    },
+    {
+      "country": "PA",
+      "dashboard": "http://149.56.98.154:84/",
+      "dial": {
+        "host": "149.56.98.154",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "7146",
+      "name": "UPRA",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "HP1DBK"
     },
     {
       "country": "IT",

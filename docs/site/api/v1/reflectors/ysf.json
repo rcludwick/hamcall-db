@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1565,
-  "generated": "2026-10-11",
+  "count": 1567,
+  "generated": "2026-10-12",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1210,15 +1210,15 @@
     },
     {
       "country": "US",
-      "dashboard": "http://ysf.kd9fuw.com:4000",
-      "description": "KD9FUW-YSF",
+      "dashboard": "http://xlx.kd9fuw.com",
+      "description": "CenWis XLX131",
       "dial": {
         "host": "ysf.kd9fuw.com",
         "kind": "ysf",
         "port": 42000
       },
       "id": "00131",
-      "name": "KD9FUW-YSF",
+      "name": "XLX131",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "KD9FUW"
@@ -4349,6 +4349,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "W1LA"
+    },
+    {
+      "country": "ES",
+      "dashboard": "http://ea3rks.ddns.net",
+      "description": "URE Sabadell",
+      "dial": {
+        "host": "ea3rks.ddns.net",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "02399",
+      "name": "XLX399",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "EA3GHT"
     },
     {
       "country": "US",
@@ -12321,10 +12336,9 @@
     },
     {
       "country": "US",
-      "dashboard": "http://192.155.88.85/configuracion.php",
       "description": "grupo latinos",
       "dial": {
-        "host": "192.155.88.85",
+        "host": "162.35.25.21",
         "kind": "ysf",
         "port": 42000
       },
@@ -13100,7 +13114,7 @@
     },
     {
       "country": "US",
-      "dashboard": "http://192.168.0.83/index.php",
+      "dashboard": "http://192.168.0.16/index.php",
       "description": "N7YMM",
       "dial": {
         "host": "96.19.67.130",
@@ -14180,7 +14194,7 @@
       "dashboard": "http://fortiga.ddns.net:42180",
       "description": "SCANIA TEAM",
       "dial": {
-        "host": "79.131.82.81",
+        "host": "94.65.37.245",
         "kind": "ysf",
         "port": 42007
       },
@@ -17942,6 +17956,19 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "M0WTN"
+    },
+    {
+      "country": "US",
+      "dial": {
+        "host": "64.177.53.121",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "60230",
+      "name": "Valkyrie",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "W6BSD"
     },
     {
       "country": "GB",

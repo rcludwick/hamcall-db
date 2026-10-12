@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 402,
-  "generated": "2026-10-11",
+  "count": 404,
+  "generated": "2026-10-12",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -295,7 +295,7 @@
     {
       "country": "US",
       "dashboard": "http://nxdn.kd9fuw.com:4000",
-      "description": "<p>KD9FUW NXDN REFLECTOR &ndash; WAUSAU, WI</p>\r\n<p>WHILE THIS SERVER HOSTS MULTIPLE MODES, THEY ARE NOT LINKED AT THIS TIME.</p>\r\n<p>IF YOU HAVE ANY QUESTIONS, PLEASE EMAIL:&nbsp;<a href=\"mailto:[email removed]\">[email removed]</a></p>",
+      "description": "<p>NXDN Reflector, Currently unlinked from the rest of the system, Email me if you have any questions - [email removed]</p>",
       "dial": {
         "host": "nxdn.kd9fuw.com",
         "kind": "nxdn",
@@ -3797,6 +3797,20 @@
     },
     {
       "country": "US",
+      "dashboard": "http://144.202.37.96:4000/",
+      "dial": {
+        "host": "144.202.37.96",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "3175",
+      "name": "The Fog Multi mode system XLX073",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "Future Orientated Gateway"
+    },
+    {
+      "country": "US",
       "dashboard": "http://41606.duckdns.org/NXDNReflector-Dashboard/",
       "description": "<p>DX-LINK SYSTEM Multi Mode Digital/Analog Experimenters Network.</p>",
       "dial": {
@@ -5094,6 +5108,20 @@
       "name": "NXDN GREMPA",
       "network": "nxdn",
       "source": "dvref"
+    },
+    {
+      "country": "PA",
+      "dashboard": "http://149.56.98.154:83/",
+      "dial": {
+        "host": "149.56.98.154",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "7146",
+      "name": "UPRA",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "HP1DBK"
     },
     {
       "country": "IT",
