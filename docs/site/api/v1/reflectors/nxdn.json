@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 404,
-  "generated": "2026-10-12",
+  "count": 406,
+  "generated": "2026-10-13",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1557,6 +1557,20 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "2E0LXY"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://urf001.cumbriacq.com/urf/",
+      "dial": {
+        "host": "digital2.cumbriacq.com",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "23534",
+      "name": "CumbriaCQ",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "cumbriaCQ"
     },
     {
       "country": "GB",
@@ -5586,6 +5600,20 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "HS0ZOE"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://urf001.cumbriacq.com/urf/",
+      "dial": {
+        "host": "urf001.cumbriacq.com",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "921",
+      "name": "CumbriaCQ.com",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "cumbriacq.com"
     },
     {
       "country": "GB",

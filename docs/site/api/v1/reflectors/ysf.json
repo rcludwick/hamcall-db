@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 1567,
-  "generated": "2026-10-12",
+  "generated": "2026-10-13",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1601,6 +1601,36 @@
       "sponsor": "JS1YTG"
     },
     {
+      "country": "ES",
+      "dashboard": "http://203.88.124.105/cafe",
+      "description": "EL-CAFECITO",
+      "dial": {
+        "host": "203.88.124.105",
+        "kind": "ysf",
+        "port": 42003
+      },
+      "id": "00200",
+      "name": "EL-CAFECITO",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "xreflector"
+    },
+    {
+      "country": "CN",
+      "dashboard": "http://223.95.197.217:8002",
+      "description": "XLX002",
+      "dial": {
+        "host": "223.95.197.217",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00201",
+      "name": "XLX002",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "BG6GTU"
+    },
+    {
       "country": "GR",
       "dashboard": "http://reflector.freedmr.gr/",
       "description": "GR-GREECE-DV",
@@ -2133,21 +2163,6 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "KE4TZN"
-    },
-    {
-      "country": "CN",
-      "dashboard": "http://223.95.197.217:8551",
-      "description": "XLX355",
-      "dial": {
-        "host": "223.95.197.217",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "00355",
-      "name": "Wuhu460553",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "BG6GTU"
     },
     {
       "country": "BG",
@@ -5489,7 +5504,7 @@
       "dashboard": "http://www.mw0kec.xyz:8080",
       "description": "HighfieldsARC",
       "dial": {
-        "host": "www.mw0kec.xyz",
+        "host": "ysf.mw0kec.xyz",
         "kind": "ysf",
         "port": 42003
       },
@@ -6389,21 +6404,6 @@
       "name": "Koda1213",
       "network": "ysf",
       "source": "dvref"
-    },
-    {
-      "country": "GB",
-      "dashboard": "https://xlx.buxton.radio",
-      "description": "XLX178",
-      "dial": {
-        "host": "80.229.161.124",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "12178",
-      "name": "XLX178",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "Buxton Radio Amateurs"
     },
     {
       "country": "ES",
@@ -8133,6 +8133,7 @@
     },
     {
       "country": "BR",
+      "dashboard": "https://ysfbrazilx.com",
       "description": "Wires-X  Link",
       "dial": {
         "host": "180.199.39.49",
@@ -11935,14 +11936,14 @@
     {
       "country": "GB",
       "dashboard": "https://nwfg.info/home/",
-      "description": "NWMG",
+      "description": "NWFG5",
       "dial": {
         "host": "154.61.61.38",
         "kind": "ysf",
         "port": 42000
       },
       "id": "28804",
-      "name": "NWMG",
+      "name": "NWFG5",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "NWFG"
@@ -12343,7 +12344,7 @@
         "port": 42000
       },
       "id": "30555",
-      "name": "REPDOM#1",
+      "name": "REPDOM-1",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "miguel jerez"
@@ -13496,7 +13497,7 @@
       "dashboard": "http://wp4nnz.ddns.net/index.php",
       "description": "Coamo WP4NNZ",
       "dial": {
-        "host": "173.215.225.88",
+        "host": "67.224.140.9",
         "kind": "ysf",
         "port": 42002
       },

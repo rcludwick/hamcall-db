@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 127,
-  "generated": "2026-10-12",
+  "generated": "2026-10-13",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -918,7 +918,7 @@
       "dashboard": "http://wp4nnz.ddns.net/index.php",
       "description": "<p>dstar coamo</p>",
       "dial": {
-        "host": "173.215.225.88",
+        "host": "67.224.140.9",
         "kind": "urf",
         "modules": [
           "C"
@@ -2104,7 +2104,7 @@
     {
       "country": "PL",
       "dashboard": "https://waw01.kg5a.us",
-      "description": "<p>TG:26512 YSF/NXDN/DMR/DMR.tGIF.network/P25</p>\r\n<p>+ DSTAR</p>",
+      "description": "<p>TG:26512 YSF/NXDN/DMR/DMR.tGIF.network/P25</p>\r\n<p>+ DSTAR</p>\r\n<p>&nbsp;</p>\r\n<p>Module A (only) - TG4001</p>",
       "dial": {
         "host": "94.177.202.207",
         "kind": "urf",
