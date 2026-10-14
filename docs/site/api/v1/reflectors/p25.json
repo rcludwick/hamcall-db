@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 439,
-  "generated": "2026-10-13",
+  "count": 441,
+  "generated": "2026-10-14",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -569,14 +569,14 @@
     {
       "country": "US",
       "dashboard": "http://p25.kd9fuw.com:4001/",
-      "description": "<p>Central Wisconsin Digital Network - Call 1</p>\r\n<p>Linked to XLX131 Module A</p>\r\n<p>Email me if you have any questions - [email removed]</p>",
+      "description": "<p>Central Wisconsin Digital Network - Calling talkgroup</p>\r\n<p>Linked to XLX131 Module A</p>\r\n<p>Email me if you have any questions - [email removed]</p>",
       "dial": {
         "host": "p25.kd9fuw.com",
         "kind": "p25",
         "port": 41000
       },
       "id": "131",
-      "name": "CenWis Call 1",
+      "name": "CenWis Call",
       "network": "p25",
       "source": "dvref",
       "sponsor": "KD9FUW"
@@ -3030,6 +3030,19 @@
     },
     {
       "country": "US",
+      "dashboard": "http://ref.reactintl.org:4000",
+      "dial": {
+        "host": "ref.reactintl.org",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "31038",
+      "name": "SRG Reflector",
+      "network": "p25",
+      "source": "dvref"
+    },
+    {
+      "country": "US",
       "dashboard": "https://p25.na0d.com",
       "dial": {
         "host": "reflector.na0d.org",
@@ -5058,6 +5071,20 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "KB1ELV"
+    },
+    {
+      "country": "TH",
+      "dashboard": "http://203.159.93.71/",
+      "dial": {
+        "host": "hs9awo.com",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "535",
+      "name": "URF535",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "HS9AI pattani Thailand"
     },
     {
       "country": "TH",

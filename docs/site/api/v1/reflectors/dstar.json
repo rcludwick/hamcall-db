@@ -3,7 +3,7 @@
   "attribution": "XLX reflector data from the XLX registry maintained by Luc Engelmann, LX1IQ (http://xlxapi.rlx.lu/).\nStandalone XRF reflector data from the Pi-Star DExtra host file (http://www.pistar.uk/downloads/DExtra_Hosts.txt).\nREF and DCS reflector names from the Pi-Star DPlus and DCS host files (http://www.pistar.uk/downloads/).",
   "client_refresh_days": 7,
   "count": 966,
-  "generated": "2026-10-13",
+  "generated": "2026-10-14",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -845,8 +845,8 @@
         "DCS045"
       ],
       "country": "USA",
-      "dashboard": "http://xlx045.pennlinkgroup.com/xlxd/",
-      "description": "Penn-Link - info.pennlinkgroup.com - DSTAR/DMR/YSF/P25/NXDN/Wires-X",
+      "dashboard": "http://urf045.pennlinkgroup.com:8082/urfd",
+      "description": "PennLink Group URF045",
       "dial": {
         "callsign": "XRF045",
         "host": "70.44.20.24",
@@ -931,25 +931,6 @@
       },
       "id": "XLX049",
       "name": "XLX049",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "aliases": [
-        "XRF050",
-        "DCS050"
-      ],
-      "country": "USA",
-      "dashboard": "http://xlx050.bsdworld.org",
-      "description": "San Francisco Bay reflector",
-      "dial": {
-        "callsign": "XRF050",
-        "host": "140.82.51.26",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLX050",
-      "name": "XLX050",
       "network": "dstar",
       "source": "xlx"
     },
@@ -1857,7 +1838,7 @@
       "description": "Welcome to xrf098 Rintaro's Room",
       "dial": {
         "callsign": "XRF098",
-        "host": "118.109.150.22",
+        "host": "122.135.209.10",
         "kind": "dextra",
         "port": 30001
       },
@@ -2315,7 +2296,7 @@
       "description": "Verona Reflector [DSTAR] - [C4FM Transcoded DMR]",
       "dial": {
         "callsign": "XRF121",
-        "host": "87.14.253.209",
+        "host": "87.0.252.173",
         "kind": "dextra",
         "port": 30001
       },
@@ -4680,26 +4661,6 @@
     },
     {
       "aliases": [
-        "XRF249",
-        "REF249",
-        "DCS249"
-      ],
-      "country": "USA",
-      "dashboard": "http://107.128.234.208",
-      "description": "West Georgia Reflector - All Are Welcome",
-      "dial": {
-        "callsign": "XRF249",
-        "host": "209.184.235.51",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLX249",
-      "name": "XLX249",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "aliases": [
         "REF250",
         "DCS250"
       ],
@@ -5382,7 +5343,7 @@
       "description": "XLX288 / YSF IT-URF288 #22250",
       "dial": {
         "callsign": "XRF288",
-        "host": "79.19.194.81",
+        "host": "79.37.143.194",
         "kind": "dextra",
         "port": 30001
       },
@@ -5502,7 +5463,7 @@
       "description": "JF2ANH Test",
       "dial": {
         "callsign": "XRF298",
-        "host": "60.236.33.182",
+        "host": "122.133.230.246",
         "kind": "dextra",
         "port": 30001
       },
@@ -6096,11 +6057,10 @@
         "DCS331"
       ],
       "country": "Coamo PR",
-      "dashboard": "http://10.0.0.110",
       "description": "Bacalao",
       "dial": {
         "callsign": "XRF331",
-        "host": "173.215.225.88",
+        "host": "67.224.140.9",
         "kind": "dextra",
         "port": 30001
       },
@@ -6485,26 +6445,6 @@
       },
       "id": "XLX354",
       "name": "XLX354",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "aliases": [
-        "XRF355",
-        "REF355",
-        "DCS355"
-      ],
-      "country": "China",
-      "dashboard": "http://223.95.197.217:8551",
-      "description": "\u6a21\u5f0fA=TG46001\uff0c\u6a21\u5f0fB=TG460551\uff0c\u6a21\u5f0fC=DMRTG460553\uff0c\u6a21\u5f0fE=TG46025\uff0cYSF00355(CN-Wuhu460553)\u9ed8\u8ba4\u6a21\u5f0fC \u4f7f\u75282\u4e2aUSB-3006\u58f0\u7801\u5668\u89e3\u7801\u4e92\u901a\u3002\u671f\u5f85\u4f60\u7684\u901a\u8054\uff01",
-      "dial": {
-        "callsign": "XRF355",
-        "host": "125.114.244.7",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLX355",
-      "name": "XLX355",
       "network": "dstar",
       "source": "xlx"
     },
@@ -7998,7 +7938,7 @@
       "description": "K1DBC",
       "dial": {
         "callsign": "XRF442",
-        "host": "71.218.242.132",
+        "host": "71.218.119.163",
         "kind": "dextra",
         "port": 30001
       },
@@ -9468,6 +9408,26 @@
     },
     {
       "aliases": [
+        "XRF542",
+        "REF542",
+        "DCS542"
+      ],
+      "country": "Croatia",
+      "dashboard": "http://xlxcroatia.ddns.net",
+      "description": "XLX542 Multiprotocol Reflector by 9A3EJJ, info: [email removed]",
+      "dial": {
+        "callsign": "XRF542",
+        "host": "89.201.208.148",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLX542",
+      "name": "XLX542",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "aliases": [
         "XRF543",
         "REF543",
         "DCS543"
@@ -10549,9 +10509,9 @@
         "REF645",
         "DCS645"
       ],
-      "country": "USA",
-      "dashboard": "http://xlx645.pennlinkgroup.com/xlxd/",
-      "description": "Penn-Link - info.pennlinkgroup.com - YSF & ICOM G3 Terminal Support",
+      "country": "United States",
+      "dashboard": "http://xlx545.pennlinkgroup.com/urfd",
+      "description": "URF Reflector",
       "dial": {
         "callsign": "XRF645",
         "host": "34.196.134.215",
@@ -12956,26 +12916,6 @@
     },
     {
       "aliases": [
-        "XRF830",
-        "REF830",
-        "DCS830"
-      ],
-      "country": "USA",
-      "dashboard": "http://lonestarlinksystem.com/STARLINK/db/",
-      "description": "LONE STAR LINK SYSTEM: D-STAR / P25 / DMR / YSF",
-      "dial": {
-        "callsign": "XRF830",
-        "host": "216.128.136.176",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLX830",
-      "name": "XLX830",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "aliases": [
         "XRF831",
         "REF831",
         "DCS831"
@@ -13276,26 +13216,6 @@
     },
     {
       "aliases": [
-        "XRF862",
-        "REF862",
-        "DCS862"
-      ],
-      "country": "Italy",
-      "dashboard": "http://it9bfb.ns0.it:125",
-      "description": "Gruppo Dstar Agrigento",
-      "dial": {
-        "callsign": "XRF862",
-        "host": "195.231.118.80",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLX862",
-      "name": "XLX862",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "aliases": [
         "XRF867",
         "REF867",
         "DCS867"
@@ -13391,6 +13311,25 @@
       },
       "id": "XLX878",
       "name": "XLX878",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "aliases": [
+        "REF880",
+        "DCS880"
+      ],
+      "country": "Belgium",
+      "dashboard": "http://dashboard.on6uhf.com/xlx880/",
+      "description": "XLXBEL XLX880 - Sysop ON6UHF, JO11iC Oostduinkerke",
+      "dial": {
+        "callsign": "XRF880",
+        "host": "81.83.4.238",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLX880",
+      "name": "XLX880",
       "network": "dstar",
       "source": "xlx"
     },
@@ -13669,6 +13608,26 @@
       },
       "id": "XLX905",
       "name": "XLX905",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "aliases": [
+        "XRF906",
+        "REF906",
+        "DCS906"
+      ],
+      "country": "Germany",
+      "dashboard": "https://xlx.lima07.de",
+      "description": "C4FM / D-STAR / DMR - Kamp-Lintfort, DO6IL",
+      "dial": {
+        "callsign": "XRF906",
+        "host": "81.169.240.11",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLX906",
+      "name": "XLX906",
       "network": "dstar",
       "source": "xlx"
     },
@@ -14620,7 +14579,7 @@
       "description": "XLX966 for BG5CIA TEST ONLY",
       "dial": {
         "callsign": "XRF966",
-        "host": "125.123.153.38",
+        "host": "122.238.162.33",
         "kind": "dextra",
         "port": 30001
       },
@@ -15453,12 +15412,10 @@
         "REFCA1",
         "DCSCA1"
       ],
-      "country": "CA",
       "dashboard": "http://xlxca1.hamlink.ca",
-      "description": "Hamlink Canada",
       "dial": {
         "callsign": "XRFCA1",
-        "host": "44.27.26.218",
+        "host": "66.179.9.220",
         "kind": "dextra",
         "port": 30001
       },
@@ -16611,7 +16568,7 @@
       "description": "New England MultiMode Group",
       "dial": {
         "callsign": "XRFMMG",
-        "host": "172.56.192.58",
+        "host": "137.103.112.175",
         "kind": "dextra",
         "port": 30001
       },
@@ -16642,6 +16599,26 @@
     },
     {
       "aliases": [
+        "XRFNAI",
+        "REFNAI",
+        "DCSNAI"
+      ],
+      "country": "United States of America",
+      "dashboard": "http://wx4alaimrs.radiotechnology.xyz",
+      "description": "WX4ALA Dashboard",
+      "dial": {
+        "callsign": "XRFNAI",
+        "host": "45.32.172.166",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLXNAI",
+      "name": "XLXNAI",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "aliases": [
         "XRFNFL",
         "REFNFL",
         "DCSNFL"
@@ -16666,9 +16643,9 @@
         "REFNLD",
         "DCSNLD"
       ],
-      "country": "The Netherlands",
+      "country": "Netherlands",
       "dashboard": "http://dstarnld.pa7lim.nl",
-      "description": "Dutch Reflector by David PA7LIM",
+      "description": "Dutch DSTAR Central",
       "dial": {
         "callsign": "XRFNLD",
         "host": "90.145.156.214",
@@ -17309,7 +17286,7 @@
       "description": "UDON Ken Reflector",
       "dial": {
         "callsign": "XRFUDN",
-        "host": "133.123.221.104",
+        "host": "123.230.36.85",
         "kind": "dextra",
         "port": 30001
       },
@@ -18121,7 +18098,7 @@
     {
       "dial": {
         "callsign": "XRF014",
-        "host": "104.21.21.239",
+        "host": "172.67.201.108",
         "kind": "dextra",
         "port": 30001
       },
@@ -18586,6 +18563,22 @@
       "source": "dextra"
     },
     {
+      "aliases": [
+        "REF862",
+        "DCS862"
+      ],
+      "dial": {
+        "callsign": "XRF862",
+        "host": "195.231.118.80",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XRF862",
+      "name": "XRF862",
+      "network": "dstar",
+      "source": "dextra"
+    },
+    {
       "dial": {
         "callsign": "XRF880",
         "host": "176.10.105.211",
@@ -18712,7 +18705,7 @@
       ],
       "dial": {
         "callsign": "XRFMMG",
-        "host": "137.103.112.175",
+        "host": "172.56.192.58",
         "kind": "dextra",
         "port": 30001
       },

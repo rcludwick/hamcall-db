@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1567,
-  "generated": "2026-10-13",
+  "count": 1570,
+  "generated": "2026-10-14",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -7940,6 +7940,21 @@
       "sponsor": "GREEK C4FM NETWORK / SV9KIH"
     },
     {
+      "country": "US",
+      "dashboard": "https://n4azo.net/YSFReflector-Dashboard/",
+      "description": "444.700 k4gv",
+      "dial": {
+        "host": "66.171.80.93",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "20718",
+      "name": "82Crew-Room",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "N4AZO"
+    },
+    {
       "country": "GB",
       "dashboard": "http://smrcc.ddns.net:8888",
       "description": "S.Mcr Radio",
@@ -13754,10 +13769,10 @@
     },
     {
       "country": "KR",
-      "dashboard": "http://ds5qdr-3rd.iptime.org:88/ysf841/",
+      "dashboard": "http://dvref.ddnsfree.com/ysf841",
       "description": "YSF841",
       "dial": {
-        "host": "220.119.199.180",
+        "host": "158.180.80.27",
         "kind": "ysf",
         "port": 42001
       },
@@ -13769,15 +13784,30 @@
     },
     {
       "country": "KR",
-      "dashboard": "http://dvref.ddnsfree.com/ysf182/",
+      "dashboard": "https://dvmq.ddnsfree.com/ysf182/",
       "description": "YSF182",
       "dial": {
-        "host": "158.180.80.27",
+        "host": "168.107.6.135",
         "kind": "ysf",
-        "port": 42002
+        "port": 42001
       },
       "id": "35692",
       "name": "YSF182",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "DS5QDR"
+    },
+    {
+      "country": "KR",
+      "dashboard": "http://ds5qdr-3rd.iptime.org:88/ysf183/",
+      "description": "YSF183",
+      "dial": {
+        "host": "220.119.199.180",
+        "kind": "ysf",
+        "port": 42001
+      },
+      "id": "35693",
+      "name": "YSF183",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "DS5QDR"
@@ -15934,6 +15964,20 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "KAB Amateur Radio Club/SP5PA"
+    },
+    {
+      "country": "DE",
+      "dashboard": "https://xlx.lima07.de/",
+      "description": "OV L07 Ka-Li",
+      "dial": {
+        "host": "81.169.240.11",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "47475",
+      "name": "LIMA07",
+      "network": "ysf",
+      "source": "dvref"
     },
     {
       "country": "ES",
