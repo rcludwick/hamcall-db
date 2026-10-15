@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 407,
-  "generated": "2026-10-14",
+  "generated": "2026-10-15",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -13,7 +13,7 @@
       "country": "GR",
       "dashboard": "http://nxref.duckdns.org:8008/nxdn/",
       "dial": {
-        "host": "2.87.21.221",
+        "host": "79.129.234.51",
         "kind": "nxdn",
         "port": 41400
       },
@@ -295,7 +295,7 @@
     {
       "country": "US",
       "dashboard": "http://nxdn.kd9fuw.com:4000",
-      "description": "<p>NXDN Reflector, Currently unlinked from the rest of the system, Email me if you have any questions - [email removed]</p>",
+      "description": "<p>Central Wisconsin Digital Network - Calling talkgroup</p>\r\n<p>Linked to XLX131 Module A</p>\r\n<p>Email me if you have any questions - [email removed]</p>\r\n<p>&nbsp;</p>",
       "dial": {
         "host": "nxdn.kd9fuw.com",
         "kind": "nxdn",
@@ -4255,7 +4255,7 @@
       "dashboard": "http://xrf298.mydns.jp:8070/",
       "description": "<p>YSF-NAGOYA-2/TGIF TG-310 / WIRES-X 42314 / XLX298 Y /XLX098 H /M17-LIM L /PEANUT XLX561 P</p>",
       "dial": {
-        "host": "60.236.33.182",
+        "host": "122.133.230.246",
         "kind": "nxdn",
         "port": 41400
       },

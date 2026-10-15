@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 441,
-  "generated": "2026-10-14",
+  "count": 443,
+  "generated": "2026-10-15",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -337,6 +337,21 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "VK2HK"
+    },
+    {
+      "country": "AU",
+      "dashboard": "http://vk4mcureflector.ddns.net:4000/",
+      "description": "<p>BAYSIDE CHAT MULTIMODE REFLECTOR for bdars.org.au sponsored by Martin - VK4MCU</p>",
+      "dial": {
+        "host": "vk4mcureflector.ddns.net",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "10404",
+      "name": "BAYSIDE CHAT MULTIMODE REFLECTOR",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "VK4MCU"
     },
     {
       "country": "CN",
@@ -3096,6 +3111,19 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "N/A"
+    },
+    {
+      "country": "US",
+      "dial": {
+        "host": "p25-reflector.wx6d.org",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "31062",
+      "name": "Mountain West P25 Reflector",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KE6YJC"
     },
     {
       "country": "US",

@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1570,
-  "generated": "2026-10-14",
+  "count": 1571,
+  "generated": "2026-10-15",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -867,6 +867,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "K0RAP"
+    },
+    {
+      "country": "ES",
+      "dashboard": "https://sala-andalucia.es/1/",
+      "description": "COSTA-ATLANTIC",
+      "dial": {
+        "host": "sala-andalucia.es",
+        "kind": "ysf",
+        "port": 42399
+      },
+      "id": "00086",
+      "name": "ACRAB",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "xreflector"
     },
     {
       "country": "US",
@@ -7008,7 +7023,7 @@
       "dashboard": "https://xrf098.mydns.jp:8030/",
       "description": "YSF-NAGOYA",
       "dial": {
-        "host": "118.109.150.22",
+        "host": "122.135.209.10",
         "kind": "ysf",
         "port": 42000
       },
@@ -17902,7 +17917,7 @@
       "dashboard": "http://xrf098.mydns.jp",
       "description": "XLX reflector",
       "dial": {
-        "host": "118.109.150.22",
+        "host": "122.135.209.10",
         "kind": "ysf",
         "port": 42001
       },
@@ -20190,7 +20205,7 @@
       "dashboard": "http://xrf098.mydns.jp:8050",
       "description": "YSF-NAGOYA-2",
       "dial": {
-        "host": "118.109.150.22",
+        "host": "122.135.209.10",
         "kind": "ysf",
         "port": 42002
       },
@@ -22558,7 +22573,7 @@
       "dashboard": "http://xrf298.mydns.jp",
       "description": "XLX reflector",
       "dial": {
-        "host": "60.236.33.182",
+        "host": "122.133.230.246",
         "kind": "ysf",
         "port": 42000
       },

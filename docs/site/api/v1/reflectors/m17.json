@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 121,
-  "generated": "2026-10-14",
+  "count": 123,
+  "generated": "2026-10-15",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -881,6 +881,25 @@
       "sponsor": "US-Keywork"
     },
     {
+      "country": "AU",
+      "dashboard": "http://vk4mcureflector.ddns.net:4000/",
+      "description": "<p>BAYSIDE CHAT MULTIMODE REFLECTOR for bdars.org.au sponsored by Martin - VK4MCU</p>",
+      "dial": {
+        "callsign": "M17-404",
+        "host": "vk4mcureflector.ddns.net",
+        "kind": "m17",
+        "modules": [
+          "A"
+        ],
+        "port": 17000
+      },
+      "id": "M17-404",
+      "name": "BAYSIDE CHAT MULTIMODE REFLECTOR",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "VK4MCU"
+    },
+    {
       "country": "CA",
       "dashboard": "https://xlx405.repeatme.ca",
       "dial": {
@@ -1082,6 +1101,24 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "RadioSC"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://m17.ne5ie.com",
+      "dial": {
+        "callsign": "M17-555",
+        "host": "m17.ne5ie.com",
+        "kind": "m17",
+        "modules": [
+          "A"
+        ],
+        "port": 17000
+      },
+      "id": "M17-555",
+      "name": "Just an average M17 reflector",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "NE5IE"
     },
     {
       "country": "US",
