@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 1571,
-  "generated": "2026-10-15",
+  "generated": "2026-10-16",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -4103,21 +4103,6 @@
       "sponsor": "EA3HKB"
     },
     {
-      "country": "GB",
-      "dashboard": "http://atzxlx.ddns.net",
-      "description": "NE Wales",
-      "dial": {
-        "host": "31.48.22.144",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "01793",
-      "name": "XLX179",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "GW3ATZ"
-    },
-    {
       "country": "HU",
       "dashboard": "https://vmi2909834.contaboserver.net/xlxd/",
       "description": "YSF Balaton",
@@ -8207,7 +8192,7 @@
     },
     {
       "country": "ES",
-      "dashboard": "http://www.ysf.es/",
+      "dashboard": "https://eadistrito.ysf.es/",
       "description": "EA-Distrito-3",
       "dial": {
         "host": "ysfdmr.ysf.es",
@@ -8222,7 +8207,7 @@
     },
     {
       "country": "ES",
-      "dashboard": "http://www.ysf.es/",
+      "dashboard": "https://eadistrito.ysf.es/",
       "description": "EA-Distrito-5",
       "dial": {
         "host": "212.227.87.198",
@@ -8237,7 +8222,7 @@
     },
     {
       "country": "ES",
-      "dashboard": "http://www.ysf.es/",
+      "dashboard": "https://eadistrito.ysf.es/",
       "description": "EA-Distrito-6",
       "dial": {
         "host": "ysfdmr.ysf.es",
@@ -8372,7 +8357,7 @@
     },
     {
       "country": "ES",
-      "dashboard": "http://www.ysf.es/",
+      "dashboard": "https://eadistrito.ysf.es/",
       "description": "EA-Distrito-1",
       "dial": {
         "host": "ysfdmr.ysf.es",
@@ -8387,7 +8372,7 @@
     },
     {
       "country": "ES",
-      "dashboard": "http://www.ysf.es/",
+      "dashboard": "https://eadistrito.ysf.es/",
       "description": "EA-Distrito-2",
       "dial": {
         "host": "212.227.87.198",
@@ -8417,7 +8402,7 @@
     },
     {
       "country": "ES",
-      "dashboard": "http://www.ysf.es/",
+      "dashboard": "https://eadistrito.ysf.es/",
       "description": "EA-Distrito-8",
       "dial": {
         "host": "212.227.87.198",
@@ -8432,7 +8417,7 @@
     },
     {
       "country": "ES",
-      "dashboard": "http://www.ysf.es/",
+      "dashboard": "https://eadistrito.ysf.es/",
       "description": "EA-Distrito-9",
       "dial": {
         "host": "212.227.87.198",
@@ -8492,8 +8477,8 @@
     },
     {
       "country": "ES",
-      "dashboard": "https://xlx214.xreflector.es/yfsmulti",
-      "description": "EA-5",
+      "dashboard": "https://dcs214.xreflector.net/ysfmulti/",
+      "description": "EA-DISTRITO-4",
       "dial": {
         "host": "xlx214.xreflector.es",
         "kind": "ysf",
@@ -8609,7 +8594,7 @@
     },
     {
       "country": "ES",
-      "dashboard": "https://xlx214.xreflector.es/yfsmulti",
+      "dashboard": "https://dcs214.xreflector.net/ysfmulti/",
       "description": "EA-DISTRITO",
       "dial": {
         "host": "xlx214.xreflector.es",
@@ -9330,7 +9315,7 @@
     },
     {
       "country": "ES",
-      "dashboard": "http://www.ysf.es/",
+      "dashboard": "https://eadistrito.ysf.es/",
       "description": "EA-Distrito-7",
       "dial": {
         "host": "212.227.87.198",
@@ -15952,6 +15937,20 @@
       "source": "dvref"
     },
     {
+      "country": "US",
+      "dashboard": "https://hvarc.org/jcs",
+      "description": "Hanover VA YSF",
+      "dial": {
+        "host": "68.168.211.250",
+        "kind": "ysf",
+        "port": 43000
+      },
+      "id": "47100",
+      "name": "Hanover YSF",
+      "network": "ysf",
+      "source": "dvref"
+    },
+    {
       "country": "CH",
       "dashboard": "http://212.237.33.114:3020/main.php",
       "description": "Gruppo HB9CSR",
@@ -21946,7 +21945,6 @@
     },
     {
       "country": "RU",
-      "dashboard": "http://157.228.138.240/",
       "dial": {
         "host": "157.228.138.240",
         "kind": "ysf",

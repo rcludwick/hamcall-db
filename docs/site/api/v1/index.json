@@ -7,15 +7,15 @@
     "network": "reflectors/{network}.json",
     "openapi": "openapi.json"
   },
-  "expires_hint": "2026-10-22",
-  "generated": "2026-10-15",
+  "expires_hint": "2026-10-23",
+  "generated": "2026-10-16",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
   "networks": {
     "dmr": {
       "count": 189,
-      "generated": "2026-10-15",
+      "generated": "2026-10-16",
       "source": {
         "name": "DVRef",
         "url": "https://dvref.com/api/v2/"
@@ -275,25 +275,25 @@
         },
         "freedmr-network": {
           "count": 11,
-          "fetched": "2026-09-16",
+          "fetched": "2026-10-16",
           "generated": "2026-09-16",
           "url": "reflectors/dmr/freedmr-network/talkgroups.json"
         },
         "freedmr-reunion": {
           "count": 1,
-          "fetched": "2026-09-17",
+          "fetched": "2026-10-16",
           "generated": "2026-09-17",
           "url": "reflectors/dmr/freedmr-reunion/talkgroups.json"
         },
         "funknetz-celle": {
           "count": 1,
-          "fetched": "2026-09-17",
+          "fetched": "2026-10-16",
           "generated": "2026-09-17",
           "url": "reflectors/dmr/funknetz-celle/talkgroups.json"
         },
         "gr-aether-hellas": {
           "count": 13,
-          "fetched": "2026-09-17",
+          "fetched": "2026-10-16",
           "generated": "2026-09-17",
           "url": "reflectors/dmr/gr-aether-hellas/talkgroups.json"
         },
@@ -751,8 +751,8 @@
       "url": "reflectors/dmr.json"
     },
     "dstar": {
-      "count": 966,
-      "generated": "2026-10-15",
+      "count": 965,
+      "generated": "2026-10-16",
       "source": {
         "name": "XLX registry (LX1IQ) + Pi-Star DExtra hosts + Pi-Star DPlus/DCS names",
         "url": "http://xlxapi.rlx.lu/api.php?do=GetReflectorList"
@@ -760,8 +760,8 @@
       "url": "reflectors/dstar.json"
     },
     "m17": {
-      "count": 123,
-      "generated": "2026-10-15",
+      "count": 124,
+      "generated": "2026-10-16",
       "source": {
         "name": "DVRef",
         "url": "https://dvref.com/api/v2/"
@@ -770,7 +770,7 @@
     },
     "nxdn": {
       "count": 407,
-      "generated": "2026-10-15",
+      "generated": "2026-10-16",
       "source": {
         "name": "DVRef",
         "url": "https://dvref.com/api/v2/"
@@ -779,7 +779,7 @@
     },
     "p25": {
       "count": 443,
-      "generated": "2026-10-15",
+      "generated": "2026-10-16",
       "source": {
         "name": "DVRef",
         "url": "https://dvref.com/api/v2/"
@@ -788,7 +788,7 @@
     },
     "urf": {
       "count": 128,
-      "generated": "2026-10-15",
+      "generated": "2026-10-16",
       "source": {
         "name": "DVRef",
         "url": "https://dvref.com/api/v2/"
@@ -797,7 +797,7 @@
     },
     "ysf": {
       "count": 1571,
-      "generated": "2026-10-15",
+      "generated": "2026-10-16",
       "source": {
         "name": "DVRef",
         "url": "https://dvref.com/api/v2/"
