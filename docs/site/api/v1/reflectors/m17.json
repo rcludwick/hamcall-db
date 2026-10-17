@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 124,
-  "generated": "2026-10-16",
+  "count": 125,
+  "generated": "2026-10-17",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -441,49 +441,6 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "HS3TDI"
-    },
-    {
-      "country": "TH",
-      "dashboard": "http://44.32.81.143",
-      "dial": {
-        "callsign": "M17-162",
-        "host": "44.32.81.143",
-        "kind": "m17",
-        "modules": [
-          "A",
-          "B",
-          "C",
-          "D",
-          "E",
-          "F",
-          "G",
-          "H",
-          "I",
-          "J",
-          "K",
-          "L",
-          "M",
-          "N",
-          "O",
-          "P",
-          "Q",
-          "R",
-          "S",
-          "T",
-          "U",
-          "V",
-          "W",
-          "X",
-          "Y",
-          "Z"
-        ],
-        "port": 17000
-      },
-      "id": "M17-162",
-      "name": "M17-Thailand-E29SZE",
-      "network": "m17",
-      "source": "dvref",
-      "sponsor": "ham radio"
     },
     {
       "country": "GR",
@@ -1944,6 +1901,24 @@
       "sponsor": "ARI F.V.G."
     },
     {
+      "country": "US",
+      "dial": {
+        "callsign": "M17-HAM",
+        "host": "64.177.10.64",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "E"
+        ],
+        "port": 17000
+      },
+      "id": "M17-HAM",
+      "name": "M17-HAM",
+      "network": "m17",
+      "source": "dvref"
+    },
+    {
       "country": "AU",
       "dashboard": "http://m17-ip6.vkradio.com:3000",
       "description": "<p>Experimental IPv6 only reflector, to test IPv6 only operation and interoperability with dual stack and IPv4 only systems.&nbsp;&nbsp;</p>",
@@ -2160,6 +2135,28 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "KN6SF"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://reflectors.k0xm.net",
+      "dial": {
+        "callsign": "M17-KXM",
+        "host": "23.95.207.82",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "D",
+          "E",
+          "M",
+          "S",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-KXM",
+      "name": "K0XM Test M17 Reflector",
+      "network": "m17",
+      "source": "dvref"
     },
     {
       "country": "GB",

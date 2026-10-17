@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 443,
-  "generated": "2026-10-16",
+  "count": 444,
+  "generated": "2026-10-17",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -3271,6 +3271,19 @@
     },
     {
       "country": "US",
+      "dashboard": "http://reflectors.k0xm.net",
+      "dial": {
+        "host": "23.95.207.82",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "31202",
+      "name": "K0XM development",
+      "network": "p25",
+      "source": "dvref"
+    },
+    {
+      "country": "US",
       "dashboard": "https://foxhole.radio/index.php/network-status/",
       "description": "<p>US-Foxhole Network</p>",
       "dial": {
@@ -3933,7 +3946,7 @@
     },
     {
       "country": "US",
-      "dashboard": "http://44.27.139.150",
+      "dashboard": "http://44.27.139.150/status.php",
       "dial": {
         "host": "44.27.139.150",
         "kind": "p25",

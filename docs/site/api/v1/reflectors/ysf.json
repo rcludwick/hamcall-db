@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1571,
-  "generated": "2026-10-16",
+  "count": 1575,
+  "generated": "2026-10-17",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1048,15 +1048,15 @@
     },
     {
       "country": "AR",
-      "dashboard": "https://wire2link.lw6emn.ar",
-      "description": "WIRE2LINK",
+      "dashboard": "https://c4fm.ar",
+      "description": "C4FM AR",
       "dial": {
-        "host": "wire2link.lw6emn.ar",
+        "host": "c4fm.ar",
         "kind": "ysf",
         "port": 42000
       },
       "id": "00110",
-      "name": "WIRE2LINK",
+      "name": "C4FM AR",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "LW6EMN"
@@ -4103,6 +4103,21 @@
       "sponsor": "EA3HKB"
     },
     {
+      "country": "GB",
+      "dashboard": "http://atzxlx.ddns.net",
+      "description": "NE Wales",
+      "dial": {
+        "host": "31.48.22.144",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "01793",
+      "name": "XLX179",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "GW3ATZ"
+    },
+    {
       "country": "HU",
       "dashboard": "https://vmi2909834.contaboserver.net/xlxd/",
       "description": "YSF Balaton",
@@ -6032,7 +6047,7 @@
       "country": "RO",
       "description": "YO5KAW-Radio c",
       "dial": {
-        "host": "188.27.180.146",
+        "host": "188.27.183.97",
         "kind": "ysf",
         "port": 42002
       },
@@ -10602,7 +10617,7 @@
     },
     {
       "country": "DE",
-      "dashboard": "https://ysf-deutschland.de/main2.php?room=37",
+      "dashboard": "https://ysf-deutschland.de/index.php?room=37",
       "description": "YSF Nordsee",
       "dial": {
         "host": "ysf-deutschland.de",
@@ -11352,7 +11367,7 @@
       "dial": {
         "host": "sala-andalucia.es",
         "kind": "ysf",
-        "port": 42350
+        "port": 42355
       },
       "id": "28128",
       "name": "SALAANDALUCIA",
@@ -15275,6 +15290,20 @@
       "source": "dvref"
     },
     {
+      "country": "US",
+      "dashboard": "http://reflectors.k0xm.net",
+      "description": "K0XM Devel",
+      "dial": {
+        "host": "23.95.207.82",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "44255",
+      "name": "YSF-KXM",
+      "network": "ysf",
+      "source": "dvref"
+    },
+    {
       "country": "CH",
       "dashboard": "http://ysfsuhr.internet-box.ch",
       "description": "YSF SUHR",
@@ -15921,6 +15950,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "VE2BQA"
+    },
+    {
+      "country": "BE",
+      "dashboard": "https://ysf-deutschland.de/index.php?room=61",
+      "description": "YSF Eupen",
+      "dial": {
+        "host": "ysf-deutschland.de",
+        "kind": "ysf",
+        "port": 42361
+      },
+      "id": "47000",
+      "name": "ON0DV",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "DJ5KP"
     },
     {
       "country": "BD",
@@ -21942,6 +21986,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "KB1NE"
+    },
+    {
+      "country": "HR",
+      "dashboard": "http://xlx.xlxcro.org",
+      "description": "NEW",
+      "dial": {
+        "host": "xlx.xlxcro.org",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "89999",
+      "name": "XLXCRO",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "9a3ejj"
     },
     {
       "country": "RU",
