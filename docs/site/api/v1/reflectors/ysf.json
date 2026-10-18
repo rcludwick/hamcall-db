@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1575,
-  "generated": "2026-10-17",
+  "count": 1576,
+  "generated": "2026-10-18",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1945,7 +1945,7 @@
       "dashboard": "http://c4fmfun.ddns.net:2800",
       "description": "CYPRUS C4FM",
       "dial": {
-        "host": "2.86.36.123",
+        "host": "2.86.33.113",
         "kind": "ysf",
         "port": 42006
       },
@@ -3995,6 +3995,21 @@
       },
       "id": "01527",
       "name": "GB3WL",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "G1INC Derek"
+    },
+    {
+      "country": "GB",
+      "dashboard": "http://maythorn.myddns.me",
+      "description": "Home reflector",
+      "dial": {
+        "host": "maythorn.myddns.me",
+        "kind": "ysf",
+        "port": 42002
+      },
+      "id": "01528",
+      "name": "G1INC",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "G1INC Derek"
@@ -8166,7 +8181,7 @@
       "dashboard": "https://ysfbrazilx.com",
       "description": "Wires-X  Link",
       "dial": {
-        "host": "180.199.39.49",
+        "host": "180.199.65.221",
         "kind": "ysf",
         "port": 42395
       },

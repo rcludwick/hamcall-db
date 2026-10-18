@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 189,
-  "generated": "2026-10-17",
+  "count": 190,
+  "generated": "2026-10-18",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -3701,6 +3701,28 @@
       "sponsor": "BROWARD ENGINEERING Tm.",
       "system": "xlx205",
       "talkgroups": "reflectors/dmr/xlx205/talkgroups.json"
+    },
+    {
+      "country": "LU",
+      "dashboard": "https://xlx270.epf.lu",
+      "dial": {
+        "host": "xlx270.epf.lu",
+        "kind": "mmdvm",
+        "port": 8880,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "xlx270",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/xlx270/talkgroups/"
+      },
+      "id": "xlx270-server-xlx270",
+      "name": "XLX270",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "XLX270",
+      "system": "xlx270",
+      "talkgroups": "reflectors/dmr/xlx270/talkgroups.json"
     },
     {
       "country": "GB",

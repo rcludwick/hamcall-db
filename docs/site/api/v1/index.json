@@ -1,21 +1,21 @@
 {
   "api_version": "v1",
   "client_refresh_days": 7,
-  "count": 3840,
+  "count": 3838,
   "endpoints": {
     "all": "reflectors.json",
     "network": "reflectors/{network}.json",
     "openapi": "openapi.json"
   },
-  "expires_hint": "2026-10-24",
-  "generated": "2026-10-17",
+  "expires_hint": "2026-10-25",
+  "generated": "2026-10-18",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
   "networks": {
     "dmr": {
-      "count": 189,
-      "generated": "2026-10-17",
+      "count": 190,
+      "generated": "2026-10-18",
       "source": {
         "name": "DVRef",
         "url": "https://dvref.com/api/v2/"
@@ -323,19 +323,19 @@
         },
         "ham-united-hytera": {
           "count": 0,
-          "fetched": "2026-09-18",
+          "fetched": "2026-10-18",
           "generated": "2026-09-18",
           "url": "reflectors/dmr/ham-united-hytera/talkgroups.json"
         },
         "ham-united-motorola": {
           "count": 0,
-          "fetched": "2026-09-19",
+          "fetched": "2026-10-18",
           "generated": "2026-09-19",
           "url": "reflectors/dmr/ham-united-motorola/talkgroups.json"
         },
         "hamthings": {
           "count": 0,
-          "fetched": "2026-09-19",
+          "fetched": "2026-10-18",
           "generated": "2026-09-19",
           "url": "reflectors/dmr/hamthings/talkgroups.json"
         },
@@ -669,6 +669,12 @@
           "generated": "2026-10-02",
           "url": "reflectors/dmr/xlx205/talkgroups.json"
         },
+        "xlx270": {
+          "count": 4,
+          "fetched": "2026-10-18",
+          "generated": "2026-10-18",
+          "url": "reflectors/dmr/xlx270/talkgroups.json"
+        },
         "xlx279": {
           "count": 4,
           "fetched": "2026-10-03",
@@ -751,8 +757,8 @@
       "url": "reflectors/dmr.json"
     },
     "dstar": {
-      "count": 971,
-      "generated": "2026-10-17",
+      "count": 966,
+      "generated": "2026-10-18",
       "source": {
         "name": "XLX registry (LX1IQ) + Pi-Star DExtra hosts + Pi-Star DPlus/DCS names",
         "url": "http://xlxapi.rlx.lu/api.php?do=GetReflectorList"
@@ -760,8 +766,8 @@
       "url": "reflectors/dstar.json"
     },
     "m17": {
-      "count": 125,
-      "generated": "2026-10-17",
+      "count": 126,
+      "generated": "2026-10-18",
       "source": {
         "name": "DVRef",
         "url": "https://dvref.com/api/v2/"
@@ -770,7 +776,7 @@
     },
     "nxdn": {
       "count": 408,
-      "generated": "2026-10-17",
+      "generated": "2026-10-18",
       "source": {
         "name": "DVRef",
         "url": "https://dvref.com/api/v2/"
@@ -778,8 +784,8 @@
       "url": "reflectors/nxdn.json"
     },
     "p25": {
-      "count": 444,
-      "generated": "2026-10-17",
+      "count": 443,
+      "generated": "2026-10-18",
       "source": {
         "name": "DVRef",
         "url": "https://dvref.com/api/v2/"
@@ -787,8 +793,8 @@
       "url": "reflectors/p25.json"
     },
     "urf": {
-      "count": 128,
-      "generated": "2026-10-17",
+      "count": 129,
+      "generated": "2026-10-18",
       "source": {
         "name": "DVRef",
         "url": "https://dvref.com/api/v2/"
@@ -796,8 +802,8 @@
       "url": "reflectors/urf.json"
     },
     "ysf": {
-      "count": 1575,
-      "generated": "2026-10-17",
+      "count": 1576,
+      "generated": "2026-10-18",
       "source": {
         "name": "DVRef",
         "url": "https://dvref.com/api/v2/"
