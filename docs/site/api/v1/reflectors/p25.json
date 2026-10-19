@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 443,
-  "generated": "2026-10-18",
+  "count": 449,
+  "generated": "2026-10-19",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -426,6 +426,20 @@
       "sponsor": "hamdao"
     },
     {
+      "country": "BR",
+      "dashboard": "https://ref105.dstar.com.br/",
+      "dial": {
+        "host": "ref105.dstar.com.br",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "105",
+      "name": "REF105",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "PY4EI"
+    },
+    {
       "country": "CN",
       "dial": {
         "host": "218.79.254.55",
@@ -816,6 +830,21 @@
       "sponsor": "Buxton Radio Amateurs"
     },
     {
+      "country": "BR",
+      "dashboard": "https://ref018.dstar.com.br/",
+      "description": "<p>Reflector 018 Brazil</p>",
+      "dial": {
+        "host": "ref018.dstar.com.br",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "18",
+      "name": "REF018",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "PY2PE"
+    },
+    {
       "country": "TR",
       "description": "Turkiye 1923",
       "dial": {
@@ -841,6 +870,20 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "KC3KMV - Alltune2"
+    },
+    {
+      "country": "BR",
+      "description": "<p>BRASIL EMERG&Ecirc;NCIA</p>\r\n<p>Defesa Civil do Brasil</p>",
+      "dial": {
+        "host": "186.193.221.178",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "199",
+      "name": "Defesa Civil do Brasil",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Defesa Civil do Brasil"
     },
     {
       "country": "GR",
@@ -3102,6 +3145,18 @@
     {
       "country": "US",
       "dial": {
+        "host": "172.236.242.168",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "31061",
+      "name": "SoCalDigiTalk",
+      "network": "p25",
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dial": {
         "host": "p25-reflector.wx6d.org",
         "kind": "p25",
         "port": 41000
@@ -3728,6 +3783,21 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "DVSwitch"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://xlxwdx.worldwidedx.com/",
+      "description": "<p>W9WDX P25 reflector linked to XLXWDX module C for cross-mode conversations with D-Star, YSF, DMR/TGIF and AllStar. Use P25 TG 31670 via a P25-capable hotspot or gateway.</p>",
+      "dial": {
+        "host": "xlxwdx.worldwidedx.com",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "31670",
+      "name": "W9WDX P25 to XLXWDX C",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "W9WDX"
     },
     {
       "country": "US",
@@ -4923,18 +4993,6 @@
       "dial": {
         "host": "45.198.151.5",
         "kind": "p25",
-        "port": 41004
-      },
-      "id": "51025",
-      "name": "Indonesia P25 Talkgroup",
-      "network": "p25",
-      "source": "dvref"
-    },
-    {
-      "country": "ID",
-      "dial": {
-        "host": "45.198.151.5",
-        "kind": "p25",
         "port": 41003
       },
       "id": "51051",
@@ -4947,7 +5005,7 @@
       "country": "ID",
       "description": "<p>Indonesia P25 Reflector linked to DMR TG 51075</p>",
       "dial": {
-        "host": "103.196.153.208",
+        "host": "103.89.6.27",
         "kind": "p25",
         "port": 41000
       },
@@ -4955,7 +5013,7 @@
       "name": "Indonesia P25 Talkgroup 51075",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "Indonesia P25 Reflector linked to DMR TG 51075"
+      "sponsor": "Indonesia P25 Reflector"
     },
     {
       "country": "ID",
@@ -5498,6 +5556,20 @@
       "sponsor": "Northwest Ohio VHF Amateur Radio Society"
     },
     {
+      "country": "BR",
+      "dashboard": "https://xlx.dstar.com.br",
+      "dial": {
+        "host": "xlx.dstar.com.br",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "70",
+      "name": "XLX070",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "PY4EI"
+    },
+    {
       "country": "NL",
       "dashboard": "http://xlx.pd3rfr.nl",
       "description": "<p>Experimental Reflector of PD3RFR</p>",
@@ -5667,6 +5739,20 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "PU3SMS - S\u00e9rgio Saez"
+    },
+    {
+      "country": "BR",
+      "description": "<p>SAO PAULO</p>",
+      "dial": {
+        "host": "193.202.85.87",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "7244",
+      "name": "SAO PAULO",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "SAO PAULO"
     },
     {
       "country": "BR",

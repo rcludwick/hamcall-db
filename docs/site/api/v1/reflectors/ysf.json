@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1576,
-  "generated": "2026-10-18",
+  "count": 1579,
+  "generated": "2026-10-19",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1945,7 +1945,7 @@
       "dashboard": "http://c4fmfun.ddns.net:2800",
       "description": "CYPRUS C4FM",
       "dial": {
-        "host": "2.86.33.113",
+        "host": "2.86.39.124",
         "kind": "ysf",
         "port": 42006
       },
@@ -2870,6 +2870,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "Ham Radio Crash Course HRCC LINK"
+    },
+    {
+      "country": "JP",
+      "dashboard": "https://xrf634.xreflector-jp.org",
+      "description": "JQ1ZTN Tokyo",
+      "dial": {
+        "host": "xrf634.xreflector-jp.org",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00634",
+      "name": "XLX634",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "VoIP Reflector Club"
     },
     {
       "country": "US",
@@ -4235,6 +4250,19 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "M0ADM"
+    },
+    {
+      "country": "GR",
+      "description": "TESTREF",
+      "dial": {
+        "host": "2.86.39.124",
+        "kind": "ysf",
+        "port": 42002
+      },
+      "id": "02029",
+      "name": "TESTREF",
+      "network": "ysf",
+      "source": "dvref"
     },
     {
       "country": "US",
@@ -14326,7 +14354,7 @@
       "country": "IT",
       "description": "C4FM TEAM",
       "dial": {
-        "host": "2.86.36.123",
+        "host": "2.86.39.124",
         "kind": "ysf",
         "port": 42008
       },
@@ -14812,6 +14840,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "N1YKT"
+    },
+    {
+      "country": "FR",
+      "dashboard": "http://xlx650.ysf-france.fr:85",
+      "description": "Serveur XLX650",
+      "dial": {
+        "host": "xlx650.ysf-france.fr",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "42650",
+      "name": "XLX-650",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "F1PTL Bruno"
     },
     {
       "country": "PT",

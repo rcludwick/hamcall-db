@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 408,
-  "generated": "2026-10-18",
+  "generated": "2026-10-19",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -295,7 +295,7 @@
     {
       "country": "US",
       "dashboard": "http://nxdn.kd9fuw.com:4000",
-      "description": "<p>Central Wisconsin Digital Network - Calling talkgroup</p>\r\n<p>Linked to XLX131 Module A</p>\r\n<p>Email me if you have any questions - [email removed]</p>\r\n<p>&nbsp;</p>",
+      "description": "<p>Central Wisconsin Digital Network</p>\r\n<p>Currently unlinked from the rest of the network</p>\r\n<p>https://discord.kd9fuw.com/</p>\r\n<p>Email me if you have any questions - [email removed]</p>\r\n<p>&nbsp;</p>",
       "dial": {
         "host": "nxdn.kd9fuw.com",
         "kind": "nxdn",

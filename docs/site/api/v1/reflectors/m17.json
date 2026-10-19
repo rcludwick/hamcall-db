@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 126,
-  "generated": "2026-10-18",
+  "count": 127,
+  "generated": "2026-10-19",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -441,6 +441,49 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "HS3TDI"
+    },
+    {
+      "country": "TH",
+      "dashboard": "http://44.32.81.27/m17",
+      "dial": {
+        "callsign": "M17-162",
+        "host": "44.32.81.27",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17002
+      },
+      "id": "M17-162",
+      "name": "M17-Thailand-E29SZE",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "ham radio"
     },
     {
       "country": "GR",
@@ -998,7 +1041,7 @@
     {
       "country": "AU",
       "dashboard": "https://m17.dale.id.au",
-      "description": "<p><strong>VK Calling Hub</strong><br><strong>M17</strong>: 434 B, <strong>ASL</strong>: 572981, <strong>YSF</strong>: 50505 (AU-VK-DVDU505), <strong>NXDN</strong>: 50505, <strong>P25</strong>: 50505 bridged to DVAU DMR 505</p>\r\n<p>&nbsp;</p>\r\n<p><strong>VK Nets Hub</strong><br><strong>M17</strong>: 434 E, <strong>ASL</strong>: 572982, <strong>YSF</strong>: 50500 (AU-VK-DVDU50500), <strong>NXDN</strong>: 50500, <strong>P25</strong>: 50500 bridged to DVAU DMR 50500</p>\r\n<p>&nbsp;</p>\r\n<p><strong>VK5 Sth. Aust. Hub</strong><br><strong>M17: </strong>434 C, <strong>ASL</strong>: 572983, <strong>YSF</strong>: 05055 (AU-VK5-DVDU5055), <strong>P25</strong>: 5055, <strong>NXDN</strong>: 5055, bridged to DVAU DMR 5055</p>\r\n<p>&nbsp;</p>\r\n<p><strong>Pride Radio Group</strong><br><strong>M17</strong>: 434 D</p>",
+      "description": "<p><strong>VK Calling Hub</strong><br><strong>M17</strong>: 434 B, <strong>ASL</strong>: 572981, <strong>YSF</strong>: 50505 (AU-VK-DVDU505), <strong>NXDN</strong>: 50505, <strong>P25</strong>: 50505 bridged to DVAU DMR 505</p>\r\n<p>&nbsp;</p>\r\n<p><strong>VK Nets Hub</strong><br><strong>M17</strong>: 434 E, <strong>ASL</strong>: 572982, <strong>YSF</strong>: 50500 (AU-VK-DVDU50500), <strong>NXDN</strong>: 50500, <strong>P25</strong>: 50500 bridged to DVAU DMR 50500</p>\r\n<p>&nbsp;</p>\r\n<p><strong>VK5 Sth. Aust. Hub</strong><br><strong>M17: </strong>434 C, <strong>ASL</strong>: 572983, <strong>YSF</strong>: 05055 (AU-VK5-DVDU5055), <strong>P25</strong>: 5055, <strong>NXDN</strong>: 5055, bridged to DVAU DMR 5055</p>\r\n<p>&nbsp;</p>\r\n<p><strong>Pride Radio Group</strong><br><strong>M17</strong>: 434 D<br><br><br><strong>NZ National Calling</strong><br><strong>M17</strong>: 434 Z</p>",
       "dial": {
         "callsign": "M17-434",
         "host": "45.124.54.132",
@@ -1034,7 +1077,7 @@
         "port": 17000
       },
       "id": "M17-434",
-      "name": "M17-434",
+      "name": "DVAU M17",
       "network": "m17",
       "source": "dvref",
       "sponsor": "VK5ZSH"
