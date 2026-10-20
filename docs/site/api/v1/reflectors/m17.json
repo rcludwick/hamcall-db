@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 127,
-  "generated": "2026-10-19",
+  "count": 128,
+  "generated": "2026-10-20",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -255,6 +255,33 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "PY4EI"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://xlx073.wiredham.org/",
+      "dial": {
+        "callsign": "M17-073",
+        "host": "xlx073.wiredham.org",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J"
+        ],
+        "port": 17000
+      },
+      "id": "M17-073",
+      "name": "XLX073 - THE FOG",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "The Fog"
     },
     {
       "country": "US",

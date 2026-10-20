@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 1579,
-  "generated": "2026-10-19",
+  "generated": "2026-10-20",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1945,7 +1945,7 @@
       "dashboard": "http://c4fmfun.ddns.net:2800",
       "description": "CYPRUS C4FM",
       "dial": {
-        "host": "2.86.39.124",
+        "host": "2.86.36.9",
         "kind": "ysf",
         "port": 42006
       },
@@ -3928,7 +3928,7 @@
     {
       "country": "BR",
       "dashboard": "http://189.90.244.29:80",
-      "description": "TG-72431 M.Sul",
+      "description": "SP00070/72431+",
       "dial": {
         "host": "189.90.244.29",
         "kind": "ysf",
@@ -9712,7 +9712,7 @@
       "country": "DE",
       "description": "DA1SR",
       "dial": {
-        "host": "93.244.49.191",
+        "host": "93.244.37.83",
         "kind": "ysf",
         "port": 42000
       },
@@ -10645,7 +10645,7 @@
     },
     {
       "country": "DE",
-      "dashboard": "https://ysf-deutschland.de/main2.php?room=42",
+      "dashboard": "https://ysf-deutschland.de/main.php?room=42",
       "description": "Chaoswelle",
       "dial": {
         "host": "ysf-deutschland.de",
@@ -10719,7 +10719,7 @@
     },
     {
       "country": "DE",
-      "dashboard": "https://ysf-deutschland.de",
+      "dashboard": "https://ysf-deutschland.de/main.php?room=66",
       "description": "FM-Funknetz",
       "dial": {
         "host": "ysf-deutschland.de",
@@ -10734,7 +10734,7 @@
     },
     {
       "country": "DE",
-      "dashboard": "https://ysf-deutschland.de",
+      "dashboard": "https://ysf-deutschland.de/main.php?room=98",
       "description": "ChatGPT Bot",
       "dial": {
         "host": "ysf-deutschland.de",
@@ -10764,7 +10764,7 @@
     },
     {
       "country": "DE",
-      "dashboard": "https://ysf-deutschland.de",
+      "dashboard": "https://ysf-deutschland.de/main.php?room=76",
       "description": "Multimode",
       "dial": {
         "host": "85.215.138.68",
@@ -16302,7 +16302,7 @@
       "dashboard": "http://192.168.0.101",
       "description": "GAYLORD-MI",
       "dial": {
-        "host": "71.82.92.107",
+        "host": "97.83.44.73",
         "kind": "ysf",
         "port": 42000
       },
@@ -21929,15 +21929,15 @@
     },
     {
       "country": "BE",
-      "dashboard": "http://xlx.on7hh.be",
-      "description": "XLXD Server",
+      "dashboard": "http://xlx.on7hh.be/",
+      "description": "URF898",
       "dial": {
         "host": "vps.on7hh.be",
         "kind": "ysf",
         "port": 42000
       },
       "id": "88898",
-      "name": "XLX898",
+      "name": "URF898",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "ON7HH"

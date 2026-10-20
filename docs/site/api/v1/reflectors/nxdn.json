@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 408,
-  "generated": "2026-10-19",
+  "count": 410,
+  "generated": "2026-10-20",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -746,14 +746,14 @@
     {
       "country": "BE",
       "dashboard": "http://xlx.on7hh.be/",
-      "description": "<p>Linked to <strong>XLX898 </strong>(YSF #88898).</p>",
+      "description": "<p>Wallonie <em>(Belgique</em><em> francophone)</em> XLX Multiprotocol Gateway Reflector (DMR C4FM D-STAR NXDN).</p>\r\n<p><strong>No transcoding.</strong></p>",
       "dial": {
         "host": "vps.on7hh.be",
         "kind": "nxdn",
         "port": 41400
       },
       "id": "20698",
-      "name": "NXDN 20698 - Belgique francophone",
+      "name": "URF898",
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "ON7HH"
@@ -4824,6 +4824,20 @@
       "sponsor": "KY4VC"
     },
     {
+      "country": "US",
+      "dashboard": "https://dvnext.lzarc.com",
+      "dial": {
+        "host": "nxdn.lzarc.com",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "56420",
+      "name": "LZARC",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "W0WC"
+    },
+    {
       "country": "GB",
       "dashboard": "http://wf-link.ddns.net/",
       "dial": {
@@ -5511,6 +5525,18 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "Chandler Ham Radio Club"
+    },
+    {
+      "country": "US",
+      "dial": {
+        "host": "98.28.196.189",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "850",
+      "name": "US-HAMLINK",
+      "network": "nxdn",
+      "source": "dvref"
     },
     {
       "country": "US",
