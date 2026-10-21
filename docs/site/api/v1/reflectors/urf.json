@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 130,
-  "generated": "2026-10-20",
+  "count": 131,
+  "generated": "2026-10-21",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -675,7 +675,7 @@
       "country": "JP",
       "dashboard": "http://xlx274.duckdns.org/",
       "dial": {
-        "host": "60.37.69.6",
+        "host": "xlx274.duckdns.org",
         "kind": "urf"
       },
       "id": "274",
@@ -1241,6 +1241,20 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "QuadNet"
+    },
+    {
+      "country": "NL",
+      "dashboard": "http://xlx717.ddns.net/",
+      "description": "<p>A multimode YSFReflector In Den Bosch</p>",
+      "dial": {
+        "host": "kiwisdr.ddns.net",
+        "kind": "urf"
+      },
+      "id": "597",
+      "name": "BRAC Den Bosch Reflector",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "BRAC A25"
     },
     {
       "country": "IT",

@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1579,
-  "generated": "2026-10-20",
+  "count": 1580,
+  "generated": "2026-10-21",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -8563,10 +8563,10 @@
     },
     {
       "country": "ES",
-      "dashboard": "https://xlx214.xreflector.es/2142",
-      "description": "IPSC2-DR-2X",
+      "dashboard": "https://ed7zak.c4fm.es/",
+      "description": "DR-2X",
       "dial": {
-        "host": "xlx214.xreflector.es",
+        "host": "ed7zak.c4fm.es",
         "kind": "ysf",
         "port": 42398
       },
@@ -18042,6 +18042,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "4G1FTU"
+    },
+    {
+      "country": "NL",
+      "dashboard": "http://xlx717.ddns.net/",
+      "description": "URF597",
+      "dial": {
+        "host": "kiwisdr.ddns.net",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "59709",
+      "name": "URF597",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "BRAC A25"
     },
     {
       "country": "US",

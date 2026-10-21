@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 449,
-  "generated": "2026-10-20",
+  "count": 451,
+  "generated": "2026-10-21",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1705,7 +1705,7 @@
       "country": "JP",
       "dashboard": "http://xlx274.duckdns.org/",
       "dial": {
-        "host": "60.37.69.6",
+        "host": "xlx274.duckdns.org",
         "kind": "p25",
         "port": 41000
       },
@@ -5445,6 +5445,20 @@
     },
     {
       "country": "US",
+      "dashboard": "http://45.33.22.225:4000/",
+      "dial": {
+        "host": "45.33.22.225",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "65123",
+      "name": "MRN P25 Reflector",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Murphy  Radio Network (MRN)"
+    },
+    {
+      "country": "US",
       "dashboard": "http://p25.kq4wze.online:4000/",
       "dial": {
         "host": "p25.kq4wze.online",
@@ -5829,7 +5843,7 @@
     },
     {
       "country": "UY",
-      "dashboard": "http://uruguaynet.2mydns.net",
+      "dashboard": "http://uruguaynet1.2mydns.net",
       "dial": {
         "host": "198.245.55.26",
         "kind": "p25",
@@ -6048,6 +6062,18 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "Chandler Ham Radio Club"
+    },
+    {
+      "country": "US",
+      "dial": {
+        "host": "98.28.196.189",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "850",
+      "name": "US-HAMLINK",
+      "network": "p25",
+      "source": "dvref"
     },
     {
       "country": "US",
