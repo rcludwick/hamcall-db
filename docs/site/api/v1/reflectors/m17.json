@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 128,
-  "generated": "2026-10-21",
+  "generated": "2026-10-22",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -255,33 +255,6 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "PY4EI"
-    },
-    {
-      "country": "US",
-      "dashboard": "http://xlx073.wiredham.org/",
-      "dial": {
-        "callsign": "M17-073",
-        "host": "xlx073.wiredham.org",
-        "kind": "m17",
-        "modules": [
-          "A",
-          "B",
-          "C",
-          "D",
-          "E",
-          "F",
-          "G",
-          "H",
-          "I",
-          "J"
-        ],
-        "port": 17000
-      },
-      "id": "M17-073",
-      "name": "XLX073 - THE FOG",
-      "network": "m17",
-      "source": "dvref",
-      "sponsor": "The Fog"
     },
     {
       "country": "US",
@@ -555,6 +528,49 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "Digital Voice GREECE"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://k2hzem17.duckdns.org",
+      "dial": {
+        "callsign": "M17-177",
+        "host": "k2hzem17.duckdns.org",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-177",
+      "name": "DXLINK",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "K2HZE"
     },
     {
       "country": "KR",
@@ -958,7 +974,10 @@
         "host": "vk4mcureflector.ddns.net",
         "kind": "m17",
         "modules": [
-          "A"
+          "A",
+          "B",
+          "C",
+          "E"
         ],
         "port": 17000
       },

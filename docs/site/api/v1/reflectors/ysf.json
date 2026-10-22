@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1580,
-  "generated": "2026-10-21",
+  "count": 1583,
+  "generated": "2026-10-22",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -2956,6 +2956,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "KE4EVL"
+    },
+    {
+      "country": "NL",
+      "dashboard": "http://xlx.pd3rfr.nl",
+      "description": "URF700",
+      "dial": {
+        "host": "PD3RFR.myasustor.com",
+        "kind": "ysf",
+        "port": 42001
+      },
+      "id": "00700",
+      "name": "URF700",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "PD3RFR"
     },
     {
       "country": "CA",
@@ -8854,6 +8869,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "IZ8LYA"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://c4fm.ddns.net:82",
+      "description": "YSFReflector",
+      "dial": {
+        "host": "c4fm.ddns.net",
+        "kind": "ysf",
+        "port": 42005
+      },
+      "id": "22200",
+      "name": "C4FM-ELBA",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "Benacus"
     },
     {
       "country": "IT",
@@ -21707,6 +21737,21 @@
       "name": "XLX499",
       "network": "ysf",
       "source": "dvref"
+    },
+    {
+      "country": "ES",
+      "dashboard": "http://ysf.ea5khu.es",
+      "description": "Alicante Shack",
+      "dial": {
+        "host": "ysf.ea5khu.es",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "87465",
+      "name": "EA5KHU-YSF",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "EA5KHU"
     },
     {
       "country": "IT",
