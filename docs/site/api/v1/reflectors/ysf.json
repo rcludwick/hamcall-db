@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1583,
-  "generated": "2026-10-22",
+  "count": 1585,
+  "generated": "2026-10-23",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -398,10 +398,10 @@
     },
     {
       "country": "JP",
-      "dashboard": "http://118.27.15.122/db/",
+      "dashboard": "http://153.195.218.129/",
       "description": "XLX109F",
       "dial": {
-        "host": "118.27.15.122",
+        "host": "153.195.218.129",
         "kind": "ysf",
         "port": 42000
       },
@@ -1033,7 +1033,7 @@
     },
     {
       "country": "JP",
-      "dashboard": "http://d-star.f5.si/db/",
+      "dashboard": "http://d-star.f5.si/",
       "description": "XLX109 Fusion",
       "dial": {
         "host": "d-star.f5.si",
@@ -2899,6 +2899,21 @@
       "name": "W6IDK HUB",
       "network": "ysf",
       "source": "dvref"
+    },
+    {
+      "country": "RE",
+      "dashboard": "https://ysf.arra.re",
+      "description": "YSF - C4FM",
+      "dial": {
+        "host": "fr5fc.ddns.net",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00647",
+      "name": "FR-La_Reunion",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "FR5FC"
     },
     {
       "country": "US",
@@ -8224,7 +8239,7 @@
       "dashboard": "https://ysfbrazilx.com",
       "description": "Wires-X  Link",
       "dial": {
-        "host": "180.199.65.221",
+        "host": "180.199.10.191",
         "kind": "ysf",
         "port": 42395
       },
@@ -13600,7 +13615,7 @@
       "dashboard": "http://wp4nnz.ddns.net/index.php",
       "description": "Coamo WP4NNZ",
       "dial": {
-        "host": "67.224.140.9",
+        "host": "67.224.140.59",
         "kind": "ysf",
         "port": 42002
       },
@@ -17984,6 +17999,21 @@
       "name": "XLX318 Hemet",
       "network": "ysf",
       "source": "dvref"
+    },
+    {
+      "country": "NZ",
+      "dashboard": "http://xlx530.hopto.org/",
+      "description": "XLX530 Fusion",
+      "dial": {
+        "host": "zldigitalreflectors.hopto.org",
+        "kind": "ysf",
+        "port": 42025
+      },
+      "id": "59245",
+      "name": "XLX530",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "ZL3DMH"
     },
     {
       "country": "AU",

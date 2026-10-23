@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 128,
-  "generated": "2026-10-22",
+  "count": 131,
+  "generated": "2026-10-23",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -399,6 +399,24 @@
       "sponsor": "ADR.Thailand Team DE E23JWE"
     },
     {
+      "country": "US",
+      "dashboard": "https://xlx139.dyndns.org",
+      "dial": {
+        "callsign": "M17-139",
+        "host": "xlx139.dyndns.org",
+        "kind": "m17",
+        "modules": [
+          "C"
+        ],
+        "port": 17000
+      },
+      "id": "M17-139",
+      "name": "M17-139 Maine M17",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "ne-dstar.org"
+    },
+    {
       "country": "TH",
       "dashboard": "http://m17.hs3tdi.com:3000",
       "description": "<p>M17-148 Thailand</p>",
@@ -531,7 +549,7 @@
     },
     {
       "country": "US",
-      "dashboard": "http://k2hzem17.duckdns.org",
+      "dashboard": "https://k2hzem17.duckdns.org",
       "dial": {
         "callsign": "M17-177",
         "host": "k2hzem17.duckdns.org",
@@ -615,6 +633,49 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "DS5QDR DV HAM World"
+    },
+    {
+      "country": "KR",
+      "dashboard": "http://ds5qdr-3rd.iptime.org:88/xlxd",
+      "dial": {
+        "callsign": "M17-183",
+        "host": "220.119.199.180",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-183",
+      "name": "M17-183",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "DS5QDR"
     },
     {
       "country": "GR",
@@ -2012,6 +2073,24 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "F4LML"
+    },
+    {
+      "country": "FR",
+      "dashboard": "http://m17-fra.f5dan.fr:86",
+      "dial": {
+        "callsign": "M17-FRA",
+        "host": "m17-fra.f5dan.fr",
+        "kind": "m17",
+        "modules": [
+          "B"
+        ],
+        "port": 17100
+      },
+      "id": "M17-FRA",
+      "name": "M17-FRA",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "F5DAN"
     },
     {
       "country": "IT",

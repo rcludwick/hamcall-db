@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 411,
-  "generated": "2026-10-22",
+  "generated": "2026-10-23",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -364,6 +364,20 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "NXDN 138 XNexus Thailand"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://xlx139.dyndns.org",
+      "dial": {
+        "host": "xlx139.dyndns.org",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "139",
+      "name": "Maine 139 NXDN",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "ne-dstar.org"
     },
     {
       "country": "ES",
@@ -1244,20 +1258,6 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "IZ7KYS"
-    },
-    {
-      "country": "IT",
-      "dashboard": "http://22367.ddns.net",
-      "dial": {
-        "host": "22367.ddns.net",
-        "kind": "nxdn",
-        "port": 41400
-      },
-      "id": "22367",
-      "name": "Ham Network",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "By IK2UCJ & IZ3VDA"
     },
     {
       "country": "ES",
@@ -4524,7 +4524,7 @@
       "dashboard": "https://xlx049.dyndns.org",
       "description": "<p>XLX049C-REF049C-BM TG 312543</p>",
       "dial": {
-        "host": "nxdn49.dyndns.org",
+        "host": "xlx049.dyndns.org",
         "kind": "nxdn",
         "port": 41400
       },

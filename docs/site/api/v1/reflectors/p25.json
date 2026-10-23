@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 451,
-  "generated": "2026-10-22",
+  "count": 453,
+  "generated": "2026-10-23",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -682,6 +682,20 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "P25 138 XLX138 XNexus Thailand"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://xlx139.dyndns.org",
+      "dial": {
+        "host": "xlx139.dyndns.org",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "139",
+      "name": "Maine P25 Talkgroup",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "ne-dstar.org"
     },
     {
       "country": "ES",
@@ -4777,7 +4791,7 @@
       "country": "US",
       "dashboard": "https://xlx049.dyndns.org",
       "dial": {
-        "host": "p2549.dyndns.org",
+        "host": "xlx049.dyndns.org",
         "kind": "p25",
         "port": 41000
       },
@@ -5540,6 +5554,20 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "W8FLH"
+    },
+    {
+      "country": "TH",
+      "dashboard": "https://103.91.205.89/html/100watts.html",
+      "dial": {
+        "host": "103.91.205.89",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "69",
+      "name": "SISAKET THAILAND",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "HS3SXW"
     },
     {
       "country": "CA",
