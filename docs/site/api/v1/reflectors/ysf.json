@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1585,
-  "generated": "2026-10-23",
+  "count": 1586,
+  "generated": "2026-10-24",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -2530,6 +2530,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "VK2HK"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://ysf.k5ain.com:42001",
+      "description": "Arkansas CN",
+      "dial": {
+        "host": "ysf.k5ain.com",
+        "kind": "ysf",
+        "port": 42002
+      },
+      "id": "00501",
+      "name": "Arkansas CN",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "K5AIN"
     },
     {
       "country": "US",
@@ -14815,6 +14830,21 @@
     },
     {
       "country": "FR",
+      "dashboard": "http://xlx311.ysf-france.fr:86",
+      "description": "Serveur XLX311",
+      "dial": {
+        "host": "xlx311.ysf-france.fr",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "42311",
+      "name": "YSF-XLX311",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "F1PTL Bruno"
+    },
+    {
+      "country": "FR",
       "dashboard": "http://gpj-hamradio.servebeer.com/index.php",
       "description": "C4FM for xlx",
       "dial": {
@@ -14885,21 +14915,6 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "N1YKT"
-    },
-    {
-      "country": "FR",
-      "dashboard": "http://xlx650.ysf-france.fr:85",
-      "description": "Serveur XLX650",
-      "dial": {
-        "host": "xlx650.ysf-france.fr",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "42650",
-      "name": "XLX-650",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "F1PTL Bruno"
     },
     {
       "country": "PT",
@@ -17829,6 +17844,21 @@
       "sponsor": "K0BFE"
     },
     {
+      "country": "US",
+      "dashboard": "http://ysf.k5ain.com:42003",
+      "description": "ASL YSF Link",
+      "dial": {
+        "host": "ysf.k5ain.com",
+        "kind": "ysf",
+        "port": 42004
+      },
+      "id": "57711",
+      "name": "K5AIN ASL",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "K5AIN"
+    },
+    {
       "country": "SE",
       "dashboard": "https://sk7rn.se/status",
       "description": "BM | SvxLink",
@@ -20286,21 +20316,6 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "HC1LNM"
-    },
-    {
-      "country": "US",
-      "dashboard": "http://172.232.15.244",
-      "description": "xlx245",
-      "dial": {
-        "host": "172.232.15.244",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "74132",
-      "name": "us xlx245",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "carroll price"
     },
     {
       "country": "DE",

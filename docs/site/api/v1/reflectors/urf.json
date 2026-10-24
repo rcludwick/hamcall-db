@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 132,
-  "generated": "2026-10-23",
+  "count": 133,
+  "generated": "2026-10-24",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1200,6 +1200,19 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "HB9GFX"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://urf.ne5ie.com",
+      "dial": {
+        "host": "urf.ne5ie.com",
+        "kind": "urf"
+      },
+      "id": "513",
+      "name": "A URF reflector I guess",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "NE5IE"
     },
     {
       "country": "US",
