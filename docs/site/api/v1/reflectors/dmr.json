@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 190,
-  "generated": "2026-10-24",
+  "count": 192,
+  "generated": "2026-10-25",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -119,6 +119,28 @@
       "sponsor": "Rescue System",
       "system": "871",
       "talkgroups": "reflectors/dmr/871/talkgroups.json"
+    },
+    {
+      "country": "FR",
+      "dashboard": "http://2082.adn.systems/",
+      "dial": {
+        "host": "2082.adn.systems",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "adn-france-digital",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/adn-france-digital/talkgroups/"
+      },
+      "id": "adn-france-digital-server-adn-france-digital",
+      "name": "ADN France Digital",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "F6KTM HamClub Station",
+      "system": "adn-france-digital",
+      "talkgroups": "reflectors/dmr/adn-france-digital/talkgroups.json"
     },
     {
       "country": "FR",
@@ -1982,26 +2004,25 @@
     },
     {
       "country": "FR",
-      "dashboard": "http://ctb1.ysf-france.fr:8086/",
-      "description": "<p>Serveur HBlink4 F1PTL</p>\r\n<p>TG20800 Interco avec YSF-France (YSF/DMR)</p>\r\n<p>TG20841 Interco avec YSF-DPT41 (YSF/DMR)</p>\r\n<p>TG20862 interco avec YSF-TG20862 (YSF/DMR)</p>\r\n<p>TG20892 interco OpenAI (YSF/DMR)</p>",
+      "dashboard": "http://xlx311.ysf-france.fr:8585/",
       "dial": {
-        "host": "hb4.ysf-france.fr",
+        "host": "xlx311.ysf-france.fr",
         "kind": "mmdvm",
         "port": 62031,
         "requires": [
           "dmr_id",
           "password"
         ],
-        "system": "hb_fr_f1ptl",
-        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/hb_fr_f1ptl/talkgroups/"
+        "system": "hb_fr_hblink4",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/hb_fr_hblink4/talkgroups/"
       },
-      "id": "hb_fr_f1ptl-server-hb_fr_f1ptl",
-      "name": "HB_FR_F1PTL",
+      "id": "hb_fr_hblink4-server-hb_fr_hblink4",
+      "name": "HB_FR_HBLINK4",
       "network": "dmr",
       "source": "dvref",
       "sponsor": "F1PTL Bruno",
-      "system": "hb_fr_f1ptl",
-      "talkgroups": "reflectors/dmr/hb_fr_f1ptl/talkgroups.json"
+      "system": "hb_fr_hblink4",
+      "talkgroups": "reflectors/dmr/hb_fr_hblink4/talkgroups.json"
     },
     {
       "country": "IT",
@@ -3915,6 +3936,28 @@
       "sponsor": "mb6ds",
       "system": "xlx942",
       "talkgroups": "reflectors/dmr/xlx942/talkgroups.json"
+    },
+    {
+      "country": "FR",
+      "dashboard": "https://xlx976.f8kgk.fr",
+      "dial": {
+        "host": "xlx976.f8kgk.fr",
+        "kind": "mmdvm",
+        "port": 62030,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "xlx976",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/xlx976/talkgroups/"
+      },
+      "id": "xlx976-server-xlx976",
+      "name": "XLX976",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "F8KGK HamClub Station",
+      "system": "xlx976",
+      "talkgroups": "reflectors/dmr/xlx976/talkgroups.json"
     },
     {
       "country": "US",

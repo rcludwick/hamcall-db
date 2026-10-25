@@ -1,21 +1,21 @@
 {
   "api_version": "v1",
   "client_refresh_days": 7,
-  "count": 3869,
+  "count": 3879,
   "endpoints": {
     "all": "reflectors.json",
     "network": "reflectors/{network}.json",
     "openapi": "openapi.json"
   },
-  "expires_hint": "2026-10-31",
-  "generated": "2026-10-24",
+  "expires_hint": "2026-11-01",
+  "generated": "2026-10-25",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
   "networks": {
     "dmr": {
-      "count": 190,
-      "generated": "2026-10-24",
+      "count": 192,
+      "generated": "2026-10-25",
       "source": {
         "name": "DVRef",
         "url": "https://dvref.com/api/v2/"
@@ -56,6 +56,12 @@
           "fetched": "2026-10-07",
           "generated": "2026-09-08",
           "url": "reflectors/dmr/871/talkgroups.json"
+        },
+        "adn-france-digital": {
+          "count": 3,
+          "fetched": "2026-10-25",
+          "generated": "2026-10-25",
+          "url": "reflectors/dmr/adn-france-digital/talkgroups.json"
         },
         "adn-hauts-de-france": {
           "count": 1,
@@ -369,6 +375,12 @@
           "generated": "2026-09-20",
           "url": "reflectors/dmr/hb_fr_f1ptl/talkgroups.json"
         },
+        "hb_fr_hblink4": {
+          "count": 3,
+          "fetched": "2026-10-25",
+          "generated": "2026-10-25",
+          "url": "reflectors/dmr/hb_fr_hblink4/talkgroups.json"
+        },
         "hb_it_bat": {
           "count": 17,
           "fetched": "2026-10-20",
@@ -485,7 +497,7 @@
         },
         "ipsc2-poland": {
           "count": 0,
-          "fetched": "2026-09-26",
+          "fetched": "2026-10-25",
           "generated": "2026-09-26",
           "url": "reflectors/dmr/ipsc2-poland/talkgroups.json"
         },
@@ -735,6 +747,12 @@
           "generated": "2026-10-05",
           "url": "reflectors/dmr/xlx942/talkgroups.json"
         },
+        "xlx976": {
+          "count": 6,
+          "fetched": "2026-10-25",
+          "generated": "2026-10-25",
+          "url": "reflectors/dmr/xlx976/talkgroups.json"
+        },
         "xlxdam": {
           "count": 1,
           "fetched": "2026-10-05",
@@ -757,8 +775,8 @@
       "url": "reflectors/dmr.json"
     },
     "dstar": {
-      "count": 964,
-      "generated": "2026-10-24",
+      "count": 957,
+      "generated": "2026-10-25",
       "source": {
         "name": "XLX registry (LX1IQ) + Pi-Star DExtra hosts + Pi-Star DPlus/DCS names",
         "url": "http://xlxapi.rlx.lu/api.php?do=GetReflectorList"
@@ -766,8 +784,8 @@
       "url": "reflectors/dstar.json"
     },
     "m17": {
-      "count": 131,
-      "generated": "2026-10-24",
+      "count": 136,
+      "generated": "2026-10-25",
       "source": {
         "name": "DVRef",
         "url": "https://dvref.com/api/v2/"
@@ -775,8 +793,8 @@
       "url": "reflectors/m17.json"
     },
     "nxdn": {
-      "count": 412,
-      "generated": "2026-10-24",
+      "count": 365,
+      "generated": "2026-10-25",
       "source": {
         "name": "DVRef",
         "url": "https://dvref.com/api/v2/"
@@ -784,8 +802,8 @@
       "url": "reflectors/nxdn.json"
     },
     "p25": {
-      "count": 453,
-      "generated": "2026-10-24",
+      "count": 450,
+      "generated": "2026-10-25",
       "source": {
         "name": "DVRef",
         "url": "https://dvref.com/api/v2/"
@@ -793,8 +811,8 @@
       "url": "reflectors/p25.json"
     },
     "urf": {
-      "count": 133,
-      "generated": "2026-10-24",
+      "count": 134,
+      "generated": "2026-10-25",
       "source": {
         "name": "DVRef",
         "url": "https://dvref.com/api/v2/"
@@ -802,8 +820,8 @@
       "url": "reflectors/urf.json"
     },
     "ysf": {
-      "count": 1586,
-      "generated": "2026-10-24",
+      "count": 1645,
+      "generated": "2026-10-25",
       "source": {
         "name": "DVRef",
         "url": "https://dvref.com/api/v2/"

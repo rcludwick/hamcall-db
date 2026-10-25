@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 133,
-  "generated": "2026-10-24",
+  "count": 134,
+  "generated": "2026-10-25",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1609,6 +1609,25 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "cumbriaCQ.com (XLX921)"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://k2as-ref.xyz/",
+      "description": "<p>Rochester Area Digital Multiprotocol XLX927 Reflector supporting Finger Lakes and Rochester, NY areas</p>",
+      "dial": {
+        "host": "69.164.209.180",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "B",
+          "F"
+        ]
+      },
+      "id": "927",
+      "name": "US-XLX927",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "RADNET"
     },
     {
       "country": "FR",

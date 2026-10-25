@@ -1,0 +1,43 @@
+{
+  "api_version": "v1",
+  "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
+  "client_refresh_days": 7,
+  "count": 6,
+  "generated": "2026-10-25",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
+  "network": "dmr",
+  "schema_version": 1,
+  "source": {
+    "name": "DVRef",
+    "url": "https://dvref.com/api/v2/dmr/networks/xlx976/talkgroups/"
+  },
+  "system": "xlx976",
+  "talkgroups": [
+    {
+      "name": "Peanut XLX976C",
+      "tg": 4003
+    },
+    {
+      "name": "Francophonie",
+      "tg": 4004
+    },
+    {
+      "name": "Link XLX209G",
+      "tg": 4007
+    },
+    {
+      "name": "France Multiprotocole",
+      "tg": 4013
+    },
+    {
+      "name": "Peanut DMR976",
+      "tg": 4018
+    },
+    {
+      "name": "YSF France DG-ID 71",
+      "tg": 4025
+    }
+  ]
+}
