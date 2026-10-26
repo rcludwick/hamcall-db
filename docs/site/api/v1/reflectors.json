@@ -2,19 +2,19 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/\nXLX reflector data from the XLX registry maintained by Luc Engelmann, LX1IQ (http://xlxapi.rlx.lu/).\nStandalone XRF reflector data from the Pi-Star DExtra host file (http://www.pistar.uk/downloads/DExtra_Hosts.txt).\nREF and DCS reflector names from the Pi-Star DPlus and DCS host files (http://www.pistar.uk/downloads/).",
   "client_refresh_days": 7,
-  "count": 3879,
-  "generated": "2026-10-25",
+  "count": 3787,
+  "generated": "2026-10-26",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
   "networks": {
     "dmr": 192,
-    "dstar": 957,
+    "dstar": 956,
     "m17": 136,
-    "nxdn": 365,
-    "p25": 450,
-    "urf": 134,
-    "ysf": 1645
+    "nxdn": 341,
+    "p25": 380,
+    "urf": 135,
+    "ysf": 1647
   },
   "reflectors": [
     {
@@ -5388,7 +5388,7 @@
         "DCS069"
       ],
       "country": "Spain",
-      "dashboard": "https://grupoelite.es/db",
+      "dashboard": "http://www.grupoelite.es/db",
       "description": "Grupo ELITE",
       "dial": {
         "callsign": "XRF069",
@@ -5881,8 +5881,8 @@
         "DCS095"
       ],
       "country": "Japan",
-      "dashboard": "http://xrf095.xreflector-jp.org",
-      "description": "Hosted by JP7ELN in Hanamaki-City.",
+      "dashboard": "http://xrf095.xreflector-jp.org/",
+      "description": "Hosted by JP7ELN in Hanamaki-City, Japan.",
       "dial": {
         "callsign": "XRF095",
         "host": "128.22.171.138",
@@ -6889,6 +6889,26 @@
     },
     {
       "aliases": [
+        "XRF148",
+        "REF148",
+        "DCS148"
+      ],
+      "country": "Thailand",
+      "dashboard": "https://xlx.hs3tdi.com",
+      "description": "Backup Reflectors",
+      "dial": {
+        "callsign": "XRF148",
+        "host": "122.154.141.51",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLX148",
+      "name": "XLX148",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "aliases": [
         "XRF149",
         "REF149",
         "DCS149"
@@ -7098,7 +7118,7 @@
       "description": "Digital ham Thai",
       "dial": {
         "callsign": "XRF162",
-        "host": "27.130.224.142",
+        "host": "27.130.221.166",
         "kind": "dextra",
         "port": 30001
       },
@@ -7973,8 +7993,8 @@
         "DCS208"
       ],
       "country": "France",
-      "dashboard": "http://urf208.f5kav.fr",
-      "description": "French Multimode Reflector, brought to you by F5KAV Club",
+      "dashboard": "http://xlx208.f5kav.fr",
+      "description": "French D-Star XLX Multiprotocol Reflector and Smart Group Server, brought to you by F5KAV",
       "dial": {
         "callsign": "XRF208",
         "host": "213.186.34.50",
@@ -8037,7 +8057,7 @@
       "description": "XLX211 Multiprotocol Reflector by EA4EJV, info: [email removed]",
       "dial": {
         "callsign": "XRF211",
-        "host": "81.33.45.135",
+        "host": "88.1.113.13",
         "kind": "dextra",
         "port": 30001
       },
@@ -8706,26 +8726,6 @@
     },
     {
       "aliases": [
-        "XRF246",
-        "REF246",
-        "DCS246"
-      ],
-      "country": "N California, USA",
-      "dashboard": "https://xlx.mkagawa.com",
-      "description": "Silicon Valley Japanese Ham Club (SVJHC) and NW6UP",
-      "dial": {
-        "callsign": "XRF246",
-        "host": "172.93.48.159",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLX246",
-      "name": "XLX246",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "aliases": [
         "XRF247",
         "REF247",
         "DCS247"
@@ -9216,6 +9216,26 @@
       },
       "id": "XLX273",
       "name": "XLX273",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "aliases": [
+        "XRF274",
+        "REF274",
+        "DCS274"
+      ],
+      "country": "Japan",
+      "dashboard": "http://xlx274.duckdns.org/",
+      "description": "Funabashi",
+      "dial": {
+        "callsign": "XRF274",
+        "host": "124.87.101.215",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLX274",
+      "name": "XLX274",
       "network": "dstar",
       "source": "xlx"
     },
@@ -9821,9 +9841,7 @@
       "aliases": [
         "XRF311",
         "REF311",
-        "REF650",
-        "DCS311",
-        "DCS650"
+        "DCS311"
       ],
       "country": "France",
       "dashboard": "http://xlx311.ysf-france.fr:85",
@@ -10194,25 +10212,6 @@
       },
       "id": "XLX330",
       "name": "XLX330",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "aliases": [
-        "XRF331",
-        "REF331",
-        "DCS331"
-      ],
-      "country": "Coamo PR",
-      "description": "Bacalao",
-      "dial": {
-        "callsign": "XRF331",
-        "host": "67.224.140.59",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLX331",
-      "name": "XLX331",
       "network": "dstar",
       "source": "xlx"
     },
@@ -11087,7 +11086,7 @@
       "description": "IT AOT TG 22206",
       "dial": {
         "callsign": "XRF390",
-        "host": "79.26.177.138",
+        "host": "82.48.41.240",
         "kind": "dextra",
         "port": 30001
       },
@@ -12640,9 +12639,9 @@
         "REF479",
         "DCS479"
       ],
-      "country": "USA",
-      "dashboard": "http://n9ink.net/db",
-      "description": "Welcome to Ozark Digital",
+      "country": "United States",
+      "dashboard": "http://imrs.amcomm.network",
+      "description": "AmComm Network IMRS",
       "dial": {
         "callsign": "XRF479",
         "host": "198.58.106.10",
@@ -13280,7 +13279,7 @@
       ],
       "country": "USA",
       "dashboard": "http://520ref.theworkpc.com:8809",
-      "description": "v2.6.0 Placeholder",
+      "description": "v2.6.1 Placeholder",
       "dial": {
         "callsign": "XRF520",
         "host": "44.32.128.18",
@@ -13991,6 +13990,26 @@
     },
     {
       "aliases": [
+        "XRF595",
+        "REF595",
+        "DCS595"
+      ],
+      "country": "Italia",
+      "dashboard": "https://xlx.xlx595.net",
+      "description": "D-STAR ITALY NORD MP by IZ1MLF",
+      "dial": {
+        "callsign": "XRF595",
+        "host": "217.160.187.38",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLX595",
+      "name": "XLX595",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "aliases": [
         "XRF598",
         "REF598",
         "DCS598"
@@ -14371,26 +14390,6 @@
     },
     {
       "aliases": [
-        "XRF633",
-        "REF633",
-        "DCS633"
-      ],
-      "country": "United States",
-      "dashboard": "http://xlx.ke0tcf.radio",
-      "description": "KE0TCF hosted reflector in Tri-Cities Nebraska",
-      "dial": {
-        "callsign": "XRF633",
-        "host": "74.51.129.179",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLX633",
-      "name": "XLX633",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "aliases": [
         "XRF634",
         "REF634",
         "DCS634"
@@ -14586,28 +14585,6 @@
       },
       "id": "XLX649",
       "name": "XLX649",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "aliases": [
-        "XRF650",
-        "REF311",
-        "REF650",
-        "DCS311",
-        "DCS650"
-      ],
-      "country": "France",
-      "dashboard": "http://xlx650.ysf-france.fr:85",
-      "description": "Serveur C4FM/YSF",
-      "dial": {
-        "callsign": "XRF650",
-        "host": "176.134.151.34",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLX650",
-      "name": "XLX650",
       "network": "dstar",
       "source": "xlx"
     },
@@ -14858,7 +14835,7 @@
         "DCS673"
       ],
       "country": "Japan",
-      "dashboard": "http://xrf673.xreflector-jp.org",
+      "dashboard": "http://xrf673.xreflector-jp.org/",
       "description": "Hosted by JL3ZIN in Takatsuki-City, Osaka.",
       "dial": {
         "callsign": "XRF673",
@@ -15816,7 +15793,7 @@
       "description": "Hosted by Syunan-City Susuma Reflector",
       "dial": {
         "callsign": "XRF745",
-        "host": "131.129.105.238",
+        "host": "131.129.106.231",
         "kind": "dextra",
         "port": 30001
       },
@@ -17149,8 +17126,8 @@
         "DCS845"
       ],
       "country": "USA",
-      "dashboard": "https://xlx845.pota.review",
-      "description": "Sponsored by POTA News and Review https://pota.review",
+      "dashboard": "https://xlx845.pota.review/dashboard",
+      "description": "Sponsored by POTA News and Reviews https://pota.review",
       "dial": {
         "callsign": "XRF845",
         "host": "71.174.60.28",
@@ -17273,7 +17250,7 @@
       "description": "Gruppo Dstar Agrigento",
       "dial": {
         "callsign": "XRF862",
-        "host": "195.231.118.80",
+        "host": "195.231.117.61",
         "kind": "dextra",
         "port": 30001
       },
@@ -18079,26 +18056,6 @@
     },
     {
       "aliases": [
-        "XRF931",
-        "REF931",
-        "DCS931"
-      ],
-      "country": "USA",
-      "dashboard": "http://wlvsys.net",
-      "description": "The WLV Multimode System",
-      "dial": {
-        "callsign": "XRF931",
-        "host": "172.236.106.40",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLX931",
-      "name": "XLX931",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "aliases": [
         "XRF932",
         "REF932",
         "DCS932"
@@ -18121,14 +18078,16 @@
       "aliases": [
         "XRF933",
         "REF933",
-        "DCS933"
+        "REF970",
+        "DCS933",
+        "DCS970"
       ],
-      "country": "France",
-      "dashboard": "http://xlx933.hamdigital.fr",
-      "description": "XLX933 Reflecteur France DSTAR",
+      "country": "Italy",
+      "dashboard": "http://xlx933.duckdns.org",
+      "description": "D-STAR ITALY NORD MP",
       "dial": {
         "callsign": "XRF933",
-        "host": "51.254.33.194",
+        "host": "95.216.221.226",
         "kind": "dextra",
         "port": 30001
       },
@@ -18587,7 +18546,7 @@
       "description": "XLX966 for BG5CIA TEST ONLY",
       "dial": {
         "callsign": "XRF966",
-        "host": "115.239.124.96",
+        "host": "125.123.186.222",
         "kind": "dextra",
         "port": 30001
       },
@@ -18618,21 +18577,23 @@
     },
     {
       "aliases": [
-        "XRF973",
-        "REF973",
-        "DCS973"
+        "XRF970",
+        "REF933",
+        "REF970",
+        "DCS933",
+        "DCS970"
       ],
-      "country": "FRANCE",
-      "dashboard": "https://f4gje.freeboxos.fr",
-      "description": "Reflector managed by F4GJE",
+      "country": "Italy",
+      "dashboard": "http://xlx970.duckdns.org",
+      "description": "D-STAR NORD by IZ1MLF",
       "dial": {
-        "callsign": "XRF973",
-        "host": "82.65.1.185",
+        "callsign": "XRF970",
+        "host": "95.216.221.226",
         "kind": "dextra",
         "port": 30001
       },
-      "id": "XLX973",
-      "name": "XLX973",
+      "id": "XLX970",
+      "name": "XLX970",
       "network": "dstar",
       "source": "xlx"
     },
@@ -20414,6 +20375,26 @@
     },
     {
       "aliases": [
+        "XRFLXF",
+        "REFLXF",
+        "DCSLXF"
+      ],
+      "country": "Austria",
+      "dashboard": "http://XLXLXF.la-x.info/xlx",
+      "description": "Breitenwaida",
+      "dial": {
+        "callsign": "XRFLXF",
+        "host": "193.238.156.232",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLXLXF",
+      "name": "XLXLXF",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "aliases": [
         "XRFLXP",
         "REFLXP",
         "DCSLXP"
@@ -21713,7 +21694,9 @@
       "aliases": [
         "XRFWRN",
         "REFWRN",
-        "DCSWRN"
+        "REFYYC",
+        "DCSWRN",
+        "DCSYYC"
       ],
       "country": "Canada",
       "description": "Local Reflector in Calgary, AB",
@@ -21909,6 +21892,27 @@
       "source": "xlx"
     },
     {
+      "aliases": [
+        "XRFYYC",
+        "REFWRN",
+        "REFYYC",
+        "DCSWRN",
+        "DCSYYC"
+      ],
+      "country": "Canada",
+      "description": "Local Reflector in Calgary AB",
+      "dial": {
+        "callsign": "XRFYYC",
+        "host": "70.73.135.36",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLXYYC",
+      "name": "XLXYYC",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
       "dial": {
         "callsign": "XRF002",
         "host": "52.36.45.107",
@@ -21971,7 +21975,7 @@
     {
       "dial": {
         "callsign": "XRF014",
-        "host": "172.67.201.108",
+        "host": "104.21.21.239",
         "kind": "dextra",
         "port": 30001
       },
@@ -22238,7 +22242,7 @@
     {
       "dial": {
         "callsign": "XRF321",
-        "host": "104.21.57.126",
+        "host": "172.67.163.225",
         "kind": "dextra",
         "port": 30001
       },
@@ -22552,22 +22556,6 @@
       },
       "id": "XRF988",
       "name": "XRF988",
-      "network": "dstar",
-      "source": "dextra"
-    },
-    {
-      "aliases": [
-        "REFLXF",
-        "DCSLXF"
-      ],
-      "dial": {
-        "callsign": "XRFLXF",
-        "host": "193.238.156.232",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XRFLXF",
-      "name": "XRFLXF",
       "network": "dstar",
       "source": "dextra"
     },
@@ -23631,15 +23619,14 @@
     },
     {
       "country": "FR",
-      "dashboard": "http://m17ptl.ysf-france.fr:86",
+      "dashboard": "http://gkom.ysf-france.fr:85",
       "dial": {
         "callsign": "M17-311",
-        "host": "m17ptl.ysf-france.fr",
+        "host": "gkom.ysf-france.fr",
         "kind": "m17",
         "modules": [
           "A",
-          "B",
-          "C"
+          "B"
         ],
         "port": 18000
       },
@@ -26856,20 +26843,6 @@
       "sponsor": "Buxton Radio Amateurs"
     },
     {
-      "country": "TR",
-      "description": "Turkiye 1923",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41923
-      },
-      "id": "1923",
-      "name": "NXDN Turkiye 1923",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
       "country": "AT",
       "dashboard": "https://nxdn.oevsv.at/",
       "dial": {
@@ -27302,19 +27275,6 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "IS0GQX Bruno"
-    },
-    {
-      "country": "IT",
-      "dial": {
-        "host": "xlx390.ddns.net",
-        "kind": "nxdn",
-        "port": 41400
-      },
-      "id": "22206",
-      "name": "AOT",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "IZ6OUF"
     },
     {
       "country": "IT",
@@ -27917,7 +27877,7 @@
     },
     {
       "country": "GB",
-      "dashboard": "https://dashboard.ukfusion.group/",
+      "dashboard": "https://nxdn.ukfusion.group/",
       "description": "<p>Bridge to Southern England for NXDN</p>",
       "dial": {
         "host": "151.241.74.132",
@@ -28442,321 +28402,9 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28301/",
-      "description": "<p>NXDN Adana Reflector - YM2KG</p>",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41401
-      },
-      "id": "28601",
-      "name": "NXDN Adana",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "NXDN Adiyaman",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41402
-      },
-      "id": "28602",
-      "name": "NXDN Adiyaman",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "NXDN Agri Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41404
-      },
-      "id": "28604",
-      "name": "NXDN Agri",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "NXDN Amasya Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41405
-      },
-      "id": "28605",
-      "name": "NXDN Amasya",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28306/",
-      "description": "<p>NXDN Ankara Reflector - YM2KG</p>",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41406
-      },
-      "id": "28606",
-      "name": "NXDN Ankara",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28307/",
-      "description": "<p>NXDN Antalya Reflector - YM2KG</p>",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41407
-      },
-      "id": "28607",
-      "name": "NXDN Antalya",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "NXDN Samsun Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41455
-      },
-      "id": "28655",
-      "name": "NXDN Samsun",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "NXDN Siirt Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41456
-      },
-      "id": "28656",
-      "name": "NXDN Siirt",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "NXDN Sinop Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41457
-      },
-      "id": "28657",
-      "name": "NXDN Sinop",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "NXDN Sivas Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41458
-      },
-      "id": "28658",
-      "name": "NXDN Sivas",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28359/",
-      "description": "TurkLINK NXDN 59 Reflektor Odasi",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41459
-      },
-      "id": "28659",
-      "name": "NXDN Tekirdag",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "NXDN Tokat Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41460
-      },
-      "id": "28660",
-      "name": "NXDN Tokat",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "NXDN Trabzon Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41461
-      },
-      "id": "28661",
-      "name": "NXDN Trabzon",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "NXDN Tunceli Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41462
-      },
-      "id": "28662",
-      "name": "NXDN Tunceli",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "NXDN Sanliurfa Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41463
-      },
-      "id": "28663",
-      "name": "NXDN Sanliurfa",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "NXDN Usak Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41464
-      },
-      "id": "28664",
-      "name": "NXDN Usak",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "NXDN Van Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41465
-      },
-      "id": "28665",
-      "name": "NXDN Van",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "NXDN Yozgat Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41466
-      },
-      "id": "28666",
-      "name": "NXDN Yozgat",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "NXDN Zonguldak Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41467
-      },
-      "id": "28667",
-      "name": "NXDN Zonguldak",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "NXDN Aksaray Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41468
-      },
-      "id": "28668",
-      "name": "NXDN Aksaray",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "NXDN Karaman Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41470
-      },
-      "id": "28670",
-      "name": "NXDN Karaman",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "NXDN Kirikkale Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41471
-      },
-      "id": "28671",
-      "name": "NXDN Kirikkale",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
       "description": "NXDN Batman Reflektoru",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "nxdn",
         "port": 41472
       },
@@ -28770,7 +28418,7 @@
       "country": "TR",
       "description": "NXDN Sirnak Reflektoru",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "nxdn",
         "port": 41473
       },
@@ -28784,7 +28432,7 @@
       "country": "TR",
       "description": "NXDN Bartin Reflektoru",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "nxdn",
         "port": 41474
       },
@@ -28798,7 +28446,7 @@
       "country": "TR",
       "description": "NXDN Ardahan Reflektoru",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "nxdn",
         "port": 41475
       },
@@ -28812,7 +28460,7 @@
       "country": "TR",
       "description": "NXDN Igdir Reflektoru",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "nxdn",
         "port": 41476
       },
@@ -28841,7 +28489,7 @@
       "country": "TR",
       "description": "NXDN Karabuk Reflektoru",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "nxdn",
         "port": 41478
       },
@@ -28855,7 +28503,7 @@
       "country": "TR",
       "description": "NXDN Kilis Reflektoru",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "nxdn",
         "port": 41479
       },
@@ -28869,7 +28517,7 @@
       "country": "TR",
       "description": "NXDN Osmaniye Reflektoru",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "nxdn",
         "port": 41480
       },
@@ -28884,7 +28532,7 @@
       "dashboard": "http://dmr.pistar.com.tr:28381/",
       "description": "TurkLINK NXDN 81 Reflektor Odasi",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "nxdn",
         "port": 41481
       },
@@ -31285,14 +30933,14 @@
     },
     {
       "country": "US",
-      "dashboard": "http://47.156.44.132/",
+      "dashboard": "http://nxdn.radioarca.net/",
       "dial": {
-        "host": "47.156.44.132",
+        "host": "nxdn.radioarca.net",
         "kind": "nxdn",
         "port": 41400
       },
       "id": "9140",
-      "name": "URF914",
+      "name": "ARCA",
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "N6RBH"
@@ -32353,7 +32001,7 @@
       "country": "TR",
       "description": "Turkiye 1923",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "p25",
         "port": 41123
       },
@@ -33283,7 +32931,7 @@
       "dashboard": "http://dmr.pistar.com.tr:28201/",
       "description": "<p>P25 Adana Reflector - YM2KT</p>",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "p25",
         "port": 41001
       },
@@ -33297,7 +32945,7 @@
       "country": "TR",
       "description": "P25 Adiyaman",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "p25",
         "port": 41002
       },
@@ -33309,597 +32957,9 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28203/",
-      "description": "<p>P25 Afyon Reflector - YM2KT</p>",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41003
-      },
-      "id": "28603",
-      "name": "P25 Afyon",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Agri Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41004
-      },
-      "id": "28604",
-      "name": "P25 Agri",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Amasya Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41005
-      },
-      "id": "28605",
-      "name": "P25 Amasya",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28206/",
-      "description": "<p>P25 Ankara Reflector - YM2KT</p>",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41006
-      },
-      "id": "28606",
-      "name": "P25 Ankara",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28207/",
-      "description": "<p>P25 Antalya Reflector - YM2KT</p>",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41007
-      },
-      "id": "28607",
-      "name": "P25 Antalya",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Artvin Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41008
-      },
-      "id": "28608",
-      "name": "P25 Artvin",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28210/",
-      "description": "TurkLINK P25 10 Reflektor Odasi",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41010
-      },
-      "id": "28610",
-      "name": "P25 Balikesir",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Bilecik Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41011
-      },
-      "id": "28611",
-      "name": "P25 Bilecik",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Bingol Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41012
-      },
-      "id": "28612",
-      "name": "P25 Bingol",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Bitlis Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41013
-      },
-      "id": "28613",
-      "name": "P25 Bitlis",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Bolu Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41014
-      },
-      "id": "28614",
-      "name": "P25 Bolu",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Burdur Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41015
-      },
-      "id": "28615",
-      "name": "P25 Burdur",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28216/",
-      "description": "TurkLINK P25 16 Reflektor Odasi",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41016
-      },
-      "id": "28616",
-      "name": "P25 Bursa",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28217/",
-      "description": "TurkLINK P25 17 Reflektor Odasi",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41017
-      },
-      "id": "28617",
-      "name": "P25 Canakkale",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Cankiri Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41018
-      },
-      "id": "28618",
-      "name": "P25 Cankiri",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Corum Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41019
-      },
-      "id": "28619",
-      "name": "P25 Corum",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28220/",
-      "description": "TurkLINK P25 20 Reflektor Odasi",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41020
-      },
-      "id": "28620",
-      "name": "P25 Denizli",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Diyarbakir Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41021
-      },
-      "id": "28621",
-      "name": "P25 Diyarbakir",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Edirne Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41022
-      },
-      "id": "28622",
-      "name": "P25 Edirne",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Elazig Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41023
-      },
-      "id": "28623",
-      "name": "P25 Elazig",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Erzincan Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41024
-      },
-      "id": "28624",
-      "name": "P25 Erzincan",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Erzurum Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41025
-      },
-      "id": "28625",
-      "name": "P25 Erzurum",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28226/",
-      "description": "TurkLINK P25 26 Reflektor Odasi",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41026
-      },
-      "id": "28626",
-      "name": "P25 Eskisehir",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Gaziantep Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41027
-      },
-      "id": "28627",
-      "name": "P25 Gaziantep",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Giresun Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41028
-      },
-      "id": "28628",
-      "name": "P25 Giresun",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Gumushane Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41029
-      },
-      "id": "28629",
-      "name": "P25 Gumushane",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Hakkari Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41030
-      },
-      "id": "28630",
-      "name": "P25 Hakkari",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Hatay Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41031
-      },
-      "id": "28631",
-      "name": "P25 Hatay",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Isparta Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41032
-      },
-      "id": "28632",
-      "name": "P25 Isparta",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28233/",
-      "description": "TurkLINK P25 33 Reflektor Odasi",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41033
-      },
-      "id": "28633",
-      "name": "P25 Mersin",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28234/",
-      "description": "<p>P25 Istanbul Reflector - YM2KT</p>",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41034
-      },
-      "id": "28634",
-      "name": "P25 Istanbul",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28235/",
-      "description": "<p>P25 Izmir Reflector - YM2KT</p>",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41035
-      },
-      "id": "28635",
-      "name": "P25 Izmir",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Kars Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41036
-      },
-      "id": "28636",
-      "name": "P25 Kars",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Kastamonu Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41037
-      },
-      "id": "28637",
-      "name": "P25 Kastamonu",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Kayseri Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41038
-      },
-      "id": "28638",
-      "name": "P25 Kayseri",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Kirklareli Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41039
-      },
-      "id": "28639",
-      "name": "P25 Kirklareli",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Kirsehir Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41040
-      },
-      "id": "28640",
-      "name": "P25 Kirsehir",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28241/",
-      "description": "TurkLINK P25 41 Reflektor Odasi",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41041
-      },
-      "id": "28641",
-      "name": "P25 Kocaeli",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28242/",
-      "description": "TurkLINK P25 42 Reflektor Odasi",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41042
-      },
-      "id": "28642",
-      "name": "P25 Konya",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Kutahya Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41043
-      },
-      "id": "28643",
-      "name": "P25 Kutahya",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28244/",
-      "description": "TurkLINK P25 44 Reflektor Odasi",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41044
-      },
-      "id": "28644",
-      "name": "P25 Malatya",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
       "description": "P25 Manisa Reflektoru",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "p25",
         "port": 41045
       },
@@ -33913,7 +32973,7 @@
       "country": "TR",
       "description": "P25 Kahramanmaras Reflektoru",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "p25",
         "port": 41046
       },
@@ -33927,7 +32987,7 @@
       "country": "TR",
       "description": "P25 Mardin Reflektoru",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "p25",
         "port": 41047
       },
@@ -33942,377 +33002,12 @@
       "dashboard": "http://dmr.pistar.com.tr:28248/",
       "description": "<p>P25 Mugla Reflector - YM2KT</p>",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "p25",
         "port": 41048
       },
       "id": "28648",
       "name": "P25 Mugla",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Mus Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41049
-      },
-      "id": "28649",
-      "name": "P25 Mus",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Nigde Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41051
-      },
-      "id": "28651",
-      "name": "P25 Nigde",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Ordu Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41052
-      },
-      "id": "28652",
-      "name": "P25 Ordu",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Rize Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41053
-      },
-      "id": "28653",
-      "name": "P25 Rize",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Sakarya Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41054
-      },
-      "id": "28654",
-      "name": "P25 Sakarya",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Samsun Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41055
-      },
-      "id": "28655",
-      "name": "P25 Samsun",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Siirt Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41056
-      },
-      "id": "28656",
-      "name": "P25 Siirt",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Sinop Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41057
-      },
-      "id": "28657",
-      "name": "P25 Sinop",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Sivas Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41058
-      },
-      "id": "28658",
-      "name": "P25 Sivas",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28259/",
-      "description": "TurkLINK P25 59 Reflektor Odasi",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41059
-      },
-      "id": "28659",
-      "name": "P25 Tekirdag",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Tokat Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41060
-      },
-      "id": "28660",
-      "name": "P25 Tokat",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Trabzon Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41061
-      },
-      "id": "28661",
-      "name": "P25 Trabzon",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Tunceli Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41062
-      },
-      "id": "28662",
-      "name": "P25 Tunceli",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Sanliurfa Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41063
-      },
-      "id": "28663",
-      "name": "P25 Sanliurfa",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Usak Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41064
-      },
-      "id": "28664",
-      "name": "P25 Usak",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Van Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41065
-      },
-      "id": "28665",
-      "name": "P25 Van",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Yozgat Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41066
-      },
-      "id": "28666",
-      "name": "P25 Yozgat",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Zonguldak Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41067
-      },
-      "id": "28667",
-      "name": "P25 Zonguldak",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Aksaray Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41068
-      },
-      "id": "28668",
-      "name": "P25 Aksaray",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Bayburt Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41069
-      },
-      "id": "28669",
-      "name": "P25 Bayburt",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Karaman Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41070
-      },
-      "id": "28670",
-      "name": "P25 Karaman",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Kirikkale Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41071
-      },
-      "id": "28671",
-      "name": "P25 Kirikkale",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Sirnak Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41073
-      },
-      "id": "28673",
-      "name": "P25 Sirnak",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Bartin Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41074
-      },
-      "id": "28674",
-      "name": "P25 Bartin",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Ardahan Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41075
-      },
-      "id": "28675",
-      "name": "P25 Ardahan",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Igdir Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41076
-      },
-      "id": "28676",
-      "name": "P25 Igdir",
       "network": "p25",
       "source": "dvref",
       "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
@@ -34331,63 +33026,6 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "P25 YALOVA T\u00dcRK\u0130YE"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Karabuk Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41078
-      },
-      "id": "28678",
-      "name": "P25 Karabuk",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Kilis Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41079
-      },
-      "id": "28679",
-      "name": "P25 Kilis",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "P25 Osmaniye Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41080
-      },
-      "id": "28680",
-      "name": "P25 Osmaniye",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28281/",
-      "description": "TurkLINK P25 81 Reflektor Odasi",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "p25",
-        "port": 41081
-      },
-      "id": "28681",
-      "name": "P25 Duzce",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TR",
@@ -34444,6 +33082,20 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "Canberra Region Amateur Radio Club"
+    },
+    {
+      "country": "CA",
+      "dashboard": "http://reflector.p25alberta.ca/",
+      "dial": {
+        "host": "reflector.p25alberta.ca",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "3026",
+      "name": "Alberta P25 3026",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "VE6EN"
     },
     {
       "country": "US",
@@ -37742,14 +36394,14 @@
     },
     {
       "country": "US",
-      "dashboard": "http://47.156.44.132/",
+      "dashboard": "http://p25.radioarca.net/",
       "dial": {
-        "host": "47.156.44.132",
+        "host": "p25.radioarca.net",
         "kind": "p25",
         "port": 41000
       },
       "id": "9140",
-      "name": "URF914",
+      "name": "ARCA",
       "network": "p25",
       "source": "dvref",
       "sponsor": "N6RBH"
@@ -39396,6 +38048,20 @@
     },
     {
       "country": "US",
+      "dashboard": "http://xlx.n7mky.com/",
+      "description": "<p>Welcome to XLX836!</p>",
+      "dial": {
+        "host": "xlx.n7mky.com",
+        "kind": "urf"
+      },
+      "id": "836",
+      "name": "XLX836",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "David Hunter N7MKY"
+    },
+    {
+      "country": "US",
       "dashboard": "https://chandlerhams.org/reflector",
       "description": "<p>URF847 is a universal, multi-protocol digital voice reflector that supports D-Star protocols (DPlus, DCS, DExtra and G3), DMR protocols (MMDVMHost, DMR+ and NXDN), M17, P25 (using IMBE) and YSF.<br>&nbsp;<br>DCS847 A<br>REF847 A<br>XLX847 A<br>XRF847 A<br>&nbsp;<br>M17-847<br>NXDN TG 847<br>P25 TG 847<br>TGIF 30847<br>YSF 00847<br>&nbsp;<br>https://chandlerhams.org/reflector<br>&nbsp;<br>Chandler Ham Radio Club (N7CHN)</p>",
       "dial": {
@@ -39468,9 +38134,9 @@
     },
     {
       "country": "US",
-      "dashboard": "http://47.156.44.132/",
+      "dashboard": "http://xlx.radioarca.net/",
       "dial": {
-        "host": "47.156.44.132",
+        "host": "xlx.radioarca.net",
         "kind": "urf",
         "modules": [
           "A"
@@ -42106,7 +40772,7 @@
       "dashboard": "https://ptt.pistar.com.tr:30286",
       "description": "Turkiye Genel",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42286
       },
@@ -44091,7 +42757,7 @@
       "dashboard": "http://dmr.pistar.com.tr:28423",
       "description": "Turk Konferans",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42453
       },
@@ -44402,7 +43068,7 @@
       "country": "TR",
       "description": "Turkiye 1923",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42923
       },
@@ -44986,7 +43652,8 @@
       "id": "04024",
       "name": "CL-GLF-GAETA",
       "network": "ysf",
-      "source": "dvref"
+      "source": "dvref",
+      "sponsor": "Cluster Golfo di Gaeta"
     },
     {
       "country": "PH",
@@ -45925,15 +44592,15 @@
     },
     {
       "country": "US",
-      "dashboard": "http://47.156.44.132/",
-      "description": "URF914",
+      "dashboard": "https://ysf.radioarca.net/",
+      "description": "ARCA Net",
       "dial": {
-        "host": "47.156.44.132",
+        "host": "ysf.radioarca.net",
         "kind": "ysf",
         "port": 42000
       },
       "id": "09140",
-      "name": "URF914",
+      "name": "ARCA",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "N6RBH"
@@ -50164,14 +48831,14 @@
     {
       "country": "GB",
       "dashboard": "https://digital.cumbriacq.com/live/",
-      "description": "cumbriaCQ1",
+      "description": "CUMBRIACQ",
       "dial": {
         "host": "57.128.190.202",
         "kind": "ysf",
         "port": 42100
       },
       "id": "23534",
-      "name": "cumbriaCQ1",
+      "name": "CUMBRIACQ",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "cumbriacq.com"
@@ -51857,7 +50524,7 @@
       "dashboard": "http://dmr.pistar.com.tr:28401/",
       "description": "YSF Adana",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42001
       },
@@ -51871,7 +50538,7 @@
       "country": "TR",
       "description": "YSF Adiyaman",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42002
       },
@@ -51886,7 +50553,7 @@
       "dashboard": "http://dmr.pistar.com.tr:28403/",
       "description": "YSF Afyon",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42003
       },
@@ -51900,7 +50567,7 @@
       "country": "TR",
       "description": "YSF Agri",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42004
       },
@@ -51914,7 +50581,7 @@
       "country": "TR",
       "description": "YSF Amasya",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42005
       },
@@ -51929,7 +50596,7 @@
       "dashboard": "http://dmr.pistar.com.tr:28406/",
       "description": "YSF Ankara",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42006
       },
@@ -51944,7 +50611,7 @@
       "dashboard": "http://dmr.pistar.com.tr:28407/",
       "description": "YSF Antalya",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42007
       },
@@ -51958,7 +50625,7 @@
       "country": "TR",
       "description": "YSF Artvin",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42008
       },
@@ -51973,7 +50640,7 @@
       "dashboard": "http://dmr.pistar.com.tr:28409/",
       "description": "YSF Aydin",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42009
       },
@@ -51988,7 +50655,7 @@
       "dashboard": "http://dmr.pistar.com.tr:28410/",
       "description": "YSF Balikesir",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42010
       },
@@ -52002,7 +50669,7 @@
       "country": "TR",
       "description": "YSF Bilecik",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42011
       },
@@ -52016,7 +50683,7 @@
       "country": "TR",
       "description": "YSF Bingol",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42012
       },
@@ -52030,7 +50697,7 @@
       "country": "TR",
       "description": "YSF Bitlis",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42013
       },
@@ -52044,7 +50711,7 @@
       "country": "TR",
       "description": "YSF Bolu",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42014
       },
@@ -52058,7 +50725,7 @@
       "country": "TR",
       "description": "YSF Burdur",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42015
       },
@@ -52073,7 +50740,7 @@
       "dashboard": "http://dmr.pistar.com.tr:28416/",
       "description": "YSF Bursa",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42016
       },
@@ -52088,7 +50755,7 @@
       "dashboard": "http://dmr.pistar.com.tr:28417/",
       "description": "YSF Canakkale",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42017
       },
@@ -52102,7 +50769,7 @@
       "country": "TR",
       "description": "YSF Cankiri",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42018
       },
@@ -52116,7 +50783,7 @@
       "country": "TR",
       "description": "YSF Corum",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42019
       },
@@ -52131,7 +50798,7 @@
       "dashboard": "http://dmr.pistar.com.tr:28420/",
       "description": "YSF Denizli",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42020
       },
@@ -52145,7 +50812,7 @@
       "country": "TR",
       "description": "YSF Edirne",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42022
       },
@@ -52159,7 +50826,7 @@
       "country": "TR",
       "description": "YSF Elazig",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42023
       },
@@ -52173,7 +50840,7 @@
       "country": "TR",
       "description": "YSF Erzincan",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42024
       },
@@ -52187,7 +50854,7 @@
       "country": "TR",
       "description": "YSF Erzurum",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42025
       },
@@ -52202,7 +50869,7 @@
       "dashboard": "http://dmr.pistar.com.tr:28426/",
       "description": "YSF Eskisehir",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42026
       },
@@ -52216,7 +50883,7 @@
       "country": "TR",
       "description": "YSF Gaziantep",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42027
       },
@@ -52230,7 +50897,7 @@
       "country": "TR",
       "description": "YSF Giresun",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42028
       },
@@ -52244,7 +50911,7 @@
       "country": "TR",
       "description": "YSF Gumushane",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42029
       },
@@ -52258,7 +50925,7 @@
       "country": "TR",
       "description": "YSF Hakkari",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42030
       },
@@ -52272,7 +50939,7 @@
       "country": "TR",
       "description": "YSF Hatay",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42031
       },
@@ -52286,7 +50953,7 @@
       "country": "TR",
       "description": "YSF Isparta",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42032
       },
@@ -52301,7 +50968,7 @@
       "dashboard": "http://dmr.pistar.com.tr:28433/",
       "description": "YSF Mersin",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42033
       },
@@ -52316,7 +50983,7 @@
       "dashboard": "http://dmr.pistar.com.tr:28434/",
       "description": "YSF Istanbul",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42034
       },
@@ -52331,7 +50998,7 @@
       "dashboard": "http://dmr.pistar.com.tr:28435/",
       "description": "YSF Izmir",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42035
       },
@@ -52345,7 +51012,7 @@
       "country": "TR",
       "description": "YSF Kars",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42036
       },
@@ -52359,7 +51026,7 @@
       "country": "TR",
       "description": "YSF Kastamonu",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42037
       },
@@ -52373,7 +51040,7 @@
       "country": "TR",
       "description": "YSF Kayseri",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42038
       },
@@ -52387,7 +51054,7 @@
       "country": "TR",
       "description": "YSF Kirsehir",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42040
       },
@@ -52402,7 +51069,7 @@
       "dashboard": "http://dmr.pistar.com.tr:28441/",
       "description": "YSF Kocaeli",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42041
       },
@@ -52417,7 +51084,7 @@
       "dashboard": "http://dmr.pistar.com.tr:28442/",
       "description": "YSF Konya",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42042
       },
@@ -52431,7 +51098,7 @@
       "country": "TR",
       "description": "YSF Kutahya",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42043
       },
@@ -52446,7 +51113,7 @@
       "dashboard": "http://dmr.pistar.com.tr:28444/",
       "description": "YSF Malatya",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42044
       },
@@ -52460,7 +51127,7 @@
       "country": "TR",
       "description": "YSF Manisa",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42045
       },
@@ -52474,7 +51141,7 @@
       "country": "TR",
       "description": "YSF K Maras",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42046
       },
@@ -52488,7 +51155,7 @@
       "country": "TR",
       "description": "YSF Mardin",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42047
       },
@@ -52503,7 +51170,7 @@
       "dashboard": "http://dmr.pistar.com.tr:28448/",
       "description": "YSF Mugla",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42048
       },
@@ -52517,7 +51184,7 @@
       "country": "TR",
       "description": "YSF Mus",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42049
       },
@@ -52531,7 +51198,7 @@
       "country": "TR",
       "description": "YSF Nevsehir",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42050
       },
@@ -52545,7 +51212,7 @@
       "country": "TR",
       "description": "YSF Nigde",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42051
       },
@@ -52559,7 +51226,7 @@
       "country": "TR",
       "description": "YSF Ordu",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42052
       },
@@ -52573,7 +51240,7 @@
       "country": "TR",
       "description": "YSF Rize",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42053
       },
@@ -52587,7 +51254,7 @@
       "country": "TR",
       "description": "YSF Sakarya",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42054
       },
@@ -52615,7 +51282,7 @@
       "country": "TR",
       "description": "YSF Siirt",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42056
       },
@@ -52629,7 +51296,7 @@
       "country": "TR",
       "description": "YSF Sinop",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42057
       },
@@ -52643,7 +51310,7 @@
       "country": "TR",
       "description": "YSF Sivas",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42058
       },
@@ -52672,7 +51339,7 @@
       "country": "TR",
       "description": "YSF Tokat",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42060
       },
@@ -52686,7 +51353,7 @@
       "country": "TR",
       "description": "YSF Trabzon",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42061
       },
@@ -52700,7 +51367,7 @@
       "country": "TR",
       "description": "YSF Tunceli",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42062
       },
@@ -52714,7 +51381,7 @@
       "country": "TR",
       "description": "YSF Sanliurfa",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42063
       },
@@ -52728,7 +51395,7 @@
       "country": "TR",
       "description": "YSF Usak",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42064
       },
@@ -52742,7 +51409,7 @@
       "country": "TR",
       "description": "YSF Van",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42065
       },
@@ -52756,7 +51423,7 @@
       "country": "TR",
       "description": "YSF Yozgat",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42066
       },
@@ -52770,7 +51437,7 @@
       "country": "TR",
       "description": "YSF Zonguldak",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42067
       },
@@ -52784,7 +51451,7 @@
       "country": "TR",
       "description": "YSF Aksaray",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42068
       },
@@ -52798,7 +51465,7 @@
       "country": "TR",
       "description": "YSF Bayburt",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42069
       },
@@ -52812,7 +51479,7 @@
       "country": "TR",
       "description": "YSF Karaman",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42070
       },
@@ -52826,7 +51493,7 @@
       "country": "TR",
       "description": "YSF Kirikkale",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42071
       },
@@ -52840,7 +51507,7 @@
       "country": "TR",
       "description": "YSF Batman",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42072
       },
@@ -52854,7 +51521,7 @@
       "country": "TR",
       "description": "YSF Sirnak",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42073
       },
@@ -52868,7 +51535,7 @@
       "country": "TR",
       "description": "YSF Bartin",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42074
       },
@@ -52882,7 +51549,7 @@
       "country": "TR",
       "description": "YSF Ardahan",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42075
       },
@@ -52896,7 +51563,7 @@
       "country": "TR",
       "description": "YSF Igdir",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42076
       },
@@ -52925,7 +51592,7 @@
       "country": "TR",
       "description": "YSF Karabuk",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42078
       },
@@ -52939,7 +51606,7 @@
       "country": "TR",
       "description": "YSF Kilis",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42079
       },
@@ -52953,7 +51620,7 @@
       "country": "TR",
       "description": "YSF Osmaniye",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42080
       },
@@ -52968,7 +51635,7 @@
       "dashboard": "http://dmr.pistar.com.tr:28481/",
       "description": "YSF Duzce",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "ysf",
         "port": 42081
       },
@@ -55787,12 +54454,12 @@
     },
     {
       "country": "FR",
-      "dashboard": "http://xlx311.ysf-france.fr:86",
+      "dashboard": "http://xlx311.ysf-france.fr:85",
       "description": "Serveur XLX311",
       "dial": {
         "host": "xlx311.ysf-france.fr",
         "kind": "ysf",
-        "port": 42000
+        "port": 42311
       },
       "id": "42311",
       "name": "YSF-XLX311",
@@ -55872,6 +54539,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "N1YKT"
+    },
+    {
+      "country": "FR",
+      "dashboard": "http://xlx562.ysf-france.fr",
+      "description": "Serveur XLX562",
+      "dial": {
+        "host": "xlx562.ysf-france.fr",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "42562",
+      "name": "YSF-XLX562",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "F1PTL"
     },
     {
       "country": "PT",
@@ -57296,6 +55978,19 @@
       },
       "id": "48857",
       "name": "Slovenia",
+      "network": "ysf",
+      "source": "dvref"
+    },
+    {
+      "country": "SI",
+      "description": "SI Slovenia3",
+      "dial": {
+        "host": "xlx511.ddns.net",
+        "kind": "ysf",
+        "port": 42002
+      },
+      "id": "48858",
+      "name": "Slovenia3",
       "network": "ysf",
       "source": "dvref"
     },

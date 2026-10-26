@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 365,
-  "generated": "2026-10-25",
+  "count": 341,
+  "generated": "2026-10-26",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -555,20 +555,6 @@
       "sponsor": "Buxton Radio Amateurs"
     },
     {
-      "country": "TR",
-      "description": "Turkiye 1923",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41923
-      },
-      "id": "1923",
-      "name": "NXDN Turkiye 1923",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
       "country": "AT",
       "dashboard": "https://nxdn.oevsv.at/",
       "dial": {
@@ -1001,19 +987,6 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "IS0GQX Bruno"
-    },
-    {
-      "country": "IT",
-      "dial": {
-        "host": "xlx390.ddns.net",
-        "kind": "nxdn",
-        "port": 41400
-      },
-      "id": "22206",
-      "name": "AOT",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "IZ6OUF"
     },
     {
       "country": "IT",
@@ -1616,7 +1589,7 @@
     },
     {
       "country": "GB",
-      "dashboard": "https://dashboard.ukfusion.group/",
+      "dashboard": "https://nxdn.ukfusion.group/",
       "description": "<p>Bridge to Southern England for NXDN</p>",
       "dial": {
         "host": "151.241.74.132",
@@ -2141,321 +2114,9 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28301/",
-      "description": "<p>NXDN Adana Reflector - YM2KG</p>",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41401
-      },
-      "id": "28601",
-      "name": "NXDN Adana",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "NXDN Adiyaman",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41402
-      },
-      "id": "28602",
-      "name": "NXDN Adiyaman",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "NXDN Agri Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41404
-      },
-      "id": "28604",
-      "name": "NXDN Agri",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "NXDN Amasya Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41405
-      },
-      "id": "28605",
-      "name": "NXDN Amasya",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28306/",
-      "description": "<p>NXDN Ankara Reflector - YM2KG</p>",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41406
-      },
-      "id": "28606",
-      "name": "NXDN Ankara",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28307/",
-      "description": "<p>NXDN Antalya Reflector - YM2KG</p>",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41407
-      },
-      "id": "28607",
-      "name": "NXDN Antalya",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "NXDN Samsun Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41455
-      },
-      "id": "28655",
-      "name": "NXDN Samsun",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "NXDN Siirt Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41456
-      },
-      "id": "28656",
-      "name": "NXDN Siirt",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "NXDN Sinop Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41457
-      },
-      "id": "28657",
-      "name": "NXDN Sinop",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "NXDN Sivas Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41458
-      },
-      "id": "28658",
-      "name": "NXDN Sivas",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28359/",
-      "description": "TurkLINK NXDN 59 Reflektor Odasi",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41459
-      },
-      "id": "28659",
-      "name": "NXDN Tekirdag",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "NXDN Tokat Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41460
-      },
-      "id": "28660",
-      "name": "NXDN Tokat",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "NXDN Trabzon Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41461
-      },
-      "id": "28661",
-      "name": "NXDN Trabzon",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "NXDN Tunceli Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41462
-      },
-      "id": "28662",
-      "name": "NXDN Tunceli",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "NXDN Sanliurfa Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41463
-      },
-      "id": "28663",
-      "name": "NXDN Sanliurfa",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "NXDN Usak Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41464
-      },
-      "id": "28664",
-      "name": "NXDN Usak",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "NXDN Van Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41465
-      },
-      "id": "28665",
-      "name": "NXDN Van",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "NXDN Yozgat Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41466
-      },
-      "id": "28666",
-      "name": "NXDN Yozgat",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "NXDN Zonguldak Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41467
-      },
-      "id": "28667",
-      "name": "NXDN Zonguldak",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "NXDN Aksaray Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41468
-      },
-      "id": "28668",
-      "name": "NXDN Aksaray",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "NXDN Karaman Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41470
-      },
-      "id": "28670",
-      "name": "NXDN Karaman",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "description": "NXDN Kirikkale Reflektoru",
-      "dial": {
-        "host": "turkadn.tplinkdns.com",
-        "kind": "nxdn",
-        "port": 41471
-      },
-      "id": "28671",
-      "name": "NXDN Kirikkale",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
       "description": "NXDN Batman Reflektoru",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "nxdn",
         "port": 41472
       },
@@ -2469,7 +2130,7 @@
       "country": "TR",
       "description": "NXDN Sirnak Reflektoru",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "nxdn",
         "port": 41473
       },
@@ -2483,7 +2144,7 @@
       "country": "TR",
       "description": "NXDN Bartin Reflektoru",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "nxdn",
         "port": 41474
       },
@@ -2497,7 +2158,7 @@
       "country": "TR",
       "description": "NXDN Ardahan Reflektoru",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "nxdn",
         "port": 41475
       },
@@ -2511,7 +2172,7 @@
       "country": "TR",
       "description": "NXDN Igdir Reflektoru",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "nxdn",
         "port": 41476
       },
@@ -2540,7 +2201,7 @@
       "country": "TR",
       "description": "NXDN Karabuk Reflektoru",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "nxdn",
         "port": 41478
       },
@@ -2554,7 +2215,7 @@
       "country": "TR",
       "description": "NXDN Kilis Reflektoru",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "nxdn",
         "port": 41479
       },
@@ -2568,7 +2229,7 @@
       "country": "TR",
       "description": "NXDN Osmaniye Reflektoru",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "nxdn",
         "port": 41480
       },
@@ -2583,7 +2244,7 @@
       "dashboard": "http://dmr.pistar.com.tr:28381/",
       "description": "TurkLINK NXDN 81 Reflektor Odasi",
       "dial": {
-        "host": "turkadn.tplinkdns.com",
+        "host": "dmr.pistar.com.tr",
         "kind": "nxdn",
         "port": 41481
       },
@@ -4984,14 +4645,14 @@
     },
     {
       "country": "US",
-      "dashboard": "http://47.156.44.132/",
+      "dashboard": "http://nxdn.radioarca.net/",
       "dial": {
-        "host": "47.156.44.132",
+        "host": "nxdn.radioarca.net",
         "kind": "nxdn",
         "port": 41400
       },
       "id": "9140",
-      "name": "URF914",
+      "name": "ARCA",
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "N6RBH"

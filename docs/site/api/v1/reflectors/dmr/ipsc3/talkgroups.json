@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1120,
-  "generated": "2026-09-26",
+  "count": 1145,
+  "generated": "2026-10-26",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -22,6 +22,46 @@
     {
       "name": "NET/Broadcast",
       "tg": 5
+    },
+    {
+      "name": "JOTA Call Channel",
+      "tg": 30
+    },
+    {
+      "name": "JOTA TAC 31",
+      "tg": 31
+    },
+    {
+      "name": "JOTA TAC 32",
+      "tg": 32
+    },
+    {
+      "name": "JOTA TAC 33",
+      "tg": 33
+    },
+    {
+      "name": "JOTA TAC 34",
+      "tg": 34
+    },
+    {
+      "name": "JOTA TAC 35",
+      "tg": 35
+    },
+    {
+      "name": "JOTA TAC 36",
+      "tg": 36
+    },
+    {
+      "name": "JOTA TAC 37",
+      "tg": 37
+    },
+    {
+      "name": "JOTA BM 50597",
+      "tg": 38
+    },
+    {
+      "name": "JOTA BM 50598",
+      "tg": 39
     },
     {
       "name": "Chat",
@@ -564,6 +604,10 @@
       "tg": 472
     },
     {
+      "name": "WPSD Chat",
+      "tg": 493
+    },
+    {
       "name": "Welcome500",
       "tg": 500
     },
@@ -992,6 +1036,14 @@
       "tg": 973
     },
     {
+      "name": "GB Scout Radio",
+      "tg": 1907
+    },
+    {
+      "name": "NASA - Space / Ground Communications",
+      "tg": 1981
+    },
+    {
       "name": "Greece Wide Chat",
       "tg": 2020
     },
@@ -1398,6 +1450,10 @@
     {
       "name": "Ireland Chat",
       "tg": 2723
+    },
+    {
+      "name": "Cyprus Chat 0",
+      "tg": 2800
     },
     {
       "name": "Cyprus Chat",
@@ -2224,6 +2280,14 @@
       "tg": 9078
     },
     {
+      "name": "WorldWide Maritime",
+      "tg": 9101
+    },
+    {
+      "name": "WorldWide Aviation",
+      "tg": 9102
+    },
+    {
       "name": "Emcom EU",
       "tg": 9112
     },
@@ -2736,6 +2800,10 @@
       "tg": 23510
     },
     {
+      "name": "TGIF 116",
+      "tg": 23516
+    },
+    {
       "name": "North West",
       "tg": 23520
     },
@@ -2750,6 +2818,14 @@
     {
       "name": "Yorkshire",
       "tg": 23530
+    },
+    {
+      "name": "RAYNET UK",
+      "tg": 23531
+    },
+    {
+      "name": "Curbria CQ Uk",
+      "tg": 23534
     },
     {
       "name": "N. Ireland Chat",
@@ -2782,6 +2858,10 @@
     {
       "name": "South Wales Digital",
       "tg": 23566
+    },
+    {
+      "name": "CQ North West UK",
+      "tg": 23569
     },
     {
       "name": "Wales Chat",
@@ -3512,12 +3592,20 @@
       "tg": 31990
     },
     {
+      "name": "US-CT-RI",
+      "tg": 31997
+    },
+    {
       "name": "CW Ops/ CW Academy",
       "tg": 32103
     },
     {
       "name": "Kansas City Wide",
       "tg": 32453
+    },
+    {
+      "name": "America Link",
+      "tg": 32592
     },
     {
       "name": "PR10",
@@ -4172,6 +4260,10 @@
       "tg": 98002
     },
     {
+      "name": "AMSAT",
+      "tg": 98006
+    },
+    {
       "name": "Nederlands-Emergency",
       "tg": 204112
     },
@@ -4210,6 +4302,10 @@
     {
       "name": "EmComm Suisse (Emergency Communication)",
       "tg": 228112
+    },
+    {
+      "name": "NWMG Repeater UK",
+      "tg": 234845
     },
     {
       "name": "Chojnice",
@@ -4342,6 +4438,10 @@
     {
       "name": "WNY-DIGITAL.network (TAC8)",
       "tg": 311421
+    },
+    {
+      "name": "US D-Friends",
+      "tg": 311520
     },
     {
       "name": "Genesee Valley",

@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 134,
-  "generated": "2026-10-25",
+  "count": 135,
+  "generated": "2026-10-26",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1508,6 +1508,20 @@
     },
     {
       "country": "US",
+      "dashboard": "http://xlx.n7mky.com/",
+      "description": "<p>Welcome to XLX836!</p>",
+      "dial": {
+        "host": "xlx.n7mky.com",
+        "kind": "urf"
+      },
+      "id": "836",
+      "name": "XLX836",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "David Hunter N7MKY"
+    },
+    {
+      "country": "US",
       "dashboard": "https://chandlerhams.org/reflector",
       "description": "<p>URF847 is a universal, multi-protocol digital voice reflector that supports D-Star protocols (DPlus, DCS, DExtra and G3), DMR protocols (MMDVMHost, DMR+ and NXDN), M17, P25 (using IMBE) and YSF.<br>&nbsp;<br>DCS847 A<br>REF847 A<br>XLX847 A<br>XRF847 A<br>&nbsp;<br>M17-847<br>NXDN TG 847<br>P25 TG 847<br>TGIF 30847<br>YSF 00847<br>&nbsp;<br>https://chandlerhams.org/reflector<br>&nbsp;<br>Chandler Ham Radio Club (N7CHN)</p>",
       "dial": {
@@ -1580,9 +1594,9 @@
     },
     {
       "country": "US",
-      "dashboard": "http://47.156.44.132/",
+      "dashboard": "http://xlx.radioarca.net/",
       "dial": {
-        "host": "47.156.44.132",
+        "host": "xlx.radioarca.net",
         "kind": "urf",
         "modules": [
           "A"

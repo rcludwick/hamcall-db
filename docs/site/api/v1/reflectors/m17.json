@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 136,
-  "generated": "2026-10-25",
+  "generated": "2026-10-26",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1057,15 +1057,14 @@
     },
     {
       "country": "FR",
-      "dashboard": "http://m17ptl.ysf-france.fr:86",
+      "dashboard": "http://gkom.ysf-france.fr:85",
       "dial": {
         "callsign": "M17-311",
-        "host": "m17ptl.ysf-france.fr",
+        "host": "gkom.ysf-france.fr",
         "kind": "m17",
         "modules": [
           "A",
-          "B",
-          "C"
+          "B"
         ],
         "port": 18000
       },
