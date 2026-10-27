@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1647,
-  "generated": "2026-10-26",
+  "count": 1650,
+  "generated": "2026-10-27",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -3852,6 +3852,19 @@
       },
       "id": "01110",
       "name": "XLX829",
+      "network": "ysf",
+      "source": "dvref"
+    },
+    {
+      "country": "FR",
+      "description": "French Riviera",
+      "dial": {
+        "host": "rodobk.ddns.net",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "01174",
+      "name": "YSF-RIVIERA",
       "network": "ysf",
       "source": "dvref"
     },
@@ -11028,10 +11041,10 @@
     },
     {
       "country": "DE",
-      "dashboard": "https://urf363.merg.biz/",
+      "dashboard": "https://urf363.dl4jc.de",
       "description": "URF363",
       "dial": {
-        "host": "urf363.merg.biz",
+        "host": "urf363.dl4jc.de",
         "kind": "ysf",
         "port": 42000
       },
@@ -16954,6 +16967,19 @@
       "source": "dvref"
     },
     {
+      "country": "US",
+      "description": "JCARA Network",
+      "dial": {
+        "host": "104.153.151.53",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "47265",
+      "name": "IN JCARA",
+      "network": "ysf",
+      "source": "dvref"
+    },
+    {
       "country": "PL",
       "dashboard": "https://xlx474.duckdns.org/",
       "description": "KAB Radio Club",
@@ -19482,6 +19508,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "Radio Club REM"
+    },
+    {
+      "country": "ES",
+      "dashboard": "http://80.211.1.143/ysf2/",
+      "description": "YSF EL EJIDO",
+      "dial": {
+        "host": "80.211.1.143",
+        "kind": "ysf",
+        "port": 43000
+      },
+      "id": "62981",
+      "name": "EL EJIDO",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "REM-ESP"
     },
     {
       "country": "US",
