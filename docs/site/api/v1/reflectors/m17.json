@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 136,
-  "generated": "2026-10-27",
+  "count": 137,
+  "generated": "2026-10-28",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -140,10 +140,10 @@
     },
     {
       "country": "BR",
-      "dashboard": "https://ref018.dstar.com.br",
+      "dashboard": "https://ref018.dstargateway.org/",
       "dial": {
         "callsign": "M17-018",
-        "host": "ref018.dstar.com.br",
+        "host": "ref018.dstargateway.org",
         "kind": "m17",
         "modules": [
           "A"
@@ -154,7 +154,7 @@
       "name": "M17-018",
       "network": "m17",
       "source": "dvref",
-      "sponsor": "PY4EI"
+      "sponsor": "PY2PE"
     },
     {
       "country": "US",
@@ -976,6 +976,30 @@
       "sponsor": "145500.xyz"
     },
     {
+      "country": "CZ",
+      "dashboard": "http://185.28.100.46:4000",
+      "dial": {
+        "callsign": "M17-230",
+        "host": "185.28.100.46",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H"
+        ],
+        "port": 17000
+      },
+      "id": "M17-230",
+      "name": "CZ M17",
+      "network": "m17",
+      "source": "dvref"
+    },
+    {
       "country": "LU",
       "dashboard": "https://xlx270.epf.lu",
       "dial": {
@@ -1057,10 +1081,11 @@
     },
     {
       "country": "FR",
-      "dashboard": "http://gkom.ysf-france.fr:85",
+      "dashboard": "http://m17-311.f1ptl.net:85",
+      "description": "<p>Serveur M17-311 pour test</p>",
       "dial": {
         "callsign": "M17-311",
-        "host": "gkom.ysf-france.fr",
+        "host": "m17-311.f1ptl.net",
         "kind": "m17",
         "modules": [
           "A",
@@ -2133,7 +2158,7 @@
     },
     {
       "country": "US",
-      "dashboard": "https://dvreflector.dvswitch.org",
+      "dashboard": "https://dvsreflector.dvswitch.org",
       "description": "<p>An M17 digital voice reflector based on the lightweight C++ DVS-Reflectors codebase. It supports modules A&ndash;Z with native hub-and-spoke edge linking, hot-reloadable allow/block lists, abuse mitigations, and real-time MQTT telemetry reporting to a live web dashboard.</p>",
       "dial": {
         "callsign": "M17-DVS",

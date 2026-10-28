@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1650,
-  "generated": "2026-10-27",
+  "count": 1649,
+  "generated": "2026-10-28",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -190,10 +190,10 @@
     },
     {
       "country": "BR",
-      "dashboard": "https://ref018.dstar.com.br/",
+      "dashboard": "https://ref018.dstargateway.org",
       "description": "REF018",
       "dial": {
-        "host": "ref018.dstar.com.br",
+        "host": "ref018.dstargateway.org",
         "kind": "ysf",
         "port": 42000
       },
@@ -15655,10 +15655,10 @@
     },
     {
       "country": "FR",
-      "dashboard": "http://xlx311.ysf-france.fr:85",
+      "dashboard": "http://xlx-311.f1ptl.net:85",
       "description": "Serveur XLX311",
       "dial": {
-        "host": "xlx311.ysf-france.fr",
+        "host": "xlx-311.f1ptl.net",
         "kind": "ysf",
         "port": 42311
       },
@@ -19088,19 +19088,6 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "M0WTN"
-    },
-    {
-      "country": "US",
-      "dial": {
-        "host": "64.177.53.121",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "60230",
-      "name": "Valkyrie",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "W6BSD"
     },
     {
       "country": "GB",

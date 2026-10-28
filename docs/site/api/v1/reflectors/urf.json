@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 135,
-  "generated": "2026-10-27",
+  "count": 138,
+  "generated": "2026-10-28",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -44,9 +44,9 @@
     },
     {
       "country": "BR",
-      "dashboard": "https://ref018.dstar.com.br/",
+      "dashboard": "https://ref018.dstargateway.org",
       "dial": {
-        "host": "ref018.dstar.com.br",
+        "host": "ref018.dstargateway.org",
         "kind": "urf",
         "modules": [
           "A",
@@ -1477,6 +1477,21 @@
       "source": "dvref"
     },
     {
+      "country": "UY",
+      "dial": {
+        "host": "198.245.55.26",
+        "kind": "urf",
+        "modules": [
+          "A"
+        ]
+      },
+      "id": "748",
+      "name": "UYURUGUAY.NET",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "CX3DW"
+    },
+    {
       "country": "US",
       "dashboard": "http://xlx760.ddns.net",
       "description": "<p>URF760</p>\r\n<p>With a <strong>Halo Halo Network</strong>, it celebrates diversity and connection, mixing voices and cultures like the famous Filipino dessert: colorful, layered, and always refreshing. Add in the <strong>XPR Pinoy spirit</strong>, and you get a reflector that&rsquo;s proudly community\u2011driven, welcoming operators worldwide while keeping a strong Pinoy identity at its core.</p>\r\n<p><strong>In short:</strong> URF isn&rsquo;t just about linking modes&mdash;it&rsquo;s about linking people, networks, and cultures into one vibrant digital space.</p>",
@@ -1558,7 +1573,7 @@
     {
       "country": "BE",
       "dashboard": "http://xlx.on7hh.be/",
-      "description": "<p>Wallonie <em>(Belgique</em><em> francophone)</em> XLX Multiprotocol Gateway Reflector (DMR C4FM D-STAR NXDN).</p>\r\n<p><strong>No transcoding.</strong></p>",
+      "description": "<p><strong>XLX Wallonie - <em>Belgique</em><em> francophone</em></strong><br>XLXD Multiprotocol Gateway Reflector (DMR C4FM D-STAR NXDN).</p>\r\n<p><strong>No transcoding.</strong></p>",
       "dial": {
         "host": "vps.on7hh.be",
         "kind": "urf",
@@ -2231,6 +2246,34 @@
       "name": "U1",
       "network": "urf",
       "source": "dvref"
+    },
+    {
+      "country": "UY",
+      "dashboard": "http://uruguaynet.2mydns.net",
+      "dial": {
+        "host": "198.245.55.26",
+        "kind": "urf",
+        "modules": [
+          "B"
+        ]
+      },
+      "id": "URU",
+      "name": "UYURUGUAY.NET",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "CX3DW"
+    },
+    {
+      "country": "UY",
+      "dial": {
+        "host": "198.245.55.26",
+        "kind": "urf"
+      },
+      "id": "UYU",
+      "name": "UYURUGUAY.NET",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "CX3DW"
     },
     {
       "country": "PL",

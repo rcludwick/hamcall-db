@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 192,
-  "generated": "2026-10-27",
+  "count": 193,
+  "generated": "2026-10-28",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -823,6 +823,28 @@
       "sponsor": "sv2snh.gr",
       "system": "digital-voice-greece",
       "talkgroups": "reflectors/dmr/digital-voice-greece/talkgroups.json"
+    },
+    {
+      "country": "BR",
+      "dashboard": "https://xlx.dstar.com.br/",
+      "dial": {
+        "host": "xlx.dstar.com.br",
+        "kind": "mmdvm",
+        "port": 62030,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "dmr-070",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/dmr-070/talkgroups/"
+      },
+      "id": "dmr-070-server-070",
+      "name": "070",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "PY4EI",
+      "system": "dmr-070",
+      "talkgroups": "reflectors/dmr/dmr-070/talkgroups.json"
     },
     {
       "country": "US",
