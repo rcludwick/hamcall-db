@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1649,
-  "generated": "2026-10-28",
+  "count": 1652,
+  "generated": "2026-10-29",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -520,7 +520,7 @@
       "dashboard": "http://ysf.bsdworld.org",
       "description": "SF Bay",
       "dial": {
-        "host": "140.82.51.26",
+        "host": "64.177.53.121",
         "kind": "ysf",
         "port": 42000
       },
@@ -1871,14 +1871,14 @@
     {
       "country": "GB",
       "dashboard": "https://xlx.oz-dmr.network/",
-      "description": "OZ-DMR NETWORK",
+      "description": "URF247",
       "dial": {
         "host": "xlx.oz-dmr.network",
         "kind": "ysf",
-        "port": 42000
+        "port": 42099
       },
       "id": "00247",
-      "name": "XLX247",
+      "name": "URF247",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "OZ-DMR NETWORK"
@@ -3544,6 +3544,21 @@
       "name": "XLXFLD",
       "network": "ysf",
       "source": "dvref"
+    },
+    {
+      "country": "BE",
+      "dashboard": "http://xlx.on7hh.be/",
+      "description": "URF898",
+      "dial": {
+        "host": "vps.on7hh.be",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00898",
+      "name": "URF898",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "ON7HH"
     },
     {
       "country": "GB",
@@ -7398,6 +7413,21 @@
       "sponsor": "URE CHASNA"
     },
     {
+      "country": "BE",
+      "dashboard": "https://xlxlus.on7lu.be",
+      "description": "YSF reflector",
+      "dial": {
+        "host": "148.113.148.18",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "18181",
+      "name": "XLXLUS",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "UBA LUS"
+    },
+    {
       "country": "ES",
       "dashboard": "http://ysfextemadura.c4fm.es/main.php",
       "description": "EXTREMADURA",
@@ -10270,7 +10300,7 @@
     {
       "country": "US",
       "dashboard": "http://74.208.174.230",
-      "description": "KJ4OHN Ragchew",
+      "description": "KJ4OHN Bridge",
       "dial": {
         "host": "74.208.174.230",
         "kind": "ysf",
@@ -15655,21 +15685,6 @@
     },
     {
       "country": "FR",
-      "dashboard": "http://xlx-311.f1ptl.net:85",
-      "description": "Serveur XLX311",
-      "dial": {
-        "host": "xlx-311.f1ptl.net",
-        "kind": "ysf",
-        "port": 42311
-      },
-      "id": "42311",
-      "name": "YSF-XLX311",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "F1PTL Bruno"
-    },
-    {
-      "country": "FR",
       "dashboard": "http://gpj-hamradio.servebeer.com/index.php",
       "description": "C4FM for xlx",
       "dial": {
@@ -15743,6 +15758,21 @@
     },
     {
       "country": "FR",
+      "dashboard": "http://xlx521.f1ptl.net:85",
+      "description": "Serveur XLX521",
+      "dial": {
+        "host": "xlx521.f1ptl.net",
+        "kind": "ysf",
+        "port": 42521
+      },
+      "id": "42521",
+      "name": "XLX521",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "F1PTL"
+    },
+    {
+      "country": "FR",
       "dashboard": "http://xlx562.ysf-france.fr",
       "description": "Serveur XLX562",
       "dial": {
@@ -15775,7 +15805,7 @@
       "country": "US",
       "description": "Chop Chop",
       "dial": {
-        "host": "24.220.147.57",
+        "host": "140.186.17.219",
         "kind": "ysf",
         "port": 42002
       },
@@ -17814,6 +17844,21 @@
       "sponsor": "DU6PEW"
     },
     {
+      "country": "TH",
+      "dashboard": "https://xlx345.jane.in.th/",
+      "description": "URF345",
+      "dial": {
+        "host": "103.224.85.34",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "51599",
+      "name": "URF345",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "E24OUW"
+    },
+    {
       "country": "US",
       "description": "www.KR6DK.com",
       "dial": {
@@ -17884,6 +17929,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "K6NIC"
+    },
+    {
+      "country": "TH",
+      "dashboard": "http://xlx.dprns.com",
+      "description": "YSF Reflector",
+      "dial": {
+        "host": "xlx.dprns.com",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "52000",
+      "name": "XLXTHA",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "HS5TQA"
     },
     {
       "country": "GB",
@@ -21038,10 +21098,10 @@
     },
     {
       "country": "VE",
-      "dashboard": "http://15.204.242.27:81",
+      "dashboard": "http://157.173.207.130:81",
       "description": "REPORTE GEN",
       "dial": {
-        "host": "15.204.242.27",
+        "host": "157.173.207.130",
         "kind": "ysf",
         "port": 42002
       },
@@ -21053,10 +21113,10 @@
     },
     {
       "country": "VE",
-      "dashboard": "http://15.204.242.27:83",
+      "dashboard": "http://157.173.207.130:83",
       "description": "REPORTE GEN",
       "dial": {
-        "host": "15.204.242.27",
+        "host": "157.173.207.130",
         "kind": "ysf",
         "port": 42001
       },
@@ -22914,21 +22974,6 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "cumbriaCQ.com"
-    },
-    {
-      "country": "BE",
-      "dashboard": "http://xlx.on7hh.be/",
-      "description": "URF898",
-      "dial": {
-        "host": "vps.on7hh.be",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "88898",
-      "name": "URF898",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "ON7HH"
     },
     {
       "country": "CL",

@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 137,
-  "generated": "2026-10-28",
+  "generated": "2026-10-29",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1080,26 +1080,6 @@
       "sponsor": "WG5EEK"
     },
     {
-      "country": "FR",
-      "dashboard": "http://m17-311.f1ptl.net:85",
-      "description": "<p>Serveur M17-311 pour test</p>",
-      "dial": {
-        "callsign": "M17-311",
-        "host": "m17-311.f1ptl.net",
-        "kind": "m17",
-        "modules": [
-          "A",
-          "B"
-        ],
-        "port": 18000
-      },
-      "id": "M17-311",
-      "name": "M17-311",
-      "network": "m17",
-      "source": "dvref",
-      "sponsor": "F1PTL Bruno"
-    },
-    {
       "country": "US",
       "dashboard": "https://xlx315.duckdns.org",
       "description": "<p style=\"padding-left: 40px; text-align: center;\"><strong>Wisconsin DMR(Digital Mode Reflector)</strong></p>\r\n<p style=\"padding-left: 40px; text-align: center;\"><span style=\"text-decoration: underline;\">The following are all linked on XLX315A :</span></p>\r\n<p style=\"padding-left: 40px; text-align: center;\">DMR TG 31555 via CLAND IPSC2</p>\r\n<p style=\"padding-left: 40px; text-align: center;\">P25 TG 31555 via WI Regional P25 Reflector</p>\r\n<p style=\"padding-left: 40px; text-align: center;\">NXDN TG 31555 via NXCore</p>\r\n<p style=\"padding-left: 40px; text-align: center;\">YSF31555 via XLXD</p>\r\n<p style=\"padding-left: 40px; text-align: center;\">M17-315 via XLXD</p>\r\n<p style=\"padding-left: 40px; text-align: center;\">-------------------------------------</p>\r\n<p style=\"padding-left: 40px; text-align: center;\">XLXD Server is hosted by WX9KVH</p>\r\n<p style=\"padding-left: 40px; text-align: center;\">IPSC2 is hosted by N9OIG</p>\r\n<p style=\"padding-left: 40px; text-align: center;\">P25 Reflector is hosted by N9FBF</p>\r\n<p style=\"padding-left: 40px; text-align: center;\">-------------------------------------</p>\r\n<p style=\"padding-left: 40px; text-align: center;\">Visit wisconsindmr.com for more info.</p>\r\n<p style=\"padding-left: 40px; text-align: center;\">&nbsp;</p>",
@@ -1861,6 +1841,49 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "F8KGK HamClub Station"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://94.177.204.159:3000",
+      "dial": {
+        "callsign": "M17-999",
+        "host": "94.177.204.159",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-999",
+      "name": "M17-999",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "IW1ELO"
     },
     {
       "country": "IT",
