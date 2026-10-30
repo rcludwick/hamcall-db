@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1652,
-  "generated": "2026-10-29",
+  "count": 1654,
+  "generated": "2026-10-30",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -2136,6 +2136,21 @@
     },
     {
       "country": "US",
+      "dashboard": "http://44.27.139.150:4000",
+      "description": "W2NJR YSF Ref",
+      "dial": {
+        "host": "44.27.139.150",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00333",
+      "name": "00333",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "W2NJR Linked Repeater System"
+    },
+    {
+      "country": "US",
       "dashboard": "http://xlx.hamfusion.com",
       "description": "Fusion",
       "dial": {
@@ -2386,7 +2401,7 @@
     },
     {
       "country": "NL",
-      "dashboard": "http://51.83.46.75:35000/index.php",
+      "dashboard": "https://pd2vdy.ddns.net/",
       "description": "YSF XLX-444 B",
       "dial": {
         "host": "51.83.46.75",
@@ -4369,8 +4384,8 @@
     },
     {
       "country": "NL",
-      "dashboard": "http://51.83.46.75:38000/",
-      "description": "C4FM NL-Room",
+      "dashboard": "https://pd2vdy.ddns.net/",
+      "description": "YSF NL-NLOost",
       "dial": {
         "host": "51.83.46.75",
         "kind": "ysf",
@@ -9870,6 +9885,21 @@
       "sponsor": "2E0TJW"
     },
     {
+      "country": "MX",
+      "dashboard": "https://es.xreflector.es",
+      "description": "MEXICO-C4FM",
+      "dial": {
+        "host": "es.xreflector.es",
+        "kind": "ysf",
+        "port": 42004
+      },
+      "id": "23436",
+      "name": "MEXICO",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "xreflector.es"
+    },
+    {
       "country": "GB",
       "dashboard": "https://ysf.cqnorth.org.uk",
       "description": "CQ-North",
@@ -13488,12 +13518,12 @@
     },
     {
       "country": "US",
-      "dashboard": "https://c4fm.es/florida",
+      "dashboard": "https://es.xreflector.es/",
       "description": "Keys-MIAMI",
       "dial": {
-        "host": "217.154.97.237",
+        "host": "es.xreflector.es",
         "kind": "ysf",
-        "port": 42395
+        "port": 42003
       },
       "id": "31120",
       "name": "FLORIDA-KEYS",
@@ -15803,7 +15833,7 @@
     },
     {
       "country": "US",
-      "description": "Chop Chop",
+      "description": "Project Talk",
       "dial": {
         "host": "140.186.17.219",
         "kind": "ysf",
@@ -20029,7 +20059,7 @@
       "country": "CA",
       "description": "Acadie,Qc est",
       "dial": {
-        "host": "174.113.118.234",
+        "host": "174.113.119.75",
         "kind": "ysf",
         "port": 42003
       },
@@ -22298,10 +22328,10 @@
     },
     {
       "country": "US",
-      "dashboard": "http://160.2.131.44",
+      "dashboard": "https://dvswitch.n7mky.com",
       "description": "N7MKY YSF",
       "dial": {
-        "host": "160.2.131.44",
+        "host": "dvswitch.n7mky.com",
         "kind": "ysf",
         "port": 42000
       },

@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 341,
-  "generated": "2026-10-29",
+  "count": 343,
+  "generated": "2026-10-30",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -290,6 +290,20 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "2The Experience"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://dvswitch.n7mky.com",
+      "dial": {
+        "host": "dvswitch.n7mky.com",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "12668",
+      "name": "N7MKY NXDN TG",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "N7MKY David Hunter"
     },
     {
       "country": "ES",
@@ -701,7 +715,7 @@
     },
     {
       "country": "NL",
-      "dashboard": "http://51.83.46.75:38000/nxdn/",
+      "dashboard": "https://pd2vdy.ddns.net/",
       "description": "<p>NXDN NL-Oost Reflector</p>",
       "dial": {
         "host": "51.83.46.75",
@@ -3839,6 +3853,19 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "KY4VC"
+    },
+    {
+      "country": "GB",
+      "dial": {
+        "host": "2.103.180.36",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "55577",
+      "name": "FN-NXDN",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "Private"
     },
     {
       "country": "US",

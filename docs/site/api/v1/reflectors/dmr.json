@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 193,
-  "generated": "2026-10-29",
+  "generated": "2026-10-30",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -3535,9 +3535,9 @@
     },
     {
       "country": "UY",
-      "dashboard": "http://uruguaynet1.2mydns.net",
+      "dashboard": "https://uruguay-net.sytes.net",
       "dial": {
-        "host": "uruguaynet1.2mydns.net",
+        "host": "uruguay-net.sytes.net",
         "kind": "mmdvm",
         "port": 62031,
         "requires": [
@@ -3802,8 +3802,8 @@
     },
     {
       "country": "NL",
-      "dashboard": "http://51.83.46.75:35000/",
-      "description": "<p>NL YSF DMR DSTAR C4FM Multi-mode Reflector Owner PD2VDY</p>",
+      "dashboard": "https://pd2vdy.ddns.net/",
+      "description": "<p>Multi-mode XLX Reflector NL (YSF DMR DSTAR C4FM)</p>",
       "dial": {
         "host": "51.83.46.75",
         "kind": "mmdvm",

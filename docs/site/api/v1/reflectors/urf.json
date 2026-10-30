@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 139,
-  "generated": "2026-10-29",
+  "count": 140,
+  "generated": "2026-10-30",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1665,6 +1665,19 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "cumbriaCQ.com (XLX921)"
+    },
+    {
+      "country": "GB",
+      "dashboard": "http://xlx925.hopto.org/index.php",
+      "dial": {
+        "host": "185.26.243.94",
+        "kind": "urf"
+      },
+      "id": "925",
+      "name": "925",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "MI5DAW"
     },
     {
       "country": "US",

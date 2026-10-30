@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 380,
-  "generated": "2026-10-29",
+  "count": 382,
+  "generated": "2026-10-30",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -597,6 +597,20 @@
     },
     {
       "country": "US",
+      "description": "<p>Welcome!</p>",
+      "dial": {
+        "host": "dvswitch.n7mky.com",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "12668",
+      "name": "N7MKY P25",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "N7MKY David Hunter"
+    },
+    {
+      "country": "US",
       "dashboard": "http://p25.kd9fuw.com:4001/",
       "description": "<p>Central Wisconsin Digital Network - Calling talkgroup</p>\r\n<p>Linked to XLX131 Module A</p>\r\n<p>Email me if you have any questions - [email removed]</p>",
       "dial": {
@@ -945,7 +959,7 @@
     },
     {
       "country": "NL",
-      "dashboard": "http://51.83.46.75:38000/p25/",
+      "dashboard": "https://pd2vdy.ddns.net/",
       "description": "<p>2044 / P25 NL-Oost Reflector</p>",
       "dial": {
         "host": "51.83.46.75",
@@ -2978,13 +2992,27 @@
     },
     {
       "country": "US",
-      "dashboard": "http://44.27.139.150/status.php",
+      "dashboard": "http://44.27.139.150:4000",
       "dial": {
         "host": "44.27.139.150",
         "kind": "p25",
         "port": 41000
       },
       "id": "333",
+      "name": "W2NJR Linked Repeater System",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "W2NJR"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://44.27.139.151/status.php",
+      "dial": {
+        "host": "44.27.139.151",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "3333",
       "name": "W2NJR Linked Repeater System",
       "network": "p25",
       "source": "dvref",
