@@ -1,21 +1,21 @@
 {
   "api_version": "v1",
   "client_refresh_days": 7,
-  "count": 3807,
+  "count": 3800,
   "endpoints": {
     "all": "reflectors.json",
     "network": "reflectors/{network}.json",
     "openapi": "openapi.json"
   },
-  "expires_hint": "2026-11-06",
-  "generated": "2026-10-30",
+  "expires_hint": "2026-11-07",
+  "generated": "2026-10-31",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
   "networks": {
     "dmr": {
       "count": 193,
-      "generated": "2026-10-30",
+      "generated": "2026-10-31",
       "source": {
         "name": "DVRef",
         "url": "https://dvref.com/api/v2/"
@@ -629,25 +629,25 @@
         },
         "uruguaynet": {
           "count": 1,
-          "fetched": "2026-10-01",
+          "fetched": "2026-10-31",
           "generated": "2026-10-01",
           "url": "reflectors/dmr/uruguaynet/talkgroups.json"
         },
         "ve2sus-dmr": {
           "count": 3,
-          "fetched": "2026-10-01",
+          "fetched": "2026-10-31",
           "generated": "2026-10-01",
           "url": "reflectors/dmr/ve2sus-dmr/talkgroups.json"
         },
         "w0chpradio-network": {
           "count": 1,
-          "fetched": "2026-10-01",
+          "fetched": "2026-10-31",
           "generated": "2026-10-01",
           "url": "reflectors/dmr/w0chpradio-network/talkgroups.json"
         },
         "w2db": {
           "count": 1,
-          "fetched": "2026-10-01",
+          "fetched": "2026-10-31",
           "generated": "2026-10-01",
           "url": "reflectors/dmr/w2db/talkgroups.json"
         },
@@ -659,7 +659,7 @@
         },
         "wisconsin-dmr": {
           "count": 1,
-          "fetched": "2026-10-02",
+          "fetched": "2026-10-31",
           "generated": "2026-10-02",
           "url": "reflectors/dmr/wisconsin-dmr/talkgroups.json"
         },
@@ -781,8 +781,8 @@
       "url": "reflectors/dmr.json"
     },
     "dstar": {
-      "count": 957,
-      "generated": "2026-10-30",
+      "count": 945,
+      "generated": "2026-10-31",
       "source": {
         "name": "XLX registry (LX1IQ) + Pi-Star DExtra hosts + Pi-Star DPlus/DCS names",
         "url": "http://xlxapi.rlx.lu/api.php?do=GetReflectorList"
@@ -790,8 +790,8 @@
       "url": "reflectors/dstar.json"
     },
     "m17": {
-      "count": 138,
-      "generated": "2026-10-30",
+      "count": 140,
+      "generated": "2026-10-31",
       "source": {
         "name": "DVRef",
         "url": "https://dvref.com/api/v2/"
@@ -800,7 +800,7 @@
     },
     "nxdn": {
       "count": 343,
-      "generated": "2026-10-30",
+      "generated": "2026-10-31",
       "source": {
         "name": "DVRef",
         "url": "https://dvref.com/api/v2/"
@@ -809,7 +809,7 @@
     },
     "p25": {
       "count": 382,
-      "generated": "2026-10-30",
+      "generated": "2026-10-31",
       "source": {
         "name": "DVRef",
         "url": "https://dvref.com/api/v2/"
@@ -818,7 +818,7 @@
     },
     "urf": {
       "count": 140,
-      "generated": "2026-10-30",
+      "generated": "2026-10-31",
       "source": {
         "name": "DVRef",
         "url": "https://dvref.com/api/v2/"
@@ -826,8 +826,8 @@
       "url": "reflectors/urf.json"
     },
     "ysf": {
-      "count": 1654,
-      "generated": "2026-10-30",
+      "count": 1657,
+      "generated": "2026-10-31",
       "source": {
         "name": "DVRef",
         "url": "https://dvref.com/api/v2/"

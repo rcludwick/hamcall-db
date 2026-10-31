@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1654,
-  "generated": "2026-10-30",
+  "count": 1657,
+  "generated": "2026-10-31",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1945,7 +1945,7 @@
       "dashboard": "http://c4fmfun.ddns.net:2800",
       "description": "CYPRUS C4FM",
       "dial": {
-        "host": "2.86.36.9",
+        "host": "109.242.59.105",
         "kind": "ysf",
         "port": 42006
       },
@@ -2137,14 +2137,14 @@
     {
       "country": "US",
       "dashboard": "http://44.27.139.150:4000",
-      "description": "W2NJR YSF Ref",
+      "description": "W2NJR Link Sys",
       "dial": {
         "host": "44.27.139.150",
         "kind": "ysf",
         "port": 42000
       },
       "id": "00333",
-      "name": "00333",
+      "name": "W2NJR",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "W2NJR Linked Repeater System"
@@ -5176,6 +5176,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "PennLink Group"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://192.168.68.160",
+      "description": "Home2",
+      "dial": {
+        "host": "99.106.54.170",
+        "kind": "ysf",
+        "port": 42016
+      },
+      "id": "06969",
+      "name": "WJM Rockwall",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "WJM"
     },
     {
       "country": "US",
@@ -8439,6 +8454,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "xreflector.es"
+    },
+    {
+      "country": "ES",
+      "dashboard": "https://ea1fir.duckdns.org",
+      "description": "QSO QSLs CERTs",
+      "dial": {
+        "host": "ea1fir.duckdns.org",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "21412",
+      "name": "Vallatellon",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "EA1FIR"
     },
     {
       "country": "ES",
@@ -21890,6 +21920,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "CE3MRO"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://45.79.10.125/ysf-dashboard/",
+      "description": "K5TKR YSF",
+      "dial": {
+        "host": "45.79.10.125",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "80222",
+      "name": "K5TKR",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "K5TKR"
     },
     {
       "country": "US",

@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 193,
-  "generated": "2026-10-30",
+  "generated": "2026-10-31",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -3624,7 +3624,7 @@
     {
       "country": "US",
       "dashboard": "https://dash.TN10.us",
-      "description": "<p>This is the bridge for West TN DMR linked repeater system. On all repeaters we use a single, static a talkgroup (TG2)per each time slot. On TS2 we use West TN Talk (TN10) and this is externally linked as 314710 and on TS1 we use West TN Mutual Aid (WTMA). This is externally 314448. For more info on the RF repeaters check out the info page at http://dash.TN10.us or the website https//kg5a.us .</p>",
+      "description": "<p>This is the bridge for West TN DMR linked repeater system. On all repeaters we use a single, static a talkgroup (TG2)per each time slot. On TS2 we use West TN Talk (TN10) and this is externally linked as 314710 and on TS1 we use West TN Mutual Aid (WTMA). This is externally 314448. For more info on the RF repeaters check out the info page at https://dash.TN10.us or the website https://kg5a.us .</p>",
       "dial": {
         "host": "dash.tn10.us",
         "kind": "mmdvm",
