@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 382,
-  "generated": "2026-10-31",
+  "count": 385,
+  "generated": "2026-11-01",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1961,6 +1961,20 @@
     },
     {
       "country": "CA",
+      "dashboard": "http://304.ve5aas.ca",
+      "dial": {
+        "host": "304.ve5aas.ca",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "30252",
+      "name": "VE5SKN SASKWARN Multimode Cloud Server",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "VE5AAS"
+    },
+    {
+      "country": "CA",
       "dashboard": "http://reflector.p25alberta.ca/",
       "dial": {
         "host": "reflector.p25alberta.ca",
@@ -3627,6 +3641,20 @@
     },
     {
       "country": "CN",
+      "dashboard": "https://8.137.160.70",
+      "dial": {
+        "host": "8.137.160.70",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "46087",
+      "name": "P25_46087",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "BI8SPS, BH8UOU."
+    },
+    {
+      "country": "CN",
       "dashboard": "http://urf.fmrs.cn:59",
       "dial": {
         "host": "urf.fmrs.cn",
@@ -3819,6 +3847,21 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "Malaysia-NET Digital P25 Room"
+    },
+    {
+      "country": "MY",
+      "dashboard": "https://p25.lucifernet.com",
+      "description": "<p>Malaysia Canton Channel - TG50288</p>\r\n<p>D-Star XLX522-Y &lt;&gt; P25-TG50288 &lt;&gt; NXDN-50288 &lt;&gt; DMR-TG50288</p>\r\n<p>Special thanks to 9W2LWK for all the effort, and to 9W3SPY for providing the NXDN host.</p>",
+      "dial": {
+        "host": "p25.lucifernet.com",
+        "kind": "p25",
+        "port": 41001
+      },
+      "id": "50288",
+      "name": "Malaysia Canton Channel",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "9W4GKH"
     },
     {
       "country": "US",

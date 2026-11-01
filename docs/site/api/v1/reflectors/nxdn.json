@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 343,
-  "generated": "2026-10-31",
+  "count": 347,
+  "generated": "2026-11-01",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1001,6 +1001,21 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "IS0GQX Bruno"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://xlx390.ddns.net:8087",
+      "description": "<p><strong>Rete multiprotocollo IT AOT ONDA TELEMANICA</strong></p>\r\n<p><strong>I nostri accessi:</strong></p>\r\n<p>DMR BM 22206</p>\r\n<p>XLX390 B</p>\r\n<p>NXDN 22206</p>\r\n<p>YSF 41403</p>\r\n<p>WIRES-X 41403</p>\r\n<p>YCS 22206-89</p>\r\n<p>Allstarlink 57714</p>\r\n<p>PEANUT XLX390B</p>\r\n<p>ECHOLINKIQ6PP-L (NODE: 234855)</p>\r\n<p>Le dashboard : http://185.203.119.229/db.php</p>",
+      "dial": {
+        "host": "xlx390.ddns.net",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "22206",
+      "name": "IT-AOT",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "IZ6OUF"
     },
     {
       "country": "IT",
@@ -2968,6 +2983,20 @@
       "sponsor": "KQ4HPI"
     },
     {
+      "country": "US",
+      "dashboard": "http://44.27.139.150:4000",
+      "dial": {
+        "host": "44.27.139.150",
+        "kind": "nxdn",
+        "port": 43000
+      },
+      "id": "333",
+      "name": "W2NJR Linked Repeater System",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "W2NJR"
+    },
+    {
       "country": "MX",
       "dashboard": "http://89.117.61.236:8102",
       "description": "<p>NXDN-3341 TGIF</p>",
@@ -3444,6 +3473,20 @@
     },
     {
       "country": "CN",
+      "dashboard": "http://8.137.160.70",
+      "dial": {
+        "host": "8.137.160.70",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "46087",
+      "name": "YN-46087",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "BI8SPS, BH8UOU."
+    },
+    {
+      "country": "CN",
       "dashboard": "http://urf.fmrs.cn:59",
       "dial": {
         "host": "urf.fmrs.cn",
@@ -3568,7 +3611,7 @@
     },
     {
       "country": "MY",
-      "dashboard": "https://tencent.nightfall.monster/nxdn/",
+      "dashboard": "https://nxdn.nightfall.monster/",
       "description": "<p>Malaysia NXDN Reflector</p>",
       "dial": {
         "host": "43.156.121.49",
@@ -3577,6 +3620,21 @@
       },
       "id": "50210",
       "name": "Malaysia NXDN Reflector",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "9W4GKH"
+    },
+    {
+      "country": "MY",
+      "dashboard": "https://nxdn.nightfall.monster/",
+      "description": "<p>Malaysia Canton Channel - TG50288</p>\r\n<p>D-Star XLX522-Y &lt;&gt; P25-TG50288 &lt;&gt; NXDN-50288 &lt;&gt; DMR-TG50288</p>\r\n<p>Special thanks to 9W2LWK for all the effort, and to 9W3SPY for providing the NXDN host.</p>",
+      "dial": {
+        "host": "nxdn.nightfall.monster",
+        "kind": "nxdn",
+        "port": 41402
+      },
+      "id": "50288",
+      "name": "Malaysia Canton Channel",
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "9W4GKH"

@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1657,
-  "generated": "2026-10-31",
+  "count": 1658,
+  "generated": "2026-11-01",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -2147,7 +2147,7 @@
       "name": "W2NJR",
       "network": "ysf",
       "source": "dvref",
-      "sponsor": "W2NJR Linked Repeater System"
+      "sponsor": "W2NJR"
     },
     {
       "country": "US",
@@ -10329,20 +10329,6 @@
       "sponsor": "HP3ICC"
     },
     {
-      "country": "PA",
-      "dashboard": "http://xlx-hp3.dnsup.net/",
-      "description": "URF744",
-      "dial": {
-        "host": "xlx-hp3.dnsup.net",
-        "kind": "ysf",
-        "port": 42002
-      },
-      "id": "24543",
-      "name": "URF744",
-      "network": "ysf",
-      "source": "dvref"
-    },
-    {
       "country": "US",
       "dashboard": "https://ysf.ysf.es",
       "description": "MIAMI-HISPANO",
@@ -16725,18 +16711,18 @@
     },
     {
       "country": "CN",
-      "dashboard": "http://8.137.165.149",
+      "dashboard": "http://8.137.160.70",
       "description": "Yunnan C4FM",
       "dial": {
-        "host": "8.137.165.149",
+        "host": "8.137.160.70",
         "kind": "ysf",
         "port": 42000
       },
       "id": "46087",
-      "name": "YSF-46087",
+      "name": "YN-46087",
       "network": "ysf",
       "source": "dvref",
-      "sponsor": "BI8SPS, BH8UXN, BH8UOU."
+      "sponsor": "BI8SPS, BH8UOU."
     },
     {
       "country": "CN",
@@ -19503,6 +19489,20 @@
     },
     {
       "country": "US",
+      "dashboard": "https://gregski24.com/kn6pkg",
+      "description": "KN6PKG YSF Ref",
+      "dial": {
+        "host": "ysf.gregski24.com",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "62424",
+      "name": "KN6PKG",
+      "network": "ysf",
+      "source": "dvref"
+    },
+    {
+      "country": "US",
       "dashboard": "https://crhrc.org",
       "description": "CRHRC YSF Ref",
       "dial": {
@@ -19618,7 +19618,7 @@
     },
     {
       "country": "ES",
-      "dashboard": "http://80.211.1.143/ysf2/",
+      "dashboard": "https://xlxgeyvan.ddns.net/ysf2/",
       "description": "YSF EL EJIDO",
       "dial": {
         "host": "80.211.1.143",
@@ -19626,7 +19626,7 @@
         "port": 43000
       },
       "id": "62981",
-      "name": "EL EJIDO",
+      "name": "EL-EJIDO",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "REM-ESP"
@@ -20101,10 +20101,10 @@
     },
     {
       "country": "CA",
-      "dashboard": "http://184.161.30.124/index.php",
+      "dashboard": "http://24.202.96.126/index.php",
       "description": "CA VA2RXY",
       "dial": {
-        "host": "184.161.30.124",
+        "host": "24.202.96.126",
         "kind": "ysf",
         "port": 42003
       },
@@ -24070,6 +24070,20 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "JA2CCV"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://hadarsdiginet.co.uk/",
+      "description": "HALIFAX-DIST",
+      "dial": {
+        "host": "217.154.54.124",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "99808",
+      "name": "HADARS",
+      "network": "ysf",
+      "source": "dvref"
     },
     {
       "country": "US",

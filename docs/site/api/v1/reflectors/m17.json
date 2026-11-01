@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 140,
-  "generated": "2026-10-31",
+  "count": 144,
+  "generated": "2026-11-01",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1343,6 +1343,50 @@
       "sponsor": "VK5ZSH"
     },
     {
+      "country": "MY",
+      "dashboard": "https://xlx.lucifernet.com",
+      "description": "<p>Malaysia M17 Reflector</p>\r\n<p>TG 50210</p>",
+      "dial": {
+        "callsign": "M17-502",
+        "host": "m17.lucifernet.com",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-502",
+      "name": "Malaysia M17 Reflector - 50210",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "9W2LWK"
+    },
+    {
       "country": "PL",
       "dashboard": "http://waw01.kg5a.us",
       "description": "<p>M17 - TG512 Warsaw Reflector Poland</p>",
@@ -1532,6 +1576,30 @@
       "sponsor": "Pi-Star Multi-mode Reflector"
     },
     {
+      "country": "NL",
+      "dashboard": "http://m17.pd3rfr.nl",
+      "description": "<p>Experimental Reflector of PD3RFR</p>",
+      "dial": {
+        "callsign": "M17-700",
+        "host": "dv.pd3rfr.nl",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "M"
+        ],
+        "port": 17000
+      },
+      "id": "M17-700",
+      "name": "M17 Reflector of PD3RFR",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "PD3RFR"
+    },
+    {
       "country": "IT",
       "dashboard": "http://66.45.238.67/mref/",
       "description": "<p>italia.it</p>",
@@ -1652,6 +1720,28 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "E21NZC"
+    },
+    {
+      "country": "AU",
+      "dashboard": "https://m17.xlx820.com",
+      "dial": {
+        "callsign": "M17-820",
+        "host": "172.105.180.77",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "Y"
+        ],
+        "port": 17000
+      },
+      "id": "M17-820",
+      "name": "M17-820",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "VK4UE"
     },
     {
       "country": "US",
@@ -2974,6 +3064,25 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "KN4EWT"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://44.27.139.150:4000",
+      "dial": {
+        "callsign": "M17-NJR",
+        "host": "44.27.139.150",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B"
+        ],
+        "port": 44000
+      },
+      "id": "M17-NJR",
+      "name": "W2NJR Linked Repeater System",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "W2NJR"
     },
     {
       "country": "NL",

@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 140,
-  "generated": "2026-10-31",
+  "count": 138,
+  "generated": "2026-11-01",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1233,7 +1233,11 @@
       "dashboard": "http://urf.ne5ie.com",
       "dial": {
         "host": "urf.ne5ie.com",
-        "kind": "urf"
+        "kind": "urf",
+        "modules": [
+          "M",
+          "S"
+        ]
       },
       "id": "513",
       "name": "A URF reflector I guess",
@@ -1392,6 +1396,7 @@
         "modules": [
           "B",
           "D",
+          "M",
           "N",
           "P"
         ]
@@ -1486,18 +1491,6 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "HC1LNM"
-    },
-    {
-      "country": "PA",
-      "dashboard": "http://xlx-hp3.dnsup.net/",
-      "dial": {
-        "host": "xlx-hp3.dnsup.net",
-        "kind": "urf"
-      },
-      "id": "744",
-      "name": "Chiriqui Link Panama",
-      "network": "urf",
-      "source": "dvref"
     },
     {
       "country": "UY",
@@ -2153,28 +2146,6 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "G6PHF"
-    },
-    {
-      "country": "MY",
-      "dashboard": "http://xlx.hamsup.my/urf",
-      "dial": {
-        "host": "xlx.hamsup.my",
-        "kind": "urf",
-        "modules": [
-          "A",
-          "D",
-          "M",
-          "N",
-          "P",
-          "S",
-          "X"
-        ]
-      },
-      "id": "MYR",
-      "name": "URFMYR",
-      "network": "urf",
-      "source": "dvref",
-      "sponsor": "9W2KHN"
     },
     {
       "country": "US",
