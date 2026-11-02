@@ -12,21 +12,7 @@ inline. All 39 issues (35 of them closed) were exported to
 `docs/issues-archive.jsonl`, which is gitignored and local-only; a committed copy of the
 tracker's final state survives in git history at the migration commit.
 
-## Open items (10)
-
-### hdb-licence-sweep — Carry the 2026-11-02 licence review into the remaining docs and docstrings
-*MEDIUM · task · cx:1*
-
-**Spec:** NOTICE, README, PROJECT-NOTES, CLAUDE.md, `enrich.py`, `sources/sota.py` and
-`hamcall_db/data/README.md` were corrected on `work/hdb-licdocs`. These still carry the old
-claims (cty.dat "free for non-commercial use", ISED under OGL-Canada, AllStarLink / POTA
-"assumed non-commercial", LoTW "All Rights Reserved"/assumed basis): `docs/site/about/sources.md`,
-`docs/site/about/datasets.md`, and the docstrings/comments in `sources/ad1c.py`,
-`enrich_allstar.py`, `enrich_lotw.py` and `build.py` (~line 234). Align them with NOTICE.
-Also pending replies to the permission requests (POTA, AllStarLink, ISED, XLX, Pi-Star,
-AD1C); drafts are in the notes repo at
-`docs/superpowers/notes/hamcall-db/2026-11-02-licence-review.md`.
-
+## Open items (9)
 
 ### hdb-acma-licence — Follow-ups to the ACMA natural-person rule
 *HIGH · decision · cx:2*
@@ -67,12 +53,9 @@ Open questions for the owner:
    permission", radioid.net/api), QRZ (personal non-commercial use only, eutc.txt §12),
    HamCall (commercial), HamQTH (no AU import, no redistribution licence), the WIA
    printed Callbook (stale 2019, copyrighted). Do not ingest any of them.
-   Realistic paths: (a) ask ACMA for a bulk list of **callsign + qualification level**
-   (the register's own fields; covers every AU amateur, not just the ~234 left in the
-   RRL) under the RRL licence or CC BY — start from
-   acma.gov.au/radiocomms-licence-data; the WIA argued for exactly this public listing
-   in its response to ACMA Consultation 31/2022 and is a natural ally; (b) opt-in name
-   submissions from AU amateurs themselves (separate product decision).
+   No outreach to ACMA or the WIA (owner's policy, 2026-11-02: no permission requests).
+   Names stay consumer-side: downstream apps look them up live with the operator's own
+   QRZ/HamQTH account (adif backlog, 2026-11-02).
 
 ### hdb-dl-timeout — Add a timeout to every upstream urlopen
 *MED · bug · cx:1*
@@ -204,6 +187,18 @@ move back into Actions and remove a machine from the critical path. A draft
 ticket exists; not sent.
 
 ## Shipped
+
+### hdb-licence-review — Licence review of every source, and the follow-up sweep (2026-11-02)
+
+Every upstream was checked against its own published terms. Fixed: ISED cited the wrong
+licence (OGL excludes personal information; ISED's non-commercial terms apply) and
+postcodes are now FSA-only; AD1C is MIT, not non-commercial; AllStarLink's new terms;
+LoTW prohibited; SOTA unlicensed; the ODbL release never held OSM data (POTA rows were
+mislabelled — the file now holds only `source='osm'` rows); XLX/Pi-Star reflector rows are
+labelled per row as having no stated licence. Owner's policy: openly published data with no
+stated licence is usable with attribution, and no permission requests are made (NOTICE,
+"Project policy for openly published data"). Review record:
+`~/dev/notes/docs/superpowers/notes/hamcall-db/2026-11-02-licence-review.md`.
 
 ### au-1022 — ISED importer rewritten for the real fixed-width amateur.txt (2026-11-02)
 *was: column layout an unverified assumption*

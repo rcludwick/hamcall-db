@@ -184,9 +184,8 @@ Upstream sources and their licenses
    BASIS: node data is information about users' Nodes, so it is treated as
    User Content. It is therefore NOT under CC BY-SA 4.0 and carries no
    share-alike obligation. It is used under "reasonable use of published
-   directories", pending AllStarLink's confirmation (requested 2026-11-02).
-   The node-number column is supplementary; if AllStarLink objects, it can be
-   dropped without affecting the rest of the dataset.
+   directories", which its terms permit. The node-number column is
+   supplementary and can be dropped without affecting the rest of the dataset.
 
 6. POTA (Parks On The Air) — park directory
    Coverage: POTA park references (e.g. US-0001), names, region/location
@@ -195,9 +194,9 @@ Upstream sources and their licenses
              https://api.pota.app/program/parks/<PREFIX>.
    Source:   Parks On The Air (POTA), https://pota.app/. "Parks on the Air ®"
              is a service mark of its owner.
-   License:  No licence or terms are published. Used non-commercially with
-             attribution while permission is requested (2026-11-02); the files
-             will be withdrawn if POTA objects.
+   License:  No licence or terms are published. Under this project's policy
+             for openly published, unlicensed data (see "Project policy"
+             below), it is used non-commercially with attribution.
              (Checked 2026-11-02: no terms of use, API terms or data licence
              are published anywhere; the site shows only "Copyright ©
              2017-2026" and the service mark.)
@@ -331,8 +330,7 @@ Upstream sources and their licenses
              formal licence agreement", and "no AI-generated software may connect
              to the SOTA API without prior approval". This project reads only the
              STATIC summitslist.csv bulk file, never the API. Disabled in
-             published builds; it must not be published unless the SOTA
-             Management Team gives permission (https://www.sota.org.uk/Contact).
+             published builds.
 
    The SOTA summits dataset is a SEPARATE, supplementary reference table
    (hamcall-db-sota-summits-YYYY-MM-DD.parquet and a sota_summits table in the
@@ -364,12 +362,27 @@ comply with the union of these terms, which means:
   * Reproduce the AllStarLink attribution statement (source 5); use stays
     within AllStarLink's "reasonable use of published directories".
   * Reproduce the POTA attribution statement (source 6) and use it
-    non-commercially (POTA publishes no terms; permission requested).
+    non-commercially (POTA publishes no terms).
   * Credit USGS PAD-US (source 7) where PAD-US grids are present.
 
 Opt-in builds made with --include-restricted also contain SOTA (source 10,
 no licence published; not to be published without SOTA's permission) and LoTW
 (source 9, redistribution prohibited). Do not redistribute such a build.
+
+Project policy for openly published data (decided 2026-11-02)
+--------------------------------------------------------------
+
+Where an upstream publishes its data openly and states no licence or terms
+(POTA, the XLX registry, the Pi-Star host files, the SOTA summit-list CSV),
+this project treats it as usable: it is redistributed with attribution,
+inside whichever of this project's licences the file carries, and labelled as
+coming from a source with no stated licence where the format allows (the
+reflector directory's per-row `license` field). Where an upstream DOES state
+terms, those terms are followed: restrictive ones are honoured (LoTW is
+never published; ACMA natural persons are callsign-only; ISED stays
+non-commercial), and permissive ones are credited as they ask. No permission
+requests are made. Rights holders who object can ask for removal by opening an
+issue on this repository.
 
 11. DVRef — digital-voice reflector directory (SEPARATE CC BY 4.0 file)
    Coverage: M17 (mrefd), YSF, NXDN, P25 and URF reflector listings; the DMR
@@ -412,8 +425,7 @@ no licence published; not to be published without SOTA's permission) and LoTW
    License:  None published. This is a self-registration directory of
              publicly-advertised reflector addresses, served openly over HTTP
              for exactly this purpose (Pi-Star and other projects redistribute
-             it). Redistributed as factual listings, with attribution;
-             permission requested 2026-11-02.
+             it). Redistributed as factual listings, with attribution.
    Required attribution statement:
 
        XLX reflector data from the XLX registry maintained by Luc Engelmann,
@@ -425,7 +437,7 @@ no licence published; not to be published without SOTA's permission) and LoTW
    License:  None published. A publicly served host file of reflector
              addresses, published for exactly this purpose and redistributed by
              hotspot software generally. Redistributed as factual listings,
-             with attribution; permission requested 2026-11-02.
+             with attribution.
    Required attribution statement:
 
        Standalone XRF reflector data from the Pi-Star DExtra host file
@@ -445,9 +457,8 @@ no licence published; not to be published without SOTA's permission) and LoTW
    License:  None published. Same basis as source 13: publicly served host
              files of reflector addresses, published for this purpose and
              redistributed by hotspot software generally. Redistributed as
-             factual listings, with attribution; permission requested
-             2026-11-02. Pi-Star compiles DPlus from dstargateway.org DNS and
-             DCS from xreflector.net DNS.
+             factual listings, with attribution. Pi-Star compiles DPlus from
+             dstargateway.org DNS and DCS from xreflector.net DNS.
    Required attribution statement:
 
        REF and DCS reflector names from the Pi-Star DPlus and DCS host files
@@ -503,11 +514,11 @@ Parquet files and the SQLite .db) are licensed under Creative Commons
 Attribution-NonCommercial 4.0 International (CC BY-NC 4.0):
 https://creativecommons.org/licenses/by-nc/4.0/
 The non-commercial term is required by ISED's non-commercial reproduction
-terms (source 2); POTA's terms are unconfirmed (source 6). When you
+terms (source 2), and POTA (source 6) is used non-commercially. When you
 redistribute the dataset you must ALSO satisfy the upstream attribution terms
 listed above. Commercial use requires separate arrangements with the upstream
 rights holders: ISED (non-commercial terms; prior written permission needed)
-and POTA / AllStarLink (terms unconfirmed). The CC BY-NC licence covers this
+and POTA (no terms published). The CC BY-NC licence covers this
 project's compilation only; it grants nothing beyond what each upstream
 licence allows (see sources 1 and 3). The build CODE in this repository is
 licensed separately under the MIT License (see LICENSE) and is unaffected by

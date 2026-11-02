@@ -127,8 +127,8 @@ Park data courtesy of Parks On The Air (POTA), https://pota.app/.
 
     POTA publishes no licence or terms of any kind for the park directory,
     and the API it comes from is unofficial and undocumented. The data is used
-    **non-commercially, with attribution, while permission is requested**; the
-    files will be withdrawn if POTA objects. The representative coordinate and grid are **indicative only**: a
+    **non-commercially, with attribution**, under the project's policy that
+    openly published data with no stated licence is usable. The representative coordinate and grid are **indicative only**: a
     large park spans many grid squares, so the value is display-only and never a
     join key.
 

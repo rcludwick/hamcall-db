@@ -26,8 +26,8 @@ number or a callsign are skipped.
 
 License: node data is "User Content" under the AllStarLink Terms of Use (effective
 2026-09-22), so the site's CC BY-SA 4.0 licence does not cover it. It is used under the
-terms' allowance for "reasonable use of published directories"; AllStarLink's
-confirmation was requested 2026-11-02. Attribution required. See NOTICE source 5.
+terms' allowance for "reasonable use of published directories". Attribution required.
+See NOTICE source 5.
 """
 
 from __future__ import annotations
