@@ -12,7 +12,60 @@ inline. All 39 issues (35 of them closed) were exported to
 `docs/issues-archive.jsonl`, which is gitignored and local-only; a committed copy of the
 tracker's final state survives in git history at the migration commit.
 
-## Open items (6)
+## Open items (9)
+
+### hdb-acma-licence — Decide whether ACMA data may be published at all
+*HIGH · decision · cx:2*
+
+**Spec:** ACMA's RRL extract moved from `web.acma.gov.au/rrl-updates/spectra_rrl.zip`
+(dead since 2026-10-21) to `https://cdn.acma.gov.au/rrl/spectra_rrl.zip`. The fix is on
+branch `work/hdb-acma` (6805303, unmerged): new URL, plus the parser read the callsign from
+`AREA_AREA_ID` (col 32) instead of `CALL_SIGN` (col 33), and now looks columns up by header.
+Two blockers before merging:
+
+1. **Licence.** NOTICE says ACMA data is CC BY 4.0, but the zip's own `LICENCE.TXT`
+   (also `cdn.acma.gov.au/offline-rrl/doc/LICENCE.TXT`) is ACMA's licence. Clause 8: "Where
+   the Licensee is a natural person, this Licence does not permit you to reproduce or
+   distribute the Licensee's Client Information contained in the Register in any Derivative
+   work." Clause 6 limits client information to spectrum management; clause 9 requires
+   "Based on Australian Communications and Media Authority information". Options: publish
+   only club/organisation records, publish callsigns without identity fields, or drop ACMA.
+   Fix NOTICE either way.
+2. **Coverage.** Since 2024-02-19 Australian amateurs operate under a class licence and are
+   no longer individually in the RRL. The extract now yields ~760 records (507 repeaters,
+   31 beacons, ~234 individual licences). ACMA's separate call-sign register has no bulk
+   download found.
+
+Until decided, ACMA is skipped every night, and since the skip alert landed that turns the
+Release job red.
+
+### hdb-dl-timeout — Add a timeout to every upstream urlopen
+*MED · bug · cx:1*
+
+**Spec:** `sources/fcc.py`, `sources/acma.py` and `sources/ad1c.py` call `urlopen` with no
+`timeout`, so a stalled server hangs the Release job until the Actions limit and the
+transient-retry in `sources/base.py` never fires. ISED already passes `DOWNLOAD_TIMEOUT`;
+do the same everywhere. Also consider retrying `ad1c.download_cty` (it runs outside the
+source loop, so it gets no retry and isn't in `skipped-sources.txt`).
+
+### hdb-real-fixtures — Replace fabricated FCC and ACMA fixtures with real slices
+*MED · test · cx:2*
+
+**Spec:** `tests/fixtures/fcc/EN.dat` ("Jane Doe, 1 Beacon St") and
+`tests/fixtures/acma/client.csv` ("John Smith, 42 Wireless Rd") are invented, against the
+"small slices of real data" rule. A fabricated ISED fixture is exactly how the ISED
+importer shipped broken for five months (see au-1022 below). Take small real slices, but
+**overwrite every street-address field with synthetic text** — the repo is public — as was
+done for `tests/fixtures/ised/amateur.txt`.
+
+### hdb-ised-extras — ISED follow-ups from the parser rewrite
+*LOW · task · cx:1*
+
+**Spec:** (a) No Canadian postal/city centroids, so `grid` is NULL for every ISED row
+(covered by au-4248). (b) Club rows publish the club name/location and drop the trustee;
+a `trustee` column would be an additive schema change if wanted. (c) Merge title-casing
+produces `St. John'S` and `Bc Fm Communications Assn`; FCC mixed-case cities like
+`honolulu` pass through untouched.
 
 ### hdb-refl-pages — Enable GitHub Pages + add the DVREF_API_TOKEN secret
 *HIGH · task · cx:1*
@@ -40,11 +93,6 @@ things must be done by a human before the nightly job can publish:
 Until Pages exists, `.github/workflows/reflectors.yml`'s `deploy` job will fail even
 though `refresh` and `release` succeed. The committed JSON under `docs/site/api/v1/` stays
 correct regardless.
-
-### au-1022 — Verify ISED amateur.txt real column layout against in-zip README
-*MED · task · cx:1*
-
-**Spec:** au-f694's ISED importer column order is an ASSUMPTION (the real spec lives in a README inside amateur.zip; exact order/delimiter not publicly documented). Download a real amateur.zip, read its README, and correct the named _* column constants + delimiter + qualification-flag map in sources/ised.py if they differ. Add a fixture slice from real data.
 
 ### hdb-4b8c — PERF: real PAD-US GDB read is very slow (organizePolygons + /vsizip random access on the 651k-feature Combined layer)
 *MED · task · cx:2*
@@ -120,6 +168,19 @@ move back into Actions and remove a machine from the critical path. A draft
 ticket exists; not sent.
 
 ## Shipped
+
+### au-1022 — ISED importer rewritten for the real fixed-width amateur.txt (2026-11-02)
+*was: column layout an unverified assumption*
+
+The importer split lines on `;`, but ISED ships a fixed-width report (layout in the zip's
+`readme_amat.txt`). Every release from 2026-06-18 to 2026-11-01 put whole raw lines,
+**street addresses included**, into `callsign` for ~92k Canadian rows. Fixed in
+`work/hdb-ised` (fixed-width slicing, address columns never sliced, callsign-shape and
+no-address guard tests, real fixture slice with synthetic addresses). On 2026-11-02 the 168
+callsign assets (`.db`, `.parquet`, history) were deleted from all 56 affected releases and
+history restarted from a clean build. The same session also fixed: KG4 + 3-letter calls
+filed as Guantanamo Bay (4,980 rows), `grid` NULL for every row (geocoder keyed on
+`country` before cty.dat set it), and silent source skips (retry + red Release job).
 
 ### hdb-refl-dmrtg — DMR talkgroups, mirrored a rotating slice at a time (2026-09-07)
 *was: talkgroups linked but not mirrored — 172 per-network endpoints against a 60/hour budget*
