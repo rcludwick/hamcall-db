@@ -23,6 +23,7 @@
         "port": 17000
       },
       "id": "M17-002",
+      "license": "CC-BY-4.0",
       "name": "CumbriaCQ.com M17",
       "network": "m17",
       "source": "dvref",
@@ -46,6 +47,7 @@
         "port": 17000
       },
       "id": "M17-003",
+      "license": "CC-BY-4.0",
       "name": "RI DIGITALINK",
       "network": "m17",
       "source": "dvref",
@@ -89,6 +91,7 @@
         "port": 17000
       },
       "id": "M17-005",
+      "license": "CC-BY-4.0",
       "name": "M17",
       "network": "m17",
       "source": "dvref",
@@ -133,6 +136,7 @@
         "port": 17002
       },
       "id": "M17-010",
+      "license": "CC-BY-4.0",
       "name": "M17-010 \u00a0HELLAS Zone!",
       "network": "m17",
       "source": "dvref",
@@ -151,6 +155,7 @@
         "port": 17000
       },
       "id": "M17-018",
+      "license": "CC-BY-4.0",
       "name": "M17-018",
       "network": "m17",
       "source": "dvref",
@@ -170,6 +175,7 @@
         "port": 17000
       },
       "id": "M17-020",
+      "license": "CC-BY-4.0",
       "name": "M17-020",
       "network": "m17",
       "source": "dvref",
@@ -213,6 +219,7 @@
         "port": 17000
       },
       "id": "M17-032",
+      "license": "CC-BY-4.0",
       "name": "XLX032 M17 Reflector",
       "network": "m17",
       "source": "dvref"
@@ -256,6 +263,7 @@
         "port": 17000
       },
       "id": "M17-033",
+      "license": "CC-BY-4.0",
       "name": "IT-MULTIPROTOCOL-NETWORK",
       "network": "m17",
       "source": "dvref",
@@ -275,6 +283,7 @@
         "port": 17000
       },
       "id": "M17-049",
+      "license": "CC-BY-4.0",
       "name": "XLX049 M17 Reflector",
       "network": "m17",
       "source": "dvref",
@@ -293,6 +302,7 @@
         "port": 17000
       },
       "id": "M17-070",
+      "license": "CC-BY-4.0",
       "name": "M17-070",
       "network": "m17",
       "source": "dvref",
@@ -337,6 +347,7 @@
         "port": 17000
       },
       "id": "M17-097",
+      "license": "CC-BY-4.0",
       "name": "KC1VAX M17 Reflector",
       "network": "m17",
       "source": "dvref",
@@ -355,6 +366,7 @@
         "port": 17000
       },
       "id": "M17-105",
+      "license": "CC-BY-4.0",
       "name": "REF105",
       "network": "m17",
       "source": "dvref",
@@ -374,6 +386,7 @@
         "port": 17000
       },
       "id": "M17-117",
+      "license": "CC-BY-4.0",
       "name": "M17-117",
       "network": "m17",
       "source": "dvref",
@@ -417,6 +430,7 @@
         "port": 17000
       },
       "id": "M17-122",
+      "license": "CC-BY-4.0",
       "name": "SV1IW M17 Reflector",
       "network": "m17",
       "source": "dvref",
@@ -439,6 +453,7 @@
         "port": 17000
       },
       "id": "M17-128",
+      "license": "CC-BY-4.0",
       "name": "RadioHUB",
       "network": "m17",
       "source": "dvref",
@@ -457,6 +472,7 @@
         "port": 17000
       },
       "id": "M17-137",
+      "license": "CC-BY-4.0",
       "name": "XLX137 Reflector",
       "network": "m17",
       "source": "dvref",
@@ -478,6 +494,7 @@
         "port": 17000
       },
       "id": "M17-138",
+      "license": "CC-BY-4.0",
       "name": "M17-138",
       "network": "m17",
       "source": "dvref",
@@ -496,6 +513,7 @@
         "port": 17000
       },
       "id": "M17-139",
+      "license": "CC-BY-4.0",
       "name": "M17-139 Maine M17",
       "network": "m17",
       "source": "dvref",
@@ -518,6 +536,7 @@
         "port": 17000
       },
       "id": "M17-148",
+      "license": "CC-BY-4.0",
       "name": "M17-148",
       "network": "m17",
       "source": "dvref",
@@ -540,6 +559,7 @@
         "port": 17000
       },
       "id": "M17-149",
+      "license": "CC-BY-4.0",
       "name": "M17-149",
       "network": "m17",
       "source": "dvref",
@@ -583,6 +603,7 @@
         "port": 17002
       },
       "id": "M17-162",
+      "license": "CC-BY-4.0",
       "name": "M17-Thailand-E29SZE",
       "network": "m17",
       "source": "dvref",
@@ -627,6 +648,7 @@
         "port": 17000
       },
       "id": "M17-165",
+      "license": "CC-BY-4.0",
       "name": "Digital Voice Greece",
       "network": "m17",
       "source": "dvref",
@@ -670,6 +692,7 @@
         "port": 17000
       },
       "id": "M17-177",
+      "license": "CC-BY-4.0",
       "name": "DXLINK",
       "network": "m17",
       "source": "dvref",
@@ -714,6 +737,7 @@
         "port": 17000
       },
       "id": "M17-182",
+      "license": "CC-BY-4.0",
       "name": "M17-182",
       "network": "m17",
       "source": "dvref",
@@ -757,6 +781,7 @@
         "port": 17000
       },
       "id": "M17-183",
+      "license": "CC-BY-4.0",
       "name": "M17-183",
       "network": "m17",
       "source": "dvref",
@@ -801,6 +826,7 @@
         "port": 17001
       },
       "id": "M17-202",
+      "license": "CC-BY-4.0",
       "name": "M17-202 \u00a0HELLAS Zone!",
       "network": "m17",
       "source": "dvref",
@@ -845,6 +871,7 @@
         "port": 17000
       },
       "id": "M17-207",
+      "license": "CC-BY-4.0",
       "name": "M17-207",
       "network": "m17",
       "source": "dvref",
@@ -889,6 +916,7 @@
         "port": 17000
       },
       "id": "M17-209",
+      "license": "CC-BY-4.0",
       "name": "XLX209 M17 Reflector",
       "network": "m17",
       "source": "dvref",
@@ -909,6 +937,7 @@
         "port": 17000
       },
       "id": "M17-213",
+      "license": "CC-BY-4.0",
       "name": "URF213",
       "network": "m17",
       "source": "dvref",
@@ -928,6 +957,7 @@
         "port": 17000
       },
       "id": "M17-214",
+      "license": "CC-BY-4.0",
       "name": "SPAIN",
       "network": "m17",
       "source": "dvref",
@@ -947,6 +977,7 @@
         "port": 17000
       },
       "id": "M17-217",
+      "license": "CC-BY-4.0",
       "name": "M17-217 Experimental RasPi4 Reflector",
       "network": "m17",
       "source": "dvref",
@@ -970,6 +1001,7 @@
         "port": 17000
       },
       "id": "M17-218",
+      "license": "CC-BY-4.0",
       "name": "Chaverim Multimode Reflector",
       "network": "m17",
       "source": "dvref",
@@ -992,6 +1024,7 @@
         "port": 17000
       },
       "id": "M17-222",
+      "license": "CC-BY-4.0",
       "name": "M17-222  Reflector of Hellas-Node.net",
       "network": "m17",
       "source": "dvref",
@@ -1013,6 +1046,7 @@
         "port": 17000
       },
       "id": "M17-226",
+      "license": "CC-BY-4.0",
       "name": "M17-YO-Romania",
       "network": "m17",
       "source": "dvref",
@@ -1038,6 +1072,7 @@
         "port": 17000
       },
       "id": "M17-230",
+      "license": "CC-BY-4.0",
       "name": "CZ M17",
       "network": "m17",
       "source": "dvref"
@@ -1080,6 +1115,7 @@
         "port": 17000
       },
       "id": "M17-270",
+      "license": "CC-BY-4.0",
       "name": "XLX270 M17 Reflector",
       "network": "m17",
       "source": "dvref"
@@ -1098,6 +1134,7 @@
         "port": 17000
       },
       "id": "M17-286",
+      "license": "CC-BY-4.0",
       "name": "M17 T\u00dcRK\u0130YE",
       "network": "m17",
       "source": "dvref",
@@ -1117,6 +1154,7 @@
         "port": 17000
       },
       "id": "M17-2MC",
+      "license": "CC-BY-4.0",
       "name": "2 Meter Crew Arkansas Radio Heads",
       "network": "m17",
       "source": "dvref",
@@ -1136,6 +1174,7 @@
         "port": 17000
       },
       "id": "M17-315",
+      "license": "CC-BY-4.0",
       "name": "Wisconsin DMR",
       "network": "m17",
       "source": "dvref",
@@ -1155,6 +1194,7 @@
         "port": 17001
       },
       "id": "M17-333",
+      "license": "CC-BY-4.0",
       "name": "M17 QQ",
       "network": "m17",
       "source": "dvref",
@@ -1174,6 +1214,7 @@
         "port": 17000
       },
       "id": "M17-396",
+      "license": "CC-BY-4.0",
       "name": "US-Keywork",
       "network": "m17",
       "source": "dvref",
@@ -1196,6 +1237,7 @@
         "port": 17000
       },
       "id": "M17-404",
+      "license": "CC-BY-4.0",
       "name": "BAYSIDE CHAT MULTIMODE REFLECTOR",
       "network": "m17",
       "source": "dvref",
@@ -1223,6 +1265,7 @@
         "port": 17000
       },
       "id": "M17-405",
+      "license": "CC-BY-4.0",
       "name": "XLX405A - 405",
       "network": "m17",
       "source": "dvref",
@@ -1249,6 +1292,7 @@
         "port": 17000
       },
       "id": "M17-427",
+      "license": "CC-BY-4.0",
       "name": "XLX427A - M17 427",
       "network": "m17",
       "source": "dvref",
@@ -1293,6 +1337,7 @@
         "port": 17000
       },
       "id": "M17-432",
+      "license": "CC-BY-4.0",
       "name": "M17-432",
       "network": "m17",
       "source": "dvref",
@@ -1337,6 +1382,7 @@
         "port": 17000
       },
       "id": "M17-434",
+      "license": "CC-BY-4.0",
       "name": "DVAU M17",
       "network": "m17",
       "source": "dvref",
@@ -1381,6 +1427,7 @@
         "port": 17000
       },
       "id": "M17-502",
+      "license": "CC-BY-4.0",
       "name": "Malaysia M17 Reflector - 50210",
       "network": "m17",
       "source": "dvref",
@@ -1400,6 +1447,7 @@
         "port": 17000
       },
       "id": "M17-512",
+      "license": "CC-BY-4.0",
       "name": "M17-512 Warszawa Poland (26512)",
       "network": "m17",
       "source": "dvref",
@@ -1443,6 +1491,7 @@
         "port": 17000
       },
       "id": "M17-517",
+      "license": "CC-BY-4.0",
       "name": "RadioSC Linked M17 Reflector",
       "network": "m17",
       "source": "dvref",
@@ -1461,6 +1510,7 @@
         "port": 17000
       },
       "id": "M17-555",
+      "license": "CC-BY-4.0",
       "name": "Just an average M17 reflector",
       "network": "m17",
       "source": "dvref",
@@ -1483,6 +1533,7 @@
         "port": 17000
       },
       "id": "M17-556",
+      "license": "CC-BY-4.0",
       "name": "KQ4TNV M17 Reflector in Stafford Virginia",
       "network": "m17",
       "source": "dvref",
@@ -1527,6 +1578,7 @@
         "port": 17000
       },
       "id": "M17-647",
+      "license": "CC-BY-4.0",
       "name": "M17-647",
       "network": "m17",
       "source": "dvref",
@@ -1547,6 +1599,7 @@
         "port": 17000
       },
       "id": "M17-654",
+      "license": "CC-BY-4.0",
       "name": "M17-654",
       "network": "m17",
       "source": "dvref",
@@ -1570,6 +1623,7 @@
         "port": 17000
       },
       "id": "M17-672",
+      "license": "CC-BY-4.0",
       "name": "M17-672",
       "network": "m17",
       "source": "dvref",
@@ -1594,6 +1648,7 @@
         "port": 17000
       },
       "id": "M17-700",
+      "license": "CC-BY-4.0",
       "name": "M17 Reflector of PD3RFR",
       "network": "m17",
       "source": "dvref",
@@ -1614,6 +1669,7 @@
         "port": 17000
       },
       "id": "M17-718",
+      "license": "CC-BY-4.0",
       "name": "AllStarLink Italoa",
       "network": "m17",
       "source": "dvref",
@@ -1632,6 +1688,7 @@
         "port": 17000
       },
       "id": "M17-727",
+      "license": "CC-BY-4.0",
       "name": "M17-727",
       "network": "m17",
       "source": "dvref",
@@ -1675,6 +1732,7 @@
         "port": 17000
       },
       "id": "M17-737",
+      "license": "CC-BY-4.0",
       "name": "RAAG M17 Reflector",
       "network": "m17",
       "source": "dvref",
@@ -1696,6 +1754,7 @@
         "port": 17000
       },
       "id": "M17-815",
+      "license": "CC-BY-4.0",
       "name": "Fun Machine Linked Repeater System",
       "network": "m17",
       "source": "dvref",
@@ -1716,6 +1775,7 @@
         "port": 17000
       },
       "id": "M17-818",
+      "license": "CC-BY-4.0",
       "name": "M17-818",
       "network": "m17",
       "source": "dvref",
@@ -1738,6 +1798,7 @@
         "port": 17000
       },
       "id": "M17-820",
+      "license": "CC-BY-4.0",
       "name": "M17-820",
       "network": "m17",
       "source": "dvref",
@@ -1756,6 +1817,7 @@
         "port": 17000
       },
       "id": "M17-835",
+      "license": "CC-BY-4.0",
       "name": "WMRA MULTIMODE-NETWORK",
       "network": "m17",
       "source": "dvref",
@@ -1799,6 +1861,7 @@
         "port": 17000
       },
       "id": "M17-841",
+      "license": "CC-BY-4.0",
       "name": "M17-841",
       "network": "m17",
       "source": "dvref",
@@ -1817,6 +1880,7 @@
         "port": 17000
       },
       "id": "M17-909",
+      "license": "CC-BY-4.0",
       "name": "XLX909 M17",
       "network": "m17",
       "source": "dvref",
@@ -1836,6 +1900,7 @@
         "port": 17000
       },
       "id": "M17-910",
+      "license": "CC-BY-4.0",
       "name": "XLX910",
       "network": "m17",
       "source": "dvref",
@@ -1854,6 +1919,7 @@
         "port": 17000
       },
       "id": "M17-911",
+      "license": "CC-BY-4.0",
       "name": "M17-911",
       "network": "m17",
       "source": "dvref",
@@ -1884,6 +1950,7 @@
         "port": 17000
       },
       "id": "M17-914",
+      "license": "CC-BY-4.0",
       "name": "HISPANO",
       "network": "m17",
       "source": "dvref",
@@ -1902,6 +1969,7 @@
         "port": 17000
       },
       "id": "M17-918",
+      "license": "CC-BY-4.0",
       "name": "XLX918 M17",
       "network": "m17",
       "source": "dvref",
@@ -1927,6 +1995,7 @@
         "port": 17000
       },
       "id": "M17-922",
+      "license": "CC-BY-4.0",
       "name": "M17-922",
       "network": "m17",
       "source": "dvref",
@@ -1970,6 +2039,7 @@
         "port": 17000
       },
       "id": "M17-950",
+      "license": "CC-BY-4.0",
       "name": "XLX950 M17 Reflector",
       "network": "m17",
       "source": "dvref"
@@ -2013,6 +2083,7 @@
         "port": 17000
       },
       "id": "M17-976",
+      "license": "CC-BY-4.0",
       "name": "XLX976 M17 Reflector",
       "network": "m17",
       "source": "dvref",
@@ -2056,6 +2127,7 @@
         "port": 17000
       },
       "id": "M17-999",
+      "license": "CC-BY-4.0",
       "name": "M17-999",
       "network": "m17",
       "source": "dvref",
@@ -2077,6 +2149,7 @@
         "port": 17000
       },
       "id": "M17-BAT",
+      "license": "CC-BY-4.0",
       "name": "Reflector\u00a0 M17\u00a0 per\u00a0 Trani Conference",
       "network": "m17",
       "source": "dvref",
@@ -2100,6 +2173,7 @@
         "port": 17000
       },
       "id": "M17-BEL",
+      "license": "CC-BY-4.0",
       "name": "M17-BEL",
       "network": "m17",
       "source": "dvref",
@@ -2122,6 +2196,7 @@
         "port": 17000
       },
       "id": "M17-BTT",
+      "license": "CC-BY-4.0",
       "name": "IT-C4FM_BAT  Reflector M17",
       "network": "m17",
       "source": "dvref",
@@ -2140,6 +2215,7 @@
         "port": 17000
       },
       "id": "M17-BYG",
+      "license": "CC-BY-4.0",
       "name": "Backyard Repeater Group Chat",
       "network": "m17",
       "source": "dvref",
@@ -2159,6 +2235,7 @@
         "port": 17000
       },
       "id": "M17-CBR",
+      "license": "CC-BY-4.0",
       "name": "M17-CBR",
       "network": "m17",
       "source": "dvref"
@@ -2185,6 +2262,7 @@
         "port": 17000
       },
       "id": "M17-CCV",
+      "license": "CC-BY-4.0",
       "name": "JP-OWARI",
       "network": "m17",
       "source": "dvref",
@@ -2204,6 +2282,7 @@
         "port": 17000
       },
       "id": "M17-CEL",
+      "license": "CC-BY-4.0",
       "name": "Funknetz-Celle",
       "network": "m17",
       "source": "dvref",
@@ -2247,6 +2326,7 @@
         "port": 17000
       },
       "id": "M17-CHI",
+      "license": "CC-BY-4.0",
       "name": "M17-CHI Reflector",
       "network": "m17",
       "source": "dvref",
@@ -2269,6 +2349,7 @@
         "port": 17000
       },
       "id": "M17-CZ0",
+      "license": "CC-BY-4.0",
       "name": "M17-CZ0",
       "network": "m17",
       "source": "dvref"
@@ -2288,6 +2369,7 @@
         "port": 17000
       },
       "id": "M17-CZ1",
+      "license": "CC-BY-4.0",
       "name": "Czech M17 reflector",
       "network": "m17",
       "source": "dvref",
@@ -2309,6 +2391,7 @@
         "port": 17000
       },
       "id": "M17-D22",
+      "license": "CC-BY-4.0",
       "name": "D22",
       "network": "m17",
       "source": "dvref",
@@ -2328,6 +2411,7 @@
         "port": 17000
       },
       "id": "M17-DHN",
+      "license": "CC-BY-4.0",
       "name": "Doghouse Digital Network",
       "network": "m17",
       "source": "dvref",
@@ -2350,6 +2434,7 @@
         "port": 17000
       },
       "id": "M17-DMR",
+      "license": "CC-BY-4.0",
       "name": "FreeSTAR Network M17 Reflector",
       "network": "m17",
       "source": "dvref",
@@ -2374,6 +2459,7 @@
         "port": 17000
       },
       "id": "M17-DVS",
+      "license": "CC-BY-4.0",
       "name": "DVSwitch M17",
       "network": "m17",
       "source": "dvref",
@@ -2393,6 +2479,7 @@
         "port": 17000
       },
       "id": "M17-E2H",
+      "license": "CC-BY-4.0",
       "name": "HS1AB - 144.900 MHz BKK,THA",
       "network": "m17",
       "source": "dvref",
@@ -2420,6 +2507,7 @@
         "port": 17000
       },
       "id": "M17-FMT",
+      "license": "CC-BY-4.0",
       "name": "W6VS Fremont, CA.",
       "network": "m17",
       "source": "dvref",
@@ -2463,6 +2551,7 @@
         "port": 17000
       },
       "id": "M17-FOG",
+      "license": "CC-BY-4.0",
       "name": "THE FOG - Future Orientated Gateways",
       "network": "m17",
       "source": "dvref",
@@ -2484,6 +2573,7 @@
         "port": 17000
       },
       "id": "M17-FR2",
+      "license": "CC-BY-4.0",
       "name": "M17-FR2",
       "network": "m17",
       "source": "dvref",
@@ -2502,6 +2592,7 @@
         "port": 17100
       },
       "id": "M17-FRA",
+      "license": "CC-BY-4.0",
       "name": "M17-FRA",
       "network": "m17",
       "source": "dvref",
@@ -2523,6 +2614,7 @@
         "port": 17000
       },
       "id": "M17-FVG",
+      "license": "CC-BY-4.0",
       "name": "FVG",
       "network": "m17",
       "source": "dvref",
@@ -2542,6 +2634,7 @@
         "port": 17000
       },
       "id": "M17-HAM",
+      "license": "CC-BY-4.0",
       "name": "M17-HAM",
       "network": "m17",
       "source": "dvref"
@@ -2585,6 +2678,7 @@
         "port": 17000
       },
       "id": "M17-IP6",
+      "license": "CC-BY-4.0",
       "name": "M17-IP6",
       "network": "m17",
       "source": "dvref",
@@ -2604,6 +2698,7 @@
         "port": 17000
       },
       "id": "M17-IS0",
+      "license": "CC-BY-4.0",
       "name": "M17-IS0",
       "network": "m17",
       "source": "dvref",
@@ -2647,6 +2742,7 @@
         "port": 17000
       },
       "id": "M17-ITA",
+      "license": "CC-BY-4.0",
       "name": "M17 MASTER REFLECTOR ITALY",
       "network": "m17",
       "source": "dvref",
@@ -2690,6 +2786,7 @@
         "port": 17001
       },
       "id": "M17-JET",
+      "license": "CC-BY-4.0",
       "name": "N6JET M17 Reflector",
       "network": "m17",
       "source": "dvref",
@@ -2712,6 +2809,7 @@
         "port": 17000
       },
       "id": "M17-KAB",
+      "license": "CC-BY-4.0",
       "name": "KAB Amateur Radio Club",
       "network": "m17",
       "source": "dvref",
@@ -2733,6 +2831,7 @@
         "port": 17000
       },
       "id": "M17-KCW",
+      "license": "CC-BY-4.0",
       "name": "M17-KCW",
       "network": "m17",
       "source": "dvref",
@@ -2759,6 +2858,7 @@
         "port": 17000
       },
       "id": "M17-KPH",
+      "license": "CC-BY-4.0",
       "name": "M17-KPH",
       "network": "m17",
       "source": "dvref",
@@ -2782,6 +2882,7 @@
         "port": 17000
       },
       "id": "M17-KXM",
+      "license": "CC-BY-4.0",
       "name": "K0XM Test M17 Reflector",
       "network": "m17",
       "source": "dvref"
@@ -2804,6 +2905,7 @@
         "port": 17000
       },
       "id": "M17-LEF",
+      "license": "CC-BY-4.0",
       "name": "M17-LEF",
       "network": "m17",
       "source": "dvref",
@@ -2848,6 +2950,7 @@
         "port": 17000
       },
       "id": "M17-LIM",
+      "license": "CC-BY-4.0",
       "name": "M17 reflector of David PA7LIM",
       "network": "m17",
       "source": "dvref",
@@ -2891,6 +2994,7 @@
         "port": 17000
       },
       "id": "M17-LRC",
+      "license": "CC-BY-4.0",
       "name": "K8LRC M17 Reflector",
       "network": "m17",
       "source": "dvref",
@@ -2935,6 +3039,7 @@
         "port": 17000
       },
       "id": "M17-M17",
+      "license": "CC-BY-4.0",
       "name": "M17 Project Reflector",
       "network": "m17",
       "source": "dvref",
@@ -2978,6 +3083,7 @@
         "port": 17000
       },
       "id": "M17-MCH",
+      "license": "CC-BY-4.0",
       "name": "K8LRC M17-MCH Reflector",
       "network": "m17",
       "source": "dvref",
@@ -2998,6 +3104,7 @@
         "port": 17000
       },
       "id": "M17-MEM",
+      "license": "CC-BY-4.0",
       "name": "Memphis Metro",
       "network": "m17",
       "source": "dvref",
@@ -3021,6 +3128,7 @@
         "port": 17000
       },
       "id": "M17-MEX",
+      "license": "CC-BY-4.0",
       "name": "M17-MEX",
       "network": "m17",
       "source": "dvref",
@@ -3042,6 +3150,7 @@
         "port": 17000
       },
       "id": "M17-NCA",
+      "license": "CC-BY-4.0",
       "name": "M17-NCA",
       "network": "m17",
       "source": "dvref",
@@ -3060,6 +3169,7 @@
         "port": 17000
       },
       "id": "M17-NET",
+      "license": "CC-BY-4.0",
       "name": "Netoholics Network",
       "network": "m17",
       "source": "dvref",
@@ -3079,6 +3189,7 @@
         "port": 44000
       },
       "id": "M17-NJR",
+      "license": "CC-BY-4.0",
       "name": "W2NJR Linked Repeater System",
       "network": "m17",
       "source": "dvref",
@@ -3100,6 +3211,7 @@
         "port": 17000
       },
       "id": "M17-NLD",
+      "license": "CC-BY-4.0",
       "name": "Dutch M17 Server",
       "network": "m17",
       "source": "dvref",
@@ -3129,6 +3241,7 @@
         "port": 17000
       },
       "id": "M17-NZD",
+      "license": "CC-BY-4.0",
       "name": "New Zealand",
       "network": "m17",
       "source": "dvref",
@@ -3153,6 +3266,7 @@
         "port": 17000
       },
       "id": "M17-OBX",
+      "license": "CC-BY-4.0",
       "name": "Outer Banks",
       "network": "m17",
       "source": "dvref",
@@ -3197,6 +3311,7 @@
         "port": 17000
       },
       "id": "M17-OMO",
+      "license": "CC-BY-4.0",
       "name": "PRIDE",
       "network": "m17",
       "source": "dvref",
@@ -3240,6 +3355,7 @@
         "port": 17000
       },
       "id": "M17-PHP",
+      "license": "CC-BY-4.0",
       "name": "M17-PHP",
       "network": "m17",
       "source": "dvref",
@@ -3261,6 +3377,7 @@
         "port": 17000
       },
       "id": "M17-PLG",
+      "license": "CC-BY-4.0",
       "name": "East PA Reflector",
       "network": "m17",
       "source": "dvref",
@@ -3282,6 +3399,7 @@
         "port": 17000
       },
       "id": "M17-PNW",
+      "license": "CC-BY-4.0",
       "name": "M17-PNW",
       "network": "m17",
       "source": "dvref",
@@ -3301,6 +3419,7 @@
         "port": 17000
       },
       "id": "M17-POR",
+      "license": "CC-BY-4.0",
       "name": "M17-POR",
       "network": "m17",
       "source": "dvref",
@@ -3323,6 +3442,7 @@
         "port": 17000
       },
       "id": "M17-PPP",
+      "license": "CC-BY-4.0",
       "name": "M17-PPP",
       "network": "m17",
       "source": "dvref",
@@ -3349,6 +3469,7 @@
         "port": 17000
       },
       "id": "M17-REM",
+      "license": "CC-BY-4.0",
       "name": "Asociaci\u00f3n de Radio Amateur REM",
       "network": "m17",
       "source": "dvref",
@@ -3393,6 +3514,7 @@
         "port": 17000
       },
       "id": "M17-RLX",
+      "license": "CC-BY-4.0",
       "name": "M17-RLX",
       "network": "m17",
       "source": "dvref",
@@ -3414,6 +3536,7 @@
         "port": 17000
       },
       "id": "M17-SAT",
+      "license": "CC-BY-4.0",
       "name": "AMSAT",
       "network": "m17",
       "source": "dvref",
@@ -3457,6 +3580,7 @@
         "port": 17000
       },
       "id": "M17-SCS",
+      "license": "CC-BY-4.0",
       "name": "SCARSVOIP",
       "network": "m17",
       "source": "dvref",
@@ -3501,6 +3625,7 @@
         "port": 17000
       },
       "id": "M17-SEL",
+      "license": "CC-BY-4.0",
       "name": "M17-SEL",
       "network": "m17",
       "source": "dvref",
@@ -3520,6 +3645,7 @@
         "port": 17000
       },
       "id": "M17-SFI",
+      "license": "CC-BY-4.0",
       "name": "Starfleet Amateur Radio Group - Trek Talk",
       "network": "m17",
       "source": "dvref",
@@ -3545,6 +3671,7 @@
         "port": 17000
       },
       "id": "M17-SFO",
+      "license": "CC-BY-4.0",
       "name": "M17 NorCal-Link",
       "network": "m17",
       "source": "dvref",
@@ -3576,6 +3703,7 @@
         "port": 17000
       },
       "id": "M17-SLB",
+      "license": "CC-BY-4.0",
       "name": "M17-SLB Brazil - Multiprotocolo",
       "network": "m17",
       "source": "dvref",
@@ -3619,6 +3747,7 @@
         "port": 17000
       },
       "id": "M17-SPY",
+      "license": "CC-BY-4.0",
       "name": "K0SPY MUTLI PROTOCOL MATRIX",
       "network": "m17",
       "source": "dvref"
@@ -3644,6 +3773,7 @@
         "port": 17000
       },
       "id": "M17-SVD",
+      "license": "CC-BY-4.0",
       "name": "Savona Network M17",
       "network": "m17",
       "source": "dvref",
@@ -3687,6 +3817,7 @@
         "port": 17000
       },
       "id": "M17-SWD",
+      "license": "CC-BY-4.0",
       "name": "South Wales Digital Group",
       "network": "m17",
       "source": "dvref",
@@ -3730,6 +3861,7 @@
         "port": 17000
       },
       "id": "M17-THA",
+      "license": "CC-BY-4.0",
       "name": "M17-THA Reflector",
       "network": "m17",
       "source": "dvref",
@@ -3749,6 +3881,7 @@
         "port": 17000
       },
       "id": "M17-URU",
+      "license": "CC-BY-4.0",
       "name": "Uruguay-Link",
       "network": "m17",
       "source": "dvref",
@@ -3792,6 +3925,7 @@
         "port": 17000
       },
       "id": "M17-USA",
+      "license": "CC-BY-4.0",
       "name": "M17 USA Reflector",
       "network": "m17",
       "source": "dvref",
@@ -3813,6 +3947,7 @@
         "port": 17000
       },
       "id": "M17-UT0",
+      "license": "CC-BY-4.0",
       "name": "Utah DRN M17",
       "network": "m17",
       "source": "dvref",
@@ -3856,6 +3991,7 @@
         "port": 17000
       },
       "id": "M17-WAL",
+      "license": "CC-BY-4.0",
       "name": "Wales, United Kingdom",
       "network": "m17",
       "source": "dvref",
@@ -3874,6 +4010,7 @@
         "port": 17001
       },
       "id": "M17-WHO",
+      "license": "CC-BY-4.0",
       "name": "Who Cares ARG",
       "network": "m17",
       "source": "dvref",
@@ -3892,6 +4029,7 @@
         "port": 17000
       },
       "id": "M17-WIL",
+      "license": "CC-BY-4.0",
       "name": "KE7WIL Personal M17 Reflector",
       "network": "m17",
       "source": "dvref",
@@ -3910,6 +4048,7 @@
         "port": 17002
       },
       "id": "M17-WVD",
+      "license": "CC-BY-4.0",
       "name": "W8VD New Haven, MI",
       "network": "m17",
       "source": "dvref",
@@ -3930,6 +4069,7 @@
         "port": 17000
       },
       "id": "M17-XOR",
+      "license": "CC-BY-4.0",
       "name": "OE3ANC - DEV Reflector",
       "network": "m17",
       "source": "dvref",
@@ -3952,6 +4092,7 @@
         "port": 17000
       },
       "id": "M17-YAI",
+      "license": "CC-BY-4.0",
       "name": "Awaji-IS AMC",
       "network": "m17",
       "source": "dvref",
@@ -3979,6 +4120,7 @@
         "port": 17000
       },
       "id": "M17-YEG",
+      "license": "CC-BY-4.0",
       "name": "M17-YEG Mobara, Chiba, JP",
       "network": "m17",
       "source": "dvref",
@@ -3998,6 +4140,7 @@
         "port": 17000
       },
       "id": "M17-YLH",
+      "license": "CC-BY-4.0",
       "name": "Yorkshire Link M17",
       "network": "m17",
       "source": "dvref",
@@ -4016,6 +4159,7 @@
         "port": 17003
       },
       "id": "M17-ZOM",
+      "license": "CC-BY-4.0",
       "name": "Zombie Alert - Metro Detroit MI",
       "network": "m17",
       "source": "dvref",

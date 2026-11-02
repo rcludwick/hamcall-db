@@ -17,6 +17,7 @@
         "kind": "urf"
       },
       "id": "000",
+      "license": "CC-BY-4.0",
       "name": "XRF00",
       "network": "urf",
       "source": "dvref",
@@ -37,6 +38,7 @@
         ]
       },
       "id": "007",
+      "license": "CC-BY-4.0",
       "name": "XRF007 D-STAR SPAIN",
       "network": "urf",
       "source": "dvref",
@@ -57,6 +59,7 @@
         ]
       },
       "id": "018",
+      "license": "CC-BY-4.0",
       "name": "REF018",
       "network": "urf",
       "source": "dvref",
@@ -70,6 +73,7 @@
         "kind": "urf"
       },
       "id": "025",
+      "license": "CC-BY-4.0",
       "name": "SavonaNetwork",
       "network": "urf",
       "source": "dvref",
@@ -91,6 +95,7 @@
         ]
       },
       "id": "026",
+      "license": "CC-BY-4.0",
       "name": "XLX026",
       "network": "urf",
       "source": "dvref",
@@ -108,6 +113,7 @@
         ]
       },
       "id": "032",
+      "license": "CC-BY-4.0",
       "name": "XLX232",
       "network": "urf",
       "source": "dvref",
@@ -124,6 +130,7 @@
         ]
       },
       "id": "033",
+      "license": "CC-BY-4.0",
       "name": "XLX033",
       "network": "urf",
       "source": "dvref",
@@ -144,6 +151,7 @@
         ]
       },
       "id": "045",
+      "license": "CC-BY-4.0",
       "name": "URF045 Multi-Protocol Reflector",
       "network": "urf",
       "source": "dvref",
@@ -157,6 +165,7 @@
         "kind": "urf"
       },
       "id": "051",
+      "license": "CC-BY-4.0",
       "name": "XLX051 EA SPAIN MULTIPROTOCOLO",
       "network": "urf",
       "source": "dvref",
@@ -174,6 +183,7 @@
         ]
       },
       "id": "069",
+      "license": "CC-BY-4.0",
       "name": "XLX690",
       "network": "urf",
       "source": "dvref",
@@ -194,6 +204,7 @@
         ]
       },
       "id": "070",
+      "license": "CC-BY-4.0",
       "name": "XLX070",
       "network": "urf",
       "source": "dvref",
@@ -207,6 +218,7 @@
         "kind": "urf"
       },
       "id": "076",
+      "license": "CC-BY-4.0",
       "name": "XLX076 AETHER HELLAS NET",
       "network": "urf",
       "source": "dvref",
@@ -221,6 +233,7 @@
         "kind": "urf"
       },
       "id": "079",
+      "license": "CC-BY-4.0",
       "name": "K\u00d8SPY",
       "network": "urf",
       "source": "dvref",
@@ -234,6 +247,7 @@
         "kind": "urf"
       },
       "id": "091",
+      "license": "CC-BY-4.0",
       "name": "XRF091",
       "network": "urf",
       "source": "dvref",
@@ -253,6 +267,7 @@
         ]
       },
       "id": "097",
+      "license": "CC-BY-4.0",
       "name": "New England Digital Radio",
       "network": "urf",
       "source": "dvref",
@@ -269,6 +284,7 @@
         ]
       },
       "id": "105",
+      "license": "CC-BY-4.0",
       "name": "REF105",
       "network": "urf",
       "source": "dvref",
@@ -283,6 +299,7 @@
         "kind": "urf"
       },
       "id": "106",
+      "license": "CC-BY-4.0",
       "name": "URF106",
       "network": "urf",
       "source": "dvref",
@@ -299,6 +316,7 @@
         ]
       },
       "id": "112",
+      "license": "CC-BY-4.0",
       "name": "XLX112 D-STAR SPAIN",
       "network": "urf",
       "source": "dvref",
@@ -313,6 +331,7 @@
         "kind": "urf"
       },
       "id": "115",
+      "license": "CC-BY-4.0",
       "name": "XLX115",
       "network": "urf",
       "source": "dvref",
@@ -329,6 +348,7 @@
         ]
       },
       "id": "121",
+      "license": "CC-BY-4.0",
       "name": "XLX121",
       "network": "urf",
       "source": "dvref",
@@ -345,6 +365,7 @@
         ]
       },
       "id": "123",
+      "license": "CC-BY-4.0",
       "name": "XLX123 Multimodereflector",
       "network": "urf",
       "source": "dvref",
@@ -365,6 +386,7 @@
         ]
       },
       "id": "162",
+      "license": "CC-BY-4.0",
       "name": "all mode",
       "network": "urf",
       "source": "dvref",
@@ -379,6 +401,7 @@
         "kind": "urf"
       },
       "id": "173",
+      "license": "CC-BY-4.0",
       "name": "XLX173",
       "network": "urf",
       "source": "dvref",
@@ -392,6 +415,7 @@
         "kind": "urf"
       },
       "id": "177",
+      "license": "CC-BY-4.0",
       "name": "URF177",
       "network": "urf",
       "source": "dvref"
@@ -408,6 +432,7 @@
         ]
       },
       "id": "178",
+      "license": "CC-BY-4.0",
       "name": "URF178 - Buxton Radio Amateurs",
       "network": "urf",
       "source": "dvref",
@@ -425,6 +450,7 @@
         ]
       },
       "id": "208",
+      "license": "CC-BY-4.0",
       "name": "XLX208 France",
       "network": "urf",
       "source": "dvref",
@@ -446,6 +472,7 @@
         ]
       },
       "id": "213",
+      "license": "CC-BY-4.0",
       "name": "URF213",
       "network": "urf",
       "source": "dvref",
@@ -463,6 +490,7 @@
         ]
       },
       "id": "214",
+      "license": "CC-BY-4.0",
       "name": "XLX214 D-STAR SPAIN",
       "network": "urf",
       "source": "dvref",
@@ -485,6 +513,7 @@
         ]
       },
       "id": "217",
+      "license": "CC-BY-4.0",
       "name": "Experimental RasPi4 Reflector",
       "network": "urf",
       "source": "dvref",
@@ -506,6 +535,7 @@
         ]
       },
       "id": "218",
+      "license": "CC-BY-4.0",
       "name": "Chaverim Multiprotocol Reflector",
       "network": "urf",
       "source": "dvref",
@@ -523,6 +553,7 @@
         ]
       },
       "id": "231",
+      "license": "CC-BY-4.0",
       "name": "XLX231 Sardinia Island",
       "network": "urf",
       "source": "dvref",
@@ -536,6 +567,7 @@
         "kind": "urf"
       },
       "id": "245",
+      "license": "CC-BY-4.0",
       "name": "URF245",
       "network": "urf",
       "source": "dvref",
@@ -556,6 +588,7 @@
         ]
       },
       "id": "247",
+      "license": "CC-BY-4.0",
       "name": "OZ-DMR NETWORK",
       "network": "urf",
       "source": "dvref",
@@ -577,6 +610,7 @@
         ]
       },
       "id": "251",
+      "license": "CC-BY-4.0",
       "name": "Multi-XLX251-ADN.Systems.Greece",
       "network": "urf",
       "source": "dvref",
@@ -591,6 +625,7 @@
         "kind": "urf"
       },
       "id": "252",
+      "license": "CC-BY-4.0",
       "name": "Multi-XLX252-ADN.Systems.Greece",
       "network": "urf",
       "source": "dvref",
@@ -605,6 +640,7 @@
         "kind": "urf"
       },
       "id": "256",
+      "license": "CC-BY-4.0",
       "name": "URF256 Odessa Radio Link",
       "network": "urf",
       "source": "dvref",
@@ -625,6 +661,7 @@
         ]
       },
       "id": "260",
+      "license": "CC-BY-4.0",
       "name": "XRF260 - XRF DSTAR reflector of the DSTAR.SU net",
       "network": "urf",
       "source": "dvref",
@@ -644,6 +681,7 @@
         ]
       },
       "id": "269",
+      "license": "CC-BY-4.0",
       "name": "Multimode HessenRLP",
       "network": "urf",
       "source": "dvref",
@@ -667,6 +705,7 @@
         ]
       },
       "id": "272",
+      "license": "CC-BY-4.0",
       "name": "DXHAMS Amateur Radio Group",
       "network": "urf",
       "source": "dvref",
@@ -680,6 +719,7 @@
         "kind": "urf"
       },
       "id": "274",
+      "license": "CC-BY-4.0",
       "name": "URF274",
       "network": "urf",
       "source": "dvref",
@@ -693,6 +733,7 @@
         "kind": "urf"
       },
       "id": "276",
+      "license": "CC-BY-4.0",
       "name": "G1INC",
       "network": "urf",
       "source": "dvref",
@@ -710,6 +751,7 @@
         ]
       },
       "id": "277",
+      "license": "CC-BY-4.0",
       "name": "BitbyBitHams all mode",
       "network": "urf",
       "source": "dvref",
@@ -727,6 +769,7 @@
         ]
       },
       "id": "284",
+      "license": "CC-BY-4.0",
       "name": "284 NXDN Bulgaria",
       "network": "urf",
       "source": "dvref",
@@ -747,6 +790,7 @@
         ]
       },
       "id": "286",
+      "license": "CC-BY-4.0",
       "name": "T\u00dcRK\u0130YE Multi-Mode Reflector",
       "network": "urf",
       "source": "dvref",
@@ -769,6 +813,7 @@
         ]
       },
       "id": "288",
+      "license": "CC-BY-4.0",
       "name": "XLX YSF Procida Island",
       "network": "urf",
       "source": "dvref",
@@ -782,6 +827,7 @@
         "kind": "urf"
       },
       "id": "296",
+      "license": "CC-BY-4.0",
       "name": "XLX296",
       "network": "urf",
       "source": "dvref",
@@ -795,6 +841,7 @@
         "kind": "urf"
       },
       "id": "297",
+      "license": "CC-BY-4.0",
       "name": "URF297",
       "network": "urf",
       "source": "dvref",
@@ -815,6 +862,7 @@
         ]
       },
       "id": "300",
+      "license": "CC-BY-4.0",
       "name": "BR 300",
       "network": "urf",
       "source": "dvref",
@@ -828,6 +876,7 @@
         "kind": "urf"
       },
       "id": "301",
+      "license": "CC-BY-4.0",
       "name": "XLX301 - Canberra, Australia",
       "network": "urf",
       "source": "dvref",
@@ -856,6 +905,7 @@
         ]
       },
       "id": "303",
+      "license": "CC-BY-4.0",
       "name": "303",
       "network": "urf",
       "source": "dvref",
@@ -870,6 +920,7 @@
         "kind": "urf"
       },
       "id": "304",
+      "license": "CC-BY-4.0",
       "name": "Multi reflector",
       "network": "urf",
       "source": "dvref",
@@ -884,6 +935,7 @@
         "kind": "urf"
       },
       "id": "306",
+      "license": "CC-BY-4.0",
       "name": "VK6 URF306",
       "network": "urf",
       "source": "dvref",
@@ -903,6 +955,7 @@
         ]
       },
       "id": "307",
+      "license": "CC-BY-4.0",
       "name": "307",
       "network": "urf",
       "source": "dvref",
@@ -916,6 +969,7 @@
         "kind": "urf"
       },
       "id": "323",
+      "license": "CC-BY-4.0",
       "name": "XLX323",
       "network": "urf",
       "source": "dvref",
@@ -929,6 +983,7 @@
         "kind": "urf"
       },
       "id": "324",
+      "license": "CC-BY-4.0",
       "name": "Amerinet US",
       "network": "urf",
       "source": "dvref",
@@ -947,6 +1002,7 @@
         ]
       },
       "id": "331",
+      "license": "CC-BY-4.0",
       "name": "dstar coamo",
       "network": "urf",
       "source": "dvref"
@@ -963,6 +1019,7 @@
         ]
       },
       "id": "337",
+      "license": "CC-BY-4.0",
       "name": "XLX337 SWLA-LINK",
       "network": "urf",
       "source": "dvref",
@@ -985,6 +1042,7 @@
         ]
       },
       "id": "345",
+      "license": "CC-BY-4.0",
       "name": "XLX345 Thailand Multimode",
       "network": "urf",
       "source": "dvref",
@@ -999,6 +1057,7 @@
         "kind": "urf"
       },
       "id": "359",
+      "license": "CC-BY-4.0",
       "name": "NXDN359  - Link to ADN Systems Bulgaria TG28410",
       "network": "urf",
       "source": "dvref",
@@ -1022,6 +1081,7 @@
         ]
       },
       "id": "363",
+      "license": "CC-BY-4.0",
       "name": "URF363 - Saarland - Multimode Bridge (XLX363)",
       "network": "urf",
       "source": "dvref",
@@ -1036,6 +1096,7 @@
         "kind": "urf"
       },
       "id": "365",
+      "license": "CC-BY-4.0",
       "name": "xlx365",
       "network": "urf",
       "source": "dvref",
@@ -1052,6 +1113,7 @@
         ]
       },
       "id": "379",
+      "license": "CC-BY-4.0",
       "name": "XLX379A",
       "network": "urf",
       "source": "dvref",
@@ -1069,6 +1131,7 @@
         ]
       },
       "id": "386",
+      "license": "CC-BY-4.0",
       "name": "Foxhole",
       "network": "urf",
       "source": "dvref",
@@ -1083,6 +1146,7 @@
         "kind": "urf"
       },
       "id": "401",
+      "license": "CC-BY-4.0",
       "name": "CTRI MULTIMODE",
       "network": "urf",
       "source": "dvref",
@@ -1099,6 +1163,7 @@
         ]
       },
       "id": "420",
+      "license": "CC-BY-4.0",
       "name": "VESUS REF",
       "network": "urf",
       "source": "dvref",
@@ -1112,6 +1177,7 @@
         "kind": "urf"
       },
       "id": "425",
+      "license": "CC-BY-4.0",
       "name": "US-PCRRMN",
       "network": "urf",
       "source": "dvref",
@@ -1132,6 +1198,7 @@
         ]
       },
       "id": "433",
+      "license": "CC-BY-4.0",
       "name": "XLX433",
       "network": "urf",
       "source": "dvref",
@@ -1148,6 +1215,7 @@
         ]
       },
       "id": "470",
+      "license": "CC-BY-4.0",
       "name": "XLX470",
       "network": "urf",
       "source": "dvref",
@@ -1164,6 +1232,7 @@
         ]
       },
       "id": "483",
+      "license": "CC-BY-4.0",
       "name": "XLX483",
       "network": "urf",
       "source": "dvref",
@@ -1178,6 +1247,7 @@
         "kind": "urf"
       },
       "id": "486",
+      "license": "CC-BY-4.0",
       "name": "XLX486",
       "network": "urf",
       "source": "dvref",
@@ -1195,6 +1265,7 @@
         ]
       },
       "id": "493",
+      "license": "CC-BY-4.0",
       "name": "URF493 by W0CHP",
       "network": "urf",
       "source": "dvref",
@@ -1209,6 +1280,7 @@
         "kind": "urf"
       },
       "id": "500",
+      "license": "CC-BY-4.0",
       "name": "XLX500",
       "network": "urf",
       "source": "dvref",
@@ -1223,6 +1295,7 @@
         "kind": "urf"
       },
       "id": "508",
+      "license": "CC-BY-4.0",
       "name": "XLX508",
       "network": "urf",
       "source": "dvref",
@@ -1240,6 +1313,7 @@
         ]
       },
       "id": "513",
+      "license": "CC-BY-4.0",
       "name": "A URF reflector I guess",
       "network": "urf",
       "source": "dvref",
@@ -1263,6 +1337,7 @@
         ]
       },
       "id": "517",
+      "license": "CC-BY-4.0",
       "name": "RadioSC URF517 Multimode Digital Network",
       "network": "urf",
       "source": "dvref",
@@ -1276,6 +1351,7 @@
         "kind": "urf"
       },
       "id": "535",
+      "license": "CC-BY-4.0",
       "name": "XLX535",
       "network": "urf",
       "source": "dvref",
@@ -1295,6 +1371,7 @@
         ]
       },
       "id": "587",
+      "license": "CC-BY-4.0",
       "name": "587",
       "network": "urf",
       "source": "dvref",
@@ -1309,6 +1386,7 @@
         "kind": "urf"
       },
       "id": "597",
+      "license": "CC-BY-4.0",
       "name": "BRAC Den Bosch Reflector",
       "network": "urf",
       "source": "dvref",
@@ -1323,6 +1401,7 @@
         "kind": "urf"
       },
       "id": "606",
+      "license": "CC-BY-4.0",
       "name": "Abruzzo Radio Network",
       "network": "urf",
       "source": "dvref",
@@ -1342,6 +1421,7 @@
         ]
       },
       "id": "607",
+      "license": "CC-BY-4.0",
       "name": "XLX607",
       "network": "urf",
       "source": "dvref",
@@ -1359,6 +1439,7 @@
         ]
       },
       "id": "621",
+      "license": "CC-BY-4.0",
       "name": "HRCC LINK",
       "network": "urf",
       "source": "dvref",
@@ -1381,6 +1462,7 @@
         ]
       },
       "id": "668",
+      "license": "CC-BY-4.0",
       "name": "US WCARS URF668",
       "network": "urf",
       "source": "dvref",
@@ -1402,6 +1484,7 @@
         ]
       },
       "id": "700",
+      "license": "CC-BY-4.0",
       "name": "XLX-Reflector of PD3RFR",
       "network": "urf",
       "source": "dvref",
@@ -1421,6 +1504,7 @@
         ]
       },
       "id": "713",
+      "license": "CC-BY-4.0",
       "name": "US-K0ROS",
       "network": "urf",
       "source": "dvref"
@@ -1437,6 +1521,7 @@
         ]
       },
       "id": "718",
+      "license": "CC-BY-4.0",
       "name": "AllStarLink Italia",
       "network": "urf",
       "source": "dvref",
@@ -1451,6 +1536,7 @@
         "kind": "urf"
       },
       "id": "720",
+      "license": "CC-BY-4.0",
       "name": "XLX720 Reflector",
       "network": "urf",
       "source": "dvref",
@@ -1469,6 +1555,7 @@
         ]
       },
       "id": "736",
+      "license": "CC-BY-4.0",
       "name": "Vola Basso Multimodo",
       "network": "urf",
       "source": "dvref"
@@ -1487,6 +1574,7 @@
         ]
       },
       "id": "743",
+      "license": "CC-BY-4.0",
       "name": "XLX743",
       "network": "urf",
       "source": "dvref",
@@ -1502,6 +1590,7 @@
         ]
       },
       "id": "748",
+      "license": "CC-BY-4.0",
       "name": "UYURUGUAY.NET",
       "network": "urf",
       "source": "dvref",
@@ -1519,6 +1608,7 @@
         ]
       },
       "id": "760",
+      "license": "CC-BY-4.0",
       "name": "URF-760",
       "network": "urf",
       "source": "dvref",
@@ -1536,6 +1626,7 @@
         ]
       },
       "id": "820",
+      "license": "CC-BY-4.0",
       "name": "AU-Central Qld",
       "network": "urf",
       "source": "dvref",
@@ -1550,6 +1641,7 @@
         "kind": "urf"
       },
       "id": "836",
+      "license": "CC-BY-4.0",
       "name": "XLX836",
       "network": "urf",
       "source": "dvref",
@@ -1567,6 +1659,7 @@
         ]
       },
       "id": "847",
+      "license": "CC-BY-4.0",
       "name": "Chandler Hams",
       "network": "urf",
       "source": "dvref",
@@ -1581,6 +1674,7 @@
         "kind": "urf"
       },
       "id": "865",
+      "license": "CC-BY-4.0",
       "name": "KNXDVHUB",
       "network": "urf",
       "source": "dvref",
@@ -1601,6 +1695,7 @@
         ]
       },
       "id": "898",
+      "license": "CC-BY-4.0",
       "name": "XLX898",
       "network": "urf",
       "source": "dvref",
@@ -1622,6 +1717,7 @@
         ]
       },
       "id": "902",
+      "license": "CC-BY-4.0",
       "name": "URF DVSwitch",
       "network": "urf",
       "source": "dvref",
@@ -1638,6 +1734,7 @@
         ]
       },
       "id": "914",
+      "license": "CC-BY-4.0",
       "name": "ARCA-CLUB",
       "network": "urf",
       "source": "dvref",
@@ -1654,6 +1751,7 @@
         ]
       },
       "id": "921",
+      "license": "CC-BY-4.0",
       "name": "cumbriaCQ-urf",
       "network": "urf",
       "source": "dvref",
@@ -1667,6 +1765,7 @@
         "kind": "urf"
       },
       "id": "925",
+      "license": "CC-BY-4.0",
       "name": "925",
       "network": "urf",
       "source": "dvref",
@@ -1686,6 +1785,7 @@
         ]
       },
       "id": "927",
+      "license": "CC-BY-4.0",
       "name": "US-XLX927",
       "network": "urf",
       "source": "dvref",
@@ -1705,6 +1805,7 @@
         ]
       },
       "id": "933",
+      "license": "CC-BY-4.0",
       "name": "XLX933",
       "network": "urf",
       "source": "dvref",
@@ -1718,6 +1819,7 @@
         "kind": "urf"
       },
       "id": "938",
+      "license": "CC-BY-4.0",
       "name": "G3BRG - Brundall Radio Group",
       "network": "urf",
       "source": "dvref",
@@ -1734,6 +1836,7 @@
         ]
       },
       "id": "960",
+      "license": "CC-BY-4.0",
       "name": "White Channel",
       "network": "urf",
       "source": "dvref",
@@ -1751,6 +1854,7 @@
         ]
       },
       "id": "987",
+      "license": "CC-BY-4.0",
       "name": "WindyLink Tehachapi",
       "network": "urf",
       "source": "dvref",
@@ -1767,6 +1871,7 @@
         ]
       },
       "id": "988",
+      "license": "CC-BY-4.0",
       "name": "XRF988 D-STAR SPAIN",
       "network": "urf",
       "source": "dvref",
@@ -1785,6 +1890,7 @@
         ]
       },
       "id": "992",
+      "license": "CC-BY-4.0",
       "name": "Multiprotocolo URE C\u00f3rdoba",
       "network": "urf",
       "source": "dvref",
@@ -1797,6 +1903,7 @@
         "kind": "urf"
       },
       "id": "995",
+      "license": "CC-BY-4.0",
       "name": "Club-618",
       "network": "urf",
       "source": "dvref"
@@ -1810,6 +1917,7 @@
         "kind": "urf"
       },
       "id": "ARA",
+      "license": "CC-BY-4.0",
       "name": "Appalachian Repeater Association",
       "network": "urf",
       "source": "dvref",
@@ -1824,6 +1932,7 @@
         "kind": "urf"
       },
       "id": "ARG",
+      "license": "CC-BY-4.0",
       "name": "Reflector Bell Ville Link - Cordoba",
       "network": "urf",
       "source": "dvref",
@@ -1844,6 +1953,7 @@
         ]
       },
       "id": "BAT",
+      "license": "CC-BY-4.0",
       "name": "Riflettore Universale per TRANI CONFERENCE",
       "network": "urf",
       "source": "dvref",
@@ -1864,6 +1974,7 @@
         ]
       },
       "id": "BRA",
+      "license": "CC-BY-4.0",
       "name": "BR XLXBRA",
       "network": "urf",
       "source": "dvref",
@@ -1889,6 +2000,7 @@
         ]
       },
       "id": "CEL",
+      "license": "CC-BY-4.0",
       "name": "Funknetz-Celle",
       "network": "urf",
       "source": "dvref",
@@ -1902,6 +2014,7 @@
         "kind": "urf"
       },
       "id": "CNP",
+      "license": "CC-BY-4.0",
       "name": "Asociacion Radioaficionados Santo Angel (ARSA)",
       "network": "urf",
       "source": "dvref",
@@ -1932,6 +2045,7 @@
         ]
       },
       "id": "CZS",
+      "license": "CC-BY-4.0",
       "name": "Czech XLX Reflector",
       "network": "urf",
       "source": "dvref",
@@ -1946,6 +2060,7 @@
         "kind": "urf"
       },
       "id": "D51",
+      "license": "CC-BY-4.0",
       "name": "Multi-XLXD51-ADN.Systems.Greece",
       "network": "urf",
       "source": "dvref",
@@ -1963,6 +2078,7 @@
         ]
       },
       "id": "DDC",
+      "license": "CC-BY-4.0",
       "name": "URF IZ7DDC",
       "network": "urf",
       "source": "dvref",
@@ -1979,6 +2095,7 @@
         ]
       },
       "id": "DIG",
+      "license": "CC-BY-4.0",
       "name": "DIG",
       "network": "urf",
       "source": "dvref"
@@ -1992,6 +2109,7 @@
         "kind": "urf"
       },
       "id": "E51",
+      "license": "CC-BY-4.0",
       "name": "Multi-XLXE51-ADN.Systems.Greece",
       "network": "urf",
       "source": "dvref",
@@ -2006,6 +2124,7 @@
         "kind": "urf"
       },
       "id": "FOX",
+      "license": "CC-BY-4.0",
       "name": "FOXHOLE-Under Construct.",
       "network": "urf",
       "source": "dvref",
@@ -2028,6 +2147,7 @@
         ]
       },
       "id": "FRA",
+      "license": "CC-BY-4.0",
       "name": "IT-Francavilla",
       "network": "urf",
       "source": "dvref",
@@ -2045,6 +2165,7 @@
         ]
       },
       "id": "H60",
+      "license": "CC-BY-4.0",
       "name": "Military Pilots Lounge",
       "network": "urf",
       "source": "dvref",
@@ -2058,6 +2179,7 @@
         "kind": "urf"
       },
       "id": "HLJ",
+      "license": "CC-BY-4.0",
       "name": "46002",
       "network": "urf",
       "source": "dvref",
@@ -2071,6 +2193,7 @@
         "kind": "urf"
       },
       "id": "ITA",
+      "license": "CC-BY-4.0",
       "name": "FREEDMR ITALY MULTISTANDARD REFLECTOR",
       "network": "urf",
       "source": "dvref",
@@ -2113,6 +2236,7 @@
         ]
       },
       "id": "JET",
+      "license": "CC-BY-4.0",
       "name": "N6JET URF REFLECTOR",
       "network": "urf",
       "source": "dvref",
@@ -2125,6 +2249,7 @@
         "kind": "urf"
       },
       "id": "JSS",
+      "license": "CC-BY-4.0",
       "name": "JSS",
       "network": "urf",
       "source": "dvref"
@@ -2142,6 +2267,7 @@
         ]
       },
       "id": "LAN",
+      "license": "CC-BY-4.0",
       "name": "NW Multimode  Group - Reflector",
       "network": "urf",
       "source": "dvref",
@@ -2159,6 +2285,7 @@
         ]
       },
       "id": "OKA",
+      "license": "CC-BY-4.0",
       "name": "OKA",
       "network": "urf",
       "source": "dvref",
@@ -2175,6 +2302,7 @@
         ]
       },
       "id": "PRC",
+      "license": "CC-BY-4.0",
       "name": "Foshan Multi-mode Reflector Service",
       "network": "urf",
       "source": "dvref",
@@ -2194,6 +2322,7 @@
         ]
       },
       "id": "SIN",
+      "license": "CC-BY-4.0",
       "name": "Southern Indiana Network (SIN)",
       "network": "urf",
       "source": "dvref",
@@ -2211,6 +2340,7 @@
         ]
       },
       "id": "SPB",
+      "license": "CC-BY-4.0",
       "name": "SPB",
       "network": "urf",
       "source": "dvref",
@@ -2224,6 +2354,7 @@
         "kind": "urf"
       },
       "id": "TRK",
+      "license": "CC-BY-4.0",
       "name": "Turkiye ADN Multimod",
       "network": "urf",
       "source": "dvref",
@@ -2237,6 +2368,7 @@
         "kind": "urf"
       },
       "id": "TUR",
+      "license": "CC-BY-4.0",
       "name": "Turkiye ADN Multimod",
       "network": "urf",
       "source": "dvref",
@@ -2250,6 +2382,7 @@
         "kind": "urf"
       },
       "id": "U1",
+      "license": "CC-BY-4.0",
       "name": "U1",
       "network": "urf",
       "source": "dvref"
@@ -2265,6 +2398,7 @@
         ]
       },
       "id": "URU",
+      "license": "CC-BY-4.0",
       "name": "UYURUGUAY.NET",
       "network": "urf",
       "source": "dvref",
@@ -2277,6 +2411,7 @@
         "kind": "urf"
       },
       "id": "UYU",
+      "license": "CC-BY-4.0",
       "name": "UYURUGUAY.NET",
       "network": "urf",
       "source": "dvref",
@@ -2294,6 +2429,7 @@
         ]
       },
       "id": "WAW",
+      "license": "CC-BY-4.0",
       "name": "26512WarszawaNXDN",
       "network": "urf",
       "source": "dvref",
@@ -2310,6 +2446,7 @@
         ]
       },
       "id": "WIL",
+      "license": "CC-BY-4.0",
       "name": "URFWIL Multi-Mode Reflector",
       "network": "urf",
       "source": "dvref",
@@ -2330,6 +2467,7 @@
         ]
       },
       "id": "YLV",
+      "license": "CC-BY-4.0",
       "name": "XLXYLV T\u00dcRK\u0130YE YALOVA",
       "network": "urf",
       "source": "dvref",

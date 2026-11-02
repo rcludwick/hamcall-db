@@ -24,7 +24,7 @@ rather than rounding it up.
 | [POTA park directory](#pota-park-directory) | Parquet, SQLite table | `latest` release | **CC BY-NC 4.0** |
 | [POTA park grid sets (US)](#pota-park-grid-sets-us-pad-us) | Parquet, SQLite table | `latest` release | **CC BY-NC 4.0** |
 | [POTA park grid sets (international)](#pota-park-grid-sets-international-openstreetmap) | Parquet, SQLite | `latest-osm` release | **ODbL 1.0** |
-| [Reflector directory](#reflector-directory) | Static JSON, Parquet, SQLite | this site + `latest-reflectors` release | **CC BY 4.0** |
+| [Reflector directory](#reflector-directory) | Static JSON, Parquet, SQLite | this site + `latest-reflectors` release | **CC BY 4.0** for DVRef rows; XLX/Pi-Star rows no licence stated (per-row `license`) |
 | [SOTA summits](#not-published-sota-summits-and-lotw-activity) | Parquet, SQLite table | not published — opt-in local builds only | pending sign-off |
 | [LoTW activity columns](#not-published-sota-summits-and-lotw-activity) | columns on the callsign dataset | not published — opt-in local builds only | pending sign-off |
 | [Build code](#build-code) | this repository | GitHub | **MIT** |
@@ -230,14 +230,19 @@ release:
 gh release download latest-reflectors --repo rcludwick/hamcall-db
 ```
 
-**Licence: CC BY 4.0** — <https://creativecommons.org/licenses/by/4.0/>.
-**Commercial use is permitted.** Attribution and a statement of modification are
-required; every emitted file carries `license`, `attribution` and
-`modifications` inline so the terms cannot get separated from the data. What was
+**Licence: per row.** Rows from DVRef (`license: "CC-BY-4.0"`) and hamcall-db's
+own contributions are CC BY 4.0 —
+<https://creativecommons.org/licenses/by/4.0/>; **commercial use is permitted**,
+and attribution and a statement of modification are required. Rows from the XLX
+registry and the Pi-Star host files (`license: "none-stated"`) come from
+publishers who state no licence: they are redistributed as facts, and no rights
+are granted beyond those the upstream provides. Files holding both kinds say
+`"license": "mixed — see per-row license and NOTICE"`. Every emitted file
+carries `license`, `attribution` and `modifications` inline so the terms cannot get separated from the data. What was
 changed is listed under [Modifications](licensing.md#modifications).
 
 This dataset is **never** merged into the CC BY-NC artifacts. Doing so would
-impose a non-commercial restriction that CC BY 4.0 grants away — see
+impose a non-commercial restriction on the DVRef rows that CC BY 4.0 grants away — see
 [Licensing](licensing.md#why-the-reflector-directory-is-kept-separate).
 
 **Required attribution**, verbatim:
@@ -252,17 +257,20 @@ Standalone XRF reflector data from the Pi-Star DExtra host file
 (http://www.pistar.uk/downloads/DExtra_Hosts.txt).
 
 REF and DCS reflector names from the Pi-Star DPlus and DCS host files
-(http://www.pistar.uk/downloads/).
+(http://www.pistar.uk/downloads/), which compile them from
+dstargateway.org and xreflector.net DNS.
 ```
 
 !!! note "Only DVRef's half of this is an explicit licence grant"
 
     DVRef placed its data under CC BY 4.0 in its *Accessing DVRef Data*
     announcement of 2026-08-04. The other three sources publish **no explicit
-    machine-readable licence**: the XLX registry and the Pi-Star host files are
+    licence or terms at all**: the XLX registry and the Pi-Star host files are
     publicly served directories of reflector addresses, published for exactly
-    this purpose and redistributed by hotspot software generally, and are used
-    on that basis with attribution. NOTICE flags all three for **human
+    this purpose and redistributed by hotspot software generally. Their rows
+    are labelled `license: "none-stated"`, redistributed as facts with
+    attribution, and no rights are granted in them beyond what those upstreams
+    provide. NOTICE flags all three for **human
     sign-off** alongside the project's other assumed-basis sources.
 
 !!! info "Access terms are not licence terms"
@@ -352,7 +360,8 @@ Standalone XRF reflector data from the Pi-Star DExtra host file
 (http://www.pistar.uk/downloads/DExtra_Hosts.txt).
 
 REF and DCS reflector names from the Pi-Star DPlus and DCS host files
-(http://www.pistar.uk/downloads/).
+(http://www.pistar.uk/downloads/), which compile them from
+dstargateway.org and xreflector.net DNS.
 ```
 
 Redistributing the

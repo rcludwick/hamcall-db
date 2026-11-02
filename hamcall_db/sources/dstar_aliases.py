@@ -3,6 +3,11 @@
 This importer creates no rows. It adds *names* to rows that already exist, and
 that limit is the whole design.
 
+Rights: Pi-Star publishes these host files with no licence or terms (it compiles
+the DPlus file from dstargateway.org DNS and the DCS file from xreflector.net
+DNS). The names are redistributed as facts, and every row that gains one is
+marked ``alias_source = "pistar"`` so that provenance is never lost.
+
 Why the other names matter
 --------------------------
 D-Star has three linking protocols — DPlus (``REF``), DExtra (``XRF``) and DCS
@@ -43,12 +48,11 @@ failure :mod:`hamcall_db.sources.dextra` documents.
 
 from __future__ import annotations
 
-import re
 import urllib.request
 from collections.abc import Callable, Iterable
 from pathlib import Path
 
-from hamcall_db.reflectors import ReflectorRecord
+from hamcall_db.reflectors import ALIAS_SOURCE_PISTAR, PISTAR_ALIAS_PATTERN, ReflectorRecord
 
 DPLUS_HOSTS_URL = "http://www.pistar.uk/downloads/DPlus_Hosts.txt"
 DCS_HOSTS_URL = "http://www.pistar.uk/downloads/DCS_Hosts.txt"
@@ -65,7 +69,10 @@ _USER_AGENT = "hamcall-db/0 (+https://github.com/rcludwick/hamcall-db)"
 # ~590 repeater gateways under their own callsigns (`DB0…`, `GB7…`, `F1Z…`),
 # and the DCS file repeats every XLX reflector under its `XLX###` name. A
 # repeater is not the reflector, and the XLX name is already the row's id.
-_NAME = re.compile(r"^(?:REF|DCS)[0-9A-Z]{3}$")
+#
+# The pattern lives in hamcall_db.reflectors because the publisher uses it too, to
+# recognise these names when labelling their provenance (``alias_source``).
+_NAME = PISTAR_ALIAS_PATTERN
 
 Fetcher = Callable[[str], bytes]
 
@@ -168,6 +175,9 @@ def apply_aliases(
             if candidate in existing or candidate in taken:
                 continue
             record.aliases.append(candidate)
+            # Provenance travels with the name: Pi-Star states no licence, so the row
+            # must say these names came from there rather than from the row's source.
+            record.alias_source = ALIAS_SOURCE_PISTAR
             existing.add(candidate)
             added += 1
     return rows, added

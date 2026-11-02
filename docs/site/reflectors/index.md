@@ -91,9 +91,46 @@ SLA — an outage there must not blank out every client's reflector picker.
 
 ## Licence
 
-**CC BY 4.0.** Commercial use is permitted; attribution and a statement of
-modification are required. Every file carries `license`, `attribution` and
-`modifications` inline so the terms cannot get separated from the data.
+The licence depends on where each row came from, and every row says which
+applies in its own `license` field.
 
-This is **not** the licence on the [callsign dataset](../callsigns.md) — see
+| Rows | `source` | Row `license` | What that means |
+|---|---|---|---|
+| M17, YSF, NXDN, P25, URF and DMR servers, and the DMR talkgroup files | `dvref` | `CC-BY-4.0` | CC BY 4.0. Commercial use is permitted; attribution and a statement of modification are required. |
+| D-Star reflectors from the XLX registry | `xlx` | `none-stated` | The registry publishes no licence. The rows are redistributed as facts, and no rights are granted beyond what the registry provides. |
+| Standalone XRF reflectors from the Pi-Star DExtra host file | `dextra` | `none-stated` | Pi-Star publishes no licence. Same treatment as the XLX rows. |
+
+D-Star rows can also carry REF and DCS names in `aliases`. Those names come
+from the Pi-Star DPlus and DCS host files, which state no licence either, and
+the row records that with `alias_source: "pistar"`.
+
+hamcall-db's own contributions (the schema, the selection and the derived
+fields) are CC BY 4.0.
+
+Each file's top-level `license` sums up its rows. A file whose rows are all
+CC BY (`m17.json`, `ysf.json`, `nxdn.json`, `p25.json`, `urf.json`, `dmr.json`
+and the talkgroup files) says `"CC BY 4.0"`. A file holding any `none-stated`
+rows (`dstar.json`, `reflectors.json` and `index.json`) says
+`"mixed — see per-row license and NOTICE"` and carries a `rights` note. Every
+file also carries `attribution` and `modifications` inline, so the terms cannot
+get separated from the data. If you need a set that is wholly CC BY, keep only
+the rows whose `license` is `CC-BY-4.0`.
+
+When you redistribute the directory, reproduce each attribution line that
+applies to the rows you pass on (all four, for the files whole). Only the DVRef
+line is a CC BY 4.0 obligation; the other three credit sources that state no
+licence.
+
+```
+Reflector data provided by DVRef — https://dvref.com/
+XLX reflector data from the XLX registry maintained by Luc Engelmann, LX1IQ
+(http://xlxapi.rlx.lu/).
+Standalone XRF reflector data from the Pi-Star DExtra host file
+(http://www.pistar.uk/downloads/DExtra_Hosts.txt).
+REF and DCS reflector names from the Pi-Star DPlus and DCS host files
+(http://www.pistar.uk/downloads/), which compile them from dstargateway.org
+and xreflector.net DNS.
+```
+
+None of this is the licence on the [callsign dataset](../callsigns.md). See
 [Licensing](../about/licensing.md) for why the two must stay apart.

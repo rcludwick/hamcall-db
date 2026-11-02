@@ -19,6 +19,7 @@
         "port": 41001
       },
       "id": "100",
+      "license": "CC-BY-4.0",
       "name": "Motorola BatChat",
       "network": "p25",
       "source": "dvref",
@@ -34,6 +35,7 @@
         "port": 41000
       },
       "id": "1005",
+      "license": "CC-BY-4.0",
       "name": "AETHER HELLAS P25 - 1005 REFLECTOR",
       "network": "p25",
       "source": "dvref",
@@ -49,6 +51,7 @@
         "port": 41000
       },
       "id": "1008",
+      "license": "CC-BY-4.0",
       "name": "ARERT - Weather Related Chat",
       "network": "p25",
       "source": "dvref",
@@ -63,6 +66,7 @@
         "port": 41000
       },
       "id": "10100",
+      "license": "CC-BY-4.0",
       "name": "World Wide",
       "network": "p25",
       "source": "dvref",
@@ -78,6 +82,7 @@
         "port": 41000
       },
       "id": "10120",
+      "license": "CC-BY-4.0",
       "name": "10120",
       "network": "p25",
       "source": "dvref",
@@ -92,6 +97,7 @@
         "port": 41003
       },
       "id": "1017",
+      "license": "CC-BY-4.0",
       "name": "SFARG Australian Portal",
       "network": "p25",
       "source": "dvref",
@@ -107,6 +113,7 @@
         "port": 41000
       },
       "id": "10200",
+      "license": "CC-BY-4.0",
       "name": "P25 North America",
       "network": "p25",
       "source": "dvref",
@@ -122,6 +129,7 @@
         "port": 41010
       },
       "id": "10201",
+      "license": "CC-BY-4.0",
       "name": "P25 NA TAC 1",
       "network": "p25",
       "source": "dvref",
@@ -136,6 +144,7 @@
         "port": 41001
       },
       "id": "10207",
+      "license": "CC-BY-4.0",
       "name": "Southwest P25",
       "network": "p25",
       "source": "dvref",
@@ -150,6 +159,7 @@
         "port": 41000
       },
       "id": "10208",
+      "license": "CC-BY-4.0",
       "name": "10208",
       "network": "p25",
       "source": "dvref",
@@ -164,6 +174,7 @@
         "port": 41000
       },
       "id": "10209",
+      "license": "CC-BY-4.0",
       "name": "Fun Machine Linked Repeater System",
       "network": "p25",
       "source": "dvref",
@@ -179,6 +190,7 @@
         "port": 41000
       },
       "id": "10253",
+      "license": "CC-BY-4.0",
       "name": "N6OCS",
       "network": "p25",
       "source": "dvref",
@@ -194,6 +206,7 @@
         "port": 41000
       },
       "id": "10260",
+      "license": "CC-BY-4.0",
       "name": "P25 TG-10260 Poland",
       "network": "p25",
       "source": "dvref",
@@ -208,6 +221,7 @@
         "port": 41000
       },
       "id": "10294",
+      "license": "CC-BY-4.0",
       "name": "SkyHubLink System",
       "network": "p25",
       "source": "dvref",
@@ -222,6 +236,7 @@
         "port": 41000
       },
       "id": "10300",
+      "license": "CC-BY-4.0",
       "name": "Europe",
       "network": "p25",
       "source": "dvref",
@@ -236,6 +251,7 @@
         "port": 41000
       },
       "id": "10301",
+      "license": "CC-BY-4.0",
       "name": "P25 ESPA\u00d1A",
       "network": "p25",
       "source": "dvref"
@@ -249,6 +265,7 @@
         "port": 41000
       },
       "id": "10320",
+      "license": "CC-BY-4.0",
       "name": "Germany Internet",
       "network": "p25",
       "source": "dvref",
@@ -264,6 +281,7 @@
         "port": 41000
       },
       "id": "10328",
+      "license": "CC-BY-4.0",
       "name": "DE-Pegasus-P25",
       "network": "p25",
       "source": "dvref",
@@ -277,6 +295,7 @@
         "port": 41000
       },
       "id": "10350",
+      "license": "CC-BY-4.0",
       "name": "WARC",
       "network": "p25",
       "source": "dvref"
@@ -290,6 +309,7 @@
         "port": 41001
       },
       "id": "10363",
+      "license": "CC-BY-4.0",
       "name": "REM-ESP P25Reflector",
       "network": "p25",
       "source": "dvref"
@@ -303,6 +323,7 @@
         "port": 41000
       },
       "id": "10365",
+      "license": "CC-BY-4.0",
       "name": "ADER P25Reflector",
       "network": "p25",
       "source": "dvref",
@@ -318,6 +339,7 @@
         "port": 41000
       },
       "id": "10400",
+      "license": "CC-BY-4.0",
       "name": "Pacific p25 TG 10400",
       "network": "p25",
       "source": "dvref",
@@ -333,6 +355,7 @@
         "port": 41010
       },
       "id": "10401",
+      "license": "CC-BY-4.0",
       "name": "Pacific TG 10401",
       "network": "p25",
       "source": "dvref",
@@ -348,6 +371,7 @@
         "port": 41000
       },
       "id": "10404",
+      "license": "CC-BY-4.0",
       "name": "BAYSIDE CHAT MULTIMODE REFLECTOR",
       "network": "p25",
       "source": "dvref",
@@ -362,6 +386,7 @@
         "port": 41000
       },
       "id": "10409",
+      "license": "CC-BY-4.0",
       "name": "BI1LLM P25 bridge to 46001",
       "network": "p25",
       "source": "dvref",
@@ -376,6 +401,7 @@
         "port": 41000
       },
       "id": "10411",
+      "license": "CC-BY-4.0",
       "name": "P25 Reflector bridged to DMR TG 46601",
       "network": "p25",
       "source": "dvref"
@@ -390,6 +416,7 @@
         "port": 41000
       },
       "id": "10421",
+      "license": "CC-BY-4.0",
       "name": "dl-nordwest.com",
       "network": "p25",
       "source": "dvref",
@@ -405,6 +432,7 @@
         "port": 41000
       },
       "id": "10428",
+      "license": "CC-BY-4.0",
       "name": "P25-LRC",
       "network": "p25",
       "source": "dvref",
@@ -420,6 +448,7 @@
         "port": 41000
       },
       "id": "10473",
+      "license": "CC-BY-4.0",
       "name": "Fireside Chat Reflector",
       "network": "p25",
       "source": "dvref",
@@ -434,6 +463,7 @@
         "port": 41000
       },
       "id": "105",
+      "license": "CC-BY-4.0",
       "name": "REF105",
       "network": "p25",
       "source": "dvref",
@@ -447,6 +477,7 @@
         "port": 41000
       },
       "id": "10512",
+      "license": "CC-BY-4.0",
       "name": "10512",
       "network": "p25",
       "source": "dvref"
@@ -461,6 +492,7 @@
         "port": 41000
       },
       "id": "10700",
+      "license": "CC-BY-4.0",
       "name": "10700",
       "network": "p25",
       "source": "dvref",
@@ -476,6 +508,7 @@
         "port": 41000
       },
       "id": "10888",
+      "license": "CC-BY-4.0",
       "name": "10888",
       "network": "p25",
       "source": "dvref",
@@ -489,6 +522,7 @@
         "port": 41000
       },
       "id": "10901",
+      "license": "CC-BY-4.0",
       "name": "Ki4eki",
       "network": "p25",
       "source": "dvref",
@@ -504,6 +538,7 @@
         "port": 41000
       },
       "id": "10902",
+      "license": "CC-BY-4.0",
       "name": "URF902",
       "network": "p25",
       "source": "dvref",
@@ -518,6 +553,7 @@
         "port": 41000
       },
       "id": "11053",
+      "license": "CC-BY-4.0",
       "name": "W6APX P25 Group",
       "network": "p25",
       "source": "dvref",
@@ -532,6 +568,7 @@
         "port": 41000
       },
       "id": "11069",
+      "license": "CC-BY-4.0",
       "name": "11069",
       "network": "p25",
       "source": "dvref",
@@ -546,6 +583,7 @@
         "port": 41002
       },
       "id": "112",
+      "license": "CC-BY-4.0",
       "name": "EMERGENCIAS",
       "network": "p25",
       "source": "dvref",
@@ -561,6 +599,7 @@
         "port": 41000
       },
       "id": "11520",
+      "license": "CC-BY-4.0",
       "name": "US D Friends",
       "network": "p25",
       "source": "dvref",
@@ -575,6 +614,7 @@
         "port": 41003
       },
       "id": "116",
+      "license": "CC-BY-4.0",
       "name": "116 TGIF",
       "network": "p25",
       "source": "dvref",
@@ -590,6 +630,7 @@
         "port": 41000
       },
       "id": "11710",
+      "license": "CC-BY-4.0",
       "name": "11710",
       "network": "p25",
       "source": "dvref",
@@ -605,6 +646,7 @@
         "port": 41000
       },
       "id": "12668",
+      "license": "CC-BY-4.0",
       "name": "N7MKY P25",
       "network": "p25",
       "source": "dvref",
@@ -620,6 +662,7 @@
         "port": 41000
       },
       "id": "131",
+      "license": "CC-BY-4.0",
       "name": "CenWis Call",
       "network": "p25",
       "source": "dvref",
@@ -635,6 +678,7 @@
         "port": 41001
       },
       "id": "1311",
+      "license": "CC-BY-4.0",
       "name": "CenWis Tac 1",
       "network": "p25",
       "source": "dvref",
@@ -650,6 +694,7 @@
         "port": 41002
       },
       "id": "1312",
+      "license": "CC-BY-4.0",
       "name": "CenWis Tac 2",
       "network": "p25",
       "source": "dvref",
@@ -664,6 +709,7 @@
         "port": 41002
       },
       "id": "1361",
+      "license": "CC-BY-4.0",
       "name": "MN RADIO Network Testing Node",
       "network": "p25",
       "source": "dvref",
@@ -678,6 +724,7 @@
         "port": 41000
       },
       "id": "137",
+      "license": "CC-BY-4.0",
       "name": "137",
       "network": "p25",
       "source": "dvref",
@@ -693,6 +740,7 @@
         "port": 41001
       },
       "id": "138",
+      "license": "CC-BY-4.0",
       "name": "XLX138 XNexus",
       "network": "p25",
       "source": "dvref",
@@ -707,6 +755,7 @@
         "port": 41000
       },
       "id": "139",
+      "license": "CC-BY-4.0",
       "name": "Maine P25 Talkgroup",
       "network": "p25",
       "source": "dvref",
@@ -721,6 +770,7 @@
         "port": 41004
       },
       "id": "14",
+      "license": "CC-BY-4.0",
       "name": "14",
       "network": "p25",
       "source": "dvref",
@@ -735,6 +785,7 @@
         "port": 41000
       },
       "id": "1453",
+      "license": "CC-BY-4.0",
       "name": "URFTUR",
       "network": "p25",
       "source": "dvref",
@@ -749,6 +800,7 @@
         "port": 41000
       },
       "id": "14679",
+      "license": "CC-BY-4.0",
       "name": "Treaty City ARA",
       "network": "p25",
       "source": "dvref",
@@ -764,6 +816,7 @@
         "port": 41000
       },
       "id": "148",
+      "license": "CC-BY-4.0",
       "name": "148",
       "network": "p25",
       "source": "dvref",
@@ -779,6 +832,7 @@
         "port": 41000
       },
       "id": "149",
+      "license": "CC-BY-4.0",
       "name": "149",
       "network": "p25",
       "source": "dvref",
@@ -793,6 +847,7 @@
         "port": 41000
       },
       "id": "1523",
+      "license": "CC-BY-4.0",
       "name": "URF276",
       "network": "p25",
       "source": "dvref",
@@ -808,6 +863,7 @@
         "port": 41000
       },
       "id": "15431",
+      "license": "CC-BY-4.0",
       "name": "URF587",
       "network": "p25",
       "source": "dvref",
@@ -823,6 +879,7 @@
         "port": 41000
       },
       "id": "15432",
+      "license": "CC-BY-4.0",
       "name": "URF307",
       "network": "p25",
       "source": "dvref",
@@ -838,6 +895,7 @@
         "port": 41000
       },
       "id": "165",
+      "license": "CC-BY-4.0",
       "name": "TG165-Digital Voice GREECE",
       "network": "p25",
       "source": "dvref",
@@ -853,6 +911,7 @@
         "port": 41000
       },
       "id": "178",
+      "license": "CC-BY-4.0",
       "name": "URF178",
       "network": "p25",
       "source": "dvref",
@@ -868,6 +927,7 @@
         "port": 41000
       },
       "id": "18",
+      "license": "CC-BY-4.0",
       "name": "REF018",
       "network": "p25",
       "source": "dvref",
@@ -882,6 +942,7 @@
         "port": 41123
       },
       "id": "1923",
+      "license": "CC-BY-4.0",
       "name": "P25 Turkiye 1923",
       "network": "p25",
       "source": "dvref",
@@ -895,6 +956,7 @@
         "port": 41000
       },
       "id": "19570",
+      "license": "CC-BY-4.0",
       "name": "KC3KMV Private P25 TG - ASL3 Node",
       "network": "p25",
       "source": "dvref",
@@ -909,6 +971,7 @@
         "port": 41000
       },
       "id": "199",
+      "license": "CC-BY-4.0",
       "name": "Defesa Civil do Brasil",
       "network": "p25",
       "source": "dvref",
@@ -924,6 +987,7 @@
         "port": 41000
       },
       "id": "202",
+      "license": "CC-BY-4.0",
       "name": "HELLAS Zone",
       "network": "p25",
       "source": "dvref",
@@ -939,6 +1003,7 @@
         "port": 41000
       },
       "id": "20210",
+      "license": "CC-BY-4.0",
       "name": "P25-2021.ADN.Systems.Greece",
       "network": "p25",
       "source": "dvref",
@@ -953,6 +1018,7 @@
         "port": 41000
       },
       "id": "20222",
+      "license": "CC-BY-4.0",
       "name": "P25-2022.ADN.Systems.Hellas-Node",
       "network": "p25",
       "source": "dvref",
@@ -968,6 +1034,7 @@
         "port": 41000
       },
       "id": "2044",
+      "license": "CC-BY-4.0",
       "name": "P25 NL-Oost Reflector",
       "network": "p25",
       "source": "dvref",
@@ -982,6 +1049,7 @@
         "port": 41000
       },
       "id": "2061",
+      "license": "CC-BY-4.0",
       "name": "VEX-BEL-P25",
       "network": "p25",
       "source": "dvref",
@@ -997,6 +1065,7 @@
         "port": 41000
       },
       "id": "20899",
+      "license": "CC-BY-4.0",
       "name": "URF399",
       "network": "p25",
       "source": "dvref",
@@ -1011,6 +1080,7 @@
         "port": 41000
       },
       "id": "210",
+      "license": "CC-BY-4.0",
       "name": "P25 PE",
       "network": "p25",
       "source": "dvref",
@@ -1026,6 +1096,7 @@
         "port": 41000
       },
       "id": "2121",
+      "license": "CC-BY-4.0",
       "name": "2121 Cambria County Multi-Mode Hub",
       "network": "p25",
       "source": "dvref",
@@ -1041,6 +1112,7 @@
         "port": 41000
       },
       "id": "21277",
+      "license": "CC-BY-4.0",
       "name": "URF277",
       "network": "p25",
       "source": "dvref",
@@ -1056,6 +1128,7 @@
         "port": 41000
       },
       "id": "213",
+      "license": "CC-BY-4.0",
       "name": "URF213",
       "network": "p25",
       "source": "dvref",
@@ -1071,6 +1144,7 @@
         "port": 41003
       },
       "id": "214",
+      "license": "CC-BY-4.0",
       "name": "214",
       "network": "p25",
       "source": "dvref",
@@ -1085,6 +1159,7 @@
         "port": 41005
       },
       "id": "2140",
+      "license": "CC-BY-4.0",
       "name": "Multiprotocoll",
       "network": "p25",
       "source": "dvref",
@@ -1099,6 +1174,7 @@
         "port": 41000
       },
       "id": "21413",
+      "license": "CC-BY-4.0",
       "name": "D-FRIENDS",
       "network": "p25",
       "source": "dvref",
@@ -1113,6 +1189,7 @@
         "port": 41002
       },
       "id": "2147",
+      "license": "CC-BY-4.0",
       "name": "TG2147",
       "network": "p25",
       "source": "dvref",
@@ -1128,6 +1205,7 @@
         "port": 41000
       },
       "id": "21909",
+      "license": "CC-BY-4.0",
       "name": "PRIDE",
       "network": "p25",
       "source": "dvref",
@@ -1142,6 +1220,7 @@
         "port": 41000
       },
       "id": "22022",
+      "license": "CC-BY-4.0",
       "name": "US-PA Parrot",
       "network": "p25",
       "source": "dvref",
@@ -1156,6 +1235,7 @@
         "port": 41000
       },
       "id": "22108",
+      "license": "CC-BY-4.0",
       "name": "URF025",
       "network": "p25",
       "source": "dvref",
@@ -1170,6 +1250,7 @@
         "port": 41000
       },
       "id": "222",
+      "license": "CC-BY-4.0",
       "name": "WZ5TX",
       "network": "p25",
       "source": "dvref",
@@ -1184,6 +1265,7 @@
         "port": 41000
       },
       "id": "22200",
+      "license": "CC-BY-4.0",
       "name": "URFITA",
       "network": "p25",
       "source": "dvref",
@@ -1199,6 +1281,7 @@
         "port": 41000
       },
       "id": "22202",
+      "license": "CC-BY-4.0",
       "name": "Sardinia Island",
       "network": "p25",
       "source": "dvref",
@@ -1213,6 +1296,7 @@
         "port": 41000
       },
       "id": "22208",
+      "license": "CC-BY-4.0",
       "name": "Italy Centro Digiland",
       "network": "p25",
       "source": "dvref",
@@ -1228,6 +1312,7 @@
         "port": 41000
       },
       "id": "22212",
+      "license": "CC-BY-4.0",
       "name": "P25 Reflector Gruppo DMR Ossola TG 22212",
       "network": "p25",
       "source": "dvref",
@@ -1243,6 +1328,7 @@
         "port": 41000
       },
       "id": "22252",
+      "license": "CC-BY-4.0",
       "name": "P25-REF-IT-MULTI-NET",
       "network": "p25",
       "source": "dvref",
@@ -1258,6 +1344,7 @@
         "port": 41000
       },
       "id": "22270",
+      "license": "CC-BY-4.0",
       "name": "URFDDC",
       "network": "p25",
       "source": "dvref",
@@ -1273,6 +1360,7 @@
         "port": 41000
       },
       "id": "22273",
+      "license": "CC-BY-4.0",
       "name": "P25-BAT",
       "network": "p25",
       "source": "dvref",
@@ -1288,6 +1376,7 @@
         "port": 41000
       },
       "id": "22276",
+      "license": "CC-BY-4.0",
       "name": "URFBAT",
       "network": "p25",
       "source": "dvref",
@@ -1301,6 +1390,7 @@
         "port": 41000
       },
       "id": "223",
+      "license": "CC-BY-4.0",
       "name": "W2GGI Reflector",
       "network": "p25",
       "source": "dvref",
@@ -1315,6 +1405,7 @@
         "port": 41004
       },
       "id": "224",
+      "license": "CC-BY-4.0",
       "name": "P25 224",
       "network": "p25",
       "source": "dvref",
@@ -1329,6 +1420,7 @@
         "port": 41000
       },
       "id": "226",
+      "license": "CC-BY-4.0",
       "name": "P25 Romania YO",
       "network": "p25",
       "source": "dvref",
@@ -1344,6 +1436,7 @@
         "port": 41000
       },
       "id": "22625",
+      "license": "CC-BY-4.0",
       "name": "22625",
       "network": "p25",
       "source": "dvref",
@@ -1359,6 +1452,7 @@
         "port": 41000
       },
       "id": "22633",
+      "license": "CC-BY-4.0",
       "name": "P25Core TG22633",
       "network": "p25",
       "source": "dvref",
@@ -1374,6 +1468,7 @@
         "port": 41000
       },
       "id": "228",
+      "license": "CC-BY-4.0",
       "name": "Switzerland",
       "network": "p25",
       "source": "dvref",
@@ -1389,6 +1484,7 @@
         "port": 41000
       },
       "id": "2284",
+      "license": "CC-BY-4.0",
       "name": "Basel, Switzerland",
       "network": "p25",
       "source": "dvref",
@@ -1403,6 +1499,7 @@
         "port": 41000
       },
       "id": "23225",
+      "license": "CC-BY-4.0",
       "name": "Austria P25 Group",
       "network": "p25",
       "source": "dvref",
@@ -1417,6 +1514,7 @@
         "port": 41000
       },
       "id": "23426",
+      "license": "CC-BY-4.0",
       "name": "FreeSTAR UK",
       "network": "p25",
       "source": "dvref",
@@ -1431,6 +1529,7 @@
         "port": 41000
       },
       "id": "23456",
+      "license": "CC-BY-4.0",
       "name": "DNET_P25_VPS",
       "network": "p25",
       "source": "dvref",
@@ -1445,6 +1544,7 @@
         "port": 41001
       },
       "id": "2350",
+      "license": "CC-BY-4.0",
       "name": "ChatterBOX 2350",
       "network": "p25",
       "source": "dvref",
@@ -1460,6 +1560,7 @@
         "port": 41000
       },
       "id": "23511",
+      "license": "CC-BY-4.0",
       "name": "23511",
       "network": "p25",
       "source": "dvref",
@@ -1475,6 +1576,7 @@
         "port": 41000
       },
       "id": "23530",
+      "license": "CC-BY-4.0",
       "name": "Yorkshire Link P25",
       "network": "p25",
       "source": "dvref",
@@ -1489,6 +1591,7 @@
         "port": 41000
       },
       "id": "23534",
+      "license": "CC-BY-4.0",
       "name": "CumbriaCQ.com",
       "network": "p25",
       "source": "dvref",
@@ -1503,6 +1606,7 @@
         "port": 41000
       },
       "id": "24033",
+      "license": "CC-BY-4.0",
       "name": "Arkansas Radio Heads",
       "network": "p25",
       "source": "dvref",
@@ -1517,6 +1621,7 @@
         "port": 41000
       },
       "id": "24601",
+      "license": "CC-BY-4.0",
       "name": "Lithuania MultiMode",
       "network": "p25",
       "source": "dvref",
@@ -1531,6 +1636,7 @@
         "port": 41000
       },
       "id": "24706",
+      "license": "CC-BY-4.0",
       "name": "MultiMode",
       "network": "p25",
       "source": "dvref",
@@ -1546,6 +1652,7 @@
         "port": 41000
       },
       "id": "255",
+      "license": "CC-BY-4.0",
       "name": "URF256",
       "network": "p25",
       "source": "dvref",
@@ -1559,6 +1666,7 @@
         "port": 41000
       },
       "id": "25508",
+      "license": "CC-BY-4.0",
       "name": "New England 25508",
       "network": "p25",
       "source": "dvref",
@@ -1573,6 +1681,7 @@
         "port": 41000
       },
       "id": "256",
+      "license": "CC-BY-4.0",
       "name": "WX4ALA",
       "network": "p25",
       "source": "dvref"
@@ -1587,6 +1696,7 @@
         "port": 41000
       },
       "id": "25617",
+      "license": "CC-BY-4.0",
       "name": "KAVKAZ",
       "network": "p25",
       "source": "dvref",
@@ -1600,6 +1710,7 @@
         "port": 41000
       },
       "id": "25619",
+      "license": "CC-BY-4.0",
       "name": "Volgodonsk",
       "network": "p25",
       "source": "dvref",
@@ -1614,6 +1725,7 @@
         "port": 41000
       },
       "id": "25701",
+      "license": "CC-BY-4.0",
       "name": "BY MultiMode",
       "network": "p25",
       "source": "dvref",
@@ -1629,6 +1741,7 @@
         "port": 41005
       },
       "id": "260",
+      "license": "CC-BY-4.0",
       "name": "P25 TG-260 Poland",
       "network": "p25",
       "source": "dvref",
@@ -1642,6 +1755,7 @@
         "port": 41010
       },
       "id": "26230",
+      "license": "CC-BY-4.0",
       "name": "DL-AFURegH",
       "network": "p25",
       "source": "dvref"
@@ -1654,6 +1768,7 @@
         "port": 41000
       },
       "id": "26231",
+      "license": "CC-BY-4.0",
       "name": "DL-NI-Mitte",
       "network": "p25",
       "source": "dvref",
@@ -1669,6 +1784,7 @@
         "port": 41000
       },
       "id": "26269",
+      "license": "CC-BY-4.0",
       "name": "URF269",
       "network": "p25",
       "source": "dvref",
@@ -1684,6 +1800,7 @@
         "port": 41000
       },
       "id": "26334",
+      "license": "CC-BY-4.0",
       "name": "Funknetz-Celle",
       "network": "p25",
       "source": "dvref",
@@ -1698,6 +1815,7 @@
         "port": 41000
       },
       "id": "26447",
+      "license": "CC-BY-4.0",
       "name": "Bridge to XLX508",
       "network": "p25",
       "source": "dvref",
@@ -1712,6 +1830,7 @@
         "port": 41000
       },
       "id": "26512",
+      "license": "CC-BY-4.0",
       "name": "P25-26512 Warszawa Poland",
       "network": "p25",
       "source": "dvref",
@@ -1725,6 +1844,7 @@
         "port": 41000
       },
       "id": "2700",
+      "license": "CC-BY-4.0",
       "name": "2700nxdn.ddns.net",
       "network": "p25",
       "source": "dvref",
@@ -1739,6 +1859,7 @@
         "port": 41000
       },
       "id": "274",
+      "license": "CC-BY-4.0",
       "name": "URF274",
       "network": "p25",
       "source": "dvref",
@@ -1753,6 +1874,7 @@
         "port": 41000
       },
       "id": "276",
+      "license": "CC-BY-4.0",
       "name": "Amateur Radio Network",
       "network": "p25",
       "source": "dvref",
@@ -1768,6 +1890,7 @@
         "port": 41001
       },
       "id": "28299",
+      "license": "CC-BY-4.0",
       "name": "America Ragchew",
       "network": "p25",
       "source": "dvref",
@@ -1783,6 +1906,7 @@
         "port": 41000
       },
       "id": "286",
+      "license": "CC-BY-4.0",
       "name": "P25 T\u00dcRK\u0130YE",
       "network": "p25",
       "source": "dvref",
@@ -1797,6 +1921,7 @@
         "port": 41000
       },
       "id": "28600",
+      "license": "CC-BY-4.0",
       "name": "P25 Turkiye",
       "network": "p25",
       "source": "dvref",
@@ -1812,6 +1937,7 @@
         "port": 41001
       },
       "id": "28601",
+      "license": "CC-BY-4.0",
       "name": "P25 Adana",
       "network": "p25",
       "source": "dvref",
@@ -1826,6 +1952,7 @@
         "port": 41002
       },
       "id": "28602",
+      "license": "CC-BY-4.0",
       "name": "P25 Adiyaman",
       "network": "p25",
       "source": "dvref",
@@ -1840,6 +1967,7 @@
         "port": 41045
       },
       "id": "28645",
+      "license": "CC-BY-4.0",
       "name": "P25 Manisa",
       "network": "p25",
       "source": "dvref",
@@ -1854,6 +1982,7 @@
         "port": 41046
       },
       "id": "28646",
+      "license": "CC-BY-4.0",
       "name": "P25 Kahramanmaras",
       "network": "p25",
       "source": "dvref",
@@ -1868,6 +1997,7 @@
         "port": 41047
       },
       "id": "28647",
+      "license": "CC-BY-4.0",
       "name": "P25 Mardin",
       "network": "p25",
       "source": "dvref",
@@ -1883,6 +2013,7 @@
         "port": 41048
       },
       "id": "28648",
+      "license": "CC-BY-4.0",
       "name": "P25 Mugla",
       "network": "p25",
       "source": "dvref",
@@ -1898,6 +2029,7 @@
         "port": 41000
       },
       "id": "28677",
+      "license": "CC-BY-4.0",
       "name": "P25 YALOVA T\u00dcRK\u0130YE",
       "network": "p25",
       "source": "dvref",
@@ -1912,6 +2044,7 @@
         "port": 41000
       },
       "id": "28699",
+      "license": "CC-BY-4.0",
       "name": "URFTRK",
       "network": "p25",
       "source": "dvref",
@@ -1926,6 +2059,7 @@
         "port": 41000
       },
       "id": "297",
+      "license": "CC-BY-4.0",
       "name": "URF297",
       "network": "p25",
       "source": "dvref",
@@ -1940,6 +2074,7 @@
         "port": 41000
       },
       "id": "30043",
+      "license": "CC-BY-4.0",
       "name": "URF043 P25",
       "network": "p25",
       "source": "dvref",
@@ -1954,6 +2089,7 @@
         "port": 41000
       },
       "id": "301",
+      "license": "CC-BY-4.0",
       "name": "URF301",
       "network": "p25",
       "source": "dvref",
@@ -1968,6 +2104,7 @@
         "port": 41000
       },
       "id": "30252",
+      "license": "CC-BY-4.0",
       "name": "VE5SKN SASKWARN Multimode Cloud Server",
       "network": "p25",
       "source": "dvref",
@@ -1982,6 +2119,7 @@
         "port": 41000
       },
       "id": "3026",
+      "license": "CC-BY-4.0",
       "name": "Alberta P25 3026",
       "network": "p25",
       "source": "dvref",
@@ -1997,6 +2135,7 @@
         "port": 41004
       },
       "id": "304",
+      "license": "CC-BY-4.0",
       "name": "West Virginia ARA",
       "network": "p25",
       "source": "dvref",
@@ -2012,6 +2151,7 @@
         "port": 41000
       },
       "id": "30421",
+      "license": "CC-BY-4.0",
       "name": "URFARA",
       "network": "p25",
       "source": "dvref",
@@ -2026,6 +2166,7 @@
         "port": 41000
       },
       "id": "30444",
+      "license": "CC-BY-4.0",
       "name": "ZONA DMR CL - LYNK25",
       "network": "p25",
       "source": "dvref",
@@ -2041,6 +2182,7 @@
         "port": 41000
       },
       "id": "306",
+      "license": "CC-BY-4.0",
       "name": "URF306",
       "network": "p25",
       "source": "dvref",
@@ -2055,6 +2197,7 @@
         "port": 41000
       },
       "id": "30639",
+      "license": "CC-BY-4.0",
       "name": "30639",
       "network": "p25",
       "source": "dvref",
@@ -2070,6 +2213,7 @@
         "port": 41000
       },
       "id": "31000",
+      "license": "CC-BY-4.0",
       "name": "US Severe Weather",
       "network": "p25",
       "source": "dvref",
@@ -2085,6 +2229,7 @@
         "port": 41000
       },
       "id": "31010",
+      "license": "CC-BY-4.0",
       "name": "Alabama Link",
       "network": "p25",
       "source": "dvref",
@@ -2099,6 +2244,7 @@
         "port": 41000
       },
       "id": "31038",
+      "license": "CC-BY-4.0",
       "name": "SRG Reflector",
       "network": "p25",
       "source": "dvref"
@@ -2112,6 +2258,7 @@
         "port": 41000
       },
       "id": "31052",
+      "license": "CC-BY-4.0",
       "name": "NA0D P25 Reflector",
       "network": "p25",
       "source": "dvref",
@@ -2127,6 +2274,7 @@
         "port": 41000
       },
       "id": "31057",
+      "license": "CC-BY-4.0",
       "name": "31057",
       "network": "p25",
       "source": "dvref",
@@ -2141,6 +2289,7 @@
         "port": 41000
       },
       "id": "31059",
+      "license": "CC-BY-4.0",
       "name": "vidalia net",
       "network": "p25",
       "source": "dvref",
@@ -2154,6 +2303,7 @@
         "port": 41000
       },
       "id": "31061",
+      "license": "CC-BY-4.0",
       "name": "SoCalDigiTalk",
       "network": "p25",
       "source": "dvref"
@@ -2166,6 +2316,7 @@
         "port": 41000
       },
       "id": "31062",
+      "license": "CC-BY-4.0",
       "name": "Mountain West P25 Reflector",
       "network": "p25",
       "source": "dvref",
@@ -2180,6 +2331,7 @@
         "port": 41000
       },
       "id": "31068",
+      "license": "CC-BY-4.0",
       "name": "P25 NorCal Talk Group",
       "network": "p25",
       "source": "dvref",
@@ -2195,6 +2347,7 @@
         "port": 41007
       },
       "id": "31077",
+      "license": "CC-BY-4.0",
       "name": "PAPA Chat",
       "network": "p25",
       "source": "dvref",
@@ -2210,6 +2363,7 @@
         "port": 41000
       },
       "id": "31078",
+      "license": "CC-BY-4.0",
       "name": "PAPA Bridge",
       "network": "p25",
       "source": "dvref",
@@ -2224,6 +2378,7 @@
         "port": 41000
       },
       "id": "31088",
+      "license": "CC-BY-4.0",
       "name": "Colorado HD",
       "network": "p25",
       "source": "dvref",
@@ -2238,6 +2393,7 @@
         "port": 41000
       },
       "id": "31128",
+      "license": "CC-BY-4.0",
       "name": "Gulf of America Radio Network",
       "network": "p25",
       "source": "dvref",
@@ -2252,6 +2408,7 @@
         "port": 41000
       },
       "id": "31138",
+      "license": "CC-BY-4.0",
       "name": "KingsLand Local network",
       "network": "p25",
       "source": "dvref",
@@ -2266,6 +2423,7 @@
         "port": 41001
       },
       "id": "31161",
+      "license": "CC-BY-4.0",
       "name": "Virginia",
       "network": "p25",
       "source": "dvref",
@@ -2281,6 +2439,7 @@
         "port": 41000
       },
       "id": "31171",
+      "license": "CC-BY-4.0",
       "name": "31171",
       "network": "p25",
       "source": "dvref",
@@ -2296,6 +2455,7 @@
         "port": 41000
       },
       "id": "31188",
+      "license": "CC-BY-4.0",
       "name": "URFSIN",
       "network": "p25",
       "source": "dvref",
@@ -2310,6 +2470,7 @@
         "port": 41000
       },
       "id": "31201",
+      "license": "CC-BY-4.0",
       "name": "BYRG TalkGroup",
       "network": "p25",
       "source": "dvref",
@@ -2324,6 +2485,7 @@
         "port": 41000
       },
       "id": "31202",
+      "license": "CC-BY-4.0",
       "name": "K0XM development",
       "network": "p25",
       "source": "dvref"
@@ -2338,6 +2500,7 @@
         "port": 41000
       },
       "id": "31238",
+      "license": "CC-BY-4.0",
       "name": "31238",
       "network": "p25",
       "source": "dvref",
@@ -2352,6 +2515,7 @@
         "port": 41001
       },
       "id": "31291",
+      "license": "CC-BY-4.0",
       "name": "Southwest Missouri",
       "network": "p25",
       "source": "dvref",
@@ -2366,6 +2530,7 @@
         "port": 41003
       },
       "id": "31297",
+      "license": "CC-BY-4.0",
       "name": "Southwest Missouri Skywarn",
       "network": "p25",
       "source": "dvref",
@@ -2380,6 +2545,7 @@
         "port": 41000
       },
       "id": "31313",
+      "license": "CC-BY-4.0",
       "name": "31313",
       "network": "p25",
       "source": "dvref",
@@ -2395,6 +2561,7 @@
         "port": 41000
       },
       "id": "31337",
+      "license": "CC-BY-4.0",
       "name": "SWLA-LINK",
       "network": "p25",
       "source": "dvref",
@@ -2409,6 +2576,7 @@
         "port": 41000
       },
       "id": "31340",
+      "license": "CC-BY-4.0",
       "name": "CNJHAM",
       "network": "p25",
       "source": "dvref",
@@ -2423,6 +2591,7 @@
         "port": 41000
       },
       "id": "31377",
+      "license": "CC-BY-4.0",
       "name": "Foothills Wave Whisperers",
       "network": "p25",
       "source": "dvref"
@@ -2436,6 +2605,7 @@
         "port": 41000
       },
       "id": "31379",
+      "license": "CC-BY-4.0",
       "name": "Piedmont Triad Network",
       "network": "p25",
       "source": "dvref"
@@ -2450,6 +2620,7 @@
         "port": 41000
       },
       "id": "31390",
+      "license": "CC-BY-4.0",
       "name": "Torcon Weather",
       "network": "p25",
       "source": "dvref",
@@ -2465,6 +2636,7 @@
         "port": 41001
       },
       "id": "31391",
+      "license": "CC-BY-4.0",
       "name": "TORCON Amateur Radio Club",
       "network": "p25",
       "source": "dvref",
@@ -2480,6 +2652,7 @@
         "port": 41002
       },
       "id": "31392",
+      "license": "CC-BY-4.0",
       "name": "TORCON Weather TAC",
       "network": "p25",
       "source": "dvref",
@@ -2495,6 +2668,7 @@
         "port": 41002
       },
       "id": "3142",
+      "license": "CC-BY-4.0",
       "name": "3142",
       "network": "p25",
       "source": "dvref",
@@ -2510,6 +2684,7 @@
         "port": 41001
       },
       "id": "31425",
+      "license": "CC-BY-4.0",
       "name": "31425",
       "network": "p25",
       "source": "dvref"
@@ -2523,6 +2698,7 @@
         "port": 41000
       },
       "id": "31444",
+      "license": "CC-BY-4.0",
       "name": "RI DIGITALINK",
       "network": "p25",
       "source": "dvref",
@@ -2537,6 +2713,7 @@
         "port": 41000
       },
       "id": "31471",
+      "license": "CC-BY-4.0",
       "name": "Midsouth P25",
       "network": "p25",
       "source": "dvref",
@@ -2552,6 +2729,7 @@
         "port": 41000
       },
       "id": "31473",
+      "license": "CC-BY-4.0",
       "name": "TN TAC System",
       "network": "p25",
       "source": "dvref",
@@ -2565,6 +2743,7 @@
         "port": 41003
       },
       "id": "3149",
+      "license": "CC-BY-4.0",
       "name": "Utah DRN P25 Standalone",
       "network": "p25",
       "source": "dvref",
@@ -2579,6 +2758,7 @@
         "port": 41000
       },
       "id": "31490",
+      "license": "CC-BY-4.0",
       "name": "Utah DRN 00 Bridge",
       "network": "p25",
       "source": "dvref",
@@ -2593,6 +2773,7 @@
         "port": 41001
       },
       "id": "31491",
+      "license": "CC-BY-4.0",
       "name": "Utah DRN 01 Bridge",
       "network": "p25",
       "source": "dvref",
@@ -2607,6 +2788,7 @@
         "port": 41002
       },
       "id": "31495",
+      "license": "CC-BY-4.0",
       "name": "Utah DRN 05 Bridge",
       "network": "p25",
       "source": "dvref",
@@ -2621,6 +2803,7 @@
         "port": 41010
       },
       "id": "3155",
+      "license": "CC-BY-4.0",
       "name": "3155",
       "network": "p25",
       "source": "dvref",
@@ -2636,6 +2819,7 @@
         "port": 41000
       },
       "id": "31551",
+      "license": "CC-BY-4.0",
       "name": "31551",
       "network": "p25",
       "source": "dvref",
@@ -2650,6 +2834,7 @@
         "port": 41000
       },
       "id": "31555",
+      "license": "CC-BY-4.0",
       "name": "31555",
       "network": "p25",
       "source": "dvref",
@@ -2665,6 +2850,7 @@
         "port": 41000
       },
       "id": "3159",
+      "license": "CC-BY-4.0",
       "name": "UPNS SW",
       "network": "p25",
       "source": "dvref",
@@ -2680,6 +2866,7 @@
         "port": 41001
       },
       "id": "31590",
+      "license": "CC-BY-4.0",
       "name": "UPNS 00",
       "network": "p25",
       "source": "dvref",
@@ -2695,6 +2882,7 @@
         "port": 41001
       },
       "id": "31591",
+      "license": "CC-BY-4.0",
       "name": "UPNS NORTH",
       "network": "p25",
       "source": "dvref",
@@ -2710,6 +2898,7 @@
         "port": 41002
       },
       "id": "31592",
+      "license": "CC-BY-4.0",
       "name": "UPNS CENTRAL",
       "network": "p25",
       "source": "dvref",
@@ -2725,6 +2914,7 @@
         "port": 41003
       },
       "id": "31593",
+      "license": "CC-BY-4.0",
       "name": "UPNS SOUTH",
       "network": "p25",
       "source": "dvref",
@@ -2740,6 +2930,7 @@
         "port": 41004
       },
       "id": "31594",
+      "license": "CC-BY-4.0",
       "name": "UPNS EVENT",
       "network": "p25",
       "source": "dvref",
@@ -2755,6 +2946,7 @@
         "port": 41005
       },
       "id": "31595",
+      "license": "CC-BY-4.0",
       "name": "UPNS IT",
       "network": "p25",
       "source": "dvref",
@@ -2769,6 +2961,7 @@
         "port": 41000
       },
       "id": "31611",
+      "license": "CC-BY-4.0",
       "name": "Halo-Halo Network",
       "network": "p25",
       "source": "dvref",
@@ -2783,6 +2976,7 @@
         "port": 43166
       },
       "id": "3166",
+      "license": "CC-BY-4.0",
       "name": "DVSwitch P25 Reflector",
       "network": "p25",
       "source": "dvref",
@@ -2798,6 +2992,7 @@
         "port": 41000
       },
       "id": "31670",
+      "license": "CC-BY-4.0",
       "name": "W9WDX P25 to XLXWDX C",
       "network": "p25",
       "source": "dvref",
@@ -2812,6 +3007,7 @@
         "port": 41000
       },
       "id": "31672",
+      "license": "CC-BY-4.0",
       "name": "Pi-Star Multi-Mode Reflector",
       "network": "p25",
       "source": "dvref",
@@ -2827,6 +3023,7 @@
         "port": 41000
       },
       "id": "31691",
+      "license": "CC-BY-4.0",
       "name": "TriState DMR (IL-IN-WI multimode)",
       "network": "p25",
       "source": "dvref",
@@ -2842,6 +3039,7 @@
         "port": 41000
       },
       "id": "31701",
+      "license": "CC-BY-4.0",
       "name": "Starfleet Amateur Radio Group - Trek Talk",
       "network": "p25",
       "source": "dvref",
@@ -2856,6 +3054,7 @@
         "port": 41000
       },
       "id": "3175",
+      "license": "CC-BY-4.0",
       "name": "The Fog Multimode  XLX073",
       "network": "p25",
       "source": "dvref",
@@ -2871,6 +3070,7 @@
         "port": 41000
       },
       "id": "31777",
+      "license": "CC-BY-4.0",
       "name": "DX-LINK SYSTEM",
       "network": "p25",
       "source": "dvref",
@@ -2886,6 +3086,7 @@
         "port": 41000
       },
       "id": "31845",
+      "license": "CC-BY-4.0",
       "name": "URFPAW",
       "network": "p25",
       "source": "dvref",
@@ -2899,6 +3100,7 @@
         "port": 41000
       },
       "id": "31910",
+      "license": "CC-BY-4.0",
       "name": "LMRNET",
       "network": "p25",
       "source": "dvref",
@@ -2913,6 +3115,7 @@
         "port": 41000
       },
       "id": "31947",
+      "license": "CC-BY-4.0",
       "name": "Missouri Digital Calling Network",
       "network": "p25",
       "source": "dvref",
@@ -2928,6 +3131,7 @@
         "port": 41000
       },
       "id": "31983",
+      "license": "CC-BY-4.0",
       "name": "31983",
       "network": "p25",
       "source": "dvref",
@@ -2943,6 +3147,7 @@
         "port": 41000
       },
       "id": "31985",
+      "license": "CC-BY-4.0",
       "name": "URF550",
       "network": "p25",
       "source": "dvref",
@@ -2958,6 +3163,7 @@
         "port": 41000
       },
       "id": "31990",
+      "license": "CC-BY-4.0",
       "name": "MNRADIO",
       "network": "p25",
       "source": "dvref",
@@ -2972,6 +3178,7 @@
         "port": 41000
       },
       "id": "32103",
+      "license": "CC-BY-4.0",
       "name": "32103",
       "network": "p25",
       "source": "dvref",
@@ -2986,6 +3193,7 @@
         "port": 41002
       },
       "id": "32136",
+      "license": "CC-BY-4.0",
       "name": "KN4YDL Amateur Radio Group TG32136",
       "network": "p25",
       "source": "dvref",
@@ -3000,6 +3208,7 @@
         "port": 41000
       },
       "id": "3241",
+      "license": "CC-BY-4.0",
       "name": "URF324",
       "network": "p25",
       "source": "dvref",
@@ -3014,6 +3223,7 @@
         "port": 41000
       },
       "id": "333",
+      "license": "CC-BY-4.0",
       "name": "W2NJR Linked Repeater System",
       "network": "p25",
       "source": "dvref",
@@ -3028,6 +3238,7 @@
         "port": 41000
       },
       "id": "3333",
+      "license": "CC-BY-4.0",
       "name": "W2NJR Linked Repeater System",
       "network": "p25",
       "source": "dvref",
@@ -3042,6 +3253,7 @@
         "port": 41008
       },
       "id": "334",
+      "license": "CC-BY-4.0",
       "name": "MEXICO",
       "network": "p25",
       "source": "dvref",
@@ -3057,6 +3269,7 @@
         "port": 41000
       },
       "id": "3341",
+      "license": "CC-BY-4.0",
       "name": "P25-XE1JMB",
       "network": "p25",
       "source": "dvref",
@@ -3071,6 +3284,7 @@
         "port": 41000
       },
       "id": "33420",
+      "license": "CC-BY-4.0",
       "name": "DURANGO",
       "network": "p25",
       "source": "dvref"
@@ -3084,6 +3298,7 @@
         "port": 41000
       },
       "id": "33581",
+      "license": "CC-BY-4.0",
       "name": "NET TALK - P25",
       "network": "p25",
       "source": "dvref",
@@ -3098,6 +3313,7 @@
         "port": 41000
       },
       "id": "34075",
+      "license": "CC-BY-4.0",
       "name": "URFSCP",
       "network": "p25",
       "source": "dvref",
@@ -3113,6 +3329,7 @@
         "port": 41000
       },
       "id": "34109",
+      "license": "CC-BY-4.0",
       "name": "34109",
       "network": "p25",
       "source": "dvref",
@@ -3127,6 +3344,7 @@
         "port": 41000
       },
       "id": "34567",
+      "license": "CC-BY-4.0",
       "name": "SKYSCRAPER",
       "network": "p25",
       "source": "dvref",
@@ -3142,6 +3360,7 @@
         "port": 41010
       },
       "id": "357",
+      "license": "CC-BY-4.0",
       "name": "357",
       "network": "p25",
       "source": "dvref",
@@ -3157,6 +3376,7 @@
         "port": 41000
       },
       "id": "3690",
+      "license": "CC-BY-4.0",
       "name": "P25 Dr.Parrots Office",
       "network": "p25",
       "source": "dvref",
@@ -3172,6 +3392,7 @@
         "port": 41011
       },
       "id": "37225",
+      "license": "CC-BY-4.0",
       "name": "37225",
       "network": "p25",
       "source": "dvref",
@@ -3187,6 +3408,7 @@
         "port": 41002
       },
       "id": "38",
+      "license": "CC-BY-4.0",
       "name": "XLX138 Module B",
       "network": "p25",
       "source": "dvref",
@@ -3200,6 +3422,7 @@
         "port": 41000
       },
       "id": "396",
+      "license": "CC-BY-4.0",
       "name": "US-KEYWORK",
       "network": "p25",
       "source": "dvref"
@@ -3214,6 +3437,7 @@
         "port": 41000
       },
       "id": "400",
+      "license": "CC-BY-4.0",
       "name": "URF401",
       "network": "p25",
       "source": "dvref",
@@ -3229,6 +3453,7 @@
         "port": 41000
       },
       "id": "401",
+      "license": "CC-BY-4.0",
       "name": "N1JBC Reflector (Rhode Island)",
       "network": "p25",
       "source": "dvref",
@@ -3244,6 +3469,7 @@
         "port": 41000
       },
       "id": "4016",
+      "license": "CC-BY-4.0",
       "name": "P25 REFLECTOR",
       "network": "p25",
       "source": "dvref",
@@ -3258,6 +3484,7 @@
         "port": 41001
       },
       "id": "405",
+      "license": "CC-BY-4.0",
       "name": "XLX405A - TG405",
       "network": "p25",
       "source": "dvref",
@@ -3273,6 +3500,7 @@
         "port": 41000
       },
       "id": "41120",
+      "license": "CC-BY-4.0",
       "name": "LoneStarLinkSystem",
       "network": "p25",
       "source": "dvref",
@@ -3286,6 +3514,7 @@
         "port": 41000
       },
       "id": "419",
+      "license": "CC-BY-4.0",
       "name": "Toledo Amateur Digital Association",
       "network": "p25",
       "source": "dvref",
@@ -3300,6 +3529,7 @@
         "port": 41000
       },
       "id": "420",
+      "license": "CC-BY-4.0",
       "name": "VE2SUS REF420",
       "network": "p25",
       "source": "dvref"
@@ -3313,6 +3543,7 @@
         "port": 41000
       },
       "id": "42021",
+      "license": "CC-BY-4.0",
       "name": "P25-TEST",
       "network": "p25",
       "source": "dvref"
@@ -3327,6 +3558,7 @@
         "port": 41000
       },
       "id": "42069",
+      "license": "CC-BY-4.0",
       "name": "URF668",
       "network": "p25",
       "source": "dvref",
@@ -3341,6 +3573,7 @@
         "port": 41000
       },
       "id": "425",
+      "license": "CC-BY-4.0",
       "name": "URF425",
       "network": "p25",
       "source": "dvref",
@@ -3354,6 +3587,7 @@
         "port": 41000
       },
       "id": "42555",
+      "license": "CC-BY-4.0",
       "name": "4X Allstar to P25 Cloud Bridge",
       "network": "p25",
       "source": "dvref",
@@ -3368,6 +3602,7 @@
         "port": 41401
       },
       "id": "427",
+      "license": "CC-BY-4.0",
       "name": "427",
       "network": "p25",
       "source": "dvref",
@@ -3383,6 +3618,7 @@
         "port": 41000
       },
       "id": "43389",
+      "license": "CC-BY-4.0",
       "name": "43389",
       "network": "p25",
       "source": "dvref",
@@ -3397,6 +3633,7 @@
         "port": 41000
       },
       "id": "43715",
+      "license": "CC-BY-4.0",
       "name": "Kazakhstan P25",
       "network": "p25",
       "source": "dvref",
@@ -3410,6 +3647,7 @@
         "port": 41000
       },
       "id": "44000",
+      "license": "CC-BY-4.0",
       "name": "Japan",
       "network": "p25",
       "source": "dvref",
@@ -3424,6 +3662,7 @@
         "port": 41000
       },
       "id": "44064",
+      "license": "CC-BY-4.0",
       "name": "JP-OWARI",
       "network": "p25",
       "source": "dvref",
@@ -3437,6 +3676,7 @@
         "port": 41000
       },
       "id": "44120",
+      "license": "CC-BY-4.0",
       "name": "Japan 44120",
       "network": "p25",
       "source": "dvref",
@@ -3451,6 +3691,7 @@
         "port": 41000
       },
       "id": "445",
+      "license": "CC-BY-4.0",
       "name": "SuperMag",
       "network": "p25",
       "source": "dvref",
@@ -3466,6 +3707,7 @@
         "port": 41000
       },
       "id": "4487",
+      "license": "CC-BY-4.0",
       "name": "448.700 Repeater Aurora Denver CO",
       "network": "p25",
       "source": "dvref",
@@ -3480,6 +3722,7 @@
         "port": 41000
       },
       "id": "45000",
+      "license": "CC-BY-4.0",
       "name": "450IPSC2-P25",
       "network": "p25",
       "source": "dvref",
@@ -3495,6 +3738,7 @@
         "port": 41000
       },
       "id": "45001",
+      "license": "CC-BY-4.0",
       "name": "45001",
       "network": "p25",
       "source": "dvref",
@@ -3510,6 +3754,7 @@
         "port": 41005
       },
       "id": "4519",
+      "license": "CC-BY-4.0",
       "name": "145.190 P25 Aurora Denver CO",
       "network": "p25",
       "source": "dvref",
@@ -3523,6 +3768,7 @@
         "port": 41000
       },
       "id": "45401",
+      "license": "CC-BY-4.0",
       "name": "TG-45401 Hong Kong",
       "network": "p25",
       "source": "dvref"
@@ -3536,6 +3782,7 @@
         "port": 41000
       },
       "id": "46001",
+      "license": "CC-BY-4.0",
       "name": "46001",
       "network": "p25",
       "source": "dvref"
@@ -3549,6 +3796,7 @@
         "port": 41000
       },
       "id": "46002",
+      "license": "CC-BY-4.0",
       "name": "46002",
       "network": "p25",
       "source": "dvref",
@@ -3563,6 +3811,7 @@
         "port": 41000
       },
       "id": "46005",
+      "license": "CC-BY-4.0",
       "name": "P25-TG46005",
       "network": "p25",
       "source": "dvref",
@@ -3578,6 +3827,7 @@
         "port": 41000
       },
       "id": "46008",
+      "license": "CC-BY-4.0",
       "name": "46008",
       "network": "p25",
       "source": "dvref",
@@ -3592,6 +3842,7 @@
         "port": 41002
       },
       "id": "46010",
+      "license": "CC-BY-4.0",
       "name": "46010",
       "network": "p25",
       "source": "dvref"
@@ -3606,6 +3857,7 @@
         "port": 41000
       },
       "id": "46020",
+      "license": "CC-BY-4.0",
       "name": "CROSS TG46020",
       "network": "p25",
       "source": "dvref",
@@ -3621,6 +3873,7 @@
         "port": 41000
       },
       "id": "46023",
+      "license": "CC-BY-4.0",
       "name": "46023",
       "network": "p25",
       "source": "dvref",
@@ -3634,6 +3887,7 @@
         "port": 41000
       },
       "id": "46085",
+      "license": "CC-BY-4.0",
       "name": "P25 TG46085 BM46085",
       "network": "p25",
       "source": "dvref",
@@ -3648,6 +3902,7 @@
         "port": 41000
       },
       "id": "46087",
+      "license": "CC-BY-4.0",
       "name": "P25_46087",
       "network": "p25",
       "source": "dvref",
@@ -3662,6 +3917,7 @@
         "port": 41000
       },
       "id": "461",
+      "license": "CC-BY-4.0",
       "name": "URFPRC",
       "network": "p25",
       "source": "dvref",
@@ -3676,6 +3932,7 @@
         "port": 41000
       },
       "id": "46351",
+      "license": "CC-BY-4.0",
       "name": "Cross 2 BM46351",
       "network": "p25",
       "source": "dvref",
@@ -3689,6 +3946,7 @@
         "port": 41000
       },
       "id": "46666",
+      "license": "CC-BY-4.0",
       "name": "DMRISGOOD",
       "network": "p25",
       "source": "dvref",
@@ -3703,6 +3961,7 @@
         "port": 41000
       },
       "id": "46888",
+      "license": "CC-BY-4.0",
       "name": "TG46888 only P25",
       "network": "p25",
       "source": "dvref",
@@ -3717,6 +3976,7 @@
         "port": 41000
       },
       "id": "47070",
+      "license": "CC-BY-4.0",
       "name": "S21ALT P25 74070 Test",
       "network": "p25",
       "source": "dvref"
@@ -3730,6 +3990,7 @@
         "port": 41001
       },
       "id": "47100",
+      "license": "CC-BY-4.0",
       "name": "Virginia Ops Primary TG 7A",
       "network": "p25",
       "source": "dvref",
@@ -3744,6 +4005,7 @@
         "port": 41002
       },
       "id": "47101",
+      "license": "CC-BY-4.0",
       "name": "Virginia TAC 1 7B",
       "network": "p25",
       "source": "dvref",
@@ -3758,6 +4020,7 @@
         "port": 41003
       },
       "id": "47102",
+      "license": "CC-BY-4.0",
       "name": "Virginia TAC 2 7C",
       "network": "p25",
       "source": "dvref",
@@ -3772,6 +4035,7 @@
         "port": 41000
       },
       "id": "47103",
+      "license": "CC-BY-4.0",
       "name": "Virginia TAC 3 7D DMR X-MODE",
       "network": "p25",
       "source": "dvref",
@@ -3786,6 +4050,7 @@
         "port": 41000
       },
       "id": "47366",
+      "license": "CC-BY-4.0",
       "name": "Sin City Repeater Group",
       "network": "p25",
       "source": "dvref",
@@ -3800,6 +4065,7 @@
         "port": 41000
       },
       "id": "478",
+      "license": "CC-BY-4.0",
       "name": "URF478",
       "network": "p25",
       "source": "dvref",
@@ -3814,6 +4080,7 @@
         "port": 41000
       },
       "id": "49",
+      "license": "CC-BY-4.0",
       "name": "P25 TG49 interlinked to XLX049C",
       "network": "p25",
       "source": "dvref",
@@ -3828,6 +4095,7 @@
         "port": 41000
       },
       "id": "493",
+      "license": "CC-BY-4.0",
       "name": "VEX493",
       "network": "p25",
       "source": "dvref",
@@ -3843,6 +4111,7 @@
         "port": 41000
       },
       "id": "50210",
+      "license": "CC-BY-4.0",
       "name": "Malaysia-NET Digital P25 Room",
       "network": "p25",
       "source": "dvref",
@@ -3858,6 +4127,7 @@
         "port": 41001
       },
       "id": "50288",
+      "license": "CC-BY-4.0",
       "name": "Malaysia Canton Channel",
       "network": "p25",
       "source": "dvref",
@@ -3872,6 +4142,7 @@
         "port": 41000
       },
       "id": "5030",
+      "license": "CC-BY-4.0",
       "name": "KK7GKG ASL Bridge 1",
       "network": "p25",
       "source": "dvref",
@@ -3886,6 +4157,7 @@
         "port": 41000
       },
       "id": "5031",
+      "license": "CC-BY-4.0",
       "name": "KK7GKG ASL Bridge 2",
       "network": "p25",
       "source": "dvref",
@@ -3900,6 +4172,7 @@
         "port": 41896
       },
       "id": "50405",
+      "license": "CC-BY-4.0",
       "name": "ALL IS WELCOME",
       "network": "p25",
       "source": "dvref",
@@ -3915,6 +4188,7 @@
         "port": 41001
       },
       "id": "50500",
+      "license": "CC-BY-4.0",
       "name": "VK Nets Hub",
       "network": "p25",
       "source": "dvref",
@@ -3930,6 +4204,7 @@
         "port": 41000
       },
       "id": "50505",
+      "license": "CC-BY-4.0",
       "name": "VK Calling Hub",
       "network": "p25",
       "source": "dvref",
@@ -3945,6 +4220,7 @@
         "port": 41000
       },
       "id": "50525",
+      "license": "CC-BY-4.0",
       "name": "50525 P25 Reflector",
       "network": "p25",
       "source": "dvref",
@@ -3960,6 +4236,7 @@
         "port": 41000
       },
       "id": "50535",
+      "license": "CC-BY-4.0",
       "name": "50535",
       "network": "p25",
       "source": "dvref",
@@ -3975,6 +4252,7 @@
         "port": 41001
       },
       "id": "50536",
+      "license": "CC-BY-4.0",
       "name": "50536",
       "network": "p25",
       "source": "dvref",
@@ -3990,6 +4268,7 @@
         "port": 41002
       },
       "id": "5055",
+      "license": "CC-BY-4.0",
       "name": "Australia - SA",
       "network": "p25",
       "source": "dvref",
@@ -4004,6 +4283,7 @@
         "port": 41000
       },
       "id": "50592",
+      "license": "CC-BY-4.0",
       "name": "Kilowatt Amateur Radio Club p25 Reflector",
       "network": "p25",
       "source": "dvref",
@@ -4017,6 +4297,7 @@
         "port": 41000
       },
       "id": "50964",
+      "license": "CC-BY-4.0",
       "name": "LARK",
       "network": "p25",
       "source": "dvref",
@@ -4030,6 +4311,7 @@
         "port": 41005
       },
       "id": "51000",
+      "license": "CC-BY-4.0",
       "name": "Indonesia P25 Talkgroup 51000",
       "network": "p25",
       "source": "dvref",
@@ -4043,6 +4325,7 @@
         "port": 41003
       },
       "id": "51051",
+      "license": "CC-BY-4.0",
       "name": "DGI P25",
       "network": "p25",
       "source": "dvref",
@@ -4057,6 +4340,7 @@
         "port": 41000
       },
       "id": "51075",
+      "license": "CC-BY-4.0",
       "name": "Indonesia P25 Talkgroup 51075",
       "network": "p25",
       "source": "dvref",
@@ -4070,6 +4354,7 @@
         "port": 41000
       },
       "id": "51091",
+      "license": "CC-BY-4.0",
       "name": "DGI Reflector",
       "network": "p25",
       "source": "dvref",
@@ -4084,6 +4369,7 @@
         "port": 41000
       },
       "id": "51547",
+      "license": "CC-BY-4.0",
       "name": "51547",
       "network": "p25",
       "source": "dvref",
@@ -4098,6 +4384,7 @@
         "port": 41000
       },
       "id": "517",
+      "license": "CC-BY-4.0",
       "name": "URF517",
       "network": "p25",
       "source": "dvref",
@@ -4113,6 +4400,7 @@
         "port": 41009
       },
       "id": "52032",
+      "license": "CC-BY-4.0",
       "name": "52032",
       "network": "p25",
       "source": "dvref",
@@ -4128,6 +4416,7 @@
         "port": 41000
       },
       "id": "52138",
+      "license": "CC-BY-4.0",
       "name": "XLX138 Module P",
       "network": "p25",
       "source": "dvref",
@@ -4143,6 +4432,7 @@
         "port": 41005
       },
       "id": "52149",
+      "license": "CC-BY-4.0",
       "name": "52149",
       "network": "p25",
       "source": "dvref",
@@ -4157,6 +4447,7 @@
         "port": 41000
       },
       "id": "530",
+      "license": "CC-BY-4.0",
       "name": "530",
       "network": "p25",
       "source": "dvref",
@@ -4171,6 +4462,7 @@
         "port": 41003
       },
       "id": "53035",
+      "license": "CC-BY-4.0",
       "name": "NZ Calling",
       "network": "p25",
       "source": "dvref",
@@ -4185,6 +4477,7 @@
         "port": 41001
       },
       "id": "533",
+      "license": "CC-BY-4.0",
       "name": "SW Florida P25 Reflector",
       "network": "p25",
       "source": "dvref",
@@ -4200,6 +4493,7 @@
         "port": 41000
       },
       "id": "53347",
+      "license": "CC-BY-4.0",
       "name": "Waltham P25",
       "network": "p25",
       "source": "dvref",
@@ -4214,6 +4508,7 @@
         "port": 41000
       },
       "id": "535",
+      "license": "CC-BY-4.0",
       "name": "URF535",
       "network": "p25",
       "source": "dvref",
@@ -4228,6 +4523,7 @@
         "port": 41000
       },
       "id": "54100",
+      "license": "CC-BY-4.0",
       "name": "THAILAND Bridge to XLX727C",
       "network": "p25",
       "source": "dvref",
@@ -4243,6 +4539,7 @@
         "port": 41003
       },
       "id": "554",
+      "license": "CC-BY-4.0",
       "name": "Georgia900 Secondary Reflector",
       "network": "p25",
       "source": "dvref",
@@ -4258,6 +4555,7 @@
         "port": 41000
       },
       "id": "555",
+      "license": "CC-BY-4.0",
       "name": "Georgia900 Primary Reflector",
       "network": "p25",
       "source": "dvref",
@@ -4273,6 +4571,7 @@
         "port": 41000
       },
       "id": "556",
+      "license": "CC-BY-4.0",
       "name": "ARFCOM",
       "network": "p25",
       "source": "dvref",
@@ -4286,6 +4585,7 @@
         "port": 41000
       },
       "id": "56169",
+      "license": "CC-BY-4.0",
       "name": "N5QP NE Oklahoma P25",
       "network": "p25",
       "source": "dvref"
@@ -4299,6 +4599,7 @@
         "port": 41000
       },
       "id": "56429",
+      "license": "CC-BY-4.0",
       "name": "Wyre Forest P25 Link",
       "network": "p25",
       "source": "dvref",
@@ -4313,6 +4614,7 @@
         "port": 41000
       },
       "id": "58907",
+      "license": "CC-BY-4.0",
       "name": "URF162",
       "network": "p25",
       "source": "dvref",
@@ -4327,6 +4629,7 @@
         "port": 41000
       },
       "id": "5945",
+      "license": "CC-BY-4.0",
       "name": "MCRC P25 Chat",
       "network": "p25",
       "source": "dvref",
@@ -4342,6 +4645,7 @@
         "port": 41000
       },
       "id": "609",
+      "license": "CC-BY-4.0",
       "name": "AREA-609 Serving SNJ and MultiMode World Wide",
       "network": "p25",
       "source": "dvref",
@@ -4355,6 +4659,7 @@
         "port": 41010
       },
       "id": "61668",
+      "license": "CC-BY-4.0",
       "name": "All Are Welcome",
       "network": "p25",
       "source": "dvref",
@@ -4370,6 +4675,7 @@
         "port": 41000
       },
       "id": "621",
+      "license": "CC-BY-4.0",
       "name": "URF621",
       "network": "p25",
       "source": "dvref",
@@ -4385,6 +4691,7 @@
         "port": 41000
       },
       "id": "62238",
+      "license": "CC-BY-4.0",
       "name": "KC3YGF Middle River, Maryland, USA",
       "network": "p25",
       "source": "dvref",
@@ -4400,6 +4707,7 @@
         "port": 41000
       },
       "id": "6381",
+      "license": "CC-BY-4.0",
       "name": "URF045",
       "network": "p25",
       "source": "dvref",
@@ -4415,6 +4723,7 @@
         "port": 41000
       },
       "id": "6382",
+      "license": "CC-BY-4.0",
       "name": "URF645",
       "network": "p25",
       "source": "dvref",
@@ -4429,6 +4738,7 @@
         "port": 41010
       },
       "id": "64189",
+      "license": "CC-BY-4.0",
       "name": "URFWIL",
       "network": "p25",
       "source": "dvref",
@@ -4442,6 +4752,7 @@
         "port": 41000
       },
       "id": "6453",
+      "license": "CC-BY-4.0",
       "name": "MIKE-LINK",
       "network": "p25",
       "source": "dvref",
@@ -4456,6 +4767,7 @@
         "port": 41000
       },
       "id": "64701",
+      "license": "CC-BY-4.0",
       "name": "64701 REUNION ISLAND",
       "network": "p25",
       "source": "dvref",
@@ -4470,6 +4782,7 @@
         "port": 41000
       },
       "id": "65050",
+      "license": "CC-BY-4.0",
       "name": "P25 Reflector",
       "network": "p25",
       "source": "dvref",
@@ -4485,6 +4798,7 @@
         "port": 41000
       },
       "id": "65102",
+      "license": "CC-BY-4.0",
       "name": "Utah High Desert Amateur Radio Club Bridge",
       "network": "p25",
       "source": "dvref",
@@ -4499,6 +4813,7 @@
         "port": 41000
       },
       "id": "65123",
+      "license": "CC-BY-4.0",
       "name": "MRN P25 Reflector",
       "network": "p25",
       "source": "dvref",
@@ -4513,6 +4828,7 @@
         "port": 41000
       },
       "id": "65300",
+      "license": "CC-BY-4.0",
       "name": "KQ4WZE Reflector",
       "network": "p25",
       "source": "dvref",
@@ -4528,6 +4844,7 @@
         "port": 41000
       },
       "id": "654",
+      "license": "CC-BY-4.0",
       "name": "N2FED",
       "network": "p25",
       "source": "dvref",
@@ -4542,6 +4859,7 @@
         "port": 41001
       },
       "id": "665",
+      "license": "CC-BY-4.0",
       "name": "665",
       "network": "p25",
       "source": "dvref",
@@ -4556,6 +4874,7 @@
         "port": 41000
       },
       "id": "666",
+      "license": "CC-BY-4.0",
       "name": "666",
       "network": "p25",
       "source": "dvref",
@@ -4569,6 +4888,7 @@
         "port": 41000
       },
       "id": "6749",
+      "license": "CC-BY-4.0",
       "name": "Netoholics Network",
       "network": "p25",
       "source": "dvref",
@@ -4583,6 +4903,7 @@
         "port": 41000
       },
       "id": "6875",
+      "license": "CC-BY-4.0",
       "name": "W8FLH-KB8SCR Link",
       "network": "p25",
       "source": "dvref",
@@ -4597,6 +4918,7 @@
         "port": 41000
       },
       "id": "69",
+      "license": "CC-BY-4.0",
       "name": "SISAKET THAILAND",
       "network": "p25",
       "source": "dvref",
@@ -4612,6 +4934,7 @@
         "port": 41000
       },
       "id": "690",
+      "license": "CC-BY-4.0",
       "name": "VA3ODC - P25 Network",
       "network": "p25",
       "source": "dvref",
@@ -4625,6 +4948,7 @@
         "port": 41000
       },
       "id": "6942",
+      "license": "CC-BY-4.0",
       "name": "NOVARS P25",
       "network": "p25",
       "source": "dvref",
@@ -4639,6 +4963,7 @@
         "port": 41000
       },
       "id": "70",
+      "license": "CC-BY-4.0",
       "name": "XLX070",
       "network": "p25",
       "source": "dvref",
@@ -4654,6 +4979,7 @@
         "port": 41000
       },
       "id": "700",
+      "license": "CC-BY-4.0",
       "name": "URF700",
       "network": "p25",
       "source": "dvref",
@@ -4669,6 +4995,7 @@
         "port": 41000
       },
       "id": "7000",
+      "license": "CC-BY-4.0",
       "name": "Boston 7000 P25 Reflector",
       "network": "p25",
       "source": "dvref",
@@ -4684,6 +5011,7 @@
         "port": 41000
       },
       "id": "707",
+      "license": "CC-BY-4.0",
       "name": "707",
       "network": "p25",
       "source": "dvref",
@@ -4698,6 +5026,7 @@
         "port": 41007
       },
       "id": "708",
+      "license": "CC-BY-4.0",
       "name": "HONDURAS",
       "network": "p25",
       "source": "dvref",
@@ -4712,6 +5041,7 @@
         "port": 41000
       },
       "id": "7144",
+      "license": "CC-BY-4.0",
       "name": "Chiriqui Link Panama",
       "network": "p25",
       "source": "dvref"
@@ -4725,6 +5055,7 @@
         "port": 41000
       },
       "id": "7145",
+      "license": "CC-BY-4.0",
       "name": "GREMPA",
       "network": "p25",
       "source": "dvref"
@@ -4738,6 +5069,7 @@
         "port": 41000
       },
       "id": "7146",
+      "license": "CC-BY-4.0",
       "name": "UPRA",
       "network": "p25",
       "source": "dvref",
@@ -4752,6 +5084,7 @@
         "port": 41000
       },
       "id": "718",
+      "license": "CC-BY-4.0",
       "name": "URF718",
       "network": "p25",
       "source": "dvref",
@@ -4766,6 +5099,7 @@
         "port": 41006
       },
       "id": "722",
+      "license": "CC-BY-4.0",
       "name": "ARGENTINA",
       "network": "p25",
       "source": "dvref",
@@ -4781,6 +5115,7 @@
         "port": 41000
       },
       "id": "7221",
+      "license": "CC-BY-4.0",
       "name": "URFARG",
       "network": "p25",
       "source": "dvref",
@@ -4795,6 +5130,7 @@
         "port": 41000
       },
       "id": "724",
+      "license": "CC-BY-4.0",
       "name": "TG Brazil",
       "network": "p25",
       "source": "dvref",
@@ -4810,6 +5146,7 @@
         "port": 41000
       },
       "id": "7240",
+      "license": "CC-BY-4.0",
       "name": "7240",
       "network": "p25",
       "source": "dvref",
@@ -4824,6 +5161,7 @@
         "port": 41000
       },
       "id": "7244",
+      "license": "CC-BY-4.0",
       "name": "SAO PAULO",
       "network": "p25",
       "source": "dvref",
@@ -4839,6 +5177,7 @@
         "port": 41000
       },
       "id": "7245",
+      "license": "CC-BY-4.0",
       "name": "7245 Brazil - Multiprotocolo",
       "network": "p25",
       "source": "dvref",
@@ -4853,6 +5192,7 @@
         "port": 41000
       },
       "id": "73",
+      "license": "CC-BY-4.0",
       "name": "URF073",
       "network": "p25",
       "source": "dvref",
@@ -4868,6 +5208,7 @@
         "port": 41000
       },
       "id": "732",
+      "license": "CC-BY-4.0",
       "name": "Octane Network P25",
       "network": "p25",
       "source": "dvref",
@@ -4882,6 +5223,7 @@
         "port": 41001
       },
       "id": "747",
+      "license": "CC-BY-4.0",
       "name": "747",
       "network": "p25",
       "source": "dvref",
@@ -4897,6 +5239,7 @@
         "port": 41000
       },
       "id": "7487",
+      "license": "CC-BY-4.0",
       "name": "Uruguay-Link P25",
       "network": "p25",
       "source": "dvref",
@@ -4911,6 +5254,7 @@
         "port": 41000
       },
       "id": "7489",
+      "license": "CC-BY-4.0",
       "name": "Uruguay.Net",
       "network": "p25",
       "source": "dvref",
@@ -4924,6 +5268,7 @@
         "port": 41000
       },
       "id": "7573",
+      "license": "CC-BY-4.0",
       "name": "docksea",
       "network": "p25",
       "source": "dvref"
@@ -4937,6 +5282,7 @@
         "port": 41000
       },
       "id": "76",
+      "license": "CC-BY-4.0",
       "name": "P25TNHAMS",
       "network": "p25",
       "source": "dvref"
@@ -4951,6 +5297,7 @@
         "port": 41000
       },
       "id": "760",
+      "license": "CC-BY-4.0",
       "name": "URF760",
       "network": "p25",
       "source": "dvref",
@@ -4966,6 +5313,7 @@
         "port": 41000
       },
       "id": "7620",
+      "license": "CC-BY-4.0",
       "name": "NC CrossLink",
       "network": "p25",
       "source": "dvref"
@@ -4980,6 +5328,7 @@
         "port": 41000
       },
       "id": "7701",
+      "license": "CC-BY-4.0",
       "name": "RU_RoIP DV",
       "network": "p25",
       "source": "dvref"
@@ -4994,6 +5343,7 @@
         "port": 41001
       },
       "id": "7702",
+      "license": "CC-BY-4.0",
       "name": "RU_RoIP MIX",
       "network": "p25",
       "source": "dvref"
@@ -5008,6 +5358,7 @@
         "port": 41002
       },
       "id": "7703",
+      "license": "CC-BY-4.0",
       "name": "RU_RoIP AUX",
       "network": "p25",
       "source": "dvref"
@@ -5022,6 +5373,7 @@
         "port": 41005
       },
       "id": "777",
+      "license": "CC-BY-4.0",
       "name": "WV Almost Heaven BLUESTONE ARC",
       "network": "p25",
       "source": "dvref",
@@ -5035,6 +5387,7 @@
         "port": 41000
       },
       "id": "7770",
+      "license": "CC-BY-4.0",
       "name": "JesusSaves",
       "network": "p25",
       "source": "dvref"
@@ -5048,6 +5401,7 @@
         "port": 41000
       },
       "id": "7941",
+      "license": "CC-BY-4.0",
       "name": "WMRA MULTIMODE NETWORK",
       "network": "p25",
       "source": "dvref",
@@ -5061,6 +5415,7 @@
         "port": 41000
       },
       "id": "8206",
+      "license": "CC-BY-4.0",
       "name": "ham p25",
       "network": "p25",
       "source": "dvref"
@@ -5074,6 +5429,7 @@
         "port": 41000
       },
       "id": "8208",
+      "license": "CC-BY-4.0",
       "name": "HAM China P25",
       "network": "p25",
       "source": "dvref",
@@ -5089,6 +5445,7 @@
         "port": 41000
       },
       "id": "822",
+      "license": "CC-BY-4.0",
       "name": "NC VA Fusion P25",
       "network": "p25",
       "source": "dvref",
@@ -5104,6 +5461,7 @@
         "port": 41000
       },
       "id": "825",
+      "license": "CC-BY-4.0",
       "name": "URFLAN",
       "network": "p25",
       "source": "dvref",
@@ -5119,6 +5477,7 @@
         "port": 41000
       },
       "id": "847",
+      "license": "CC-BY-4.0",
       "name": "URF847",
       "network": "p25",
       "source": "dvref",
@@ -5132,6 +5491,7 @@
         "port": 41000
       },
       "id": "850",
+      "license": "CC-BY-4.0",
       "name": "US-HAMLINK",
       "network": "p25",
       "source": "dvref"
@@ -5145,6 +5505,7 @@
         "port": 41000
       },
       "id": "8610",
+      "license": "CC-BY-4.0",
       "name": "CRHRC-TX",
       "network": "p25",
       "source": "dvref"
@@ -5159,6 +5520,7 @@
         "port": 41000
       },
       "id": "865",
+      "license": "CC-BY-4.0",
       "name": "URF865",
       "network": "p25",
       "source": "dvref",
@@ -5172,6 +5534,7 @@
         "port": 41000
       },
       "id": "899",
+      "license": "CC-BY-4.0",
       "name": "North Carolina",
       "network": "p25",
       "source": "dvref"
@@ -5185,6 +5548,7 @@
         "port": 41000
       },
       "id": "900",
+      "license": "CC-BY-4.0",
       "name": "NEAR900 New England Amateur Radio 900 MHz P25 Net",
       "network": "p25",
       "source": "dvref",
@@ -5199,6 +5563,7 @@
         "port": 41000
       },
       "id": "909",
+      "license": "CC-BY-4.0",
       "name": "XLX909 P25",
       "network": "p25",
       "source": "dvref",
@@ -5213,6 +5578,7 @@
         "port": 41003
       },
       "id": "91",
+      "license": "CC-BY-4.0",
       "name": "World Wide",
       "network": "p25",
       "source": "dvref",
@@ -5228,6 +5594,7 @@
         "port": 41000
       },
       "id": "910",
+      "license": "CC-BY-4.0",
       "name": "DC - MD -VA XLX910D",
       "network": "p25",
       "source": "dvref",
@@ -5242,6 +5609,7 @@
         "port": 41000
       },
       "id": "9101",
+      "license": "CC-BY-4.0",
       "name": "VK2ADF Main",
       "network": "p25",
       "source": "dvref"
@@ -5255,6 +5623,7 @@
         "port": 41001
       },
       "id": "9102",
+      "license": "CC-BY-4.0",
       "name": "VK2ADF Training 1",
       "network": "p25",
       "source": "dvref"
@@ -5268,6 +5637,7 @@
         "port": 41002
       },
       "id": "9103",
+      "license": "CC-BY-4.0",
       "name": "VK2ADF Training 2",
       "network": "p25",
       "source": "dvref"
@@ -5281,6 +5651,7 @@
         "port": 41003
       },
       "id": "9104",
+      "license": "CC-BY-4.0",
       "name": "VK2ADF Exercise",
       "network": "p25",
       "source": "dvref"
@@ -5294,6 +5665,7 @@
         "port": 41004
       },
       "id": "9105",
+      "license": "CC-BY-4.0",
       "name": "VK2ADF Special",
       "network": "p25",
       "source": "dvref"
@@ -5307,6 +5679,7 @@
         "port": 41005
       },
       "id": "9106",
+      "license": "CC-BY-4.0",
       "name": "VK2ADF Public Interop",
       "network": "p25",
       "source": "dvref"
@@ -5320,6 +5693,7 @@
         "port": 41001
       },
       "id": "914",
+      "license": "CC-BY-4.0",
       "name": "P25 HISPANO",
       "network": "p25",
       "source": "dvref",
@@ -5334,6 +5708,7 @@
         "port": 41000
       },
       "id": "9140",
+      "license": "CC-BY-4.0",
       "name": "ARCA",
       "network": "p25",
       "source": "dvref",
@@ -5348,6 +5723,7 @@
         "port": 41000
       },
       "id": "918",
+      "license": "CC-BY-4.0",
       "name": "XLX918 P25",
       "network": "p25",
       "source": "dvref",
@@ -5362,6 +5738,7 @@
         "port": 41000
       },
       "id": "921",
+      "license": "CC-BY-4.0",
       "name": "CumbriaCQ.com",
       "network": "p25",
       "source": "dvref",
@@ -5376,6 +5753,7 @@
         "port": 41009
       },
       "id": "925",
+      "license": "CC-BY-4.0",
       "name": "925",
       "network": "p25",
       "source": "dvref"
@@ -5389,6 +5767,7 @@
         "port": 41000
       },
       "id": "926",
+      "license": "CC-BY-4.0",
       "name": "URF925",
       "network": "p25",
       "source": "dvref",
@@ -5404,6 +5783,7 @@
         "port": 41000
       },
       "id": "936",
+      "license": "CC-BY-4.0",
       "name": "URFLKA",
       "network": "p25",
       "source": "dvref",
@@ -5418,6 +5798,7 @@
         "port": 41100
       },
       "id": "9512",
+      "license": "CC-BY-4.0",
       "name": "P25-JET",
       "network": "p25",
       "source": "dvref",
@@ -5433,6 +5814,7 @@
         "port": 41002
       },
       "id": "9517",
+      "license": "CC-BY-4.0",
       "name": "9517",
       "network": "p25",
       "source": "dvref",
@@ -5447,6 +5829,7 @@
         "port": 41000
       },
       "id": "960",
+      "license": "CC-BY-4.0",
       "name": "NorCal Gray Channel",
       "network": "p25",
       "source": "dvref",
@@ -5462,6 +5845,7 @@
         "port": 41000
       },
       "id": "97",
+      "license": "CC-BY-4.0",
       "name": "URF097",
       "network": "p25",
       "source": "dvref",
@@ -5477,6 +5861,7 @@
         "port": 41001
       },
       "id": "9846",
+      "license": "CC-BY-4.0",
       "name": "URF106",
       "network": "p25",
       "source": "dvref",

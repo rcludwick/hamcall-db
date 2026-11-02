@@ -9,7 +9,9 @@ version — with the exact attribution wording each one requires — is the
 | Source | Covers | Licence |
 |---|---|---|
 | [DVRef](https://dvref.com/) | M17 (`mrefd`), YSF, NXDN, P25, URF, DMR | **CC BY 4.0** |
-| [XLX registry](http://xlxapi.rlx.lu/) (LX1IQ) | XLX / D-Star (~890 reflectors) | No explicit licence; public self-registration directory, attributed |
+| [XLX registry](http://xlxapi.rlx.lu/) (LX1IQ) | XLX / D-Star (~890 reflectors) | **No licence stated.** Rows say `license: "none-stated"`; redistributed as facts, attributed |
+| [Pi-Star DExtra host file](http://www.pistar.uk/downloads/DExtra_Hosts.txt) | Standalone XRF / D-Star | **No licence stated.** Rows say `license: "none-stated"`; redistributed as facts, attributed |
+| [Pi-Star DPlus and DCS host files](http://www.pistar.uk/downloads/) | REF and DCS names in `aliases` (no rows), compiled by Pi-Star from dstargateway.org and xreflector.net DNS | **No licence stated.** Rows carrying them say `alias_source: "pistar"`; attributed |
 
 DVRef placed its data under CC BY 4.0 in its *Accessing DVRef Data* announcement
 of 2026-08-04, explicitly permitting mirroring, reformatting, commercial use and

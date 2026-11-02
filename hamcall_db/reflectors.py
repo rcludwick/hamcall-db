@@ -6,8 +6,20 @@ parks and SOTA summits reference sets.
 
 LICENSING — read before adding a source
 ---------------------------------------
-The reflector data published from here is **CC BY 4.0**, NOT the project's CC BY-NC
-dataset licence, and the two must never be merged into one artifact.
+The reflector directory is NOT under the project's CC BY-NC dataset licence, and the
+two must never be merged into one artifact. Its own licensing is per source, and every
+row says which applies in its ``license`` field (see :data:`SOURCE_LICENSES`):
+
+* DVRef rows are **CC BY 4.0**, and so are hamcall-db's own contributions (the schema,
+  the selection, the derived fields).
+* XLX registry and Pi-Star host-file rows come from publishers who state NO licence.
+  They are redistributed as facts, and no rights are granted beyond what those
+  upstreams provide — we cannot license under CC BY what we were never licensed.
+
+A file whose rows are all CC BY says ``CC BY 4.0``; a file mixing in rows of any other
+kind says :data:`MIXED_LICENSE` and carries :data:`RIGHTS_NOTE`. A new source must be
+added to :data:`SOURCE_LICENSES`; until it is, its rows are labelled ``none-stated``,
+because the failure mode of a missing entry has to be under-claiming, never over-.
 
 DVRef's data is CC BY 4.0 (their 2026-08-04 "Accessing DVRef Data" announcement).
 CC BY 4.0 §2(a)(5)(B) forbids imposing "additional or different terms ... if doing so
@@ -52,16 +64,66 @@ from dataclasses import dataclass, field, fields
 from datetime import UTC, date, datetime, timedelta
 from pathlib import Path
 
-# The licence the published reflector JSON carries, and the attribution DVRef asks for
-# verbatim in their announcement. Both are written into every emitted file — an
+# The licence a file carries when every row in it is CC BY, and the attribution DVRef
+# asks for verbatim in their announcement. Both are written into every emitted file — an
 # attribution that lives only in a README is one copy-paste away from being lost.
 REFLECTOR_LICENSE = "CC BY 4.0"
 REFLECTOR_LICENSE_URL = "https://creativecommons.org/licenses/by/4.0/"
 REFLECTOR_LICENSE_SPDX = "CC-BY-4.0"
 
+# --- per-row licence ---------------------------------------------------------------
+# Not every upstream licenses its data. DVRef publishes under CC BY 4.0 (dvref.com/aup/).
+# The XLX registry (xlxapi.rlx.lu) and the Pi-Star host files publish no licence or terms
+# at all, so their rows are labelled for what they are: facts whose publisher stated no
+# licence. Labelling them CC BY would claim rights this project does not hold.
+#
+# Row values are SPDX-style identifiers (machine-readable, no spaces) where one exists,
+# and the literal `none-stated` where upstream gave none. The file-level `license` stays
+# the human-readable "CC BY 4.0" it has always been.
+ROW_LICENSE_CC_BY = REFLECTOR_LICENSE_SPDX
+ROW_LICENSE_NONE_STATED = "none-stated"
+
+#: importer name (the row's ``source``) -> the licence its rows carry.
+SOURCE_LICENSES: dict[str, str] = {
+    "dvref": ROW_LICENSE_CC_BY,
+    "xlx": ROW_LICENSE_NONE_STATED,
+    "dextra": ROW_LICENSE_NONE_STATED,
+}
+
+
+def source_license(source: str | None) -> str:
+    """The per-row licence for rows from ``source``.
+
+    An unknown or missing source is ``none-stated``: a source somebody forgot to add to
+    :data:`SOURCE_LICENSES` must under-claim, never inherit CC BY by default.
+    """
+    return SOURCE_LICENSES.get(source or "", ROW_LICENSE_NONE_STATED)
+
+
+# What a file says when it holds any row that is not CC BY.
+MIXED_LICENSE = "mixed — see per-row license and NOTICE"
+MIXED_LICENSE_URL = "https://github.com/rcludwick/hamcall-db/blob/main/NOTICE"
+RIGHTS_NOTE = (
+    "hamcall-db's own contributions (schema, selection, derived fields) and all "
+    "DVRef-sourced rows are CC BY 4.0. Rows from the XLX registry and Pi-Star host files "
+    "are factual listings whose publishers state no licence; they are redistributed as "
+    "facts and no rights are granted beyond those the upstream provides."
+)
+
+# Provenance of the REF/DCS names in `aliases`. They come from the Pi-Star DPlus and DCS
+# host files (no stated licence), which compile them from dstargateway.org and
+# xreflector.net DNS. The row's own `license` describes the row's source; this says where
+# the extra names came from, since that is a different upstream.
+ALIAS_SOURCE_PISTAR = "pistar"
+PISTAR_ALIAS_PATTERN = re.compile(r"^(?:REF|DCS)[0-9A-Z]{3}$")
+
 ATTRIBUTION_SUMMARY = (
     "Reflector data provided by DVRef — https://dvref.com/. XLX reflector data from the "
-    "XLX registry maintained by Luc Engelmann, LX1IQ (http://xlxapi.rlx.lu/)."
+    "XLX registry maintained by Luc Engelmann, LX1IQ (http://xlxapi.rlx.lu/). Standalone "
+    "XRF reflector data from the Pi-Star DExtra host file "
+    "(http://www.pistar.uk/downloads/DExtra_Hosts.txt). REF and DCS reflector names from "
+    "the Pi-Star DPlus and DCS host files (http://www.pistar.uk/downloads/), which compile "
+    "them from dstargateway.org and xreflector.net DNS."
 )
 
 
@@ -124,7 +186,9 @@ ATTRIBUTION_SEPARATOR = "\n"
 
 # The JSON schema version of the published files. Bump only when an existing field
 # changes meaning or goes away; adding a field is not a bump (an older reader ignores
-# what it does not recognise).
+# what it does not recognise). Adding per-row `license` / `alias_source` and the
+# file-level `rights` note did not bump it; the file-level `license` still means "the
+# licence of this file", it just no longer claims CC BY for rows that are not.
 SCHEMA_VERSION = 1
 
 # The path segment the whole API lives under. A bump moves the path (/api/v2/...) and
@@ -190,7 +254,7 @@ class ReflectorRecord:
     sponsor: str | None = None  # who runs it, as upstream words it
     description: str | None = None
     dashboard: str | None = None  # web dashboard URL, when upstream publishes one
-    source: str | None = None  # 'dvref' | 'xlx' — which importer produced this row
+    source: str | None = None  # 'dvref' | 'xlx' | 'dextra' — which importer made this row
     synced_at: str | None = None  # ISO date of the upstream pull
 
     # --- DMR only ------------------------------------------------------------------
@@ -222,12 +286,22 @@ class ReflectorRecord:
     talkgroup: int | None = None
     timeslot: int | None = None  # 1 or 2
 
+    # --- rights ----------------------------------------------------------------------
+    # Where the REF/DCS names in `aliases` came from, when any did: 'pistar' (the Pi-Star
+    # DPlus/DCS host files). None when the row carries no such names.
+    alias_source: str | None = None
+    # The licence THIS row is under, derived from `source` and never set by hand: see
+    # SOURCE_LICENSES. Appended last so existing Parquet/SQLite column positions hold.
+    license: str | None = field(default=None, init=False)
+
     def __post_init__(self) -> None:
         # One choke point for redaction: doing it here rather than in each importer
         # means a future source cannot publish an address by forgetting a call, and it
         # covers the Parquet and SQLite artifacts as well as the JSON.
         for name in REDACTED_TEXT_FIELDS:
             setattr(self, name, redact_emails(getattr(self, name)))
+        # Same choke point for the licence label: an importer cannot mislabel a row.
+        self.license = source_license(self.source)
 
 
 #: Free-text fields scrubbed of email addresses before publication.
@@ -371,6 +445,8 @@ _ENVELOPE_FIELDS: tuple[str, ...] = (
     "sponsor",
     "dashboard",
     "source",
+    "license",
+    "alias_source",
 )
 
 
@@ -395,12 +471,68 @@ def entry_json(record: ReflectorRecord) -> dict[str, object]:
     return out
 
 
-def _license_block() -> dict[str, object]:
+def _license_block(row_licenses: Iterable[str] = ()) -> dict[str, object]:
+    """The file-level licence fields for a file holding rows under ``row_licenses``.
+
+    Plain CC BY 4.0 only when EVERY row is CC BY (an empty file holds only this
+    project's own contributions, which are). Anything else is labelled mixed and carries
+    the rights note, so a file can never claim more than its least-licensed row allows.
+    """
+    if all(lic == ROW_LICENSE_CC_BY for lic in row_licenses):
+        return {
+            "license": REFLECTOR_LICENSE,
+            "license_url": REFLECTOR_LICENSE_URL,
+            "modifications": MODIFICATION_NOTE,
+        }
     return {
-        "license": REFLECTOR_LICENSE,
-        "license_url": REFLECTOR_LICENSE_URL,
+        "license": MIXED_LICENSE,
+        "license_url": MIXED_LICENSE_URL,
+        "rights": RIGHTS_NOTE,
         "modifications": MODIFICATION_NOTE,
     }
+
+
+def _row_licenses(document: Mapping[str, object]) -> list[str]:
+    rows = document.get("reflectors")
+    if not isinstance(rows, list):
+        return []
+    return [
+        str(row.get("license") or source_license(_opt_str(row.get("source"))))
+        for row in rows
+        if isinstance(row, dict)
+    ]
+
+
+def _is_cc_by(document: Mapping[str, object]) -> bool:
+    return all(lic == ROW_LICENSE_CC_BY for lic in _row_licenses(document))
+
+
+def label_document(document: dict[str, object]) -> dict[str, object]:
+    """(Re)apply the licence labels to a published network document, in place.
+
+    Called on every network document as it is written, so a file the shrink guard kept
+    from an earlier build — or one written before rows carried a ``license`` — is
+    published with the same labels a fresh build would give it. Each row's ``license``
+    is re-derived from its ``source``; a row whose aliases include REF/DCS names gains
+    ``alias_source: "pistar"`` (those names only ever come from the Pi-Star DPlus/DCS
+    files); and the file-level fields are recomputed from the rows.
+    """
+    rows = document.get("reflectors")
+    if isinstance(rows, list):
+        for row in rows:
+            if not isinstance(row, dict):
+                continue
+            row["license"] = source_license(_opt_str(row.get("source")))
+            aliases = row.get("aliases")
+            if (
+                "alias_source" not in row
+                and isinstance(aliases, list)
+                and any(isinstance(a, str) and PISTAR_ALIAS_PATTERN.match(a) for a in aliases)
+            ):
+                row["alias_source"] = ALIAS_SOURCE_PISTAR
+    document.pop("rights", None)
+    document.update(_license_block(_row_licenses(document)))
+    return document
 
 
 def drop_shadowing_aliases(records: Sequence[ReflectorRecord]) -> int:
@@ -464,7 +596,7 @@ def network_document(
         "network": network,
         "generated": stamp,
         "client_refresh_days": CLIENT_REFRESH_DAYS,
-        **_license_block(),
+        **_license_block(source_license(r.source) for r in ordered),
         "attribution": attribution,
         "source": {"name": source_name, "url": source_url},
         "count": len(ordered),
@@ -607,7 +739,9 @@ def combined_document(
         "api_version": API_VERSION,
         "generated": newest,
         "client_refresh_days": CLIENT_REFRESH_DAYS,
-        **_license_block(),
+        **_license_block(
+            str(e.get("license") or source_license(_opt_str(e.get("source")))) for e in entries
+        ),
         "attribution": ATTRIBUTION_SEPARATOR.join(attributions),
         "sources": sources,
         "networks": counts,
@@ -648,6 +782,9 @@ def manifest_document(
             "count": doc["count"],
             "generated": doc["generated"],
             "source": doc["source"],
+            # Per network, so a client can see which files are plain CC BY without
+            # downloading them.
+            "license": REFLECTOR_LICENSE if _is_cc_by(doc) else MIXED_LICENSE,
         }
 
     if talkgroups and TALKGROUP_NETWORK in networks:
@@ -676,7 +813,9 @@ def manifest_document(
         "api_version": API_VERSION,
         "generated": stamp,
         "client_refresh_days": CLIENT_REFRESH_DAYS,
-        **_license_block(),
+        **_license_block(
+            lic for name in sorted(documents) for lic in _row_licenses(documents[name])
+        ),
         "endpoints": {
             "all": ALL_REFLECTORS_FILE,
             "network": f"{NETWORK_DIR}/{{network}}.json",
@@ -731,7 +870,27 @@ _ENVELOPE_PROPERTIES: dict[str, dict[str, object]] = {
     "source": {
         "type": "string",
         "description": "Which importer produced the row: provenance, for debugging a bad entry.",
-        "examples": ["xlx", "dvref"],
+        "examples": ["xlx", "dvref", "dextra"],
+    },
+    "license": {
+        "type": "string",
+        "description": (
+            "The licence THIS row is under, derived from `source`. `CC-BY-4.0` for DVRef "
+            "rows; `none-stated` for rows from the XLX registry and the Pi-Star host files, "
+            "whose publishers state no licence — those are redistributed as facts and no "
+            "rights are granted beyond those the upstream provides. A client that must "
+            "redistribute under CC BY should keep only `CC-BY-4.0` rows."
+        ),
+        "examples": ["CC-BY-4.0", "none-stated"],
+    },
+    "alias_source": {
+        "type": "string",
+        "description": (
+            "Where the REF/DCS names in `aliases` came from, when any did: `pistar` (the "
+            "Pi-Star DPlus and DCS host files, compiled from dstargateway.org and "
+            "xreflector.net DNS; no stated licence)."
+        ),
+        "examples": ["pistar"],
     },
     "system": {
         "type": "string",
@@ -860,8 +1019,19 @@ def _document_meta_properties() -> dict[str, object]:
             "type": "integer",
             "description": "How often a client should re-check. Cache for this long.",
         },
-        "license": {"type": "string", "const": REFLECTOR_LICENSE},
+        "license": {
+            "type": "string",
+            "enum": [REFLECTOR_LICENSE, MIXED_LICENSE],
+            "description": (
+                f"`{REFLECTOR_LICENSE}` when every row in the file is CC BY; "
+                f"`{MIXED_LICENSE}` when any row's per-row `license` is something else."
+            ),
+        },
         "license_url": {"type": "string", "format": "uri"},
+        "rights": {
+            "type": "string",
+            "description": "Present on mixed files: what is and is not licensed, in words.",
+        },
         "modifications": {
             "type": "string",
             "description": "What this project changed, as CC BY 4.0 requires be stated.",
@@ -906,10 +1076,13 @@ def openapi_document() -> dict[str, object]:
                 "values must be ignored gracefully — that is the extension mechanism, and "
                 "a client must never attempt to connect to a kind it does not understand."
                 "\n\n"
+                f"Rights: {RIGHTS_NOTE} Each row's `license` field says which applies."
+                "\n\n"
                 f"Attribution is required: {ATTRIBUTION_SUMMARY}"
                 f"\n\nModifications: {MODIFICATION_NOTE}"
             ),
-            "license": {"name": REFLECTOR_LICENSE, "identifier": REFLECTOR_LICENSE_SPDX},
+            # Mixed, so no single SPDX identifier would be true of the whole API.
+            "license": {"name": MIXED_LICENSE, "url": MIXED_LICENSE_URL},
             "contact": {"url": "https://github.com/rcludwick/hamcall-db"},
         },
         "servers": [{"url": API_BASE_URL, "description": "GitHub Pages"}],
@@ -1037,7 +1210,7 @@ def openapi_document() -> dict[str, object]:
                             "description": "Absent means listed but not dialable from this data.",
                         },
                     },
-                    "required": ["network", "id", "name", "source"],
+                    "required": ["network", "id", "name", "source", "license"],
                 },
                 "Manifest": {
                     "type": "object",
@@ -1058,6 +1231,11 @@ def openapi_document() -> dict[str, object]:
                                     "count": {"type": "integer"},
                                     "generated": {"type": "string", "format": "date"},
                                     "source": {"$ref": "#/components/schemas/Source"},
+                                    "license": {
+                                        "type": "string",
+                                        "enum": [REFLECTOR_LICENSE, MIXED_LICENSE],
+                                        "description": "That network file's `license`.",
+                                    },
                                     "talkgroups": {
                                         "type": "object",
                                         "description": (
@@ -1236,6 +1414,11 @@ def write_api(
     with a trailing newline and sorted keys so the output is stable across runs and
     diffs cleanly.
     """
+    # Labels first, so the manifest and combined file are built from labelled rows and a
+    # kept-from-yesterday document is republished with today's labels.
+    for document in documents.values():
+        label_document(document)
+
     api = out_dir
     api.mkdir(parents=True, exist_ok=True)
     (api / NETWORK_DIR).mkdir(parents=True, exist_ok=True)
@@ -1397,6 +1580,7 @@ def records_from_document(document: dict[str, object]) -> list[ReflectorRecord]:
                 talkgroups=_opt_str(row.get("talkgroups")),
                 talkgroup=_opt_int(dial.get("talkgroup")),
                 timeslot=_opt_int(dial.get("timeslot")),
+                alias_source=_opt_str(row.get("alias_source")),
             )
         )
     return out
