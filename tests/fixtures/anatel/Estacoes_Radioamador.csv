@@ -1,0 +1,15 @@
+﻿Tipo de Identificação;CNPJ ou CPF;Nome da Entidade;Fistel do Serviço da Estação;Serviço;Indicativo;Número da Estação;UF da Entidade;COER;Nome da Estação;Tipo de Estação;Frequências de Operação da Estação;Município da Estação;UF da Estação;Data do Primeiro Licenciamento;Data do Último Licenciamento;Data de Validade da Estação;Status da Validade
+CPF;***00011**;Fulana Exemplo de Teste;90000000011;Radioamador;PU5ZZA;9000000102;SC;Classe C;Estação_002;N/I;N/I;Vila Imaginária;SC;31/10/2023;31/10/2023;N/I;N/I
+CPF;***00011**;Fulana Exemplo de Teste;90000000011;Radioamador;PU5ZZA;9000000100;SC;Classe C;Estação_000;Fixa;N/I;Vila Imaginária;SC;31/10/2023;31/10/2023;N/I;N/I
+CPF;***00011**;Fulana Exemplo de Teste;90000000011;Radioamador;PU5ZZA;9000000101;SC;Classe C;Estação_001;Móvel;N/I;N/A;N/A;31/10/2023;31/10/2023;N/I;N/I
+CPF;***00022**;CICRANO FICTICIO DOS SANTOS;90000000022;Radioamador;PY2ZZB;9000000202;SP;Classe B;Estação_002;N/I;N/I;Cidade Inventada;SP;27/02/2018;27/02/2018;02/09/2035;Ativa
+CPF;***00022**;CICRANO FICTICIO DOS SANTOS;90000000022;Radioamador;PY2ZZB;9000000200;SP;Classe B;Estação_000;Fixa;N/I;Cidade Inventada;SP;27/02/2018;27/02/2018;02/09/2055;Ativa
+CPF;***00022**;CICRANO FICTICIO DOS SANTOS;90000000022;Radioamador;PY2ZZB;9000000201;SP;Classe B;Estação_001;Móvel;N/I;N/A;N/A;27/02/2018;27/02/2018;02/09/2035;Ativa
+CPF;***00033**;"BELTRANO JOSE D'EXEMPLO";90000000033;Radioamador;PT2ZZC;9000000300;DF;Classe A;Estação_000;Fixa;N/I;"Vila d'Amostra";DF;24/09/2013;16/10/2013;12/12/2031;Ativa
+CPF;***00044**;Joana Modelo Silva;90000000044;Radioamador;PP1ZZD;9000000400;ES;Classe A;Estação_000;Móvel;N/I;N/A;N/A;19/05/1999;22/03/2010;01/10/2027;Vencida
+CNPJ;**.000.055/0001-**;LIGA DE RADIOAMADORES FICTICIOS;90000000055;Radioamador;PY5ZZE;9000000500;PR;N/A;Estação_000;Repetidora;145,210 / 144,610 MHz;Município Exemplo;PR;06/11/2008;06/11/2008;06/11/2028;Ativa
+CNPJ;**.000.055/0001-**;LIGA DE RADIOAMADORES FICTICIOS;90000000055;Radioamador;PY5ZZE;9000000501;PR;N/A;Estação_001;Fixa;N/I;Município Exemplo;PR;06/11/2008;15/03/2011;06/11/2028;Ativa
+CPF;***00066**;Pessoa Sem Indicativo;90000000066;Radioamador;N/I;9000000600;MG;Classe C;Estação_000;N/I;N/I;Lugar Nenhum;MG;18/01/2013;18/01/2013;N/I;N/I
+CPF;***00077**;Outra Pessoa Hifenada;90000000077;Radioamador;PU2-ZZF;9000000700;SP;Classe C;Estação_000;Fixa;N/I;Cidade Inventada;SP;18/01/2013;18/01/2013;N/I;N/I
+CPF;***00088**;minúscula da silva;90000000088;Radioamador;pu1zzg;9000000800;RJ;Classe C;Estação_000;Fixa;N/I;Rio Imaginário;RJ;05/11/2008;05/11/2008;N/I;N/I
+CPF;***00099**;Radioamador Faixa Z;90000000099;Radioamador;ZZ2ZZH;9000000900;RS;Classe B;Estação_000;N/I;N/I;N/A;N/A;04/11/2008;04/11/2008;N/I;N/I
