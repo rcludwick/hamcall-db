@@ -22,6 +22,7 @@ from hamcall_db.merge import MergeStats, merge
 from hamcall_db.sources import ad1c
 from hamcall_db.sources.acma import AcmaSource, withhold_prior_history
 from hamcall_db.sources.base import Source, retry_transient
+from hamcall_db.sources.bnetza import BnetzaSource
 from hamcall_db.sources.fcc import FccUlsSource
 from hamcall_db.sources.ised import IsedSource
 from hamcall_db.sources.ised import scrub_prior_history as scrub_ised_prior_history
@@ -51,6 +52,7 @@ SOURCES: dict[str, Source] = {
     "fcc": FccUlsSource(),
     "ised": IsedSource(),
     "acma": AcmaSource(),
+    "bnetza": BnetzaSource(),
 }
 
 app = typer.Typer(
