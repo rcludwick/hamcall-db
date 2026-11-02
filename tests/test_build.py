@@ -586,10 +586,15 @@ def test_all_build_omits_restricted_sources_by_default(tmp_path, monkeypatch):
 def test_restricted_source_refused_without_flag(tmp_path):
     # NMHH's site terms forbid saving into a database or distributing without written
     # permission, so a build must opt in explicitly (never the published release).
+    import re
+
     out = tmp_path / "out.parquet"
-    result = CliRunner().invoke(app, ["--source", "nmhh", "--out", str(out)])
+    runner = CliRunner(env={"COLUMNS": "200", "NO_COLOR": "1", "TERM": "dumb"})
+    result = runner.invoke(app, ["--source", "nmhh", "--out", str(out)])
     assert result.exit_code != 0
-    assert "--include-restricted" in result.output
+    # CI terminals render Typer's error box with ANSI colour codes and may wrap it.
+    plain = re.sub(r"\x1b\[[0-9;]*m|[│╭╮╰╯─\s]", "", result.output)
+    assert "--include-restricted" in plain
 
 
 def test_all_build_skips_restricted_sources_by_default(tmp_path, monkeypatch):
