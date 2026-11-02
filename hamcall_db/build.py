@@ -21,7 +21,7 @@ from hamcall_db.history import diff_history
 from hamcall_db.merge import merge
 from hamcall_db.sources import ad1c
 from hamcall_db.sources.acma import AcmaSource
-from hamcall_db.sources.base import Source
+from hamcall_db.sources.base import Source, retry_transient
 from hamcall_db.sources.fcc import FccUlsSource
 from hamcall_db.sources.ised import IsedSource
 from hamcall_db.sources.osm import OsmSource, compute_osm_park_grids
@@ -63,8 +63,19 @@ def _run_source(source: Source, work_dir: Path) -> list:
 
     download() captures the upstream file date as source.synced_at (au-23bc); pass it
     through so every Record is stamped with the source's published date.
+
+    The download is retried on transient failures (HTTP 5xx/429, timeouts, connection
+    resets) per `retry_transient`; parse failures are never retried.
     """
-    path = source.download(work_dir)
+
+    def _log_retry(attempt: int, exc: BaseException, delay: float) -> None:
+        typer.echo(
+            f"WARNING: source '{source.name}' download attempt {attempt} failed ({exc}); "
+            f"retrying in {delay:g}s",
+            err=True,
+        )
+
+    path = retry_transient(lambda: source.download(work_dir), on_retry=_log_retry)
     return list(source.parse(path, synced_at=source.synced_at))
 
 
@@ -90,6 +101,23 @@ def _collect_streams(
             typer.echo(f"WARNING: source '{tag}' failed ({exc}); skipping", err=True)
             skipped.append(tag)
     return streams, skipped
+
+
+# Written into the output directory when any source was skipped: one source tag per line.
+# release.yml reads it after publishing and fails the job with an ::error:: annotation, so
+# a partial build still ships but never goes green (hdb-skipalert).
+SKIPPED_SOURCES_FILENAME = "skipped-sources.txt"
+
+
+def _record_skipped(skipped: list[str], out: Path) -> None:
+    """Write (or clear) the skipped-sources marker next to the build's artifacts."""
+    marker_dir = out if (out.is_dir() or out.suffix == "") else out.parent
+    marker = marker_dir / SKIPPED_SOURCES_FILENAME
+    if skipped:
+        marker_dir.mkdir(parents=True, exist_ok=True)
+        marker.write_text("".join(f"{tag}\n" for tag in skipped), encoding="utf-8")
+    else:
+        marker.unlink(missing_ok=True)  # don't let a stale marker from a reused dir lie
 
 
 @app.command()
@@ -147,6 +175,7 @@ def build(
         raise typer.BadParameter(f"Unknown source(s): {', '.join(unknown)}")
 
     streams, skipped = _collect_streams(selected, work_dir)
+    _record_skipped(skipped, out)
     if skipped:
         typer.echo(f"Skipped {len(skipped)} source(s): {', '.join(skipped)}", err=True)
     if not streams:

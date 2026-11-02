@@ -27,6 +27,8 @@ Source licenses (must surface in NOTICE): FCC ULS = public domain; ISED Canada =
 
 Build cadence: nightly via GitHub Actions cron (changed from weekly 2026-09-07). Artifact naming: hamcall-db-YYYY-MM-DD.parquet on Releases page. 'latest' tag/release alias points at most recent build. Consumers should pull 'latest' by default and pin to a date when reproducibility matters.
 
+Partial builds (hdb-skipalert, 2026-11-01): each source download is retried on transient failures (HTTP 5xx/429, timeouts, connection resets; 3 attempts, 30 s / 90 s backoff, `retry_transient` in hamcall_db/sources/base.py). 4xx and DNS failures are not retried. A source that still fails is skipped and the rest are published, but the build writes `skipped-sources.txt` (one tag per line) into the out dir and the release workflow's final step turns it into an `::error::` annotation and a failed job. Zero successful sources stays a hard error (exit 1, nothing published). Motivation: ACMA was silently skipped every night 2026-10-21..11-01 and ISED on 2026-10-15 and 2026-11-01 (HTTP 503) while the job stayed green.
+
 ### mem-8a86
 
 Repo lives at github.com/rcludwick/hamcall-db (private as of 2026-06-16; flip to public once first build ships).

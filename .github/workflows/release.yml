@@ -249,3 +249,21 @@ jobs:
           fail_on_unmatched_files: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # A source that still fails after the build's retries (HTTP 5xx/429, timeouts) is
+      # skipped so the other sources still publish above, but the night must not go green
+      # with data missing: ACMA was silently absent 2026-10-21..11-01 and ISED on 10-15 and
+      # 11-01. The build writes dist/skipped-sources.txt (one tag per line) only when
+      # something was skipped; this LAST step turns it into a red job with an annotation.
+      # always() so it still reports when a publish step failed.
+      - name: Fail if any source was skipped
+        if: always()
+        run: |
+          set -euo pipefail
+          MARKER="dist/skipped-sources.txt"
+          if [ -s "$MARKER" ]; then
+            SKIPPED="$(tr '\n' ' ' < "$MARKER" | sed 's/ *$//; s/ /, /g')"
+            echo "::error title=Sources skipped::Published a partial build; these sources failed and are MISSING from ${{ steps.date.outputs.date }}: ${SKIPPED}. See the 'Build artifacts' log for the cause."
+            exit 1
+          fi
+          echo "All sources built."

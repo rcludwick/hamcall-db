@@ -205,6 +205,8 @@ Each nightly build publishes two releases, each with a rolling alias that always
 
 > The POTA park-grid sets currently published are **indicative point grids**: the public nightly build runs without the build-time `padus`/`osm` GIS groups, so real polygon→grid coverage is not yet in the released artifacts. Treat the grids as approximate until polygon coverage ships.
 
+**When a source is missing from a night's build.** The build downloads each regulator's extract (FCC, ISED, ACMA) separately. If a download fails with a temporary error (an HTTP 5xx such as `503 Service Unavailable`, an HTTP 429 rate limit, a timeout, or a reset connection), the build waits and tries again: 3 attempts in all, 30 s and then 90 s apart. Errors that won't fix themselves, such as a 404 or a DNS lookup failure, are not retried. A source that still fails is left out, and the release is published anyway from the sources that worked, so one regulator's outage doesn't cost everyone the other countries' fresh data. The build writes the missing sources' tags, one per line, to `skipped-sources.txt` in the output directory, and the release workflow's last step reads that file and fails the run with an error annotation naming them. A red nightly run therefore can mean "published, but incomplete": check the annotation before assuming nothing shipped. If every source fails, the build exits non-zero and nothing is published.
+
 ### Optional / restricted sources
 
 Some sources are implemented but **disabled by default** because their redistribution terms are not confirmed. The published release **never** includes them; their importers run only when you pass `--include-restricted`, for **personal/local builds**:
