@@ -45,8 +45,8 @@ never on grid, so coverage ambiguity for big parks doesn't affect search quality
 License
 -------
 POTA publishes no licence or terms of any kind (re-checked 2026-11-02). The park data is
-used non-commercially, with attribution, while permission is requested; the files will be
-withdrawn if POTA objects, and the table can be dropped without affecting the rest of the
+used non-commercially, with attribution, under the project policy for openly published,
+unlicensed data (NOTICE); the table can be dropped without affecting the rest of the
 dataset. See NOTICE source 6.
 """
 

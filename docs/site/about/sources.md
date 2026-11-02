@@ -39,8 +39,8 @@ fetching 172 of them does not fit in a 60-request hourly budget.
 | [ISED Canada](https://ised-isde.canada.ca/) | Canadian licensees | ISED's non-commercial reproduction terms (not OGL-Canada, which excludes personal information); postal codes published as the 3-character FSA |
 | [ACMA](https://www.acma.gov.au/) | Australian licensees | ACMA's *Licence to use the Register of Radiocommunications Licences* (not Creative Commons); natural persons are callsign-only, organisations and clubs in full |
 | [AD1C `cty.dat`](https://www.country-files.com/) | DXCC prefix mapping | MIT licence ([country-files.com/copyright](https://www.country-files.com/copyright/)) |
-| [AllStarLink](https://www.allstarlink.org/) | Node numbers per callsign | "User Content" under the AllStarLink Terms of Use (2026-09-22), used as "reasonable use of published directories"; confirmation requested |
-| [POTA](https://parksontheair.com/) | Park directory | No licence or terms published; used non-commercially with attribution while permission is requested |
+| [AllStarLink](https://www.allstarlink.org/) | Node numbers per callsign | "User Content" under the AllStarLink Terms of Use (2026-09-22), used as "reasonable use of published directories", which the terms permit |
+| [POTA](https://parksontheair.com/) | Park directory | No licence or terms published; used non-commercially with attribution (openly published, no stated licence) |
 | [ARRL LoTW](https://lotw.arrl.org/) | Last-upload date per callsign | Redistribution prohibited without ARRL's written permission; **disabled in published builds** |
 | [SOTA](https://www.sota.org.uk/) | Summit directory | No licence; the API terms forbid commercial use; **disabled in published builds** |
 | [PAD-US](https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-download) | US park boundaries (build-time only) | Public domain |
