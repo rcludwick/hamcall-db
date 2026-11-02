@@ -32,12 +32,28 @@ Open questions for the owner:
    it withheld; or publish type 6 only when ACMA also holds an ABN/ACN for the client
    (every type-6 amateur client with an ABN in the 2026-11-01 extract is an organisation
    or partnership, but a sole trader can hold an ABN too).
-2. **Already-published releases.** Releases before 2026-10-21 contained ACMA rows with
-   individuals' names and postcodes (keyed on AREA_AREA_ID, not the callsign). New
-   builds scrub that history, but the old dated release assets are still downloadable.
-   Decide whether to delete or re-cut them.
+2. **Already-published releases — resolved.** Releases before 2026-10-21 contained ACMA
+   rows with individuals' names and postcodes. Those assets were deleted on 2026-11-02
+   with the rest of the callsign assets (see au-1022 under Shipped), and `latest` was
+   rebuilt from scratch, so nothing remains downloadable.
 3. **No grid for AU organisations.** The offline geocoder's seed tables have no
    Australian postcodes, so even published organisations get `grid = None`.
+4. **Names for Australian individuals — no legitimate source exists (researched
+   2026-11-02).** Since the class licence, ACMA deliberately stopped publishing who holds
+   a callsign: its online call sign register shows only callsign, status and
+   qualification level ("Personal information is not available"). The WIA pulled its
+   public callsign database "to comply with the ACMA deed" (WIA news, 2020-01-06).
+   Every aggregator forbids redistribution: RadioID.net ("Do not mirror or re-publish
+   RadioID as a public feed, bulk export, reusable database… without written
+   permission", radioid.net/api), QRZ (personal non-commercial use only, eutc.txt §12),
+   HamCall (commercial), HamQTH (no AU import, no redistribution licence), the WIA
+   printed Callbook (stale 2019, copyrighted). Do not ingest any of them.
+   Realistic paths: (a) ask ACMA for a bulk list of **callsign + qualification level**
+   (the register's own fields; covers every AU amateur, not just the ~234 left in the
+   RRL) under the RRL licence or CC BY — start from
+   acma.gov.au/radiocomms-licence-data; the WIA argued for exactly this public listing
+   in its response to ACMA Consultation 31/2022 and is a natural ally; (b) opt-in name
+   submissions from AU amateurs themselves (separate product decision).
 
 ### hdb-dl-timeout — Add a timeout to every upstream urlopen
 *MED · bug · cx:1*
