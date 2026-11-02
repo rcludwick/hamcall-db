@@ -6,7 +6,7 @@ Hawaii:                  31:  61:  OC:   21.12:   157.48:   -10.0:  KH6:
     AH6,AH7,KH6,KH7,NH6,NH7,WH6,WH7,
     KH6<21.12/157.48>;
 Alaska:                  01:  01:  NA:   61.41:   148.93:     9.0:  KL:
-    AL,KL,NL,WL,
+    AL,KL,NL,WL,=KG4BBX,
     KL7;
 Canada:                  05:  09:  NA:   44.35:    78.75:     5.0:  VE:
     VA,VE,VO,VY,CF,CG,CH,CY{NA},
@@ -14,3 +14,5 @@ Canada:                  05:  09:  NA:   44.35:    78.75:     5.0:  VE:
 Argentina:               13:  14:  SA:  -34.00:    64.00:     3.0:  LU:
     AY,AZ,L,LO,LP,LQ,LR,LS,LT,LU,LV,LW,
     LU1;
+Guantanamo Bay:           08:  11:  NA:   20.00:    75.00:     5.0:  KG4:
+    KG4,=KG44WW,=KG4AC,=W1AW/KG4;

@@ -31,7 +31,8 @@ Resolution
 For a callsign:
 
 1. EXACT full-callsign match (the ``=`` set) wins outright.
-2. Otherwise the LONGEST matching prefix wins (e.g. "KH6AA" -> "KH6" over "K").
+2. Otherwise the LONGEST matching prefix wins (e.g. "KH6AA" -> "KH6" over "K"),
+   subject to the KG4 callsign-shape exception (see `_skip_prefix`).
 3. No match -> ``(None, None)``; `country`/`dxcc` are left untouched.
 
 DXCC NUMBER (cty.csv vs. seed json)
@@ -104,6 +105,34 @@ def _strip_token(token: str) -> str:
     return "".join(out).strip().upper()
 
 
+# KG4 callsign-shape exception (hdb-kg4). cty.dat lists the bare prefix "KG4" under
+# Guantanamo Bay, but cty.dat can only express prefixes and exact calls, not call
+# *shapes*. The rule every logger applies on top of it: only KG4 + exactly two
+# letters (KG4AA-KG4ZZ, a 2x2 call) is Guantanamo Bay (DXCC 105). Every other KG4
+# call (2x1 like KG4A, 2x3 like KG4ABC) is an ordinary United States call issued
+# in call district 4, so for those we skip the "KG4" key and let the longest-prefix
+# search fall through to the next shorter match ("K" -> United States).
+#
+# Exact ``=CALL`` overrides are checked before prefixes, so they still win.
+# Portable forms: the shape is judged on the part before the first "/", so
+# "KG4AB/P" stays Guantanamo and "KG4ABC/P" becomes United States. "KG4/W1XYZ"
+# (bare KG4 as a location prefix) stays Guantanamo. A trailing "/KG4"
+# ("W1AW/KG4") is not parsed as a location; it resolves by its leading prefix as
+# before unless cty.dat lists it as an exact call (the real file does for W1AW/KG4).
+_KG4_PREFIX = "KG4"
+
+
+def _skip_prefix(call: str, key: str) -> bool:
+    """True when the cty.dat prefix ``key`` must be ignored for ``call``."""
+    if key != _KG4_PREFIX:
+        return False
+    base = call.split("/", 1)[0]
+    suffix = base[len(_KG4_PREFIX) :]
+    if not suffix:  # "KG4/..." -- KG4 used as a portable location prefix.
+        return False
+    return not (len(suffix) == 2 and suffix.isalpha())
+
+
 @lru_cache(maxsize=1)
 def _dxcc_numbers() -> dict[str, int]:
     """Primary-prefix (UPPER) -> ADIF DXCC entity number, from the bundled seed."""
@@ -157,8 +186,9 @@ class CtyLookup:
         # Longest matching prefix: probe from the longest possible down to 1 char.
         upper = min(len(call), self._max_prefix_len)
         for length in range(upper, 0, -1):
-            hit = self._prefix.get(call[:length])
-            if hit is not None:
+            key = call[:length]
+            hit = self._prefix.get(key)
+            if hit is not None and not _skip_prefix(call, key):
                 return hit
         return (None, None)
 

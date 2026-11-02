@@ -243,3 +243,35 @@ def test_csv_unknown_callsign_still_none(csv_lookup: CtyLookup) -> None:
 def test_csv_enrich_record_sets_number(csv_lookup: CtyLookup) -> None:
     out = enrich_record(Record(callsign="VE3ABC"), csv_lookup)
     assert (out.country, out.dxcc) == ("Canada", 1)
+
+
+# --- KG4 callsign-shape exception (hdb-kg4) ------------------------------------
+#
+# cty.dat maps the whole "KG4" prefix to Guantanamo Bay, but only KG4 + exactly two
+# letters (KG4AA-KG4ZZ, a 2x2 call) is Guantanamo (DXCC 105). Every other KG4 call
+# (2x1 like KG4A, 2x3 like KG4ABC) is an ordinary United States call (DXCC 291).
+# Exact ``=CALL`` overrides in cty.dat still win over the rule.
+
+
+@pytest.mark.parametrize("call", ["KG4AB", "KG4ZZ", "kg4ab", "KG4AB/P", "KG4/W1XYZ"])
+def test_kg4_two_letter_suffix_is_guantanamo(csv_lookup: CtyLookup, call: str) -> None:
+    assert csv_lookup.resolve(call) == ("Guantanamo Bay", 105)
+
+
+@pytest.mark.parametrize("call", ["KG4ABC", "KG4A", "KG4AAA", "KG4ABC/P", "KG4A/M"])
+def test_kg4_non_two_letter_suffix_is_united_states(csv_lookup: CtyLookup, call: str) -> None:
+    assert csv_lookup.resolve(call) == ("United States", 291)
+
+
+def test_kg4_exact_override_still_wins(csv_lookup: CtyLookup) -> None:
+    # =KG4AC (2x2) and =KG44WW (digit suffix, which the shape rule would send to the
+    # US) are exact Guantanamo entries; =KG4BBX (2x3) is an exact Alaska entry.
+    assert csv_lookup.resolve("KG4AC") == ("Guantanamo Bay", 105)
+    assert csv_lookup.resolve("KG44WW") == ("Guantanamo Bay", 105)
+    assert csv_lookup.resolve("KG4BBX") == ("Alaska", 6)
+    assert csv_lookup.resolve("W1AW/KG4") == ("Guantanamo Bay", 105)
+
+
+def test_kg4_enrich_record_fixes_stateside_call(csv_lookup: CtyLookup) -> None:
+    out = enrich_record(Record(callsign="KG4AAA", source="fcc"), csv_lookup)
+    assert (out.country, out.dxcc) == ("United States", 291)
