@@ -18,7 +18,7 @@ from hamcall_db import enrich_allstar, enrich_lotw
 from hamcall_db.enrich import enrich, load_cty
 from hamcall_db.geocode import LookupGeocoder
 from hamcall_db.history import diff_history
-from hamcall_db.merge import merge
+from hamcall_db.merge import MergeStats, merge
 from hamcall_db.sources import ad1c
 from hamcall_db.sources.acma import AcmaSource
 from hamcall_db.sources.base import Source, retry_transient
@@ -189,7 +189,15 @@ def build(
     # United States), never on `country`, which is the callsign's DXCC entity.
     # merge() yields lazily and geocoding fills grid; materialize so we can both write the
     # current-state artifact AND diff it into history without re-running the pipeline.
-    records = list(merge(streams, geocode=LookupGeocoder()))
+    merge_stats = MergeStats()
+    records = list(merge(streams, geocode=LookupGeocoder(), stats=merge_stats))
+    if merge_stats.street_addresses_scrubbed:
+        by_field = ", ".join(f"{k}={v}" for k, v in merge_stats.street_addresses_by_field.items())
+        typer.echo(
+            f"WARNING: nulled {merge_stats.street_addresses_scrubbed} street-address-shaped "
+            f"value(s) ({by_field}); no street address is published (hdb-addrguard)",
+            err=True,
+        )
 
     # cty.dat enrichment runs once over the deduped set (order-independent): resolve
     # country (DXCC entity name) + dxcc number from the callsign prefix. On --all (a

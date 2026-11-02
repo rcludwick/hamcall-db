@@ -6,7 +6,8 @@ of pipe-delimited ``.dat`` files joined on the unique-system-identifier (USI):
 - HD.dat — license header: call sign, license status (filter to active), and the
   grant / effective / expired dates (normalized to ISO).
 - EN.dat — entity: licensee name + mailing address (we keep city/state/zip; the street
-  address is read past but NEVER stored — redistribution contract), plus the FRN,
+  address is read only to compare against the published fields and is NEVER stored —
+  redistribution contract), plus the FRN,
   entity-type code, and applicant-type code (mapped to a readable value).
 - AM.dat — amateur: operator class (mapped to a human-readable license class) and the
   previous call sign held.
@@ -27,6 +28,7 @@ import urllib.request
 from collections.abc import Iterable, Iterator
 from pathlib import Path
 
+from hamcall_db.address_guard import echoes_street, warn_scrubbed
 from hamcall_db.models import Record
 from hamcall_db.sources.base import synced_at_from
 
@@ -44,6 +46,8 @@ _EN_CALLSIGN = 4
 _EN_ENTITY_TYPE = 5  # FCC EN position 6
 _EN_FIRST_NAME = 8
 _EN_LAST_NAME = 10
+# Street address (FCC EN position 16): compared against, never stored (hdb-addrguard).
+_EN_STREET = 15
 _EN_CITY = 16
 _EN_STATE = 17
 _EN_ZIP = 18
@@ -155,6 +159,7 @@ def parse_dir(
             previous_callsigns[usi] = _field(row, _AM_PREVIOUS_CALLSIGN)
 
     # EN carries the licensee identity + location; it drives record emission.
+    scrubbed = 0
     for row in _read_dat(path / "EN.dat"):
         usi = _field(row, _EN_USI)
         if usi is None or usi not in statuses:
@@ -167,11 +172,19 @@ def parse_dir(
         op_class = operator_classes.get(usi)
         grant_date, effective_date, expired_date = hd_dates.get(usi, (None, None, None))
         applicant_code = _field(row, _EN_APPLICANT_TYPE)
+        # Some filers type their street address into the city (or a name) field. Drop
+        # any published field that copies this row's street; the street itself goes
+        # nowhere (hdb-addrguard).
+        street = (_field(row, _EN_STREET),)
+        published = [_field(row, i) for i in (_EN_FIRST_NAME, _EN_LAST_NAME, _EN_CITY)]
+        kept = [None if echoes_street(value, street) else value for value in published]
+        scrubbed += sum(a is not None and b is None for a, b in zip(published, kept, strict=True))
+        first_name, last_name, city = kept
         yield Record(
             callsign=callsign,
-            first_name=_field(row, _EN_FIRST_NAME),
-            last_name=_field(row, _EN_LAST_NAME),
-            city=_field(row, _EN_CITY),
+            first_name=first_name,
+            last_name=last_name,
+            city=city,
             state=_field(row, _EN_STATE),
             postal_code=_field(row, _EN_ZIP),
             license_class=OPERATOR_CLASS.get(op_class, op_class) if op_class else None,
@@ -187,6 +200,7 @@ def parse_dir(
             ),
             previous_callsign=previous_callsigns.get(usi),
         )
+    warn_scrubbed("fcc", scrubbed)
 
 
 class FccUlsSource:

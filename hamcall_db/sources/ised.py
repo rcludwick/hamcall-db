@@ -35,7 +35,7 @@ Field                          Start  Length
 Callsign                           1       6
 Given Names                        8      35
 Surname                           44      35
-Street Address                    80      70   (read past, NEVER stored)
+Street Address                    80      70   (compared against, NEVER stored)
 City                             151      35
 Province                         187       2
 Postal/ZIP Code                  190      10
@@ -46,7 +46,7 @@ ADVANCED Qualification (D)       207       1
 Basic with Honours (E)           209       1
 Club Name (field 1)              211      70
 Club Name (field 2)              282      70   (not published; often "c/o <person>")
-Club Address                     353      70   (read past, NEVER stored)
+Club Address                     353      70   (compared against, NEVER stored)
 Club City                        424      35
 Club Province                    460       2
 Club Postal/ZIP Code             463       7
@@ -58,8 +58,11 @@ code instead. Placeholder values with no letters or digits (``**``, ``-``) becom
 ISED escapes apostrophes as HTML numeric entities (``&#x27;``); those are
 decoded.
 
-The street-address columns are never sliced into any Record field — redistribution
-contract (no street address in output, see CLAUDE.md / mem-c6e0). Output leaves county
+The street-address columns never go into any Record field — redistribution contract
+(no street address in output, see CLAUDE.md / mem-c6e0). They are read for one thing
+only: some filers type their address into a published field (a club whose club name is
+the trustee's street, a city that repeats the street), so any published value that
+copies either of the row's addresses is dropped (hdb-addrguard). Output leaves county
 (US-only), country/dxcc (cty.dat enriches downstream), and grid (geocoded downstream)
 as None.
 """
@@ -72,6 +75,7 @@ import urllib.request
 from collections.abc import Iterable, Iterator
 from pathlib import Path
 
+from hamcall_db.address_guard import echoes_street, warn_scrubbed
 from hamcall_db.models import Record
 from hamcall_db.sources.base import synced_at_from
 
@@ -95,13 +99,15 @@ def _col(start: int, length: int) -> slice:
 _CALLSIGN = _col(1, 6)
 _GIVEN_NAMES = _col(8, 35)
 _SURNAME = _col(44, 35)
-# _col(80, 70) is the street address: deliberately not defined, never read.
+# Street address: sliced only to compare against published fields, never stored.
+_STREET_ADDRESS = _col(80, 70)
 _CITY = _col(151, 35)
 _PROVINCE = _col(187, 2)
 _POSTAL_CODE = _col(190, 10)
 _CLUB_NAME = _col(211, 70)
 # _col(282, 70) is club name field 2 (free text, often "c/o <person>"): not published.
-# _col(353, 70) is the club street address: deliberately not defined, never read.
+# Club street address: sliced only to compare against published fields, never stored.
+_CLUB_ADDRESS = _col(353, 70)
 _CLUB_CITY = _col(424, 35)
 _CLUB_PROVINCE = _col(460, 2)
 _CLUB_POSTAL_CODE = _col(463, 7)
@@ -153,8 +159,12 @@ def _license_class(line: str) -> str | None:
     return ", ".join(held) if held else None
 
 
-def _to_record(line: str, *, synced_at: str | None) -> Record:
-    """Map one fixed-width ISED data row to a `Record`."""
+def _to_record(line: str, *, synced_at: str | None) -> tuple[Record, int]:
+    """Map one fixed-width ISED data row to a `Record`.
+
+    Returns the record and how many published values were dropped because they copied
+    one of the row's street addresses (personal or club).
+    """
     callsign = line[_CALLSIGN].strip()  # non-empty: guaranteed by _DATA_ROW
     club_name = _field(line, _CLUB_NAME)
     if club_name is not None:
@@ -165,11 +175,18 @@ def _to_record(line: str, *, synced_at: str | None) -> Record:
         first_name, last_name = _field(line, _GIVEN_NAMES), _field(line, _SURNAME)
         city, state, postal = _CITY, _PROVINCE, _POSTAL_CODE
 
-    return Record(
+    # The address columns are compared against, never stored (hdb-addrguard).
+    streets = (_field(line, _STREET_ADDRESS), _field(line, _CLUB_ADDRESS))
+    published = [first_name, last_name, _field(line, city)]
+    kept = [None if echoes_street(value, streets) else value for value in published]
+    scrubbed = sum(a is not None and b is None for a, b in zip(published, kept, strict=True))
+    first_name, last_name, city_name = kept
+
+    record = Record(
         callsign=callsign,
         first_name=first_name,
         last_name=last_name,
-        city=_field(line, city),
+        city=city_name,
         state=_field(line, state),  # province maps to the state/region slot
         postal_code=_field(line, postal),
         license_class=_license_class(line),
@@ -177,6 +194,7 @@ def _to_record(line: str, *, synced_at: str | None) -> Record:
         synced_at=synced_at,
         # county is US-only; country/dxcc come from cty.dat; grid is geocoded downstream.
     )
+    return record, scrubbed
 
 
 def _read_text(path: Path) -> str:
@@ -194,13 +212,17 @@ def parse_file(path: Path, *, synced_at: str | None = None) -> Iterator[Record]:
     Skips blank lines, the dated report header, the call-sign count line, and the
     trailing ``EOF``. Any other line that isn't a fixed-width data row raises
     ValueError, so a format change fails the build instead of publishing garbage.
-    `synced_at` stamps the upstream file date. Street addresses are never read.
+    `synced_at` stamps the upstream file date. Street addresses are only compared
+    against the published fields, never stored.
     """
+    scrubbed = 0
     for lineno, line in enumerate(_read_text(path).splitlines(), start=1):
         if not line.strip():
             continue
         if _DATA_ROW.match(line) and len(line) >= _MIN_ROW_LENGTH:
-            yield _to_record(line, synced_at=synced_at)
+            record, dropped = _to_record(line, synced_at=synced_at)
+            scrubbed += dropped
+            yield record
         elif line.strip() == _EOF or _HEADER.match(line) or _COUNT.match(line):
             continue
         else:
@@ -208,6 +230,7 @@ def parse_file(path: Path, *, synced_at: str | None = None) -> Iterator[Record]:
                 f"{path}: line {lineno} is not an ISED fixed-width call sign row "
                 f"(has the amateur.txt layout changed?): {line[:40]!r}"
             )
+    warn_scrubbed("ised", scrubbed)
 
 
 def parse_dir(path: Path, *, synced_at: str | None = None) -> Iterator[Record]:

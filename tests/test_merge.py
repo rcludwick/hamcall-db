@@ -2,7 +2,9 @@
 
 from __future__ import annotations
 
-from hamcall_db.merge import merge, normalize
+import pytest
+
+from hamcall_db.merge import MergeStats, merge, normalize
 from hamcall_db.models import Record
 
 # --- normalize -----------------------------------------------------------------
@@ -37,8 +39,6 @@ def test_normalize_is_idempotent() -> None:
 
 
 # --- smart title-casing of all-caps name/place fields (hdb-b991) ----------------
-
-import pytest  # noqa: E402
 
 from hamcall_db.merge import _smart_titlecase  # noqa: E402
 
@@ -182,3 +182,44 @@ def test_merge_without_geocode_leaves_grid_none() -> None:
     fcc = [Record(callsign="W1AW", postal_code="06111", source="fcc")]
     out = list(merge([fcc]))
     assert out[0].grid is None
+
+
+# --- street-address backstop (hdb-addrguard) ------------------------------------
+# Synthetic addresses only: the repo is public.
+
+
+def test_normalize_nulls_street_address_typed_into_city() -> None:
+    out = normalize(Record(callsign="K1ABC", city="100 FAKE RD", state="CT"))
+    assert out.city is None
+    assert out.state == "CT"
+
+
+def test_normalize_nulls_street_address_in_name_fields() -> None:
+    out = normalize(Record(callsign="K1ABC", first_name="200 Sample Ave", last_name="Doe"))
+    assert out.first_name is None
+    assert out.last_name == "Doe"
+
+
+@pytest.mark.parametrize("city", ["29 Palms", "100 Mile House", "Six Mile", "108 Mile Ranch"])
+def test_normalize_keeps_leading_number_place_names(city: str) -> None:
+    assert normalize(Record(callsign="K1ABC", city=city)).city == city.title()
+
+
+def test_merge_counts_scrubbed_street_addresses() -> None:
+    stats = MergeStats()
+    out = list(
+        merge(
+            [
+                [
+                    Record(callsign="K1AAA", city="300 TEST DRIVE", source="fcc"),
+                    Record(callsign="K1AAB", city="29 PALMS", source="fcc"),
+                ],
+                [Record(callsign="VA1AA", last_name="400 Example Way", source="ised")],
+            ],
+            stats=stats,
+        )
+    )
+    assert [r.city for r in out] == [None, "29 Palms", None]
+    assert out[2].last_name is None
+    assert stats.street_addresses_scrubbed == 2
+    assert stats.street_addresses_by_field == {"city": 1, "last_name": 1}
