@@ -155,7 +155,9 @@ def build(
     # Always route through merge(): it normalizes, dedups, and sorts deterministically,
     # which a single-source build wants too. Collision resolution is a no-op for one
     # source. The offline LookupGeocoder fills `grid` (4-char Maidenhead) only where a
-    # source didn't already supply one; see hamcall_db/geocode.py and mem-e3fd.
+    # source didn't already supply one; see hamcall_db/geocode.py and mem-e3fd. It runs
+    # BEFORE cty.dat enrichment on purpose: it keys on the source's postal country (FCC ->
+    # United States), never on `country`, which is the callsign's DXCC entity.
     # merge() yields lazily and geocoding fills grid; materialize so we can both write the
     # current-state artifact AND diff it into history without re-running the pipeline.
     records = list(merge(streams, geocode=LookupGeocoder()))

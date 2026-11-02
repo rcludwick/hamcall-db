@@ -116,3 +116,31 @@ def test_merge_with_lookup_geocoder_does_not_override_existing_grid() -> None:
     ]
     out = list(merge([fcc], geocode=LookupGeocoder()))
     assert out[0].grid == "AA00"
+
+
+# --- postal country comes from the source, not the callsign's DXCC entity ------
+
+
+def test_geocoder_uses_source_country_when_country_unset() -> None:
+    # merge() geocodes before cty.dat enrichment, so country is still None here.
+    geo = LookupGeocoder()
+    assert geo(Record(callsign="W1AW", postal_code="06111", source="fcc")) == "FN31"
+    assert geo(Record(callsign="VE3ZZZ", postal_code="K1A", source="ised")) == "FN25"
+    assert geo(Record(callsign="VK2ZZZ", city="Sydney", state="NSW", source="acma")) == "QF56"
+
+
+def test_geocoder_source_country_beats_callsign_entity() -> None:
+    # A KH6 call ("Hawaii" in cty.dat) with an FCC address in Connecticut: the grid
+    # follows the address. A Puerto Rico ZIP is a USPS ZIP in the US table.
+    geo = LookupGeocoder()
+    kh6 = Record(callsign="KH6ZZZ", postal_code="06111", country="Hawaii", source="fcc")
+    kp4 = Record(callsign="KP4ZZZ", postal_code="00901", country="Puerto Rico", source="fcc")
+    assert geo(kh6) == "FN31"
+    assert geo(kp4) == "FK68"
+
+
+def test_geocoder_unknown_source_falls_back_to_record_country() -> None:
+    geo = LookupGeocoder()
+    rec = Record(callsign="W1AW", postal_code="06111", country="United States", source="x")
+    assert geo(rec) == "FN31"
+    assert geo(Record(callsign="W1AW", postal_code="06111", source="x")) is None
