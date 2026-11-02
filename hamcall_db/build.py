@@ -24,6 +24,7 @@ from hamcall_db.sources.acma import AcmaSource, withhold_prior_history
 from hamcall_db.sources.base import Source, retry_transient
 from hamcall_db.sources.fcc import FccUlsSource
 from hamcall_db.sources.ised import IsedSource
+from hamcall_db.sources.ised import scrub_prior_history as scrub_ised_prior_history
 from hamcall_db.sources.osm import OsmSource, compute_osm_park_grids
 from hamcall_db.sources.padus import PadusSource, compute_park_grids
 from hamcall_db.sources.pota import PotaSource
@@ -267,6 +268,10 @@ def build(
         # ACMA licence cl. 8: history carried forward from older releases may still
         # name natural persons; null those rows before they are republished.
         prior = withhold_prior_history(prior, records)
+        # ISED rows in older releases hold full Canadian postal codes; truncate them to
+        # the FSA the current build publishes, before diffing, so unchanged holders
+        # don't open new intervals (hdb-isedfsa).
+        prior = scrub_ised_prior_history(prior)
         history = diff_history(prior, records, as_of=as_of)
         hist_path = (out.parent if not out_dir else out) / _history_filename()
         hist_count = write_history_parquet(history, hist_path)

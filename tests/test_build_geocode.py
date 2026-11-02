@@ -108,3 +108,98 @@ def test_all_build_fills_grid_for_each_source_and_us_territories(tmp_path, monke
     assert grids["VE3ZZZ"] == "FN25"  # Ottawa FSA K1A
     assert grids["VK2ZZZ"] == "QF56"  # Sydney city centroid
     assert all(g is not None and len(g) == 4 for g in grids.values())
+
+
+# --- ISED postal codes published as the FSA only (hdb-isedfsa) ---------------------
+# Synthetic names; K1A is the seed table's Ottawa FSA.
+
+
+class _IsedFileSource:
+    """Runs the real ISED parser over a synthetic amateur.txt."""
+
+    name = "ised"
+    synced_at = None
+
+    def __init__(self, amateur_txt: Path) -> None:
+        self._path = amateur_txt
+
+    def download(self, work_dir):
+        return work_dir
+
+    def parse(self, path, *, synced_at=None):
+        from hamcall_db.sources.ised import parse_file
+
+        return list(parse_file(self._path))
+
+
+def _ised_line(call: str, surname: str, postal: str) -> str:
+    line = [" "] * 210
+    for start, length, value in (
+        (1, 6, call),
+        (44, 35, surname),
+        (151, 35, "OTTAWA"),
+        (187, 2, "ON"),
+        (190, 10, postal),
+        (201, 1, "A"),
+    ):
+        line[start - 1 : start - 1 + length] = value.ljust(length)[:length]
+    return "".join(line)
+
+
+def _run_all(tmp_path: Path, out: Path, *extra: str) -> tuple[pl.DataFrame, Path, Path]:
+    args = ["--all", "--out", str(out), "--work-dir", str(tmp_path), *extra]
+    result = CliRunner().invoke(app, args)
+    assert result.exit_code == 0, result.output
+    hist = next(out.glob("hamcall-db-history-*.parquet"))
+    db = next(out.glob("hamcall-db-20*.db"))
+    current = next(p for p in out.glob("hamcall-db-20*.parquet") if "history" not in p.name)
+    return pl.read_parquet(current), hist, db
+
+
+def test_all_build_publishes_fsa_and_scrubs_prior_history_without_churn(tmp_path, monkeypatch):
+    import sqlite3
+
+    amateur = tmp_path / "amateur.txt"
+    amateur.write_text(_ised_line("VE3ZZX", "Sample", "K1A 0B1") + "\r\nEOF\r\n")
+    _stub_sources(monkeypatch, {})
+    monkeypatch.setitem(SOURCES, "ised", _IsedFileSource(amateur))
+    monkeypatch.setattr("hamcall_db.build.ad1c.download_cty", lambda *a, **k: CTY_FIXTURE)
+
+    # Fake an older release: build once, then rewrite its history the way a pre-FSA
+    # build wrote it (full postal code), plus a closed interval from an earlier holder.
+    _, hist0, _ = _run_all(tmp_path, tmp_path / "run0")
+    open_iv = pl.read_parquet(hist0).with_columns(
+        valid_from=pl.lit("2026-01-01"), postal_code=pl.lit("K1A 0B1")
+    )
+    closed_iv = open_iv.with_columns(
+        valid_from=pl.lit("2025-01-01"),
+        valid_to=pl.lit("2026-01-01"),
+        last_name=pl.lit("Example"),
+        postal_code=pl.lit("K1A 0A6"),
+    )
+    prior_hist = tmp_path / "prior-history.parquet"
+    pl.concat([closed_iv, open_iv]).write_parquet(prior_hist)
+
+    cur1, hist1, db1 = _run_all(tmp_path, tmp_path / "run1", "--history-in", str(prior_hist))
+    cur2, hist2, db2 = _run_all(
+        tmp_path, tmp_path / "run2", "--history-in", str(hist1), "--db-in", str(db1)
+    )
+
+    for cur in (cur1, cur2):
+        row = cur.filter(pl.col("callsign") == "VE3ZZX").row(0, named=True)
+        assert row["postal_code"] == "K1A"
+        assert row["grid"] == "FN25"  # still geocoded from the FSA
+
+    for hist in (hist1, hist2):
+        frame = pl.read_parquet(hist).sort("valid_from")
+        # No new interval: the closed one is carried, the open one still dates 2026-01-01.
+        assert frame["valid_from"].to_list() == ["2025-01-01", "2026-01-01"]
+        assert frame["valid_to"].to_list() == ["2026-01-01", None]
+        assert frame["postal_code"].to_list() == ["K1A", "K1A"]
+
+    with sqlite3.connect(db2) as con:
+        for table in ("current", "history"):
+            (longest,) = con.execute(
+                f"SELECT max(length(postal_code)) FROM {table} WHERE source='ised'"  # noqa: S608
+            ).fetchone()
+            assert longest == 3
