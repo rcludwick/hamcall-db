@@ -1,0 +1,8 @@
+number;valid_to;call_sign;category;transmitter_power;applicant_name;applicant_city;applicant_street;applicant_house;applicant_number;enduser_name;enduser_city;enduser_street;enduser_house;enduser_number;station_city;station_street;station_house;station_number;lat;lng
+0001/K/X/2017;2027-01-28;SP2XKA;Kategoria1;500;Stowarzyszenie Przyk³adowych Krótkofalowców;Zmyœlonowo;ul. Fikcyjna;14;"";Stowarzyszenie Przyk³adowych Krótkofalowców;Zmyœlonowo;ul. Fikcyjna;14;"";ŒWIÊTOWO DOLNE;Ogrodowa Próbna;18;"";;
+DZC.NET.5101.9.2018.0;2027-01-31;SP2XKB;Kategoria1;500;Ogólnopolski Zwi¹zek Testowy;Warszawa;ul. Wymyœlona;66;U1;"";"";"";"";"";Gdañsk;ul. Nibylandzka;20-22;"";52.2297;21.0122
+0003/K/X/2017;2027-02-08;SP5XKC;Kategoria1;500;Klub £¹cznoœci Próbnej;Zmyœlonowo;ul. Fikcyjna;7;"";"";"";"";"";"";52°06’05,4”  21°15’47,4”;"";"";"";52,4064;16,9252
+0004/K/X/2017;2027-03-10;SN0XKD;Dodatkowe;500;Ogólnopolski Zwi¹zek Testowy;Warszawa;ul. Wymyœlona;66;U1;"";"";"";"";"";Pogórze ul. Zmyœlona 16 B;"";"";"";;
+0005/K/X/2017;2027-04-05;SP3XKE;Kategoria1;150;Zwi¹zek Harcerstwa Testowego;Poznañ;ul. Wilków Wymyœlonych;23/25;"";"HARCERSKI KLUB £¥CZNOŒCI ""PRÓBA""  SP3XKE";POZNAÑ;OSINOWA TESTOWA;14/16;"";D³uga Wieœ Zmyœlona;D³uga Wieœ Zmyœlona;12;"";;
+0006/K/X/2017;2027-05-05;SP9XKF;Kategoria1;150;Klub Testowy;Zmyœlonowo;ul. Wymyœlona;3;"";ul. Wymyœlona 3;Zmyœlonowo;"";"";"";Zmyœlonowo;"";"";"";;
+0007/K/X/2017;2029-01-01;SP0XDG;Kategoria1;500;Klub Podwójny;Zmyœlonowo;ul. Fikcyjna;9;"";"";"";"";"";"";Przyk³adowo;"";"";"";;

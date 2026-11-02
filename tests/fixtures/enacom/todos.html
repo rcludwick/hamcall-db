@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<link rel="stylesheet" type="text/css" href="/se/utils/css/main.css?ts=20190201"/>
+<link rel="stylesheet" type="text/css" href="/se/utils/css/header.css?ts=20190201"/>
+<link rel="stylesheet" type="text/css" href="/se/utils/css/sidebar.css?ts=20190201"/>
+<link rel="stylesheet" type="text/css" href="/se/portal/arg/css/default.css?ts=20190201"/>
+
+<script type="text/javascript" src="/se/utils/js/rfmain.js?ts=20190201"></script>
+
+<style>
+:root { --color-header: #FF8C00; }
+#header { display:grid; grid-template-columns:1fr auto 1fr; align-items:center; padding:10px 20px; background-color:var(--color-header); }
+#header #logo { justify-self:start; }
+#header #title { justify-self:center; text-align:center; }
+#header #title a { color:white; font-size:1.6em; font-weight:bold; text-decoration:none; white-space:nowrap; }
+#header .hdr-spacer { justify-self:end; }
+
+.form-box { background: rgba(255,255,255,0.9); padding:15px; border-radius:8px; margin:20px 0; }
+.form-box label { font-weight:bold; }
+.form-box input[type=text] { padding:5px; }
+.form-box button { margin:5px; }
+
+table.listado { border-collapse:collapse; width:100%; margin-top:20px; background-color:#fff; }
+table.listado th { background-color:#e0e0e0; color:#000; padding:10px; text-align:left; }
+table.listado td { border:1px solid #ddd; padding:8px; color:#000; background-color:#fff; }
+table.listado tr:nth-child(even) td { background-color:#f9f9f9; }
+
+.error-box { background-color:#f8d7da; color:#721c24; border:1px solid #f5c6cb; padding:15px; border-radius:8px; margin-bottom:20px; }
+</style>
+</head>
+<body>
+<div class="header" id="header">
+    <div class="logo" id="logo">
+        <img src="/se/portal/arg/images/logo-se_v4.png" alt="logo" style="max-height:40px"/>
+    </div>
+    <div class="title" id="title"></div>
+    <div class="hdr-spacer"></div>
+</div>
+
+<div id="opensb"></div>
+<div id="owner">Spectrum-E by ATDI</div>
+
+<div class="container func">
+    <h2>Listado de Radioaficionados Vigentes</h2>
+
+    <div class="form-box">
+        <form method="post" action="ListadoRadioaficionado.php" autocomplete="off" novalidate>
+            <label for="valor">Señal Distintiva:</label>
+            <input type="text" name="valor" id="valor"
+                   value=""
+                   autocomplete="off">
+            <input type="hidden" name="csrf_token" value="0000000000000000000000000000000000000000000000000000000000000000">
+            <button type="submit" >Buscar</button>
+            <button type="submit" name="mostrarTodos" value="1" >Mostrar todos los Radioaficionados</button>
+            <button type="submit" name="soloCuitEspecial" value="1" >Instituciones y Radioclubes</button>
+        </form>
+    </div>
+
+            <h3>Registros encontrados: 8</h3>
+    
+            <table class="listado">
+            <tr>
+                            <th>Radioaficionado</th>
+                            <th>Categoria</th>
+                            <th>Señal Distintiva</th>
+                            <th>Vigencia Certificado Antecedentes Penales</th>
+                            <th>Ciudad</th>
+                            <th>Provincia</th>
+                        </tr>
+
+                            <tr>
+                                    <td>JUAN EJEMPLO FICTICIO</td>
+                                    <td>NOVICIO</td>
+                                    <td>LU1ZZA</td>
+                                    <td>2029-09-29 00:00:00</td>
+                                    <td>CIUDAD AUTONOMA BUENOS AIRES</td>
+                                    <td>CIUDAD DE BUENOS AIRES</td>
+                                </tr>
+                            <tr>
+                                    <td>MARIA INVENTADA PRUEBA</td>
+                                    <td>GENERAL</td>
+                                    <td>LU2ZZB</td>
+                                    <td>2030-01-15 00:00:00</td>
+                                    <td>VILLA IMAGINARIA</td>
+                                    <td>PROVINCIA DE BUENOS AIRES</td>
+                                </tr>
+                            <tr>
+                                    <td>PEDRO MUESTRA VIÑA</td>
+                                    <td>SUPERIOR</td>
+                                    <td>LW9ZZC</td>
+                                    <td>2031-06-20 00:00:00</td>
+                                    <td>9 DE ABRIL</td>
+                                    <td>CÓRDOBA</td>
+                                </tr>
+                            <tr>
+                                    <td>ANA D&#039;EJEMPLO</td>
+                                    <td>ESPECIAL</td>
+                                    <td>AY0ZZD</td>
+                                    <td>2028-12-05 00:00:00</td>
+                                    <td>PUERTO FICTICIO</td>
+                                    <td>TIERRA DEL FUEGO A. E I.A.S.</td>
+                                </tr>
+                            <tr>
+                                    <td>CARLOS SIN CIUDAD</td>
+                                    <td>NOVICIO</td>
+                                    <td>LU5ZZE</td>
+                                    <td>2030-10-02 00:00:00</td>
+                                    <td></td>
+                                    <td>CIUDAD DE BUENOS AIRES</td>
+                                </tr>
+                            <tr>
+                                    <td>PRIMER TITULAR DUPLICADO</td>
+                                    <td>NOVICIO</td>
+                                    <td>LU3ZZF</td>
+                                    <td>2029-11-04 00:00:00</td>
+                                    <td>PUEBLO UNO</td>
+                                    <td>ENTRE RÍOS</td>
+                                </tr>
+                            <tr>
+                                    <td>SEGUNDO TITULAR DUPLICADO</td>
+                                    <td>GENERAL</td>
+                                    <td>LU3ZZF</td>
+                                    <td>2030-07-18 00:00:00</td>
+                                    <td>PUEBLO DOS</td>
+                                    <td>ENTRE RÍOS</td>
+                                </tr>
+                            <tr>
+                                    <td>LUCIA PROVINCIA NUEVA</td>
+                                    <td>NOVICIO</td>
+                                    <td>LO7ZZG</td>
+                                    <td>2031-01-12 00:00:00</td>
+                                    <td>LOCALIDAD X</td>
+                                    <td>PROVINCIA INEXISTENTE</td>
+                                </tr>
+                    </table>
+    </div>
+</body>
+</html>

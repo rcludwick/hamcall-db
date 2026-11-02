@@ -1,0 +1,17 @@
+Kallesignal;Organisasjon;Fornavn;Etternavn;Adresse;Adresse_2;Postnr;Poststed;Land;Type;Gyldigdato;Utlõpsdato;Oppdatertdato;Kommentar
+LA1XYZ;;KÜre írlig;Bjõrnstad;Fiktivveien 12;;4365;NíRBù;Norge;Personlig;;;11.10.2016;
+JW0QQ;;Lise;BÅgeltest;Postboks 999;;9173;NY-èLESUND;Norge;Personlig;;;12.06.2018;
+LA1ZZZ;Testby Radioamatõrklubb;v/ùystein;Prõvesen;Klubbveien 7;Postboks 3;7030;TRONDHEIM;Norge;Organisasjon;;;01.04.2025;
+LB1TST;Eksempel Radio AS;;;Industriveien 45;;0150;OSLO;Norge;Bedrift;;31.12.2028;06.10.2026;
+LB100TEST;Prõveby VideregÜende Skole;;;Skolegata 1;;3900;PORSGRUNN;Norge;Skole;;31.12.2025;05.01.2025;
+LA2EMP;;;;;;;;;Personlig;;;11.10.2016;
+LB3NOT;;;;;;;;;;;;01.12.2021;
+LA9QQQ;;Sven;Utlandsen;TestvÑgen 123;;SE-670 10;TôCKSFORS;Sverige;Personlig;;;22.08.2023;
+LA3QQ ;;Ola;Nordmann;Sampleveien 21ˇ;;5003;BERGEN;Norger;Personlig;;;19.01.2021;
+LB4ECH;;Kari;Ekko;Ekkogata 15 B;;0560;Ekkogata 15 B;Norge;Personlig;;;03.03.2025;
+LA4BAD;;Per;Rarsen;Rarveien 4;;622;KRISTIANSAND S;Norge;Personlig;;KRISTIANSAND, NORGE;11.10.2016;
+LG5XX;Grensetest Amatõrradio;;;Grenseveien 2;;2240;MAGNOR;Norge;Organisasjon;;31.12.2028;11.10.2016;
+LA1XYZ;;Duplikat;Dobbeltsen;Annenveien 99;;9999;ANNETSTED;Norge;Personlig;;;11.10.2016;
+XX1ABC;;Feil;Formatsen;Feilveien 1;;1234;FEILBY;Norge;Personlig;;;11.10.2016;
+;;;;;;;;;;;;;
+JX9TST;Jan Mayen Testgruppen;;;Postboks 1;;1397;NESùYA;Norge;Organisasjon;;;11.10.2016;

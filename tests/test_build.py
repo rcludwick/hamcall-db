@@ -140,9 +140,10 @@ def test_no_successful_sources_is_a_hard_error(tmp_path, monkeypatch):
         app, ["--all", "--out", str(out), "--work-dir", str(tmp_path / "work")]
     )
     assert result.exit_code == 1
-    assert (out / SKIPPED_SOURCES_FILENAME).read_text(encoding="utf-8").splitlines() == list(
-        SOURCES
-    )
+    from hamcall_db.build import RESTRICTED_SOURCES
+
+    expected = [s for s in SOURCES if s not in RESTRICTED_SOURCES]
+    assert (out / SKIPPED_SOURCES_FILENAME).read_text(encoding="utf-8").splitlines() == expected
 
 
 # --- AllStarLink enrichment wiring on --all (hdb-8803) -------------------------
@@ -580,3 +581,29 @@ def test_all_build_omits_restricted_sources_by_default(tmp_path, monkeypatch):
     )
     frame = pl.read_parquet(current)
     assert not frame["uses_lotw"].any()  # LoTW never populated by default
+
+
+def test_restricted_source_refused_without_flag(tmp_path):
+    # NMHH's site terms forbid saving into a database or distributing without written
+    # permission, so a build must opt in explicitly (never the published release).
+    out = tmp_path / "out.parquet"
+    result = CliRunner().invoke(app, ["--source", "nmhh", "--out", str(out)])
+    assert result.exit_code != 0
+    assert "--include-restricted" in result.output
+
+
+def test_all_build_skips_restricted_sources_by_default(tmp_path, monkeypatch):
+    import hamcall_db.build as build
+
+    seen: list[list[str]] = []
+
+    def _capture(selected, work_dir, *a, **k):
+        seen.append(list(selected))
+        raise SystemExit(0)  # stop before any network or writing
+
+    monkeypatch.setattr(build, "_collect_streams", _capture)
+    CliRunner().invoke(app, ["--all", "--out", str(tmp_path / "o.parquet")])
+    CliRunner().invoke(app, ["--all", "--include-restricted", "--out", str(tmp_path / "o.parquet")])
+    assert seen[0] and "nmhh" not in seen[0] and "uke" in seen[0]
+    assert "nmhh" in seen[1]
+    assert build.RESTRICTED_SOURCES == {"nmhh"}

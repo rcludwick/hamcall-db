@@ -341,13 +341,142 @@ Upstream sources and their licenses
    official release never contains the SOTA summits artifact. ***
 
 
+Additional national regulators (added 2026-11-02)
+--------------------------------------------------
+
+Sources 15-21 are national amateur registers. For every one of them, street
+addresses are read only to guard published fields against copies of the
+address and are NEVER stored or published; masked national ID numbers,
+coordinates and non-licence columns are never published either.
+
+15. Nkom (Nasjonal kommunikasjonsmyndighet, Norway) — list of Norwegian call signs
+   Coverage: ~7,300 Norwegian amateur licences (LA-LN, JW Svalbard, JX Jan
+             Mayen): callsign, holder name (person, or organisation for
+             club/school/company/government calls), postal town, 4-digit
+             postcode, holder type, expiry where set. Holders with a foreign
+             postal address keep callsign and name; their town and postcode are
+             not published.
+   Source:   "Liste over norske kallesignaler <d.m.yyyy>.csv", linked from
+             https://nkom.no/frekvenser-og-elektronisk-utstyr/radioamator
+   License:  None stated (checked 2026-11-02). Used under the project policy for
+             openly published data, below. Nkom publishes the list so that
+             "alle skal bli oppført i en oppdatert oversikt over gyldige norske
+             kallesignal" (everyone is listed in an up-to-date overview of
+             valid Norwegian call signs); holders choose whether to be listed.
+             hamcall-db publishes less than Nkom does: no street address.
+   Required attribution statement:
+
+       Kilde: Nasjonal kommunikasjonsmyndighet (Nkom),
+       https://nkom.no/frekvenser-og-elektronisk-utstyr/radioamator
+
+16. BNetzA Rufzeichenliste (Bundesnetzagentur, Germany)
+   Coverage: every assigned German amateur callsign, lists 1-6 (personal,
+             training, club, special-event club, relay/beacon, experimental):
+             licence class (A/E/N), holder name exactly as printed, and the
+             town and 5-digit postcode of the holder's address. Station
+             locations are not published. Holders who objected under § 15 (4)
+             AFuV appear with callsign and name only, as in the source.
+   Source:   "Verzeichnis der zugeteilten deutschen Amateurfunkrufzeichen und
+             ihrer Inhaber (Rufzeichenliste)", linked from
+             https://www.bundesnetzagentur.de/amateurfunk
+   License:  None needed: an official work without copyright. The list states
+             "Diese Rufzeichenliste unterliegt den Bestimmungen des § 5 des
+             Urheberrechtsgesetzes (UrhG)." § 5 (2) UrhG
+             (https://www.gesetze-im-internet.de/urhg/__5.html) applies the
+             no-alteration and source-citation rules of §§ 62-63: the source
+             must be cited and content must not be altered (extracts are
+             allowed). hamcall-db publishes field extracts, keeps names exactly
+             as printed, and only repairs two encoding faults.
+   Required attribution statement:
+
+       Quelle: Bundesnetzagentur, Rufzeichenliste Amateurfunk, Stand <edition
+       date> (the per-row synced_at holds the edition date).
+
+17. Anatel (Agência Nacional de Telecomunicações, Brazil) — amateur stations
+   Coverage: ~46,700 Brazilian amateur callsigns: holder name, class (A/B/C),
+             station municipality and state, licence dates, person or
+             organisation.
+   Source:   "Estações do Serviço de Radioamador" (Estacoes_Radioamador.csv in
+             https://www.anatel.gov.br/dadosabertos/paineis_de_dados/outorga_e_licenciamento/estacoes_licenciadas.zip)
+   License:  Anatel's open-data page (https://www.gov.br/anatel/pt-br/dados/dados-abertos)
+             describes its open data as "disponibilizados sob licença aberta que
+             permita sua livre utilização, consumo ou cruzamento, limitando-se a
+             creditar a autoria ou a fonte" (Decreto nº 8.777/2016). The dataset
+             was catalogued on dados.gov.br as Creative Commons Attribution; that
+             catalogue record no longer resolves (checked 2026-11-02). Either
+             way it is used with attribution, and at minimum under the project
+             policy for openly published data.
+   Required attribution statement:
+
+       Fonte: Anatel, Estações do Serviço de Radioamador,
+       https://www.anatel.gov.br/dadosabertos/
+
+18. ENACOM (Ente Nacional de Comunicaciones, Argentina)
+   Coverage: ~16,300 Argentine amateur licences (people, plus institutions and
+             radio clubs): holder name, category, city, province. The
+             criminal-record-certificate column is never published.
+   Source:   "Listado de Radioaficionados con Licencia Vigente", linked from
+             https://enacom.gob.ar/listado-de-radioaficionados_p316
+   License:  None stated (checked 2026-11-02). Used under the project policy
+             for openly published data.
+   Required attribution statement:
+
+       Datos: Ente Nacional de Comunicaciones (ENACOM), Listado de
+       Radioaficionados con Licencia Vigente,
+       https://enacom.gob.ar/listado-de-radioaficionados_p316
+
+19. URSEC (Unidad Reguladora de Servicios de Comunicaciones, Uruguay)
+   Coverage: ~1,300 Uruguayan amateur permits: given names, surnames,
+             category, expiry. No location is published by the source.
+   Source:   "Nómina de permisos de radioaficionados" (ODS), linked from
+             https://www.gub.uy/unidad-reguladora-servicios-comunicaciones/datos-y-estadisticas/datos/registro-radioaficionados
+   License:  No data licence. The portal's terms
+             (https://www.gub.uy/unidad-reguladora-servicios-comunicaciones/terminos-y-condiciones-de-uso):
+             "Salvo indicación en contrario, la información contenida en el
+             Portal será considerada de carácter público." No restriction is
+             stated for this file.
+   Required attribution statement:
+
+       Fuente: Unidad Reguladora de Servicios de Comunicaciones (URSEC),
+       Nómina de permisos de radioaficionados
+
+20. UKE (Urząd Komunikacji Elektronicznej, Poland) — amateur permit register
+   Coverage: ~19,000 Polish permits (individual, club, unattended station):
+             callsign, station town, category, validity, and club name for club
+             rows. UKE publishes no names for individuals.
+   Source:   https://amator.uke.gov.pl (the /pl/{individuals,clubs,
+             individual_devices,club_devices}/export.csv exports)
+   License:  None stated (checked 2026-11-02; the site shows only "© 2019
+             UKE"). Used under the project policy for openly published data.
+   Required attribution statement:
+
+       Polish amateur permit data from the Urząd Komunikacji Elektronicznej
+       (UKE), https://amator.uke.gov.pl
+
+21. NMHH (Nemzeti Média- és Hírközlési Hatóság, Hungary) — call sign book
+   Coverage: issued Hungarian amateur licences: callsign, licensee name, town,
+             class, validity.
+   Source:   https://nmhh.hu/amator/call_sign_book.xml (page
+             https://nmhh.hu/cikk/162176)
+   License:  RESTRICTED. NMHH's site terms
+             (https://nmhh.hu/cikk/109316) state: "Az NMHH írásos engedélye
+             nélkül tilos jelen webhely tartalmát akár nyílt, akár zárt
+             adatbázisba lementeni, továbbá a tartalmát kereskedelmi célra
+             felhasználni, vagy azt terjeszteni." (Without NMHH's written
+             permission it is forbidden to save the site's content into an open
+             or closed database, use it commercially, or distribute it.)
+   *** DISABLED BY DEFAULT: the importer runs only in opt-in local builds via
+   --include-restricted. The published release never contains NMHH data, and
+   the output of such a build must not be redistributed. ***
+
+
 Combined dataset terms
 -----------------------
 
 The CC BY-NC published dataset (the callsign current/history Parquet + SQLite,
 the POTA parks table, and the US pota_park_grids set — i.e. everything EXCEPT
 the separate OSM file, source 8, and the reflector directory, sources 11-14) is
-a derived work that combines sources 1-7. Anyone who redistributes it must
+a derived work that combines sources 1-7 and 15-20. Anyone who redistributes it must
 comply with the union of these terms, which means:
 
   * Reproduce the ISED attribution statement (source 2), and observe ISED's
@@ -364,10 +493,14 @@ comply with the union of these terms, which means:
   * Reproduce the POTA attribution statement (source 6) and use it
     non-commercially (POTA publishes no terms).
   * Credit USGS PAD-US (source 7) where PAD-US grids are present.
+  * Reproduce the attribution statements of sources 15-20 (Nkom, BNetzA with
+    its edition date, Anatel, ENACOM, URSEC, UKE). For BNetzA (source 16), do
+    not alter the published entries (§ 62 UrhG).
 
 Opt-in builds made with --include-restricted also contain SOTA (source 10,
-no licence published; not to be published without SOTA's permission) and LoTW
-(source 9, redistribution prohibited). Do not redistribute such a build.
+no licence published; not to be published without SOTA's permission), LoTW
+(source 9, redistribution prohibited) and NMHH Hungary (source 21,
+redistribution prohibited). Do not redistribute such a build.
 
 Project policy for openly published data (decided 2026-11-02)
 --------------------------------------------------------------
