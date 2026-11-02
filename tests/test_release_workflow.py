@@ -78,10 +78,11 @@ def test_odbl_and_ccbync_assets_are_collected_into_separate_lists() -> None:
 
 def test_release_workflow_runs_nightly() -> None:
     text = _workflow_text()
-    # Pinned schedule (hdb-nightly): every day at 07:00 UTC, not the old weekly Monday
-    # slot. A daily cron matches upstream ACMA/LoTW's daily cadence and lets the history
-    # ledger accrue at day granularity.
-    assert '- cron: "0 7 * * *"' in text, "release schedule must be daily at 07:00 UTC"
+    # Pinned schedule (hdb-nightly): every day at 00:00 UTC (5 PM MST), not the old
+    # weekly Monday slot. A daily cron matches upstream ACMA/LoTW's daily cadence and lets
+    # the history ledger accrue at day granularity.
+    assert '- cron: "0 0 * * *"' in text, "release schedule must be daily at 00:00 UTC"
+    assert '- cron: "0 7 * * *"' not in text, "the old 07:00 UTC cron must be gone"
     assert '- cron: "0 7 * * 1"' not in text, "the old weekly (Monday-only) cron must be gone"
 
 
