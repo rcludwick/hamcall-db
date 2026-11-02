@@ -25,6 +25,7 @@ from hamcall_db.sources.base import Source, retry_transient
 from hamcall_db.sources.fcc import FccUlsSource
 from hamcall_db.sources.ised import IsedSource
 from hamcall_db.sources.ised import scrub_prior_history as scrub_ised_prior_history
+from hamcall_db.sources.nkom import NkomSource
 from hamcall_db.sources.osm import OsmSource, compute_osm_park_grids
 from hamcall_db.sources.padus import PadusSource, compute_park_grids
 from hamcall_db.sources.pota import PotaSource
@@ -51,6 +52,7 @@ SOURCES: dict[str, Source] = {
     "fcc": FccUlsSource(),
     "ised": IsedSource(),
     "acma": AcmaSource(),
+    "nkom": NkomSource(),
 }
 
 app = typer.Typer(
