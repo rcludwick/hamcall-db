@@ -35,17 +35,11 @@ approximation lands in the correct cell for the overwhelming majority of holders
 
 ## Data sources & licensing
 
-All coordinates are drawn from **public-domain / openly-licensed** references and are
-city/region centroids only — no proprietary or unclearly-licensed bulk dataset is
-vendored here:
+Approximate coordinates of well-known cities and postal areas, compiled by hand. These
+are facts, not copyrightable expression, and no single bulk source was copied. A future
+regeneration should use the Census Gazetteer (US, public domain) and cite it.
 
-- **U.S. cities & ZIP regions:** U.S. Census Bureau Gazetteer / ZCTA centroids —
-  **public domain** (work of the U.S. federal government).
-- **Canadian cities & FSA centroids:** public-domain municipal coordinates; FSA prefix
-  centroids approximated to the principal city of each FSA.
-- **Australian capitals/regions:** public-domain municipal coordinates.
-
-Because every coordinate here is public domain, **no new NOTICE entry is required** for
+Because these coordinates are hand-compiled facts, **no NOTICE entry is required** for
 these tables (mem-371f). The regulator licenses in NOTICE govern the *licensee* data,
 not these geographic centroids.
 

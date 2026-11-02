@@ -11,21 +11,22 @@ A Python build pipeline that aggregates free, openly-licensed amateur radio lice
 | Source | Coverage | License | Format upstream |
 |---|---|---|---|
 | FCC ULS | US (~1M records) | Public domain | Bulk ZIP, weekly |
-| ISED Canada | Canada (~80k records) | Open Government Licence – Canada | Delimited TXT in ZIP |
+| ISED Canada | Canada (~80k records). Postal codes are published as the 3-character FSA only (e.g. `K1G`) | ISED's non-commercial reproduction terms, attribution required; **not** the Open Government Licence, which excludes personal information (see NOTICE) | Fixed-width TXT in ZIP |
 | ACMA RRL | Australia (~770 amateur licences, mostly repeaters and beacons: since 2024 most Australian amateurs operate under a class licence and are not in the register). Natural persons' records carry the callsign and licence fields only; name and location are withheld | ACMA's *Licence to use the Register of Radiocommunications Licences*, attribution required (see NOTICE) | Daily extract |
-| AD1C cty.dat | Worldwide DXCC prefix → entity mapping | Free for non-commercial use, attribution required | cty.dat |
-| AllStarLink | Node numbers per callsign (one-to-many) | Used on an assumed non-commercial basis (see NOTICE) | Pipe-delimited node directory |
-| ARRL LoTW | LoTW user activity per callsign (`uses_lotw`, last upload date) | **License unclear — needs human sign-off** (see NOTICE); used on an assumed non-commercial basis | Public CSV `lotw-user-activity.csv` |
-| POTA | Parks On The Air park directory (places, not licensees) | Used on an assumed non-commercial basis (see NOTICE) | Per-program JSON from `api.pota.app` |
-| SOTA | Summits on the Air summit directory (places, not licensees) | Used on an assumed non-commercial basis, **pending human sign-off** (see NOTICE) | Static `summitslist.csv` from `storage.sota.org.uk` |
-| PAD-US | US protected-area boundaries → POTA park grid sets (build-time only) | Public domain (USGS) | National GeoPackage/GDB |
-| OpenStreetMap | Non-US protected-area/park boundaries → **separate ODbL** POTA park grid sets (build-time only) | ODbL — shipped in its own file, never mixed into the CC BY-NC dataset (see NOTICE / LICENSE-ODbL) | Geofabrik regional extracts |
+| AD1C cty.dat | Worldwide DXCC prefix → entity mapping | MIT License (Jim Reisert, AD1C); keep the copyright notice (see NOTICE) | cty.dat |
+| AllStarLink | Node numbers per callsign (one-to-many) | Node data is User Content under the AllStarLink Terms of Use (not CC BY-SA); used as "reasonable use of published directories", confirmation requested (see NOTICE) | Pipe-delimited node directory |
+| ARRL LoTW | LoTW user activity per callsign (`uses_lotw`, last upload date) | **Redistribution prohibited** without written permission (ARRL Terms of Use); off by default, never published (see NOTICE) | Public CSV `lotw-user-activity.csv` |
+| POTA | Parks On The Air park directory (places, not licensees) | No licence or terms published; used non-commercially with attribution while permission is requested, withdrawn if POTA objects (see NOTICE) | Per-program JSON from `api.pota.app` |
+| SOTA | Summits on the Air summit directory (places, not licensees) | Assumed non-commercial, **pending human sign-off**; off by default, never published (see NOTICE) | Static `summitslist.csv` from `storage.sota.org.uk` |
+| PAD-US | US protected-area boundaries → POTA park grid sets (build-time only; release builds currently ship POTA point grids instead) | Public domain (USGS); cited in NOTICE | National GeoPackage/GDB |
+| OpenStreetMap | Non-US protected-area/park boundaries → **separate ODbL** POTA park grid sets (build-time only) | ODbL — shipped in its own file when there are OSM-derived rows, never mixed into the CC BY-NC dataset (see NOTICE / LICENSE-ODbL) | Geofabrik regional extracts |
 | DVRef | M17 / YSF / NXDN / P25 / URF / DMR reflector directory (places, not licensees) | **CC BY 4.0** — shipped in its own file, never mixed into the CC BY-NC dataset (see NOTICE / LICENSE-CC-BY) | REST API, token required |
-| XLX registry (LX1IQ) | XLX / D-Star reflector directory (~890 reflectors) | No explicit licence; public self-registration directory, attributed — **pending human sign-off** (see NOTICE) | XML over HTTP |
+| XLX registry (LX1IQ) | XLX / D-Star reflector directory (~890 reflectors) | No licence published; redistributed as factual listings with attribution, rows labelled per row, permission requested (see NOTICE) | XML over HTTP |
+| Pi-Star host files (MW0MWZ) | Standalone XRF reflectors (DExtra, ~53) plus REF/DCS names for listed D-Star reflectors (DPlus, DCS) | No licence published; redistributed as factual listings with attribution, rows labelled per row, permission requested (see NOTICE) | Plain-text host files from `pistar.uk` |
 
 The on-demand long tail (UK, EU, JA, etc.) is intentionally out of scope here — consumer tools should fall through to per-callsign APIs like QRZ or HamQTH for those.
 
-### Reflector directory — a SEPARATE **CC BY 4.0** dataset
+### Reflector directory — a SEPARATE dataset (CC BY 4.0 plus labelled factual listings)
 
 Digital-voice reflectors for D-Star, M17, YSF, NXDN, P25, URF and DMR, published three ways:
 `hamcall-db-reflectors-YYYY-MM-DD.parquet`, a matching `.db` (table `reflectors`), and —
@@ -108,10 +109,15 @@ uv run hamcall-db-reflectors --out docs/site/api/v1 --dist dist/
 uv run hamcall-db-reflectors --out docs/site/api/v1 --skip-dvref   # no token needed
 ```
 
-**This dataset is CC BY 4.0 and is never merged into the CC BY-NC artifacts.** That is a
-licence requirement, not tidiness: CC BY 4.0 §2(a)(5)(B) forbids adding restrictions the
-licence grants away, so folding it into the non-commercial dataset would violate it. Same
-discipline as the ODbL park grids, opposite direction — see `LICENSE-CC-BY`.
+**This dataset is never merged into the CC BY-NC artifacts.** hamcall-db's own
+contributions (schema, selection, derived fields) and all DVRef-sourced rows are CC BY 4.0.
+Rows from the XLX registry and Pi-Star host files are factual listings whose publishers
+state no licence; they are redistributed as facts and no rights are granted beyond those
+the upstream provides. Each row carries a per-row `license` field. Keeping the directory
+apart is a licence requirement, not tidiness: CC BY 4.0 §2(a)(5)(B) forbids adding
+restrictions the licence grants away, so folding DVRef rows into the non-commercial dataset
+would violate it. Same discipline as the ODbL park grids, opposite direction — see
+`LICENSE-CC-BY`.
 
 ### POTA parks reference dataset
 
@@ -119,9 +125,9 @@ POTA park data is published as a SEPARATE, additive reference dataset (parks are
 
 ### SOTA summits reference dataset
 
-SOTA summit data is published as a SEPARATE, additive reference dataset — a sibling of the POTA parks set (summits are places, not licensees, so it does not touch the callsign schema): `hamcall-db-sota-summits-YYYY-MM-DD.parquet` plus a `sota_summits` table in the SQLite `.db`. Columns: `reference` (PK, SOTA SummitCode e.g. `G/LD-001`), `name`, `association`, `region`, `alt_m`, `alt_ft`, `grid`, `lat`, `lon`, `points`, `bonus_points`, `valid_from`, `valid_to`, `active`, `source`, `synced_at`. The `grid`/`lat`/`lon` per summit is **indicative only**, is display-only and never a join key, and is stored **verbatim** at 6-char precision — the 4-char person-grid privacy truncation does not apply to public landmarks (mountain summits). The `grid` is derived from the summit's `Longitude`/`Latitude` (SOTA's own OSGB grid columns are not used). `active` is `False` when `valid_to` is in the past (retired summit).
+SOTA summit data is produced, only by opt-in `--include-restricted` builds (see [Optional / restricted sources](#optional--restricted-sources)), as a SEPARATE, additive reference dataset — a sibling of the POTA parks set (summits are places, not licensees, so it does not touch the callsign schema): `hamcall-db-sota-summits-YYYY-MM-DD.parquet` plus a `sota_summits` table in the SQLite `.db`. Columns: `reference` (PK, SOTA SummitCode e.g. `G/LD-001`), `name`, `association`, `region`, `alt_m`, `alt_ft`, `grid`, `lat`, `lon`, `points`, `bonus_points`, `valid_from`, `valid_to`, `active`, `source`, `synced_at`. The `grid`/`lat`/`lon` per summit is **indicative only**, is display-only and never a join key, and is stored **verbatim** at 6-char precision — the 4-char person-grid privacy truncation does not apply to public landmarks (mountain summits). The `grid` is derived from the summit's `Longitude`/`Latitude` (SOTA's own OSGB grid columns are not used). `active` is `False` when `valid_to` is in the past (retired summit).
 
-Data comes from SOTA's **static** bulk [`summitslist.csv`](https://storage.sota.org.uk/summitslist.csv) — deliberately *not* the gated `api2.sota.org.uk` JSON API, whose terms of service are explicitly non-commercial, registration-gated, and prohibit AI-generated software from connecting. The static file carries no explicit machine-readable license and no share-alike term was found, so SOTA rides under the CC BY-NC umbrella (assumed non-commercial + attributed + droppable, the same posture as POTA) — **but this is not a confirmed license and is flagged in NOTICE for human sign-off with the SOTA Management Team before the first public release.** WWFF and IOTA references are deliberately out of scope for this dataset (future follow-ups).
+Data comes from SOTA's **static** bulk [`summitslist.csv`](https://storage.sota.org.uk/summitslist.csv) — deliberately *not* the gated `api2.sota.org.uk` JSON API, whose terms of service are explicitly non-commercial, registration-gated, and prohibit AI-generated software from connecting. The static file carries no explicit machine-readable license and no share-alike term was found, so SOTA would ride under the CC BY-NC umbrella (assumed non-commercial + attributed + droppable) — **but this is not a confirmed license, so the SOTA set is off by default and never in the published release; NOTICE flags it for sign-off with the SOTA Management Team.** WWFF and IOTA references are deliberately out of scope for this dataset (future follow-ups).
 
 ### POTA park grid sets (PAD-US)
 
@@ -129,7 +135,7 @@ Because a large park spans many grid squares, a companion child table gives the 
 
 ### POTA park grid sets — international (OpenStreetMap, ODbL — SEPARATE file)
 
-Non-US POTA parks get the same 4-char grid-set treatment from OpenStreetMap boundaries, but because OSM is **ODbL share-alike** (incompatible with this project's CC BY-NC terms) the OSM-derived grids are a **separate, ODbL-licensed dataset** that is **never** mixed into the CC BY-NC artifacts: `hamcall-db-pota-park-grids-osm-YYYY-MM-DD.parquet` plus a **separate** SQLite `hamcall-db-pota-park-grids-osm-YYYY-MM-DD.db` whose table is named `pota_park_grids_osm`. Schema mirrors the PAD-US set exactly: `reference` (FK to `pota_parks`), `grid` (4-char), `source` (`osm` for a boundary match, `osm-point` for the single-point fallback), `confidence` (`high`/`medium`/`low`, same rules as PAD-US). Boundaries come from [OpenStreetMap](https://www.openstreetmap.org/copyright) (© OpenStreetMap contributors, ODbL) via Geofabrik regional extracts; matching uses true geometric intersection with interior rings/inholdings honored (never filled), exactly like the PAD-US path — only the matching heuristic (OSM tags + `name`) differs. US parks are covered by the public-domain PAD-US set above and are **excluded** here, so the two sets never overlap. The OSM polygons themselves are used only at build time and are never redistributed.
+Non-US POTA parks get the same 4-char grid-set treatment from OpenStreetMap boundaries, but because OSM is **ODbL share-alike** (incompatible with this project's CC BY-NC terms) the OSM-derived grids are a **separate, ODbL-licensed dataset** that is **never** mixed into the CC BY-NC artifacts: `hamcall-db-pota-park-grids-osm-YYYY-MM-DD.parquet` plus a **separate** SQLite `hamcall-db-pota-park-grids-osm-YYYY-MM-DD.db` whose table is named `pota_park_grids_osm`. Schema mirrors the PAD-US set exactly: `reference` (FK to `pota_parks`), `grid` (4-char), `source` (always `osm`: only boundary matches are OSM-derived, so only those rows are written here), `confidence` (`high`/`medium`, same rules as PAD-US). `reference` is a POTA park identifier included solely as a join key. The file is published only when there are OSM-derived rows. Earlier ODbL releases held only POTA-derived single-point fallbacks mislabelled `osm-point` and never contained OSM data; they are kept as published. Boundaries come from [OpenStreetMap](https://www.openstreetmap.org/copyright) (© OpenStreetMap contributors, ODbL) via Geofabrik regional extracts; matching uses true geometric intersection with interior rings/inholdings honored (never filled), exactly like the PAD-US path — only the matching heuristic (OSM tags + `name`) differs. US parks are covered by the public-domain PAD-US set above and are **excluded** here, so the two sets never overlap. The OSM polygons themselves are used only at build time and are never redistributed.
 
 This file is governed by [`LICENSE-ODbL`](LICENSE-ODbL), not the CC BY-NC terms. **Consumer warning:** combining (joining) the ODbL grid set with the CC BY-NC artifacts and redistributing the result as a database makes the combined database **inherit ODbL share-alike**. "Combine them later in one database" is a consumer concern; keep them separate to keep the CC BY-NC dataset free of share-alike.
 
@@ -187,19 +193,18 @@ lotw_last_activity TEXT -- ISO date of last LoTW upload; OFF by default (opt-in 
 - `first_name` / `last_name` are best-effort splits of the licensee/trustee field. Club/trustee/business holders may put the entity name in `last_name` and leave `first_name` NULL.
 - `allstar_nodes` is a list of [AllStarLink](https://www.allstarlink.org/) node numbers registered to the callsign (one callsign may hold many nodes; sorted ascending, empty when none). In the SQLite convenience copy it is normalized into a child table `allstar_nodes(id, node)` keyed by the stable `id` (SQLite has no list type), not a column on `current`. It does not participate in history (a node change is not a holder/location change, so it never opens a new SCD2 interval).
 - `grant_date` / `effective_date` / `expired_date` / `frn` / `entity_type` / `applicant_type` / `previous_callsign` are sourced from the FCC ULS amateur bulk extract (HD/EN/AM `.dat` files) and are NULL for non-FCC sources. Dates are normalized to ISO `YYYY-MM-DD` from the source `mm/dd/yyyy`. `entity_type` is the raw FCC entity-type code; `applicant_type` maps the FCC `applicant_type_code` to a readable value (e.g. `I` → `Individual`, `B` → `Amateur Club`, `M` → `Military Recreation`, `R` → `RACES`), passing unmapped codes through verbatim. `previous_callsign` comes from the amateur-specific AM record. These fields are exposed for downstream use only; the published artifact does **not** derive active/expired status from them (that is a separate concern). They are NOT holder/location identity, so they do not participate in SCD2 history.
-- `uses_lotw` / `lotw_last_activity` flag whether the callsign appears in [ARRL](https://www.arrl.org/)'s public [Logbook of the World](https://lotw.arrl.org/) user-activity list and, if so, the ISO date (`YYYY-MM-DD`) of that user's last LoTW upload. **This enrichment is OFF by default and is NEVER part of the published release:** ARRL states no explicit redistribution license (only "All Rights Reserved"), so the columns ship empty in the official artifact. You can populate them in a *personal/local* build by passing `--include-restricted` (see [Optional / restricted sources](#optional--restricted-sources)). The data is activity metadata, not holder identity, so it never opens a history interval; in SQLite `uses_lotw` is a `0`/`1` INTEGER. See [`NOTICE`](NOTICE).
+- `uses_lotw` / `lotw_last_activity` flag whether the callsign appears in [ARRL](https://www.arrl.org/)'s public [Logbook of the World](https://lotw.arrl.org/) user-activity list and, if so, the ISO date (`YYYY-MM-DD`) of that user's last LoTW upload. **This enrichment is OFF by default and is NEVER part of the published release:** ARRL's Terms of Use allow personal, non-commercial use only, "not for further reproduction, publication, or distribution", so the columns ship empty in the official artifact. You can populate them in a *personal/local* build by passing `--include-restricted` (see [Optional / restricted sources](#optional--restricted-sources)). The data is activity metadata, not holder identity, so it never opens a history interval; in SQLite `uses_lotw` is a `0`/`1` INTEGER. See [`NOTICE`](NOTICE).
 
 Each nightly build publishes two releases, each with a rolling alias that always points at the most recent build. Dated releases are kept indefinitely; pin to a specific `hamcall-db-YYYY-MM-DD` (or `hamcall-db-osm-YYYY-MM-DD`) release when reproducibility matters, or pull `latest` (`latest-osm`) for the newest build.
 
 **CC BY-NC release** — tag `hamcall-db-YYYY-MM-DD`, alias `latest`:
 - `hamcall-db-YYYY-MM-DD.parquet` — current-state dataset (the schema above; the redistribution contract).
 - `hamcall-db-history-YYYY-MM-DD.parquet` — SCD2 change history (callsign holder/location changes over time).
-- `hamcall-db-YYYY-MM-DD.db` — SQLite convenience copy with the callsign tables plus the `pota_parks` / `pota_park_grids` / `sota_summits` tables in one file (see [Exploring the data with Datasette](#exploring-the-data-with-datasette)).
+- `hamcall-db-YYYY-MM-DD.db` — SQLite convenience copy with the callsign tables plus the `pota_parks` / `pota_park_grids` tables in one file (see [Exploring the data with Datasette](#exploring-the-data-with-datasette)).
 - `hamcall-db-pota-parks-YYYY-MM-DD.parquet` — POTA park directory ([above](#pota-parks-reference-dataset)).
-- `hamcall-db-sota-summits-YYYY-MM-DD.parquet` — SOTA summit directory ([above](#sota-summits-reference-dataset)).
 - `hamcall-db-pota-park-grids-YYYY-MM-DD.parquet` — POTA park → 4-char grid sets (PAD-US/point, [above](#pota-park-grid-sets-pad-us)).
 
-**ODbL release** (OpenStreetMap-derived grids — kept separate so its share-alike terms never touch the CC BY-NC set) — tag `hamcall-db-osm-YYYY-MM-DD`, alias `latest-osm`:
+**ODbL release** (OpenStreetMap-derived grids, published when available — kept separate so its share-alike terms never touch the CC BY-NC set) — tag `hamcall-db-osm-YYYY-MM-DD`, alias `latest-osm`:
 - `hamcall-db-pota-park-grids-osm-YYYY-MM-DD.parquet` + `…-osm-YYYY-MM-DD.db` — OSM-derived park grid sets ([above](#pota-park-grid-sets--international-openstreetmap-odbl--separate-file)).
 - `LICENSE-ODbL` — the governing license + © OpenStreetMap contributors attribution.
 
@@ -213,7 +218,7 @@ Some sources are implemented but **disabled by default** because their redistrib
 
 | Source | What it adds | Why gated |
 |---|---|---|
-| ARRL LoTW | `uses_lotw` / `lotw_last_activity` columns on the callsign artifact | ARRL states "All Rights Reserved" on the user-activity CSV — no redistribution grant (see [`NOTICE`](NOTICE) source 9). |
+| ARRL LoTW | `uses_lotw` / `lotw_last_activity` columns on the callsign artifact | ARRL's Terms of Use prohibit redistribution without written permission (see [`NOTICE`](NOTICE) source 9). |
 | SOTA summits | `hamcall-db-sota-summits-*.parquet` + a `sota_summits` table | SOTA's API terms are non-commercial and bar non-approved automated access; the static bulk file has no explicit license (see [`NOTICE`](NOTICE) source 10). |
 
 ```bash
@@ -269,7 +274,13 @@ Prefer Parquet? Those stay the canonical, storage-neutral output. Datasette itse
 
 **Build code:** MIT — see [`LICENSE`](LICENSE).
 
-**Published dataset** (the Parquet files and the SQLite `.db`): [Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/). When you redistribute the data you must also satisfy the upstream source attribution terms in [`NOTICE`](NOTICE), including the ACMA's required statement: "Based on Australian Communications and Media Authority information". Commercial use requires separate arrangements with the upstream rights holders (principally AD1C for cty.dat).
+**Published dataset** (the Parquet files and the SQLite `.db`): [Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/). When you redistribute the data you must also satisfy the upstream source attribution terms in [`NOTICE`](NOTICE), including the ACMA's required statement: "Based on Australian Communications and Media Authority information", and ISED's: "Canadian Amateur Call Sign List, Innovation, Science and Economic Development Canada. Adapted from the version available at https://apc-cap.ic.gc.ca/datafiles/amateur.zip. Not an official version and not endorsed by ISED." The non-commercial term is required by ISED's non-commercial reproduction terms. Commercial use requires separate arrangements with the upstream rights holders: ISED (non-commercial terms; prior written permission needed) and POTA / AllStarLink (terms unconfirmed). The CC BY-NC licence covers this project's compilation only and grants nothing beyond what each upstream licence allows: FCC-derived facts stay public domain, and ACMA-derived rows carry only the rights the ACMA licence gives.
+
+**OSM park grids:** ODbL, in a separate release when available — see [`LICENSE-ODbL`](LICENSE-ODbL).
+
+**Reflector directory:** CC BY 4.0 for this project's contributions and DVRef rows; XLX and Pi-Star rows are factual listings with no upstream licence, labelled per row — see [`LICENSE-CC-BY`](LICENSE-CC-BY).
+
+**Takedown:** rights holders or licensees can request removal of their data by opening a [GitHub issue](https://github.com/rcludwick/hamcall-db/issues).
 
 ## Status
 
