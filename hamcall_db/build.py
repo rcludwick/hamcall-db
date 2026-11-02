@@ -34,8 +34,8 @@ from hamcall_db.sources.osm import OsmSource, compute_osm_park_grids
 from hamcall_db.sources.padus import PadusSource, compute_park_grids
 from hamcall_db.sources.pota import PotaSource
 from hamcall_db.sources.sota import SotaSource
-from hamcall_db.sources.ursec import UrsecSource
 from hamcall_db.sources.uke import UkeSource
+from hamcall_db.sources.ursec import UrsecSource
 from hamcall_db.sqlite_writer import (
     write_pota_park_grids_osm_sqlite,
     write_pota_park_grids_sqlite,
@@ -66,6 +66,14 @@ SOURCES: dict[str, Source] = {
     "nmhh": NmhhSource(),
     "uke": UkeSource(),
 }
+
+# Sources whose own terms forbid redistribution (NOTICE: "Opt-in builds"). They are
+# skipped by --all unless --include-restricted is passed, and --source refuses them
+# without it, so the published release can never contain them. NMHH's site terms:
+# "Az NMHH írásos engedélye nélkül tilos jelen webhely tartalmát akár nyílt, akár zárt
+# adatbázisba lementeni … vagy azt terjeszteni" (no saving into a database or
+# distributing without written permission).
+RESTRICTED_SOURCES: frozenset[str] = frozenset({"nmhh"})
 
 app = typer.Typer(
     add_completion=False,
@@ -173,9 +181,10 @@ def build(
             "--include-restricted",
             help="Include sources that may not be redistributed (LoTW enrichment: ARRL "
             "prohibits redistribution without written permission; SOTA summits: no licence, "
-            "API terms forbid commercial use). OFF by default — the published release NEVER "
+            "API terms forbid commercial use; NMHH Hungary: site terms forbid saving into a "
+            "database or distributing). OFF by default — the published release NEVER "
             "sets this. For personal/local builds only; do not redistribute the result "
-            "(see NOTICE sources 9 and 10).",
+            "(see NOTICE sources 9, 10 and the NMHH entry).",
         ),
     ] = False,
 ) -> None:
@@ -185,10 +194,19 @@ def build(
     if source is not None and all_sources:
         raise typer.BadParameter("Pass either --source or --all, not both.")
 
-    selected = list(SOURCES) if all_sources else [source]
+    if all_sources:
+        selected = [s for s in SOURCES if include_restricted or s not in RESTRICTED_SOURCES]
+    else:
+        selected = [source]
     unknown = [s for s in selected if s not in SOURCES]
     if unknown:
         raise typer.BadParameter(f"Unknown source(s): {', '.join(unknown)}")
+    refused = [s for s in selected if s in RESTRICTED_SOURCES and not include_restricted]
+    if refused:
+        raise typer.BadParameter(
+            f"{', '.join(refused)} may not be redistributed; pass --include-restricted "
+            "for a local build (and do not redistribute the output)."
+        )
 
     streams, skipped = _collect_streams(selected, work_dir)
     _record_skipped(skipped, out)

@@ -51,7 +51,8 @@ _HOUSE_NUMBER = re.compile(r"^\d+(?:[A-Z]|ST|ND|RD|TH)?(?:-\d+[A-Z]?)?$")
 # MILE, HOUSE, RANCH, PALMS, CITY, and TRAIL (Trail, BC).
 STREET_TYPES: frozenset[str] = frozenset(
     {
-        "AV",
+        # Not "AV": in Norwegian (and Swedish) "av" means "of", and club names like
+        # "1. Kolbotn gruppe av Norges Speiderforbund" would be blanked. AVE/AVENUE stay.
         "AVE",
         "AVENUE",
         "BLVD",

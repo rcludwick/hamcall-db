@@ -97,6 +97,9 @@ def test_backstop_flags_house_number_plus_street_type(value: str) -> None:
         "306 Forster City",
         "10407 Berlin, DE",
         "Fort Drive-In",  # no leading house number
+        # Norwegian "av" means "of", not "avenue" (a real Scout group's name shape).
+        "1. Kolbotn gruppe av Norges Speiderforbund",
+        "2 Eksempel gruppe av Norsk Radio Relæ Liga",
         "Smith",
         "",
     ],

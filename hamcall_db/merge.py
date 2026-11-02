@@ -20,7 +20,18 @@ from hamcall_db.address_guard import looks_like_street_address
 from hamcall_db.models import Record
 
 # Source precedence, highest first. Used to resolve cross-source callsign collisions.
-SOURCE_PRECEDENCE: tuple[str, ...] = ("fcc", "ised", "acma", "nkom", "bnetza", "anatel", "enacom", "ursec", "nmhh", "uke")
+SOURCE_PRECEDENCE: tuple[str, ...] = (
+    "fcc",
+    "ised",
+    "acma",
+    "nkom",
+    "bnetza",
+    "anatel",
+    "enacom",
+    "ursec",
+    "nmhh",
+    "uke",
+)
 
 # Fields that hold human names / place names and should be smart-title-cased when a source
 # (notably FCC ULS) delivers them ALL CAPS. Deliberately EXCLUDES `state` (often a 2-letter
