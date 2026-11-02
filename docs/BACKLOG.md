@@ -12,7 +12,37 @@ inline. All 39 issues (35 of them closed) were exported to
 `docs/issues-archive.jsonl`, which is gitignored and local-only; a committed copy of the
 tracker's final state survives in git history at the migration commit.
 
-## Open items (9)
+## Open items (11)
+
+### hdb-crawl — Private crawler for per-callsign sources, and the Australian name join
+*HIGH · feature · cx:3*
+
+**Spec:** Decided 2026-11-02 (Rob): per-callsign fetching is OK if polite and cached, but
+the crawler script must NOT be published. Plan: a private repo (e.g.
+`rcludwick/hamcall-crawl`) with a runner on the IONOS box (add it via `runner_repos` in
+`~/dev/gh-runners`, never by hand). It crawls CQ WW / CQ WPX public logs (name, 4-char
+grid), POTA user profiles for callsigns we already hold, and ACMA's call-sign register
+(assigned callsigns + qualification, CC BY 4.0 website content), then uploads only its
+data output (callsign, name, town, 4-char grid, source) to a release here; the public
+build reads it as one more input. Australian individuals then get names from those
+public sources, never from ACMA's `client.csv`: add a `name_source` column, a guard test
+that no AU individual's identity fields come from ACMA, and a NOTICE paragraph saying
+the dataset combines ACMA callsigns with separately published public sources and does
+not redistribute ACMA's Client Information. Also usable as single files: SKCC roster,
+CWops roster, IRLP nodes, NZART Call Book PDF (check its in-document notice; drop street
+addresses). Research: `~/dev/notes/docs/superpowers/notes/hamcall-db/2026-11-02-new-data-sources.md`.
+Write a design doc in `~/dev/notes/docs/superpowers/designs/hamcall-db/` first.
+
+### hdb-intl-followups — Follow-ups from the 2026-11-02 national sources
+*MEDIUM · task · cx:2*
+
+**Spec:** (a) No geocoder tables for NO/DE/BR/AR/UY/PL, so `grid` is NULL for all of them
+(extends au-4248). (b) URSEC skips 5 visiting reciprocal calls (`OE3GEA/CX`…) because
+cty.dat resolves them to the home country; teach enrichment `/<prefix>` suffixes, then
+publish them. (c) BNetzA list 5 (repeaters/beacons) uses the trustee's town; the site
+town might be more useful. (d) UKE sits behind Imperva; it worked from GitHub runners on
+2026-11-02, watch for challenges. (e) Brazil's licence evidence: the dados.gov.br record
+saying CC BY now 404s; re-check if it reappears.
 
 ### hdb-acma-licence — Follow-ups to the ACMA natural-person rule
 *HIGH · decision · cx:2*
