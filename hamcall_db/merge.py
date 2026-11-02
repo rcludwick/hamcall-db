@@ -12,9 +12,11 @@ postal/city lookup tables that land in au-76be.
 from __future__ import annotations
 
 import re
+from collections import Counter
 from collections.abc import Callable, Iterable, Iterator
-from dataclasses import fields, replace
+from dataclasses import dataclass, field, fields, replace
 
+from hamcall_db.address_guard import looks_like_street_address
 from hamcall_db.models import Record
 
 # Source precedence, highest first. Used to resolve cross-source callsign collisions.
@@ -25,6 +27,11 @@ SOURCE_PRECEDENCE: tuple[str, ...] = ("fcc", "ised", "acma")
 # abbreviation like "CT"/"ID" that must stay upper), `postal_code`, `country` (DXCC entity
 # name, already proper from cty.dat), and machine fields.
 _NAME_FIELDS: frozenset[str] = frozenset({"first_name", "last_name", "city", "county"})
+
+# Fields where a filer sometimes types a street address. Backstop for the importer-layer
+# check: normalize() nulls any value here with the shape of a street address
+# (address_guard.looks_like_street_address), whatever the source (hdb-addrguard).
+_ADDRESS_GUARDED_FIELDS: tuple[str, ...] = ("first_name", "last_name", "city")
 
 # Surname particles rendered lowercase when INTERIOR (capitalized when leading). Conservative
 # European set; cross-cultural overlaps (e.g. Vietnamese "Le"/"Van") are accepted imperfections.
@@ -156,16 +163,32 @@ def _precedence_rank(source: str | None) -> int:
         return len(SOURCE_PRECEDENCE)
 
 
+@dataclass
+class MergeStats:
+    """Counts the merge stage gathers for the build log (filled in by `merge`)."""
+
+    street_addresses_scrubbed: int = 0
+    street_addresses_by_field: dict[str, int] = field(default_factory=dict)
+
+
+def _street_address_fields(record: Record) -> list[str]:
+    """Names of the guarded fields on `record` that hold a street-address-shaped value."""
+    return [
+        name for name in _ADDRESS_GUARDED_FIELDS if looks_like_street_address(getattr(record, name))
+    ]
+
+
 def normalize(record: Record) -> Record:
-    """Clean a single record: trim strings, blank -> None, uppercase the callsign, and
-    smart-title-case ALL-CAPS name/place fields (FCC ULS ships these uppercase; hdb-b991).
+    """Clean a single record: trim strings, blank -> None, uppercase the callsign,
+    smart-title-case ALL-CAPS name/place fields (FCC ULS ships these uppercase; hdb-b991),
+    and null any city/name that has the shape of a street address (hdb-addrguard).
 
     Idempotent.
     """
-    changes: dict[str, str | None] = {}
+    changes: dict[str, str | None] = dict.fromkeys(_street_address_fields(record))
     for name in _STR_FIELDS:
         value = getattr(record, name)
-        if value is None:
+        if value is None or name in changes:
             continue
         cleaned = value.strip()
         if name == "callsign":
@@ -180,23 +203,31 @@ def merge(
     streams: Iterable[Iterable[Record]],
     *,
     geocode: Geocoder | None = None,
+    stats: MergeStats | None = None,
 ) -> Iterator[Record]:
     """Merge per-source record streams into one normalized, deduplicated set.
 
     On a callsign collision the higher-precedence source wins (see SOURCE_PRECEDENCE);
     within a single source the first occurrence wins. When `geocode` is supplied it
     fills `grid` only where it is missing. Output is sorted by callsign for
-    reproducible builds.
+    reproducible builds. When `stats` is supplied it receives the number of street-
+    address-shaped values normalize() nulled, per field, so the caller can log it.
     """
+    scrubbed: Counter[str] = Counter()
     winners: dict[str, Record] = {}
     for stream in streams:
         for raw in stream:
+            scrubbed.update(_street_address_fields(raw))
             record = normalize(raw)
             existing = winners.get(record.callsign)
             if existing is None:
                 winners[record.callsign] = record
             elif _precedence_rank(record.source) < _precedence_rank(existing.source):
                 winners[record.callsign] = record
+
+    if stats is not None:
+        stats.street_addresses_scrubbed = sum(scrubbed.values())
+        stats.street_addresses_by_field = dict(sorted(scrubbed.items()))
 
     for callsign in sorted(winners):
         record = winners[callsign]

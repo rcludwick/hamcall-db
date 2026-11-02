@@ -129,3 +129,59 @@ def test_parse_falls_back_to_self_synced_at() -> None:
     src.synced_at = "2026-06-10"  # as download() would have set it
     out = _by_call(src.parse(FIXTURES))
     assert out["W1AW"].synced_at == "2026-06-10"
+
+
+# --- street address typed into a published field (hdb-addrguard) ----------------
+# Synthetic addresses only: the repo is public.
+
+
+def _write_extract(tmp_path: Path, *en_rows: tuple[str, str, str, str, str]) -> Path:
+    """Write a minimal HD/EN/AM extract; each EN row is (call, first, last, street, city)."""
+    hd, en = [], []
+    for i, (call, first, last, street, city) in enumerate(en_rows, start=1):
+        hd.append(f"HD|{i}|{i:010d}|EBF{i}|{call}|A|HA|01/01/2020|01/01/2030")
+        en.append(
+            f"EN|{i}|{i:011d}|EBF|{call}|L|L{i}|{last} {first}|{first}||{last}|||||"
+            f"{street}|{city}|CT|06111||||{i:010d}|I"
+        )
+    (tmp_path / "HD.dat").write_text("\n".join(hd) + "\n", encoding="latin-1")
+    (tmp_path / "EN.dat").write_text("\n".join(en) + "\n", encoding="latin-1")
+    (tmp_path / "AM.dat").write_text("", encoding="latin-1")
+    return tmp_path
+
+
+def test_city_holding_the_street_address_is_nulled(tmp_path: Path) -> None:
+    path = _write_extract(
+        tmp_path,
+        ("K1ZZA", "Jane", "Sample", "100 Fake Rd", "100 Fake Rd"),
+        # FCC city is 20 chars wide, so a long street lands truncated.
+        ("K1ZZB", "John", "Example", "4000 Sample Water Cove", "4000 Sample Water Co"),
+        ("K1ZZC", "Ann", "Test", "300 Test Ct.", "300 Test Ct. Somewher"),
+    )
+    out = _by_call(parse_dir(path))
+    assert out["K1ZZA"].city is None
+    assert out["K1ZZA"].last_name == "Sample"
+    assert out["K1ZZA"].state == "CT"
+    assert out["K1ZZB"].city is None
+    assert out["K1ZZC"].city is None
+
+
+def test_name_holding_the_street_address_is_nulled(tmp_path: Path) -> None:
+    path = _write_extract(
+        tmp_path, ("K1ZZD", "Bob", "200 Sample Ave", "200 SAMPLE AVE", "Hartford")
+    )
+    k1zzd = _by_call(parse_dir(path))["K1ZZD"]
+    assert k1zzd.last_name is None
+    assert k1zzd.first_name == "Bob"
+    assert k1zzd.city == "Hartford"
+
+
+def test_town_typed_as_street_keeps_city(tmp_path: Path) -> None:
+    path = _write_extract(
+        tmp_path,
+        ("K1ZZE", "Al", "Sample", "Pawleys Island", "Pawleys Island"),
+        ("K6ZZF", "Bo", "Example", "PO Box 29", "29 Palms"),
+    )
+    out = _by_call(parse_dir(path))
+    assert out["K1ZZE"].city == "Pawleys Island"
+    assert out["K6ZZF"].city == "29 Palms"

@@ -236,3 +236,100 @@ def test_download_url_is_https_hdb_f363():
     from hamcall_db.sources.ised import DOWNLOAD_URL
 
     assert DOWNLOAD_URL.startswith("https://")
+
+
+# --- street address typed into a published field (hdb-addrguard) ----------------
+# Synthetic addresses only: the repo is public.
+
+
+def _ised_row(
+    call: str,
+    *,
+    given: str = "",
+    surname: str = "",
+    street: str = "",
+    city: str = "",
+    province: str = "ON",
+    club: str = "",
+    club_street: str = "",
+    club_city: str = "",
+) -> str:
+    """Build one fixed-width amateur.txt row at readme_amat.txt's 1-based columns."""
+    cols = [
+        (1, 6, call),
+        (8, 35, given),
+        (44, 35, surname),
+        (80, 70, street),
+        (151, 35, city),
+        (187, 2, province),
+        (201, 1, "A"),
+    ]
+    width = 210
+    if club:
+        cols += [(211, 70, club), (353, 70, club_street), (424, 35, club_city), (460, 2, province)]
+        width = 469
+    line = [" "] * width
+    for start, length, value in cols:
+        line[start - 1 : start - 1 + length] = value.ljust(length)[:length]
+    return "".join(line)
+
+
+def _parse_rows(tmp_path: Path, *rows: str):
+    path = tmp_path / "amateur.txt"
+    path.write_text("\r\n".join([*rows, "EOF"]) + "\r\n", encoding="utf-8")
+    return _by_call(parse_file(path))
+
+
+def test_city_holding_the_rows_street_address_is_nulled(tmp_path: Path) -> None:
+    out = _parse_rows(
+        tmp_path,
+        _ised_row(
+            "VA3ZZA", given="Jane", surname="Sample", street="100 FAKE RD", city="100 FAKE RD"
+        ),
+    )
+    assert out["VA3ZZA"].city is None
+    assert out["VA3ZZA"].last_name == "Sample"
+    assert out["VA3ZZA"].state == "ON"
+
+
+def test_club_name_holding_a_street_address_is_nulled(tmp_path: Path) -> None:
+    # The trustee typed the address into the club-name field.
+    out = _parse_rows(
+        tmp_path,
+        _ised_row(
+            "VE3ZZB",
+            given="John",
+            surname="Example",
+            street="1305 PLACEHOLDER GREEN",
+            club="1305 PLACEHOLDER GREEN",
+            club_city="OTTAWA",
+        ),
+    )
+    assert out["VE3ZZB"].last_name is None
+    assert out["VE3ZZB"].first_name is None
+    assert out["VE3ZZB"].city == "OTTAWA"
+
+
+def test_club_city_matching_the_club_street_is_nulled(tmp_path: Path) -> None:
+    out = _parse_rows(
+        tmp_path,
+        _ised_row(
+            "VE3ZZC",
+            club="SAMPLE AMATEUR RADIO CLUB",
+            club_street="9 EXAMPLE CRES",
+            club_city="9 EXAMPLE CRES",
+        ),
+    )
+    assert out["VE3ZZC"].last_name == "SAMPLE AMATEUR RADIO CLUB"
+    assert out["VE3ZZC"].city is None
+
+
+def test_town_typed_as_street_keeps_city(tmp_path: Path) -> None:
+    # Rural filers often put the town in the street column; that's not an address.
+    out = _parse_rows(
+        tmp_path,
+        _ised_row("VA1ZZD", street="INGONISH BEACH", city="INGONISH BEACH", province="NS"),
+        _ised_row("VA7ZZE", street="PO BOX 1", city="100 MILE HOUSE", province="BC"),
+    )
+    assert out["VA1ZZD"].city == "INGONISH BEACH"
+    assert out["VA7ZZE"].city == "100 MILE HOUSE"
