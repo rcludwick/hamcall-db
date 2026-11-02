@@ -17,6 +17,10 @@ dependencies = [
     # group below.
     "shapely>=2.0",
     "pyproj>=3.6",
+    # Text extraction for the BNetzA Rufzeichenliste (Germany ships only a PDF). Pure
+    # Python with no required dependencies (BSD-3-Clause, py-pdf org); it returns each
+    # page's text in content-stream order, which keeps the PDF's three columns apart.
+    "pypdf>=6.0",
 ]
 
 [project.scripts]
