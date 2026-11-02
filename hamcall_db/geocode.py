@@ -117,6 +117,21 @@ def _postal_country(record: Record) -> str:
     return _norm(implied if implied is not None else record.country)
 
 
+def _postal_key(country: str, postal: str) -> str:
+    """Reduce a postal code to the granularity the seed table is keyed at.
+
+    US tables hold 5-digit ZIPs, but FCC ships ZIP+4 run together ("061111234"); Canadian
+    tables hold the 3-char Forward Sortation Area ("K1A"), but ISED ships the full code
+    ("K1A 0B1"). Other countries are matched as given.
+    """
+    compact = _norm(postal).replace(" ", "").replace("-", "")
+    if country == "UNITED STATES":
+        return compact[:5]
+    if country == "CANADA":
+        return compact[:3]
+    return compact
+
+
 class LookupGeocoder:
     """A `merge.Geocoder`: resolve a Record's location to a 4-char Maidenhead grid.
 
@@ -128,7 +143,7 @@ class LookupGeocoder:
         country = _postal_country(record)
 
         if record.postal_code:
-            coords = _postal_table().get((country, _norm(record.postal_code)))
+            coords = _postal_table().get((country, _postal_key(country, record.postal_code)))
             if coords is not None:
                 return latlon_to_grid(*coords)
 

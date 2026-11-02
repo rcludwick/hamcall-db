@@ -144,3 +144,20 @@ def test_geocoder_unknown_source_falls_back_to_record_country() -> None:
     rec = Record(callsign="W1AW", postal_code="06111", country="United States", source="x")
     assert geo(rec) == "FN31"
     assert geo(Record(callsign="W1AW", postal_code="06111", source="x")) is None
+
+
+# --- postal codes are reduced to the seed table's granularity ------------------
+
+
+@pytest.mark.parametrize(
+    ("postal", "source", "expected"),
+    [
+        ("061111234", "fcc", "FN31"),  # FCC ships ZIP+4 run together
+        ("06111-1234", "fcc", "FN31"),
+        ("K1A 0B1", "ised", "FN25"),  # full Canadian code -> FSA "K1A"
+        ("k1a0b1", "ised", "FN25"),
+    ],
+)
+def test_geocoder_reduces_postal_to_table_key(postal: str, source: str, expected: str) -> None:
+    geo = LookupGeocoder()
+    assert geo(Record(callsign="X", postal_code=postal, source=source)) == expected
