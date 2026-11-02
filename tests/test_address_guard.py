@@ -106,3 +106,47 @@ def test_backstop_flags_house_number_plus_street_type(value: str) -> None:
 )
 def test_backstop_spares_legit_place_and_person_names(value: str) -> None:
     assert not looks_like_street_address(value)
+
+
+@pytest.mark.parametrize(
+    "value",
+    [
+        "Waldstr. 35 A",  # a German address typed into a Norwegian town field
+        "Musterstraße 12",
+        "Beispielgasse 4",
+        "Eksempelveien 3",
+        "Storgata 10B",
+        "ul. Przykładowa 5",
+        "Calle Falsa 123",
+        "Rua Exemplo 45",
+        "Avenida Ficticia 1200",
+        "Barrio San Ramon Lote 245",
+        "Manzana 4 Casa 12",
+        "1435",
+        "92",
+    ],
+)
+def test_backstop_flags_number_after_street_and_plot_numbers(value: str) -> None:
+    assert looks_like_street_address(value)
+
+
+@pytest.mark.parametrize(
+    "value",
+    [
+        "9 de Julio",
+        "25 de Mayo",
+        "Villa 25 de Mayo",
+        "Comuna 1",
+        "Barrio 76 Viviendas",
+        "5ta Seccion",
+        "Neustadt an der Weinstraße",  # street word in a town name, no number
+        "Salzweg",
+        "Sankt Augustin",
+        "Gdańsk",
+        "Tromsø",
+        "39 Signal Regiment",
+        "1. Kolbotn gruppe av Norges Speiderforbund",
+    ],
+)
+def test_backstop_leaves_numbered_place_and_club_names(value: str) -> None:
+    assert not looks_like_street_address(value)

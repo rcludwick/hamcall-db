@@ -131,16 +131,50 @@ def echoes_street(value: str | None, streets: Iterable[str | None]) -> bool:
     return False
 
 
+# European and Latin American addresses put the number AFTER the street: "Waldstr. 35 A",
+# "Storgata 10B", "ul. Przykładowa 5", "Calle Falsa 123". A street word (as a compound
+# suffix or a standalone word) together with a number token marks one. Checked on the raw
+# string, because _words() splits on non-ASCII letters (ß, ø, ł).
+_STREET_SUFFIX = re.compile(
+    r"\w*(?:str\.|straße|strasse|gasse|allee|veien|vegen|gata|gatan|vägen)(?=\W|$)",
+    re.IGNORECASE,
+)
+_STREET_WORD = re.compile(
+    r"(?:^|\s)(?:ul\.|al\.|os\.|calle|avenida|av\.|rua|travessa|rodovia|vei|gate|"
+    r"weg|platz|straat|laan|via|viale|piazza)(?=\s|$)",
+    re.IGNORECASE,
+)
+_NUMBER_TOKEN = re.compile(r"(?:^|\s)\d+\s?[a-z]?(?=\W|$)", re.IGNORECASE)
+# Lot / block / flat numbers ("Barrio San Ramon Lote 245", "Manzana 4 Casa 12").
+_PLOT = re.compile(
+    r"\b(?:lote|manzana|mza?|casa|depto|dpto|piso|apto|apartamento|bloque|torre)\.?\s*\d",
+    re.IGNORECASE,
+)
+# A bare number (a postcode or house number typed into a name or town field).
+_ONLY_DIGITS = re.compile(r"^\s*\d[\d\s-]*$")
+
+
 def looks_like_street_address(value: str | None) -> bool:
     """True when `value` has the shape of a street address.
 
-    The shape is a leading house number followed, somewhere later, by a street-type
-    word: "100 Fake Rd", "12345 Nowhere Pl NW", "500 Sample Ave #101", "1200 rue
-    Fictive". Values without a street-type word ("29 Palms", "100 Mile House") and
-    values without a leading number ("Six Mile", "St. Louis") are not flagged.
+    Three shapes are flagged:
+
+    * North American: a leading house number followed, somewhere later, by a street-type
+      word: "100 Fake Rd", "12345 Nowhere Pl NW", "500 Sample Ave #101", "1200 rue
+      Fictive". Values without a street-type word ("29 Palms", "100 Mile House") and
+      values without a leading number ("Six Mile", "St. Louis") are not flagged.
+    * European / Latin American: a street word plus a number, in either order:
+      "Waldstr. 35 A", "Storgata 10B", "ul. Przykładowa 5", "Calle Falsa 123". Place
+      names that merely contain a number ("9 de Julio", "Comuna 1") have no street word.
+    * Lot, block or flat numbers ("Lote 245", "Manzana 4"), and values that are only
+      digits (a postcode or house number in the wrong field).
     """
     if not value:
         return False
+    if _ONLY_DIGITS.match(value) or _PLOT.search(value):
+        return True
+    if _NUMBER_TOKEN.search(value) and (_STREET_SUFFIX.search(value) or _STREET_WORD.search(value)):
+        return True
     words = _words(value)
     if len(words) < 2 or not _HOUSE_NUMBER.match(words[0]):
         return False

@@ -76,4 +76,5 @@ no longer holds. The full research is in the notes repo:
 | SOTA API | API terms: "No commercial usage…", "no AI-generated software may connect to the SOTA API without prior approval". The static `summitslist.csv` (no licence) is fine; it's disabled in published builds today. |
 | Austria, Fernmeldebüro callsign list | Restricted by law: "ausschließlich nur zum Zwecke des Amateurfunkdienstes zulässig" (§ 150 Abs. 4 TKG 2021). |
 | New Zealand RSM Register of Radio Frequencies | "may be reproduced for personal or in-house use free of charge" (rsm.govt.nz/copyright). The NZART Call Book is a separate candidate. |
+| NMHH Hungary, call sign book | Site terms: "Az NMHH írásos engedélye nélkül tilos jelen webhely tartalmát akár nyílt, akár zárt adatbázisba lementeni … vagy azt terjeszteni" (no saving into a database or distributing without written permission). The importer exists but is in `RESTRICTED_SOURCES` (`build.py`): opt-in local builds via `--include-restricted` only, never published. |
 | Malaysia, MCMC register | "not permitted to copy … store … without the prior written permission of the MCMC". |
