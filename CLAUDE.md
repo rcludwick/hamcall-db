@@ -14,7 +14,7 @@ Use the **Claude Code task tracker** (`TaskCreate` / `TaskUpdate` / `TaskList`) 
 the current session: create a task before starting, mark it `in_progress` when you pick it
 up, `completed` when it's done.
 
-The durable backlog lives in [`docs/BACKLOG.md`](docs/BACKLOG.md) — 4 open items, each with
+The durable backlog lives in [`docs/BACKLOG.md`](docs/BACKLOG.md) — 9 open items, each with
 its full description and spec text inline. Anything that outlives the session goes there.
 
 ### Rules
