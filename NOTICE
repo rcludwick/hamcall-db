@@ -323,18 +323,18 @@ Upstream sources and their licenses
        Summit data courtesy of Summits on the Air (SOTA),
        https://www.sota.org.uk/.
 
-   NOTE (LICENSE — FLAGGED FOR HUMAN SIGN-OFF before any public release):
-   SOTA's *API* terms of service are explicit — NON-COMMERCIAL use only,
-   registration required, and "no AI-generated software may connect to the SOTA
-   API without prior approval". To stay clear of those API terms this project
-   consumes the STATIC summitslist.csv bulk file, NOT the api2.sota.org.uk JSON
-   API. The static bulk file carries no explicit machine-readable license, and no
-   SHARE-ALIKE term (CC BY-SA / ODbL) was found for it — so, UNLIKE OpenStreetMap
-   (source 8), the SOTA data does NOT require separate-file segregation. PROJECT
-   POSTURE (2026-06-18): SOTA summit data is used on an ASSUMED NON-COMMERCIAL
-   basis, attributed and droppable. This is NOT a confirmed license and MUST be
-   confirmed with the SOTA Management Team before it is ever published. The SOTA
-   summits dataset is a SEPARATE, supplementary reference table
+   License:  None published (reviewed 2026-11-02). The site footer carries only
+             "Copyright 2002 Summits on the Air" and the summitslist.csv header
+             has no licence line; no Creative Commons or share-alike term was
+             found. SOTA's *API* terms (https://api2.sota.org.uk/) are explicit:
+             "No commercial usage… Commercial usage of the API will require a
+             formal licence agreement", and "no AI-generated software may connect
+             to the SOTA API without prior approval". This project reads only the
+             STATIC summitslist.csv bulk file, never the API. Disabled in
+             published builds; it must not be published unless the SOTA
+             Management Team gives permission (https://www.sota.org.uk/Contact).
+
+   The SOTA summits dataset is a SEPARATE, supplementary reference table
    (hamcall-db-sota-summits-YYYY-MM-DD.parquet and a sota_summits table in the
    SQLite .db of an opt-in build). The single representative coordinate/grid per
    summit is INDICATIVE ONLY and is display-only, never a join key.
@@ -368,8 +368,8 @@ comply with the union of these terms, which means:
   * Credit USGS PAD-US (source 7) where PAD-US grids are present.
 
 Opt-in builds made with --include-restricted also contain SOTA (source 10,
-assumed non-commercial, pending sign-off) and LoTW (source 9, redistribution
-prohibited). Do not redistribute such a build.
+no licence published; not to be published without SOTA's permission) and LoTW
+(source 9, redistribution prohibited). Do not redistribute such a build.
 
 11. DVRef — digital-voice reflector directory (SEPARATE CC BY 4.0 file)
    Coverage: M17 (mrefd), YSF, NXDN, P25 and URF reflector listings; the DMR
@@ -451,7 +451,8 @@ prohibited). Do not redistribute such a build.
    Required attribution statement:
 
        REF and DCS reflector names from the Pi-Star DPlus and DCS host files
-       (http://www.pistar.uk/downloads/).
+       (http://www.pistar.uk/downloads/), which compile them from
+       dstargateway.org and xreflector.net DNS.
 
    WHY THIS SOURCE EXISTS: D-Star has three linking protocols and the XLX
    multiprotocol reflector answers on all of them, so one machine is REF836,
