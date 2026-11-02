@@ -12,7 +12,21 @@ inline. All 39 issues (35 of them closed) were exported to
 `docs/issues-archive.jsonl`, which is gitignored and local-only; a committed copy of the
 tracker's final state survives in git history at the migration commit.
 
-## Open items (9)
+## Open items (10)
+
+### hdb-licence-sweep — Carry the 2026-11-02 licence review into the remaining docs and docstrings
+*MEDIUM · task · cx:1*
+
+**Spec:** NOTICE, README, PROJECT-NOTES, CLAUDE.md, `enrich.py`, `sources/sota.py` and
+`hamcall_db/data/README.md` were corrected on `work/hdb-licdocs`. These still carry the old
+claims (cty.dat "free for non-commercial use", ISED under OGL-Canada, AllStarLink / POTA
+"assumed non-commercial", LoTW "All Rights Reserved"/assumed basis): `docs/site/about/sources.md`,
+`docs/site/about/datasets.md`, and the docstrings/comments in `sources/ad1c.py`,
+`enrich_allstar.py`, `enrich_lotw.py` and `build.py` (~line 234). Align them with NOTICE.
+Also pending replies to the permission requests (POTA, AllStarLink, ISED, XLX, Pi-Star,
+AD1C); drafts are in the notes repo at
+`docs/superpowers/notes/hamcall-db/2026-11-02-licence-review.md`.
+
 
 ### hdb-acma-licence — Follow-ups to the ACMA natural-person rule
 *HIGH · decision · cx:2*
@@ -86,7 +100,8 @@ done for `tests/fixtures/ised/amateur.txt`.
 (covered by au-4248). (b) Club rows publish the club name/location and drop the trustee;
 a `trustee` column would be an additive schema change if wanted. (c) Merge title-casing
 produces `St. John'S` and `Bc Fm Communications Assn`; FCC mixed-case cities like
-`honolulu` pass through untouched.
+`honolulu` pass through untouched. (d) `ised.py`'s docstring says there is no delimited
+variant, but ISED also publishes `amateur_delim.zip`; correct the docstring (or consider it).
 
 ### hdb-refl-pages — Enable GitHub Pages + add the DVREF_API_TOKEN secret
 *HIGH · task · cx:1*

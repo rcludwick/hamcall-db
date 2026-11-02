@@ -3,8 +3,8 @@
 Resolves each `Record`'s callsign to a DXCC entity, filling `country` (the entity
 name) and `dxcc` (the numeric ADIF entity code). Pure functions over `Record`
 iterables — no I/O beyond loading the cty.dat file once via `load_cty`. License:
-AD1C cty.dat is free for non-commercial use, attribution required (mem-371f); the
-NOTICE file must credit AD1C.
+AD1C cty.dat is under the MIT License (https://www.country-files.com/copyright/,
+mem-371f); the NOTICE file must credit AD1C and carry the MIT notice.
 
 Two pieces:
 
