@@ -1,33 +1,72 @@
 """ISED Canada amateur importer (CA).
 
 Parses the Innovation, Science and Economic Development Canada (ISED, formerly
-Industry Canada) amateur call sign list — the "delimited TXT" download published at
-``apc-cap.ic.gc.ca/datafiles/amateur.zip``. The zip contains a single semicolon
-(``;``) delimited ``amateur.txt`` with one row per assigned call sign (individuals and
-sponsored clubs), carrying qualification flags, name, and a mailing address.
+Industry Canada) amateur call sign list published at
+``apc-cap.ic.gc.ca/datafiles/amateur.zip``. The zip holds three files:
+
+- ``amateur.txt`` — the call sign list itself, a **fixed-width** report (UTF-8, CRLF);
+- ``readme_amat.txt`` / ``lisezmoi_amat.txt`` — the column layout, in English / French.
+
+There is no delimited variant. (Until 2026-11 this importer assumed a ``;``-delimited
+file that ISED never shipped, so every line landed whole in ``callsign`` — hdb-ised.)
+
+File shape
+----------
+::
+
+    2026-11-01  Canadian Amateur Call Sign List / List d'indicatif d'appel canadien
+    <blank>
+    There are 92186 call signs in this report. / Il y a 92186 indicatifs ...
+    <blank>
+    VA1AA  Bill        McFadden    100 FAKE DRIVE        MIDDLE SACKVILLE  NS B4E 2X8 A C D
+    ...one fixed-width row per call sign...
+    EOF
 
 Column layout
 -------------
-The exact field order is not documented on the public ISED downloads page; it ships in a
-README *inside the zip*. The constants below encode the long-standing community-documented
-layout of the delimited extract:
+Copied from ``readme_amat.txt`` (1-based start column, length). Columns are counted in
+*characters* of the decoded text, not bytes. Verified against the whole 2026-11-01 file
+(92,186 rows): every column between these fields is a space on every row, and rows are
+exactly 210 characters (no club) or 469 (club).
 
-    callsign ; qual_a ; qual_b ; qual_c ; qual_d ; qual_e ;
-    first_name ; surname ; club_name_or_attn ; address ; city ; province ;
-    postal_code ; country ; region
+=============================  =====  ======
+Field                          Start  Length
+=============================  =====  ======
+Callsign                           1       6
+Given Names                        8      35
+Surname                           44      35
+Street Address                    80      70   (read past, NEVER stored)
+City                             151      35
+Province                         187       2
+Postal/ZIP Code                  190      10
+BASIC Qualification (A)          201       1
+5WPM Qualification (B)           203       1
+12WPM Qualification (C)          205       1
+ADVANCED Qualification (D)       207       1
+Basic with Honours (E)           209       1
+Club Name (field 1)              211      70
+Club Name (field 2)              282      70   (not published; often "c/o <person>")
+Club Address                     353      70   (read past, NEVER stored)
+Club City                        424      35
+Club Province                    460       2
+Club Postal/ZIP Code             463       7
+=============================  =====  ======
 
-If a future download reorders columns, this is a one-line fix per constant — the parser
-reads strictly by named index. The qualification columns are flag columns; a non-empty
-value means the operator holds that qualification (Basic / Basic-with-Honours / Advanced
-/ Morse, etc.). The ``address`` column is read *past* but NEVER stored — redistribution
-contract (no street address in output, see CLAUDE.md / mem-c6e0).
+A row with a club name is a club call: the given/surname/address on that row belong to
+the trustee, so the Record takes the club name and the club's city/province/postal
+code instead. Placeholder values with no letters or digits (``**``, ``-``) become None.
+ISED escapes apostrophes as HTML numeric entities (``&#x27;``); those are
+decoded.
 
-Output leaves county (US-only), country/dxcc (cty.dat enriches downstream), and grid
-(geocoded downstream) as None.
+The street-address columns are never sliced into any Record field — redistribution
+contract (no street address in output, see CLAUDE.md / mem-c6e0). Output leaves county
+(US-only), country/dxcc (cty.dat enriches downstream), and grid (geocoded downstream)
+as None.
 """
 
 from __future__ import annotations
 
+import re
 import urllib.error
 import urllib.request
 from collections.abc import Iterable, Iterator
@@ -36,7 +75,7 @@ from pathlib import Path
 from hamcall_db.models import Record
 from hamcall_db.sources.base import synced_at_from
 
-# Upstream delimited amateur extract (zip containing amateur.txt).
+# Upstream amateur call sign list (zip containing amateur.txt).
 # https, not http: the http endpoint 301-redirects to https and its port 80 is
 # unreachable from some networks (GitHub Actions runners timed out — hdb-f363).
 DOWNLOAD_URL = "https://apc-cap.ic.gc.ca/datafiles/amateur.zip"
@@ -44,103 +83,131 @@ DOWNLOAD_URL = "https://apc-cap.ic.gc.ca/datafiles/amateur.zip"
 # Connect/read timeout (seconds) so a hung upstream fails fast instead of stalling.
 DOWNLOAD_TIMEOUT = 60
 
-# Field within the zip we parse.
+# File within the zip we parse.
 AMATEUR_FILENAME = "amateur.txt"
 
-# Record delimiter.
-_DELIMITER = ";"
 
-# 0-based column indices in the semicolon-delimited amateur record.
-# ASSUMPTION: documented in the in-zip README; encoded here so a reorder is a 1-line fix.
-_CALLSIGN = 0
-# Qualification flag columns. ISED publishes one column per qualification; a non-empty
-# value indicates the operator holds it. Order: Basic, Basic-w/-Honours, 5 wpm Morse,
-# 12 wpm Morse, Advanced. Exact set/order varies; mapped by name below.
-_QUAL_BASIC = 1
-_QUAL_BASIC_HONOURS = 2
-_QUAL_MORSE_5 = 3
-_QUAL_MORSE_12 = 4
-_QUAL_ADVANCED = 5
-_FIRST_NAME = 6
-_SURNAME = 7
-_CLUB_NAME = 8  # club / care-of name; populated for sponsored-club call signs
-_ADDRESS = 9  # street address — read past, NEVER stored
-_CITY = 10
-_PROVINCE = 11
-_POSTAL_CODE = 12
-_COUNTRY = 13
-_REGION = 14
+def _col(start: int, length: int) -> slice:
+    """Slice for a field given readme_amat.txt's 1-based start column and length."""
+    return slice(start - 1, start - 1 + length)
 
-# Ordered (column-index, human-readable label) for qualification flags. Order here
-# defines the order they appear in the composed license_class string.
-_QUALIFICATIONS: tuple[tuple[int, str], ...] = (
-    (_QUAL_BASIC, "Basic"),
-    (_QUAL_BASIC_HONOURS, "Basic with Honours"),
-    (_QUAL_MORSE_5, "Morse (5 wpm)"),
-    (_QUAL_MORSE_12, "Morse (12 wpm)"),
-    (_QUAL_ADVANCED, "Advanced"),
+
+_CALLSIGN = _col(1, 6)
+_GIVEN_NAMES = _col(8, 35)
+_SURNAME = _col(44, 35)
+# _col(80, 70) is the street address: deliberately not defined, never read.
+_CITY = _col(151, 35)
+_PROVINCE = _col(187, 2)
+_POSTAL_CODE = _col(190, 10)
+_CLUB_NAME = _col(211, 70)
+# _col(282, 70) is club name field 2 (free text, often "c/o <person>"): not published.
+# _col(353, 70) is the club street address: deliberately not defined, never read.
+_CLUB_CITY = _col(424, 35)
+_CLUB_PROVINCE = _col(460, 2)
+_CLUB_POSTAL_CODE = _col(463, 7)
+
+# A data row must reach at least the last qualification column (209).
+_MIN_ROW_LENGTH = 209
+
+# Qualification flag columns (a letter when held, blank otherwise). Order here defines
+# the order labels appear in the composed license_class string.
+_QUALIFICATIONS: tuple[tuple[slice, str], ...] = (
+    (_col(201, 1), "Basic"),  # A
+    (_col(209, 1), "Basic with Honours"),  # E
+    (_col(203, 1), "Morse (5 wpm)"),  # B
+    (_col(205, 1), "Morse (12 wpm)"),  # C
+    (_col(207, 1), "Advanced"),  # D
 )
 
+# A data row's callsign field: letters and digits with at least one digit, left-aligned
+# and space-padded to six characters, followed by the space at column 7.
+_DATA_ROW = re.compile(r"^(?=[A-Z0-9]*[0-9])[A-Z0-9]{3,6} *(?<=^.{6}) ")
 
-def _field(row: list[str], idx: int) -> str | None:
-    """Return column `idx` of `row` stripped, or None if absent/blank."""
-    if idx < len(row):
-        value = row[idx].strip()
-        return value or None
-    return None
+# Non-data lines the report wraps around its rows.
+_HEADER = re.compile(r"^\d{4}-\d{2}-\d{2}\s+Canadian Amateur Call Sign List", re.IGNORECASE)
+_COUNT = re.compile(r"^There are \d+ call signs in this report", re.IGNORECASE)
+_EOF = "EOF"
+
+_HAS_WORD = re.compile(r"\w")
+_NUMERIC_ENTITY = re.compile(r"&#(x[0-9a-fA-F]+|[0-9]+);")
 
 
-def _license_class(row: list[str]) -> str | None:
-    """Compose a human-readable license class from the qualification flag columns.
+def _unescape(match: re.Match[str]) -> str:
+    ref = match.group(1)
+    return chr(int(ref[1:], 16) if ref[0] == "x" else int(ref))
 
-    Each non-empty qualification column contributes its label. ``None`` when the
-    operator holds no recorded qualifications (e.g. some club records).
+
+def _field(line: str, col: slice) -> str | None:
+    """Return the fixed-width field at `col`, stripped and entity-decoded, or None.
+
+    Placeholders with no letters or digits (ISED uses ``**``, ``-``, ``--`` for some
+    unknown cities) are None too.
     """
-    held = [label for idx, label in _QUALIFICATIONS if _field(row, idx) is not None]
+    value = _NUMERIC_ENTITY.sub(_unescape, line[col]).strip()
+    return value if _HAS_WORD.search(value) else None
+
+
+def _license_class(line: str) -> str | None:
+    """Compose a human-readable license class from the qualification flag columns."""
+    held = [label for col, label in _QUALIFICATIONS if line[col].strip()]
     return ", ".join(held) if held else None
 
 
-def _to_record(row: list[str], *, synced_at: str | None) -> Record | None:
-    """Map one delimited ISED row to a `Record`, or None if it has no callsign."""
-    callsign = _field(row, _CALLSIGN)
-    if callsign is None:
-        return None
-
-    first_name = _field(row, _FIRST_NAME)
-    surname = _field(row, _SURNAME)
-    # Sponsored clubs have no personal name; the entity lives in the club/attn column.
-    # Fold it into last_name so consumers see a single display name.
-    last_name = surname or _field(row, _CLUB_NAME)
+def _to_record(line: str, *, synced_at: str | None) -> Record:
+    """Map one fixed-width ISED data row to a `Record`."""
+    callsign = line[_CALLSIGN].strip()  # non-empty: guaranteed by _DATA_ROW
+    club_name = _field(line, _CLUB_NAME)
+    if club_name is not None:
+        # Club call: the holder is the club, located at the club's mailing address.
+        first_name, last_name = None, club_name
+        city, state, postal = _CLUB_CITY, _CLUB_PROVINCE, _CLUB_POSTAL_CODE
+    else:
+        first_name, last_name = _field(line, _GIVEN_NAMES), _field(line, _SURNAME)
+        city, state, postal = _CITY, _PROVINCE, _POSTAL_CODE
 
     return Record(
         callsign=callsign,
         first_name=first_name,
         last_name=last_name,
-        city=_field(row, _CITY),
-        state=_field(row, _PROVINCE),  # province maps to the state/region slot
-        postal_code=_field(row, _POSTAL_CODE),
-        license_class=_license_class(row),
+        city=_field(line, city),
+        state=_field(line, state),  # province maps to the state/region slot
+        postal_code=_field(line, postal),
+        license_class=_license_class(line),
         source="ised",
         synced_at=synced_at,
         # county is US-only; country/dxcc come from cty.dat; grid is geocoded downstream.
     )
 
 
-def parse_file(path: Path, *, synced_at: str | None = None) -> Iterator[Record]:
-    """Parse a single semicolon-delimited ISED amateur file into `Record`s.
+def _read_text(path: Path) -> str:
+    """Decode the report: UTF-8 (what ISED serves), falling back to Latin-1."""
+    raw = path.read_bytes()
+    try:
+        return raw.decode("utf-8")
+    except UnicodeDecodeError:
+        return raw.decode("latin-1")
 
-    Skips blank lines and rows lacking a callsign. `synced_at` stamps the upstream file
-    date. The street-address column is read past and never emitted.
+
+def parse_file(path: Path, *, synced_at: str | None = None) -> Iterator[Record]:
+    """Parse ISED's fixed-width ``amateur.txt`` report into `Record`s.
+
+    Skips blank lines, the dated report header, the call-sign count line, and the
+    trailing ``EOF``. Any other line that isn't a fixed-width data row raises
+    ValueError, so a format change fails the build instead of publishing garbage.
+    `synced_at` stamps the upstream file date. Street addresses are never read.
     """
-    with path.open(encoding="latin-1") as fh:
-        for line in fh:
-            line = line.rstrip("\n")
-            if not line:
-                continue
-            row = line.split(_DELIMITER)
-            record = _to_record(row, synced_at=synced_at)
-            if record is not None:
-                yield record
+    for lineno, line in enumerate(_read_text(path).splitlines(), start=1):
+        if not line.strip():
+            continue
+        if _DATA_ROW.match(line) and len(line) >= _MIN_ROW_LENGTH:
+            yield _to_record(line, synced_at=synced_at)
+        elif line.strip() == _EOF or _HEADER.match(line) or _COUNT.match(line):
+            continue
+        else:
+            raise ValueError(
+                f"{path}: line {lineno} is not an ISED fixed-width call sign row "
+                f"(has the amateur.txt layout changed?): {line[:40]!r}"
+            )
 
 
 def parse_dir(path: Path, *, synced_at: str | None = None) -> Iterator[Record]:
@@ -158,7 +225,7 @@ def parse_dir(path: Path, *, synced_at: str | None = None) -> Iterator[Record]:
 
 
 class IsedSource:
-    """Importer for the ISED Canada amateur delimited call sign list."""
+    """Importer for the ISED Canada amateur call sign list (fixed-width report)."""
 
     name = "ised"
 
