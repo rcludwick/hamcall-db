@@ -77,6 +77,8 @@ The merge stage is the only place where source ordering matters (callsign collis
 ## Build & Test
 
 This repo uses [uv](https://docs.astral.sh/uv/) for env + dependency management (Python >=3.14).
+`.python-version` pins 3.14, the version CI uses, so uv won't pick up a newer
+interpreter (e.g. 3.15) that numpy/pyproj can't install on yet.
 
 ```bash
 uv sync --dev                  # create .venv and install runtime + dev deps
