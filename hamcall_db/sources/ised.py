@@ -65,6 +65,10 @@ the trustee's street, a city that repeats the street), so any published value th
 copies either of the row's addresses is dropped (hdb-addrguard). Output leaves county
 (US-only), country/dxcc (cty.dat enriches downstream), and grid (geocoded downstream)
 as None.
+
+Postal codes are published as the 3-character FSA only (``K1G 0Z5`` -> ``K1G``,
+hdb-isedfsa): see `fsa`. `scrub_prior_history` applies the same rule to history carried
+forward from releases built before it.
 """
 
 from __future__ import annotations
@@ -73,9 +77,11 @@ import re
 import urllib.error
 import urllib.request
 from collections.abc import Iterable, Iterator
+from dataclasses import replace
 from pathlib import Path
 
 from hamcall_db.address_guard import echoes_street, warn_scrubbed
+from hamcall_db.history import HistoryRow
 from hamcall_db.models import Record
 from hamcall_db.sources.base import synced_at_from
 
@@ -153,6 +159,49 @@ def _field(line: str, col: slice) -> str | None:
     return value if _HAS_WORD.search(value) else None
 
 
+# A Canadian postal code starts with its FSA: letter, digit, letter. Only that prefix
+# is checked, because only it is published: a typo in the last three characters
+# ("K1G 0Z", "K1G 0ZZ") still yields a real FSA. An FSA alone (prior history already
+# truncated) maps to itself.
+_FSA_PREFIX = re.compile(r"^[A-Z]\d[A-Z]")
+
+
+def fsa(postal_code: str | None) -> str | None:
+    """Reduce a Canadian postal code to its 3-character Forward Sortation Area.
+
+    Privacy (hdb-isedfsa): a full postal code (``K1G 0Z5``) often narrows to one side
+    of a single block, which is too close to a street address to publish (CLAUDE.md:
+    no street addresses). The FSA (``K1G``) is a neighbourhood or a small town, and is
+    the key the geocoder already matches Canadian codes on, so grids are unchanged.
+    A value that doesn't start with an FSA (a US ZIP, a stray word) returns None
+    rather than publishing something odd.
+    """
+    if postal_code is None:
+        return None
+    match = _FSA_PREFIX.match(postal_code.strip().upper())
+    return match.group(0) if match else None
+
+
+def scrub_prior_history(prior: Iterable[HistoryRow]) -> list[HistoryRow]:
+    """Truncate ``postal_code`` to the FSA on every prior ISED history row.
+
+    The nightly build extends the previous release's history, whose ISED rows predate
+    the FSA rule and hold full postal codes. Every ``source='ised'`` row, open and
+    closed alike, is rewritten with `fsa` before diffing. The current build's ISED
+    records already carry the FSA, so an unchanged holder's open interval still
+    compares equal and no new interval opens. Other sources' rows pass through
+    untouched.
+    """
+    out: list[HistoryRow] = []
+    for row in prior:
+        if row.source == "ised":
+            truncated = fsa(row.postal_code)
+            if truncated != row.postal_code:
+                row = replace(row, postal_code=truncated)
+        out.append(row)
+    return out
+
+
 def _license_class(line: str) -> str | None:
     """Compose a human-readable license class from the qualification flag columns."""
     held = [label for col, label in _QUALIFICATIONS if line[col].strip()]
@@ -188,7 +237,8 @@ def _to_record(line: str, *, synced_at: str | None) -> tuple[Record, int]:
         last_name=last_name,
         city=city_name,
         state=_field(line, state),  # province maps to the state/region slot
-        postal_code=_field(line, postal),
+        # FSA only: a full Canadian postal code is too close to a street address.
+        postal_code=fsa(_field(line, postal)),
         license_class=_license_class(line),
         source="ised",
         synced_at=synced_at,
