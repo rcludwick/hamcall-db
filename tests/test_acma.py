@@ -12,7 +12,9 @@ from __future__ import annotations
 from dataclasses import asdict
 from pathlib import Path
 
-from hamcall_db.sources.acma import AcmaSource, _split_name, parse_dir
+from hamcall_db.history import HistoryRow
+from hamcall_db.models import Record
+from hamcall_db.sources.acma import AcmaSource, parse_dir, withhold_prior_history
 
 FIXTURES = Path(__file__).parent / "fixtures" / "acma"
 
@@ -23,14 +25,11 @@ def _by_call(records):
 
 def test_parse_joins_device_licence_client_for_amateur() -> None:
     out = _by_call(parse_dir(FIXTURES, synced_at="2026-06-16"))
-    vk4 = out["VK4ABC"]
-    assert vk4.first_name == "John Andrew"  # given names after the comma
-    assert vk4.last_name == "Smith"  # "Smith, John Andrew" -> surname/given
-    assert vk4.city == "Brisbane"
-    assert vk4.state == "QLD"
-    assert vk4.postal_code == "4000"
-    assert vk4.source == "acma"
-    assert vk4.synced_at == "2026-06-16"
+    org = out["VK4RCLUB"]  # CLIENT_TYPE_ID 5 (Company): published in full
+    assert org.last_name == "Example Coast Repeater Company Pty Ltd"
+    assert (org.city, org.state, org.postal_code) == ("Caloundra", "QLD", "4551")
+    assert org.source == "acma"
+    assert org.synced_at == "2026-06-16"
 
 
 def test_only_amateur_licences_emitted() -> None:
@@ -60,20 +59,6 @@ def test_callsign_uppercased() -> None:
     out = _by_call(parse_dir(FIXTURES))
     # fixture stores "VK4RClub"; emitted callsign is upper-cased.
     assert "VK4RCLUB" in out
-
-
-def test_club_name_kept_whole_in_last_name() -> None:
-    out = _by_call(parse_dir(FIXTURES))
-    club = out["VK4RCLUB"]
-    assert club.first_name is None
-    assert club.last_name == "Sunshine Coast Amateur Radio Club Inc"
-
-
-def test_plain_given_surname_split() -> None:
-    out = _by_call(parse_dir(FIXTURES))
-    vk6 = out["VK6BEA"]
-    assert vk6.first_name == "Jane"
-    assert vk6.last_name == "Mary Doe"
 
 
 def test_street_address_never_appears_in_output() -> None:
@@ -143,15 +128,6 @@ def test_parse_falls_back_to_self_synced_at() -> None:
     assert out["VK4ABC"].synced_at == "2026-06-10"
 
 
-def test_split_name_variants() -> None:
-    assert _split_name("Smith, John") == ("John", "Smith")
-    assert _split_name("Jane Doe") == ("Jane", "Doe")
-    assert _split_name("Madonna") == (None, "Madonna")
-    assert _split_name("Acme Radio Club Inc") == (None, "Acme Radio Club Inc")
-    assert _split_name(None) == (None, None)
-    assert _split_name("") == (None, None)
-
-
 # --- Headered extract in the 2026 published layout (tests/fixtures/acma/headered/) ---
 # Synthetic rows under the real header rows of the 2026-11-01 spectra extract. The
 # device rows carry a populated AREA_AREA_ID (index 32) right before CALL_SIGN (33).
@@ -161,13 +137,11 @@ HEADERED = FIXTURES / "headered"
 
 def test_headered_extract_reads_call_sign_not_area_id() -> None:
     out = _by_call(parse_dir(HEADERED, synced_at="2026-11-01"))
-    assert set(out) == {"VK2RXX"}  # land-mobile VKTELCO filtered; area id 17737 not a call
-    rec = out["VK2RXX"]
-    assert rec.first_name is None
-    assert rec.last_name == "Example Valley Amateur Radio Club Inc"
-    assert (rec.city, rec.state, rec.postal_code) == ("KATOOMBA", "NSW", "2780")
-    values = {v for v in asdict(rec).values() if isinstance(v, str)}
-    assert "PO Box 123" not in values  # POSTAL_STREET never published
+    # Land-mobile VKTELCO is filtered; the area ids (17737...) are never read as calls.
+    assert set(out) == {"VK2RXX", "VK4RZZ", "VK3ZZA", "VK6ZZB", "VK5ZZC"}
+    for rec in out.values():
+        values = {v for v in asdict(rec).values() if isinstance(v, str)}
+        assert not any("PO Box" in v or "Sample St" in v for v in values)  # no street
 
 
 def test_header_names_win_over_positions(tmp_path: Path) -> None:
@@ -183,4 +157,135 @@ def test_header_names_win_over_positions(tmp_path: Path) -> None:
     with (tmp_path / "device_details.csv").open("w", newline="") as fh:
         csv.writer(fh).writerows(rows)
 
-    assert set(_by_call(parse_dir(tmp_path))) == {"VK2RXX"}
+    shutil.copy(HEADERED / "client_type.csv", tmp_path / "client_type.csv")
+    assert "VK2RXX" in _by_call(parse_dir(tmp_path))
+
+
+# --- ACMA licence clause 8: natural persons' Client Information is withheld ---------
+# "Where the Licensee is a natural person, this Licence does not permit you to reproduce
+# or distribute the Licensee's Client Information contained in the Register in any
+# Derivative work." Natural-person status comes from client.CLIENT_TYPE_ID; anything
+# that isn't clearly an organisation is treated as a natural person (fail closed).
+# All names and addresses below are synthetic.
+
+IDENTIFYING = ("first_name", "last_name", "city", "county", "state", "postal_code", "grid")
+
+
+def _assert_withheld(rec: Record) -> None:
+    for name in IDENTIFYING:
+        assert getattr(rec, name) is None, (rec.callsign, name)
+
+
+def test_person_keeps_callsign_and_licence_fields_but_no_identity() -> None:
+    rec = _by_call(parse_dir(HEADERED))["VK3ZZA"]  # CLIENT_TYPE_ID 7 = Person
+    _assert_withheld(rec)
+    assert rec.license_class == "Advanced"
+    assert (rec.grant_date, rec.effective_date, rec.expired_date) == (
+        "2022-03-04",
+        "2022-03-05",
+        "2027-03-03",
+    )
+    assert rec.applicant_type == "Person"
+    assert rec.source == "acma"
+
+
+def test_company_record_is_fully_populated() -> None:
+    rec = _by_call(parse_dir(HEADERED))["VK4RZZ"]  # CLIENT_TYPE_ID 5 = Company
+    assert rec.first_name is None
+    assert rec.last_name == "Example Repeater Company Pty Ltd"
+    assert (rec.city, rec.state, rec.postal_code) == ("EXAMPLETOWN", "QLD", "4000")
+    assert rec.license_class == "Amateur Repeater"
+    assert (rec.grant_date, rec.expired_date) == ("2021-02-03", "2027-02-02")
+    assert rec.applicant_type == "Company"
+
+
+def test_community_group_type_is_ambiguous_so_withheld() -> None:
+    # Type 6 "Community or Volunteer Group" is used for clubs AND, in the real extract,
+    # for plenty of individuals, so it can't prove the holder isn't a natural person.
+    rec = _by_call(parse_dir(HEADERED))["VK2RXX"]
+    _assert_withheld(rec)
+    assert rec.license_class == "Amateur Repeater"
+    assert rec.applicant_type == "Community or Volunteer Group"
+
+
+def test_blank_client_type_treated_as_natural_person() -> None:
+    _assert_withheld(_by_call(parse_dir(HEADERED))["VK6ZZB"])
+
+
+def test_unknown_client_type_treated_as_natural_person() -> None:
+    _assert_withheld(_by_call(parse_dir(HEADERED))["VK5ZZC"])
+
+
+def test_headerless_individuals_withheld() -> None:
+    out = _by_call(parse_dir(FIXTURES))
+    _assert_withheld(out["VK4ABC"])
+    _assert_withheld(out["VK6BEA"])
+
+
+def test_no_person_name_or_place_reaches_any_field() -> None:
+    synthetic = {"Alex Example", "Sam Placeholder", "Robin Mockperson", "Alex", "Example"}
+    places = {"SAMPLEVILLE", "TESTVILLE", "MOCKTON", "3000", "6000", "5000", "VIC", "WA", "SA"}
+    for rec in parse_dir(HEADERED):
+        if rec.callsign not in {"VK3ZZA", "VK6ZZB", "VK5ZZC"}:
+            continue
+        values = {v for v in asdict(rec).values() if isinstance(v, str)}
+        assert values.isdisjoint(synthetic | places), rec
+
+
+def test_withheld_person_gets_no_grid_after_merge_and_geocode() -> None:
+    from hamcall_db.geocode import LookupGeocoder
+    from hamcall_db.merge import merge
+
+    merged = _by_call(merge([parse_dir(HEADERED)], geocode=LookupGeocoder()))
+    for call in ("VK3ZZA", "VK6ZZB", "VK5ZZC", "VK2RXX"):
+        _assert_withheld(merged[call])
+
+
+def _hist(callsign: str, valid_to: str | None, **kw) -> HistoryRow:
+    base = dict(
+        first_name="Old",
+        last_name="Holder",
+        city="OLDTOWN",
+        state="NSW",
+        postal_code="2000",
+        grid="QF56",
+        source="acma",
+    )
+    base.update(kw)
+    return HistoryRow(callsign=callsign, valid_from="2026-01-01", valid_to=valid_to, **base)
+
+
+def test_prior_history_scrubbed_for_withheld_and_vanished_acma_calls() -> None:
+    current = list(parse_dir(HEADERED))
+    prior = [
+        _hist("VK3ZZA", None),  # now a withheld person
+        _hist("VK9GONE", "2026-06-01"),  # no longer in the extract
+        _hist("17737", None),  # junk row from the old AREA_AREA_ID bug
+        _hist("W1AW", None, source="fcc"),  # other sources untouched
+    ]
+    out = {r.callsign: r for r in withhold_prior_history(prior, current)}
+    for call in ("VK3ZZA", "VK9GONE", "17737"):
+        for name in IDENTIFYING:
+            assert getattr(out[call], name) is None, (call, name)
+    assert out["W1AW"].last_name == "Holder"
+
+
+def test_prior_history_kept_for_unchanged_open_org_interval() -> None:
+    current = list(parse_dir(HEADERED))
+    prior = [
+        _hist("VK4RZZ", None, last_name="Example Repeater Company Pty Ltd", first_name=None),
+        _hist("VK4RZZ", "2025-01-01", last_name="Example Repeater Company Pty Ltd"),
+    ]
+    out = withhold_prior_history(prior, current)
+    open_iv = next(r for r in out if r.valid_to is None)
+    closed = next(r for r in out if r.valid_to is not None)
+    assert open_iv.last_name == "Example Repeater Company Pty Ltd"
+    assert open_iv.city == "OLDTOWN"
+    assert closed.last_name is None  # closed ACMA intervals can't be vetted: withheld
+
+
+def test_prior_open_interval_of_a_different_holder_is_scrubbed() -> None:
+    # Callsign now held by an organisation, but the open interval names someone else.
+    current = list(parse_dir(HEADERED))
+    out = withhold_prior_history([_hist("VK4RZZ", None)], current)
+    assert out[0].last_name is None and out[0].city is None
