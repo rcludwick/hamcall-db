@@ -21,8 +21,10 @@ from hamcall_db.history import diff_history
 from hamcall_db.merge import MergeStats, merge
 from hamcall_db.sources import ad1c
 from hamcall_db.sources.acma import AcmaSource, withhold_prior_history
+from hamcall_db.sources.anatel import AnatelSource
 from hamcall_db.sources.base import Source, retry_transient
 from hamcall_db.sources.bnetza import BnetzaSource
+from hamcall_db.sources.enacom import EnacomSource
 from hamcall_db.sources.fcc import FccUlsSource
 from hamcall_db.sources.ised import IsedSource
 from hamcall_db.sources.ised import scrub_prior_history as scrub_ised_prior_history
@@ -31,6 +33,7 @@ from hamcall_db.sources.osm import OsmSource, compute_osm_park_grids
 from hamcall_db.sources.padus import PadusSource, compute_park_grids
 from hamcall_db.sources.pota import PotaSource
 from hamcall_db.sources.sota import SotaSource
+from hamcall_db.sources.ursec import UrsecSource
 from hamcall_db.sqlite_writer import (
     write_pota_park_grids_osm_sqlite,
     write_pota_park_grids_sqlite,
@@ -55,6 +58,9 @@ SOURCES: dict[str, Source] = {
     "acma": AcmaSource(),
     "nkom": NkomSource(),
     "bnetza": BnetzaSource(),
+    "anatel": AnatelSource(),
+    "enacom": EnacomSource(),
+    "ursec": UrsecSource(),
 }
 
 app = typer.Typer(
