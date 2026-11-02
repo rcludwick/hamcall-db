@@ -1,0 +1,3 @@
+number;valid_to;call_sign;category;transmitter_power;name_type_station;emission;input_frequency;output_frequency;station_location
+DC.WML.5101.9101.2020.2;2030-12-01;SR9XAA;Kategoria5;15;PrzemiennikFMDV;"";431.05;438.65;Przyk³adowo
+DC.WML.5101.9102.2021.2;2026-10-24;SR8XAB;Kategoria5;15;AnalogowyPrzemiennikFM;"";145.1;145.7;"Górka - Obiekt RTCN ""Próbny"""

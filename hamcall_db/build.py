@@ -29,11 +29,13 @@ from hamcall_db.sources.fcc import FccUlsSource
 from hamcall_db.sources.ised import IsedSource
 from hamcall_db.sources.ised import scrub_prior_history as scrub_ised_prior_history
 from hamcall_db.sources.nkom import NkomSource
+from hamcall_db.sources.nmhh import NmhhSource
 from hamcall_db.sources.osm import OsmSource, compute_osm_park_grids
 from hamcall_db.sources.padus import PadusSource, compute_park_grids
 from hamcall_db.sources.pota import PotaSource
 from hamcall_db.sources.sota import SotaSource
 from hamcall_db.sources.ursec import UrsecSource
+from hamcall_db.sources.uke import UkeSource
 from hamcall_db.sqlite_writer import (
     write_pota_park_grids_osm_sqlite,
     write_pota_park_grids_sqlite,
@@ -61,6 +63,8 @@ SOURCES: dict[str, Source] = {
     "anatel": AnatelSource(),
     "enacom": EnacomSource(),
     "ursec": UrsecSource(),
+    "nmhh": NmhhSource(),
+    "uke": UkeSource(),
 }
 
 app = typer.Typer(
