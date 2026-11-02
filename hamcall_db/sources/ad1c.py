@@ -12,8 +12,10 @@ for everyday logging than the contest-trimmed file). It is served as a plain fil
 extraction needed) with a ``Last-Modified`` header, so a conditional GET (If-Modified-Since)
 lets us skip re-downloading an unchanged weekly file.
 
-License: AD1C cty.dat is free for non-commercial use, attribution required (see NOTICE /
-mem-371f). Be polite to upstream — cache and use conditional GET.
+License: AD1C cty.dat is under the MIT licence (https://www.country-files.com/copyright/);
+redistribution must carry the attribution and the MIT copyright and permission notice. It
+imposes no non-commercial restriction. See NOTICE source 4. Be polite to upstream — cache
+and use conditional GET.
 """
 
 from __future__ import annotations

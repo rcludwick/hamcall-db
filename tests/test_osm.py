@@ -59,7 +59,7 @@ _PARKS = [
     ),  # OSM polygon match
     ParkRecord(
         reference="DE-9999", name="Unmapped Park", country="DE", lat=51.0, lon=10.0
-    ),  # no OSM feature -> point fallback
+    ),  # no OSM feature -> no rows (no POTA-derived point fallback; hdb-odbl)
     ParkRecord(
         reference="US-4567", name="Boise National Forest", country="US", lat=44.0, lon=-115.5
     ),  # US -> EXCLUDED from the OSM set (PAD-US owns it)
@@ -89,12 +89,17 @@ def test_compute_excludes_us_parks_entirely() -> None:
     assert not [r for r in rows if (r.reference or "").upper().startswith("US-")]
 
 
-def test_compute_unmatched_non_us_park_point_fallback() -> None:
+def test_compute_unmatched_non_us_park_yields_no_rows() -> None:
+    # hdb-odbl: an unmatched park must not get a point grid from POTA's own lat/lon in the
+    # ODbL set — that would be POTA data relabelled as OSM data.
     rows = osm.compute_osm_park_grids(_PARKS, _fake_features())
-    de9999 = [r for r in rows if r.reference == "DE-9999"]
-    assert len(de9999) == 1
-    assert de9999[0].source == "osm-point"
-    assert de9999[0].confidence == "low"
+    assert not [r for r in rows if r.reference == "DE-9999"]
+
+
+def test_compute_without_osm_features_yields_nothing() -> None:
+    # OSM boundaries unavailable (no GIS reader / download failed): the ODbL set is EMPTY,
+    # never a set of POTA-derived point grids.
+    assert osm.compute_osm_park_grids(_PARKS, []) == []
 
 
 def test_compute_no_point_no_polygon_yields_nothing() -> None:
@@ -112,11 +117,11 @@ def test_compute_never_raises_on_bad_geometry() -> None:
 
 
 def test_compute_all_rows_are_odbl_provenance() -> None:
-    # Every row in the OSM set must carry an OSM provenance tag (osm / osm-point) — never a
-    # padus/pota-point tag that belongs to the CC-BY-NC set.
+    # Every row in the OSM set must be source='osm' (a matched OSM polygon) — never a
+    # point-derived or padus/pota-point row (hdb-odbl).
     rows = osm.compute_osm_park_grids(_PARKS, _fake_features())
     assert rows
-    assert {r.source for r in rows} <= {"osm", "osm-point"}
+    assert {r.source for r in rows} == {"osm"}
 
 
 # --- download/cache seam (no network; injected fetcher) ------------------------

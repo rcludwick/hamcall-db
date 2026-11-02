@@ -13,11 +13,16 @@ DERIVATIVE DATABASE of OpenStreetMap data and are therefore distributed under
 the Open Database License (ODbL) v1.0, NOT under the CC BY-NC 4.0 terms that
 cover the rest of the hamcall-db project.
 
-  © OpenStreetMap contributors.
-  Data available under the Open Database License (ODbL) v1.0:
-  https://opendatacommons.org/licenses/odbl/1-0/
+  © OpenStreetMap contributors (https://www.openstreetmap.org/copyright).
+  Data available under the Open Database License (ODbL) v1.0,
+  https://opendatacommons.org/licenses/odbl/1-0/.
+  Extracts processed by Geofabrik GmbH.
   Any rights in individual contents of the database are licensed under the
   Database Contents License: https://opendatacommons.org/licenses/dbcl/1-0/
+
+Only rows with source='osm' are derived from OpenStreetMap. The `reference`
+column is a Parks on the Air park identifier and is included solely as a join
+key.
 
 What ODbL requires of you when you redistribute these files (summary — the
 full text at the URL above governs):

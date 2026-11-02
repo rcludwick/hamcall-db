@@ -19,7 +19,8 @@ from pathlib import Path
 
 import pytest
 
-from hamcall_db.sources.ised import IsedSource, parse_dir, parse_file
+from hamcall_db.history import HistoryRow, diff_history
+from hamcall_db.sources.ised import IsedSource, fsa, parse_dir, parse_file, scrub_prior_history
 
 FIXTURES = Path(__file__).parent / "fixtures" / "ised"
 AMATEUR_TXT = FIXTURES / "amateur.txt"
@@ -86,7 +87,7 @@ def test_individual_maps_name_and_location() -> None:
     assert va1aa.last_name == "McFadden"
     assert va1aa.city == "MIDDLE SACKVILLE"
     assert va1aa.state == "NS"  # province maps to state
-    assert va1aa.postal_code == "B4E 2X8"
+    assert va1aa.postal_code == "B4E"  # FSA only (hdb-isedfsa)
     assert va1aa.source == "ised"
     assert va1aa.synced_at == "2026-11-01"
 
@@ -141,7 +142,7 @@ def test_club_call_uses_club_name_and_club_location() -> None:
     assert ve3rac.last_name == "RADIO AMATEUR DU / OF CANADA INC."
     assert ve3rac.city == "OTTAWA"
     assert ve3rac.state == "ON"
-    assert ve3rac.postal_code == "K1G 0Z5"
+    assert ve3rac.postal_code == "K1G"  # FSA only (hdb-isedfsa)
     assert ve3rac.license_class == "Basic, Morse (12 wpm), Advanced"
 
     va1hrh = out["VA1HRH"]
@@ -250,9 +251,11 @@ def _ised_row(
     street: str = "",
     city: str = "",
     province: str = "ON",
+    postal: str = "",
     club: str = "",
     club_street: str = "",
     club_city: str = "",
+    club_postal: str = "",
 ) -> str:
     """Build one fixed-width amateur.txt row at readme_amat.txt's 1-based columns."""
     cols = [
@@ -262,11 +265,18 @@ def _ised_row(
         (80, 70, street),
         (151, 35, city),
         (187, 2, province),
+        (190, 10, postal),
         (201, 1, "A"),
     ]
     width = 210
     if club:
-        cols += [(211, 70, club), (353, 70, club_street), (424, 35, club_city), (460, 2, province)]
+        cols += [
+            (211, 70, club),
+            (353, 70, club_street),
+            (424, 35, club_city),
+            (460, 2, province),
+            (463, 7, club_postal),
+        ]
         width = 469
     line = [" "] * width
     for start, length, value in cols:
@@ -333,3 +343,119 @@ def test_town_typed_as_street_keeps_city(tmp_path: Path) -> None:
     )
     assert out["VA1ZZD"].city == "INGONISH BEACH"
     assert out["VA7ZZE"].city == "100 MILE HOUSE"
+
+
+# --- postal code published as the 3-character FSA only (hdb-isedfsa) ---------------
+# Synthetic codes and names only: the repo is public.
+
+
+def test_personal_postal_code_is_truncated_to_fsa(tmp_path: Path) -> None:
+    out = _parse_rows(
+        tmp_path,
+        _ised_row("VA3ZZF", given="Jane", surname="Sample", city="OTTAWA", postal="X1X 1X1"),
+    )
+    assert out["VA3ZZF"].postal_code == "X1X"
+
+
+def test_club_postal_code_is_truncated_to_fsa(tmp_path: Path) -> None:
+    out = _parse_rows(
+        tmp_path,
+        _ised_row(
+            "VE3ZZG",
+            given="John",
+            surname="Example",
+            postal="X2X 2X2",
+            club="SAMPLE AMATEUR RADIO CLUB",
+            club_city="OTTAWA",
+            club_postal="X3X 3X3",
+        ),
+    )
+    # The club's code, not the trustee's, and only its FSA.
+    assert out["VE3ZZG"].postal_code == "X3X"
+
+
+def test_malformed_postal_code_is_null(tmp_path: Path) -> None:
+    out = _parse_rows(
+        tmp_path,
+        _ised_row("VA3ZZH", surname="Sample", postal="12345"),
+        _ised_row("VA3ZZI", surname="Sample", postal="USA 1X1"),
+    )
+    assert out["VA3ZZH"].postal_code is None
+    assert out["VA3ZZI"].postal_code is None
+
+
+@pytest.mark.parametrize(
+    ("raw", "expected"),
+    [
+        ("X1X 1X1", "X1X"),
+        ("x1x1x1", "X1X"),
+        ("X1X-1X1", "X1X"),
+        (" X1X ", "X1X"),
+        ("X1X", "X1X"),
+        ("X1X 1X", "X1X"),  # typo in the unpublished tail: the FSA is still real
+        ("X1X 1XX", "X1X"),
+        ("1X1 X1X", None),
+        ("XX1 1X1", None),
+        ("06111", None),
+        ("", None),
+        (None, None),
+    ],
+)
+def test_fsa(raw: str | None, expected: str | None) -> None:
+    assert fsa(raw) == expected
+
+
+def test_address_guard_still_works_with_postal_code(tmp_path: Path) -> None:
+    out = _parse_rows(
+        tmp_path,
+        _ised_row(
+            "VA3ZZJ", surname="Sample", street="100 FAKE RD", city="100 FAKE RD", postal="X1X 1X1"
+        ),
+    )
+    assert out["VA3ZZJ"].city is None
+    assert out["VA3ZZJ"].postal_code == "X1X"
+
+
+def _hist(call: str, postal: str | None, *, valid_to: str | None = None, source="ised"):
+    return HistoryRow(
+        callsign=call,
+        valid_from="2026-01-01",
+        valid_to=valid_to,
+        last_name="Sample",
+        postal_code=postal,
+        grid="FN25",
+        source=source,
+    )
+
+
+def test_scrub_prior_history_truncates_every_ised_row() -> None:
+    prior = [
+        _hist("VA3ZZK", "X1X 1X1"),  # open
+        _hist("VA3ZZL", "X2X 2X2", valid_to="2026-06-01"),  # closed
+        _hist("VA3ZZM", "not a code"),
+        _hist("VA3ZZN", "X3X"),  # already truncated
+        _hist("W1ZZZ", "06111-1234", source="fcc"),  # other source: untouched
+    ]
+    out = {r.callsign: r for r in scrub_prior_history(prior)}
+    assert out["VA3ZZK"].postal_code == "X1X"
+    assert out["VA3ZZL"].postal_code == "X2X"
+    assert out["VA3ZZL"].valid_to == "2026-06-01"
+    assert out["VA3ZZM"].postal_code is None
+    assert out["VA3ZZN"].postal_code == "X3X"
+    assert out["W1ZZZ"].postal_code == "06111-1234"
+
+
+def test_scrubbed_prior_history_does_not_churn_unchanged_rows(tmp_path: Path) -> None:
+    from hamcall_db.models import Record
+
+    current = [
+        Record(callsign="VA3ZZK", last_name="Sample", postal_code="X1X", grid="FN25", source="ised")
+    ]
+    prior = [_hist("VA3ZZK", "X1X 1X1")]  # an older release's full code
+    night1 = diff_history(scrub_prior_history(prior), current, as_of="2026-11-02")
+    night2 = diff_history(scrub_prior_history(night1), current, as_of="2026-11-03")
+    for history in (night1, night2):
+        assert len(history) == 1
+        assert history[0].valid_from == "2026-01-01"
+        assert history[0].valid_to is None
+        assert history[0].postal_code == "X1X"

@@ -31,6 +31,13 @@ from third parties, and this file contains none.
 RefCheck.Radio was considered and rejected: it publishes no D-Star modes at all,
 and its own footer credits DVRef, so it is downstream of the source that stopped.
 
+Rights: no licence stated
+-------------------------
+Pi-Star publishes its host files with no licence or terms of use. Rows from here are
+therefore NOT CC BY: they carry ``license = "none-stated"`` (derived from
+``source = "dextra"``, see :data:`hamcall_db.reflectors.SOURCE_LICENSES`) and are
+redistributed as facts, with no rights granted beyond what Pi-Star provides.
+
 Deduplicating against XLX — by ADDRESS, never by name
 -----------------------------------------------------
 This file lists both kinds of reflector under XRF names:

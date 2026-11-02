@@ -55,6 +55,8 @@ differs per protocol because the protocols genuinely differ.
   "sponsor": "N7MKY",
   "dashboard": "http://xlx.n7mky.com",
   "source": "xlx",
+  "license": "none-stated",
+  "alias_source": "pistar",
   "dial": {
     "kind": "dextra",
     "host": "45.56.69.219",
@@ -77,7 +79,9 @@ differs per protocol because the protocols genuinely differ.
 | `country` | no | ISO-ish country code or name, verbatim from upstream. |
 | `sponsor` | no | Who runs it. |
 | `dashboard` | no | Web dashboard URL. |
-| `source` | yes | Which importer produced the row (`xlx`, `dvref`, …). Provenance, for debugging a wrong entry. |
+| `source` | yes | Which importer produced the row (`xlx`, `dextra`, `dvref`, …). Provenance, for debugging a wrong entry. |
+| `license` | yes | The licence this row is under, derived from `source`: `CC-BY-4.0` for `dvref` rows, `none-stated` for `xlx` and `dextra` rows, whose publishers state no licence. See "Licence". |
+| `alias_source` | no | Where the REF/DCS names in `aliases` came from, when any did: `pistar` (the Pi-Star DPlus and DCS host files). |
 | `system` | no | Which DMR network a server belongs to; **DMR only**. Present on every `dmr` row, absent on every other network. Repeated in `dial.system`. |
 | `talkgroups` | no | Path of **our mirror** of that network's talkgroup list, relative to the API root; **DMR only**, and absent until the network has been mirrored. Not the same thing as `dial.talkgroups_url` — see "DMR talkgroups". |
 | `dial` | no | How to connect. **Absent means listed-but-not-dialable** — see below. |
@@ -256,7 +260,7 @@ practical problem. But if you need the current list to the minute — a client t
 about to key up on a talkgroup a sysop added this morning — follow `talkgroups_url` to
 DVRef, which is exactly why that field stays on every row.
 
-**Licence, the same as everything else here: CC BY 4.0.** The talkgroup files carry
+**Licence: CC BY 4.0**, because every talkgroup list comes from DVRef. The talkgroup files carry
 `license`, `attribution` and `modifications` inline like every other file, and
 attribution is required if you redistribute them.
 
@@ -366,10 +370,25 @@ harder costs bandwidth and buys nothing, and there is no SLA here to lean on.
 
 ## Licence
 
-The published data is **CC BY 4.0** — attribution required, commercial use
-permitted, and you must indicate modification. Every file carries `license`,
-`attribution` and `modifications` inline so the terms cannot get separated from
-the data. See `LICENSE-CC-BY`.
+The licence is **per row**, because only one upstream licenses its data:
+
+* rows with `source: "dvref"`, and hamcall-db's own contributions (schema,
+  selection, derived fields), are **CC BY 4.0**: attribution required,
+  commercial use permitted, and you must indicate modification. These rows say
+  `"license": "CC-BY-4.0"`.
+* rows with `source: "xlx"` (the XLX registry) or `source: "dextra"` (the Pi-Star
+  DExtra host file) say `"license": "none-stated"`. Those publishers state no
+  licence; the rows are redistributed as facts, and no rights are granted beyond
+  those the upstream provides. REF/DCS names in `aliases` come from the Pi-Star
+  DPlus and DCS host files, also unlicensed, and the row marks them with
+  `alias_source: "pistar"`.
+
+A file's top-level `license` is `"CC BY 4.0"` when every row in it is CC BY, and
+`"mixed — see per-row license and NOTICE"` otherwise (`dstar.json`,
+`reflectors.json`, `index.json`), in which case it also carries a `rights` note.
+The manifest repeats each network file's label under `networks.<name>.license`.
+Every file carries `attribution` and `modifications` inline so the terms cannot
+get separated from the data. See `LICENSE-CC-BY`.
 
 One of those modifications is substantive: **email addresses are stripped from the
 free-text fields** (`name`, `sponsor`, `description`) and replaced with
@@ -379,6 +398,6 @@ exposure from the same text rendered on a dashboard page. It is the same reasoni
 truncates person grids to four characters and keeps street addresses out of the callsign
 dataset entirely.
 
-This is deliberately **not** the CC BY-NC licence on hamcall-db's callsign
-dataset. Merging the two would impose a non-commercial restriction that CC BY 4.0
+None of this is the CC BY-NC licence on hamcall-db's callsign dataset. Merging
+the DVRef rows into it would impose a non-commercial restriction that CC BY 4.0
 grants away, which the licence forbids. Keep them apart.

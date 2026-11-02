@@ -59,7 +59,7 @@ These are non-negotiable because consumers depend on them. If a change would bre
 - **No street addresses** in published output. Ever. Use them at build time for geocoding, then discard.
 - **Grid is 4-char only** (e.g. `DN13`). Never publish 6-char subsquare. Truncate after geocoding. See mem-e3fd.
 - **NOTICE file** must list every upstream source's license terms. Recheck before adding a new source. See mem-371f.
-- **Dataset is CC BY-NC 4.0; code is MIT** (decided 2026-06-16, au-f0ea). Published artifacts (Parquet + SQLite) are CC BY-NC 4.0 (non-commercial; consistent with cty.dat). Build code is MIT (`LICENSE`). Redistributing the data still requires the upstream attributions in NOTICE. Keep LICENSE/NOTICE/README in sync.
+- **Dataset is CC BY-NC 4.0; code is MIT** (decided 2026-06-16, au-f0ea). Published artifacts (Parquet + SQLite) are CC BY-NC 4.0 (non-commercial; required by ISED's non-commercial terms; POTA terms unconfirmed). Build code is MIT (`LICENSE`). Redistributing the data still requires the upstream attributions in NOTICE. Keep LICENSE/NOTICE/README in sync.
 
 ## Architecture overview
 

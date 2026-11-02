@@ -320,7 +320,11 @@
             "type": "string"
           },
           "license": {
-            "const": "CC BY 4.0",
+            "description": "`CC BY 4.0` when every row in the file is CC BY; `mixed \u2014 see per-row license and NOTICE` when any row's per-row `license` is something else.",
+            "enum": [
+              "CC BY 4.0",
+              "mixed \u2014 see per-row license and NOTICE"
+            ],
             "type": "string"
           },
           "license_url": {
@@ -339,6 +343,14 @@
                 },
                 "generated": {
                   "format": "date",
+                  "type": "string"
+                },
+                "license": {
+                  "description": "That network file's `license`.",
+                  "enum": [
+                    "CC BY 4.0",
+                    "mixed \u2014 see per-row license and NOTICE"
+                  ],
                   "type": "string"
                 },
                 "source": {
@@ -389,6 +401,10 @@
             "description": "One entry per network, keyed by network name.",
             "type": "object"
           },
+          "rights": {
+            "description": "Present on mixed files: what is and is not licensed, in words.",
+            "type": "string"
+          },
           "schema_version": {
             "const": 1,
             "type": "integer"
@@ -424,7 +440,11 @@
             "type": "string"
           },
           "license": {
-            "const": "CC BY 4.0",
+            "description": "`CC BY 4.0` when every row in the file is CC BY; `mixed \u2014 see per-row license and NOTICE` when any row's per-row `license` is something else.",
+            "enum": [
+              "CC BY 4.0",
+              "mixed \u2014 see per-row license and NOTICE"
+            ],
             "type": "string"
           },
           "license_url": {
@@ -443,6 +463,10 @@
               "$ref": "#/components/schemas/Reflector"
             },
             "type": "array"
+          },
+          "rights": {
+            "description": "Present on mixed files: what is and is not licensed, in words.",
+            "type": "string"
           },
           "schema_version": {
             "const": 1,
@@ -464,6 +488,13 @@
       "Reflector": {
         "description": "One reflector: the searchable envelope plus its `dial`.",
         "properties": {
+          "alias_source": {
+            "description": "Where the REF/DCS names in `aliases` came from, when any did: `pistar` (the Pi-Star DPlus and DCS host files, compiled from dstargateway.org and xreflector.net DNS; no stated licence).",
+            "examples": [
+              "pistar"
+            ],
+            "type": "string"
+          },
           "aliases": {
             "description": "Other names that address THIS reflector \u2014 e.g. the XRF-form name an XLX reflector answers to. Searchable, and never a deduplication key: XRF### and XLX### are different machines that merely share a numbering scheme.",
             "examples": [
@@ -499,6 +530,14 @@
             ],
             "type": "string"
           },
+          "license": {
+            "description": "The licence THIS row is under, derived from `source`. `CC-BY-4.0` for DVRef rows; `none-stated` for rows from the XLX registry and the Pi-Star host files, whose publishers state no licence \u2014 those are redistributed as facts and no rights are granted beyond those the upstream provides. A client that must redistribute under CC BY should keep only `CC-BY-4.0` rows.",
+            "examples": [
+              "CC-BY-4.0",
+              "none-stated"
+            ],
+            "type": "string"
+          },
           "name": {
             "description": "Display name; falls back to `id` when upstream has none.",
             "type": "string"
@@ -516,7 +555,8 @@
             "description": "Which importer produced the row: provenance, for debugging a bad entry.",
             "examples": [
               "xlx",
-              "dvref"
+              "dvref",
+              "dextra"
             ],
             "type": "string"
           },
@@ -543,7 +583,8 @@
           "network",
           "id",
           "name",
-          "source"
+          "source",
+          "license"
         ],
         "type": "object"
       },
@@ -570,7 +611,11 @@
             "type": "string"
           },
           "license": {
-            "const": "CC BY 4.0",
+            "description": "`CC BY 4.0` when every row in the file is CC BY; `mixed \u2014 see per-row license and NOTICE` when any row's per-row `license` is something else.",
+            "enum": [
+              "CC BY 4.0",
+              "mixed \u2014 see per-row license and NOTICE"
+            ],
             "type": "string"
           },
           "license_url": {
@@ -593,6 +638,10 @@
               "$ref": "#/components/schemas/Reflector"
             },
             "type": "array"
+          },
+          "rights": {
+            "description": "Present on mixed files: what is and is not licensed, in words.",
+            "type": "string"
           },
           "schema_version": {
             "const": 1,
@@ -677,7 +726,11 @@
             "type": "string"
           },
           "license": {
-            "const": "CC BY 4.0",
+            "description": "`CC BY 4.0` when every row in the file is CC BY; `mixed \u2014 see per-row license and NOTICE` when any row's per-row `license` is something else.",
+            "enum": [
+              "CC BY 4.0",
+              "mixed \u2014 see per-row license and NOTICE"
+            ],
             "type": "string"
           },
           "license_url": {
@@ -690,6 +743,10 @@
           },
           "network": {
             "const": "dmr",
+            "type": "string"
+          },
+          "rights": {
+            "description": "Present on mixed files: what is and is not licensed, in words.",
             "type": "string"
           },
           "schema_version": {
@@ -733,10 +790,10 @@
     "contact": {
       "url": "https://github.com/rcludwick/hamcall-db"
     },
-    "description": "A directory of digital-voice reflectors \u2014 D-Star, M17, YSF, NXDN, P25 and URF \u2014 rebuilt nightly from upstream and served as static files, so a client picking a reflector needs no API key and no rate-limit budget.\n\nEvery entry is a common envelope plus a discriminated `dial` object. An absent `dial` means the entry is listed but not dialable from this data; no default address is ever substituted. Unknown `network` or `dial.kind` values must be ignored gracefully \u2014 that is the extension mechanism, and a client must never attempt to connect to a kind it does not understand.\n\nAttribution is required: Reflector data provided by DVRef \u2014 https://dvref.com/. XLX reflector data from the XLX registry maintained by Luc Engelmann, LX1IQ (http://xlxapi.rlx.lu/).\n\nModifications: Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
+    "description": "A directory of digital-voice reflectors \u2014 D-Star, M17, YSF, NXDN, P25 and URF \u2014 rebuilt nightly from upstream and served as static files, so a client picking a reflector needs no API key and no rate-limit budget.\n\nEvery entry is a common envelope plus a discriminated `dial` object. An absent `dial` means the entry is listed but not dialable from this data; no default address is ever substituted. Unknown `network` or `dial.kind` values must be ignored gracefully \u2014 that is the extension mechanism, and a client must never attempt to connect to a kind it does not understand.\n\nRights: hamcall-db's own contributions (schema, selection, derived fields) and all DVRef-sourced rows are CC BY 4.0. Rows from the XLX registry and Pi-Star host files are factual listings whose publishers state no licence; they are redistributed as facts and no rights are granted beyond those the upstream provides. Each row's `license` field says which applies.\n\nAttribution is required: Reflector data provided by DVRef \u2014 https://dvref.com/. XLX reflector data from the XLX registry maintained by Luc Engelmann, LX1IQ (http://xlxapi.rlx.lu/). Standalone XRF reflector data from the Pi-Star DExtra host file (http://www.pistar.uk/downloads/DExtra_Hosts.txt). REF and DCS reflector names from the Pi-Star DPlus and DCS host files (http://www.pistar.uk/downloads/), which compile them from dstargateway.org and xreflector.net DNS.\n\nModifications: Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
     "license": {
-      "identifier": "CC-BY-4.0",
-      "name": "CC BY 4.0"
+      "name": "mixed \u2014 see per-row license and NOTICE",
+      "url": "https://github.com/rcludwick/hamcall-db/blob/main/NOTICE"
     },
     "summary": "Digital-voice reflector directory as static JSON. No token, no account.",
     "title": "hamcall-db reflector directory",

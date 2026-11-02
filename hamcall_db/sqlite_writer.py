@@ -44,6 +44,7 @@ from hamcall_db.reflectors import (
     ReflectorRecord,
     TalkgroupRecord,
 )
+from hamcall_db.sources.osm_grids import require_osm_only
 from hamcall_db.sources.padus_grids import PARK_GRID_SCHEMA_COLUMNS, ParkGridRecord
 from hamcall_db.sources.pota import PARK_SCHEMA_COLUMNS, ParkRecord
 from hamcall_db.sources.sota import SUMMIT_SCHEMA_COLUMNS, SummitRecord
@@ -559,7 +560,7 @@ def write_pota_park_grids_sqlite(grids: Iterable[ParkGridRecord], out_path: Path
 # (hamcall-db-pota-park-grids-osm-YYYY-MM-DD.db) in a DEDICATED table, ``pota_park_grids_osm``
 # — DELIBERATELY a different table name from the CC-BY-NC ``pota_park_grids`` so the two can
 # never be confused or accidentally co-located. Same four-string schema as PAD-US (reference
-# FK, 4-char grid, source ('osm'/'osm-point'), confidence). Indexed on ``reference``.
+# FK, 4-char grid, source (always 'osm'), confidence). Indexed on ``reference``.
 # (c) OpenStreetMap contributors, ODbL.
 _POTA_PARK_GRIDS_OSM_DDL = (
     "CREATE TABLE IF NOT EXISTS pota_park_grids_osm (\n"
@@ -582,6 +583,7 @@ def write_pota_park_grids_osm_sqlite(grids: Iterable[ParkGridRecord], out_path: 
     taints the CC BY-NC artifact. Idempotent — re-running replaces the rows.
     """
     grids = list(grids)
+    require_osm_only(grids)  # only OSM-derived rows may be published under ODbL (hdb-odbl)
     out = Path(out_path)
     out.parent.mkdir(parents=True, exist_ok=True)
 
@@ -604,10 +606,12 @@ def write_pota_park_grids_osm_sqlite(grids: Iterable[ParkGridRecord], out_path: 
 
 
 # Reflector directory table (hdb-refl): one row per (network, id) reflector. Lives in its
-# OWN .db file under CC BY 4.0 — DVRef's terms permit commercial reuse, and the CC BY-NC
-# artifacts must never absorb it (CC BY 4.0 s2(a)(5)(B) forbids adding that restriction).
-# `modules` is stored as a comma-separated string: SQLite has no array type, and a join
-# table for at most a handful of single letters buys nothing a consumer would use.
+# OWN .db file (CC BY 4.0 for DVRef rows and this project's contributions; XLX/Pi-Star
+# rows labelled per row, NOTICE sources 11-14) — DVRef's terms permit commercial reuse,
+# and the CC BY-NC artifacts must never absorb it (CC BY 4.0 s2(a)(5)(B) forbids adding
+# that restriction). `modules` is stored as a comma-separated string: SQLite has no array
+# type, and a join table for at most a handful of single letters buys nothing a consumer
+# would use.
 # Named apart from the callsign table's _INT_COLUMNS on purpose: rebinding that name
 # here would silently change what `_col_def` (used by the current/history DDL above)
 # treats as an integer for any later caller.
@@ -637,7 +641,7 @@ def _reflector_payload(reflector: ReflectorRecord) -> tuple:
 
 
 def write_reflectors_sqlite(reflectors: Iterable[ReflectorRecord], out_path: Path) -> int:
-    """Write/refresh the ``reflectors`` table in a SEPARATE CC BY 4.0 SQLite file.
+    """Write/refresh the ``reflectors`` table in a SEPARATE reflector SQLite file.
 
     Returns the row count. This writer targets the reflector artifact's OWN ``.db`` and
     creates ONLY the ``reflectors`` table — it never creates or touches the CC-BY-NC
@@ -656,8 +660,9 @@ def write_reflectors_sqlite(reflectors: Iterable[ReflectorRecord], out_path: Pat
     already share it with a ``dmr_talkgroups`` table this same build is about to
     (re)write right after this call, and that table must be left alone.
 
-    :func:`write_dmr_talkgroups_sqlite` adds a second table to the SAME file; both are
-    DVRef's CC BY 4.0 data, which is exactly why they may share one.
+    :func:`write_dmr_talkgroups_sqlite` adds a second table to the SAME file. Neither
+    carries a non-commercial restriction (DVRef rows are CC BY 4.0; XLX/Pi-Star rows state
+    no licence and are labelled per row), which is why they may share one.
     """
     reflectors = list(reflectors)
     out = Path(out_path)
@@ -681,10 +686,11 @@ def write_reflectors_sqlite(reflectors: Iterable[ReflectorRecord], out_path: Pat
     return len(reflectors)
 
 
-# DMR talkgroups (hdb-refl-dmrtg): a child table of `reflectors`, in the SAME CC BY 4.0
-# file. `system` + `tg` is the key, and there is no foreign key to `reflectors`: a
-# network's talkgroups are published even on a night when the server rows for it were
-# kept from a previous file, and a strict FK would drop rows for that.
+# DMR talkgroups (hdb-refl-dmrtg): a child table of `reflectors`, in the SAME reflector
+# file (talkgroups are all DVRef data, CC BY 4.0). `system` + `tg` is the key, and there
+# is no foreign key to `reflectors`: a network's talkgroups are published even on a night
+# when the server rows for it were kept from a previous file, and a strict FK would drop
+# rows for that.
 _TALKGROUPS_DDL = (
     "CREATE TABLE IF NOT EXISTS dmr_talkgroups (\n"
     + ",\n".join(f"  {c} " + ("INTEGER" if c == "tg" else "TEXT") for c in TALKGROUP_SCHEMA_COLUMNS)
@@ -696,8 +702,8 @@ _TALKGROUPS_INDEX_DDL = "CREATE INDEX IF NOT EXISTS idx_dmr_talkgroups_tg ON dmr
 def write_dmr_talkgroups_sqlite(talkgroups: Iterable[TalkgroupRecord], out_path: Path) -> int:
     """Write/refresh the ``dmr_talkgroups`` table in the reflector artifact's ``.db``.
 
-    Returns the row count. Same file as :func:`write_reflectors_sqlite` and the same
-    CC BY 4.0 terms; it creates ONLY this table and never touches the CC BY-NC ones.
+    Returns the row count. Same file as :func:`write_reflectors_sqlite`; the talkgroups
+    are DVRef's CC BY 4.0 data. It creates ONLY this table and never touches the CC BY-NC ones.
     Idempotent — re-running replaces the rows.
 
     The index is on ``tg`` because the interesting question a talkgroup table answers is

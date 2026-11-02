@@ -12,12 +12,13 @@ Two datasets, deliberately kept apart because they carry different licences:
     Digital-voice reflectors for D-Star, M17, YSF, NXDN, P25 and URF, served as
     **static JSON**. No API key, no account, no rate limit.
 
-    **CC BY 4.0** — commercial use permitted.
+    **CC BY 4.0** for DVRef rows (commercial use permitted); XLX and Pi-Star
+    rows carry no stated licence. Each row says which in its `license` field.
 
 -   :material-card-account-details: **[Callsign dataset](callsigns.md)**
 
-    Normalized licensee records from national regulators, plus POTA parks and
-    SOTA summits, published as Parquet and SQLite through GitHub Releases.
+    Normalized licensee records from national regulators, plus POTA parks,
+    published as Parquet and SQLite through GitHub Releases.
 
     **CC BY-NC 4.0** — non-commercial.
 

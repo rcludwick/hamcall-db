@@ -16,6 +16,7 @@ import sqlite3
 from pathlib import Path
 
 import polars as pl
+import pytest
 
 from hamcall_db.sources.padus_grids import ParkGridRecord
 from hamcall_db.sqlite_writer import (
@@ -27,7 +28,7 @@ from hamcall_db.writer import write_pota_park_grids_osm_parquet
 _OSM_ROWS = [
     ParkGridRecord(reference="DE-0001", grid="JN57", source="osm", confidence="high"),
     ParkGridRecord(reference="DE-0001", grid="JN58", source="osm", confidence="high"),
-    ParkGridRecord(reference="DE-9999", grid="JO50", source="osm-point", confidence="low"),
+    ParkGridRecord(reference="DE-9999", grid="JO50", source="osm", confidence="medium"),
 ]
 
 
@@ -37,7 +38,7 @@ def test_osm_parquet_writes_separate_file_with_mirrored_schema(tmp_path: Path) -
     assert count == 3
     frame = pl.read_parquet(out)
     assert frame.columns == ["reference", "grid", "source", "confidence"]
-    assert set(frame["source"].to_list()) == {"osm", "osm-point"}
+    assert set(frame["source"].to_list()) == {"osm"}
 
 
 def test_osm_sqlite_uses_dedicated_table_name(tmp_path: Path) -> None:
@@ -57,7 +58,7 @@ def test_osm_sqlite_uses_dedicated_table_name(tmp_path: Path) -> None:
             "SELECT reference, grid, source, confidence FROM pota_park_grids_osm ORDER BY grid"
         ).fetchall()
         assert rows[0] == ("DE-0001", "JN57", "osm", "high")
-        assert ("DE-9999", "JO50", "osm-point", "low") in rows
+        assert ("DE-9999", "JO50", "osm", "medium") in rows
     finally:
         con.close()
 
@@ -120,3 +121,25 @@ def test_osm_sqlite_idempotent_refresh(tmp_path: Path) -> None:
         assert n == 3  # not doubled
     finally:
         con.close()
+
+
+# --- hdb-odbl: the ODbL writers refuse anything that is not source='osm' ---------
+
+
+@pytest.mark.parametrize("bad_source", ["osm-point", "pota-point", "padus"])
+def test_osm_writers_reject_non_osm_rows(tmp_path: Path, bad_source: str) -> None:
+    # A POTA-derived point grid published under ODbL would relabel POTA data (non-commercial
+    # use only) with rights we don't hold and credit it to OSM. Both writers fail loudly and
+    # write nothing.
+    rows = [
+        *_OSM_ROWS,
+        ParkGridRecord(reference="DE-8888", grid="JO40", source=bad_source, confidence="low"),
+    ]
+    pq = tmp_path / "osm.parquet"
+    db = tmp_path / "osm.db"
+    with pytest.raises(ValueError, match="source='osm'"):
+        write_pota_park_grids_osm_parquet(rows, pq)
+    with pytest.raises(ValueError, match="source='osm'"):
+        write_pota_park_grids_osm_sqlite(rows, db)
+    assert not pq.exists()
+    assert not db.exists()

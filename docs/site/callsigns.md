@@ -41,8 +41,10 @@ privacy interest.
 
 ## Companion datasets
 
-**POTA parks** and **SOTA summits** ship as separate additive files — places are
-not licensees, so they do not touch the callsign schema. Park boundaries are
+**POTA parks** ship as separate additive files — places are not licensees, so
+they do not touch the callsign schema. **SOTA summits** use the same shape but
+are built only in opt-in local builds and never published (SOTA publishes no
+licence, and its API terms forbid commercial use). Park boundaries are
 resolved to the *set* of grid squares each park actually intersects, rather than
 one indicative point.
 
@@ -56,7 +58,9 @@ one indicative point.
 
 ## Licence
 
-**CC BY-NC 4.0** — non-commercial, inherited from `cty.dat` and other upstreams.
+**CC BY-NC 4.0** — non-commercial, inherited from ISED's non-commercial
+reproduction terms (POTA, which publishes no terms, is also used
+non-commercially).
 Redistributing it means satisfying every upstream attribution simultaneously; the
 simplest way to comply is to ship the
 [NOTICE](https://github.com/rcludwick/hamcall-db/blob/main/NOTICE) file alongside

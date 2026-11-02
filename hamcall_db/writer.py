@@ -20,6 +20,7 @@ from hamcall_db.reflectors import (
     ReflectorRecord,
     TalkgroupRecord,
 )
+from hamcall_db.sources.osm_grids import require_osm_only
 from hamcall_db.sources.padus_grids import PARK_GRID_SCHEMA_COLUMNS, ParkGridRecord
 from hamcall_db.sources.pota import PARK_SCHEMA_COLUMNS, ParkRecord
 from hamcall_db.sources.sota import SUMMIT_SCHEMA_COLUMNS, SummitRecord
@@ -123,15 +124,18 @@ def write_pota_park_grids_parquet(grids: Iterable[ParkGridRecord], out_path: Pat
 # PAD-US set, but written to a SEPARATE ODbL-licensed file —
 # hamcall-db-pota-park-grids-osm-YYYY-MM-DD.parquet — NEVER mixed into the CC BY-NC artifact.
 # OSM-derived grids form an ODbL derivative database; share-alike is incompatible with the
-# main artifact's CC BY-NC terms, so they ship segregated (source='osm'/'osm-point').
+# main artifact's CC BY-NC terms, so they ship segregated (source is always 'osm').
 def write_pota_park_grids_osm_parquet(grids: Iterable[ParkGridRecord], out_path: Path) -> int:
     """Write OSM-derived `ParkGridRecord`s to `out_path` as Parquet. Returns the row count.
 
     SEPARATE ODbL artifact (hamcall-db-pota-park-grids-osm-YYYY-MM-DD.parquet): one row per
     (non-US park reference, 4-char grid) intersected from OpenStreetMap boundaries. License
     segregation: this is an ODbL derivative database and is NEVER written into the CC BY-NC
-    callsign/parks/PAD-US files. (c) OpenStreetMap contributors, ODbL.
+    callsign/parks/PAD-US files. (c) OpenStreetMap contributors, ODbL. Only ``source="osm"``
+    rows are accepted; anything else raises ``ValueError`` (hdb-odbl).
     """
+    grids = list(grids)
+    require_osm_only(grids)
     rows = [asdict(g) for g in grids]
     frame = pl.DataFrame(rows, schema=_PARK_GRID_SCHEMA)
     out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -178,11 +182,13 @@ def read_history_parquet(in_path: Path) -> list[HistoryRow]:
 
 
 # Reflector directory artifact (hdb-refl): a SEPARATE reference dataset — reflectors are
-# places, not licensees — written to its OWN file under a DIFFERENT licence. DVRef's data
-# is CC BY 4.0, and CC BY 4.0 s2(a)(5)(B) forbids adding restrictions the licence grants
-# away, so folding these rows into the CC BY-NC artifacts would be a licence violation,
-# not merely untidy. Same segregation discipline as the ODbL park grids, opposite
-# direction: there the upstream was MORE restrictive, here it is LESS.
+# places, not licensees — written to its OWN file under DIFFERENT terms: CC BY 4.0 for
+# DVRef rows and this project's contributions, XLX/Pi-Star rows labelled per row
+# (`license`: CC-BY-4.0 / none-stated; NOTICE sources 11-14). DVRef's data is CC BY 4.0,
+# and CC BY 4.0 s2(a)(5)(B) forbids adding restrictions the licence grants away, so
+# folding these rows into the CC BY-NC artifacts would be a licence violation, not merely
+# untidy. Same segregation discipline as the ODbL park grids, opposite direction: there
+# the upstream was MORE restrictive, here it is LESS.
 # `modules`, `aliases` and `requires` are string lists; `port`, `talkgroup` and `timeslot`
 # are Int64; the rest are strings.
 _REFLECTOR_INT_COLUMNS = ("port", "talkgroup", "timeslot")
@@ -205,7 +211,8 @@ _REFLECTOR_SCHEMA: dict[str, pl.DataType] = {
 def write_reflectors_parquet(reflectors: Iterable[ReflectorRecord], out_path: Path) -> int:
     """Write `ReflectorRecord`s to `out_path` as Parquet. Returns the row count.
 
-    SEPARATE CC BY 4.0 artifact (hamcall-db-reflectors-YYYY-MM-DD.parquet): one row per
+    SEPARATE reflector artifact (hamcall-db-reflectors-YYYY-MM-DD.parquet; CC BY 4.0 for
+    DVRef rows, per-row ``license`` for XLX/Pi-Star rows): one row per
     (network, id) reflector across D-Star, M17, YSF, NXDN, P25 and URF. NEVER written into
     the CC BY-NC callsign/parks files — see the module comment above. Attribution travels
     with the artifact in NOTICE and the release body.
@@ -220,7 +227,7 @@ def write_reflectors_parquet(reflectors: Iterable[ReflectorRecord], out_path: Pa
 # DMR talkgroups (hdb-refl-dmrtg): a CHILD table of the reflector directory, in its own
 # file for the same reason the park grids are — one row per (system, tg), which does not
 # fit beside one row per server without multiplying the server rows by every talkgroup
-# its network publishes. Same CC BY 4.0 terms as the reflector rows, and the same
+# its network publishes. All DVRef data, so CC BY 4.0 throughout, and the same
 # absolute bar on mixing either into the CC BY-NC artifacts.
 _TALKGROUP_SCHEMA: dict[str, pl.DataType] = {
     col: (pl.Int64 if col == "tg" else pl.Utf8) for col in TALKGROUP_SCHEMA_COLUMNS
