@@ -312,8 +312,11 @@ def _refresh_talkgroups(
             failed.append(f"dvref/talkgroups/{system}:empty")
             continue
 
-        # The fetch happened either way, and that is what the rotation turns on.
-        fetched[system] = source.synced_at or today.isoformat()
+        # The fetch happened either way, and that is what the rotation turns on. Dated
+        # from the build's ``today``, not the source's cache-file mtime: the cache lives
+        # under ``<work>/<today>/`` so the two agree in production, and only ``today``
+        # can be pinned by a caller.
+        fetched[system] = today.isoformat()
         if _unchanged(documents.get(system), rows):
             continue
 
