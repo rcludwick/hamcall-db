@@ -1,8 +1,8 @@
 """POTA park -> Maidenhead 4-char grid-set matching CORE (hdb-438b, PHASE 2: OSM/international).
 
 This is the ODbL/international counterpart to ``padus_grids`` (PHASE 1, US/PAD-US). It is the
-PURE-shapely heart of the NON-US park-grids feature: park<->OpenStreetMap-boundary matching
-and the point-grid fallback. It has NO GDAL/OSM-reader dependency and never touches the
+PURE-shapely heart of the NON-US park-grids feature: park<->OpenStreetMap-boundary matching.
+It has NO GDAL/OSM-reader dependency and never touches the
 network — the thin build-time adapter (``hamcall_db.sources.osm``) hands it shapely
 geometries read out of an OSM extract.
 
@@ -11,9 +11,15 @@ LICENSE SEGREGATION (non-negotiable)
 OpenStreetMap is an ODbL share-alike database; grids DERIVED from OSM boundaries form an
 ODbL DERIVATIVE DATABASE. They are therefore INCOMPATIBLE with the main CC BY-NC artifact
 and MUST ship in their OWN ODbL-licensed files (Parquet + SQLite), NEVER mixed into the
-callsign/.db or the PAD-US ``pota_park_grids`` set. The rows this module emits carry
-``source="osm"`` (polygon match) or ``source="osm-point"`` (point fallback) and are written
-ONLY into the separate ODbL artifact by the OSM writers. ``(c) OpenStreetMap contributors``,
+callsign/.db or the PAD-US ``pota_park_grids`` set. The rows this module emits ALWAYS carry
+``source="osm"`` (a matched OSM polygon) and are written ONLY into the separate ODbL artifact
+by the OSM writers.
+
+NO POINT FALLBACK (hdb-odbl). An unmatched park yields NO rows here. A point grid computed
+from the POTA park's own lat/lon is POTA data, not OpenStreetMap data: publishing it under
+ODbL would relabel POTA data (which we use non-commercially only) with rights we don't hold,
+and credit it to OSM. POTA point grids already ship, correctly licensed, in the CC BY-NC
+``pota_park_grids`` set as ``source="pota-point"``. ``(c) OpenStreetMap contributors``,
 ODbL — see the ODbL LICENSE file shipped with the OSM artifact and NOTICE (mem-371f).
 
 REUSE, not fork
@@ -38,10 +44,9 @@ Output rows
 schema is IDENTICAL to the PAD-US set (the files stay separate; only the schema is shared).
 
   * ``grid``       4-char Maidenhead field+square (never 6-char; mem-e3fd).
-  * ``source``     ``"osm"`` (intersected a matched OSM boundary) or ``"osm-point"``
-                   (point-grid fallback for unmatched/non-matching parks).
-  * ``confidence`` ``"high"`` (point-in-polygon AND name match), ``"medium"`` (point in a
-                   single polygon, name didn't match), ``"low"`` (point-grid fallback).
+  * ``source``     always ``"osm"`` (intersected a matched OSM boundary).
+  * ``confidence`` ``"high"`` (point-in-polygon AND name match) or ``"medium"`` (point in a
+                   single polygon, name didn't match).
 """
 
 from __future__ import annotations
@@ -55,29 +60,41 @@ from shapely.ops import unary_union
 
 # REUSE the shared, license-agnostic geometry core (the seam in padus_grids.py). We import
 # the helpers we need so callers can drive the OSM path without touching the PAD-US adapter.
-from hamcall_db.geocode import latlon_to_grid
 from hamcall_db.sources.padus_grids import (
     ParkGridRecord,
     grid_cells_for_geometry,
 )
 
 __all__ = [
+    "SOURCE_OSM",
     "OsmFeature",
+    "require_osm_only",
     "ParkGridRecord",
     "grid_cells_for_geometry",
     "match_park",
     "osm_park_grids",
 ]
 
-# OSM provenance tags. Rows from a matched OSM boundary; the point fallback keeps a distinct
-# tag so a consumer can tell a true boundary intersection from a single indicative point.
+# OSM provenance tag. The ONLY source value allowed in the ODbL outputs: every row is a grid
+# a matched OpenStreetMap boundary intersects. (There is deliberately no point-fallback tag.)
 SOURCE_OSM = "osm"
-SOURCE_OSM_POINT = "osm-point"
 
 # Fuzzy name-match acceptance threshold (SequenceMatcher ratio over normalized names). Tuned
 # the same as PAD-US — OSM ``name`` and the POTA park name often differ in punctuation /
 # language / suffix.
 _NAME_MATCH_THRESHOLD = 0.6
+
+
+def require_osm_only(grids: list[ParkGridRecord]) -> None:
+    """Raise ``ValueError`` if any row is not ``source="osm"``.
+
+    The ODbL writers call this before writing anything: a row with any other source (say a
+    POTA-derived point grid) would be republished under ODbL and credited to OpenStreetMap,
+    which we have no right to do (hdb-odbl). Failing loudly beats silently dropping rows.
+    """
+    bad = sorted({g.source for g in grids if g.source != SOURCE_OSM})
+    if bad:
+        raise ValueError(f"ODbL OSM park-grid output may only contain source='osm' rows; got {bad}")
 
 
 @dataclass(slots=True)
@@ -120,7 +137,7 @@ def _safe_contains(geom: BaseGeometry, point: Point) -> bool:
     ``contains`` is interior-only; a representative point dropped exactly on the outer ring
     would be missed, so we also accept ``intersects``. A point genuinely inside an inholding
     HOLE still returns False (shapely honors interior rings) — that is desired; the park
-    then has no containing feature for that point and other features / the fallback apply.
+    then has no containing feature for that point and other features may still match.
     Never raises on a malformed geometry (the build must not block).
     """
     try:
@@ -184,10 +201,10 @@ def osm_park_grids(
     """Compute the OSM ``pota_park_grids_osm`` rows for one POTA park.
 
     Matched OSM boundary -> the SET of 4-char grids it intersects (via the SHARED geometry
-    core, source ``"osm"``, confidence from ``match_park``). Unmatched/non-matching parks
-    degrade to a single point-grid row from the representative coordinate (source
-    ``"osm-point"``, ``"low"``). A park with neither a matched polygon nor a usable point
-    yields no rows. Rows are de-duped on grid and sorted for determinism.
+    core, source ``"osm"``, confidence from ``match_park``). A park with no matched OSM
+    polygon (or no usable point to match with) yields NO rows: there is no point fallback,
+    because a grid from the POTA park's own coordinate is POTA data, not OSM data. Rows are
+    de-duped on grid and sorted for determinism.
 
     EVERY row produced here is an ODbL derivative and is written ONLY into the separate ODbL
     artifact — never into the CC BY-NC files.
@@ -204,14 +221,5 @@ def osm_park_grids(
                 for g in sorted(grids)
             ]
 
-    # Point-grid fallback (unmatched parks). Stays in the ODbL file: it is the OSM-side
-    # answer for a non-US park, kept segregated from the PAD-US/CC-BY-NC set on purpose.
-    if lat is not None and lon is not None:
-        grid = latlon_to_grid(lat, lon)
-        return [
-            ParkGridRecord(
-                reference=reference, grid=grid, source=SOURCE_OSM_POINT, confidence="low"
-            )
-        ]
-
+    # No OSM polygon matched: emit nothing (never a POTA-derived point grid; hdb-odbl).
     return []

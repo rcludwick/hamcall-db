@@ -30,7 +30,7 @@ Responsibilities
                       WGS84 (EPSG:4326), so no reprojection is needed.
   * ``compute_osm_park_grids()`` — pure orchestration over a parks iterable: gate OUT US
                       parks, match each non-US park against the OSM features, intersect with
-                      the Maidenhead lattice, fall back to the point grid. Driven from
+                      the Maidenhead lattice; an unmatched park yields no rows. Driven from
                       injected features in tests, so it needs neither the GIS reader nor a
                       download.
 """
@@ -45,7 +45,7 @@ from email.utils import formatdate
 from pathlib import Path
 
 from hamcall_db.sources._gis import require_pyogrio
-from hamcall_db.sources.osm_grids import OsmFeature, ParkGridRecord, osm_park_grids
+from hamcall_db.sources.osm_grids import SOURCE_OSM, OsmFeature, ParkGridRecord, osm_park_grids
 from hamcall_db.sources.pota import ParkRecord
 
 __all__ = [
@@ -142,7 +142,7 @@ class OsmSource:
         """Probe for the GIS reader (pyogrio) WITHOUT downloading anything.
 
         Call this BEFORE :meth:`download`: the configured Geofabrik extracts are multi-GB, so
-        a build without the ``osm`` group must skip the download and degrade to point grids
+        a build without the ``osm`` group must skip the download and emit no OSM rows
         rather than pull gigabytes only to fail on the read (hdb-66be). Raises the actionable
         ``RuntimeError`` when pyogrio is absent.
         """
@@ -247,37 +247,28 @@ def compute_osm_park_grids(
     """Compute the OSM ``pota_park_grids_osm`` rows for every NON-US park.
 
     PHASE 2 gates OUT US parks entirely (they are owned by the PAD-US/CC-BY-NC set, so the
-    OSM artifact never overlaps them — not even a point fallback). Every other park is
+    OSM artifact never overlaps them). Every other park is
     matched against the OSM features and intersected with the Maidenhead lattice; an
-    unmatched non-US park degrades to the point-grid fallback inside ``osm_park_grids``. A
+    unmatched non-US park yields NO rows (no POTA-derived point fallback; hdb-odbl). A
     single park's failure NEVER blocks the build: each is guarded so a bad geometry or a
-    matching hiccup just falls back to (or omits) that park's rows. Returns the flat list of
-    rows for the OSM writers — ALL ODbL, written ONLY to the separate ODbL artifact.
+    matching hiccup just omits that park's rows. Returns the flat list of rows for the OSM
+    writers — ALL ``source="osm"``, written ONLY to the separate ODbL artifact. With no
+    features (OSM boundaries unavailable) the result is empty.
     """
     rows: list[ParkGridRecord] = []
     for park in parks:
         if _is_us_park(park):
             continue  # owned by the PAD-US set; excluded from the ODbL artifact
         try:
-            rows.extend(
-                osm_park_grids(
-                    reference=park.reference,
-                    name=park.name,
-                    lat=park.lat,
-                    lon=park.lon,
-                    features=features,
-                )
+            park_rows = osm_park_grids(
+                reference=park.reference,
+                name=park.name,
+                lat=park.lat,
+                lon=park.lon,
+                features=features,
             )
-        except Exception:  # never block the build on one park
-            # Best-effort point fallback so the park still appears if it has a coord.
-            if park.lat is not None and park.lon is not None:
-                rows.extend(
-                    osm_park_grids(
-                        reference=park.reference,
-                        name=park.name,
-                        lat=park.lat,
-                        lon=park.lon,
-                        features=[],
-                    )
-                )
+        except Exception:  # never block the build on one park; it just gets no OSM rows
+            continue
+        # Belt and braces: only OSM-derived rows may reach the ODbL artifact (hdb-odbl).
+        rows.extend(r for r in park_rows if r.source == SOURCE_OSM)
     return rows

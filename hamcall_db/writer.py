@@ -20,6 +20,7 @@ from hamcall_db.reflectors import (
     ReflectorRecord,
     TalkgroupRecord,
 )
+from hamcall_db.sources.osm_grids import require_osm_only
 from hamcall_db.sources.padus_grids import PARK_GRID_SCHEMA_COLUMNS, ParkGridRecord
 from hamcall_db.sources.pota import PARK_SCHEMA_COLUMNS, ParkRecord
 from hamcall_db.sources.sota import SUMMIT_SCHEMA_COLUMNS, SummitRecord
@@ -123,15 +124,18 @@ def write_pota_park_grids_parquet(grids: Iterable[ParkGridRecord], out_path: Pat
 # PAD-US set, but written to a SEPARATE ODbL-licensed file —
 # hamcall-db-pota-park-grids-osm-YYYY-MM-DD.parquet — NEVER mixed into the CC BY-NC artifact.
 # OSM-derived grids form an ODbL derivative database; share-alike is incompatible with the
-# main artifact's CC BY-NC terms, so they ship segregated (source='osm'/'osm-point').
+# main artifact's CC BY-NC terms, so they ship segregated (source is always 'osm').
 def write_pota_park_grids_osm_parquet(grids: Iterable[ParkGridRecord], out_path: Path) -> int:
     """Write OSM-derived `ParkGridRecord`s to `out_path` as Parquet. Returns the row count.
 
     SEPARATE ODbL artifact (hamcall-db-pota-park-grids-osm-YYYY-MM-DD.parquet): one row per
     (non-US park reference, 4-char grid) intersected from OpenStreetMap boundaries. License
     segregation: this is an ODbL derivative database and is NEVER written into the CC BY-NC
-    callsign/parks/PAD-US files. (c) OpenStreetMap contributors, ODbL.
+    callsign/parks/PAD-US files. (c) OpenStreetMap contributors, ODbL. Only ``source="osm"``
+    rows are accepted; anything else raises ``ValueError`` (hdb-odbl).
     """
+    grids = list(grids)
+    require_osm_only(grids)
     rows = [asdict(g) for g in grids]
     frame = pl.DataFrame(rows, schema=_PARK_GRID_SCHEMA)
     out_path.parent.mkdir(parents=True, exist_ok=True)

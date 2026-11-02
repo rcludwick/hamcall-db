@@ -332,27 +332,36 @@ def build(
             # They are NEVER written into the CC-BY-NC db_path or the PAD-US parquet above.
             # Independently guarded and resilient: reading OSM extracts needs the build-time
             # `osm` dependency group (GDAL via pyogrio) and large regional downloads — if
-            # absent or the download fails, every non-US park degrades to its point grid via
-            # compute_osm_park_grids([]). US parks are excluded (PAD-US owns them). The build
-            # never blocks on it.
+            # absent or the download fails, there are simply no OSM rows. US parks are
+            # excluded (PAD-US owns them). The build never blocks on it.
+            #
+            # Only source='osm' rows (grids a matched OSM polygon intersects) may go in the
+            # ODbL files. A park with no matched polygon gets NO row there: a grid from the
+            # POTA park's own lat/lon is POTA data (non-commercial use only), not OSM data,
+            # and already ships correctly in the CC BY-NC set as 'pota-point' (hdb-odbl).
+            # With zero OSM rows the ODbL files are NOT written at all, so nothing
+            # POTA-derived or empty can ever be published under ODbL.
             try:
                 osm_features = _load_osm_features(work_dir)
             except Exception as exc:  # GDAL/group missing or download failed
                 typer.echo(
-                    f"WARNING: OSM boundaries unavailable ({exc}); non-US park grids "
-                    "fall back to point grids",
+                    f"WARNING: OSM boundaries unavailable ({exc}); no OSM (ODbL) park grids "
+                    "this build",
                     err=True,
                 )
                 osm_features = []
             osm_grid_rows = compute_osm_park_grids(parks, osm_features)
-            osm_grids_path = parks_dir_out / _pota_park_grids_osm_filename()
-            osm_db_path = parks_dir_out / _pota_park_grids_osm_db_filename()
-            osm_count = write_pota_park_grids_osm_parquet(osm_grid_rows, osm_grids_path)
-            write_pota_park_grids_osm_sqlite(osm_grid_rows, osm_db_path)
-            typer.echo(
-                f"Wrote {osm_count} OSM (ODbL) park-grid rows to {osm_grids_path} "
-                f"(+ pota_park_grids_osm table in {osm_db_path})"
-            )
+            if osm_grid_rows:
+                osm_grids_path = parks_dir_out / _pota_park_grids_osm_filename()
+                osm_db_path = parks_dir_out / _pota_park_grids_osm_db_filename()
+                osm_count = write_pota_park_grids_osm_parquet(osm_grid_rows, osm_grids_path)
+                write_pota_park_grids_osm_sqlite(osm_grid_rows, osm_db_path)
+                typer.echo(
+                    f"Wrote {osm_count} OSM (ODbL) park-grid rows to {osm_grids_path} "
+                    f"(+ pota_park_grids_osm table in {osm_db_path})"
+                )
+            else:
+                typer.echo("No OSM (ODbL) park-grid rows this build; ODbL files not written")
         except Exception as exc:  # download/parse/write failure is non-fatal
             typer.echo(
                 f"WARNING: POTA parks dataset skipped ({exc}); parks artifacts not written",
@@ -442,7 +451,7 @@ def _load_osm_features(work_dir: Path) -> list:
     """Download + read OSM boundary features (build-time, GIS reader via the `osm` group).
 
     Isolated so the caller can guard it: any failure here (missing GIS reader, download
-    error) degrades non-US park grids to point grids without blocking the build. Geofabrik
+    error) leaves the ODbL set empty without blocking the build. Geofabrik
     publishes daily extracts; the cached files are reused within a build day. The region
     list is a pin-at-build-time decision (OsmSource defaults to a conservative non-US set).
     """
