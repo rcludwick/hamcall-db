@@ -1,7 +1,8 @@
 """Tests for the digital-voice reflector directory (hdb-refl).
 
 A SEPARATE dataset from the callsign Record schema — reflectors are places, not
-licensees — and under a SEPARATE licence (CC BY 4.0, not the project's CC BY-NC).
+licensees — and under SEPARATE licensing (CC BY 4.0 for DVRef rows, no stated licence
+for XLX/Pi-Star rows; never the project's CC BY-NC).
 Several tests below exist specifically to keep those two facts from drifting.
 
 All offline: parsing drives off the checked-in fixtures under tests/fixtures/reflectors/
@@ -286,7 +287,8 @@ def test_document_carries_licence_and_attribution() -> None:
     # file itself: an attribution that lives only in a README is one copy-paste from
     # being lost.
     doc = _doc()
-    assert doc["license"] == "CC BY 4.0"
+    assert doc["license"] == reflectors.MIXED_LICENSE  # XLX rows: no licence stated
+    assert doc["rights"] == reflectors.RIGHTS_NOTE
     assert doc["attribution"]
     assert doc["modifications"]
 
@@ -647,7 +649,9 @@ def test_combined_file_credits_every_upstream_it_contains() -> None:
     assert isinstance(attribution, str)
     assert "XLX registry" in attribution
     assert "DVRef" in attribution
-    assert combined["license"] == reflectors.REFLECTOR_LICENSE
+    # It holds the XLX rows, so it cannot be labelled plain CC BY.
+    assert combined["license"] == reflectors.MIXED_LICENSE
+    assert combined["rights"] == reflectors.RIGHTS_NOTE
     assert combined["modifications"] == reflectors.MODIFICATION_NOTE
     sources = combined["sources"]
     assert isinstance(sources, list)
@@ -737,7 +741,11 @@ def test_every_emitted_field_appears_in_the_openapi_schemas() -> None:
 def test_openapi_carries_the_licence_and_attribution() -> None:
     # A generated client that reads only the contract still learns the terms.
     info = reflectors.openapi_document()["info"]
-    assert info["license"]["identifier"] == reflectors.REFLECTOR_LICENSE_SPDX
+    # The API mixes CC BY and unlicensed rows, so no single SPDX id is claimed for it.
+    assert info["license"]["name"] == reflectors.MIXED_LICENSE
+    assert "identifier" not in info["license"]
+    assert reflectors.RIGHTS_NOTE in info["description"]
+    assert "Pi-Star" in info["description"]
     assert "DVRef" in info["description"]
     assert "XLX registry" in info["description"]
     assert reflectors.MODIFICATION_NOTE in info["description"]
@@ -1266,3 +1274,146 @@ def test_an_unambiguous_alias_is_left_alone() -> None:
         attribution="test",
     )
     assert doc["reflectors"][0]["aliases"] == ["XRF836"]
+
+
+# --- per-source licence labels (hdb-refllabel) ------------------------------------
+# Only DVRef licenses its data (CC BY 4.0). The XLX registry and the Pi-Star host files
+# state no licence at all, so labelling their rows CC BY would grant rights this project
+# does not hold.
+
+
+@pytest.mark.parametrize(
+    ("source", "expected"),
+    [
+        ("dvref", "CC-BY-4.0"),
+        ("xlx", "none-stated"),
+        ("dextra", "none-stated"),
+        (None, "none-stated"),  # a source nobody labelled must under-claim
+        ("some-new-source", "none-stated"),
+    ],
+)
+def test_each_row_carries_its_sources_licence(source: str | None, expected: str) -> None:
+    record = ReflectorRecord(id="X", network="dstar", source=source)
+    assert record.license == expected
+    assert reflectors.entry_json(record)["license"] == expected
+
+
+def test_real_importers_label_their_rows() -> None:
+    assert {r.license for r in _xlx_records()} == {"none-stated"}
+    ysf = list(DvrefSource("ysf", token="t").parse(DVREF_YSF))
+    assert {r.license for r in ysf} == {"CC-BY-4.0"}
+
+
+def test_dstar_json_is_not_labelled_plain_cc_by() -> None:
+    # dstar.json is XLX + Pi-Star DExtra rows; none of them is CC BY.
+    dextra_row = ReflectorRecord(
+        id="XRF002", network="dstar", host="52.36.45.107", port=30001, source="dextra"
+    )
+    doc = network_document(
+        "dstar",
+        [*_xlx_records(), dextra_row],
+        source_name="XLX registry (LX1IQ) + Pi-Star DExtra hosts",
+        source_url="http://xlxapi.rlx.lu/api.php?do=GetReflectorList",
+        attribution="XLX ...",
+        generated=NOW.date(),
+    )
+    assert doc["license"] != reflectors.REFLECTOR_LICENSE
+    assert doc["license"] == reflectors.MIXED_LICENSE
+    assert doc["license_url"] == reflectors.MIXED_LICENSE_URL
+    assert doc["rights"] == reflectors.RIGHTS_NOTE
+    assert {r["license"] for r in doc["reflectors"]} == {"none-stated"}
+
+
+def test_dvref_only_files_stay_cc_by() -> None:
+    for doc in (_dvref_doc("ysf", "ysf", DVREF_YSF), _dvref_doc("nxdn", "nxdn", DVREF_NXDN)):
+        assert doc["license"] == reflectors.REFLECTOR_LICENSE == "CC BY 4.0"
+        assert doc["license_url"] == reflectors.REFLECTOR_LICENSE_URL
+        assert "rights" not in doc
+        assert {r["license"] for r in doc["reflectors"]} == {"CC-BY-4.0"}
+
+
+def test_manifest_labels_each_network(tmp_path: Path) -> None:
+    write_api(tmp_path, _documents(), generated=NOW.date())
+    manifest = json.loads((tmp_path / "index.json").read_text(encoding="utf-8"))
+    assert manifest["license"] == reflectors.MIXED_LICENSE
+    assert manifest["networks"]["dstar"]["license"] == reflectors.MIXED_LICENSE
+    assert manifest["networks"]["ysf"]["license"] == reflectors.REFLECTOR_LICENSE
+    ysf = json.loads((tmp_path / "reflectors" / "ysf.json").read_text(encoding="utf-8"))
+    assert ysf["license"] == reflectors.REFLECTOR_LICENSE
+
+
+def test_a_kept_document_is_relabelled_on_write(tmp_path: Path) -> None:
+    # A file the shrink guard keeps from an older build still claims CC BY for every
+    # row; publishing it again must not carry that claim forward.
+    stale = {
+        "network": "dstar",
+        "generated": "2026-08-26",
+        "count": 1,
+        "license": "CC BY 4.0",
+        "license_url": reflectors.REFLECTOR_LICENSE_URL,
+        "source": {"name": "XLX registry (LX1IQ)", "url": "http://xlxapi.rlx.lu/"},
+        "reflectors": [
+            {
+                "network": "dstar",
+                "id": "XLX836",
+                "name": "XLX836",
+                "aliases": ["XRF836", "REF836", "DCS836"],
+                "source": "xlx",
+            }
+        ],
+    }
+    write_api(tmp_path, {"dstar": stale}, generated=NOW.date())
+    written = json.loads((tmp_path / "reflectors" / "dstar.json").read_text(encoding="utf-8"))
+    assert written["license"] == reflectors.MIXED_LICENSE
+    assert written["rights"] == reflectors.RIGHTS_NOTE
+    (row,) = written["reflectors"]
+    assert row["license"] == "none-stated"
+    assert row["alias_source"] == "pistar"
+
+
+def test_a_relabelled_dvref_document_drops_a_stale_rights_note() -> None:
+    doc = _dvref_doc("ysf", "ysf", DVREF_YSF)
+    doc["rights"] = "stale"
+    doc["license"] = reflectors.MIXED_LICENSE
+    reflectors.label_document(doc)
+    assert doc["license"] == reflectors.REFLECTOR_LICENSE
+    assert "rights" not in doc
+
+
+def test_pistar_names_record_their_provenance() -> None:
+    rows, added = dstar_aliases.apply_aliases([_xlx836()], _alias_names())
+    assert added == 2
+    assert rows[0].alias_source == "pistar"
+    assert rows[0].license == "none-stated"  # the row's own source is still XLX
+    entry = reflectors.entry_json(rows[0])
+    assert entry["alias_source"] == "pistar"
+    restored = reflectors.records_from_document({"network": "dstar", "reflectors": [entry]})
+    assert restored[0].alias_source == "pistar"
+
+
+def test_a_row_without_pistar_names_has_no_alias_source() -> None:
+    assert _xlx836().alias_source is None
+    assert "alias_source" not in reflectors.entry_json(_xlx836())
+
+
+def test_licence_columns_reach_the_parquet_artifact(tmp_path: Path) -> None:
+    import polars as pl
+
+    from hamcall_db.writer import write_reflectors_parquet
+
+    records = [*_xlx_records(), *DvrefSource("ysf", token="t").parse(DVREF_YSF)]
+    path = tmp_path / "r.parquet"
+    write_reflectors_parquet(records, path)
+    frame = pl.read_parquet(path)
+    assert {"license", "alias_source"} <= set(frame.columns)
+    by_source = dict(frame.select("source", "license").unique().iter_rows())
+    assert by_source == {"xlx": "none-stated", "dvref": "CC-BY-4.0"}
+
+
+def test_cc_by_licence_file_is_scoped_to_what_is_actually_cc_by() -> None:
+    text = (REPO_ROOT / "LICENSE-CC-BY").read_text(encoding="utf-8")
+    assert "the two sources" not in text
+    assert "Reproduce both statements" not in text
+    assert "dmr-talkgroups" in text
+    assert "dstargateway.org" in text and "xreflector.net" in text
+    assert "none-stated" in text

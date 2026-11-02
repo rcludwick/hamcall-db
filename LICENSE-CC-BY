@@ -1,34 +1,66 @@
-hamcall-db — reflector directory: LICENSE (CC BY 4.0)
-=====================================================
+hamcall-db — reflector directory: LICENSE (CC BY 4.0, scoped)
+==============================================================
 
-THIS LICENSE APPLIES ONLY to the SEPARATE digital-voice reflector directory
-artifacts:
+WHAT THIS FILE COVERS
+---------------------
+The SEPARATE digital-voice reflector directory artifacts:
 
   * hamcall-db-reflectors-YYYY-MM-DD.parquet
-  * hamcall-db-reflectors-YYYY-MM-DD.db        (table: reflectors)
+  * hamcall-db-reflectors-dmr-talkgroups-YYYY-MM-DD.parquet
+  * hamcall-db-reflectors-YYYY-MM-DD.db   (tables: reflectors, dmr_talkgroups)
   * the static JSON API published at site/api/v1/ (index.json, reflectors.json,
-    reflectors/*.json and openapi.json)
+    reflectors/*.json, the per-network DMR talkgroup files at
+    reflectors/dmr/<network>/talkgroups.json, and openapi.json)
 
-These files list digital-voice reflectors — D-Star, M17, YSF, NXDN, P25 and
-URF — with their addresses, ports and modules. They are distributed under the
-Creative Commons Attribution 4.0 International license (CC BY 4.0), NOT under
-the CC BY-NC 4.0 terms that cover the rest of the hamcall-db project.
+These files list digital-voice reflectors (D-Star, M17, YSF, NXDN, P25, URF and
+DMR master servers) with their addresses, ports and modules, plus DMR talkgroup
+lists. They are NOT under the CC BY-NC 4.0 terms that cover the rest of the
+hamcall-db project.
 
-  https://creativecommons.org/licenses/by/4.0/
+WHICH PARTS ARE CC BY 4.0, AND WHICH ARE NOT
+-------------------------------------------
+The rows come from four upstream sources, and only one of them licenses its
+data. Every row says which applies in its own `license` field.
+
+  * CC BY 4.0 (`license` = "CC-BY-4.0"):
+      - hamcall-db's own contributions: the schema, the selection, and the
+        derived fields described below;
+      - every row with `source` = "dvref" (M17, YSF, NXDN, P25, URF and DMR
+        servers) and all of the DMR talkgroup files, which come only from DVRef.
+
+  * NO LICENCE STATED (`license` = "none-stated"):
+      - rows with `source` = "xlx", from the XLX registry (xlxapi.rlx.lu);
+      - rows with `source` = "dextra", from the Pi-Star DExtra host file;
+      - the REF and DCS names in `aliases` on rows marked
+        `alias_source` = "pistar", from the Pi-Star DPlus and DCS host files.
+
+    These publishers state no licence or terms. Their rows are factual
+    listings and are redistributed as facts. hamcall-db grants NO rights in
+    them beyond those the upstream itself provides, and this CC BY 4.0 licence
+    does not extend to them.
+
+A file whose rows are all CC BY says `"license": "CC BY 4.0"`. A file that
+mixes in rows of the other kind (dstar.json, reflectors.json and index.json)
+says `"license": "mixed — see per-row license and NOTICE"` and carries a
+`rights` note saying the same as this section.
+
+  CC BY 4.0: https://creativecommons.org/licenses/by/4.0/
 
 WHY THIS IS A SEPARATE FILE, AND WHY IT MUST STAY ONE
 -----------------------------------------------------
-DVRef placed its reflector data under CC BY 4.0 in its "Accessing DVRef Data"
-announcement of 2026-08-04, explicitly permitting mirroring, reformatting,
-commercial use, and the creation of "host files, APIs, directories, and other
-services".
+DVRef places its public reflector data under CC BY 4.0. Its Acceptable Use
+Policy (https://dvref.com/aup/) says "Public reflector data published by DVRef
+is available under the Creative Commons Attribution 4.0 International
+license", and its "Accessing DVRef Data" announcement of 2026-08-04 explicitly
+permits mirroring, reformatting, commercial use, and the creation of "host
+files, APIs, directories, and other services".
 
 CC BY 4.0 section 2(a)(5)(B) forbids a redistributor from offering or imposing
 "any additional or different terms or conditions on ... the Licensed Material
 if doing so restricts exercise of the Licensed Rights". The rest of hamcall-db
-is CC BY-NC 4.0 — non-commercial. Merging this reflector data into those
-artifacts would impose a non-commercial restriction that CC BY 4.0 grants away,
-so it would be a LICENSE VIOLATION, not merely untidy bookkeeping.
+is CC BY-NC 4.0 — non-commercial. Merging the DVRef rows into those artifacts
+would impose a non-commercial restriction that CC BY 4.0 grants away, so it
+would be a LICENSE VIOLATION, not merely untidy bookkeeping.
 
 This is the same segregation discipline the project applies to the
 OpenStreetMap-derived park grids (see LICENSE-ODbL), pointing the other way:
@@ -36,8 +68,8 @@ there the upstream is MORE restrictive than the project, here it is LESS.
 
 Do not co-locate or merge these files into the CC BY-NC artifacts.
 
-WHAT CC BY 4.0 REQUIRES OF YOU WHEN YOU REDISTRIBUTE THESE FILES
------------------------------------------------------------------
+WHAT CC BY 4.0 REQUIRES OF YOU WHEN YOU REDISTRIBUTE THE CC BY PARTS
+--------------------------------------------------------------------
 (Summary — the full text at the URL above governs.)
 
   * ATTRIBUTE: give appropriate credit, provide a link to the license, and
@@ -47,12 +79,14 @@ WHAT CC BY 4.0 REQUIRES OF YOU WHEN YOU REDISTRIBUTE THESE FILES
     measures that legally restrict others from doing anything the license
     permits — including, specifically, adding a non-commercial term.
 
-You are free to share and adapt the material for any purpose, including
-commercially.
+You are free to share and adapt the CC BY material for any purpose, including
+commercially. If you need a set that is wholly CC BY, keep only the rows whose
+`license` is "CC-BY-4.0".
 
 REQUIRED ATTRIBUTION
 --------------------
-Reproduce both statements below when redistributing these files:
+Reproduce every statement below that applies to the rows you redistribute
+(all four, if you redistribute the files whole):
 
     Reflector data provided by DVRef — https://dvref.com/
 
@@ -62,10 +96,18 @@ Reproduce both statements below when redistributing these files:
     Standalone XRF reflector data from the Pi-Star DExtra host file
     (http://www.pistar.uk/downloads/DExtra_Hosts.txt).
 
+    REF and DCS reflector names from the Pi-Star DPlus and DCS host files
+    (http://www.pistar.uk/downloads/), which compile them from
+    dstargateway.org and xreflector.net DNS.
+
+Only the DVRef statement is a CC BY 4.0 obligation. The other three credit
+sources that state no licence; they are given as a courtesy and so a reader
+can tell where each row came from.
+
 STATEMENT OF MODIFICATION (required by CC BY 4.0)
 --------------------------------------------------
 The upstream rows were reformatted into this project's common reflector schema:
-field names and structure differ from upstream, records from the two sources
+field names and structure differ from upstream, records from the four sources
 were combined into one set per network, entries lacking a resolvable address
 were dropped, and XLX registrations not seen by the registry in over 30 days
 were treated as inactive and omitted.
@@ -76,22 +118,24 @@ bulk-downloadable machine-readable artifact, which turns a sysop's address in a
 reflector blurb into a harvestable list; the marker is left in place so the
 surrounding sentence still reads. Field VALUES are otherwise unmodified.
 
-D-Star entries are drawn from two sources and DEDUPLICATED BY ADDRESS: the
-Pi-Star host file lists every XLX reflector under its XRF alias at the same
-address, and those aliases are dropped so one machine is not published twice
-under two ids. Standalone XRF reflectors are kept even where their number
-collides with an unrelated XLX reflector's.
+D-Star entries are drawn from the XLX registry and the Pi-Star host files, and
+DEDUPLICATED BY ADDRESS: the Pi-Star DExtra host file lists every XLX reflector
+under its XRF alias at the same address, and those aliases are dropped so one
+machine is not published twice under two ids. Standalone XRF reflectors are
+kept even where their number collides with an unrelated XLX reflector's. REF
+and DCS names from the Pi-Star DPlus and DCS host files are attached as
+`aliases` to the row at the same address; they never create rows.
 
-Three derived fields are computed by this project and are not upstream data:
+Derived fields computed by this project, which are not upstream data:
 `port` for D-Star (30001, the DExtra protocol constant, which the registry does
 not publish), `callsign` for XLX rows (the XRF-form name an XLX reflector
-answers to on the DExtra wire), and the matching `aliases` entry carrying that
-same XRF-form name.
+answers to on the DExtra wire), the matching `aliases` entry carrying that
+same XRF-form name, and the provenance fields `license` and `alias_source`.
 
-DVRef's Acceptable Use Policy — https://dvref.com/aup/ — governs ACCESS to
-DVRef's own infrastructure. It is separate from the license on the data, and it
-is why this project pulls from DVRef's API with an identifying User-Agent and a
-per-account token rather than scraping their site or re-downloading from
+DVRef's Acceptable Use Policy — https://dvref.com/aup/ — also governs ACCESS
+to DVRef's own infrastructure, which is separate from the license on the data.
+It is why this project pulls from DVRef's API with an identifying User-Agent
+and a per-account token rather than scraping their site or re-downloading from
 third-party mirrors. Nothing in this file grants you access to DVRef's API;
 mint your own token at https://dvref.com/accounts/token/.
 

@@ -18,6 +18,13 @@ This is deliberately NOT DVRef. DVRef's XRF list carries ~61 reflectors where th
 carries ~890, so for D-Star the XLX registry is the source with actual coverage. DVRef
 is the right upstream for M17 and YSF; see :mod:`hamcall_db.sources.dvref`.
 
+Rights: no licence stated
+-------------------------
+The registry publishes no licence or terms of use. Its rows are therefore NOT CC BY:
+they are published with ``license = "none-stated"`` (derived from ``source = "xlx"``,
+see :data:`hamcall_db.reflectors.SOURCE_LICENSES`) and redistributed as facts, with no
+rights granted beyond what the registry itself provides.
+
 The XML is not well-formed
 --------------------------
 ``<comment>`` values contain unescaped ``<`` and ``&`` — real rows include

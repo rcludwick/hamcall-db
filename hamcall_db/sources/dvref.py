@@ -15,7 +15,11 @@ Licence — CC BY 4.0, and why that matters here
 DVRef's "Accessing DVRef Data" announcement (2026-08-04) placed public reflector data
 under **CC BY 4.0**, explicitly permitting mirroring, reformatting, commercial use, and
 "host files, APIs, directories, and other services". Attribution is required, and so is
-indicating modification.
+indicating modification. Their Acceptable Use Policy (https://dvref.com/aup/) restates
+it: "Public reflector data published by DVRef is available under the Creative Commons
+Attribution 4.0 International license". Rows from here carry ``license = "CC-BY-4.0"``
+(see :data:`hamcall_db.reflectors.SOURCE_LICENSES`); DVRef is the only reflector
+upstream that licenses its data at all.
 
 That licence is LESS restrictive than this project's CC BY-NC dataset terms, which is
 precisely why the reflector output is a separate artifact: adding a non-commercial

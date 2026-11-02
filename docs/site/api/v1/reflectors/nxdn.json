@@ -18,6 +18,7 @@
         "port": 41400
       },
       "id": "100",
+      "license": "CC-BY-4.0",
       "name": "NXDN 100",
       "network": "nxdn",
       "source": "dvref",
@@ -32,6 +33,7 @@
         "port": 41400
       },
       "id": "101",
+      "license": "CC-BY-4.0",
       "name": "XLX278",
       "network": "nxdn",
       "source": "dvref",
@@ -47,6 +49,7 @@
         "port": 42400
       },
       "id": "10200",
+      "license": "CC-BY-4.0",
       "name": "NXDN North America",
       "network": "nxdn",
       "source": "dvref",
@@ -62,6 +65,7 @@
         "port": 41400
       },
       "id": "10201",
+      "license": "CC-BY-4.0",
       "name": "North America Tach",
       "network": "nxdn",
       "source": "dvref",
@@ -76,6 +80,7 @@
         "port": 41400
       },
       "id": "10294",
+      "license": "CC-BY-4.0",
       "name": "SkyHubLink",
       "network": "nxdn",
       "source": "dvref",
@@ -90,6 +95,7 @@
         "port": 41400
       },
       "id": "10301",
+      "license": "CC-BY-4.0",
       "name": "Spain OLE",
       "network": "nxdn",
       "source": "dvref"
@@ -102,6 +108,7 @@
         "port": 41400
       },
       "id": "10350",
+      "license": "CC-BY-4.0",
       "name": "WARC",
       "network": "nxdn",
       "source": "dvref"
@@ -116,6 +123,7 @@
         "port": 41400
       },
       "id": "10400",
+      "license": "CC-BY-4.0",
       "name": "Pacific NXDN 10400",
       "network": "nxdn",
       "source": "dvref",
@@ -131,6 +139,7 @@
         "port": 41902
       },
       "id": "10902",
+      "license": "CC-BY-4.0",
       "name": "URF902",
       "network": "nxdn",
       "source": "dvref",
@@ -146,6 +155,7 @@
         "port": 41400
       },
       "id": "10922",
+      "license": "CC-BY-4.0",
       "name": "10922",
       "network": "nxdn",
       "source": "dvref",
@@ -160,6 +170,7 @@
         "port": 41400
       },
       "id": "11053",
+      "license": "CC-BY-4.0",
       "name": "W6APX NXDN Group",
       "network": "nxdn",
       "source": "dvref",
@@ -174,6 +185,7 @@
         "port": 41400
       },
       "id": "11069",
+      "license": "CC-BY-4.0",
       "name": "11069",
       "network": "nxdn",
       "source": "dvref",
@@ -187,6 +199,7 @@
         "port": 41400
       },
       "id": "11349",
+      "license": "CC-BY-4.0",
       "name": "URFJSS",
       "network": "nxdn",
       "source": "dvref"
@@ -201,6 +214,7 @@
         "port": 41400
       },
       "id": "11520",
+      "license": "CC-BY-4.0",
       "name": "US D Friends",
       "network": "nxdn",
       "source": "dvref",
@@ -216,6 +230,7 @@
         "port": 41403
       },
       "id": "116",
+      "license": "CC-BY-4.0",
       "name": "116 TGIF",
       "network": "nxdn",
       "source": "dvref",
@@ -231,6 +246,7 @@
         "port": 41400
       },
       "id": "11710",
+      "license": "CC-BY-4.0",
       "name": "11710",
       "network": "nxdn",
       "source": "dvref",
@@ -245,6 +261,7 @@
         "port": 41400
       },
       "id": "12",
+      "license": "CC-BY-4.0",
       "name": "TG12 SPAIN LOCAL",
       "network": "nxdn",
       "source": "dvref",
@@ -258,6 +275,7 @@
         "port": 41400
       },
       "id": "1200",
+      "license": "CC-BY-4.0",
       "name": "Florida",
       "network": "nxdn",
       "source": "dvref",
@@ -272,6 +290,7 @@
         "port": 41401
       },
       "id": "121",
+      "license": "CC-BY-4.0",
       "name": "XLX121 NXDN  TG121",
       "network": "nxdn",
       "source": "dvref",
@@ -286,6 +305,7 @@
         "port": 41400
       },
       "id": "1224",
+      "license": "CC-BY-4.0",
       "name": "PI1DAF Almere",
       "network": "nxdn",
       "source": "dvref",
@@ -300,6 +320,7 @@
         "port": 41400
       },
       "id": "12668",
+      "license": "CC-BY-4.0",
       "name": "N7MKY NXDN TG",
       "network": "nxdn",
       "source": "dvref",
@@ -315,6 +336,7 @@
         "port": 41400
       },
       "id": "127",
+      "license": "CC-BY-4.0",
       "name": "NXDN EA1RKF",
       "network": "nxdn",
       "source": "dvref",
@@ -330,6 +352,7 @@
         "port": 41400
       },
       "id": "131",
+      "license": "CC-BY-4.0",
       "name": "CenWis",
       "network": "nxdn",
       "source": "dvref",
@@ -345,6 +368,7 @@
         "port": 41040
       },
       "id": "1337",
+      "license": "CC-BY-4.0",
       "name": "K6EF",
       "network": "nxdn",
       "source": "dvref",
@@ -359,6 +383,7 @@
         "port": 41400
       },
       "id": "137",
+      "license": "CC-BY-4.0",
       "name": "137",
       "network": "nxdn",
       "source": "dvref",
@@ -374,6 +399,7 @@
         "port": 41400
       },
       "id": "138",
+      "license": "CC-BY-4.0",
       "name": "XLX138 XNexus",
       "network": "nxdn",
       "source": "dvref",
@@ -388,6 +414,7 @@
         "port": 41400
       },
       "id": "139",
+      "license": "CC-BY-4.0",
       "name": "Maine 139 NXDN",
       "network": "nxdn",
       "source": "dvref",
@@ -403,6 +430,7 @@
         "port": 41401
       },
       "id": "14",
+      "license": "CC-BY-4.0",
       "name": "(WWW) Spanish NXDN",
       "network": "nxdn",
       "source": "dvref",
@@ -417,6 +445,7 @@
         "port": 41400
       },
       "id": "1453",
+      "license": "CC-BY-4.0",
       "name": "URFTUR",
       "network": "nxdn",
       "source": "dvref",
@@ -432,6 +461,7 @@
         "port": 41400
       },
       "id": "148",
+      "license": "CC-BY-4.0",
       "name": "148",
       "network": "nxdn",
       "source": "dvref",
@@ -447,6 +477,7 @@
         "port": 41400
       },
       "id": "149",
+      "license": "CC-BY-4.0",
       "name": "149",
       "network": "nxdn",
       "source": "dvref",
@@ -461,6 +492,7 @@
         "port": 41400
       },
       "id": "1523",
+      "license": "CC-BY-4.0",
       "name": "URF276",
       "network": "nxdn",
       "source": "dvref",
@@ -476,6 +508,7 @@
         "port": 41400
       },
       "id": "15431",
+      "license": "CC-BY-4.0",
       "name": "URF587",
       "network": "nxdn",
       "source": "dvref",
@@ -491,6 +524,7 @@
         "port": 41400
       },
       "id": "15432",
+      "license": "CC-BY-4.0",
       "name": "URF307",
       "network": "nxdn",
       "source": "dvref",
@@ -505,6 +539,7 @@
         "port": 41405
       },
       "id": "15509",
+      "license": "CC-BY-4.0",
       "name": "London ON CA",
       "network": "nxdn",
       "source": "dvref",
@@ -519,6 +554,7 @@
         "port": 41400
       },
       "id": "15846",
+      "license": "CC-BY-4.0",
       "name": "URFWIL",
       "network": "nxdn",
       "source": "dvref",
@@ -534,6 +570,7 @@
         "port": 41400
       },
       "id": "165",
+      "license": "CC-BY-4.0",
       "name": "NXDN165-Digital Voice GREECE",
       "network": "nxdn",
       "source": "dvref",
@@ -548,6 +585,7 @@
         "port": 41402
       },
       "id": "1701",
+      "license": "CC-BY-4.0",
       "name": "SFARG",
       "network": "nxdn",
       "source": "dvref",
@@ -563,6 +601,7 @@
         "port": 41400
       },
       "id": "178",
+      "license": "CC-BY-4.0",
       "name": "URF178",
       "network": "nxdn",
       "source": "dvref",
@@ -577,6 +616,7 @@
         "port": 41400
       },
       "id": "20000",
+      "license": "CC-BY-4.0",
       "name": "20000",
       "network": "nxdn",
       "source": "dvref",
@@ -592,6 +632,7 @@
         "port": 41400
       },
       "id": "202",
+      "license": "CC-BY-4.0",
       "name": "HELLAS Zone",
       "network": "nxdn",
       "source": "dvref",
@@ -607,6 +648,7 @@
         "port": 41402
       },
       "id": "2021",
+      "license": "CC-BY-4.0",
       "name": "GR-AETHER-HELLAS-NXDN",
       "network": "nxdn",
       "source": "dvref",
@@ -622,6 +664,7 @@
         "port": 41400
       },
       "id": "20210",
+      "license": "CC-BY-4.0",
       "name": "NXDN-2021.ADN.Systems.Greece",
       "network": "nxdn",
       "source": "dvref",
@@ -637,6 +680,7 @@
         "port": 41400
       },
       "id": "20218",
+      "license": "CC-BY-4.0",
       "name": "NXDN-2021.ADN.Systems.Greece",
       "network": "nxdn",
       "source": "dvref",
@@ -651,6 +695,7 @@
         "port": 41400
       },
       "id": "20222",
+      "license": "CC-BY-4.0",
       "name": "NXDN-2022.ADN.Systems.Hellas-Node",
       "network": "nxdn",
       "source": "dvref",
@@ -665,6 +710,7 @@
         "port": 41400
       },
       "id": "20281",
+      "license": "CC-BY-4.0",
       "name": "GR-KERKYRA-DV",
       "network": "nxdn",
       "source": "dvref",
@@ -680,6 +726,7 @@
         "port": 41400
       },
       "id": "20328",
+      "license": "CC-BY-4.0",
       "name": "DE-Pegasus-NXDN",
       "network": "nxdn",
       "source": "dvref",
@@ -694,6 +741,7 @@
         "port": 41400
       },
       "id": "204",
+      "license": "CC-BY-4.0",
       "name": "Nxdn NL",
       "network": "nxdn",
       "source": "dvref"
@@ -708,6 +756,7 @@
         "port": 41400
       },
       "id": "20421",
+      "license": "CC-BY-4.0",
       "name": "dl-nordwest.com",
       "network": "nxdn",
       "source": "dvref",
@@ -723,6 +772,7 @@
         "port": 41400
       },
       "id": "2044",
+      "license": "CC-BY-4.0",
       "name": "NXDN NL-Oost Reflector",
       "network": "nxdn",
       "source": "dvref",
@@ -738,6 +788,7 @@
         "port": 42400
       },
       "id": "205",
+      "license": "CC-BY-4.0",
       "name": "Talkgroup Almere",
       "network": "nxdn",
       "source": "dvref",
@@ -752,6 +803,7 @@
         "port": 41402
       },
       "id": "20600",
+      "license": "CC-BY-4.0",
       "name": "GR GREECE NXDN",
       "network": "nxdn",
       "source": "dvref",
@@ -766,6 +818,7 @@
         "port": 41400
       },
       "id": "20612",
+      "license": "CC-BY-4.0",
       "name": "NXDN VLAANDEREN WAASLAND ON8PMO",
       "network": "nxdn",
       "source": "dvref",
@@ -781,6 +834,7 @@
         "port": 41400
       },
       "id": "20698",
+      "license": "CC-BY-4.0",
       "name": "URF898",
       "network": "nxdn",
       "source": "dvref",
@@ -796,6 +850,7 @@
         "port": 41400
       },
       "id": "207",
+      "license": "CC-BY-4.0",
       "name": "Talkgroup Nieuwegein",
       "network": "nxdn",
       "source": "dvref",
@@ -811,6 +866,7 @@
         "port": 41400
       },
       "id": "20899",
+      "license": "CC-BY-4.0",
       "name": "URF399",
       "network": "nxdn",
       "source": "dvref",
@@ -826,6 +882,7 @@
         "port": 41400
       },
       "id": "21277",
+      "license": "CC-BY-4.0",
       "name": "URF277",
       "network": "nxdn",
       "source": "dvref",
@@ -841,6 +898,7 @@
         "port": 41400
       },
       "id": "213",
+      "license": "CC-BY-4.0",
       "name": "URF213",
       "network": "nxdn",
       "source": "dvref",
@@ -855,6 +913,7 @@
         "port": 41401
       },
       "id": "214",
+      "license": "CC-BY-4.0",
       "name": "NXDN Treehouse SPAIN",
       "network": "nxdn",
       "source": "dvref",
@@ -869,6 +928,7 @@
         "port": 41401
       },
       "id": "2140",
+      "license": "CC-BY-4.0",
       "name": "2140 Multi",
       "network": "nxdn",
       "source": "dvref",
@@ -884,6 +944,7 @@
         "port": 41400
       },
       "id": "21413",
+      "license": "CC-BY-4.0",
       "name": "D-FRIENDS",
       "network": "nxdn",
       "source": "dvref",
@@ -898,6 +959,7 @@
         "port": 41400
       },
       "id": "21463",
+      "license": "CC-BY-4.0",
       "name": "REM NXDNReflector",
       "network": "nxdn",
       "source": "dvref"
@@ -911,6 +973,7 @@
         "port": 41400
       },
       "id": "21465",
+      "license": "CC-BY-4.0",
       "name": "ADER",
       "network": "nxdn",
       "source": "dvref",
@@ -925,6 +988,7 @@
         "port": 41401
       },
       "id": "2147",
+      "license": "CC-BY-4.0",
       "name": "TG217",
       "network": "nxdn",
       "source": "dvref",
@@ -940,6 +1004,7 @@
         "port": 41400
       },
       "id": "21909",
+      "license": "CC-BY-4.0",
       "name": "PRIDE",
       "network": "nxdn",
       "source": "dvref",
@@ -954,6 +1019,7 @@
         "port": 41400
       },
       "id": "22108",
+      "license": "CC-BY-4.0",
       "name": "Savona Network NXDN",
       "network": "nxdn",
       "source": "dvref",
@@ -968,6 +1034,7 @@
         "port": 41402
       },
       "id": "222",
+      "license": "CC-BY-4.0",
       "name": "IT NXDN Reflector",
       "network": "nxdn",
       "source": "dvref",
@@ -982,6 +1049,7 @@
         "port": 41400
       },
       "id": "22200",
+      "license": "CC-BY-4.0",
       "name": "URFITA",
       "network": "nxdn",
       "source": "dvref",
@@ -997,6 +1065,7 @@
         "port": 41400
       },
       "id": "22202",
+      "license": "CC-BY-4.0",
       "name": "Sardinia Island",
       "network": "nxdn",
       "source": "dvref",
@@ -1012,6 +1081,7 @@
         "port": 41400
       },
       "id": "22206",
+      "license": "CC-BY-4.0",
       "name": "IT-AOT",
       "network": "nxdn",
       "source": "dvref",
@@ -1027,6 +1097,7 @@
         "port": 41400
       },
       "id": "22208",
+      "license": "CC-BY-4.0",
       "name": "22208",
       "network": "nxdn",
       "source": "dvref",
@@ -1042,6 +1113,7 @@
         "port": 41400
       },
       "id": "22209",
+      "license": "CC-BY-4.0",
       "name": "IT Radio Group - Network",
       "network": "nxdn",
       "source": "dvref",
@@ -1056,6 +1128,7 @@
         "port": 41400
       },
       "id": "22215",
+      "license": "CC-BY-4.0",
       "name": "22215",
       "network": "nxdn",
       "source": "dvref",
@@ -1070,6 +1143,7 @@
         "port": 41400
       },
       "id": "22220",
+      "license": "CC-BY-4.0",
       "name": "22220",
       "network": "nxdn",
       "source": "dvref",
@@ -1084,6 +1158,7 @@
         "port": 41400
       },
       "id": "22221",
+      "license": "CC-BY-4.0",
       "name": "Regionale Lombardia",
       "network": "nxdn",
       "source": "dvref",
@@ -1098,6 +1173,7 @@
         "port": 41400
       },
       "id": "22222",
+      "license": "CC-BY-4.0",
       "name": "22222",
       "network": "nxdn",
       "source": "dvref",
@@ -1112,6 +1188,7 @@
         "port": 41400
       },
       "id": "22231",
+      "license": "CC-BY-4.0",
       "name": "22231",
       "network": "nxdn",
       "source": "dvref",
@@ -1126,6 +1203,7 @@
         "port": 41400
       },
       "id": "22232",
+      "license": "CC-BY-4.0",
       "name": "IT-XLX232 Multi-mode AMBE",
       "network": "nxdn",
       "source": "dvref",
@@ -1140,6 +1218,7 @@
         "port": 41400
       },
       "id": "22233",
+      "license": "CC-BY-4.0",
       "name": "NXDN TG 22233 Veneto",
       "network": "nxdn",
       "source": "dvref",
@@ -1154,6 +1233,7 @@
         "port": 41400
       },
       "id": "22234",
+      "license": "CC-BY-4.0",
       "name": "IT 22234",
       "network": "nxdn",
       "source": "dvref"
@@ -1168,6 +1248,7 @@
         "port": 41400
       },
       "id": "22245",
+      "license": "CC-BY-4.0",
       "name": "NXDN Piedmont Gruppo DMR Ossola TG22245",
       "network": "nxdn",
       "source": "dvref",
@@ -1183,6 +1264,7 @@
         "port": 41400
       },
       "id": "22252",
+      "license": "CC-BY-4.0",
       "name": "NXDN-REF-IT-MULTI-NET",
       "network": "nxdn",
       "source": "dvref",
@@ -1198,6 +1280,7 @@
         "port": 41400
       },
       "id": "22270",
+      "license": "CC-BY-4.0",
       "name": "URFDDC",
       "network": "nxdn",
       "source": "dvref",
@@ -1213,6 +1296,7 @@
         "port": 41400
       },
       "id": "22273",
+      "license": "CC-BY-4.0",
       "name": "NXDN-BAT",
       "network": "nxdn",
       "source": "dvref",
@@ -1227,6 +1311,7 @@
         "port": 41405
       },
       "id": "22275",
+      "license": "CC-BY-4.0",
       "name": "IT NXDN technical group",
       "network": "nxdn",
       "source": "dvref",
@@ -1242,6 +1327,7 @@
         "port": 41400
       },
       "id": "22276",
+      "license": "CC-BY-4.0",
       "name": "URFBAT",
       "network": "nxdn",
       "source": "dvref",
@@ -1256,6 +1342,7 @@
         "port": 41400
       },
       "id": "22277",
+      "license": "CC-BY-4.0",
       "name": "NXDN REFLECTOR SALENTO",
       "network": "nxdn",
       "source": "dvref",
@@ -1270,6 +1357,7 @@
         "port": 41400
       },
       "id": "22367",
+      "license": "CC-BY-4.0",
       "name": "Ham Network",
       "network": "nxdn",
       "source": "dvref",
@@ -1284,6 +1372,7 @@
         "port": 41402
       },
       "id": "224",
+      "license": "CC-BY-4.0",
       "name": "TG 224 NXDN",
       "network": "nxdn",
       "source": "dvref",
@@ -1299,6 +1388,7 @@
         "port": 41400
       },
       "id": "226",
+      "license": "CC-BY-4.0",
       "name": "Romania NXDN YO",
       "network": "nxdn",
       "source": "dvref",
@@ -1313,6 +1403,7 @@
         "port": 41401
       },
       "id": "2261",
+      "license": "CC-BY-4.0",
       "name": "2261",
       "network": "nxdn",
       "source": "dvref",
@@ -1327,6 +1418,7 @@
         "port": 41402
       },
       "id": "2262",
+      "license": "CC-BY-4.0",
       "name": "2262",
       "network": "nxdn",
       "source": "dvref",
@@ -1341,6 +1433,7 @@
         "port": 41403
       },
       "id": "2263",
+      "license": "CC-BY-4.0",
       "name": "2263",
       "network": "nxdn",
       "source": "dvref",
@@ -1356,6 +1449,7 @@
         "port": 41400
       },
       "id": "22633",
+      "license": "CC-BY-4.0",
       "name": "NXDN Core",
       "network": "nxdn",
       "source": "dvref",
@@ -1370,6 +1464,7 @@
         "port": 41404
       },
       "id": "2264",
+      "license": "CC-BY-4.0",
       "name": "2264",
       "network": "nxdn",
       "source": "dvref",
@@ -1384,6 +1479,7 @@
         "port": 41405
       },
       "id": "2265",
+      "license": "CC-BY-4.0",
       "name": "2265",
       "network": "nxdn",
       "source": "dvref",
@@ -1398,6 +1494,7 @@
         "port": 41406
       },
       "id": "2266",
+      "license": "CC-BY-4.0",
       "name": "2266",
       "network": "nxdn",
       "source": "dvref",
@@ -1412,6 +1509,7 @@
         "port": 41407
       },
       "id": "2267",
+      "license": "CC-BY-4.0",
       "name": "2267",
       "network": "nxdn",
       "source": "dvref",
@@ -1426,6 +1524,7 @@
         "port": 41408
       },
       "id": "2268",
+      "license": "CC-BY-4.0",
       "name": "2268",
       "network": "nxdn",
       "source": "dvref",
@@ -1440,6 +1539,7 @@
         "port": 41409
       },
       "id": "2269",
+      "license": "CC-BY-4.0",
       "name": "2269",
       "network": "nxdn",
       "source": "dvref",
@@ -1454,6 +1554,7 @@
         "port": 41400
       },
       "id": "22825",
+      "license": "CC-BY-4.0",
       "name": "22825",
       "network": "nxdn",
       "source": "dvref",
@@ -1468,6 +1569,7 @@
         "port": 41400
       },
       "id": "22890",
+      "license": "CC-BY-4.0",
       "name": "CONF. ITALIA - Rete Multiprotocollo",
       "network": "nxdn",
       "source": "dvref",
@@ -1482,6 +1584,7 @@
         "port": 41400
       },
       "id": "2301",
+      "license": "CC-BY-4.0",
       "name": "CZ-NXDN",
       "network": "nxdn",
       "source": "dvref",
@@ -1496,6 +1599,7 @@
         "port": 41402
       },
       "id": "23416",
+      "license": "CC-BY-4.0",
       "name": "400Club",
       "network": "nxdn",
       "source": "dvref",
@@ -1510,6 +1614,7 @@
         "port": 41400
       },
       "id": "23426",
+      "license": "CC-BY-4.0",
       "name": "FreeSTAR UK",
       "network": "nxdn",
       "source": "dvref",
@@ -1524,6 +1629,7 @@
         "port": 41400
       },
       "id": "23450",
+      "license": "CC-BY-4.0",
       "name": "YorkshireNetUK",
       "network": "nxdn",
       "source": "dvref",
@@ -1538,6 +1644,7 @@
         "port": 41401
       },
       "id": "2350",
+      "license": "CC-BY-4.0",
       "name": "ChatterBOX 2350",
       "network": "nxdn",
       "source": "dvref",
@@ -1553,6 +1660,7 @@
         "port": 41400
       },
       "id": "23511",
+      "license": "CC-BY-4.0",
       "name": "23511",
       "network": "nxdn",
       "source": "dvref",
@@ -1568,6 +1676,7 @@
         "port": 41401
       },
       "id": "23525",
+      "license": "CC-BY-4.0",
       "name": "23525",
       "network": "nxdn",
       "source": "dvref",
@@ -1583,6 +1692,7 @@
         "port": 41400
       },
       "id": "23530",
+      "license": "CC-BY-4.0",
       "name": "Yorkshire Link",
       "network": "nxdn",
       "source": "dvref",
@@ -1597,6 +1707,7 @@
         "port": 41400
       },
       "id": "23534",
+      "license": "CC-BY-4.0",
       "name": "CumbriaCQ",
       "network": "nxdn",
       "source": "dvref",
@@ -1612,6 +1723,7 @@
         "port": 41400
       },
       "id": "23551",
+      "license": "CC-BY-4.0",
       "name": "NXDN Scotland",
       "network": "nxdn",
       "source": "dvref"
@@ -1626,6 +1738,7 @@
         "port": 41400
       },
       "id": "2359",
+      "license": "CC-BY-4.0",
       "name": "Southern England 88688",
       "network": "nxdn",
       "source": "dvref",
@@ -1640,6 +1753,7 @@
         "port": 41400
       },
       "id": "23595",
+      "license": "CC-BY-4.0",
       "name": "OZ-DMR NETWORK (UK)",
       "network": "nxdn",
       "source": "dvref",
@@ -1654,6 +1768,7 @@
         "port": 41400
       },
       "id": "239",
+      "license": "CC-BY-4.0",
       "name": "SW Florida NXDN Reflector",
       "network": "nxdn",
       "source": "dvref",
@@ -1668,6 +1783,7 @@
         "port": 41400
       },
       "id": "24033",
+      "license": "CC-BY-4.0",
       "name": "Arkansas Radio Heads",
       "network": "nxdn",
       "source": "dvref",
@@ -1683,6 +1799,7 @@
         "port": 41400
       },
       "id": "244",
+      "license": "CC-BY-4.0",
       "name": "Cross-mode DMR link",
       "network": "nxdn",
       "source": "dvref",
@@ -1697,6 +1814,7 @@
         "port": 41400
       },
       "id": "24601",
+      "license": "CC-BY-4.0",
       "name": "Lithuania MultiMode",
       "network": "nxdn",
       "source": "dvref",
@@ -1710,6 +1828,7 @@
         "port": 41400
       },
       "id": "24622",
+      "license": "CC-BY-4.0",
       "name": "LT HAM talks",
       "network": "nxdn",
       "source": "dvref",
@@ -1723,6 +1842,7 @@
         "port": 41400
       },
       "id": "24706",
+      "license": "CC-BY-4.0",
       "name": "MultiMode",
       "network": "nxdn",
       "source": "dvref",
@@ -1736,6 +1856,7 @@
         "port": 41400
       },
       "id": "25000",
+      "license": "CC-BY-4.0",
       "name": "New England 25000",
       "network": "nxdn",
       "source": "dvref",
@@ -1751,6 +1872,7 @@
         "port": 41400
       },
       "id": "255",
+      "license": "CC-BY-4.0",
       "name": "URF256",
       "network": "nxdn",
       "source": "dvref",
@@ -1765,6 +1887,7 @@
         "port": 41400
       },
       "id": "25504",
+      "license": "CC-BY-4.0",
       "name": "UA-Dnipro",
       "network": "nxdn",
       "source": "dvref",
@@ -1779,6 +1902,7 @@
         "port": 41400
       },
       "id": "256",
+      "license": "CC-BY-4.0",
       "name": "WX4ALA",
       "network": "nxdn",
       "source": "dvref",
@@ -1794,6 +1918,7 @@
         "port": 41400
       },
       "id": "25617",
+      "license": "CC-BY-4.0",
       "name": "KAVKAZ",
       "network": "nxdn",
       "source": "dvref",
@@ -1807,6 +1932,7 @@
         "port": 41400
       },
       "id": "25619",
+      "license": "CC-BY-4.0",
       "name": "Volgodonsk",
       "network": "nxdn",
       "source": "dvref",
@@ -1821,6 +1947,7 @@
         "port": 41400
       },
       "id": "2567",
+      "license": "CC-BY-4.0",
       "name": "Smolensk Obl. Digital network",
       "network": "nxdn",
       "source": "dvref"
@@ -1834,6 +1961,7 @@
         "port": 41400
       },
       "id": "25701",
+      "license": "CC-BY-4.0",
       "name": "BY MultiMode",
       "network": "nxdn",
       "source": "dvref",
@@ -1849,6 +1977,7 @@
         "port": 41400
       },
       "id": "26000",
+      "license": "CC-BY-4.0",
       "name": "NXDN-26000 Poland",
       "network": "nxdn",
       "source": "dvref",
@@ -1863,6 +1992,7 @@
         "port": 41400
       },
       "id": "26059",
+      "license": "CC-BY-4.0",
       "name": "NXDN-26059 Poland",
       "network": "nxdn",
       "source": "dvref",
@@ -1878,6 +2008,7 @@
         "port": 41400
       },
       "id": "26074",
+      "license": "CC-BY-4.0",
       "name": "SP5PA NXDN Reflector",
       "network": "nxdn",
       "source": "dvref",
@@ -1893,6 +2024,7 @@
         "port": 41400
       },
       "id": "26078",
+      "license": "CC-BY-4.0",
       "name": "NXDN-26078 Poland",
       "network": "nxdn",
       "source": "dvref",
@@ -1908,6 +2040,7 @@
         "port": 41400
       },
       "id": "26079",
+      "license": "CC-BY-4.0",
       "name": "NXDN-26079 Poland",
       "network": "nxdn",
       "source": "dvref",
@@ -1922,6 +2055,7 @@
         "port": 41400
       },
       "id": "26099",
+      "license": "CC-BY-4.0",
       "name": "NXDN-26099 Poland",
       "network": "nxdn",
       "source": "dvref",
@@ -1936,6 +2070,7 @@
         "port": 41400
       },
       "id": "26200",
+      "license": "CC-BY-4.0",
       "name": "NXDN-26200 - Deutschland",
       "network": "nxdn",
       "source": "dvref",
@@ -1950,6 +2085,7 @@
         "port": 41400
       },
       "id": "26221",
+      "license": "CC-BY-4.0",
       "name": "Hamburg-City",
       "network": "nxdn",
       "source": "dvref",
@@ -1964,6 +2100,7 @@
         "port": 41410
       },
       "id": "26230",
+      "license": "CC-BY-4.0",
       "name": "26230 - AFU Reg Hannover",
       "network": "nxdn",
       "source": "dvref",
@@ -1979,6 +2116,7 @@
         "port": 41400
       },
       "id": "26235",
+      "license": "CC-BY-4.0",
       "name": "Funknetz-Celle",
       "network": "nxdn",
       "source": "dvref",
@@ -1994,6 +2132,7 @@
         "port": 41400
       },
       "id": "26269",
+      "license": "CC-BY-4.0",
       "name": "URF269",
       "network": "nxdn",
       "source": "dvref",
@@ -2007,6 +2146,7 @@
         "port": 41400
       },
       "id": "26275",
+      "license": "CC-BY-4.0",
       "name": "DE-RAMSES-NXDN",
       "network": "nxdn",
       "source": "dvref",
@@ -2022,6 +2162,7 @@
         "port": 41400
       },
       "id": "26363",
+      "license": "CC-BY-4.0",
       "name": "URF363",
       "network": "nxdn",
       "source": "dvref",
@@ -2036,6 +2177,7 @@
         "port": 41400
       },
       "id": "26512",
+      "license": "CC-BY-4.0",
       "name": "NXDN-26512 Warszawa Poland",
       "network": "nxdn",
       "source": "dvref",
@@ -2050,6 +2192,7 @@
         "port": 41400
       },
       "id": "26810",
+      "license": "CC-BY-4.0",
       "name": "26810",
       "network": "nxdn",
       "source": "dvref",
@@ -2063,6 +2206,7 @@
         "port": 41400
       },
       "id": "2700",
+      "license": "CC-BY-4.0",
       "name": "Old Melbourne Repeater Association",
       "network": "nxdn",
       "source": "dvref",
@@ -2077,6 +2221,7 @@
         "port": 41400
       },
       "id": "274",
+      "license": "CC-BY-4.0",
       "name": "URF274",
       "network": "nxdn",
       "source": "dvref",
@@ -2092,6 +2237,7 @@
         "port": 41400
       },
       "id": "28299",
+      "license": "CC-BY-4.0",
       "name": "America Ragchew",
       "network": "nxdn",
       "source": "dvref",
@@ -2107,6 +2253,7 @@
         "port": 41400
       },
       "id": "284",
+      "license": "CC-BY-4.0",
       "name": "URF284",
       "network": "nxdn",
       "source": "dvref",
@@ -2122,6 +2269,7 @@
         "port": 41400
       },
       "id": "286",
+      "license": "CC-BY-4.0",
       "name": "NXDN T\u00dcRK\u0130YE",
       "network": "nxdn",
       "source": "dvref",
@@ -2136,6 +2284,7 @@
         "port": 41400
       },
       "id": "28600",
+      "license": "CC-BY-4.0",
       "name": "NXDN Turkiye Genel",
       "network": "nxdn",
       "source": "dvref",
@@ -2150,6 +2299,7 @@
         "port": 41472
       },
       "id": "28672",
+      "license": "CC-BY-4.0",
       "name": "NXDN Batman",
       "network": "nxdn",
       "source": "dvref",
@@ -2164,6 +2314,7 @@
         "port": 41473
       },
       "id": "28673",
+      "license": "CC-BY-4.0",
       "name": "NXDN Sirnak",
       "network": "nxdn",
       "source": "dvref",
@@ -2178,6 +2329,7 @@
         "port": 41474
       },
       "id": "28674",
+      "license": "CC-BY-4.0",
       "name": "NXDN Bartin",
       "network": "nxdn",
       "source": "dvref",
@@ -2192,6 +2344,7 @@
         "port": 41475
       },
       "id": "28675",
+      "license": "CC-BY-4.0",
       "name": "NXDN Ardahan",
       "network": "nxdn",
       "source": "dvref",
@@ -2206,6 +2359,7 @@
         "port": 41476
       },
       "id": "28676",
+      "license": "CC-BY-4.0",
       "name": "NXDN Igdir",
       "network": "nxdn",
       "source": "dvref",
@@ -2221,6 +2375,7 @@
         "port": 41400
       },
       "id": "28677",
+      "license": "CC-BY-4.0",
       "name": "NXDN YALOVA T\u00dcRK\u0130YE",
       "network": "nxdn",
       "source": "dvref",
@@ -2235,6 +2390,7 @@
         "port": 41478
       },
       "id": "28678",
+      "license": "CC-BY-4.0",
       "name": "NXDN Karabuk",
       "network": "nxdn",
       "source": "dvref",
@@ -2249,6 +2405,7 @@
         "port": 41479
       },
       "id": "28679",
+      "license": "CC-BY-4.0",
       "name": "NXDN Kilis",
       "network": "nxdn",
       "source": "dvref",
@@ -2263,6 +2420,7 @@
         "port": 41480
       },
       "id": "28680",
+      "license": "CC-BY-4.0",
       "name": "NXDN Osmaniye",
       "network": "nxdn",
       "source": "dvref",
@@ -2278,6 +2436,7 @@
         "port": 41481
       },
       "id": "28681",
+      "license": "CC-BY-4.0",
       "name": "NXDN Duzce",
       "network": "nxdn",
       "source": "dvref",
@@ -2293,6 +2452,7 @@
         "port": 41400
       },
       "id": "28690",
+      "license": "CC-BY-4.0",
       "name": "NXDN-28690",
       "network": "nxdn",
       "source": "dvref",
@@ -2307,6 +2467,7 @@
         "port": 41400
       },
       "id": "28699",
+      "license": "CC-BY-4.0",
       "name": "URFTRK",
       "network": "nxdn",
       "source": "dvref",
@@ -2322,6 +2483,7 @@
         "port": 41400
       },
       "id": "293",
+      "license": "CC-BY-4.0",
       "name": "NXDN Slovenia 293",
       "network": "nxdn",
       "source": "dvref",
@@ -2337,6 +2499,7 @@
         "port": 41402
       },
       "id": "29314",
+      "license": "CC-BY-4.0",
       "name": "NXDN Slovenia 29314",
       "network": "nxdn",
       "source": "dvref",
@@ -2352,6 +2515,7 @@
         "port": 41401
       },
       "id": "29320",
+      "license": "CC-BY-4.0",
       "name": "NXDN Slovenia 29320",
       "network": "nxdn",
       "source": "dvref",
@@ -2366,6 +2530,7 @@
         "port": 41400
       },
       "id": "297",
+      "license": "CC-BY-4.0",
       "name": "URF297",
       "network": "nxdn",
       "source": "dvref",
@@ -2381,6 +2546,7 @@
         "port": 41400
       },
       "id": "30420",
+      "license": "CC-BY-4.0",
       "name": "URFARA",
       "network": "nxdn",
       "source": "dvref",
@@ -2394,6 +2560,7 @@
         "port": 41400
       },
       "id": "30444",
+      "license": "CC-BY-4.0",
       "name": "ZONA DMR CL  NXDN PROJECT",
       "network": "nxdn",
       "source": "dvref",
@@ -2409,6 +2576,7 @@
         "port": 41400
       },
       "id": "306",
+      "license": "CC-BY-4.0",
       "name": "URF306",
       "network": "nxdn",
       "source": "dvref",
@@ -2424,6 +2592,7 @@
         "port": 41400
       },
       "id": "30639",
+      "license": "CC-BY-4.0",
       "name": "30639",
       "network": "nxdn",
       "source": "dvref",
@@ -2439,6 +2608,7 @@
         "port": 41400
       },
       "id": "31010",
+      "license": "CC-BY-4.0",
       "name": "Alabama Link",
       "network": "nxdn",
       "source": "dvref",
@@ -2453,6 +2623,7 @@
         "port": 41400
       },
       "id": "31059",
+      "license": "CC-BY-4.0",
       "name": "vidalia net",
       "network": "nxdn",
       "source": "dvref",
@@ -2467,6 +2638,7 @@
         "port": 41400
       },
       "id": "31068",
+      "license": "CC-BY-4.0",
       "name": "NXDN NorCal  Talk Group",
       "network": "nxdn",
       "source": "dvref",
@@ -2481,6 +2653,7 @@
         "port": 41400
       },
       "id": "31081",
+      "license": "CC-BY-4.0",
       "name": "Fun Machine Linked Repeater System",
       "network": "nxdn",
       "source": "dvref",
@@ -2495,6 +2668,7 @@
         "port": 41400
       },
       "id": "31138",
+      "license": "CC-BY-4.0",
       "name": "KingsLand Local",
       "network": "nxdn",
       "source": "dvref",
@@ -2510,6 +2684,7 @@
         "port": 41400
       },
       "id": "31171",
+      "license": "CC-BY-4.0",
       "name": "31171",
       "network": "nxdn",
       "source": "dvref",
@@ -2525,6 +2700,7 @@
         "port": 41400
       },
       "id": "31188",
+      "license": "CC-BY-4.0",
       "name": "URFSIN",
       "network": "nxdn",
       "source": "dvref",
@@ -2539,6 +2715,7 @@
         "port": 41400
       },
       "id": "31201",
+      "license": "CC-BY-4.0",
       "name": "BYRG",
       "network": "nxdn",
       "source": "dvref",
@@ -2553,6 +2730,7 @@
         "port": 41400
       },
       "id": "31202",
+      "license": "CC-BY-4.0",
       "name": "BYRG Chat and Testing",
       "network": "nxdn",
       "source": "dvref",
@@ -2567,6 +2745,7 @@
         "port": 41400
       },
       "id": "31203",
+      "license": "CC-BY-4.0",
       "name": "K0XM development",
       "network": "nxdn",
       "source": "dvref"
@@ -2579,6 +2758,7 @@
         "port": 41400
       },
       "id": "31226",
+      "license": "CC-BY-4.0",
       "name": "World Wide Chat",
       "network": "nxdn",
       "source": "dvref",
@@ -2594,6 +2774,7 @@
         "port": 41400
       },
       "id": "31238",
+      "license": "CC-BY-4.0",
       "name": "31238",
       "network": "nxdn",
       "source": "dvref",
@@ -2608,6 +2789,7 @@
         "port": 41401
       },
       "id": "31291",
+      "license": "CC-BY-4.0",
       "name": "Southwest Missouri",
       "network": "nxdn",
       "source": "dvref",
@@ -2622,6 +2804,7 @@
         "port": 41400
       },
       "id": "31313",
+      "license": "CC-BY-4.0",
       "name": "KCWide NXDN",
       "network": "nxdn",
       "source": "dvref",
@@ -2637,6 +2820,7 @@
         "port": 41400
       },
       "id": "31337",
+      "license": "CC-BY-4.0",
       "name": "URF668",
       "network": "nxdn",
       "source": "dvref",
@@ -2651,6 +2835,7 @@
         "port": 41400
       },
       "id": "31340",
+      "license": "CC-BY-4.0",
       "name": "CNJHAM",
       "network": "nxdn",
       "source": "dvref",
@@ -2665,6 +2850,7 @@
         "port": 41400
       },
       "id": "31377",
+      "license": "CC-BY-4.0",
       "name": "Foothills Wave Whisperers",
       "network": "nxdn",
       "source": "dvref"
@@ -2678,6 +2864,7 @@
         "port": 41400
       },
       "id": "31379",
+      "license": "CC-BY-4.0",
       "name": "Piedmont Triad Network",
       "network": "nxdn",
       "source": "dvref"
@@ -2690,6 +2877,7 @@
         "port": 41400
       },
       "id": "31393",
+      "license": "CC-BY-4.0",
       "name": "TORCON Weather Alert Network",
       "network": "nxdn",
       "source": "dvref",
@@ -2705,6 +2893,7 @@
         "port": 41400
       },
       "id": "31403",
+      "license": "CC-BY-4.0",
       "name": "31403",
       "network": "nxdn",
       "source": "dvref",
@@ -2720,6 +2909,7 @@
         "port": 41402
       },
       "id": "3142",
+      "license": "CC-BY-4.0",
       "name": "3142",
       "network": "nxdn",
       "source": "dvref",
@@ -2734,6 +2924,7 @@
         "port": 41400
       },
       "id": "31444",
+      "license": "CC-BY-4.0",
       "name": "31444",
       "network": "nxdn",
       "source": "dvref",
@@ -2747,6 +2938,7 @@
         "port": 41400
       },
       "id": "31473",
+      "license": "CC-BY-4.0",
       "name": "TN TAC System",
       "network": "nxdn",
       "source": "dvref",
@@ -2761,6 +2953,7 @@
         "port": 41400
       },
       "id": "31490",
+      "license": "CC-BY-4.0",
       "name": "Utah DRN 00 Bridge",
       "network": "nxdn",
       "source": "dvref",
@@ -2775,6 +2968,7 @@
         "port": 41401
       },
       "id": "31491",
+      "license": "CC-BY-4.0",
       "name": "Utah DRN 01 Bridge",
       "network": "nxdn",
       "source": "dvref",
@@ -2789,6 +2983,7 @@
         "port": 41400
       },
       "id": "31495",
+      "license": "CC-BY-4.0",
       "name": "Utah DRN 05 Bridge",
       "network": "nxdn",
       "source": "dvref",
@@ -2804,6 +2999,7 @@
         "port": 41400
       },
       "id": "31555",
+      "license": "CC-BY-4.0",
       "name": "Wisconsin DMR(Digital Mode Reflector)  The followi",
       "network": "nxdn",
       "source": "dvref",
@@ -2819,6 +3015,7 @@
         "port": 41400
       },
       "id": "31611",
+      "license": "CC-BY-4.0",
       "name": "XPR Pinoy Network",
       "network": "nxdn",
       "source": "dvref",
@@ -2833,6 +3030,7 @@
         "port": 41400
       },
       "id": "31672",
+      "license": "CC-BY-4.0",
       "name": "Pi-Star Multi-Mode Reflector",
       "network": "nxdn",
       "source": "dvref",
@@ -2848,6 +3046,7 @@
         "port": 41400
       },
       "id": "31691",
+      "license": "CC-BY-4.0",
       "name": "TriStateDMR (IL-IN-WI Multimode)",
       "network": "nxdn",
       "source": "dvref",
@@ -2863,6 +3062,7 @@
         "port": 41040
       },
       "id": "31701",
+      "license": "CC-BY-4.0",
       "name": "Starfleet Amateur Radio Group - Trek Talk",
       "network": "nxdn",
       "source": "dvref",
@@ -2877,6 +3077,7 @@
         "port": 41400
       },
       "id": "3175",
+      "license": "CC-BY-4.0",
       "name": "The Fog Multi mode system XLX073",
       "network": "nxdn",
       "source": "dvref",
@@ -2892,6 +3093,7 @@
         "port": 41400
       },
       "id": "31777",
+      "license": "CC-BY-4.0",
       "name": "DX-LINK SYSTEM",
       "network": "nxdn",
       "source": "dvref",
@@ -2906,6 +3108,7 @@
         "port": 41040
       },
       "id": "31910",
+      "license": "CC-BY-4.0",
       "name": "LMRNET",
       "network": "nxdn",
       "source": "dvref",
@@ -2920,6 +3123,7 @@
         "port": 41400
       },
       "id": "31947",
+      "license": "CC-BY-4.0",
       "name": "Missouri Digital Calling Network",
       "network": "nxdn",
       "source": "dvref",
@@ -2935,6 +3139,7 @@
         "port": 41400
       },
       "id": "31983",
+      "license": "CC-BY-4.0",
       "name": "31983",
       "network": "nxdn",
       "source": "dvref",
@@ -2949,6 +3154,7 @@
         "port": 41400
       },
       "id": "32100",
+      "license": "CC-BY-4.0",
       "name": "NXDN-GMR",
       "network": "nxdn",
       "source": "dvref"
@@ -2963,6 +3169,7 @@
         "port": 41400
       },
       "id": "32103",
+      "license": "CC-BY-4.0",
       "name": "CW Ops - CW Academy - CW",
       "network": "nxdn",
       "source": "dvref",
@@ -2977,6 +3184,7 @@
         "port": 41400
       },
       "id": "3241",
+      "license": "CC-BY-4.0",
       "name": "URF324",
       "network": "nxdn",
       "source": "dvref",
@@ -2991,6 +3199,7 @@
         "port": 43000
       },
       "id": "333",
+      "license": "CC-BY-4.0",
       "name": "W2NJR Linked Repeater System",
       "network": "nxdn",
       "source": "dvref",
@@ -3006,6 +3215,7 @@
         "port": 41100
       },
       "id": "3341",
+      "license": "CC-BY-4.0",
       "name": "NXDN-XE1JMB",
       "network": "nxdn",
       "source": "dvref",
@@ -3020,6 +3230,7 @@
         "port": 41400
       },
       "id": "33420",
+      "license": "CC-BY-4.0",
       "name": "Durango",
       "network": "nxdn",
       "source": "dvref",
@@ -3035,6 +3246,7 @@
         "port": 41400
       },
       "id": "33581",
+      "license": "CC-BY-4.0",
       "name": "NET TALK NXDN",
       "network": "nxdn",
       "source": "dvref",
@@ -3049,6 +3261,7 @@
         "port": 41400
       },
       "id": "34075",
+      "license": "CC-BY-4.0",
       "name": "URFSCP",
       "network": "nxdn",
       "source": "dvref",
@@ -3064,6 +3277,7 @@
         "port": 41400
       },
       "id": "34109",
+      "license": "CC-BY-4.0",
       "name": "34109",
       "network": "nxdn",
       "source": "dvref",
@@ -3079,6 +3293,7 @@
         "port": 41400
       },
       "id": "359",
+      "license": "CC-BY-4.0",
       "name": "URF359",
       "network": "nxdn",
       "source": "dvref",
@@ -3094,6 +3309,7 @@
         "port": 41400
       },
       "id": "3690",
+      "license": "CC-BY-4.0",
       "name": "XLX239 Multiprotocol Reflector",
       "network": "nxdn",
       "source": "dvref",
@@ -3109,6 +3325,7 @@
         "port": 41400
       },
       "id": "38",
+      "license": "CC-BY-4.0",
       "name": "XLX138 Module B",
       "network": "nxdn",
       "source": "dvref",
@@ -3122,6 +3339,7 @@
         "port": 41040
       },
       "id": "396",
+      "license": "CC-BY-4.0",
       "name": "US-KEYWORK",
       "network": "nxdn",
       "source": "dvref"
@@ -3136,6 +3354,7 @@
         "port": 41400
       },
       "id": "401",
+      "license": "CC-BY-4.0",
       "name": "N1LMA DIGITAL",
       "network": "nxdn",
       "source": "dvref",
@@ -3150,6 +3369,7 @@
         "port": 41400
       },
       "id": "40102",
+      "license": "CC-BY-4.0",
       "name": "KZ NXDN Reflector",
       "network": "nxdn",
       "source": "dvref",
@@ -3165,6 +3385,7 @@
         "port": 41400
       },
       "id": "4014",
+      "license": "CC-BY-4.0",
       "name": "XLX NXDN REFLECTOR",
       "network": "nxdn",
       "source": "dvref",
@@ -3179,6 +3400,7 @@
         "port": 41405
       },
       "id": "405",
+      "license": "CC-BY-4.0",
       "name": "XLX405 - NXDN",
       "network": "nxdn",
       "source": "dvref",
@@ -3192,6 +3414,7 @@
         "port": 41040
       },
       "id": "419",
+      "license": "CC-BY-4.0",
       "name": "Toledo Amateur Digital Association",
       "network": "nxdn",
       "source": "dvref",
@@ -3206,6 +3429,7 @@
         "port": 41400
       },
       "id": "420",
+      "license": "CC-BY-4.0",
       "name": "VE2SUS REF420",
       "network": "nxdn",
       "source": "dvref",
@@ -3220,6 +3444,7 @@
         "port": 41402
       },
       "id": "42021",
+      "license": "CC-BY-4.0",
       "name": "NXDN-TEST",
       "network": "nxdn",
       "source": "dvref"
@@ -3233,6 +3458,7 @@
         "port": 41400
       },
       "id": "425",
+      "license": "CC-BY-4.0",
       "name": "URF425",
       "network": "nxdn",
       "source": "dvref",
@@ -3247,6 +3473,7 @@
         "port": 41400
       },
       "id": "427",
+      "license": "CC-BY-4.0",
       "name": "XLX427A - NXDN TG427",
       "network": "nxdn",
       "source": "dvref",
@@ -3261,6 +3488,7 @@
         "port": 41400
       },
       "id": "4302",
+      "license": "CC-BY-4.0",
       "name": "URF162",
       "network": "nxdn",
       "source": "dvref",
@@ -3276,6 +3504,7 @@
         "port": 41400
       },
       "id": "43389",
+      "license": "CC-BY-4.0",
       "name": "43389",
       "network": "nxdn",
       "source": "dvref",
@@ -3290,6 +3519,7 @@
         "port": 41400
       },
       "id": "43715",
+      "license": "CC-BY-4.0",
       "name": "Kazakhstan NXDN",
       "network": "nxdn",
       "source": "dvref",
@@ -3304,6 +3534,7 @@
         "port": 41400
       },
       "id": "44000",
+      "license": "CC-BY-4.0",
       "name": "44000",
       "network": "nxdn",
       "source": "dvref",
@@ -3318,6 +3549,7 @@
         "port": 41400
       },
       "id": "44120",
+      "license": "CC-BY-4.0",
       "name": "JP-OWARI",
       "network": "nxdn",
       "source": "dvref",
@@ -3333,6 +3565,7 @@
         "port": 41400
       },
       "id": "44155",
+      "license": "CC-BY-4.0",
       "name": "NXDN-NAGOYA",
       "network": "nxdn",
       "source": "dvref",
@@ -3347,6 +3580,7 @@
         "port": 41400
       },
       "id": "45000",
+      "license": "CC-BY-4.0",
       "name": "450IPSC2-NXDN",
       "network": "nxdn",
       "source": "dvref",
@@ -3362,6 +3596,7 @@
         "port": 41400
       },
       "id": "45001",
+      "license": "CC-BY-4.0",
       "name": "45001",
       "network": "nxdn",
       "source": "dvref",
@@ -3375,6 +3610,7 @@
         "port": 41400
       },
       "id": "45401",
+      "license": "CC-BY-4.0",
       "name": "TG-45401 Hong Kong",
       "network": "nxdn",
       "source": "dvref"
@@ -3387,6 +3623,7 @@
         "port": 41400
       },
       "id": "46001",
+      "license": "CC-BY-4.0",
       "name": "46001",
       "network": "nxdn",
       "source": "dvref"
@@ -3400,6 +3637,7 @@
         "port": 41400
       },
       "id": "46002",
+      "license": "CC-BY-4.0",
       "name": "46002",
       "network": "nxdn",
       "source": "dvref",
@@ -3413,6 +3651,7 @@
         "port": 41400
       },
       "id": "46008",
+      "license": "CC-BY-4.0",
       "name": "Cross To BM_TG46008",
       "network": "nxdn",
       "source": "dvref",
@@ -3427,6 +3666,7 @@
         "port": 41402
       },
       "id": "46010",
+      "license": "CC-BY-4.0",
       "name": "46010",
       "network": "nxdn",
       "source": "dvref"
@@ -3439,6 +3679,7 @@
         "port": 41400
       },
       "id": "46018",
+      "license": "CC-BY-4.0",
       "name": "TG46018 Only NXDN",
       "network": "nxdn",
       "source": "dvref",
@@ -3453,6 +3694,7 @@
         "port": 41400
       },
       "id": "46020",
+      "license": "CC-BY-4.0",
       "name": "Guangzhou DMR TG46020",
       "network": "nxdn",
       "source": "dvref",
@@ -3466,6 +3708,7 @@
         "port": 41400
       },
       "id": "46085",
+      "license": "CC-BY-4.0",
       "name": "NXDN TO BM 46085",
       "network": "nxdn",
       "source": "dvref",
@@ -3480,6 +3723,7 @@
         "port": 41400
       },
       "id": "46087",
+      "license": "CC-BY-4.0",
       "name": "YN-46087",
       "network": "nxdn",
       "source": "dvref",
@@ -3494,6 +3738,7 @@
         "port": 41400
       },
       "id": "461",
+      "license": "CC-BY-4.0",
       "name": "URFPRC",
       "network": "nxdn",
       "source": "dvref",
@@ -3508,6 +3753,7 @@
         "port": 41400
       },
       "id": "4610",
+      "license": "CC-BY-4.0",
       "name": "KC6NKK NXDN",
       "network": "nxdn",
       "source": "dvref"
@@ -3520,6 +3766,7 @@
         "port": 41400
       },
       "id": "46601",
+      "license": "CC-BY-4.0",
       "name": "NXDN to DMR TG46601",
       "network": "nxdn",
       "source": "dvref"
@@ -3532,6 +3779,7 @@
         "port": 41400
       },
       "id": "46666",
+      "license": "CC-BY-4.0",
       "name": "DMRISGOOD",
       "network": "nxdn",
       "source": "dvref",
@@ -3547,6 +3795,7 @@
         "port": 41400
       },
       "id": "4700",
+      "license": "CC-BY-4.0",
       "name": "W4YI",
       "network": "nxdn",
       "source": "dvref",
@@ -3561,6 +3810,7 @@
         "port": 41401
       },
       "id": "47070",
+      "license": "CC-BY-4.0",
       "name": "S21ALT NXDN 47070",
       "network": "nxdn",
       "source": "dvref"
@@ -3574,6 +3824,7 @@
         "port": 41400
       },
       "id": "478",
+      "license": "CC-BY-4.0",
       "name": "URF478",
       "network": "nxdn",
       "source": "dvref",
@@ -3589,6 +3840,7 @@
         "port": 41400
       },
       "id": "49",
+      "license": "CC-BY-4.0",
       "name": "XLX049 NXDN bridged to XLX049C",
       "network": "nxdn",
       "source": "dvref",
@@ -3604,6 +3856,7 @@
         "port": 41400
       },
       "id": "493",
+      "license": "CC-BY-4.0",
       "name": "WPSD Chat",
       "network": "nxdn",
       "source": "dvref",
@@ -3619,6 +3872,7 @@
         "port": 41401
       },
       "id": "50210",
+      "license": "CC-BY-4.0",
       "name": "Malaysia NXDN Reflector",
       "network": "nxdn",
       "source": "dvref",
@@ -3634,6 +3888,7 @@
         "port": 41402
       },
       "id": "50288",
+      "license": "CC-BY-4.0",
       "name": "Malaysia Canton Channel",
       "network": "nxdn",
       "source": "dvref",
@@ -3648,6 +3903,7 @@
         "port": 41400
       },
       "id": "5030",
+      "license": "CC-BY-4.0",
       "name": "KK7GKG ASL Bridge 1",
       "network": "nxdn",
       "source": "dvref",
@@ -3662,6 +3918,7 @@
         "port": 41400
       },
       "id": "5031",
+      "license": "CC-BY-4.0",
       "name": "KK7GKG ASL Bridge 2",
       "network": "nxdn",
       "source": "dvref",
@@ -3677,6 +3934,7 @@
         "port": 41401
       },
       "id": "50500",
+      "license": "CC-BY-4.0",
       "name": "VK Calling Hub",
       "network": "nxdn",
       "source": "dvref",
@@ -3692,6 +3950,7 @@
         "port": 41400
       },
       "id": "50505",
+      "license": "CC-BY-4.0",
       "name": "VK Calling Hub",
       "network": "nxdn",
       "source": "dvref",
@@ -3707,6 +3966,7 @@
         "port": 41400
       },
       "id": "50525",
+      "license": "CC-BY-4.0",
       "name": "50525 NXDN",
       "network": "nxdn",
       "source": "dvref",
@@ -3722,6 +3982,7 @@
         "port": 41400
       },
       "id": "50535",
+      "license": "CC-BY-4.0",
       "name": "50535",
       "network": "nxdn",
       "source": "dvref",
@@ -3737,6 +3998,7 @@
         "port": 41402
       },
       "id": "5055",
+      "license": "CC-BY-4.0",
       "name": "Australia - SA",
       "network": "nxdn",
       "source": "dvref",
@@ -3751,6 +4013,7 @@
         "port": 41400
       },
       "id": "50595",
+      "license": "CC-BY-4.0",
       "name": "OZ-DMR",
       "network": "nxdn",
       "source": "dvref",
@@ -3764,6 +4027,7 @@
         "port": 41400
       },
       "id": "50964",
+      "license": "CC-BY-4.0",
       "name": "LARK",
       "network": "nxdn",
       "source": "dvref",
@@ -3778,6 +4042,7 @@
         "port": 41401
       },
       "id": "51000",
+      "license": "CC-BY-4.0",
       "name": "NXDN-51000 Poland",
       "network": "nxdn",
       "source": "dvref",
@@ -3793,6 +4058,7 @@
         "port": 41400
       },
       "id": "51500",
+      "license": "CC-BY-4.0",
       "name": "51500",
       "network": "nxdn",
       "source": "dvref",
@@ -3807,6 +4073,7 @@
         "port": 41400
       },
       "id": "517",
+      "license": "CC-BY-4.0",
       "name": "URF517",
       "network": "nxdn",
       "source": "dvref",
@@ -3822,6 +4089,7 @@
         "port": 41404
       },
       "id": "52032",
+      "license": "CC-BY-4.0",
       "name": "52032",
       "network": "nxdn",
       "source": "dvref",
@@ -3837,6 +4105,7 @@
         "port": 41408
       },
       "id": "52149",
+      "license": "CC-BY-4.0",
       "name": "52149",
       "network": "nxdn",
       "source": "dvref",
@@ -3851,6 +4120,7 @@
         "port": 41400
       },
       "id": "52521",
+      "license": "CC-BY-4.0",
       "name": "NXDN 52521 By HS1DMM",
       "network": "nxdn",
       "source": "dvref",
@@ -3865,6 +4135,7 @@
         "port": 41400
       },
       "id": "530",
+      "license": "CC-BY-4.0",
       "name": "530",
       "network": "nxdn",
       "source": "dvref",
@@ -3878,6 +4149,7 @@
         "port": 41403
       },
       "id": "53035",
+      "license": "CC-BY-4.0",
       "name": "NZ Calling",
       "network": "nxdn",
       "source": "dvref",
@@ -3892,6 +4164,7 @@
         "port": 41400
       },
       "id": "535",
+      "license": "CC-BY-4.0",
       "name": "URF535",
       "network": "nxdn",
       "source": "dvref",
@@ -3907,6 +4180,7 @@
         "port": 41400
       },
       "id": "5383",
+      "license": "CC-BY-4.0",
       "name": "URF550",
       "network": "nxdn",
       "source": "dvref",
@@ -3920,6 +4194,7 @@
         "port": 41400
       },
       "id": "55577",
+      "license": "CC-BY-4.0",
       "name": "FN-NXDN",
       "network": "nxdn",
       "source": "dvref",
@@ -3934,6 +4209,7 @@
         "port": 41400
       },
       "id": "56420",
+      "license": "CC-BY-4.0",
       "name": "LZARC",
       "network": "nxdn",
       "source": "dvref",
@@ -3948,6 +4224,7 @@
         "port": 41400
       },
       "id": "56429",
+      "license": "CC-BY-4.0",
       "name": "Wyre Forest NXDN Link",
       "network": "nxdn",
       "source": "dvref",
@@ -3962,6 +4239,7 @@
         "port": 41400
       },
       "id": "58734",
+      "license": "CC-BY-4.0",
       "name": "NXDN TECH LINK",
       "network": "nxdn",
       "source": "dvref",
@@ -3977,6 +4255,7 @@
         "port": 41400
       },
       "id": "621",
+      "license": "CC-BY-4.0",
       "name": "URF621",
       "network": "nxdn",
       "source": "dvref",
@@ -3992,6 +4271,7 @@
         "port": 41400
       },
       "id": "62238",
+      "license": "CC-BY-4.0",
       "name": "KC3YGF Middle River, Maryland, USA",
       "network": "nxdn",
       "source": "dvref",
@@ -4007,6 +4287,7 @@
         "port": 41400
       },
       "id": "6381",
+      "license": "CC-BY-4.0",
       "name": "URF045",
       "network": "nxdn",
       "source": "dvref",
@@ -4022,6 +4303,7 @@
         "port": 41400
       },
       "id": "6382",
+      "license": "CC-BY-4.0",
       "name": "URF645",
       "network": "nxdn",
       "source": "dvref",
@@ -4036,6 +4318,7 @@
         "port": 41400
       },
       "id": "64003",
+      "license": "CC-BY-4.0",
       "name": "ELITE NXDN",
       "network": "nxdn",
       "source": "dvref",
@@ -4050,6 +4333,7 @@
         "port": 41400
       },
       "id": "64701",
+      "license": "CC-BY-4.0",
       "name": "NXDN REUNION",
       "network": "nxdn",
       "source": "dvref",
@@ -4063,6 +4347,7 @@
         "port": 41400
       },
       "id": "65000",
+      "license": "CC-BY-4.0",
       "name": "World Wide",
       "network": "nxdn",
       "source": "dvref",
@@ -4078,6 +4363,7 @@
         "port": 41400
       },
       "id": "65100",
+      "license": "CC-BY-4.0",
       "name": "65100",
       "network": "nxdn",
       "source": "dvref",
@@ -4092,6 +4378,7 @@
         "port": 41400
       },
       "id": "65123",
+      "license": "CC-BY-4.0",
       "name": "TEXAS-MRN NXDN",
       "network": "nxdn",
       "source": "dvref",
@@ -4105,6 +4392,7 @@
         "port": 41400
       },
       "id": "65200",
+      "license": "CC-BY-4.0",
       "name": "NXDN SERVER",
       "network": "nxdn",
       "source": "dvref"
@@ -4119,6 +4407,7 @@
         "port": 41400
       },
       "id": "65206",
+      "license": "CC-BY-4.0",
       "name": "NXDN Belgium",
       "network": "nxdn",
       "source": "dvref",
@@ -4133,6 +4422,7 @@
         "port": 41400
       },
       "id": "65208",
+      "license": "CC-BY-4.0",
       "name": "NXDN-FRA",
       "network": "nxdn",
       "source": "dvref",
@@ -4148,6 +4438,7 @@
         "port": 41410
       },
       "id": "65209",
+      "license": "CC-BY-4.0",
       "name": "65209",
       "network": "nxdn",
       "source": "dvref",
@@ -4163,6 +4454,7 @@
         "port": 41400
       },
       "id": "654",
+      "license": "CC-BY-4.0",
       "name": "N2FED",
       "network": "nxdn",
       "source": "dvref",
@@ -4177,6 +4469,7 @@
         "port": 41401
       },
       "id": "665",
+      "license": "CC-BY-4.0",
       "name": "665",
       "network": "nxdn",
       "source": "dvref",
@@ -4191,6 +4484,7 @@
         "port": 41400
       },
       "id": "6749",
+      "license": "CC-BY-4.0",
       "name": "Netoholics Network",
       "network": "nxdn",
       "source": "dvref",
@@ -4206,6 +4500,7 @@
         "port": 41400
       },
       "id": "700",
+      "license": "CC-BY-4.0",
       "name": "URF700",
       "network": "nxdn",
       "source": "dvref",
@@ -4221,6 +4516,7 @@
         "port": 41400
       },
       "id": "707",
+      "license": "CC-BY-4.0",
       "name": "707",
       "network": "nxdn",
       "source": "dvref",
@@ -4235,6 +4531,7 @@
         "port": 41400
       },
       "id": "711",
+      "license": "CC-BY-4.0",
       "name": "NXDN Global by David PA7LIM",
       "network": "nxdn",
       "source": "dvref",
@@ -4249,6 +4546,7 @@
         "port": 41400
       },
       "id": "7144",
+      "license": "CC-BY-4.0",
       "name": "Chiriqui Link Panama",
       "network": "nxdn",
       "source": "dvref"
@@ -4262,6 +4560,7 @@
         "port": 41400
       },
       "id": "7145",
+      "license": "CC-BY-4.0",
       "name": "NXDN GREMPA",
       "network": "nxdn",
       "source": "dvref"
@@ -4275,6 +4574,7 @@
         "port": 41400
       },
       "id": "7146",
+      "license": "CC-BY-4.0",
       "name": "UPRA",
       "network": "nxdn",
       "source": "dvref",
@@ -4289,6 +4589,7 @@
         "port": 41400
       },
       "id": "718",
+      "license": "CC-BY-4.0",
       "name": "URF718",
       "network": "nxdn",
       "source": "dvref",
@@ -4304,6 +4605,7 @@
         "port": 41400
       },
       "id": "7221",
+      "license": "CC-BY-4.0",
       "name": "URFARG",
       "network": "nxdn",
       "source": "dvref",
@@ -4318,6 +4620,7 @@
         "port": 41400
       },
       "id": "7224",
+      "license": "CC-BY-4.0",
       "name": "Conferencia NAUTICA",
       "network": "nxdn",
       "source": "dvref",
@@ -4333,6 +4636,7 @@
         "port": 41400
       },
       "id": "7240",
+      "license": "CC-BY-4.0",
       "name": "7240",
       "network": "nxdn",
       "source": "dvref",
@@ -4348,6 +4652,7 @@
         "port": 41400
       },
       "id": "7245",
+      "license": "CC-BY-4.0",
       "name": "7245 Brazil - Multiprotocolo",
       "network": "nxdn",
       "source": "dvref",
@@ -4361,6 +4666,7 @@
         "port": 41400
       },
       "id": "730",
+      "license": "CC-BY-4.0",
       "name": "BM TG730 Chile",
       "network": "nxdn",
       "source": "dvref",
@@ -4375,6 +4681,7 @@
         "port": 41400
       },
       "id": "7300",
+      "license": "CC-BY-4.0",
       "name": "NXDN Reflector Dashboard TG 7300 Apeldoorn",
       "network": "nxdn",
       "source": "dvref",
@@ -4388,6 +4695,7 @@
         "port": 41401
       },
       "id": "7309",
+      "license": "CC-BY-4.0",
       "name": "BM TG 73099 CHILE-LINK",
       "network": "nxdn",
       "source": "dvref",
@@ -4401,6 +4709,7 @@
         "port": 41400
       },
       "id": "732",
+      "license": "CC-BY-4.0",
       "name": "Caf\u00e9 Digital Colombia",
       "network": "nxdn",
       "source": "dvref",
@@ -4416,6 +4725,7 @@
         "port": 41400
       },
       "id": "7344",
+      "license": "CC-BY-4.0",
       "name": "NXDN MCC-YV",
       "network": "nxdn",
       "source": "dvref",
@@ -4430,6 +4740,7 @@
         "port": 41401
       },
       "id": "747",
+      "license": "CC-BY-4.0",
       "name": "747",
       "network": "nxdn",
       "source": "dvref",
@@ -4443,6 +4754,7 @@
         "port": 41400
       },
       "id": "748",
+      "license": "CC-BY-4.0",
       "name": "UYURUGUAY.NET",
       "network": "nxdn",
       "source": "dvref",
@@ -4457,6 +4769,7 @@
         "port": 41400
       },
       "id": "7486",
+      "license": "CC-BY-4.0",
       "name": "URF073",
       "network": "nxdn",
       "source": "dvref",
@@ -4472,6 +4785,7 @@
         "port": 41400
       },
       "id": "7487",
+      "license": "CC-BY-4.0",
       "name": "Uruguay Link NXDN",
       "network": "nxdn",
       "source": "dvref",
@@ -4487,6 +4801,7 @@
         "port": 41400
       },
       "id": "7575",
+      "license": "CC-BY-4.0",
       "name": "ALICANTE",
       "network": "nxdn",
       "source": "dvref"
@@ -4501,6 +4816,7 @@
         "port": 41400
       },
       "id": "76",
+      "license": "CC-BY-4.0",
       "name": "XLX Californa Tennesee",
       "network": "nxdn",
       "source": "dvref"
@@ -4515,6 +4831,7 @@
         "port": 41400
       },
       "id": "760",
+      "license": "CC-BY-4.0",
       "name": "URF760",
       "network": "nxdn",
       "source": "dvref",
@@ -4528,6 +4845,7 @@
         "port": 41401
       },
       "id": "777",
+      "license": "CC-BY-4.0",
       "name": "JesusSaves - Not Linked",
       "network": "nxdn",
       "source": "dvref"
@@ -4540,6 +4858,7 @@
         "port": 41402
       },
       "id": "7770",
+      "license": "CC-BY-4.0",
       "name": "JesusSaves - Linked",
       "network": "nxdn",
       "source": "dvref"
@@ -4553,6 +4872,7 @@
         "port": 41400
       },
       "id": "7941",
+      "license": "CC-BY-4.0",
       "name": "WMRA MULTIMODE NETWORK",
       "network": "nxdn",
       "source": "dvref",
@@ -4566,6 +4886,7 @@
         "port": 41400
       },
       "id": "801",
+      "license": "CC-BY-4.0",
       "name": "XLX-801",
       "network": "nxdn",
       "source": "dvref"
@@ -4579,6 +4900,7 @@
         "port": 41400
       },
       "id": "822",
+      "license": "CC-BY-4.0",
       "name": "NC VA Fusion NXDN",
       "network": "nxdn",
       "source": "dvref",
@@ -4594,6 +4916,7 @@
         "port": 41400
       },
       "id": "825",
+      "license": "CC-BY-4.0",
       "name": "URFLAN",
       "network": "nxdn",
       "source": "dvref",
@@ -4608,6 +4931,7 @@
         "port": 41400
       },
       "id": "8465",
+      "license": "CC-BY-4.0",
       "name": "ECUADOR NDXN Reflector",
       "network": "nxdn",
       "source": "dvref",
@@ -4623,6 +4947,7 @@
         "port": 41400
       },
       "id": "847",
+      "license": "CC-BY-4.0",
       "name": "URF847",
       "network": "nxdn",
       "source": "dvref",
@@ -4636,6 +4961,7 @@
         "port": 41400
       },
       "id": "850",
+      "license": "CC-BY-4.0",
       "name": "US-HAMLINK",
       "network": "nxdn",
       "source": "dvref"
@@ -4650,6 +4976,7 @@
         "port": 41400
       },
       "id": "865",
+      "license": "CC-BY-4.0",
       "name": "URF865",
       "network": "nxdn",
       "source": "dvref",
@@ -4665,6 +4992,7 @@
         "port": 41902
       },
       "id": "902",
+      "license": "CC-BY-4.0",
       "name": "NXDN AR902MHz",
       "network": "nxdn",
       "source": "dvref",
@@ -4679,6 +5007,7 @@
         "port": 41400
       },
       "id": "909",
+      "license": "CC-BY-4.0",
       "name": "XLX909 NXDN",
       "network": "nxdn",
       "source": "dvref",
@@ -4693,6 +5022,7 @@
         "port": 41401
       },
       "id": "91",
+      "license": "CC-BY-4.0",
       "name": "World Wide",
       "network": "nxdn",
       "source": "dvref",
@@ -4708,6 +5038,7 @@
         "port": 41400
       },
       "id": "910",
+      "license": "CC-BY-4.0",
       "name": "DC - MD -VA XLX910D",
       "network": "nxdn",
       "source": "dvref",
@@ -4723,6 +5054,7 @@
         "port": 41400
       },
       "id": "914",
+      "license": "CC-BY-4.0",
       "name": "914",
       "network": "nxdn",
       "source": "dvref",
@@ -4737,6 +5069,7 @@
         "port": 41400
       },
       "id": "9140",
+      "license": "CC-BY-4.0",
       "name": "ARCA",
       "network": "nxdn",
       "source": "dvref",
@@ -4751,6 +5084,7 @@
         "port": 41400
       },
       "id": "918",
+      "license": "CC-BY-4.0",
       "name": "XLX918 NXDN",
       "network": "nxdn",
       "source": "dvref",
@@ -4765,6 +5099,7 @@
         "port": 41400
       },
       "id": "921",
+      "license": "CC-BY-4.0",
       "name": "CumbriaCQ.com",
       "network": "nxdn",
       "source": "dvref",
@@ -4779,6 +5114,7 @@
         "port": 41400
       },
       "id": "925",
+      "license": "CC-BY-4.0",
       "name": "URF925",
       "network": "nxdn",
       "source": "dvref",
@@ -4794,6 +5130,7 @@
         "port": 41400
       },
       "id": "930",
+      "license": "CC-BY-4.0",
       "name": "Hellenic NXDN Chat",
       "network": "nxdn",
       "source": "dvref",
@@ -4808,6 +5145,7 @@
         "port": 41400
       },
       "id": "933",
+      "license": "CC-BY-4.0",
       "name": "URF933",
       "network": "nxdn",
       "source": "dvref",
@@ -4823,6 +5161,7 @@
         "port": 41400
       },
       "id": "936",
+      "license": "CC-BY-4.0",
       "name": "URFLKA",
       "network": "nxdn",
       "source": "dvref",
@@ -4838,6 +5177,7 @@
         "port": 41400
       },
       "id": "942",
+      "license": "CC-BY-4.0",
       "name": "XLX942",
       "network": "nxdn",
       "source": "dvref"
@@ -4851,6 +5191,7 @@
         "port": 41400
       },
       "id": "9449",
+      "license": "CC-BY-4.0",
       "name": "SISAKET THAILAND",
       "network": "nxdn",
       "source": "dvref",
@@ -4866,6 +5207,7 @@
         "port": 41400
       },
       "id": "9511",
+      "license": "CC-BY-4.0",
       "name": "URFJET",
       "network": "nxdn",
       "source": "dvref",
@@ -4881,6 +5223,7 @@
         "port": 41401
       },
       "id": "9517",
+      "license": "CC-BY-4.0",
       "name": "9517",
       "network": "nxdn",
       "source": "dvref",
@@ -4895,6 +5238,7 @@
         "port": 41400
       },
       "id": "960",
+      "license": "CC-BY-4.0",
       "name": "NXDN Gray",
       "network": "nxdn",
       "source": "dvref",
@@ -4910,6 +5254,7 @@
         "port": 41400
       },
       "id": "97",
+      "license": "CC-BY-4.0",
       "name": "URF097",
       "network": "nxdn",
       "source": "dvref",
@@ -4925,6 +5270,7 @@
         "port": 41400
       },
       "id": "9774",
+      "license": "CC-BY-4.0",
       "name": "URFPAW",
       "network": "nxdn",
       "source": "dvref",
@@ -4940,6 +5286,7 @@
         "port": 41401
       },
       "id": "9846",
+      "license": "CC-BY-4.0",
       "name": "URF106",
       "network": "nxdn",
       "source": "dvref",
