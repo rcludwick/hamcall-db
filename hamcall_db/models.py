@@ -63,7 +63,8 @@ class Record:
     # (mem-c6e0); enriched from lotw.arrl.org via hamcall_db.enrich_lotw. Activity
     # metadata, NOT holder identity, so it is excluded from history tracking
     # (history._TRACKED_FIELDS). OFF BY DEFAULT — only populated in opt-in local builds
-    # (--include-restricted); ARRL's redistribution terms are unconfirmed (NOTICE).
+    # (--include-restricted); ARRL prohibits redistribution without written permission
+    # (NOTICE source 9).
     uses_lotw: bool = False
     lotw_last_activity: str | None = None
 

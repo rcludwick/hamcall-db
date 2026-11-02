@@ -44,10 +44,10 @@ never on grid, so coverage ambiguity for big parks doesn't affect search quality
 
 License
 -------
-POTA publishes no explicit data license. PROJECT DECISION (2026-06-17): treat POTA park
-data as ASSUMED-NON-COMMERCIAL + attributed + droppable, the same posture as AllStarLink
-(NOTICE source 5), fitting the dataset's CC BY-NC 4.0 umbrella. The NOTICE file credits
-POTA (source 6).
+POTA publishes no licence or terms of any kind (re-checked 2026-11-02). The park data is
+used non-commercially, with attribution, while permission is requested; the files will be
+withdrawn if POTA objects, and the table can be dropped without affecting the rest of the
+dataset. See NOTICE source 6.
 """
 
 from __future__ import annotations

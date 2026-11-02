@@ -31,14 +31,12 @@ granularity is all consumers need and keeps the value a clean ISO date). Blank l
 rows without a callsign, and rows whose date doesn't parse as ``YYYY-MM-DD`` are
 skipped. Extra trailing comma fields (if ARRL ever adds columns) are tolerated.
 
-License: ARRL publishes this list as a public developer web service but states NO
-explicit redistribution license — only a generic "© American Radio Relay League, Inc.
-All Rights Reserved" copyright notice. PROJECT POSTURE (2026-06-18): this column is
-used on an ASSUMED NON-COMMERCIAL basis, consistent with the dataset's CC BY-NC 4.0
-umbrella, the SAME unverified posture as AllStarLink/POTA — but the explicit "All
-Rights Reserved" makes redistribution permission GENUINELY UNCLEAR and this needs
-HUMAN SIGN-OFF (see NOTICE source 9 and the nugget report). The column is supplementary
-and can be dropped without affecting the rest of the dataset.
+License: redistribution is prohibited without ARRL's written permission. ARRL's Terms of
+Use allow personal, non-commercial use only, "not for further reproduction, publication,
+or distribution". This enrichment is therefore DISABLED in published builds and runs only
+in opt-in local builds (``--include-restricted``), whose output must not be
+redistributed. See NOTICE source 9. The column is supplementary and ships empty in the
+official artifact.
 """
 
 from __future__ import annotations

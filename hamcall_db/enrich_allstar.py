@@ -24,9 +24,10 @@ Data format
 Description and Location may be empty. Blank lines and lines without a numeric node
 number or a callsign are skipped.
 
-License: AllStarLink node data is used under an ASSUMED non-commercial basis (project
-decision 2026-06-16), consistent with the dataset's CC BY-NC 4.0 umbrella (mem-ffc0).
-The NOTICE file credits AllStarLink.
+License: node data is "User Content" under the AllStarLink Terms of Use (effective
+2026-09-22), so the site's CC BY-SA 4.0 licence does not cover it. It is used under the
+terms' allowance for "reasonable use of published directories"; AllStarLink's
+confirmation was requested 2026-11-02. Attribution required. See NOTICE source 5.
 """
 
 from __future__ import annotations

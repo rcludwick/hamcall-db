@@ -32,19 +32,18 @@ not a person's location. Therefore, exactly like POTA parks:
     published ``grid`` is the FULL 6-char Maidenhead subsquare, stored VERBATIM.
   * ``grid``/``lat``/``lon`` are NULLABLE, display-only, never a join key or PK.
 
-License (ASSUMED NON-COMMERCIAL — flagged for human sign-off, see NOTICE source 10)
-----------------------------------------------------------------------------------
+License (none published; DISABLED in published builds — see NOTICE source 10)
+-------------------------------------------------------------------------------
 SOTA's *API* terms of service are explicit: NON-COMMERCIAL only, registration required,
 and "no AI-generated software may connect to the SOTA API without prior approval". To stay
 clear of the API ToS we consume the STATIC ``summitslist.csv`` bulk file, NOT the API.
 
-The static bulk file carries no explicit machine-readable license. No SHARE-ALIKE term
-(CC BY-SA / ODbL) was found for it, so — unlike OpenStreetMap (osm.py) — it does NOT need
-OSM-style separate-file segregation. PROJECT POSTURE (2026-06-18): treat SOTA summit data
-as ASSUMED NON-COMMERCIAL + attributed + droppable, the SAME posture as POTA (pota.py) and
-AllStarLink, which fits the dataset's CC BY-NC 4.0 umbrella. Given SOTA's explicit
-non-commercial stance this is conservative, but it is NOT a confirmed license: FLAGGED FOR
-HUMAN SIGN-OFF before the first public release. The NOTICE file credits SOTA (source 10).
+The static bulk file carries no licence. No SHARE-ALIKE term (CC BY-SA / ODbL) was found
+for it, so — unlike OpenStreetMap (osm.py) — it would not need separate-file segregation.
+Because there is no licence and the API terms forbid commercial use, the SOTA dataset is
+OFF in the published build and only produced by opt-in local builds
+(``--include-restricted``), whose output must not be redistributed. It must be confirmed
+with the SOTA Management Team before it is ever published.
 """
 
 from __future__ import annotations

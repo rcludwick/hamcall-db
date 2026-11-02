@@ -17,8 +17,8 @@ Two datasets, deliberately kept apart because they carry different licences:
 
 -   :material-card-account-details: **[Callsign dataset](callsigns.md)**
 
-    Normalized licensee records from national regulators, plus POTA parks and
-    SOTA summits, published as Parquet and SQLite through GitHub Releases.
+    Normalized licensee records from national regulators, plus POTA parks,
+    published as Parquet and SQLite through GitHub Releases.
 
     **CC BY-NC 4.0** — non-commercial.
 

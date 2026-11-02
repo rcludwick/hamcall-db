@@ -1,8 +1,11 @@
 """Build the static reflector JSON API (hdb-refl).
 
 Separate entry point from :mod:`hamcall_db.build`, because the reflector directory is a
-separate artifact under a separate licence (CC BY 4.0, not the project's CC BY-NC) and
-must never be merged into the callsign dataset. See :mod:`hamcall_db.reflectors`.
+separate artifact under separate terms from the project's CC BY-NC callsign dataset, and
+must never be merged into it. DVRef rows and this project's contributions are CC BY 4.0;
+XLX and Pi-Star rows state no upstream licence and are labelled per row
+(``license``: ``CC-BY-4.0`` / ``none-stated``). See :mod:`hamcall_db.reflectors` and NOTICE
+sources 11-14.
 
     uv run hamcall-db-reflectors --out docs/site/api/v1
 
@@ -83,7 +86,8 @@ DEXTRA_ATTRIBUTION = (
 
 DSTAR_ALIAS_ATTRIBUTION = (
     "REF and DCS reflector names from the Pi-Star DPlus and DCS host files "
-    "(http://www.pistar.uk/downloads/)."
+    "(http://www.pistar.uk/downloads/), which compile them from dstargateway.org and "
+    "xreflector.net DNS."
 )
 
 # What DVRef is called in a published document's `source` block. One spelling for the
@@ -103,7 +107,10 @@ SHRINK_GUARD = 0.66
 
 app = typer.Typer(
     add_completion=False,
-    help="Build the static reflector JSON API (CC BY 4.0; separate from the callsign dataset).",
+    help=(
+        "Build the static reflector JSON API (CC BY 4.0 for DVRef rows, per-row licence for "
+        "XLX/Pi-Star rows; separate from the callsign dataset)."
+    ),
 )
 
 
@@ -358,7 +365,10 @@ def build(
     dist: Annotated[
         Path | None,
         typer.Option(
-            help="Also write dated Parquet + SQLite artifacts here (CC BY 4.0, SEPARATE files)."
+            help=(
+                "Also write dated Parquet + SQLite artifacts here (SEPARATE files; CC BY 4.0 "
+                "for DVRef rows, per-row licence for XLX/Pi-Star rows)."
+            )
         ),
     ] = None,
 ) -> None:
@@ -637,9 +647,10 @@ def build(
     typer.echo(f"Wrote {len(written)} files to {out}")
 
     if dist is not None:
-        # Dated CC BY 4.0 artifacts, in their OWN files. These are never merged into the
-        # CC BY-NC callsign dataset — see hamcall_db.reflectors for why that would be a
-        # licence violation rather than a housekeeping preference.
+        # Dated reflector artifacts (CC BY 4.0 for DVRef rows and our contributions, XLX
+        # and Pi-Star rows labelled per row), in their OWN files. These are never merged
+        # into the CC BY-NC callsign dataset — see hamcall_db.reflectors for why that
+        # would be a licence violation rather than a housekeeping preference.
         stamp = today.isoformat()
         all_records = [
             record
@@ -654,8 +665,8 @@ def build(
 
         # DMR talkgroups: one row per (system, tg), built from the documents actually
         # published — so a network whose fetch failed contributes the list that is live,
-        # not nothing. Same CC BY 4.0 terms, so they share the .db and take their own
-        # .parquet (one schema per file).
+        # not nothing. Talkgroups are all DVRef data (CC BY 4.0), so they share the .db
+        # and take their own .parquet (one schema per file).
         talkgroup_records: list[TalkgroupRecord] = [
             record
             for system in sorted(talkgroup_documents)

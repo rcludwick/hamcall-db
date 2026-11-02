@@ -156,10 +156,11 @@ def build(
         bool,
         typer.Option(
             "--include-restricted",
-            help="Include sources whose redistribution license is UNCONFIRMED (LoTW "
-            "enrichment, SOTA summits). OFF by default — the published release NEVER sets "
-            "this. For personal/local builds only; do not redistribute the result without "
-            "confirming each source's terms (see NOTICE).",
+            help="Include sources that may not be redistributed (LoTW enrichment: ARRL "
+            "prohibits redistribution without written permission; SOTA summits: no licence, "
+            "API terms forbid commercial use). OFF by default — the published release NEVER "
+            "sets this. For personal/local builds only; do not redistribute the result "
+            "(see NOTICE sources 9 and 10).",
         ),
     ] = False,
 ) -> None:
@@ -231,10 +232,11 @@ def build(
     # LoTW (ARRL Logbook of the World) user-activity enrichment (hdb-fccf): stamp each
     # callsign with uses_lotw + lotw_last_activity from ARRL's public list. An --all
     # concern like AllStarLink (network-bound build); single-source dev builds skip it.
-    # RESTRICTED: ARRL states no redistribution license ("All Rights Reserved"), so this is
-    # OFF unless --include-restricted is passed; the published release never sets it, so the
-    # columns ship empty there (hdb-fccf). RESILIENT: a transient ARRL outage must not abort
-    # the build — log a warning and continue with uses_lotw=False / lotw_last_activity=None.
+    # RESTRICTED: ARRL prohibits redistribution without written permission (NOTICE source
+    # 9), so this is OFF unless --include-restricted is passed; the published release
+    # never sets it, so the columns ship empty there (hdb-fccf). RESILIENT: a transient
+    # ARRL outage must not abort the build — log a warning and continue with
+    # uses_lotw=False / lotw_last_activity=None.
     if all_sources and include_restricted:
         try:
             lotw_path = enrich_lotw.download_lotw(work_dir)
@@ -337,8 +339,9 @@ def build(
             #
             # Only source='osm' rows (grids a matched OSM polygon intersects) may go in the
             # ODbL files. A park with no matched polygon gets NO row there: a grid from the
-            # POTA park's own lat/lon is POTA data (non-commercial use only), not OSM data,
-            # and already ships correctly in the CC BY-NC set as 'pota-point' (hdb-odbl).
+            # POTA park's own lat/lon is POTA data (no published terms, used non-commercially
+            # with attribution; NOTICE source 6), not OSM data, and already ships correctly
+            # in the CC BY-NC set as 'pota-point' (hdb-odbl).
             # With zero OSM rows the ODbL files are NOT written at all, so nothing
             # POTA-derived or empty can ever be published under ODbL.
             try:
@@ -371,11 +374,11 @@ def build(
         # SOTA summits: a SEPARATE additive reference dataset (places, not licensees,
         # hdb-ca00), a sibling of POTA parks. Written as its own Parquet file AND a
         # sota_summits table appended to the SAME CC-BY-NC .db — it NEVER touches the
-        # callsign schema. RESTRICTED: SOTA's terms are unconfirmed (NOTICE source 10), so
-        # this is OFF unless --include-restricted is passed; the published release never
-        # sets it, so the SOTA artifacts are NOT produced there. RESILIENT + INDEPENDENTLY
-        # guarded: a SOTA outage logs a warning and skips, never taking down the POTA
-        # artifacts (or the build).
+        # callsign schema. RESTRICTED: SOTA publishes no licence and its API terms forbid
+        # commercial use (NOTICE source 10), so this is OFF unless --include-restricted is
+        # passed; the published release never sets it, so the SOTA artifacts are NOT
+        # produced there. RESILIENT + INDEPENDENTLY guarded: a SOTA outage logs a warning
+        # and skips, never taking down the POTA artifacts (or the build).
         if include_restricted:
             try:
                 sota = SotaSource()

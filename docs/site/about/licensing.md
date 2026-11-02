@@ -8,7 +8,7 @@ datasets is a decision to make knowingly rather than by accident.
 | Build code (this repository) | **MIT** | yes |
 | [Reflector directory](../reflectors/index.md): DVRef rows and hamcall-db's own contributions | **CC BY 4.0** | yes |
 | [Reflector directory](../reflectors/index.md): XLX registry and Pi-Star rows | **no licence stated** by the publisher; redistributed as facts | see below |
-| [Callsign dataset](../callsigns.md), POTA parks, SOTA summits | **CC BY-NC 4.0** | no |
+| [Callsign dataset](../callsigns.md), POTA parks | **CC BY-NC 4.0** | no |
 | OpenStreetMap-derived park grids | **ODbL 1.0** | yes, but share-alike |
 
 ## What in the reflector directory is CC BY

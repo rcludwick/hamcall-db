@@ -25,8 +25,8 @@ rather than rounding it up.
 | [POTA park grid sets (US)](#pota-park-grid-sets-us-pad-us) | Parquet, SQLite table | `latest` release | **CC BY-NC 4.0** |
 | [POTA park grid sets (international)](#pota-park-grid-sets-international-openstreetmap) | Parquet, SQLite | `latest-osm` release | **ODbL 1.0** |
 | [Reflector directory](#reflector-directory) | Static JSON, Parquet, SQLite | this site + `latest-reflectors` release | **CC BY 4.0** for DVRef rows; XLX/Pi-Star rows no licence stated (per-row `license`) |
-| [SOTA summits](#not-published-sota-summits-and-lotw-activity) | Parquet, SQLite table | not published — opt-in local builds only | pending sign-off |
-| [LoTW activity columns](#not-published-sota-summits-and-lotw-activity) | columns on the callsign dataset | not published — opt-in local builds only | pending sign-off |
+| [SOTA summits](#not-published-sota-summits-and-lotw-activity) | Parquet, SQLite table | not published — opt-in local builds only | no licence; SOTA's API terms forbid commercial use |
+| [LoTW activity columns](#not-published-sota-summits-and-lotw-activity) | columns on the callsign dataset | not published — opt-in local builds only | redistribution prohibited without ARRL's written permission |
 | [Build code](#build-code) | this repository | GitHub | **MIT** |
 
 `YYYY-MM-DD` in an asset name is the build date. Every release also has a
@@ -60,36 +60,48 @@ is a derived work of several upstreams and is distributed under the **union** of
 their terms, so redistributing it means satisfying every attribution below at
 once. The simplest way to comply is to ship the NOTICE file alongside it.
 
-The non-commercial term is inherited: `cty.dat` is free for non-commercial use
-only, and a derived work cannot grant more than it was given.
+The non-commercial term is inherited from ISED, whose terms allow reproduction
+"for non-commercial purposes" and require prior written permission for
+commercial redistribution. A derived work cannot grant more than it was given.
+POTA, which publishes no terms, is also used non-commercially. `cty.dat` is not
+the reason: it is MIT-licensed.
+
+Two upstreams shape what the rows contain. Canadian postal codes are published
+as the 3-character forward sortation area (FSA, e.g. `K1G`). Under the ACMA
+licence, Australian licensees who are natural persons are published as callsign,
+licence category, dates and client type only; organisations and clubs are
+published in full.
 
 **Required attribution**, verbatim:
 
 ```
-Contains information licensed under the Open Government Licence – Canada.
-Source: Innovation, Science and Economic Development Canada (ISED).
+Canadian Amateur Call Sign List, Innovation, Science and Economic
+Development Canada. Adapted from the version available at
+https://apc-cap.ic.gc.ca/datafiles/amateur.zip. Not an official version
+and not endorsed by ISED.
 
-Contains data sourced from the Australian Communications and Media
-Authority (ACMA), Register of Radiocommunications Licences, licensed
-under CC BY 4.0.
+Based on Australian Communications and Media Authority information
 
-DXCC entity data derived from cty.dat by Jim Reisert, AD1C
-(https://www.country-files.com/), used by permission for
-non-commercial use.
+Country (CTY) files © Jim Reisert, AD1C, https://www.country-files.com/
 
 AllStarLink node data courtesy of AllStarLink, Inc.
 (https://www.allstarlink.org/).
 ```
 
+`cty.dat` is MIT-licensed, so its copyright and permission notice must also
+travel with the data; NOTICE reproduces it in full (source 4).
+
 FCC ULS records are a US Government work and public domain (17 U.S.C. § 105);
 no attribution is legally required and the source is credited as a courtesy.
 
-!!! note "AllStarLink node numbers are used on an assumed basis"
+!!! note "AllStarLink node numbers are User Content, used as a published directory"
 
-    AllStarLink publishes no explicit redistribution licence for the node
-    directory. It is used on an **assumed non-commercial** basis, consistent
-    with this dataset's own terms, attributed as above. The node column is
-    supplementary and can be dropped without affecting the rest of the dataset.
+    AllStarLink's Terms of Use (effective 2026-09-22) treat information about
+    users' nodes as "User Content", which the site's CC BY-SA 4.0 licence does
+    not cover. The node numbers are used under the terms' allowance for
+    "reasonable use of published directories", and AllStarLink has been asked
+    to confirm that. The node column is supplementary and can be dropped
+    without affecting the rest of the dataset.
 
 ## POTA park directory
 
@@ -113,10 +125,10 @@ Park data courtesy of Parks On The Air (POTA), https://pota.app/.
 
 !!! note "POTA's terms are unstated, not granted"
 
-    POTA publishes no explicit redistribution licence for the park directory,
+    POTA publishes no licence or terms of any kind for the park directory,
     and the API it comes from is unofficial and undocumented. The data is used
-    on an **assumed non-commercial** basis — attributed, and droppable if POTA
-    objects. The representative coordinate and grid are **indicative only**: a
+    **non-commercially, with attribution, while permission is requested**; the
+    files will be withdrawn if POTA objects. The representative coordinate and grid are **indicative only**: a
     large park spans many grid squares, so the value is display-only and never a
     join key.
 
@@ -174,8 +186,10 @@ the licence is **share-alike**.
 **Required attribution**, verbatim:
 
 ```
-© OpenStreetMap contributors. Data available under the Open Database
-License (ODbL), https://opendatacommons.org/licenses/odbl/1-0/.
+© OpenStreetMap contributors (https://www.openstreetmap.org/copyright).
+Data available under the Open Database License (ODbL) v1.0,
+https://opendatacommons.org/licenses/odbl/1-0/. Extracts processed by
+Geofabrik GmbH.
 ```
 
 !!! warning "Joining this to the CC BY-NC artifacts has consequences"
@@ -270,8 +284,7 @@ dstargateway.org and xreflector.net DNS.
     this purpose and redistributed by hotspot software generally. Their rows
     are labelled `license: "none-stated"`, redistributed as facts with
     attribution, and no rights are granted in them beyond what those upstreams
-    provide. NOTICE flags all three for **human
-    sign-off** alongside the project's other assumed-basis sources.
+    provide. Permission has been requested from each of them.
 
 !!! info "Access terms are not licence terms"
 
@@ -286,17 +299,16 @@ dstargateway.org and xreflector.net DNS.
 
 Two datasets the build can produce but the **published release never contains**.
 Both are gated behind `--include-restricted`, which the release workflow does
-not pass, because their licences are not settled.
+not pass, because neither upstream permits redistribution.
 
 **SOTA summits** — `hamcall-db-sota-summits-YYYY-MM-DD.parquet` plus a
 `sota_summits` table, built from SOTA's static bulk `summitslist.csv`
 (deliberately not the gated JSON API, whose terms are explicitly
 non-commercial, registration-gated, and prohibit AI-generated software from
-connecting). The static file carries no explicit machine-readable licence and no
-share-alike term was found. The project's posture is assumed non-commercial,
-attributed and droppable — **but that is not a confirmed licence, and NOTICE
-requires confirmation from the SOTA Management Team before first public
-release.**
+connecting). The static file carries no licence at all, and SOTA's API terms
+forbid commercial use. **It is disabled in published builds**, and NOTICE
+requires confirmation from the SOTA Management Team before it is ever
+published.
 
 ```
 Summit data courtesy of Summits on the Air (SOTA),
@@ -304,20 +316,18 @@ https://www.sota.org.uk/.
 ```
 
 **LoTW activity** — the `uses_lotw` and `lotw_last_activity` columns, from
-ARRL's public user-activity list. **The licence here is genuinely unclear, not
-merely unstated:** ARRL publishes the file as a documented developer web service
-but states no redistribution licence, terms of use or grant — only a generic
-"© American Radio Relay League, Inc. All Rights Reserved". NOTICE records this
-as needing human sign-off before public or commercial release, and the columns
-ship empty in the official artifact.
+ARRL's public user-activity list. **Redistribution is prohibited without
+ARRL's written permission:** ARRL's Terms of Use allow personal, non-commercial
+use only, "not for further reproduction, publication, or distribution". The
+columns ship empty in the official artifact.
 
 ```
 LoTW user-activity data courtesy of the American Radio Relay League
 (ARRL), Logbook of the World (https://lotw.arrl.org/).
 ```
 
-You can populate either in a personal, local build. Redistributing what comes
-out is your own call against terms nobody has cleared.
+You can populate either in a personal, local build. Do not redistribute what
+comes out.
 
 ## Build code
 
@@ -332,24 +342,24 @@ statements required across all of them — but check which ones actually apply t
 what you are shipping, since they are not all the same licence:
 
 ```
-Contains information licensed under the Open Government Licence – Canada.
-Source: Innovation, Science and Economic Development Canada (ISED).
+Canadian Amateur Call Sign List, Innovation, Science and Economic
+Development Canada. Adapted from the version available at
+https://apc-cap.ic.gc.ca/datafiles/amateur.zip. Not an official version
+and not endorsed by ISED.
 
-Contains data sourced from the Australian Communications and Media
-Authority (ACMA), Register of Radiocommunications Licences, licensed
-under CC BY 4.0.
+Based on Australian Communications and Media Authority information
 
-DXCC entity data derived from cty.dat by Jim Reisert, AD1C
-(https://www.country-files.com/), used by permission for
-non-commercial use.
+Country (CTY) files © Jim Reisert, AD1C, https://www.country-files.com/
 
 AllStarLink node data courtesy of AllStarLink, Inc.
 (https://www.allstarlink.org/).
 
 Park data courtesy of Parks On The Air (POTA), https://pota.app/.
 
-© OpenStreetMap contributors. Data available under the Open Database
-License (ODbL), https://opendatacommons.org/licenses/odbl/1-0/.
+© OpenStreetMap contributors (https://www.openstreetmap.org/copyright).
+Data available under the Open Database License (ODbL) v1.0,
+https://opendatacommons.org/licenses/odbl/1-0/. Extracts processed by
+Geofabrik GmbH.
 
 Reflector data provided by DVRef — https://dvref.com/
 
