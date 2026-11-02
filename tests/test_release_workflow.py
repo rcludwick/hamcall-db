@@ -96,3 +96,18 @@ def test_alias_releases_clear_prior_assets_before_upload() -> None:
         assert f"gh release view {alias} --json assets" in text, (
             f"'{alias}' asset-clearing step must list existing assets via 'gh release view {alias}'"
         )
+
+
+def test_release_fails_loudly_when_a_source_was_skipped() -> None:
+    from hamcall_db.build import SKIPPED_SOURCES_FILENAME
+
+    text = _workflow_text()
+    # The build still publishes a partial release, but the job must end red with an
+    # ::error:: annotation naming the skipped sources (hdb-skipalert). The check is the
+    # final step and runs even if a publish step failed.
+    assert f"dist/{SKIPPED_SOURCES_FILENAME}" in text
+    step = text[text.index("- name: Fail if any source was skipped") :]
+    assert "if: always()" in step
+    assert "::error" in step
+    assert "exit 1" in step
+    assert "\n      - name:" not in step, "the skipped-source check must be the last step"

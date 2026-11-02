@@ -7,14 +7,16 @@ and skipped, and the build proceeds from whatever succeeded.
 from __future__ import annotations
 
 import sqlite3
+import urllib.error
 
 import polars as pl
 from shapely.geometry import Polygon
 from typer.testing import CliRunner
 
 from hamcall_db import enrich_allstar
-from hamcall_db.build import SOURCES, _collect_streams, app
+from hamcall_db.build import SKIPPED_SOURCES_FILENAME, SOURCES, _collect_streams, app
 from hamcall_db.models import Record
+from hamcall_db.sources import base
 from hamcall_db.sources.osm_grids import OsmFeature
 from hamcall_db.sources.padus_grids import PadusFeature
 from hamcall_db.sources.pota import ParkRecord
@@ -63,6 +65,84 @@ def test_collect_streams_all_failed_returns_empty(tmp_path):
     streams, skipped = _collect_streams(["bad"], tmp_path, sources=sources)
     assert streams == []
     assert skipped == ["bad"]
+
+
+# --- transient retry + skipped-source marker (hdb-skipalert) ---------------------
+
+
+class _FlakySource:
+    """Fails its first download with HTTP 503 (as ISED did), then succeeds."""
+
+    name = "flaky"
+    synced_at = None
+
+    def __init__(self, failures=1, code=503):
+        self.failures = failures
+        self.code = code
+        self.calls = 0
+
+    def download(self, work_dir):
+        self.calls += 1
+        if self.calls <= self.failures:
+            raise urllib.error.HTTPError("https://x.invalid", self.code, "err", None, None)
+        return work_dir
+
+    def parse(self, path, *, synced_at=None):
+        return [Record(callsign="VE3XYZ", source="flaky")]
+
+
+def test_collect_streams_retries_transient_download_failure(tmp_path, monkeypatch):
+    monkeypatch.setattr(base, "RETRY_DELAYS", (0.0, 0.0))
+    flaky = _FlakySource(failures=2)
+    streams, skipped = _collect_streams(["flaky"], tmp_path, sources={"flaky": flaky})
+    assert skipped == []
+    assert flaky.calls == 3
+    assert streams[0][0].callsign == "VE3XYZ"
+
+
+def test_collect_streams_does_not_retry_a_404(tmp_path, monkeypatch):
+    monkeypatch.setattr(base, "RETRY_DELAYS", (0.0, 0.0))
+    flaky = _FlakySource(failures=1, code=404)
+    streams, skipped = _collect_streams(["flaky"], tmp_path, sources={"flaky": flaky})
+    assert skipped == ["flaky"]
+    assert flaky.calls == 1
+
+
+def test_skipped_sources_recorded_in_out_dir(tmp_path, monkeypatch):
+    _stub_all_sources(monkeypatch)
+    monkeypatch.setattr("hamcall_db.build.ad1c.download_cty", lambda *a, **k: None)
+    monkeypatch.setattr(enrich_allstar, "download_allstar", lambda *a, **k: FIXTURE)
+    monkeypatch.setitem(SOURCES, "acma", _BadSource())
+    monkeypatch.setitem(SOURCES, "ised", _BadSource())
+
+    out = tmp_path / "dist"
+    args = ["--all", "--out", str(out), "--work-dir", str(tmp_path / "work")]
+    result = CliRunner().invoke(app, args)
+    # Still publishes (exit 0) so the healthy sources ship; the marker carries the alarm.
+    assert result.exit_code == 0, result.output
+    marker = out / SKIPPED_SOURCES_FILENAME
+    assert marker.read_text(encoding="utf-8").splitlines() == ["ised", "acma"]
+    assert list(out.glob("hamcall-db-*.parquet"))
+
+    # A later clean build into the same dir clears the stale marker.
+    _stub_all_sources(monkeypatch)
+    result = CliRunner().invoke(app, args)
+    assert result.exit_code == 0, result.output
+    assert not marker.exists()
+
+
+def test_no_successful_sources_is_a_hard_error(tmp_path, monkeypatch):
+    _stub_all_sources(monkeypatch)
+    for tag in list(SOURCES):
+        monkeypatch.setitem(SOURCES, tag, _BadSource())
+    out = tmp_path / "dist"
+    result = CliRunner().invoke(
+        app, ["--all", "--out", str(out), "--work-dir", str(tmp_path / "work")]
+    )
+    assert result.exit_code == 1
+    assert (out / SKIPPED_SOURCES_FILENAME).read_text(encoding="utf-8").splitlines() == list(
+        SOURCES
+    )
 
 
 # --- AllStarLink enrichment wiring on --all (hdb-8803) -------------------------

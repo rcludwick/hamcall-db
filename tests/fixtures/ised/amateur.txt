@@ -1,4 +1,17 @@
-VA3ABC;;A;;;A;John;Smith;;123 Maple Ave;Toronto;ON;M5V 2T6;Canada;
-VE7XYZ;B;;;;;Jane;Doe;;456 Pine St;Vancouver;BC;V6B 1A1;Canada;
-VE3RAC;B;;;;;;;Radio Amateurs of Canada Inc;720 Belfast Rd;Ottawa;ON;K1G 0Z5;Canada;
-VA1NB;;;;;;Robert;Tremblay;;789 Elm Rd;Halifax;NS;B3J 1P3;Canada;
+2026-11-01  Canadian Amateur Call Sign List / List d'indicatif d'appel canadien
+ 
+There are 92186 call signs in this report. / Il y a 92186 indicatifs d'appels dans ce rapport.
+ 
+VA1AA  Bill                                McFadden                            100 FAKE DRIVE                                                         MIDDLE SACKVILLE                    NS B4E 2X8    A   C D   
+VA1AAB DAVID                               LEWIS                                                                                                                                          NS                  D E 
+VA1AN  Winifred Ann                        Morgan                              *C/0 JANE SAMPLE 1234 HWY 999 RR#3                                     ADVOCAT HARBOUR                     NS B0N 1A0            E 
+VA1LEN Mylène                              DiPenta                             200 SAMPLE STREET #101                                                 HALIFAX                             NS B3K 1K1    A         
+VA2AA  Jacques                             Sauvé                               123 FAKE ST / 6                                                        TROIS-RIVIERES                      QC G9B 7K7    A   C D   
+VA1HRH Harold Dewolf                       Mosher                              300 TEST DRIVE                                                         NEW MINAS                           NS B4N 4P4    A   C D   Handiradioham Amateur Radio Club of Canada                             c/o Harold Mosher                                                      300 TEST DRIVE                                                         NEW MINAS                           NS B4N 4P4
+VA2RAQ Alexis                              Robitaille                                                                                                                                     QC                    E 
+VE3RAC Christopher Llewellyn               Allingham                           400 EXAMPLE WAY                                                        KEMPTVILLE                          ON K0G 1J0    A   C D   RADIO AMATEUR DU / OF CANADA INC.                                                                                                             500 PLACEHOLDER RD SUITE 100                                           OTTAWA                              ON K1G 0Z5
+VA1RAC Christopher Llewellyn               Allingham                                                                                                                                                    A   C D   RADIO AMATEUR DU / OF CANADA INC.                                                                                                             500 PLACEHOLDER RD SUITE 100                                           OTTAWA                              ON K1G 0Z5
+VE2JPV Jean-Philippe                       Sabourin                            600 1er Rue Fictive                                                    SAINT-PAUL-DE-L&#x27;ILE-AUX-NOIX   QC J0J 1G0            E 
+VY9NF  Jason                               Van Stiphout                                                                                                                                                       D E INDUSTRY CANADA SPECTRUM MANAGEMENT                                    ATTN: Jason Van Stiphout                                               700 Nowhere Hill, Sample Building, 10th Floor                          ST. JOHN&#x27;S                     NL A1C 6M1
+VA2ZX  Marc                                Bergeron                            **                                                                     **                                  QC            A     D   
+EOF
