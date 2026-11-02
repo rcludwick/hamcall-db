@@ -52,3 +52,28 @@ or send permission requests. Where an upstream DOES state terms, follow them (re
 LoTW never published, ACMA natural persons callsign-only, ISED non-commercial; permissive:
 credit as asked). Rights holders can request removal via a GitHub issue. NOTICE carries the
 public version of this under "Project policy for openly published data".
+
+### mem-rejected-sources
+
+**Sources considered and NOT used (recorded 2026-11-02).** Each was checked against its
+own published terms or setup. Don't re-add one without new evidence that the reason below
+no longer holds. The full research is in the notes repo:
+`docs/superpowers/notes/hamcall-db/2026-11-02-licence-review.md` and
+`2026-11-02-new-data-sources.md`.
+
+| Source | Why it isn't used |
+|---|---|
+| **FISTS member CSV** (`fists.co.uk/docs/fistsmembers.csv`) | Not openly *published*, only reachable. The site's login (ASP.NET forms auth, `userlogon.aspx`) guards the Members' Area pages, but IIS serves the static CSV at its direct URL without the login check. No public page links it, and `/docs/` returns 410. FISTS's privacy policy (https://fists.co.uk/privacy.html) tells members: "The website allows logged-on members to view or download limited details of other members", and calls the Members' Area files "for use by paid-up members of the club only". That's a stated term (members only), so the open-data policy doesn't apply. Rob decided to skip it on 2026-11-02. SKCC and the CQ WW/WPX public logs cover the same CW operators. |
+| ARRL LoTW activity list | ARRL Terms of Use: "personal, non-commercial use only", "not for further reproduction, publication, or distribution". Kept as an opt-in local build only (`--include-restricted`), never published. |
+| ARRL contest results; IARU HF logs (hosted by ARRL) | arrl.org: "Reproduction of material from any ARRL web page without written permission is strictly prohibited." |
+| QRZ.com, including its XML API | Member agreement §12: copies "for your personal, non-commercial use only… You may not… republish… or distribute". Consumer apps may look callsigns up live on the operator's own account (adif backlog). |
+| RadioID.net, and every copy of it (Pi-Star `DMRIds.dat`, BrandMeister/DMR-MARC dumps, CPEditor lists) | "Do not mirror or re-publish RadioID as a public feed, bulk export, reusable database… without written permission." Copies served elsewhere without a licence are still RadioID data. |
+| HamQTH, HamCall, QRZCQ | HamQTH: no AU import and no redistribution licence. HamCall: commercial. QRZCQ: "Downloads and copies… only permitted for private, non-commercial use". |
+| HamDB (Australian entries) | Derived from ACMA, so ACMA licence clause 8 still applies to natural persons. |
+| WIA printed Callbook | Copyrighted, stale (2019), and built from pre-2024 ACMA data under ACMA's terms. |
+| WWFF directory | "No part of this directory may be reproduced… without the prior permission of WWFF." |
+| findu (APRS) | "I must insist you not use my server to harvest the data." aprs.fi's API terms are also restrictive. |
+| SOTA API | API terms: "No commercial usage…", "no AI-generated software may connect to the SOTA API without prior approval". The static `summitslist.csv` (no licence) is fine; it's disabled in published builds today. |
+| Austria, Fernmeldebüro callsign list | Restricted by law: "ausschließlich nur zum Zwecke des Amateurfunkdienstes zulässig" (§ 150 Abs. 4 TKG 2021). |
+| New Zealand RSM Register of Radio Frequencies | "may be reproduced for personal or in-house use free of charge" (rsm.govt.nz/copyright). The NZART Call Book is a separate candidate. |
+| Malaysia, MCMC register | "not permitted to copy … store … without the prior written permission of the MCMC". |
