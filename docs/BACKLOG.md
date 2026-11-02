@@ -14,30 +14,30 @@ tracker's final state survives in git history at the migration commit.
 
 ## Open items (9)
 
-### hdb-acma-licence — Decide whether ACMA data may be published at all
+### hdb-acma-licence — Follow-ups to the ACMA natural-person rule
 *HIGH · decision · cx:2*
 
-**Spec:** ACMA's RRL extract moved from `web.acma.gov.au/rrl-updates/spectra_rrl.zip`
-(dead since 2026-10-21) to `https://cdn.acma.gov.au/rrl/spectra_rrl.zip`. The fix is on
-branch `work/hdb-acma` (6805303, unmerged): new URL, plus the parser read the callsign from
-`AREA_AREA_ID` (col 32) instead of `CALL_SIGN` (col 33), and now looks columns up by header.
-Two blockers before merging:
+**Spec:** Decided 2026-11-01 and implemented on `work/hdb-acma`: ACMA records are
+published, but where the licensee is a natural person only the callsign and licence
+fields go out (ACMA licence clause 8). The rule is `is_natural_person` in
+`hamcall_db/sources/acma.py`; client types 1-5 (government, Company) publish in full,
+everything else (7 Person, 6 Community or Volunteer Group, blank, unknown) is withheld.
+NOTICE now carries the real ACMA licence terms and the clause 9 attribution. Prior
+history carried forward is scrubbed by `withhold_prior_history`. Coverage is ~760
+licences (since 2024-02-19 most amateurs hold a class licence and are not in the RRL).
+Open questions for the owner:
 
-1. **Licence.** NOTICE says ACMA data is CC BY 4.0, but the zip's own `LICENCE.TXT`
-   (also `cdn.acma.gov.au/offline-rrl/doc/LICENCE.TXT`) is ACMA's licence. Clause 8: "Where
-   the Licensee is a natural person, this Licence does not permit you to reproduce or
-   distribute the Licensee's Client Information contained in the Register in any Derivative
-   work." Clause 6 limits client information to spectrum management; clause 9 requires
-   "Based on Australian Communications and Media Authority information". Options: publish
-   only club/organisation records, publish callsigns without identity fields, or drop ACMA.
-   Fix NOTICE either way.
-2. **Coverage.** Since 2024-02-19 Australian amateurs operate under a class licence and are
-   no longer individually in the RRL. The extract now yields ~760 records (507 repeaters,
-   31 beacons, ~234 individual licences). ACMA's separate call-sign register has no bulk
-   download found.
-
-Until decided, ACMA is skipped every night, and since the skip alert landed that turns the
-Release job red.
+1. **Type 6 clubs.** "Community or Volunteer Group" covers ~120 real clubs but also ~25
+   plain individuals, so the whole type is withheld (306 of 760 records). Options: keep
+   it withheld; or publish type 6 only when ACMA also holds an ABN/ACN for the client
+   (every type-6 amateur client with an ABN in the 2026-11-01 extract is an organisation
+   or partnership, but a sole trader can hold an ABN too).
+2. **Already-published releases.** Releases before 2026-10-21 contained ACMA rows with
+   individuals' names and postcodes (keyed on AREA_AREA_ID, not the callsign). New
+   builds scrub that history, but the old dated release assets are still downloadable.
+   Decide whether to delete or re-cut them.
+3. **No grid for AU organisations.** The offline geocoder's seed tables have no
+   Australian postcodes, so even published organisations get `grid = None`.
 
 ### hdb-dl-timeout — Add a timeout to every upstream urlopen
 *MED · bug · cx:1*
