@@ -21,7 +21,7 @@ Grid policy: published value is 4-char Maidenhead ONLY (e.g. DN13), never 6-char
 
 ### mem-371f
 
-Source licenses (must surface in NOTICE): FCC ULS = public domain; ISED Canada = Open Government Licence – Canada (attribution required); ACMA = CC-BY 4.0 AU (attribution required); AD1C cty.dat = free for non-commercial use, attribution required. Combined dataset distributed under union of these terms. Re-check terms before adding any new source.
+Source licenses (must surface in NOTICE): FCC ULS = public domain; ISED Canada = Open Government Licence – Canada (attribution required); ACMA = ACMA's own "Licence to use the Register of Radiocommunications Licences" (NOT CC BY; clause 8 forbids redistributing a natural person's name/address, so the importer publishes only callsign + licence fields for them, see `is_natural_person` in hamcall_db/sources/acma.py; clause 9 attribution "Based on Australian Communications and Media Authority information"); AD1C cty.dat = free for non-commercial use, attribution required. Combined dataset distributed under union of these terms. Re-check terms before adding any new source.
 
 ### mem-ad43
 

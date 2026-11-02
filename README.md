@@ -12,7 +12,7 @@ A Python build pipeline that aggregates free, openly-licensed amateur radio lice
 |---|---|---|---|
 | FCC ULS | US (~1M records) | Public domain | Bulk ZIP, weekly |
 | ISED Canada | Canada (~80k records) | Open Government Licence – Canada | Delimited TXT in ZIP |
-| ACMA RRL | Australia (~80k amateur records, filtered from full radiocomms set) | CC-BY 4.0 AU | Daily extract |
+| ACMA RRL | Australia (~770 amateur licences, mostly repeaters and beacons: since 2024 most Australian amateurs operate under a class licence and are not in the register). Natural persons' records carry the callsign and licence fields only; name and location are withheld | ACMA's *Licence to use the Register of Radiocommunications Licences*, attribution required (see NOTICE) | Daily extract |
 | AD1C cty.dat | Worldwide DXCC prefix → entity mapping | Free for non-commercial use, attribution required | cty.dat |
 | AllStarLink | Node numbers per callsign (one-to-many) | Used on an assumed non-commercial basis (see NOTICE) | Pipe-delimited node directory |
 | ARRL LoTW | LoTW user activity per callsign (`uses_lotw`, last upload date) | **License unclear — needs human sign-off** (see NOTICE); used on an assumed non-commercial basis | Public CSV `lotw-user-activity.csv` |
@@ -269,7 +269,7 @@ Prefer Parquet? Those stay the canonical, storage-neutral output. Datasette itse
 
 **Build code:** MIT — see [`LICENSE`](LICENSE).
 
-**Published dataset** (the Parquet files and the SQLite `.db`): [Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/). When you redistribute the data you must also satisfy the upstream source attribution terms in [`NOTICE`](NOTICE). Commercial use requires separate arrangements with the upstream rights holders (principally AD1C for cty.dat).
+**Published dataset** (the Parquet files and the SQLite `.db`): [Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/). When you redistribute the data you must also satisfy the upstream source attribution terms in [`NOTICE`](NOTICE), including the ACMA's required statement: "Based on Australian Communications and Media Authority information". Commercial use requires separate arrangements with the upstream rights holders (principally AD1C for cty.dat).
 
 ## Status
 
