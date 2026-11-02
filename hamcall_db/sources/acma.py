@@ -18,12 +18,12 @@ Files / join used (only what we need):
   (mapped to city/state/postal_code); the street (``POSTAL_STREET``) is read past but
   NEVER stored — redistribution contract.
 
-Column positions are stable in the published spectra format and live in named constants
-below so a future format revision is a one-line change (see the ACMA "Summary of Spectra
-RRL format" / the create_tables.sql in the well-known kronicd/rrl_import project, which
-this mapping was grounded against). The published CSVs may or may not carry a header row;
-we auto-detect and skip it. Output leaves county/country/dxcc/grid for downstream stages
-(cty.dat enrichment, geocoding from postcode/suburb).
+The published CSVs carry a header row (checked 2026-11-01); when present, columns are
+resolved BY NAME from it, so a column added or moved upstream can't silently shift a
+field. Headerless input falls back to the positional constants below, which follow the
+ACMA's own ``DOC/cr_tables_oracle.sql`` shipped inside the extract (device_details has
+``AREA_AREA_ID`` at 32 and ``CALL_SIGN`` at 33). Output leaves county/country/dxcc/grid
+for downstream stages (cty.dat enrichment, geocoding from postcode/suburb).
 
 The ACMA client name (``LICENCEE``) is a single free-text field. We best-effort split an
 individual's name into first/last; an organisation / club name (no usable split, or a
@@ -41,8 +41,9 @@ from pathlib import Path
 from hamcall_db.models import Record
 from hamcall_db.sources.base import synced_at_from
 
-# Daily bulk "spectra" extract of the whole RRL.
-DOWNLOAD_URL = "https://web.acma.gov.au/rrl-updates/spectra_rrl.zip"
+# Daily bulk "spectra" extract of the whole RRL, served from the ACMA CDN. The old
+# web.acma.gov.au/rrl-updates/ host stopped resolving around 2026-10-21.
+DOWNLOAD_URL = "https://cdn.acma.gov.au/rrl/spectra_rrl.zip"
 
 # CSV file names inside the extract (one per core RRL table).
 _CLIENT_CSV = "client.csv"
@@ -66,7 +67,7 @@ _LICENCE_STATUS_TEXT = 10
 
 # device_details.csv — wide table; CALL_SIGN and LICENCE_NO are the only fields we read.
 _DEVICE_LICENCE_NO = 1
-_DEVICE_CALL_SIGN = 32
+_DEVICE_CALL_SIGN = 33
 
 # Amateur licences are identified by this token in LICENCE_TYPE_NAME
 # (e.g. "Amateur", "Amateur Beacon", "Amateur Repeater").
@@ -101,8 +102,13 @@ _ORG_TOKENS = {
 }
 
 
-def _read_csv(path: Path) -> Iterator[list[str]]:
-    """Yield rows of a spectra CSV, skipping a header row if present."""
+def _read_csv(path: Path, columns: dict[str, int]) -> Iterator[list[str]]:
+    """Yield rows of a spectra CSV, skipping a header row if present.
+
+    `columns` maps column name -> default (positional) index. If the file has a header
+    row, each name found in it is re-pointed at its header position, IN PLACE, before
+    the first data row is yielded; names missing from the header keep their default.
+    """
     if not path.exists():
         return
     with path.open(encoding="latin-1", newline="") as fh:
@@ -114,6 +120,10 @@ def _read_csv(path: Path) -> Iterator[list[str]]:
             if first:
                 first = False
                 if row[0].strip().lower() in _HEADER_TOKENS:
+                    header = {name.strip().upper(): i for i, name in enumerate(row)}
+                    for name in columns:
+                        if name in header:
+                            columns[name] = header[name]
                     continue
             yield row
 
@@ -171,38 +181,52 @@ def parse_dir(
     licences are emitted. `synced_at` stamps the upstream file date.
     """
     # licence.csv: keep only amateur licences; map LICENCE_NO -> client_no.
+    lic = {
+        "LICENCE_NO": _LICENCE_NO,
+        "CLIENT_NO": _LICENCE_CLIENT_NO,
+        "LICENCE_TYPE_NAME": _LICENCE_TYPE_NAME,
+        "STATUS_TEXT": _LICENCE_STATUS_TEXT,
+    }
     amateur_client: dict[str, str | None] = {}
-    for row in _read_csv(path / _LICENCE_CSV):
-        type_name = _field(row, _LICENCE_TYPE_NAME)
+    for row in _read_csv(path / _LICENCE_CSV, lic):
+        type_name = _field(row, lic["LICENCE_TYPE_NAME"])
         if type_name is None or _AMATEUR_TOKEN not in type_name.lower():
             continue
         if granted_only:
-            status = _field(row, _LICENCE_STATUS_TEXT)
+            status = _field(row, lic["STATUS_TEXT"])
             if status is None or status.lower() != _GRANTED_STATUS:
                 continue
-        licence_no = _field(row, _LICENCE_NO)
+        licence_no = _field(row, lic["LICENCE_NO"])
         if licence_no is None:
             continue
-        amateur_client[licence_no] = _field(row, _LICENCE_CLIENT_NO)
+        amateur_client[licence_no] = _field(row, lic["CLIENT_NO"])
 
     if not amateur_client:
         return
 
     # client.csv: identity + location for the amateur clients we care about.
     needed_clients = {c for c in amateur_client.values() if c is not None}
+    cli = {
+        "CLIENT_NO": _CLIENT_NO,
+        "LICENCEE": _CLIENT_LICENCEE,
+        "POSTAL_SUBURB": _CLIENT_POSTAL_SUBURB,
+        "POSTAL_STATE": _CLIENT_POSTAL_STATE,
+        "POSTAL_POSTCODE": _CLIENT_POSTAL_POSTCODE,
+    }
     clients: dict[str, list[str]] = {}
-    for row in _read_csv(path / _CLIENT_CSV):
-        client_no = _field(row, _CLIENT_NO)
+    for row in _read_csv(path / _CLIENT_CSV, cli):
+        client_no = _field(row, cli["CLIENT_NO"])
         if client_no is not None and client_no in needed_clients:
             clients[client_no] = row
 
     # device_details.csv drives emission: it carries the callsign per amateur licence.
+    dev = {"LICENCE_NO": _DEVICE_LICENCE_NO, "CALL_SIGN": _DEVICE_CALL_SIGN}
     seen: set[str] = set()
-    for row in _read_csv(path / _DEVICE_DETAILS_CSV):
-        licence_no = _field(row, _DEVICE_LICENCE_NO)
+    for row in _read_csv(path / _DEVICE_DETAILS_CSV, dev):
+        licence_no = _field(row, dev["LICENCE_NO"])
         if licence_no is None or licence_no not in amateur_client:
             continue
-        callsign = _field(row, _DEVICE_CALL_SIGN)
+        callsign = _field(row, dev["CALL_SIGN"])
         if callsign is None:
             continue
         callsign = callsign.upper()
@@ -213,11 +237,11 @@ def parse_dir(
         client_no = amateur_client[licence_no]
         client_row = clients.get(client_no) if client_no is not None else None
         if client_row is not None:
-            licencee = _field(client_row, _CLIENT_LICENCEE)
+            licencee = _field(client_row, cli["LICENCEE"])
             first_name, last_name = _split_name(licencee)
-            city = _field(client_row, _CLIENT_POSTAL_SUBURB)
-            state = _field(client_row, _CLIENT_POSTAL_STATE)
-            postal_code = _field(client_row, _CLIENT_POSTAL_POSTCODE)
+            city = _field(client_row, cli["POSTAL_SUBURB"])
+            state = _field(client_row, cli["POSTAL_STATE"])
+            postal_code = _field(client_row, cli["POSTAL_POSTCODE"])
         else:
             first_name = last_name = city = state = postal_code = None
 

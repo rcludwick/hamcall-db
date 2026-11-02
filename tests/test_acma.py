@@ -2,8 +2,9 @@
 
 No network: download() is not exercised here; we parse a small checked-in slice of the
 device_details/licence/client comma-delimited spectra extract under
-tests/fixtures/acma/. The fixtures are headerless positional rows (matching the
-published spectra column order) and include a non-amateur licence to prove filtering.
+tests/fixtures/acma/. The top-level fixtures are headerless positional rows (matching the
+published spectra column order) and include a non-amateur licence to prove filtering;
+headered/ holds rows under the real 2026 header rows.
 """
 
 from __future__ import annotations
@@ -149,3 +150,37 @@ def test_split_name_variants() -> None:
     assert _split_name("Acme Radio Club Inc") == (None, "Acme Radio Club Inc")
     assert _split_name(None) == (None, None)
     assert _split_name("") == (None, None)
+
+
+# --- Headered extract in the 2026 published layout (tests/fixtures/acma/headered/) ---
+# Synthetic rows under the real header rows of the 2026-11-01 spectra extract. The
+# device rows carry a populated AREA_AREA_ID (index 32) right before CALL_SIGN (33).
+
+HEADERED = FIXTURES / "headered"
+
+
+def test_headered_extract_reads_call_sign_not_area_id() -> None:
+    out = _by_call(parse_dir(HEADERED, synced_at="2026-11-01"))
+    assert set(out) == {"VK2RXX"}  # land-mobile VKTELCO filtered; area id 17737 not a call
+    rec = out["VK2RXX"]
+    assert rec.first_name is None
+    assert rec.last_name == "Example Valley Amateur Radio Club Inc"
+    assert (rec.city, rec.state, rec.postal_code) == ("KATOOMBA", "NSW", "2780")
+    values = {v for v in asdict(rec).values() if isinstance(v, str)}
+    assert "PO Box 123" not in values  # POSTAL_STREET never published
+
+
+def test_header_names_win_over_positions(tmp_path: Path) -> None:
+    # Upstream inserts a new column before CALL_SIGN: name lookup must follow it.
+    import csv
+    import shutil
+
+    for name in ("client.csv", "licence.csv"):
+        shutil.copy(HEADERED / name, tmp_path / name)
+    rows = list(csv.reader((HEADERED / "device_details.csv").open(newline="")))
+    for row in rows:
+        row.insert(1, "NEW_COLUMN" if row is rows[0] else "x")
+    with (tmp_path / "device_details.csv").open("w", newline="") as fh:
+        csv.writer(fh).writerows(rows)
+
+    assert set(_by_call(parse_dir(tmp_path))) == {"VK2RXX"}
