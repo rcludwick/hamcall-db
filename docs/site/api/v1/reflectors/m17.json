@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 144,
-  "generated": "2026-11-01",
+  "count": 146,
+  "generated": "2026-11-02",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1590,7 +1590,7 @@
       "description": "<p>https://n2fed.net</p>",
       "dial": {
         "callsign": "M17-654",
-        "host": "m17.n2fed.net",
+        "host": "45.79.175.220",
         "kind": "m17",
         "modules": [
           "A",
@@ -1800,6 +1800,29 @@
       "id": "M17-820",
       "license": "CC-BY-4.0",
       "name": "M17-820",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "VK4UE"
+    },
+    {
+      "country": "AU",
+      "dashboard": "https://vk4rjwm17.com",
+      "dial": {
+        "callsign": "M17-824",
+        "host": "194.195.126.139",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "Y"
+        ],
+        "port": 17000
+      },
+      "id": "M17-824",
+      "license": "CC-BY-4.0",
+      "name": "M17-824",
       "network": "m17",
       "source": "dvref",
       "sponsor": "VK4UE"
@@ -2747,6 +2770,50 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "IV3JDV"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://famiuse.ddns.net:3000",
+      "dial": {
+        "callsign": "M17-ITC",
+        "host": "famiuse.ddns.net",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-ITC",
+      "license": "CC-BY-4.0",
+      "name": "Italy Centro Digiland",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "IZ0THD"
     },
     {
       "country": "US",

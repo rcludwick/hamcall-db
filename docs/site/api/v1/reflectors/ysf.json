@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 1658,
-  "generated": "2026-11-01",
+  "generated": "2026-11-02",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -3149,7 +3149,7 @@
       "dashboard": "https://ysf.n2fed.net",
       "description": "<p>https://n2fed.net</p>",
       "dial": {
-        "host": "96.225.96.169",
+        "host": "45.79.175.220",
         "kind": "ysf",
         "port": 42000
       },
@@ -10154,7 +10154,7 @@
     {
       "country": "IT",
       "dashboard": "https://ysf.xlx595.net",
-      "description": "DSTAR-ITALY-N",
+      "description": "IT-595-MULTIP",
       "dial": {
         "host": "82.165.139.66",
         "kind": "ysf",
@@ -10162,7 +10162,7 @@
       },
       "id": "22355",
       "license": "CC-BY-4.0",
-      "name": "DSTAR-ITALY-N",
+      "name": "IT-595-MULTIP",
       "network": "ysf",
       "source": "dvref"
     },
@@ -11017,10 +11017,10 @@
     },
     {
       "country": "PA",
-      "dashboard": "http://ysf-hp3.dnsup.net/",
+      "dashboard": "http://ysf-hp3.2ham.link/",
       "description": "Chiriqui-Link",
       "dial": {
-        "host": "ysf-hp3.dnsup.net",
+        "host": "ysf-hp3.2ham.link",
         "kind": "ysf",
         "port": 42000
       },
@@ -11030,6 +11030,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "HP3ICC"
+    },
+    {
+      "country": "PA",
+      "dashboard": "http://xlx-hp3.2ham.link/",
+      "description": "URF744",
+      "dial": {
+        "host": "xlx-hp3.2ham.link",
+        "kind": "ysf",
+        "port": 42002
+      },
+      "id": "24543",
+      "license": "CC-BY-4.0",
+      "name": "URF744",
+      "network": "ysf",
+      "source": "dvref"
     },
     {
       "country": "US",
@@ -21463,6 +21478,7 @@
     },
     {
       "country": "CA",
+      "dashboard": "http://caacadie.duckdns.org",
       "description": "Acadie,Qc est",
       "dial": {
         "host": "174.113.119.75",
@@ -25041,22 +25057,6 @@
       "id": "92585",
       "license": "CC-BY-4.0",
       "name": "XLX431",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "JQ2QME"
-    },
-    {
-      "country": "JP",
-      "dashboard": "http://xrf926.xreflector-jp.org/",
-      "description": "XLX926",
-      "dial": {
-        "host": "150.66.12.109",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "92586",
-      "license": "CC-BY-4.0",
-      "name": "XLX926",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "JQ2QME"

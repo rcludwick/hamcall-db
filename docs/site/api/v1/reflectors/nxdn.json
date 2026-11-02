@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 347,
-  "generated": "2026-11-01",
+  "count": 348,
+  "generated": "2026-11-02",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1347,6 +1347,20 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "IZ7KYS"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://nxdn22355.duckdns.org",
+      "dial": {
+        "host": "2.31.136.113",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "22355",
+      "license": "CC-BY-4.0",
+      "name": "IT-595-MULTIPROTOCOL",
+      "network": "nxdn",
+      "source": "dvref"
     },
     {
       "country": "IT",
@@ -4449,7 +4463,7 @@
       "dashboard": "https://nxdn.n2fed.net",
       "description": "<p>https://n2fed.net</p>",
       "dial": {
-        "host": "96.225.96.169",
+        "host": "45.79.175.220",
         "kind": "nxdn",
         "port": 41400
       },
@@ -4477,18 +4491,18 @@
     },
     {
       "country": "US",
-      "description": "<p>Netoholics Network multimode amateur radio network. Bridged with AllStar, EchoLink, TGIF, YSF, Zello, M17, and P25.Dom</p>",
+      "description": "<p>Netoholics Network multi-mode reflector supporting DMR, M17, P25, and NXDN.</p>",
       "dial": {
-        "host": "nxdn.netoholicsnetwork.net",
+        "host": "urf.netoholicsnetwork.net",
         "kind": "nxdn",
         "port": 41400
       },
       "id": "6749",
       "license": "CC-BY-4.0",
-      "name": "Netoholics Network",
+      "name": "URFNET",
       "network": "nxdn",
       "source": "dvref",
-      "sponsor": "KN4EWT"
+      "sponsor": "Netoholics Network"
     },
     {
       "country": "NL",
@@ -4539,9 +4553,9 @@
     },
     {
       "country": "PA",
-      "dashboard": "http://nxdn-hp3.dnsup.net/",
+      "dashboard": "http://nxdn-hp3.2ham.link/",
       "dial": {
-        "host": "nxdn-hp3.dnsup.net",
+        "host": "nxdn-hp3.2ham.link",
         "kind": "nxdn",
         "port": 41400
       },

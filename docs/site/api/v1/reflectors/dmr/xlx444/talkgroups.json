@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 6,
-  "generated": "2026-10-03",
+  "count": 7,
+  "generated": "2026-11-02",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -16,28 +16,32 @@
   "system": "xlx444",
   "talkgroups": [
     {
-      "name": "DMR local chat",
+      "name": "YSF/DMR Bridge NL-NLOost (02044) not yet active",
       "tg": 4001
     },
     {
-      "name": "Bridge DMR/YSF NL-XLX444",
+      "name": "YSF/DMR Bridge NL-XLX444 (00444)",
       "tg": 4002
     },
     {
-      "name": "DMR local chat",
+      "name": "D-Star Local chat",
       "tg": 4003
     },
     {
-      "name": "Bridge CumbriaCQ UK NW England",
+      "name": "Bridge TGIF CumbriaCQ UK NW England",
       "tg": 4004
     },
     {
-      "name": "Bridge Extended Freedom Network",
+      "name": "Bridge TGIF Extended Freedom Network",
       "tg": 4005
     },
     {
-      "name": "Bridge FreeSTAR International",
+      "name": "Bridge TGIF FreeSTAR International",
       "tg": 4006
+    },
+    {
+      "name": "Bridge TGIF Waffle Group",
+      "tg": 4007
     }
   ]
 }

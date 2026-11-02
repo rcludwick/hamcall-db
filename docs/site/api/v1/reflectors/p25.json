@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 385,
-  "generated": "2026-11-01",
+  "generated": "2026-11-02",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -4839,7 +4839,7 @@
       "dashboard": "https://p25.n2fed.net",
       "description": "<p>https://n2fed.net</p>",
       "dial": {
-        "host": "96.225.96.169",
+        "host": "45.79.175.220",
         "kind": "p25",
         "port": 41000
       },
@@ -4882,17 +4882,18 @@
     },
     {
       "country": "US",
+      "description": "<p>Netoholics Network multi-mode reflector supporting DMR, M17, P25, and NXDN.</p>",
       "dial": {
-        "host": "p25.netoholicsnetwork.net",
+        "host": "urf.netoholicsnetwork.net",
         "kind": "p25",
         "port": 41000
       },
       "id": "6749",
       "license": "CC-BY-4.0",
-      "name": "Netoholics Network",
+      "name": "URFNET",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "KN4EWT"
+      "sponsor": "Netoholics Network"
     },
     {
       "country": "US",
@@ -5034,9 +5035,9 @@
     },
     {
       "country": "PA",
-      "dashboard": "http://p25-hp3.dnsup.net/",
+      "dashboard": "http://p25-hp3.2ham.link/",
       "dial": {
-        "host": "p25-hp3.dnsup.net",
+        "host": "p25-hp3.2ham.link",
         "kind": "p25",
         "port": 41000
       },

@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 138,
-  "generated": "2026-11-01",
+  "count": 141,
+  "generated": "2026-11-02",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -126,7 +126,15 @@
         "host": "164.132.230.151",
         "kind": "urf",
         "modules": [
-          "C"
+          "A",
+          "B",
+          "C",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J"
         ]
       },
       "id": "033",
@@ -1581,6 +1589,19 @@
       "sponsor": "HC1LNM"
     },
     {
+      "country": "PA",
+      "dashboard": "http://xlx-hp3.2ham.link/",
+      "dial": {
+        "host": "xlx-hp3.2ham.link",
+        "kind": "urf"
+      },
+      "id": "744",
+      "license": "CC-BY-4.0",
+      "name": "Chiriqui Link Panama",
+      "network": "urf",
+      "source": "dvref"
+    },
+    {
       "country": "UY",
       "dial": {
         "host": "198.245.55.26",
@@ -1679,6 +1700,20 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "Stephen Brown - K1LNX"
+    },
+    {
+      "country": "CN",
+      "dashboard": "http://8.137.160.70",
+      "dial": {
+        "host": "8.137.160.70",
+        "kind": "urf"
+      },
+      "id": "871",
+      "license": "CC-BY-4.0",
+      "name": "YN-46087",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "BI8SPS, BH8UOU."
     },
     {
       "country": "BE",
@@ -1798,9 +1833,20 @@
         "host": "51.254.33.194",
         "kind": "urf",
         "modules": [
+          "A",
+          "B",
           "C",
           "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "M",
           "N",
+          "V",
           "Y"
         ]
       },
@@ -2272,6 +2318,20 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "G6PHF"
+    },
+    {
+      "country": "US",
+      "description": "<p>Netoholics Network multi-mode reflector supporting DMR, M17, P25, and NXDN.</p>",
+      "dial": {
+        "host": "urf.netoholicsnetwork.net",
+        "kind": "urf"
+      },
+      "id": "NET",
+      "license": "CC-BY-4.0",
+      "name": "Netoholics Multi-Mode Reflector",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "Netoholics Network"
     },
     {
       "country": "US",
