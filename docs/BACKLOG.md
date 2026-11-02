@@ -21,17 +21,22 @@ tracker's final state survives in git history at the migration commit.
 published, but where the licensee is a natural person only the callsign and licence
 fields go out (ACMA licence clause 8). The rule is `is_natural_person` in
 `hamcall_db/sources/acma.py`; client types 1-5 (government, Company) publish in full,
-everything else (7 Person, 6 Community or Volunteer Group, blank, unknown) is withheld.
+and so do type 6 "Community or Volunteer Group" clubs; everything else (7 Person, type-6
+entries naming an individual, blank, unknown) is withheld.
 NOTICE now carries the real ACMA licence terms and the clause 9 attribution. Prior
 history carried forward is scrubbed by `withhold_prior_history`. Coverage is ~760
 licences (since 2024-02-19 most amateurs hold a class licence and are not in the RRL).
 Open questions for the owner:
 
-1. **Type 6 clubs.** "Community or Volunteer Group" covers ~120 real clubs but also ~25
-   plain individuals, so the whole type is withheld (306 of 760 records). Options: keep
-   it withheld; or publish type 6 only when ACMA also holds an ABN/ACN for the client
-   (every type-6 amateur client with an ABN in the 2026-11-01 extract is an organisation
-   or partnership, but a sole trader can hold an ABN too).
+1. **Type 6 clubs — resolved 2026-11-02.** Owner's decision: clubs are collectives, not
+   natural persons, so they are published. ACMA also files some individuals under type 6,
+   so a type-6 record publishes in full only when its licensee name contains an
+   organisation word (`_ORGANISATION_NAME` in `acma.py`) and isn't a nominee/attention
+   line. On the 2026-11-01 extract that publishes 111 of 149 type-6 names (all clubs and
+   groups, plus the partnership "P J O'BRIEN AND COMPANY") and withholds 38: 35
+   individuals, "Nominee <person> <callsign>", "Attn: The Secretary" and "Tasar". Recheck
+   the withheld list when ACMA's data changes; a new club whose name has no organisation
+   word will be withheld (fail closed) until the word list grows.
 2. **Already-published releases — resolved.** Releases before 2026-10-21 contained ACMA
    rows with individuals' names and postcodes. Those assets were deleted on 2026-11-02
    with the rest of the callsign assets (see au-1022 under Shipped), and `latest` was

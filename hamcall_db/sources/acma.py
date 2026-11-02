@@ -39,6 +39,7 @@ names are published, so it goes whole into ``last_name`` (first_name stays None)
 from __future__ import annotations
 
 import csv
+import re
 import urllib.error
 import urllib.request
 from collections.abc import Iterable, Iterator
@@ -122,15 +123,20 @@ _CLIENT_TYPE_NAMES = {
 # information that may readily identify the licensee, "including, but not limited to,
 # the Licensee's name, address and contact details".
 #
-# So a record is published in full ONLY when ACMA's own client.CLIENT_TYPE_ID says the
-# licensee is a government body or a company. Everything else is treated as a natural
-# person (fail closed):
+# So whether a record is published in full turns on ACMA's own client.CLIENT_TYPE_ID:
+#   1-5 government / Company        -> organisation, published in full.
+#   6 Community or Volunteer Group  -> organisation WHEN the licensee name contains an
+#                                      organisation word (club, society, group, inc,
+#                                      WICEN, scouts...). This is how ACMA files clubs,
+#                                      and a club is a collective, not a natural person
+#                                      (owner's decision, 2026-11-02). ACMA also files
+#                                      some individuals under type 6 ("AP Bartel",
+#                                      "Nominee <person> <callsign>"); a type-6 name with
+#                                      no organisation word, or a nominee/attention
+#                                      line, is treated as a natural person.
 #   7 Person                        -> natural person.
-#   6 Community or Volunteer Group  -> natural person. Clubs use this type, but so do
-#                                      individuals: in the 2026-11-01 extract roughly
-#                                      one in six type-6 amateur licensees is plainly a
-#                                      private person, so the type proves nothing.
-#   blank / any other value         -> natural person.
+#   blank / any other value         -> natural person (fail closed).
+# The name test only ever RESCUES type 6; it can't turn a Person into an organisation.
 # For a natural person the callsign and licence-level fields (class, dates, the readable
 # client type) are published; name, city, state, postcode and grid are not, and the grid
 # can't be derived downstream because its inputs (postcode, suburb) are withheld.
@@ -150,9 +156,37 @@ _ORGANISATION_CLIENT_TYPES = frozenset(
 _IDENTIFYING_FIELDS = ("first_name", "last_name", "city", "county", "state", "postal_code", "grid")
 
 
-def is_natural_person(client_type_id: str | None) -> bool:
-    """True unless ACMA's CLIENT_TYPE_ID marks the licensee as an organisation (cl. 8)."""
-    return client_type_id is None or client_type_id.strip() not in _ORGANISATION_CLIENT_TYPES
+_COMMUNITY_GROUP_TYPE = "6"
+
+# Whole words that mark a type-6 licensee name as an organisation. Checked against every
+# type-6 amateur licensee in the 2026-11-01 extract: each club matches, and none of the
+# individuals filed under type 6 do.
+_ORGANISATION_NAME = re.compile(
+    r"\b("
+    r"club|society|group|association|assoc|associates|inc|incorporated|institute|"
+    r"network|wicen|scouts?|branch|college|company|co|ltd|limited|pty|"
+    r"ambulance|broadcasters|shed|friends|foundation|council|committee|federation|"
+    r"league|union|trust|team|service|services|radio"
+    r")\b",
+    re.IGNORECASE,
+)
+# A type-6 entry that names a person on the organisation's behalf is about that person.
+_PERSON_ON_BEHALF = re.compile(r"^\s*(nominee|attn|attention|c/-|c/o)\b", re.IGNORECASE)
+
+
+def is_natural_person(client_type_id: str | None, name: str | None = None) -> bool:
+    """True unless ACMA's client type (and, for type 6, the name) marks an organisation.
+
+    See the clause-8 block above: types 1-5 are organisations; type 6 is an
+    organisation only when ``name`` contains an organisation word and isn't a
+    nominee/attention line; everything else is a natural person (fail closed).
+    """
+    client_type = (client_type_id or "").strip()
+    if client_type in _ORGANISATION_CLIENT_TYPES:
+        return False
+    if client_type == _COMMUNITY_GROUP_TYPE and name:
+        return _PERSON_ON_BEHALF.search(name) is not None or not _ORGANISATION_NAME.search(name)
+    return True
 
 
 def withhold_prior_history(
@@ -311,7 +345,8 @@ def parse_dir(
         client_type = _field(client_row, cli["CLIENT_TYPE_ID"]) if client_row else None
 
         last_name = city = state = postal_code = None
-        if client_row is not None and not is_natural_person(client_type):
+        licensee = _field(client_row, cli["LICENCEE"]) if client_row else None
+        if client_row is not None and not is_natural_person(client_type, licensee):
             # Organisation (clause 8 does not apply): publish name + suburb/state/postcode.
             # The street is compared against, never stored (hdb-addrguard).
             street = (_field(client_row, cli["POSTAL_STREET"]),)

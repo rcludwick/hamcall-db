@@ -57,13 +57,17 @@ Upstream sources and their licenses
        licensee, including the licensee's name, address and contact details.
 
        What hamcall-db publishes for ACMA records:
-         - Licensee is a government body or company (ACMA client types 1-5):
-           callsign, organisation name, suburb, state, postcode, grid,
-           licence category and dates, client type.
-         - Licensee is a natural person, OR the ACMA client type does not
-           establish that it is not (type 7 "Person", type 6 "Community or
-           Volunteer Group", blank or unrecognised): callsign, licence
-           category, issue / effect / expiry dates and client type ONLY.
+         - Licensee is an organisation: a government body or company (ACMA
+           client types 1-5), or a club or other collective filed as type 6
+           "Community or Volunteer Group" whose name identifies it as an
+           organisation (e.g. "... Amateur Radio Club Inc"): callsign,
+           organisation name, suburb, state, postcode, grid, licence category
+           and dates, client type.
+         - Licensee is a natural person, OR the ACMA record does not establish
+           that it is not (type 7 "Person"; a type-6 entry that names an
+           individual, such as a bare personal name or a nominee; blank or
+           unrecognised types): callsign, licence category, issue / effect /
+           expiry dates and client type ONLY.
            Name, suburb, state, postcode and grid are withheld (null). No
            street address is published for anyone.
 

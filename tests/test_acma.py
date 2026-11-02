@@ -12,9 +12,16 @@ from __future__ import annotations
 from dataclasses import asdict
 from pathlib import Path
 
+import pytest
+
 from hamcall_db.history import HistoryRow
 from hamcall_db.models import Record
-from hamcall_db.sources.acma import AcmaSource, parse_dir, withhold_prior_history
+from hamcall_db.sources.acma import (
+    AcmaSource,
+    is_natural_person,
+    parse_dir,
+    withhold_prior_history,
+)
 
 FIXTURES = Path(__file__).parent / "fixtures" / "acma"
 
@@ -138,7 +145,7 @@ HEADERED = FIXTURES / "headered"
 def test_headered_extract_reads_call_sign_not_area_id() -> None:
     out = _by_call(parse_dir(HEADERED, synced_at="2026-11-01"))
     # Land-mobile VKTELCO is filtered; the area ids (17737...) are never read as calls.
-    assert set(out) == {"VK2RXX", "VK4RZZ", "VK3ZZA", "VK6ZZB", "VK5ZZC"}
+    assert set(out) == {"VK2RXX", "VK4RZZ", "VK3ZZA", "VK6ZZB", "VK5ZZC", "VK2ZZD"}
     for rec in out.values():
         values = {v for v in asdict(rec).values() if isinstance(v, str)}
         assert not any("PO Box" in v or "Sample St" in v for v in values)  # no street
@@ -199,13 +206,68 @@ def test_company_record_is_fully_populated() -> None:
     assert rec.applicant_type == "Company"
 
 
-def test_community_group_type_is_ambiguous_so_withheld() -> None:
-    # Type 6 "Community or Volunteer Group" is used for clubs AND, in the real extract,
-    # for plenty of individuals, so it can't prove the holder isn't a natural person.
+def test_community_group_club_is_published() -> None:
+    # Type 6 "Community or Volunteer Group" is how ACMA files clubs. A club is a
+    # collective, not a natural person, so clause 8 doesn't apply: publish it in full.
     rec = _by_call(parse_dir(HEADERED))["VK2RXX"]
-    _assert_withheld(rec)
+    assert rec.last_name == "Example Valley Amateur Radio Club Inc"
+    assert (rec.city, rec.state, rec.postal_code) == ("KATOOMBA", "NSW", "2780")
     assert rec.license_class == "Amateur Repeater"
     assert rec.applicant_type == "Community or Volunteer Group"
+
+
+def test_community_group_held_by_a_person_is_withheld() -> None:
+    # ACMA also files some individuals under type 6 ("AP Bartel", "Nominee <person>
+    # <callsign>"). A type-6 name with no organisation word stays callsign-only.
+    rec = _by_call(parse_dir(HEADERED))["VK2ZZD"]
+    _assert_withheld(rec)
+    assert rec.license_class == "Amateur Beacon"
+    assert rec.applicant_type == "Community or Volunteer Group"
+
+
+@pytest.mark.parametrize(
+    "name",
+    [
+        "Example Valley Amateur Radio Club Inc",
+        "EXAMPLE RADIO GROUP INCORPORATED",
+        "Example Radio Society",
+        "Example Amateur Radio Assoc Inc",
+        "Wicen",
+        "Example Repeater Group",
+        "THE SCOUT ASSOCIATION OF AUSTRALIA EXAMPLE BRANCH",
+        "Friends of Example",
+        "Example Ham College Inc",
+        "Example Electronics Club (Inc)",
+        "J EXAMPLE AND COMPANY",
+    ],
+)
+def test_type6_organisation_names_are_not_natural_persons(name: str) -> None:
+    assert not is_natural_person("6", name)
+
+
+@pytest.mark.parametrize(
+    "name",
+    [
+        "Jordan Sampleperson",
+        "AB Example",
+        "Jordan A Example",
+        "Nominee Jordan Example VK2ZZZ",
+        "Attn: The Secretary",
+        "",
+        None,
+    ],
+)
+def test_type6_person_or_unclear_names_are_natural_persons(name: str | None) -> None:
+    assert is_natural_person("6", name)
+
+
+def test_organisation_words_only_rescue_type_6() -> None:
+    # A Person (7), blank or unknown type stays withheld whatever the name says.
+    for client_type in ("7", None, "", "99"):
+        assert is_natural_person(client_type, "Example Amateur Radio Club Inc")
+    # Government and Company types are organisations regardless of name.
+    for client_type in ("1", "2", "3", "4", "5"):
+        assert not is_natural_person(client_type, "Jordan Sampleperson")
 
 
 def test_blank_client_type_treated_as_natural_person() -> None:
@@ -223,10 +285,18 @@ def test_headerless_individuals_withheld() -> None:
 
 
 def test_no_person_name_or_place_reaches_any_field() -> None:
-    synthetic = {"Alex Example", "Sam Placeholder", "Robin Mockperson", "Alex", "Example"}
-    places = {"SAMPLEVILLE", "TESTVILLE", "MOCKTON", "3000", "6000", "5000", "VIC", "WA", "SA"}
+    synthetic = {
+        "Alex Example",
+        "Sam Placeholder",
+        "Robin Mockperson",
+        "Jordan Sampleperson",
+        "Alex",
+        "Example",
+    }
+    places = {"SAMPLEVILLE", "TESTVILLE", "MOCKTON", "FAKEBURY", "3000", "6000", "5000", "2999"}
+    places |= {"VIC", "WA", "SA"}
     for rec in parse_dir(HEADERED):
-        if rec.callsign not in {"VK3ZZA", "VK6ZZB", "VK5ZZC"}:
+        if rec.callsign not in {"VK3ZZA", "VK6ZZB", "VK5ZZC", "VK2ZZD"}:
             continue
         values = {v for v in asdict(rec).values() if isinstance(v, str)}
         assert values.isdisjoint(synthetic | places), rec
@@ -237,7 +307,7 @@ def test_withheld_person_gets_no_grid_after_merge_and_geocode() -> None:
     from hamcall_db.merge import merge
 
     merged = _by_call(merge([parse_dir(HEADERED)], geocode=LookupGeocoder()))
-    for call in ("VK3ZZA", "VK6ZZB", "VK5ZZC", "VK2RXX"):
+    for call in ("VK3ZZA", "VK6ZZB", "VK5ZZC", "VK2ZZD"):
         _assert_withheld(merged[call])
 
 
