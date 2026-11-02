@@ -45,7 +45,9 @@ class Record:
     # FCC ULS additive identity/date fields (hdb-f865). Already on disk in the bulk
     # extract; surfaced here as a MINOR (non-breaking) schema bump. Dates are ISO
     # YYYY-MM-DD strings (normalized from the source mm/dd/yyyy). All source-specific
-    # and nullable — only the FCC importer populates them; other sources leave them None.
+    # and nullable. FCC populates them all; ACMA fills the three dates (DATE_ISSUED /
+    # DATE_OF_EFFECT / DATE_OF_EXPIRY) and applicant_type (its client type, e.g.
+    # "Company", "Person"); ISED leaves them None.
     # NOTE: expired_date is exposed here for downstream use but the active/expired STATUS
     # logic is a separate concern (hdb-6e95); this nugget only surfaces the raw value.
     grant_date: str | None = None  # license grant date (FCC HD.dat)

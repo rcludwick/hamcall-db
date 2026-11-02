@@ -39,15 +39,44 @@ Upstream sources and their licenses
        Source: Innovation, Science and Economic Development Canada (ISED).
 
 3. ACMA (Australian Communications and Media Authority) — RRL extract
-   Coverage: Australian amateur licensee records (filtered from the full
-             Radiocommunications Licences dataset).
-   License:  Creative Commons Attribution 4.0 International (CC BY 4.0).
-             https://creativecommons.org/licenses/by/4.0/
-   Attribution is REQUIRED. Required attribution statement:
+   Coverage: Australian amateur licences (filtered from the full Register of
+             Radiocommunications Licences daily "spectra" extract,
+             https://cdn.acma.gov.au/rrl/spectra_rrl.zip).
+   License:  ACMA "Licence to use the Register of Radiocommunications
+             Licences" (LICENCE.TXT inside the extract; also
+             https://cdn.acma.gov.au/offline-rrl/doc/LICENCE.TXT). This is
+             the ACMA's own licence, NOT a Creative Commons licence.
+             Clause 5 permits using, adapting and merging the Register and
+             distributing derivatives to third parties, subject to:
 
-       Contains data sourced from the Australian Communications and Media
-       Authority (ACMA), Register of Radiocommunications Licences, licensed
-       under CC BY 4.0.
+     * Clause 8 (natural persons): "Where the Licensee is a natural person,
+       this Licence does not permit you to reproduce or distribute the
+       Licensee's Client Information contained in the Register in any
+       Derivative work authorised by this Licence." Clause 6 defines Client
+       Information as personal information that may readily identify the
+       licensee, including the licensee's name, address and contact details.
+
+       What hamcall-db publishes for ACMA records:
+         - Licensee is a government body or company (ACMA client types 1-5):
+           callsign, organisation name, suburb, state, postcode, grid,
+           licence category and dates, client type.
+         - Licensee is a natural person, OR the ACMA client type does not
+           establish that it is not (type 7 "Person", type 6 "Community or
+           Volunteer Group", blank or unrecognised): callsign, licence
+           category, issue / effect / expiry dates and client type ONLY.
+           Name, suburb, state, postcode and grid are withheld (null). No
+           street address is published for anyone.
+
+     * Clause 7: Client Information may not be used for unsolicited
+       commercial electronic messages (Spam Act 2003), telemarketing (Do Not
+       Call Register Act 2006) or unsolicited mail advertising.
+
+     * Clause 9 (attribution, REQUIRED). Required attribution statement:
+
+       Based on Australian Communications and Media Authority information
+
+     * Clauses 10-13: the ACMA disclaims responsibility for the data and
+       does not endorse this or any derivative use of it.
 
 4. AD1C cty.dat (DXCC prefix → entity mapping)
    Coverage: Worldwide DXCC prefix-to-entity reference data.
@@ -237,7 +266,9 @@ EXCEPT the separate OSM file, source 8) is a derived work that combines sources
 terms, which means:
 
   * Reproduce the ISED / OGL-Canada attribution statement (source 2).
-  * Reproduce the ACMA / CC BY 4.0 attribution statement (source 3).
+  * Reproduce the ACMA attribution statement "Based on Australian
+    Communications and Media Authority information" (source 3), and do not
+    add back natural persons' Client Information (source 3, clause 8).
   * Reproduce the AD1C / cty.dat attribution statement (source 4).
   * Observe the cty.dat non-commercial restriction (source 4).
   * Reproduce the AllStarLink attribution statement (source 5) and observe its

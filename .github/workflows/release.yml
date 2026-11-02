@@ -154,6 +154,8 @@ jobs:
             - `hamcall-db-pota-park-grids-${{ steps.date.outputs.date }}.parquet` — POTA park → 4-char Maidenhead grid sets. **Indicative point grids in this build** (PAD-US polygon boundaries need the build-time `padus` group); treat as approximate until polygon coverage ships.
 
             OpenStreetMap-derived park grids are **ODbL** (share-alike) and are published SEPARATELY at the `hamcall-db-osm-${{ steps.date.outputs.date }}` / `latest-osm` release — never fold them into this CC BY-NC set.
+
+            Upstream attributions are in NOTICE; among them, Australian records: *Based on Australian Communications and Media Authority information*.
           files: ${{ steps.assets.outputs.cc_files }}
           make_latest: false
           fail_on_unmatched_files: true
@@ -244,6 +246,8 @@ jobs:
 
             Pull this by default; pin to a dated `hamcall-db-YYYY-MM-DD` release when reproducibility matters.
             OpenStreetMap-derived (ODbL) grids live at the separate `latest-osm` release.
+
+            Upstream attributions are in NOTICE; among them, Australian records: *Based on Australian Communications and Media Authority information*.
           files: ${{ steps.assets.outputs.cc_files }}
           make_latest: true
           fail_on_unmatched_files: true

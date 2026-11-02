@@ -20,7 +20,7 @@ from hamcall_db.geocode import LookupGeocoder
 from hamcall_db.history import diff_history
 from hamcall_db.merge import MergeStats, merge
 from hamcall_db.sources import ad1c
-from hamcall_db.sources.acma import AcmaSource
+from hamcall_db.sources.acma import AcmaSource, withhold_prior_history
 from hamcall_db.sources.base import Source, retry_transient
 from hamcall_db.sources.fcc import FccUlsSource
 from hamcall_db.sources.ised import IsedSource
@@ -264,6 +264,9 @@ def build(
     if all_sources:
         as_of = dt.date.today().isoformat()
         prior = read_history_parquet(history_in) if history_in is not None else []
+        # ACMA licence cl. 8: history carried forward from older releases may still
+        # name natural persons; null those rows before they are republished.
+        prior = withhold_prior_history(prior, records)
         history = diff_history(prior, records, as_of=as_of)
         hist_path = (out.parent if not out_dir else out) / _history_filename()
         hist_count = write_history_parquet(history, hist_path)
