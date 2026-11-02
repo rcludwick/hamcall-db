@@ -44,6 +44,7 @@ from hamcall_db.reflectors import (
     ReflectorRecord,
     TalkgroupRecord,
 )
+from hamcall_db.sources.osm_grids import require_osm_only
 from hamcall_db.sources.padus_grids import PARK_GRID_SCHEMA_COLUMNS, ParkGridRecord
 from hamcall_db.sources.pota import PARK_SCHEMA_COLUMNS, ParkRecord
 from hamcall_db.sources.sota import SUMMIT_SCHEMA_COLUMNS, SummitRecord
@@ -559,7 +560,7 @@ def write_pota_park_grids_sqlite(grids: Iterable[ParkGridRecord], out_path: Path
 # (hamcall-db-pota-park-grids-osm-YYYY-MM-DD.db) in a DEDICATED table, ``pota_park_grids_osm``
 # — DELIBERATELY a different table name from the CC-BY-NC ``pota_park_grids`` so the two can
 # never be confused or accidentally co-located. Same four-string schema as PAD-US (reference
-# FK, 4-char grid, source ('osm'/'osm-point'), confidence). Indexed on ``reference``.
+# FK, 4-char grid, source (always 'osm'), confidence). Indexed on ``reference``.
 # (c) OpenStreetMap contributors, ODbL.
 _POTA_PARK_GRIDS_OSM_DDL = (
     "CREATE TABLE IF NOT EXISTS pota_park_grids_osm (\n"
@@ -582,6 +583,7 @@ def write_pota_park_grids_osm_sqlite(grids: Iterable[ParkGridRecord], out_path: 
     taints the CC BY-NC artifact. Idempotent — re-running replaces the rows.
     """
     grids = list(grids)
+    require_osm_only(grids)  # only OSM-derived rows may be published under ODbL (hdb-odbl)
     out = Path(out_path)
     out.parent.mkdir(parents=True, exist_ok=True)
 

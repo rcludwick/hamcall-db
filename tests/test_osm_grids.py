@@ -13,6 +13,7 @@ into a SEPARATE ODbL artifact; the matching here NEVER imports or mutates PAD-US
 
 from __future__ import annotations
 
+import pytest
 from shapely.geometry import MultiPolygon, Point, Polygon, shape
 
 from hamcall_db.sources import osm_grids as og
@@ -175,7 +176,9 @@ def test_osm_park_grids_polygon_match_emits_osm_rows() -> None:
     assert {r.grid for r in rows} == og.grid_cells_for_geometry(poly)
 
 
-def test_osm_park_grids_unmatched_falls_back_to_point_grid() -> None:
+def test_osm_park_grids_unmatched_park_yields_no_rows() -> None:
+    # hdb-odbl: no point fallback. A grid from the POTA park's own lat/lon is POTA data, not
+    # OSM data, so it must never be emitted into the ODbL set.
     rows = og.osm_park_grids(
         reference="DE-9999",
         name="No Boundary Park",
@@ -183,11 +186,35 @@ def test_osm_park_grids_unmatched_falls_back_to_point_grid() -> None:
         lon=10.0,
         features=[],
     )
-    assert len(rows) == 1
-    row = rows[0]
-    assert row.source == "osm-point"  # point fallback still ships in the ODbL file
-    assert row.confidence == "low"
-    assert len(row.grid) == 4
+    assert rows == []
+
+
+def test_osm_park_grids_point_outside_every_feature_yields_no_rows() -> None:
+    poly = Polygon([(11.0, 47.0), (13.0, 47.0), (13.0, 48.0), (11.0, 48.0)])
+    rows = og.osm_park_grids(
+        reference="DE-9999",
+        name="Elsewhere Park",
+        lat=51.0,
+        lon=10.0,
+        features=[_feature("Bayerischer Wald", poly)],
+    )
+    assert rows == []
+
+
+def test_no_point_fallback_source_exists() -> None:
+    assert og.SOURCE_OSM == "osm"
+    assert not hasattr(og, "SOURCE_OSM_POINT")
+
+
+def test_require_osm_only_rejects_non_osm_rows() -> None:
+    og.require_osm_only(
+        [og.ParkGridRecord(reference="DE-0001", grid="JN57", source="osm", confidence="high")]
+    )
+    for src in ("osm-point", "pota-point", "padus"):
+        with pytest.raises(ValueError, match="source='osm'"):
+            og.require_osm_only(
+                [og.ParkGridRecord(reference="DE-9", grid="JO50", source=src, confidence="low")]
+            )
 
 
 def test_osm_park_grids_no_point_no_polygon_yields_nothing() -> None:

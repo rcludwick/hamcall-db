@@ -358,8 +358,9 @@ def test_all_build_writes_segregated_osm_and_ccbync_grid_artifacts(tmp_path, mon
 
 
 def test_all_build_resilient_when_osm_reader_missing(tmp_path, monkeypatch):
-    # OSM boundaries unavailable (no GIS reader / download fails) must NOT block the build:
-    # non-US parks degrade to point grids in the SEPARATE ODbL file; US parks unaffected.
+    # OSM boundaries unavailable (no GIS reader / download fails) must NOT block the build,
+    # and must NOT produce an ODbL file of POTA-derived point grids (hdb-odbl): with no OSM
+    # rows the ODbL files are not written at all. The CC-BY-NC set keeps its point grids.
     _stub_parks_and_boundaries(tmp_path, monkeypatch)
 
     def _boom(wd):
@@ -370,12 +371,14 @@ def test_all_build_resilient_when_osm_reader_missing(tmp_path, monkeypatch):
     out = tmp_path / "dist"
     result = CliRunner().invoke(app, ["--all", "--out", str(out), "--work-dir", str(tmp_path)])
     assert result.exit_code == 0, result.output
-    osm_parquets = list(out.glob("hamcall-db-pota-park-grids-osm-*.parquet"))
-    assert len(osm_parquets) == 1
-    osm_frame = pl.read_parquet(osm_parquets[0])
-    # The non-US park still appears, via the point fallback in the ODbL file.
-    assert set(osm_frame["reference"].to_list()) == {"DE-0001"}
-    assert set(osm_frame["source"].to_list()) == {"osm-point"}
+    assert not list(out.glob("hamcall-db-pota-park-grids-osm-*"))
+    cc_grid_parquets = [
+        p for p in out.glob("hamcall-db-pota-park-grids-*.parquet") if "osm" not in p.name
+    ]
+    assert len(cc_grid_parquets) == 1
+    cc_frame = pl.read_parquet(cc_grid_parquets[0])
+    de_rows = cc_frame.filter(pl.col("reference") == "DE-0001")
+    assert set(de_rows["source"].to_list()) == {"pota-point"}
 
 
 # --- hdb-66be: boundary readers must probe pyogrio BEFORE the large download ----

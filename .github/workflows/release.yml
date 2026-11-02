@@ -115,18 +115,39 @@ jobs:
             echo "EOF"
           } >> "$GITHUB_OUTPUT"
 
-          # The ODbL release is published only when OSM grids were produced this build.
-          if [ -f "$OSMGRIDS" ] || [ -f "$OSMDB" ]; then
+          # The ODbL release is published ONLY when the OSM output really holds OpenStreetMap
+          # data: both files exist, the parquet has at least one source='osm' row, and it has
+          # NO row with any other source (hdb-odbl). A file merely existing is not enough —
+          # until 2026-11 every row was an 'osm-point' grid computed from POTA's own lat/lon,
+          # i.e. POTA data published under ODbL and credited to OSM. Otherwise every ODbL step
+          # (including clearing 'latest-osm') is skipped, so the existing releases stay as-is.
+          OSM_ROWS=0
+          NON_OSM_ROWS=0
+          if [ -f "$OSMGRIDS" ] && [ -f "$OSMDB" ]; then
+            # Prints "<osm rows> <other rows>". If the count itself fails, treat the output as
+            # unpublishable (fail closed for ODbL) without blocking the CC BY-NC release.
+            if COUNTS="$(uv run python -c 'import sys, polars as pl; s = pl.read_parquet(sys.argv[1])["source"]; n = int((s == "osm").sum()); print(n, s.len() - n)' "$OSMGRIDS")"; then
+              read -r OSM_ROWS NON_OSM_ROWS <<< "$COUNTS"
+            else
+              echo "::warning::Could not count rows in $OSMGRIDS; skipping the ODbL release"
+            fi
+          fi
+          echo "OSM (ODbL) park-grid rows: source='osm'=${OSM_ROWS}, other=${NON_OSM_ROWS}"
+
+          if [ "$NON_OSM_ROWS" -gt 0 ]; then
+            echo "::error::OSM (ODbL) output has ${NON_OSM_ROWS} non-'osm' rows; refusing to publish the ODbL release"
+            echo "has_odbl=false" >> "$GITHUB_OUTPUT"
+          elif [ "$OSM_ROWS" -gt 0 ]; then
             {
               echo "odbl_files<<EOF"
-              emit "OSM park-grids" "$OSMGRIDS"
-              emit "OSM park-grids SQLite" "$OSMDB"
+              echo "$OSMGRIDS"
+              echo "$OSMDB"
               echo "$ODBL_LICENSE"
               echo "EOF"
             } >> "$GITHUB_OUTPUT"
             echo "has_odbl=true" >> "$GITHUB_OUTPUT"
           else
-            echo "::warning::No OSM (ODbL) artifacts produced; skipping the ODbL release"
+            echo "::notice::No OpenStreetMap-derived rows this build; skipping the ODbL release (latest-osm left untouched)"
             echo "has_odbl=false" >> "$GITHUB_OUTPUT"
           fi
 
@@ -153,7 +174,7 @@ jobs:
             - `hamcall-db-pota-parks-${{ steps.date.outputs.date }}.parquet` — POTA park directory (places, not licensees).
             - `hamcall-db-pota-park-grids-${{ steps.date.outputs.date }}.parquet` — POTA park → 4-char Maidenhead grid sets. **Indicative point grids in this build** (PAD-US polygon boundaries need the build-time `padus` group); treat as approximate until polygon coverage ships.
 
-            OpenStreetMap-derived park grids are **ODbL** (share-alike) and are published SEPARATELY at the `hamcall-db-osm-${{ steps.date.outputs.date }}` / `latest-osm` release — never fold them into this CC BY-NC set.
+            OpenStreetMap-derived park grids are **ODbL** (share-alike) and, when available, are published separately at the `hamcall-db-osm-${{ steps.date.outputs.date }}` / `latest-osm` release — never fold them into this CC BY-NC set.
 
             Upstream attributions are in NOTICE; among them, Australian records: *Based on Australian Communications and Media Authority information*.
           files: ${{ steps.assets.outputs.cc_files }}
@@ -162,7 +183,8 @@ jobs:
 
       # ---- ODbL release (OpenStreetMap-derived grids) ----------------------------
       # SEPARATE release so the share-alike ODbL data is never distributed as part of the
-      # CC BY-NC set. Published only when this build produced OSM grids.
+      # CC BY-NC set. Published only when this build produced real source='osm' rows
+      # (has_odbl, computed in "Collect release assets" from a row count).
 
       - name: Publish dated ODbL release (OpenStreetMap-derived)
         if: steps.assets.outputs.has_odbl == 'true'
@@ -182,8 +204,6 @@ jobs:
             - `hamcall-db-pota-park-grids-osm-${{ steps.date.outputs.date }}.parquet` — OSM park-grid sets.
             - `hamcall-db-pota-park-grids-osm-${{ steps.date.outputs.date }}.db` — same, SQLite (`pota_park_grids_osm`).
             - `LICENSE-ODbL` — the governing license + attribution.
-
-            **Indicative point grids in this build** (OSM polygon boundaries need the build-time `osm` group); polygon coverage ships later.
           files: ${{ steps.assets.outputs.odbl_files }}
           make_latest: false
           fail_on_unmatched_files: true
@@ -245,7 +265,7 @@ jobs:
             Currently pointing at the ${{ steps.date.outputs.date }} build.
 
             Pull this by default; pin to a dated `hamcall-db-YYYY-MM-DD` release when reproducibility matters.
-            OpenStreetMap-derived (ODbL) grids live at the separate `latest-osm` release.
+            OpenStreetMap-derived (ODbL) grids, when available, live at the separate `latest-osm` release.
 
             Upstream attributions are in NOTICE; among them, Australian records: *Based on Australian Communications and Media Authority information*.
           files: ${{ steps.assets.outputs.cc_files }}

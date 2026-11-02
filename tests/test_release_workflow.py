@@ -12,6 +12,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
+import pytest
+
 _WORKFLOW = Path(__file__).resolve().parents[1] / ".github" / "workflows" / "release.yml"
 
 
@@ -111,3 +113,151 @@ def test_release_fails_loudly_when_a_source_was_skipped() -> None:
     assert "::error" in step
     assert "exit 1" in step
     assert "\n      - name:" not in step, "the skipped-source check must be the last step"
+
+
+# --- hdb-odbl: the ODbL release is gated on real source='osm' rows ----------------
+#
+# The bug this prevents: the ODbL release was published whenever the OSM parquet EXISTED,
+# and CI never installs the `osm` group, so every row was an 'osm-point' grid computed from
+# POTA's own lat/lon — POTA data published under ODbL and credited to OpenStreetMap. The
+# gate must count rows, and skip every ODbL step (including clearing 'latest-osm') unless
+# there is at least one source='osm' row and no row of any other source.
+
+_ODBL_STEPS = (
+    "Publish dated ODbL release (OpenStreetMap-derived)",
+    "Clear 'latest-osm' release assets (ODbL)",
+    "Update 'latest-osm' release alias (ODbL)",
+)
+
+
+def _steps() -> list[dict]:
+    yaml = pytest.importorskip("yaml")
+    doc = yaml.safe_load(_workflow_text())
+    return doc["jobs"]["build-and-release"]["steps"]
+
+
+def _step(name: str) -> dict:
+    return next(s for s in _steps() if s.get("name") == name)
+
+
+def test_workflow_yaml_parses() -> None:
+    assert _steps()
+
+
+def test_every_odbl_step_is_gated_on_has_odbl() -> None:
+    for name in _ODBL_STEPS:
+        assert _step(name).get("if") == "steps.assets.outputs.has_odbl == 'true'", name
+
+
+def test_odbl_release_text_drops_point_grid_wording() -> None:
+    body = _step("Publish dated ODbL release (OpenStreetMap-derived)")["with"]["body"]
+    assert "Indicative point grids" not in body
+    cc_body = _step("Publish dated release (CC BY-NC)")["with"]["body"]
+    assert "SEPARATELY" not in cc_body
+    assert "when available" in cc_body
+
+
+def _run_collect(tmp_path: Path, osm_sources: list[str] | None) -> dict[str, str]:
+    """Run the real "Collect release assets" script against a fake dist/ and return outputs.
+
+    ``osm_sources`` None means no OSM files were written; otherwise an OSM parquet (+ .db)
+    holding one row per listed source. ``uv`` is shimmed to this interpreter so the gate's
+    ``uv run python -c ...`` one-liner runs exactly as written.
+    """
+    import os
+    import subprocess
+    import sys
+
+    import polars as pl
+
+    date = "2026-11-01"
+    dist = tmp_path / "dist"
+    dist.mkdir()
+    (dist / f"hamcall-db-{date}.parquet").write_bytes(b"x")
+    (tmp_path / "LICENSE-ODbL").write_text("odbl")
+    if osm_sources is not None:
+        pl.DataFrame(
+            {
+                "reference": [f"DE-{i:04d}" for i in range(len(osm_sources))],
+                "grid": ["JN57"] * len(osm_sources),
+                "source": osm_sources,
+                "confidence": ["high"] * len(osm_sources),
+            },
+            schema={c: pl.Utf8 for c in ("reference", "grid", "source", "confidence")},
+        ).write_parquet(dist / f"hamcall-db-pota-park-grids-osm-{date}.parquet")
+        (dist / f"hamcall-db-pota-park-grids-osm-{date}.db").write_bytes(b"x")
+
+    shim_dir = tmp_path / "bin"
+    shim_dir.mkdir()
+    shim = shim_dir / "uv"
+    shim.write_text(
+        "#!/bin/sh\n"
+        '[ "$1" = run ] && shift\n'
+        '[ "$1" = python ] && shift\n'
+        f'exec "{sys.executable}" "$@"\n'
+    )
+    shim.chmod(0o755)
+
+    script = _step("Collect release assets")["run"].replace("${{ steps.date.outputs.date }}", date)
+    out_file = tmp_path / "gh_output"
+    out_file.write_text("")
+    env = {
+        **os.environ,
+        "PATH": f"{shim_dir}{os.pathsep}{os.environ['PATH']}",
+        "GITHUB_OUTPUT": str(out_file),
+    }
+    subprocess.run(["bash", "-c", script], cwd=tmp_path, env=env, check=True)
+
+    outputs: dict[str, str] = {}
+    lines = iter(out_file.read_text().splitlines())
+    for line in lines:
+        if "<<" in line:
+            key, marker = line.split("<<", 1)
+            block = []
+            for inner in lines:
+                if inner == marker:
+                    break
+                block.append(inner)
+            outputs[key] = "\n".join(block)
+        elif "=" in line:
+            key, value = line.split("=", 1)
+            outputs[key] = value
+    return outputs
+
+
+def test_gate_publishes_when_osm_rows_present(tmp_path: Path) -> None:
+    out = _run_collect(tmp_path, ["osm", "osm"])
+    assert out["has_odbl"] == "true"
+    assert "hamcall-db-pota-park-grids-osm-2026-11-01.parquet" in out["odbl_files"]
+    assert "LICENSE-ODbL" in out["odbl_files"]
+
+
+def test_gate_skips_when_no_osm_files(tmp_path: Path) -> None:
+    out = _run_collect(tmp_path, None)
+    assert out["has_odbl"] == "false"
+    assert "odbl_files" not in out
+
+
+def test_gate_skips_when_osm_file_is_empty(tmp_path: Path) -> None:
+    out = _run_collect(tmp_path, [])
+    assert out["has_odbl"] == "false"
+
+
+def test_gate_skips_when_only_point_rows(tmp_path: Path) -> None:
+    # Exactly today's bug: a file full of POTA-derived 'osm-point' rows must NOT publish.
+    out = _run_collect(tmp_path, ["osm-point", "osm-point"])
+    assert out["has_odbl"] == "false"
+
+
+def test_gate_skips_when_any_row_is_not_osm(tmp_path: Path) -> None:
+    out = _run_collect(tmp_path, ["osm", "pota-point"])
+    assert out["has_odbl"] == "false"
+
+
+def test_license_odbl_attribution_and_scope() -> None:
+    text = (_WORKFLOW.parents[2] / "LICENSE-ODbL").read_text(encoding="utf-8")
+    flat = " ".join(text.split())
+    assert "© OpenStreetMap contributors (https://www.openstreetmap.org/copyright)." in flat
+    assert "Extracts processed by Geofabrik GmbH." in flat
+    assert "Only rows with source='osm' are derived from OpenStreetMap." in flat
+    assert "included solely as a join key" in flat
