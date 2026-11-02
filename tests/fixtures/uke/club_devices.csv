@@ -1,0 +1,3 @@
+number;valid_to;call_sign;category;transmitter_power;name_type_station;emission;input_frequency;output_frequency;applicant_name;applicant_city;applicant_street;applicant_house;applicant_number;enduser_name;enduser_city;enduser_street;enduser_house;enduser_number;station_city;station_street;station_house;station_number;lat;lng
+DC.WML.5101.9201.2021.2;2026-11-08;SR6XBB;Kategoria5;15;CyfrowyPrzemiennik;"";430.7;438.3;Klub Testowy Przemienników;Wola Zmyœlona;ul. Przemys³owa Próbna;6;412;"";"";"";"";"";Górka Testowa;ul. Górska Próbna;6;"";;
+DC.WML.5101.9202.2021.2;2026-11-17;SR7XBC;Kategoria5;10;PrzekaznikAPRS;"";144.8;144.8;Klub Testowy Przemienników;Wola Zmyœlona;ul. Przemys³owa Próbna;6;412;"";"";"";"";"";Gliczarówek Górny 158;"";"";"";;

@@ -30,6 +30,7 @@ from hamcall_db.sources.osm import OsmSource, compute_osm_park_grids
 from hamcall_db.sources.padus import PadusSource, compute_park_grids
 from hamcall_db.sources.pota import PotaSource
 from hamcall_db.sources.sota import SotaSource
+from hamcall_db.sources.uke import UkeSource
 from hamcall_db.sqlite_writer import (
     write_pota_park_grids_osm_sqlite,
     write_pota_park_grids_sqlite,
@@ -53,6 +54,7 @@ SOURCES: dict[str, Source] = {
     "ised": IsedSource(),
     "acma": AcmaSource(),
     "nmhh": NmhhSource(),
+    "uke": UkeSource(),
 }
 
 app = typer.Typer(
