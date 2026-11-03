@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1658,
-  "generated": "2026-11-02",
+  "count": 1664,
+  "generated": "2026-11-03",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -538,7 +538,7 @@
       "dashboard": "http://n4fox.org",
       "description": "YSF/DMR/ALL*",
       "dial": {
-        "host": "xlxten.ddns.net",
+        "host": "51.81.92.198",
         "kind": "ysf",
         "port": 42000
       },
@@ -813,6 +813,22 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "QsoBox"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://162.213.130.93:4000/",
+      "description": "URF073",
+      "dial": {
+        "host": "162.213.130.93",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00073",
+      "license": "CC-BY-4.0",
+      "name": "URF073",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "MID SOUTH MULTIMODE"
     },
     {
       "country": "ES",
@@ -1773,6 +1789,22 @@
       "sponsor": "FreeDMR GREECE"
     },
     {
+      "country": "NL",
+      "dashboard": "http://vex-nld.ddns.net:8090",
+      "description": "Dutch VEX YSF",
+      "dial": {
+        "host": "159.173.136.37",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00204",
+      "license": "CC-BY-4.0",
+      "name": "VEX-YSF204",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "PD2VDY"
+    },
+    {
       "country": "GB",
       "dashboard": "http://dash-xlx207.duckdns.org",
       "description": "XLX207A MODULE",
@@ -2076,7 +2108,7 @@
       "dashboard": "http://c4fmfun.ddns.net:2800",
       "description": "CYPRUS C4FM",
       "dial": {
-        "host": "109.242.59.105",
+        "host": "37.6.27.190",
         "kind": "ysf",
         "port": 42006
       },
@@ -3034,6 +3066,22 @@
       "sponsor": "G0SIF"
     },
     {
+      "country": "GB",
+      "dashboard": "https://wf-link.ddns.net",
+      "description": "URF429",
+      "dial": {
+        "host": "wf-link.ddns.net",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00564",
+      "license": "CC-BY-4.0",
+      "name": "URF429",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "G1ZRN"
+    },
+    {
       "country": "BR",
       "dashboard": "http://xlx581.py2ko.com",
       "description": "NCGDX Brazil",
@@ -3116,7 +3164,7 @@
     {
       "country": "US",
       "dashboard": "http://w6idk.com/index.php",
-      "description": "W6IDK HUB",
+      "description": "ALLSTAR BRIDGE",
       "dial": {
         "host": "w6idk.com",
         "kind": "ysf",
@@ -3124,7 +3172,7 @@
       },
       "id": "00637",
       "license": "CC-BY-4.0",
-      "name": "W6IDK HUB",
+      "name": "NO SAD HAMS",
       "network": "ysf",
       "source": "dvref"
     },
@@ -3675,6 +3723,22 @@
       "name": "XLX827",
       "network": "ysf",
       "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://flexradio.net/db",
+      "description": "FLEXIBLE RADIO",
+      "dial": {
+        "host": "flexradio.net",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00835",
+      "license": "CC-BY-4.0",
+      "name": "FLEXRADIO",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "FLEXRADIO"
     },
     {
       "country": "US",
@@ -7170,22 +7234,6 @@
     },
     {
       "country": "DE",
-      "dashboard": "https://ysf.lausitzlink.de/",
-      "description": "LausitzLink",
-      "dial": {
-        "host": "ysf.lausitzlink.de",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "13100",
-      "license": "CC-BY-4.0",
-      "name": "Lausitz",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "DG1FI"
-    },
-    {
-      "country": "DE",
       "dashboard": "https://ysf02.bzsax.de/ysf-saxonia/",
       "description": "YSF Sachsen",
       "dial": {
@@ -10154,7 +10202,7 @@
     {
       "country": "IT",
       "dashboard": "https://ysf.xlx595.net",
-      "description": "IT-595-MULTIP",
+      "description": "MATRIX-DIGI-N",
       "dial": {
         "host": "82.165.139.66",
         "kind": "ysf",
@@ -10162,7 +10210,7 @@
       },
       "id": "22355",
       "license": "CC-BY-4.0",
-      "name": "IT-595-MULTIP",
+      "name": "MATRIX-DIGI-N",
       "network": "ysf",
       "source": "dvref"
     },
@@ -10556,6 +10604,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "DA1SR"
+    },
+    {
+      "country": "GB",
+      "description": "DAR-M9RAH",
+      "dial": {
+        "host": "duston.duckdns.org",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "23401",
+      "license": "CC-BY-4.0",
+      "name": "Duston-AR",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "M9RAH"
     },
     {
       "country": "GB",
@@ -14675,8 +14738,10 @@
     },
     {
       "country": "US",
+      "dashboard": "https://ysf.irn.radio",
+      "description": "<p>YSF Reflector of the International Radio Network!</p>\n<p>https://irn.radio</p>",
       "dial": {
-        "host": "irn.m0xfn.radio",
+        "host": "ysf.irn.radio",
         "kind": "ysf",
         "port": 42000
       },
@@ -15549,6 +15614,22 @@
       "name": "Coamo PR",
       "network": "ysf",
       "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://aa9ra-r.ddns.net:8890",
+      "description": "Sabor A Pueblo",
+      "dial": {
+        "host": "24.12.177.92",
+        "kind": "ysf",
+        "port": 42003
+      },
+      "id": "33090",
+      "license": "CC-BY-4.0",
+      "name": "AA9RA YSF",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "AA9RA"
     },
     {
       "country": "MX",
@@ -21398,6 +21479,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "Randin Confed Radio Group"
+    },
+    {
+      "country": "US",
+      "description": "AARN YSF Ref",
+      "dial": {
+        "host": "44.27.143.69",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "66483",
+      "license": "CC-BY-4.0",
+      "name": "AARN-YSF",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "KE9EZI"
     },
     {
       "country": "TH",

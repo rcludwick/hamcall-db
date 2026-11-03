@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 141,
-  "generated": "2026-11-02",
+  "count": 145,
+  "generated": "2026-11-03",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -217,6 +217,23 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "PY4EI"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://162.213.130.93:4000/",
+      "dial": {
+        "host": "162.213.130.93",
+        "kind": "urf",
+        "modules": [
+          "A"
+        ]
+      },
+      "id": "073",
+      "license": "CC-BY-4.0",
+      "name": "N1YKT-HUB",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "MID SOUTH MULTIMODE"
     },
     {
       "country": "GR",
@@ -1192,6 +1209,21 @@
       "sponsor": "K5WHG"
     },
     {
+      "country": "GB",
+      "dashboard": "https://wf-link.ddns.net",
+      "description": "<p>YSF WF-Link</p>",
+      "dial": {
+        "host": "wf-link.ddns.net",
+        "kind": "urf"
+      },
+      "id": "429",
+      "license": "CC-BY-4.0",
+      "name": "XLX564",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "G1ZRN"
+    },
+    {
       "country": "DE",
       "dashboard": "http://xlx433.de",
       "description": "<p>XLX433 Hosted by DG1JP</p>",
@@ -1211,6 +1243,39 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "DG1JP"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://xlx461.kb0lsm.com/",
+      "description": "<p>YSF Reflector for the W0NH repeater in St. Joseph, MO</p>",
+      "dial": {
+        "host": "ysf.kb0lsm.com",
+        "kind": "urf",
+        "modules": [
+          "B"
+        ]
+      },
+      "id": "461",
+      "license": "CC-BY-4.0",
+      "name": "Missouri Valley Amateur Radio Club St. Joseph, MO",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "KB0LSM Repeater Group"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://xlx462.kb0lsm.com/",
+      "description": "<p>This is a mulit-mode/crossmode parrot reflector.</p>",
+      "dial": {
+        "host": "xlx462.kb0lsm.com",
+        "kind": "urf"
+      },
+      "id": "462",
+      "license": "CC-BY-4.0",
+      "name": "KCWide Multi-mode Parrot",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "America's Kansas City Wide Digital Network"
     },
     {
       "country": "US",

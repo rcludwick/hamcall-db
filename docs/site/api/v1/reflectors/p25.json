@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 385,
-  "generated": "2026-11-02",
+  "count": 387,
+  "generated": "2026-11-03",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1023,6 +1023,22 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "2022_ADN_SYSTEMS_HELLAS_NODE"
+    },
+    {
+      "country": "NL",
+      "dashboard": "http://vex-nld.ddns.net:8090/",
+      "description": "<p>204 / P25 NL-Main Reflector</p>",
+      "dial": {
+        "host": "159.173.136.37",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "204",
+      "license": "CC-BY-4.0",
+      "name": "VEX-NL-P25",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "PD2VDY"
     },
     {
       "country": "NL",
@@ -2657,6 +2673,20 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "Torcon Weather Team"
+    },
+    {
+      "country": "US",
+      "dial": {
+        "host": "69.133.100.253",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "31393",
+      "license": "CC-BY-4.0",
+      "name": "TORCON Weather Alerts",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "WA9BD"
     },
     {
       "country": "US",

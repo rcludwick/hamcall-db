@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 348,
-  "generated": "2026-11-02",
+  "generated": "2026-11-03",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1350,15 +1350,15 @@
     },
     {
       "country": "IT",
-      "dashboard": "http://nxdn22355.duckdns.org",
+      "dashboard": "http://nxdn.xlx595.net",
       "dial": {
-        "host": "2.31.136.113",
+        "host": "87.106.28.163",
         "kind": "nxdn",
         "port": 41400
       },
       "id": "22355",
       "license": "CC-BY-4.0",
-      "name": "IT-595-MULTIPROTOCOL",
+      "name": "MATRIX DIGI-NET",
       "network": "nxdn",
       "source": "dvref"
     },
@@ -4212,7 +4212,7 @@
       "name": "FN-NXDN",
       "network": "nxdn",
       "source": "dvref",
-      "sponsor": "Private"
+      "sponsor": "GW0MAV"
     },
     {
       "country": "US",
