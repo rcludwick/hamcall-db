@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1664,
-  "generated": "2026-11-03",
+  "count": 1665,
+  "generated": "2026-11-04",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -538,7 +538,7 @@
       "dashboard": "http://n4fox.org",
       "description": "YSF/DMR/ALL*",
       "dial": {
-        "host": "51.81.92.198",
+        "host": "xlxten.ddns.net",
         "kind": "ysf",
         "port": 42000
       },
@@ -551,7 +551,7 @@
     },
     {
       "country": "US",
-      "dashboard": "http://ysf.bsdworld.org",
+      "dashboard": "https://ysfconsole.bsdworld.org",
       "description": "SF Bay",
       "dial": {
         "host": "64.177.53.121",
@@ -1068,6 +1068,22 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "New England Digital Radio"
+    },
+    {
+      "country": "JP",
+      "dashboard": "http://133.125.58.227/",
+      "description": "URF098",
+      "dial": {
+        "host": "133.125.58.227",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00098",
+      "license": "CC-BY-4.0",
+      "name": "URF098",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "fukumoto"
     },
     {
       "country": "PL",
@@ -1790,7 +1806,7 @@
     },
     {
       "country": "NL",
-      "dashboard": "http://vex-nld.ddns.net:8090",
+      "dashboard": "http://vex-nld.ddns.net",
       "description": "Dutch VEX YSF",
       "dial": {
         "host": "159.173.136.37",
@@ -1882,22 +1898,6 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "N3BBF"
-    },
-    {
-      "country": "US",
-      "dashboard": "https://xlx218.chaverimradio.com",
-      "description": "URF218",
-      "dial": {
-        "host": "xlx218.chaverimradio.com",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "00218",
-      "license": "CC-BY-4.0",
-      "name": "URF218",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "Chaverim Radio Club"
     },
     {
       "country": "BH",
@@ -2108,7 +2108,7 @@
       "dashboard": "http://c4fmfun.ddns.net:2800",
       "description": "CYPRUS C4FM",
       "dial": {
-        "host": "37.6.27.190",
+        "host": "79.107.25.162",
         "kind": "ysf",
         "port": 42006
       },
@@ -4303,12 +4303,12 @@
     },
     {
       "country": "ES",
-      "dashboard": "https://sala-andalucia.es/2/",
+      "dashboard": "https://27187.c4fm.es",
       "description": "C4FM-SPAIN",
       "dial": {
-        "host": "57.131.25.19",
+        "host": "xlx214.xreflector.es",
         "kind": "ysf",
-        "port": 42001
+        "port": 42003
       },
       "id": "01414",
       "license": "CC-BY-4.0",
@@ -6549,6 +6549,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "N4FOX"
+    },
+    {
+      "country": "US",
+      "description": "AD8G",
+      "dial": {
+        "host": "ysf10169.ad8g.net",
+        "kind": "ysf",
+        "port": 42395
+      },
+      "id": "10169",
+      "license": "CC-BY-4.0",
+      "name": "AD8G MultiMod",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "AD8G"
     },
     {
       "country": "US",
@@ -9337,6 +9352,21 @@
     },
     {
       "country": "ES",
+      "dashboard": "http://eb4fogo.ddns.net",
+      "description": "radioclubAREX",
+      "dial": {
+        "host": "eb4fogo.ddns.net",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "21462",
+      "license": "CC-BY-4.0",
+      "name": "radioclubAREX",
+      "network": "ysf",
+      "source": "dvref"
+    },
+    {
+      "country": "ES",
       "description": "HamRadioDx.es",
       "dial": {
         "host": "162.19.27.107",
@@ -10950,6 +10980,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "OZ-DMR NETWORK"
+    },
+    {
+      "country": "US",
+      "description": "NZ3C Club Link",
+      "dial": {
+        "host": "ysf.nz3c.com",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "23620",
+      "license": "CC-BY-4.0",
+      "name": "NZ3C",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "NZ3C"
     },
     {
       "country": "AU",
@@ -16383,7 +16428,7 @@
       "dashboard": "http://fortiga.ddns.net:42180",
       "description": "SCANIA TEAM",
       "dial": {
-        "host": "94.65.37.245",
+        "host": "94.65.37.120",
         "kind": "ysf",
         "port": 42007
       },
@@ -16824,22 +16869,6 @@
     },
     {
       "country": "FR",
-      "dashboard": "https://ysf-france.fr/tg20862/main.php",
-      "description": "pYSF3",
-      "dial": {
-        "host": "nws.ysf-france.fr",
-        "kind": "ysf",
-        "port": 42262
-      },
-      "id": "42262",
-      "license": "CC-BY-4.0",
-      "name": "YSF-TG20862",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "F1PTL Bruno"
-    },
-    {
-      "country": "FR",
       "dashboard": "https://nws.ysf-france.fr",
       "description": "pYSF3",
       "dial": {
@@ -16992,22 +17021,6 @@
       "id": "42521",
       "license": "CC-BY-4.0",
       "name": "XLX521",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "F1PTL"
-    },
-    {
-      "country": "FR",
-      "dashboard": "http://xlx562.ysf-france.fr",
-      "description": "Serveur XLX562",
-      "dial": {
-        "host": "xlx562.ysf-france.fr",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "42562",
-      "license": "CC-BY-4.0",
-      "name": "YSF-XLX562",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "F1PTL"
@@ -24572,8 +24585,8 @@
     },
     {
       "country": "PA",
-      "dashboard": "http://xlx507.ddns.net/",
-      "description": "Multi-Gateway",
+      "dashboard": "http://hp1cdw.ddns.net:8507",
+      "description": "URF507",
       "dial": {
         "host": "hp1cdw.ddns.net",
         "kind": "ysf",
@@ -24581,7 +24594,7 @@
       },
       "id": "88194",
       "license": "CC-BY-4.0",
-      "name": "XLX507",
+      "name": "URF507",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "HP1CDW"

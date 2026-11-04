@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 348,
-  "generated": "2026-11-03",
+  "count": 352,
+  "generated": "2026-11-04",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -608,6 +608,51 @@
       "sponsor": "Buxton Radio Amateurs"
     },
     {
+      "country": "US",
+      "dial": {
+        "host": "44.27.143.69",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "184",
+      "license": "CC-BY-4.0",
+      "name": "AARN NXDN",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "KE9EZI"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://flexradio.net/NXDN-REF/",
+      "dial": {
+        "host": "flexradio.net",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "186",
+      "license": "CC-BY-4.0",
+      "name": "FLEX RADIO MULTIMODE NETWORK",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "FLEX RADIO"
+    },
+    {
+      "country": "NL",
+      "dashboard": "http://vex-nld.ddns.net",
+      "description": "<p>VEX-NLD NXDN TG 200</p>",
+      "dial": {
+        "host": "159.173.136.37",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "200",
+      "license": "CC-BY-4.0",
+      "name": "VEX-NL-NXDN",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "PD2VDY"
+    },
+    {
       "country": "AT",
       "dashboard": "https://nxdn.oevsv.at/",
       "dial": {
@@ -933,6 +978,21 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "xreflector"
+    },
+    {
+      "country": "ES",
+      "description": "<p>Enlace al sistema dmr de acceso del radioclub arex</p>",
+      "dial": {
+        "host": "eb4fogo.ddns.net",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "21406",
+      "license": "CC-BY-4.0",
+      "name": "Radioclub-arex",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "ea4urx"
     },
     {
       "country": "ES",
@@ -4202,8 +4262,9 @@
     },
     {
       "country": "GB",
+      "description": "<p>Experimental reflector....</p>",
       "dial": {
-        "host": "2.103.180.36",
+        "host": "fn-nxdn.ddns.net",
         "kind": "nxdn",
         "port": 41400
       },
@@ -4212,7 +4273,7 @@
       "name": "FN-NXDN",
       "network": "nxdn",
       "source": "dvref",
-      "sponsor": "GW0MAV"
+      "sponsor": "FN NXDN [WWW]."
     },
     {
       "country": "US",

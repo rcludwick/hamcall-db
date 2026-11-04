@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 145,
-  "generated": "2026-11-03",
+  "count": 146,
+  "generated": "2026-11-04",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -299,6 +299,20 @@
       "sponsor": "New England Digital Radio"
     },
     {
+      "country": "JP",
+      "dashboard": "http://133.125.58.227/",
+      "dial": {
+        "host": "133.125.58.227",
+        "kind": "urf"
+      },
+      "id": "098",
+      "license": "CC-BY-4.0",
+      "name": "Aoba",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "fukumoto"
+    },
+    {
       "country": "BR",
       "dashboard": "http://ref105.dstar.com.br/",
       "dial": {
@@ -543,28 +557,6 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "N3BBF"
-    },
-    {
-      "country": "US",
-      "dashboard": "https://xlx218.chaverimradio.com",
-      "description": "<p>Multiprotocol reflector sponsored by the <em>Chaverim Radio Club</em>. Currently supported modes are:</p>\r\n<p>&nbsp;</p>\r\n<ul>\r\n<li>- Module A: D-STAR, DMR, M17, and C4FM/YSF</li>\r\n<li>- Module B: Future Use</li>\r\n<li>- Module C: Future Use</li>\r\n<li>- Module D: Future Use</li>\r\n<li>- Module E: Echo</li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<p><strong>Module A linked to Brandmeister TG 3213520</strong></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"text-decoration: underline;\">WEEKLY NETS</span></p>\r\n<p>&nbsp;</p>\r\n<p>Please join us for our weekly multiprotocol nets on XLX218 Module A:</p>\r\n<p><strong>- Washington DC Area Net</strong> every Thursday at 9PM US Eastern Time (Friday 0200 UTC).</p>\r\n<p><strong>- Worldwide Net</strong> every Sunday at 2000 UTC</p>\r\n<p>&nbsp;</p>\r\n<p>73 &amp; 18!</p>",
-      "dial": {
-        "host": "xlx218.chaverimradio.com",
-        "kind": "urf",
-        "modules": [
-          "A",
-          "B",
-          "C",
-          "D",
-          "E"
-        ]
-      },
-      "id": "218",
-      "license": "CC-BY-4.0",
-      "name": "Chaverim Multiprotocol Reflector",
-      "network": "urf",
-      "source": "dvref",
-      "sponsor": "Chaverim Radio Club"
     },
     {
       "country": "IT",
@@ -1358,6 +1350,21 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "VK2HK"
+    },
+    {
+      "country": "PA",
+      "dashboard": "http://hp1cdw.ddns.net:8507",
+      "description": "<p>Multi Ptotocol Reflector</p>",
+      "dial": {
+        "host": "hp1cdw.ddns.net",
+        "kind": "urf"
+      },
+      "id": "507",
+      "license": "CC-BY-4.0",
+      "name": "Panama HUB",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "HP1CDW"
     },
     {
       "country": "DE",

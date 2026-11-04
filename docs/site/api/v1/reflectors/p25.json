@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 387,
-  "generated": "2026-11-03",
+  "count": 389,
+  "generated": "2026-11-04",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -934,6 +934,21 @@
       "sponsor": "PY2PE"
     },
     {
+      "country": "US",
+      "dashboard": "https://flexradio.net/P25Reflector/",
+      "dial": {
+        "host": "flexradio.net",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "186",
+      "license": "CC-BY-4.0",
+      "name": "FLEX RADIO MULTIMODE NETWORK",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "FLEX RADIO"
+    },
+    {
       "country": "TR",
       "description": "Turkiye 1923",
       "dial": {
@@ -1026,7 +1041,7 @@
     },
     {
       "country": "NL",
-      "dashboard": "http://vex-nld.ddns.net:8090/",
+      "dashboard": "http://vex-nld.ddns.net",
       "description": "<p>204 / P25 NL-Main Reflector</p>",
       "dial": {
         "host": "159.173.136.37",
@@ -4558,6 +4573,20 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "THAILAND Link to XLX727C"
+    },
+    {
+      "country": "US",
+      "dial": {
+        "host": "wa8wg.ddns.net",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "54159",
+      "license": "CC-BY-4.0",
+      "name": "Northeast Wisconsin",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "WA8WG"
     },
     {
       "country": "US",
