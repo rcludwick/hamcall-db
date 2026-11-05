@@ -78,10 +78,12 @@ def test_odbl_and_ccbync_assets_are_collected_into_separate_lists() -> None:
 
 def test_release_workflow_runs_nightly() -> None:
     text = _workflow_text()
-    # Pinned schedule (hdb-nightly): every day at 00:00 UTC (5 PM MST), not the old
+    # Pinned schedule (hdb-nightly): every day at 00:17 UTC (5:17 PM MST), not the old
     # weekly Monday slot. A daily cron matches upstream ACMA/LoTW's daily cadence and lets
-    # the history ledger accrue at day granularity.
-    assert '- cron: "0 0 * * *"' in text, "release schedule must be daily at 00:00 UTC"
+    # the history ledger accrue at day granularity. Off the top of the hour on purpose:
+    # GitHub delays or drops scheduled runs at :00 under load.
+    assert '- cron: "17 0 * * *"' in text, "release schedule must be daily at 00:17 UTC"
+    assert '- cron: "0 0 * * *"' not in text, "the congested 00:00 UTC cron must be gone"
     assert '- cron: "0 7 * * *"' not in text, "the old 07:00 UTC cron must be gone"
     assert '- cron: "0 7 * * 1"' not in text, "the old weekly (Monday-only) cron must be gone"
 

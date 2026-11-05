@@ -2,16 +2,17 @@ name: Release
 
 # Nightly build + publish of the hamcall-db Parquet artifact(s).
 #
-# Schedule: every day at 00:00 UTC, which is 5 PM MST (6 PM MDT). Cron is in UTC
-# (GitHub Actions has no timezone support), and GitHub often starts scheduled runs late,
-# so the release lands in the evening Mountain time. Upstream ACMA and LoTW change daily and FCC ULS weekly,
+# Schedule: every day at 00:17 UTC, which is 5:17 PM MST (6:17 PM MDT). Cron is in UTC
+# (GitHub Actions has no timezone support). The odd minute is deliberate: the top of the
+# hour, and 00:00 UTC above all, is GitHub's busiest scheduling slot, where runs start
+# hours late or are dropped (the 00:00 slot started 4.5 h late on 2026-11-04). Upstream ACMA and LoTW change daily and FCC ULS weekly,
 # so most nights still produce a real delta, and the history ledger
 # (--history-in / --db-in) accrues at day granularity instead of week
 # granularity. Also runnable on demand via the Actions UI (workflow_dispatch)
 # for backfills or re-runs.
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "17 0 * * *"
   workflow_dispatch:
 
 # Required so the workflow can create/move tags and publish releases.
