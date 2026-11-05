@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 389,
-  "generated": "2026-11-04",
+  "count": 391,
+  "generated": "2026-11-05",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1985,6 +1985,51 @@
       "id": "28602",
       "license": "CC-BY-4.0",
       "name": "P25 Adiyaman",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>P25 Afyon Reflector - YM2KT</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41003
+      },
+      "id": "28603",
+      "license": "CC-BY-4.0",
+      "name": "P25 Afyon",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Agri Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41004
+      },
+      "id": "28604",
+      "license": "CC-BY-4.0",
+      "name": "P25 Agri",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Bolu Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41014
+      },
+      "id": "28614",
+      "license": "CC-BY-4.0",
+      "name": "P25 Bolu",
       "network": "p25",
       "source": "dvref",
       "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
@@ -5245,9 +5290,9 @@
     },
     {
       "country": "US",
-      "dashboard": "http://162.213.130.93:4000/",
+      "description": "<p>N1YKT-HUB | Mid South Multimode &mdash; Public URF073 reflector supporting DMR/TGIF, YSF, NXDN, P25, and M17. AllStar node 623123. Module A: TGIF.</p>",
       "dial": {
-        "host": "162.213.130.93",
+        "host": "162.213.130.92",
         "kind": "p25",
         "port": 41000
       },
@@ -5848,21 +5893,6 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "N6LKA"
-    },
-    {
-      "country": "US",
-      "dashboard": "https://www.n6jet.com/p25jet.php",
-      "dial": {
-        "host": "5.161.18.189",
-        "kind": "p25",
-        "port": 41100
-      },
-      "id": "9512",
-      "license": "CC-BY-4.0",
-      "name": "P25-JET",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "N6JET"
     },
     {
       "country": "AU",

@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 146,
-  "generated": "2026-11-04",
+  "generated": "2026-11-05",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -220,9 +220,9 @@
     },
     {
       "country": "US",
-      "dashboard": "http://162.213.130.93:4000/",
+      "description": "<p>N1YKT-HUB | Mid South Multimode &mdash; Public URF073 reflector supporting DMR/TGIF, YSF, NXDN, P25, and M17. AllStar node 623123. Module A: TGIF.</p>",
       "dial": {
-        "host": "162.213.130.93",
+        "host": "162.213.130.92",
         "kind": "urf",
         "modules": [
           "A"
@@ -1260,7 +1260,10 @@
       "description": "<p>This is a mulit-mode/crossmode parrot reflector.</p>",
       "dial": {
         "host": "xlx462.kb0lsm.com",
-        "kind": "urf"
+        "kind": "urf",
+        "modules": [
+          "B"
+        ]
       },
       "id": "462",
       "license": "CC-BY-4.0",

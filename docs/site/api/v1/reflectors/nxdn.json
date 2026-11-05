@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 352,
-  "generated": "2026-11-04",
+  "count": 355,
+  "generated": "2026-11-05",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -635,6 +635,21 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "FLEX RADIO"
+    },
+    {
+      "country": "TR",
+      "description": "Turkiye 1923",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41923
+      },
+      "id": "1923",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Turkiye 1923",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "NL",
@@ -2360,6 +2375,37 @@
       "id": "28600",
       "license": "CC-BY-4.0",
       "name": "NXDN Turkiye Genel",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28301/",
+      "description": "<p>NXDN Adana Reflector - YM2KG</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41401
+      },
+      "id": "28601",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Adana",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "NXDN Adiyaman",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41402
+      },
+      "id": "28602",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Adiyaman",
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
@@ -4837,9 +4883,9 @@
     },
     {
       "country": "US",
-      "dashboard": "http://162.213.130.93:4000/",
+      "description": "<p>N1YKT-HUB | Mid South Multimode &mdash; Public URF073 reflector supporting DMR/TGIF, YSF, NXDN, P25, and M17. AllStar node 623123. Module A: TGIF.</p>",
       "dial": {
-        "host": "162.213.130.93",
+        "host": "162.213.130.92",
         "kind": "nxdn",
         "port": 41400
       },

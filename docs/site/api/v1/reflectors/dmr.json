@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 193,
-  "generated": "2026-11-04",
+  "generated": "2026-11-05",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -2121,9 +2121,9 @@
     },
     {
       "country": "FR",
-      "dashboard": "http://xlx311.ysf-france.fr:8585/",
+      "dashboard": "http://hblink.f1ptl.net:8080/",
       "dial": {
-        "host": "xlx311.ysf-france.fr",
+        "host": "hblink.f1ptl.net",
         "kind": "mmdvm",
         "port": 62031,
         "requires": [
