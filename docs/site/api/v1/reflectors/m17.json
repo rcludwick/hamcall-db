@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 148,
-  "generated": "2026-11-05",
+  "count": 149,
+  "generated": "2026-11-06",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -307,6 +307,24 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "PY4EI"
+    },
+    {
+      "country": "US",
+      "dial": {
+        "callsign": "M17-073",
+        "host": "162.213.130.92",
+        "kind": "m17",
+        "modules": [
+          "A"
+        ],
+        "port": 17000
+      },
+      "id": "M17-073",
+      "license": "CC-BY-4.0",
+      "name": "Mid South M17",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "MID SOUTH MULTIMODE"
     },
     {
       "country": "US",
@@ -1869,25 +1887,6 @@
       "sponsor": "VK4UE"
     },
     {
-      "country": "US",
-      "dashboard": "https://wmrasystem.com/M17/",
-      "dial": {
-        "callsign": "M17-835",
-        "host": "wmrasystem.com",
-        "kind": "m17",
-        "modules": [
-          "A"
-        ],
-        "port": 17000
-      },
-      "id": "M17-835",
-      "license": "CC-BY-4.0",
-      "name": "WMRA MULTIMODE-NETWORK",
-      "network": "m17",
-      "source": "dvref",
-      "sponsor": "WMRA"
-    },
-    {
       "country": "KR",
       "dashboard": "http://dvref.ddnsfree.com/mrefd/index.php",
       "dial": {
@@ -1930,6 +1929,49 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "DS5QDR DV HAM World"
+    },
+    {
+      "country": "DE",
+      "dial": {
+        "callsign": "M17-875",
+        "host": "germering.dnsuser.de",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-875",
+      "license": "CC-BY-4.0",
+      "name": "Ramses",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "DG2MAS"
     },
     {
       "country": "TH",

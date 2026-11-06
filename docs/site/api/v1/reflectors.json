@@ -2,19 +2,19 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/\nXLX reflector data from the XLX registry maintained by Luc Engelmann, LX1IQ (http://xlxapi.rlx.lu/).\nStandalone XRF reflector data from the Pi-Star DExtra host file (http://www.pistar.uk/downloads/DExtra_Hosts.txt).\nREF and DCS reflector names from the Pi-Star DPlus and DCS host files (http://www.pistar.uk/downloads/), which compile them from dstargateway.org and xreflector.net DNS.",
   "client_refresh_days": 7,
-  "count": 3863,
-  "generated": "2026-11-05",
+  "count": 3987,
+  "generated": "2026-11-06",
   "license": "mixed \u2014 see per-row license and NOTICE",
   "license_url": "https://github.com/rcludwick/hamcall-db/blob/main/NOTICE",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
   "networks": {
     "dmr": 193,
-    "dstar": 965,
-    "m17": 148,
-    "nxdn": 355,
-    "p25": 391,
-    "urf": 146,
-    "ysf": 1665
+    "dstar": 963,
+    "m17": 149,
+    "nxdn": 419,
+    "p25": 456,
+    "urf": 141,
+    "ysf": 1666
   },
   "reflectors": [
     {
@@ -4833,6 +4833,27 @@
       "source": "xlx"
     },
     {
+      "alias_source": "pistar",
+      "aliases": [
+        "XRF025",
+        "DCS025"
+      ],
+      "country": "RU",
+      "dashboard": "http://ua3lts.ddns.net:8118",
+      "description": "RU, Smolensk obl. local Reflector",
+      "dial": {
+        "callsign": "XRF025",
+        "host": "92.241.103.46",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLX025",
+      "license": "none-stated",
+      "name": "XLX025",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
       "aliases": [
         "XRF026"
       ],
@@ -6413,7 +6434,7 @@
         "DCS101"
       ],
       "country": "Coggeshall, GB",
-      "dashboard": "http://xlx101.ddns.net:8080/db/",
+      "dashboard": "http://xlx101.ddns.net:8080/",
       "description": "Derek G0WJD",
       "dial": {
         "callsign": "XRF101",
@@ -7293,7 +7314,7 @@
       "description": "D-STAR Elite Italian Reflector",
       "dial": {
         "callsign": "XRF143",
-        "host": "87.2.140.120",
+        "host": "79.25.130.97",
         "kind": "dextra",
         "port": 30001
       },
@@ -7644,7 +7665,7 @@
       "description": "Digital ham Thai",
       "dial": {
         "callsign": "XRF162",
-        "host": "27.130.230.156",
+        "host": "27.130.227.85",
         "kind": "dextra",
         "port": 30001
       },
@@ -10006,9 +10027,9 @@
         "REF278",
         "DCS278"
       ],
-      "country": "UK",
-      "dashboard": "http://maythorn.uk",
-      "description": "XLX278 Multiprotocol Reflector by G1INC, info: [email removed]",
+      "country": "United Kingdom",
+      "dashboard": "http://xlx278.linf.co.uk",
+      "description": "XLX278 G1INC",
       "dial": {
         "callsign": "XRF278",
         "host": "44.27.138.44",
@@ -10906,11 +10927,12 @@
         "REF324",
         "DCS324"
       ],
-      "country": "US",
-      "dashboard": "http://your_dashboard",
+      "country": "USA",
+      "dashboard": "http://66492.ip.hamvoip.org/urfd",
+      "description": "Amerinet URFD324 Universal Reflector",
       "dial": {
         "callsign": "XRF324",
-        "host": "192.253.246.43",
+        "host": "192.253.246.39",
         "kind": "dextra",
         "port": 30001
       },
@@ -11636,7 +11658,7 @@
       "description": "Digital Voice GREECE 2",
       "dial": {
         "callsign": "XRF365",
-        "host": "46.12.9.208",
+        "host": "79.103.115.66",
         "kind": "dextra",
         "port": 30001
       },
@@ -12968,28 +12990,6 @@
     {
       "alias_source": "pistar",
       "aliases": [
-        "XRF437",
-        "REF437",
-        "DCS437"
-      ],
-      "country": "your_country",
-      "dashboard": "http://109.172.7.162/xlxd",
-      "description": "your_comment",
-      "dial": {
-        "callsign": "XRF437",
-        "host": "109.172.7.162",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLX437",
-      "license": "none-stated",
-      "name": "XLX437",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "alias_source": "pistar",
-      "aliases": [
         "XRF438",
         "REF438",
         "DCS438"
@@ -12999,7 +12999,7 @@
       "description": "D-Star Reflector  *** Feel free to test use ***  (^o^)",
       "dial": {
         "callsign": "XRF438",
-        "host": "112.68.157.50",
+        "host": "121.84.231.240",
         "kind": "dextra",
         "port": 30001
       },
@@ -13697,9 +13697,9 @@
         "REF479",
         "DCS479"
       ],
-      "country": "USA",
-      "dashboard": "http://n9ink.net/db",
-      "description": "Welcome to Ozark Digital",
+      "country": "United States",
+      "dashboard": "http://imrs.amcomm.network",
+      "description": "AmComm Network IMRS",
       "dial": {
         "callsign": "XRF479",
         "host": "198.58.106.10",
@@ -15293,6 +15293,28 @@
     {
       "alias_source": "pistar",
       "aliases": [
+        "XRF587",
+        "REF587",
+        "DCS587"
+      ],
+      "country": "USA",
+      "dashboard": "http://xlx587.openquad.net",
+      "description": "QuadNet Multi-Mode Reflector",
+      "dial": {
+        "callsign": "XRF587",
+        "host": "104.8.207.66",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLX587",
+      "license": "none-stated",
+      "name": "XLX587",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "alias_source": "pistar",
+      "aliases": [
         "XRF590",
         "REF590",
         "DCS590"
@@ -15962,7 +15984,7 @@
       "description": "XLX647 : REF647, DMR TG52007, YSF 55191, M17-647 Operate by HS5BLO",
       "dial": {
         "callsign": "XRF647",
-        "host": "58.8.189.89",
+        "host": "110.169.119.167",
         "kind": "dextra",
         "port": 30001
       },
@@ -17231,7 +17253,7 @@
       "description": "Amerinet URF740 Universal Reflector",
       "dial": {
         "callsign": "XRF740",
-        "host": "192.253.246.4",
+        "host": "192.253.246.5",
         "kind": "dextra",
         "port": 30001
       },
@@ -17341,7 +17363,7 @@
       "description": "Hosted by Syunan-City Susuma Reflector",
       "dial": {
         "callsign": "XRF745",
-        "host": "131.129.110.12",
+        "host": "131.129.107.227",
         "kind": "dextra",
         "port": 30001
       },
@@ -18163,8 +18185,11 @@
       "source": "xlx"
     },
     {
+      "alias_source": "pistar",
       "aliases": [
-        "XRF806"
+        "XRF806",
+        "REF806",
+        "DCS806"
       ],
       "country": "D-STAR Austria Netz",
       "dashboard": "http://xlx806.ddns.net/db",
@@ -18602,6 +18627,28 @@
     {
       "alias_source": "pistar",
       "aliases": [
+        "XRF830",
+        "REF830",
+        "DCS830"
+      ],
+      "country": "USA",
+      "dashboard": "http://lonestarlinksystem.com/STARLINK/db/",
+      "description": "LONE STAR LINK SYSTEM: D-STAR / P25 / DMR / YSF",
+      "dial": {
+        "callsign": "XRF830",
+        "host": "216.128.136.176",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLX830",
+      "license": "none-stated",
+      "name": "XLX830",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "alias_source": "pistar",
+      "aliases": [
         "XRF831",
         "REF831",
         "DCS831"
@@ -18850,7 +18897,7 @@
       ],
       "country": "Germany",
       "dashboard": "http://xlx850.bm262.de",
-      "description": "MultiMode DV: BM-TG263<=>YSF: DE-Germany<=>Wires-X: DL-WIRESX-BM263",
+      "description": "MultiMode: BM-TG263<>YSF: DE-Germany<>Wires-X: DL-WIRESX-BM263 <> Tetra",
       "dial": {
         "callsign": "XRF850",
         "host": "116.203.56.12",
@@ -18860,28 +18907,6 @@
       "id": "XLX850",
       "license": "none-stated",
       "name": "XLX850",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "alias_source": "pistar",
-      "aliases": [
-        "XRF858",
-        "REF858",
-        "DCS858"
-      ],
-      "country": "USA",
-      "dashboard": "http://xlx-host.top",
-      "description": "XLX858 Reflector : US-Arizona : Gilbert, AZ",
-      "dial": {
-        "callsign": "XRF858",
-        "host": "172.236.254.232",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLX858",
-      "license": "none-stated",
-      "name": "XLX858",
       "network": "dstar",
       "source": "xlx"
     },
@@ -19058,27 +19083,6 @@
       "id": "XLX878",
       "license": "none-stated",
       "name": "XLX878",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "alias_source": "pistar",
-      "aliases": [
-        "REF880",
-        "DCS880"
-      ],
-      "country": "Belgium",
-      "dashboard": "http://dashboard.on6uhf.com/xlx880/",
-      "description": "XLXBEL XLX880 - Sysop ON6UHF, JO11iC Oostduinkerke",
-      "dial": {
-        "callsign": "XRF880",
-        "host": "81.83.4.238",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLX880",
-      "license": "none-stated",
-      "name": "XLX880",
       "network": "dstar",
       "source": "xlx"
     },
@@ -22551,25 +22555,6 @@
       "source": "xlx"
     },
     {
-      "aliases": [
-        "XRFMDW"
-      ],
-      "country": "Midwest USA",
-      "dashboard": "http://44.27.143.69/xlxd/",
-      "description": "Renamed to XLXALL",
-      "dial": {
-        "callsign": "XRFMDW",
-        "host": "2600:1700:a880:1af0::1e",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLXMDW",
-      "license": "none-stated",
-      "name": "XLXMDW",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
       "alias_source": "pistar",
       "aliases": [
         "XRFMMG",
@@ -22664,9 +22649,9 @@
         "REFNLD",
         "DCSNLD"
       ],
-      "country": "Netherlands",
+      "country": "The Netherlands",
       "dashboard": "http://dstarnld.pa7lim.nl",
-      "description": "Dutch DSTAR Central",
+      "description": "Dutch Reflector by David PA7LIM",
       "dial": {
         "callsign": "XRFNLD",
         "host": "90.145.156.214",
@@ -23455,7 +23440,7 @@
         "DCSURU"
       ],
       "country": "MONTEVIDEO URUGUAY",
-      "dashboard": "http://uruguaynet1.2mydns.net",
+      "dashboard": "http://198.245.55.26",
       "description": "URUGUAY.NET",
       "dial": {
         "callsign": "XRFURU",
@@ -24240,7 +24225,7 @@
     {
       "dial": {
         "callsign": "XRF014",
-        "host": "104.21.21.239",
+        "host": "172.67.201.108",
         "kind": "dextra",
         "port": 30001
       },
@@ -24602,24 +24587,6 @@
       "id": "XRF570",
       "license": "none-stated",
       "name": "XRF570",
-      "network": "dstar",
-      "source": "dextra"
-    },
-    {
-      "alias_source": "pistar",
-      "aliases": [
-        "REF587",
-        "DCS587"
-      ],
-      "dial": {
-        "callsign": "XRF587",
-        "host": "104.8.207.66",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XRF587",
-      "license": "none-stated",
-      "name": "XRF587",
       "network": "dstar",
       "source": "dextra"
     },
@@ -25147,6 +25114,24 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "PY4EI"
+    },
+    {
+      "country": "US",
+      "dial": {
+        "callsign": "M17-073",
+        "host": "162.213.130.92",
+        "kind": "m17",
+        "modules": [
+          "A"
+        ],
+        "port": 17000
+      },
+      "id": "M17-073",
+      "license": "CC-BY-4.0",
+      "name": "Mid South M17",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "MID SOUTH MULTIMODE"
     },
     {
       "country": "US",
@@ -26709,25 +26694,6 @@
       "sponsor": "VK4UE"
     },
     {
-      "country": "US",
-      "dashboard": "https://wmrasystem.com/M17/",
-      "dial": {
-        "callsign": "M17-835",
-        "host": "wmrasystem.com",
-        "kind": "m17",
-        "modules": [
-          "A"
-        ],
-        "port": 17000
-      },
-      "id": "M17-835",
-      "license": "CC-BY-4.0",
-      "name": "WMRA MULTIMODE-NETWORK",
-      "network": "m17",
-      "source": "dvref",
-      "sponsor": "WMRA"
-    },
-    {
       "country": "KR",
       "dashboard": "http://dvref.ddnsfree.com/mrefd/index.php",
       "dial": {
@@ -26770,6 +26736,49 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "DS5QDR DV HAM World"
+    },
+    {
+      "country": "DE",
+      "dial": {
+        "callsign": "M17-875",
+        "host": "germering.dnsuser.de",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-875",
+      "license": "CC-BY-4.0",
+      "name": "Ramses",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "DG2MAS"
     },
     {
       "country": "TH",
@@ -29541,21 +29550,6 @@
       "sponsor": "NXDN SPAIN"
     },
     {
-      "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:82/",
-      "dial": {
-        "host": "dmr.pistar.com.tr",
-        "kind": "nxdn",
-        "port": 41400
-      },
-      "id": "1453",
-      "license": "CC-BY-4.0",
-      "name": "URFTUR",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
       "country": "TH",
       "dashboard": "https://nxdn.hs3tdi.com/",
       "description": "<p>NXDN Link XLX148 Modules X-Nexus</p>",
@@ -30188,6 +30182,20 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "KJ7OMO"
+    },
+    {
+      "country": "NF",
+      "dial": {
+        "host": "24.229.253.31",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "22022",
+      "license": "CC-BY-4.0",
+      "name": "PA Parrot - Echo with audio level report",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "W3NTZ"
     },
     {
       "country": "IT",
@@ -31406,21 +31414,6 @@
       "sponsor": "KP4OO"
     },
     {
-      "country": "JP",
-      "dashboard": "http://xlx274.duckdns.org/",
-      "dial": {
-        "host": "xlx274.duckdns.org",
-        "kind": "nxdn",
-        "port": 41400
-      },
-      "id": "274",
-      "license": "CC-BY-4.0",
-      "name": "URF274",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "JG1LKT"
-    },
-    {
       "country": "US",
       "dashboard": "http://arcnxdn.duckdns.org:83",
       "description": "<p>America Ragchew</p>",
@@ -31510,6 +31503,1058 @@
       "id": "28602",
       "license": "CC-BY-4.0",
       "name": "NXDN Adiyaman",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28303/",
+      "description": "<p>NXDN Afyon Reflector - YM2KG</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41403
+      },
+      "id": "28603",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Afyon",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "NXDN Agri Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41404
+      },
+      "id": "28604",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Agri",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "NXDN Amasya Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41405
+      },
+      "id": "28605",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Amasya",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28306/",
+      "description": "<p>NXDN Ankara Reflector - YM2KG</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41406
+      },
+      "id": "28606",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Ankara",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28307/",
+      "description": "<p>NXDN Antalya Reflector - YM2KG</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41407
+      },
+      "id": "28607",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Antalya",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Artvin Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41408
+      },
+      "id": "28608",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Artvin",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28309/",
+      "description": "<p>TurkLINK NXDN 09 Reflektor Odasi</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41409
+      },
+      "id": "28609",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Aydin",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28310/",
+      "description": "<p>TurkLINK NXDN 10 Reflektor Odasi</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41410
+      },
+      "id": "28610",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Balikesir",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Bilecik Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41411
+      },
+      "id": "28611",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Bilecik",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Bingol Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41412
+      },
+      "id": "28612",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Bingol",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Bitlis Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41413
+      },
+      "id": "28613",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Bitlis",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Bolu Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41414
+      },
+      "id": "28614",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Bolu",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Burdur Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41415
+      },
+      "id": "28615",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Burdur",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28316/",
+      "description": "<p>TurkLINK NXDN 16 Reflektor Odasi</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41416
+      },
+      "id": "28616",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Bursa",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28317/",
+      "description": "<p>TurkLINK NXDN 17 Reflektor Odasi</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41417
+      },
+      "id": "28617",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Canakkale",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Cankiri Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41418
+      },
+      "id": "28618",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Cankiri",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Corum Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41419
+      },
+      "id": "28619",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Corum",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28320/",
+      "description": "<p>TurkLINK NXDN 20 Reflektor Odasi</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41420
+      },
+      "id": "28620",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Denizli",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Diyarbakir Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41421
+      },
+      "id": "28621",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Diyarbakir",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Edirne Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41422
+      },
+      "id": "28622",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Edirne",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Elazig Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41423
+      },
+      "id": "28623",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Elazig",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Erzincan Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41424
+      },
+      "id": "28624",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Erzincan",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Erzurum Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41425
+      },
+      "id": "28625",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Erzurum",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28326/",
+      "description": "<p>TurkLINK NXDN 26 Reflektor Odasi</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41426
+      },
+      "id": "28626",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Eskisehir",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Gaziantep Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41427
+      },
+      "id": "28627",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Gaziantep",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Giresun Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41428
+      },
+      "id": "28628",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Giresun",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Gumushane Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41429
+      },
+      "id": "28629",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Gumushane",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Hakkari Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41430
+      },
+      "id": "28630",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Hakkari",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Hatay Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41431
+      },
+      "id": "28631",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Hatay",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Isparta Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41432
+      },
+      "id": "28632",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Isparta",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28333/",
+      "description": "<p>TurkLINK NXDN 33 Reflektor Odasi</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41433
+      },
+      "id": "28633",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Mersin",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28334/",
+      "description": "<p>NXDN Istanbul Reflector - YM2KG</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41434
+      },
+      "id": "28634",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Istanbul",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28335/",
+      "description": "<p>NXDN Izmir Reflector - YM2KG</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41435
+      },
+      "id": "28635",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Izmir",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Kars Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41436
+      },
+      "id": "28636",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Kars",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Kastamonu Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41437
+      },
+      "id": "28637",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Kastamonu",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Kayseri Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41438
+      },
+      "id": "28638",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Kayseri",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Kirklareli Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41439
+      },
+      "id": "28639",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Kirklareli",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Kirsehir Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41440
+      },
+      "id": "28640",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Kirsehir",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28341/",
+      "description": "<p>TurkLINK NXDN 41 Reflektor Odasi</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41441
+      },
+      "id": "28641",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Kocaeli",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28342/",
+      "description": "<p>TurkLINK NXDN 42 Reflektor Odasi</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41442
+      },
+      "id": "28642",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Konya",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Kutahya Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41443
+      },
+      "id": "28643",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Kutahya",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28344/",
+      "description": "<p>TurkLINK NXDN 44 Reflektor Odasi</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41444
+      },
+      "id": "28644",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Malatya",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Manisa Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41445
+      },
+      "id": "28645",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Manisa",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Kahramanmaras Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41446
+      },
+      "id": "28646",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Kahramanmaras",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Mardin Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41447
+      },
+      "id": "28647",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Mardin",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28348/",
+      "description": "<p>NXDN Mugla Reflector - YM2KG</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41448
+      },
+      "id": "28648",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Mugla",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Mus Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41449
+      },
+      "id": "28649",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Mus",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Nevsehir Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41450
+      },
+      "id": "28650",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Nevsehir",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Nigde Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41451
+      },
+      "id": "28651",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Nigde",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Ordu Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41452
+      },
+      "id": "28652",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Ordu",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Rize Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41453
+      },
+      "id": "28653",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Rize",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Sakarya Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41454
+      },
+      "id": "28654",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Sakarya",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Samsun Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41455
+      },
+      "id": "28655",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Samsun",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Siirt Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41456
+      },
+      "id": "28656",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Siirt",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Sinop Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41457
+      },
+      "id": "28657",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Sinop",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "NXDN Sivas Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41458
+      },
+      "id": "28658",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Sivas",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28359/",
+      "description": "TurkLINK NXDN 59 Reflektor Odasi",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41459
+      },
+      "id": "28659",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Tekirdag",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "NXDN Tokat Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41460
+      },
+      "id": "28660",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Tokat",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "NXDN Trabzon Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41461
+      },
+      "id": "28661",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Trabzon",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "NXDN Tunceli Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41462
+      },
+      "id": "28662",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Tunceli",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "NXDN Sanliurfa Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41463
+      },
+      "id": "28663",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Sanliurfa",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "NXDN Usak Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41464
+      },
+      "id": "28664",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Usak",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "NXDN Van Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41465
+      },
+      "id": "28665",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Van",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "NXDN Yozgat Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41466
+      },
+      "id": "28666",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Yozgat",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "NXDN Zonguldak Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41467
+      },
+      "id": "28667",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Zonguldak",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "NXDN Aksaray Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41468
+      },
+      "id": "28668",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Aksaray",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Bayburt Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41469
+      },
+      "id": "28669",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Bayburt",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>NXDN Karaman Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41470
+      },
+      "id": "28670",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Karaman",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "NXDN Kirikkale Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "nxdn",
+        "port": 41471
+      },
+      "id": "28671",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Kirikkale",
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
@@ -31683,21 +32728,6 @@
       "sponsor": "QRV73.COM"
     },
     {
-      "country": "TR",
-      "dashboard": "https://dvs.pistar.com.tr",
-      "dial": {
-        "host": "141.144.206.211",
-        "kind": "nxdn",
-        "port": 41400
-      },
-      "id": "28699",
-      "license": "CC-BY-4.0",
-      "name": "URFTRK",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
       "country": "SI",
       "dashboard": "https://293.dashboard.nxdn.s5ham.si/",
       "description": "<p>Slovenian Talk Group - connected to DMR TG293.</p>",
@@ -31744,21 +32774,6 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "S55ML, S56IAR"
-    },
-    {
-      "country": "JP",
-      "dashboard": "http://xlx297.duckdns.org/",
-      "dial": {
-        "host": "xlx297.duckdns.org",
-        "kind": "nxdn",
-        "port": 41400
-      },
-      "id": "297",
-      "license": "CC-BY-4.0",
-      "name": "URF297",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "JA9HYM"
     },
     {
       "country": "US",
@@ -32287,7 +33302,7 @@
       },
       "id": "31701",
       "license": "CC-BY-4.0",
-      "name": "Starfleet Amateur Radio Group - Trek Talk",
+      "name": "Starfleet Amateur Radio Group - Trek Talk - 31701",
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "SFARG"
@@ -33380,21 +34395,6 @@
       "sponsor": "VK5ZSH"
     },
     {
-      "country": "TH",
-      "dashboard": "http://203.159.93.71/",
-      "dial": {
-        "host": "hs9awo.com",
-        "kind": "nxdn",
-        "port": 41400
-      },
-      "id": "535",
-      "license": "CC-BY-4.0",
-      "name": "URF535",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "HS9AI pattani Thailand"
-    },
-    {
       "country": "US",
       "dashboard": "http://urf550.hanafarm.biz/",
       "description": "<p>550 is a YSF Master, connect to urf550.hanafarm.biz , use DGID 10 for module A.&nbsp; Module A is bridged to ASL3 Node 590810 and EchoLink KY4VC-L Node 450801.</p>",
@@ -33987,15 +34987,14 @@
     },
     {
       "country": "US",
-      "description": "<p>N1YKT-HUB | Mid South Multimode &mdash; Public URF073 reflector supporting DMR/TGIF, YSF, NXDN, P25, and M17. AllStar node 623123. Module A: TGIF.</p>",
       "dial": {
-        "host": "162.213.130.92",
+        "host": "162.213.130.93",
         "kind": "nxdn",
         "port": 41400
       },
       "id": "7486",
       "license": "CC-BY-4.0",
-      "name": "URF073",
+      "name": "Mid South NXDN",
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "MID SOUTH MULTIMODE"
@@ -34087,21 +35086,6 @@
       "name": "JesusSaves - Linked",
       "network": "nxdn",
       "source": "dvref"
-    },
-    {
-      "country": "US",
-      "dashboard": "https://wmrasystem.com/NXDN-REF/",
-      "dial": {
-        "host": "wmrasystem.com",
-        "kind": "nxdn",
-        "port": 41400
-      },
-      "id": "7941",
-      "license": "CC-BY-4.0",
-      "name": "WMRA MULTIMODE NETWORK",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "WMRA"
     },
     {
       "country": "AT",
@@ -35285,21 +36269,6 @@
       "sponsor": "xreflector"
     },
     {
-      "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:82/",
-      "dial": {
-        "host": "dmr.pistar.com.tr",
-        "kind": "p25",
-        "port": 41000
-      },
-      "id": "1453",
-      "license": "CC-BY-4.0",
-      "name": "URFTUR",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
       "country": "US",
       "description": "<p>This is an installation of DVSwitch and P25Reflector. It links to Allstar Node 483561, which is connected to 483560 on our local 146.790 repeater. This bridge is meant to open a new avenue to our local repeater for remote users.&nbsp;</p>\r\n<p>The 146.790 repeater is located in Greenville, Ohio, and is sponsored by the Treaty City Amateur Radio Association, W8UMD. Adam, W8FLH is our repeater trustee.</p>\r\n<p>Our local Darke County ARES net meets every Monday evening at 7:00 PM ET on 146.790. Feel free to join us! For more info, see http://w8flh.net</p>",
       "dial": {
@@ -36390,21 +37359,6 @@
       "sponsor": "KP4OO"
     },
     {
-      "country": "JP",
-      "dashboard": "http://xlx274.duckdns.org/",
-      "dial": {
-        "host": "xlx274.duckdns.org",
-        "kind": "p25",
-        "port": 41000
-      },
-      "id": "274",
-      "license": "CC-BY-4.0",
-      "name": "URF274",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "JG1LKT"
-    },
-    {
       "country": "US",
       "dashboard": "https://kc8cpw.com",
       "dial": {
@@ -36529,6 +37483,145 @@
     },
     {
       "country": "TR",
+      "description": "P25 Amasya Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41005
+      },
+      "id": "28605",
+      "license": "CC-BY-4.0",
+      "name": "P25 Amasya",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28206/",
+      "description": "<p>P25 Ankara Reflector - YM2KT</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41006
+      },
+      "id": "28606",
+      "license": "CC-BY-4.0",
+      "name": "P25 Ankara",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28207/",
+      "description": "<p>P25 Antalya Reflector - YM2KT</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41007
+      },
+      "id": "28607",
+      "license": "CC-BY-4.0",
+      "name": "P25 Antalya",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Artvin Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41008
+      },
+      "id": "28608",
+      "license": "CC-BY-4.0",
+      "name": "P25 Artvin",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28209/",
+      "description": "<p>TurkLINK P25 09 Reflektor Odasi</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41009
+      },
+      "id": "28609",
+      "license": "CC-BY-4.0",
+      "name": "P25 Aydin",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28210/",
+      "description": "TurkLINK P25 10 Reflektor Odasi",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41010
+      },
+      "id": "28610",
+      "license": "CC-BY-4.0",
+      "name": "P25 Balikesir",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Bilecik Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41011
+      },
+      "id": "28611",
+      "license": "CC-BY-4.0",
+      "name": "P25 Bilecik",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Bingol Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41012
+      },
+      "id": "28612",
+      "license": "CC-BY-4.0",
+      "name": "P25 Bingol",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Bitlis Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41013
+      },
+      "id": "28613",
+      "license": "CC-BY-4.0",
+      "name": "P25 Bitlis",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
       "description": "P25 Bolu Reflektoru",
       "dial": {
         "host": "dmr.pistar.com.tr",
@@ -36538,6 +37631,466 @@
       "id": "28614",
       "license": "CC-BY-4.0",
       "name": "P25 Bolu",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Burdur Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41015
+      },
+      "id": "28615",
+      "license": "CC-BY-4.0",
+      "name": "P25 Burdur",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28216/",
+      "description": "TurkLINK P25 16 Reflektor Odasi",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41016
+      },
+      "id": "28616",
+      "license": "CC-BY-4.0",
+      "name": "P25 Bursa",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28217/",
+      "description": "TurkLINK P25 17 Reflektor Odasi",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41017
+      },
+      "id": "28617",
+      "license": "CC-BY-4.0",
+      "name": "P25 Canakkale",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Cankiri Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41018
+      },
+      "id": "28618",
+      "license": "CC-BY-4.0",
+      "name": "P25 Cankiri",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Corum Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41019
+      },
+      "id": "28619",
+      "license": "CC-BY-4.0",
+      "name": "P25 Corum",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28220/",
+      "description": "TurkLINK P25 20 Reflektor Odasi",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41020
+      },
+      "id": "28620",
+      "license": "CC-BY-4.0",
+      "name": "P25 Denizli",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Diyarbakir Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41021
+      },
+      "id": "28621",
+      "license": "CC-BY-4.0",
+      "name": "P25 Diyarbakir",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Edirne Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41022
+      },
+      "id": "28622",
+      "license": "CC-BY-4.0",
+      "name": "P25 Edirne",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Elazig Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41023
+      },
+      "id": "28623",
+      "license": "CC-BY-4.0",
+      "name": "P25 Elazig",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Erzincan Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41024
+      },
+      "id": "28624",
+      "license": "CC-BY-4.0",
+      "name": "P25 Erzincan",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Erzurum Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41025
+      },
+      "id": "28625",
+      "license": "CC-BY-4.0",
+      "name": "P25 Erzurum",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28226/",
+      "description": "TurkLINK P25 26 Reflektor Odasi",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41026
+      },
+      "id": "28626",
+      "license": "CC-BY-4.0",
+      "name": "P25 Eskisehir",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Gaziantep Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41027
+      },
+      "id": "28627",
+      "license": "CC-BY-4.0",
+      "name": "P25 Gaziantep",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Giresun Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41028
+      },
+      "id": "28628",
+      "license": "CC-BY-4.0",
+      "name": "P25 Giresun",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Gumushane Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41029
+      },
+      "id": "28629",
+      "license": "CC-BY-4.0",
+      "name": "P25 Gumushane",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Hakkari Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41030
+      },
+      "id": "28630",
+      "license": "CC-BY-4.0",
+      "name": "P25 Hakkari",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Hatay Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41031
+      },
+      "id": "28631",
+      "license": "CC-BY-4.0",
+      "name": "P25 Hatay",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Isparta Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41032
+      },
+      "id": "28632",
+      "license": "CC-BY-4.0",
+      "name": "P25 Isparta",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28233/",
+      "description": "TurkLINK P25 33 Reflektor Odasi",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41033
+      },
+      "id": "28633",
+      "license": "CC-BY-4.0",
+      "name": "P25 Mersin",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28234/",
+      "description": "<p>P25 Istanbul Reflector - YM2KT</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41034
+      },
+      "id": "28634",
+      "license": "CC-BY-4.0",
+      "name": "P25 Istanbul",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28235/",
+      "description": "<p>P25 Izmir Reflector - YM2KT</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41035
+      },
+      "id": "28635",
+      "license": "CC-BY-4.0",
+      "name": "P25 Izmir",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Kars Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41036
+      },
+      "id": "28636",
+      "license": "CC-BY-4.0",
+      "name": "P25 Kars",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Kastamonu Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41037
+      },
+      "id": "28637",
+      "license": "CC-BY-4.0",
+      "name": "P25 Kastamonu",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Kayseri Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41038
+      },
+      "id": "28638",
+      "license": "CC-BY-4.0",
+      "name": "P25 Kayseri",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Kirklareli Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41039
+      },
+      "id": "28639",
+      "license": "CC-BY-4.0",
+      "name": "P25 Kirklareli",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Kirsehir Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41040
+      },
+      "id": "28640",
+      "license": "CC-BY-4.0",
+      "name": "P25 Kirsehir",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28241/",
+      "description": "TurkLINK P25 41 Reflektor Odasi",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41041
+      },
+      "id": "28641",
+      "license": "CC-BY-4.0",
+      "name": "P25 Kocaeli",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28242/",
+      "description": "TurkLINK P25 42 Reflektor Odasi",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41042
+      },
+      "id": "28642",
+      "license": "CC-BY-4.0",
+      "name": "P25 Konya",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Kutahya Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41043
+      },
+      "id": "28643",
+      "license": "CC-BY-4.0",
+      "name": "P25 Kutahya",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28244/",
+      "description": "TurkLINK P25 44 Reflektor Odasi",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41044
+      },
+      "id": "28644",
+      "license": "CC-BY-4.0",
+      "name": "P25 Malatya",
       "network": "p25",
       "source": "dvref",
       "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
@@ -36605,6 +38158,427 @@
     },
     {
       "country": "TR",
+      "description": "P25 Mus Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41049
+      },
+      "id": "28649",
+      "license": "CC-BY-4.0",
+      "name": "P25 Mus",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>P25 Nevsehir Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41050
+      },
+      "id": "28650",
+      "license": "CC-BY-4.0",
+      "name": "P25 Nevsehir",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Nigde Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41051
+      },
+      "id": "28651",
+      "license": "CC-BY-4.0",
+      "name": "P25 Nigde",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Ordu Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41052
+      },
+      "id": "28652",
+      "license": "CC-BY-4.0",
+      "name": "P25 Ordu",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Rize Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41053
+      },
+      "id": "28653",
+      "license": "CC-BY-4.0",
+      "name": "P25 Rize",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Sakarya Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41054
+      },
+      "id": "28654",
+      "license": "CC-BY-4.0",
+      "name": "P25 Sakarya",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Samsun Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41055
+      },
+      "id": "28655",
+      "license": "CC-BY-4.0",
+      "name": "P25 Samsun",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Siirt Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41056
+      },
+      "id": "28656",
+      "license": "CC-BY-4.0",
+      "name": "P25 Siirt",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Sinop Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41057
+      },
+      "id": "28657",
+      "license": "CC-BY-4.0",
+      "name": "P25 Sinop",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Sivas Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41058
+      },
+      "id": "28658",
+      "license": "CC-BY-4.0",
+      "name": "P25 Sivas",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28259/",
+      "description": "TurkLINK P25 59 Reflektor Odasi",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41059
+      },
+      "id": "28659",
+      "license": "CC-BY-4.0",
+      "name": "P25 Tekirdag",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Tokat Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41060
+      },
+      "id": "28660",
+      "license": "CC-BY-4.0",
+      "name": "P25 Tokat",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Trabzon Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41061
+      },
+      "id": "28661",
+      "license": "CC-BY-4.0",
+      "name": "P25 Trabzon",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Tunceli Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41062
+      },
+      "id": "28662",
+      "license": "CC-BY-4.0",
+      "name": "P25 Tunceli",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Sanliurfa Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41063
+      },
+      "id": "28663",
+      "license": "CC-BY-4.0",
+      "name": "P25 Sanliurfa",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Usak Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41064
+      },
+      "id": "28664",
+      "license": "CC-BY-4.0",
+      "name": "P25 Usak",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Van Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41065
+      },
+      "id": "28665",
+      "license": "CC-BY-4.0",
+      "name": "P25 Van",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Yozgat Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41066
+      },
+      "id": "28666",
+      "license": "CC-BY-4.0",
+      "name": "P25 Yozgat",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Zonguldak Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41067
+      },
+      "id": "28667",
+      "license": "CC-BY-4.0",
+      "name": "P25 Zonguldak",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Aksaray Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41068
+      },
+      "id": "28668",
+      "license": "CC-BY-4.0",
+      "name": "P25 Aksaray",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Bayburt Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41069
+      },
+      "id": "28669",
+      "license": "CC-BY-4.0",
+      "name": "P25 Bayburt",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Karaman Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41070
+      },
+      "id": "28670",
+      "license": "CC-BY-4.0",
+      "name": "P25 Karaman",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Kirikkale Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41071
+      },
+      "id": "28671",
+      "license": "CC-BY-4.0",
+      "name": "P25 Kirikkale",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>P25 Batman Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41072
+      },
+      "id": "28672",
+      "license": "CC-BY-4.0",
+      "name": "P25 Batman",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Sirnak Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41073
+      },
+      "id": "28673",
+      "license": "CC-BY-4.0",
+      "name": "P25 Sirnak",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Bartin Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41074
+      },
+      "id": "28674",
+      "license": "CC-BY-4.0",
+      "name": "P25 Bartin",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Ardahan Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41075
+      },
+      "id": "28675",
+      "license": "CC-BY-4.0",
+      "name": "P25 Ardahan",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Igdir Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41076
+      },
+      "id": "28676",
+      "license": "CC-BY-4.0",
+      "name": "P25 Igdir",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
       "dashboard": "https://p25.ta2kw.keenetic.pro",
       "description": "<p>Talkgroup 28677 P25 YALOVA T&Uuml;RK\u0130YE<br><br>DMR T&Uuml;RK\u0130YE</p>",
       "dial": {
@@ -36621,33 +38595,64 @@
     },
     {
       "country": "TR",
-      "dashboard": "https://dvs.pistar.com.tr",
+      "description": "P25 Karabuk Reflektoru",
       "dial": {
-        "host": "141.144.206.211",
+        "host": "dmr.pistar.com.tr",
         "kind": "p25",
-        "port": 41000
+        "port": 41078
       },
-      "id": "28699",
+      "id": "28678",
       "license": "CC-BY-4.0",
-      "name": "URFTRK",
+      "name": "P25 Karabuk",
       "network": "p25",
       "source": "dvref",
       "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
-      "country": "JP",
-      "dashboard": "http://xlx297.duckdns.org/",
+      "country": "TR",
+      "description": "P25 Kilis Reflektoru",
       "dial": {
-        "host": "xlx297.duckdns.org",
+        "host": "dmr.pistar.com.tr",
         "kind": "p25",
-        "port": 41000
+        "port": 41079
       },
-      "id": "297",
+      "id": "28679",
       "license": "CC-BY-4.0",
-      "name": "URF297",
+      "name": "P25 Kilis",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "JA9HYM"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Osmaniye Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41080
+      },
+      "id": "28680",
+      "license": "CC-BY-4.0",
+      "name": "P25 Osmaniye",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28281/",
+      "description": "TurkLINK P25 81 Reflektor Odasi",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41081
+      },
+      "id": "28681",
+      "license": "CC-BY-4.0",
+      "name": "P25 Duzce",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "US",
@@ -37638,7 +39643,7 @@
       },
       "id": "31701",
       "license": "CC-BY-4.0",
-      "name": "Starfleet Amateur Radio Group - Trek Talk",
+      "name": "Starfleet Amateur Radio Group - Trek Talk - 31701",
       "network": "p25",
       "source": "dvref",
       "sponsor": "Starfleet Amateur Radio Group"
@@ -39099,21 +41104,6 @@
     },
     {
       "country": "TH",
-      "dashboard": "http://203.159.93.71/",
-      "dial": {
-        "host": "hs9awo.com",
-        "kind": "p25",
-        "port": 41000
-      },
-      "id": "535",
-      "license": "CC-BY-4.0",
-      "name": "URF535",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "HS9AI pattani Thailand"
-    },
-    {
-      "country": "TH",
       "dashboard": "http://synceyote.ddns.net:8086",
       "dial": {
         "host": "synceyote.ddns.net",
@@ -39798,15 +41788,14 @@
     },
     {
       "country": "US",
-      "description": "<p>N1YKT-HUB | Mid South Multimode &mdash; Public URF073 reflector supporting DMR/TGIF, YSF, NXDN, P25, and M17. AllStar node 623123. Module A: TGIF.</p>",
       "dial": {
-        "host": "162.213.130.92",
+        "host": "162.213.130.93",
         "kind": "p25",
         "port": 41000
       },
       "id": "73",
       "license": "CC-BY-4.0",
-      "name": "URF073",
+      "name": "Mid South P25",
       "network": "p25",
       "source": "dvref",
       "sponsor": "MID SOUTH MULTIMODE"
@@ -40004,21 +41993,6 @@
       "name": "JesusSaves",
       "network": "p25",
       "source": "dvref"
-    },
-    {
-      "country": "US",
-      "dashboard": "https://wmrasystem.com/P25Reflector/",
-      "dial": {
-        "host": "wmrasystem.com",
-        "kind": "p25",
-        "port": 41000
-      },
-      "id": "7941",
-      "license": "CC-BY-4.0",
-      "name": "WMRA MULTIMODE NETWORK",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "WMRA"
     },
     {
       "country": "CN",
@@ -40675,23 +42649,6 @@
       "sponsor": "PY4EI"
     },
     {
-      "country": "US",
-      "description": "<p>N1YKT-HUB | Mid South Multimode &mdash; Public URF073 reflector supporting DMR/TGIF, YSF, NXDN, P25, and M17. AllStar node 623123. Module A: TGIF.</p>",
-      "dial": {
-        "host": "162.213.130.92",
-        "kind": "urf",
-        "modules": [
-          "A"
-        ]
-      },
-      "id": "073",
-      "license": "CC-BY-4.0",
-      "name": "N1YKT-HUB",
-      "network": "urf",
-      "source": "dvref",
-      "sponsor": "MID SOUTH MULTIMODE"
-    },
-    {
       "country": "GR",
       "dashboard": "http://svham.eu:82",
       "dial": {
@@ -41015,6 +42972,28 @@
       "sponsor": "N3BBF"
     },
     {
+      "country": "US",
+      "dashboard": "https://xlx218.chaverimradio.com",
+      "description": "<p>Multiprotocol reflector sponsored by the Chaverim Radio Club. Currently supported modes are:</p>\r\n<p>&nbsp;</p>\r\n<p>- Module A: D-STAR, DMR, M17, and YSF<br>- Module B: D-STAR<br>- Module C: DMR and YSF<br>- Module D: M17<br>- Module E: Echo</p>\r\n<p>&nbsp;</p>\r\n<p>Module A linked to Brandmeister TG 3213520</p>\r\n<p>Module A linked to P25 reflector 42555</p>\r\n<p>&nbsp;</p>\r\n<p>Weekly Nets</p>\r\n<p>- Chaverim Worldwide, Sundays at 2000 UTC, Module A<br>- Chaverim of North America, Thursdays at 9:00 PM Eastern, Module A</p>",
+      "dial": {
+        "host": "xlx218.chaverimradio.com",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ]
+      },
+      "id": "218",
+      "license": "CC-BY-4.0",
+      "name": "Chaverim Multiprotocol Reflector",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "Chaverim Radio Club"
+    },
+    {
       "country": "IT",
       "dashboard": "https://xlx.is0.org/",
       "description": "<p>Sardinia Island https://www.is0.org&nbsp;<br>Linked TG 22202 BrandMeister</p>",
@@ -41054,10 +43033,8 @@
         "kind": "urf",
         "modules": [
           "C",
-          "D",
           "G",
-          "K",
-          "M"
+          "K"
         ]
       },
       "id": "247",
@@ -41185,20 +43162,6 @@
       "sponsor": "9Y4C - DXHAMS Amateur Radio Group"
     },
     {
-      "country": "JP",
-      "dashboard": "http://xlx274.duckdns.org/",
-      "dial": {
-        "host": "xlx274.duckdns.org",
-        "kind": "urf"
-      },
-      "id": "274",
-      "license": "CC-BY-4.0",
-      "name": "URF274",
-      "network": "urf",
-      "source": "dvref",
-      "sponsor": "JG1LKT"
-    },
-    {
       "country": "GB",
       "dashboard": "http://linf.co.uk",
       "dial": {
@@ -41305,20 +43268,6 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "JG1XWV"
-    },
-    {
-      "country": "JP",
-      "dashboard": "http://xlx297.duckdns.org/",
-      "dial": {
-        "host": "xlx297.duckdns.org",
-        "kind": "urf"
-      },
-      "id": "297",
-      "license": "CC-BY-4.0",
-      "name": "URF297",
-      "network": "urf",
-      "source": "dvref",
-      "sponsor": "JA9HYM"
     },
     {
       "country": "BR",
@@ -41881,20 +43830,6 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "RadioSC"
-    },
-    {
-      "country": "TH",
-      "dashboard": "http://203.159.93.71/",
-      "dial": {
-        "host": "hs9awo.com",
-        "kind": "urf"
-      },
-      "id": "535",
-      "license": "CC-BY-4.0",
-      "name": "XLX535",
-      "network": "urf",
-      "source": "dvref",
-      "sponsor": "HS9AI pattani Thailand"
     },
     {
       "country": "US",
@@ -42938,47 +44873,6 @@
       "sponsor": "RA1AO"
     },
     {
-      "country": "TR",
-      "dashboard": "https://dvs.pistar.com.tr",
-      "dial": {
-        "host": "141.144.206.211",
-        "kind": "urf"
-      },
-      "id": "TRK",
-      "license": "CC-BY-4.0",
-      "name": "Turkiye ADN Multimod",
-      "network": "urf",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:82/",
-      "dial": {
-        "host": "dmr.pistar.com.tr",
-        "kind": "urf"
-      },
-      "id": "TUR",
-      "license": "CC-BY-4.0",
-      "name": "Turkiye ADN Multimod",
-      "network": "urf",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "US",
-      "description": "Reflector cafe test",
-      "dial": {
-        "host": "198.51.100.1",
-        "kind": "urf"
-      },
-      "id": "U1",
-      "license": "CC-BY-4.0",
-      "name": "U1",
-      "network": "urf",
-      "source": "dvref"
-    },
-    {
       "country": "UY",
       "dashboard": "http://uruguaynet.2mydns.net",
       "dial": {
@@ -43042,6 +44936,20 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "KE7WIL"
+    },
+    {
+      "country": "JP",
+      "dashboard": "https://xlxyai.ja3yai.club/",
+      "dial": {
+        "host": "xlxyai.ja3yai.club",
+        "kind": "urf"
+      },
+      "id": "YAI",
+      "license": "CC-BY-4.0",
+      "name": "Awaji-IS AMC",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "JG3HLX"
     },
     {
       "country": "TR",
@@ -43980,22 +45888,6 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "K0RAP"
-    },
-    {
-      "country": "ES",
-      "dashboard": "https://sala-andalucia.es/1/",
-      "description": "COSTA-ATLANTIC",
-      "dial": {
-        "host": "sala-andalucia.es",
-        "kind": "ysf",
-        "port": 42399
-      },
-      "id": "00086",
-      "license": "CC-BY-4.0",
-      "name": "ACRAB",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "xreflector"
     },
     {
       "country": "US",
@@ -44937,6 +46829,22 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "N3BBF"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://xlx218.chaverimradio.com",
+      "description": "URF218",
+      "dial": {
+        "host": "xlx218.chaverimradio.com",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00218",
+      "license": "CC-BY-4.0",
+      "name": "URF218",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "Chaverim Radio Club"
     },
     {
       "country": "BH",
@@ -49147,22 +51055,6 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "PennLink Group"
-    },
-    {
-      "country": "US",
-      "dashboard": "https://wmrasystem.com/db/",
-      "description": "MULTIMODE",
-      "dial": {
-        "host": "wmrasystem.com",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "07941",
-      "license": "CC-BY-4.0",
-      "name": "WMRA",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "WMRA"
     },
     {
       "country": "GB",
@@ -54069,10 +55961,10 @@
     },
     {
       "country": "US",
-      "dashboard": "http://24.111.198.192:80",
+      "dashboard": "http://24.111.119.66:80",
       "description": "DX3L Multilink",
       "dial": {
-        "host": "24.111.198.192",
+        "host": "24.111.119.66",
         "kind": "ysf",
         "port": 42000
       },
@@ -57853,6 +59745,22 @@
     },
     {
       "country": "US",
+      "dashboard": "http://ysf.hxo.radio",
+      "description": "BM TG 31325",
+      "dial": {
+        "host": "ysf.hxo.radio",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "31325",
+      "license": "CC-BY-4.0",
+      "name": "HXO Reflector",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "Las Vegas Repeater Association"
+    },
+    {
+      "country": "US",
       "dashboard": "http://n1pce-ysf.ddns.net:8081",
       "description": "Northern-NHASL",
       "dial": {
@@ -60065,19 +61973,19 @@
     },
     {
       "country": "FR",
-      "dashboard": "http://xlx521.f1ptl.net:85",
-      "description": "Serveur XLX521",
+      "dashboard": "http://xlx562.ysf-france.fr",
+      "description": "Serveur XLX562",
       "dial": {
-        "host": "xlx521.f1ptl.net",
+        "host": "xlx562.ysf-france.fr",
         "kind": "ysf",
-        "port": 42521
+        "port": 42000
       },
-      "id": "42521",
+      "id": "42562",
       "license": "CC-BY-4.0",
-      "name": "XLX521",
+      "name": "YSF-XLX562",
       "network": "ysf",
       "source": "dvref",
-      "sponsor": "F1PTL"
+      "sponsor": "F1PTL Bruno"
     },
     {
       "country": "PT",
@@ -64739,7 +66647,7 @@
       "country": "US",
       "description": "Netoholics Net",
       "dial": {
-        "host": "45.76.255.39",
+        "host": "44.30.157.21",
         "kind": "ysf",
         "port": 42002
       },
@@ -68740,6 +70648,22 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "IQ5QD"
+    },
+    {
+      "country": "JP",
+      "dashboard": "https://xlxyai.ja3yai.club/",
+      "description": "URFYAI",
+      "dial": {
+        "host": "xlxyai.ja3yai.club",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "98765",
+      "license": "CC-BY-4.0",
+      "name": "URFYAI",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "JG3HLX"
     },
     {
       "country": "US",

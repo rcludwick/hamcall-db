@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 146,
-  "generated": "2026-11-05",
+  "count": 141,
+  "generated": "2026-11-06",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -217,23 +217,6 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "PY4EI"
-    },
-    {
-      "country": "US",
-      "description": "<p>N1YKT-HUB | Mid South Multimode &mdash; Public URF073 reflector supporting DMR/TGIF, YSF, NXDN, P25, and M17. AllStar node 623123. Module A: TGIF.</p>",
-      "dial": {
-        "host": "162.213.130.92",
-        "kind": "urf",
-        "modules": [
-          "A"
-        ]
-      },
-      "id": "073",
-      "license": "CC-BY-4.0",
-      "name": "N1YKT-HUB",
-      "network": "urf",
-      "source": "dvref",
-      "sponsor": "MID SOUTH MULTIMODE"
     },
     {
       "country": "GR",
@@ -559,6 +542,28 @@
       "sponsor": "N3BBF"
     },
     {
+      "country": "US",
+      "dashboard": "https://xlx218.chaverimradio.com",
+      "description": "<p>Multiprotocol reflector sponsored by the Chaverim Radio Club. Currently supported modes are:</p>\r\n<p>&nbsp;</p>\r\n<p>- Module A: D-STAR, DMR, M17, and YSF<br>- Module B: D-STAR<br>- Module C: DMR and YSF<br>- Module D: M17<br>- Module E: Echo</p>\r\n<p>&nbsp;</p>\r\n<p>Module A linked to Brandmeister TG 3213520</p>\r\n<p>Module A linked to P25 reflector 42555</p>\r\n<p>&nbsp;</p>\r\n<p>Weekly Nets</p>\r\n<p>- Chaverim Worldwide, Sundays at 2000 UTC, Module A<br>- Chaverim of North America, Thursdays at 9:00 PM Eastern, Module A</p>",
+      "dial": {
+        "host": "xlx218.chaverimradio.com",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ]
+      },
+      "id": "218",
+      "license": "CC-BY-4.0",
+      "name": "Chaverim Multiprotocol Reflector",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "Chaverim Radio Club"
+    },
+    {
       "country": "IT",
       "dashboard": "https://xlx.is0.org/",
       "description": "<p>Sardinia Island https://www.is0.org&nbsp;<br>Linked TG 22202 BrandMeister</p>",
@@ -598,10 +603,8 @@
         "kind": "urf",
         "modules": [
           "C",
-          "D",
           "G",
-          "K",
-          "M"
+          "K"
         ]
       },
       "id": "247",
@@ -729,20 +732,6 @@
       "sponsor": "9Y4C - DXHAMS Amateur Radio Group"
     },
     {
-      "country": "JP",
-      "dashboard": "http://xlx274.duckdns.org/",
-      "dial": {
-        "host": "xlx274.duckdns.org",
-        "kind": "urf"
-      },
-      "id": "274",
-      "license": "CC-BY-4.0",
-      "name": "URF274",
-      "network": "urf",
-      "source": "dvref",
-      "sponsor": "JG1LKT"
-    },
-    {
       "country": "GB",
       "dashboard": "http://linf.co.uk",
       "dial": {
@@ -849,20 +838,6 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "JG1XWV"
-    },
-    {
-      "country": "JP",
-      "dashboard": "http://xlx297.duckdns.org/",
-      "dial": {
-        "host": "xlx297.duckdns.org",
-        "kind": "urf"
-      },
-      "id": "297",
-      "license": "CC-BY-4.0",
-      "name": "URF297",
-      "network": "urf",
-      "source": "dvref",
-      "sponsor": "JA9HYM"
     },
     {
       "country": "BR",
@@ -1425,20 +1400,6 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "RadioSC"
-    },
-    {
-      "country": "TH",
-      "dashboard": "http://203.159.93.71/",
-      "dial": {
-        "host": "hs9awo.com",
-        "kind": "urf"
-      },
-      "id": "535",
-      "license": "CC-BY-4.0",
-      "name": "XLX535",
-      "network": "urf",
-      "source": "dvref",
-      "sponsor": "HS9AI pattani Thailand"
     },
     {
       "country": "US",
@@ -2482,47 +2443,6 @@
       "sponsor": "RA1AO"
     },
     {
-      "country": "TR",
-      "dashboard": "https://dvs.pistar.com.tr",
-      "dial": {
-        "host": "141.144.206.211",
-        "kind": "urf"
-      },
-      "id": "TRK",
-      "license": "CC-BY-4.0",
-      "name": "Turkiye ADN Multimod",
-      "network": "urf",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:82/",
-      "dial": {
-        "host": "dmr.pistar.com.tr",
-        "kind": "urf"
-      },
-      "id": "TUR",
-      "license": "CC-BY-4.0",
-      "name": "Turkiye ADN Multimod",
-      "network": "urf",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "US",
-      "description": "Reflector cafe test",
-      "dial": {
-        "host": "198.51.100.1",
-        "kind": "urf"
-      },
-      "id": "U1",
-      "license": "CC-BY-4.0",
-      "name": "U1",
-      "network": "urf",
-      "source": "dvref"
-    },
-    {
       "country": "UY",
       "dashboard": "http://uruguaynet.2mydns.net",
       "dial": {
@@ -2586,6 +2506,20 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "KE7WIL"
+    },
+    {
+      "country": "JP",
+      "dashboard": "https://xlxyai.ja3yai.club/",
+      "dial": {
+        "host": "xlxyai.ja3yai.club",
+        "kind": "urf"
+      },
+      "id": "YAI",
+      "license": "CC-BY-4.0",
+      "name": "Awaji-IS AMC",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "JG3HLX"
     },
     {
       "country": "TR",

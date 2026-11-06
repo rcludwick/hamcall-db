@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 391,
-  "generated": "2026-11-05",
+  "count": 456,
+  "generated": "2026-11-06",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -775,21 +775,6 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "xreflector"
-    },
-    {
-      "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:82/",
-      "dial": {
-        "host": "dmr.pistar.com.tr",
-        "kind": "p25",
-        "port": 41000
-      },
-      "id": "1453",
-      "license": "CC-BY-4.0",
-      "name": "URFTUR",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "US",
@@ -1882,21 +1867,6 @@
       "sponsor": "KP4OO"
     },
     {
-      "country": "JP",
-      "dashboard": "http://xlx274.duckdns.org/",
-      "dial": {
-        "host": "xlx274.duckdns.org",
-        "kind": "p25",
-        "port": 41000
-      },
-      "id": "274",
-      "license": "CC-BY-4.0",
-      "name": "URF274",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "JG1LKT"
-    },
-    {
       "country": "US",
       "dashboard": "https://kc8cpw.com",
       "dial": {
@@ -2021,6 +1991,145 @@
     },
     {
       "country": "TR",
+      "description": "P25 Amasya Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41005
+      },
+      "id": "28605",
+      "license": "CC-BY-4.0",
+      "name": "P25 Amasya",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28206/",
+      "description": "<p>P25 Ankara Reflector - YM2KT</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41006
+      },
+      "id": "28606",
+      "license": "CC-BY-4.0",
+      "name": "P25 Ankara",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28207/",
+      "description": "<p>P25 Antalya Reflector - YM2KT</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41007
+      },
+      "id": "28607",
+      "license": "CC-BY-4.0",
+      "name": "P25 Antalya",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Artvin Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41008
+      },
+      "id": "28608",
+      "license": "CC-BY-4.0",
+      "name": "P25 Artvin",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28209/",
+      "description": "<p>TurkLINK P25 09 Reflektor Odasi</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41009
+      },
+      "id": "28609",
+      "license": "CC-BY-4.0",
+      "name": "P25 Aydin",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28210/",
+      "description": "TurkLINK P25 10 Reflektor Odasi",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41010
+      },
+      "id": "28610",
+      "license": "CC-BY-4.0",
+      "name": "P25 Balikesir",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Bilecik Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41011
+      },
+      "id": "28611",
+      "license": "CC-BY-4.0",
+      "name": "P25 Bilecik",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Bingol Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41012
+      },
+      "id": "28612",
+      "license": "CC-BY-4.0",
+      "name": "P25 Bingol",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Bitlis Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41013
+      },
+      "id": "28613",
+      "license": "CC-BY-4.0",
+      "name": "P25 Bitlis",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
       "description": "P25 Bolu Reflektoru",
       "dial": {
         "host": "dmr.pistar.com.tr",
@@ -2030,6 +2139,466 @@
       "id": "28614",
       "license": "CC-BY-4.0",
       "name": "P25 Bolu",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Burdur Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41015
+      },
+      "id": "28615",
+      "license": "CC-BY-4.0",
+      "name": "P25 Burdur",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28216/",
+      "description": "TurkLINK P25 16 Reflektor Odasi",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41016
+      },
+      "id": "28616",
+      "license": "CC-BY-4.0",
+      "name": "P25 Bursa",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28217/",
+      "description": "TurkLINK P25 17 Reflektor Odasi",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41017
+      },
+      "id": "28617",
+      "license": "CC-BY-4.0",
+      "name": "P25 Canakkale",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Cankiri Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41018
+      },
+      "id": "28618",
+      "license": "CC-BY-4.0",
+      "name": "P25 Cankiri",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Corum Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41019
+      },
+      "id": "28619",
+      "license": "CC-BY-4.0",
+      "name": "P25 Corum",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28220/",
+      "description": "TurkLINK P25 20 Reflektor Odasi",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41020
+      },
+      "id": "28620",
+      "license": "CC-BY-4.0",
+      "name": "P25 Denizli",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Diyarbakir Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41021
+      },
+      "id": "28621",
+      "license": "CC-BY-4.0",
+      "name": "P25 Diyarbakir",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Edirne Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41022
+      },
+      "id": "28622",
+      "license": "CC-BY-4.0",
+      "name": "P25 Edirne",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Elazig Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41023
+      },
+      "id": "28623",
+      "license": "CC-BY-4.0",
+      "name": "P25 Elazig",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Erzincan Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41024
+      },
+      "id": "28624",
+      "license": "CC-BY-4.0",
+      "name": "P25 Erzincan",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Erzurum Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41025
+      },
+      "id": "28625",
+      "license": "CC-BY-4.0",
+      "name": "P25 Erzurum",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28226/",
+      "description": "TurkLINK P25 26 Reflektor Odasi",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41026
+      },
+      "id": "28626",
+      "license": "CC-BY-4.0",
+      "name": "P25 Eskisehir",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Gaziantep Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41027
+      },
+      "id": "28627",
+      "license": "CC-BY-4.0",
+      "name": "P25 Gaziantep",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Giresun Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41028
+      },
+      "id": "28628",
+      "license": "CC-BY-4.0",
+      "name": "P25 Giresun",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Gumushane Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41029
+      },
+      "id": "28629",
+      "license": "CC-BY-4.0",
+      "name": "P25 Gumushane",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Hakkari Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41030
+      },
+      "id": "28630",
+      "license": "CC-BY-4.0",
+      "name": "P25 Hakkari",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Hatay Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41031
+      },
+      "id": "28631",
+      "license": "CC-BY-4.0",
+      "name": "P25 Hatay",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Isparta Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41032
+      },
+      "id": "28632",
+      "license": "CC-BY-4.0",
+      "name": "P25 Isparta",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28233/",
+      "description": "TurkLINK P25 33 Reflektor Odasi",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41033
+      },
+      "id": "28633",
+      "license": "CC-BY-4.0",
+      "name": "P25 Mersin",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28234/",
+      "description": "<p>P25 Istanbul Reflector - YM2KT</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41034
+      },
+      "id": "28634",
+      "license": "CC-BY-4.0",
+      "name": "P25 Istanbul",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28235/",
+      "description": "<p>P25 Izmir Reflector - YM2KT</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41035
+      },
+      "id": "28635",
+      "license": "CC-BY-4.0",
+      "name": "P25 Izmir",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Kars Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41036
+      },
+      "id": "28636",
+      "license": "CC-BY-4.0",
+      "name": "P25 Kars",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Kastamonu Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41037
+      },
+      "id": "28637",
+      "license": "CC-BY-4.0",
+      "name": "P25 Kastamonu",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Kayseri Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41038
+      },
+      "id": "28638",
+      "license": "CC-BY-4.0",
+      "name": "P25 Kayseri",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Kirklareli Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41039
+      },
+      "id": "28639",
+      "license": "CC-BY-4.0",
+      "name": "P25 Kirklareli",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Kirsehir Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41040
+      },
+      "id": "28640",
+      "license": "CC-BY-4.0",
+      "name": "P25 Kirsehir",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28241/",
+      "description": "TurkLINK P25 41 Reflektor Odasi",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41041
+      },
+      "id": "28641",
+      "license": "CC-BY-4.0",
+      "name": "P25 Kocaeli",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28242/",
+      "description": "TurkLINK P25 42 Reflektor Odasi",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41042
+      },
+      "id": "28642",
+      "license": "CC-BY-4.0",
+      "name": "P25 Konya",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Kutahya Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41043
+      },
+      "id": "28643",
+      "license": "CC-BY-4.0",
+      "name": "P25 Kutahya",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28244/",
+      "description": "TurkLINK P25 44 Reflektor Odasi",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41044
+      },
+      "id": "28644",
+      "license": "CC-BY-4.0",
+      "name": "P25 Malatya",
       "network": "p25",
       "source": "dvref",
       "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
@@ -2097,6 +2666,427 @@
     },
     {
       "country": "TR",
+      "description": "P25 Mus Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41049
+      },
+      "id": "28649",
+      "license": "CC-BY-4.0",
+      "name": "P25 Mus",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>P25 Nevsehir Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41050
+      },
+      "id": "28650",
+      "license": "CC-BY-4.0",
+      "name": "P25 Nevsehir",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Nigde Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41051
+      },
+      "id": "28651",
+      "license": "CC-BY-4.0",
+      "name": "P25 Nigde",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Ordu Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41052
+      },
+      "id": "28652",
+      "license": "CC-BY-4.0",
+      "name": "P25 Ordu",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Rize Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41053
+      },
+      "id": "28653",
+      "license": "CC-BY-4.0",
+      "name": "P25 Rize",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Sakarya Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41054
+      },
+      "id": "28654",
+      "license": "CC-BY-4.0",
+      "name": "P25 Sakarya",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Samsun Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41055
+      },
+      "id": "28655",
+      "license": "CC-BY-4.0",
+      "name": "P25 Samsun",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Siirt Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41056
+      },
+      "id": "28656",
+      "license": "CC-BY-4.0",
+      "name": "P25 Siirt",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Sinop Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41057
+      },
+      "id": "28657",
+      "license": "CC-BY-4.0",
+      "name": "P25 Sinop",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Sivas Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41058
+      },
+      "id": "28658",
+      "license": "CC-BY-4.0",
+      "name": "P25 Sivas",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28259/",
+      "description": "TurkLINK P25 59 Reflektor Odasi",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41059
+      },
+      "id": "28659",
+      "license": "CC-BY-4.0",
+      "name": "P25 Tekirdag",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Tokat Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41060
+      },
+      "id": "28660",
+      "license": "CC-BY-4.0",
+      "name": "P25 Tokat",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Trabzon Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41061
+      },
+      "id": "28661",
+      "license": "CC-BY-4.0",
+      "name": "P25 Trabzon",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Tunceli Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41062
+      },
+      "id": "28662",
+      "license": "CC-BY-4.0",
+      "name": "P25 Tunceli",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Sanliurfa Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41063
+      },
+      "id": "28663",
+      "license": "CC-BY-4.0",
+      "name": "P25 Sanliurfa",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Usak Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41064
+      },
+      "id": "28664",
+      "license": "CC-BY-4.0",
+      "name": "P25 Usak",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Van Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41065
+      },
+      "id": "28665",
+      "license": "CC-BY-4.0",
+      "name": "P25 Van",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Yozgat Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41066
+      },
+      "id": "28666",
+      "license": "CC-BY-4.0",
+      "name": "P25 Yozgat",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Zonguldak Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41067
+      },
+      "id": "28667",
+      "license": "CC-BY-4.0",
+      "name": "P25 Zonguldak",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Aksaray Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41068
+      },
+      "id": "28668",
+      "license": "CC-BY-4.0",
+      "name": "P25 Aksaray",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Bayburt Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41069
+      },
+      "id": "28669",
+      "license": "CC-BY-4.0",
+      "name": "P25 Bayburt",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Karaman Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41070
+      },
+      "id": "28670",
+      "license": "CC-BY-4.0",
+      "name": "P25 Karaman",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Kirikkale Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41071
+      },
+      "id": "28671",
+      "license": "CC-BY-4.0",
+      "name": "P25 Kirikkale",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "<p>P25 Batman Reflektoru</p>",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41072
+      },
+      "id": "28672",
+      "license": "CC-BY-4.0",
+      "name": "P25 Batman",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Sirnak Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41073
+      },
+      "id": "28673",
+      "license": "CC-BY-4.0",
+      "name": "P25 Sirnak",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Bartin Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41074
+      },
+      "id": "28674",
+      "license": "CC-BY-4.0",
+      "name": "P25 Bartin",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Ardahan Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41075
+      },
+      "id": "28675",
+      "license": "CC-BY-4.0",
+      "name": "P25 Ardahan",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Igdir Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41076
+      },
+      "id": "28676",
+      "license": "CC-BY-4.0",
+      "name": "P25 Igdir",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
       "dashboard": "https://p25.ta2kw.keenetic.pro",
       "description": "<p>Talkgroup 28677 P25 YALOVA T&Uuml;RK\u0130YE<br><br>DMR T&Uuml;RK\u0130YE</p>",
       "dial": {
@@ -2113,33 +3103,64 @@
     },
     {
       "country": "TR",
-      "dashboard": "https://dvs.pistar.com.tr",
+      "description": "P25 Karabuk Reflektoru",
       "dial": {
-        "host": "141.144.206.211",
+        "host": "dmr.pistar.com.tr",
         "kind": "p25",
-        "port": 41000
+        "port": 41078
       },
-      "id": "28699",
+      "id": "28678",
       "license": "CC-BY-4.0",
-      "name": "URFTRK",
+      "name": "P25 Karabuk",
       "network": "p25",
       "source": "dvref",
       "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
-      "country": "JP",
-      "dashboard": "http://xlx297.duckdns.org/",
+      "country": "TR",
+      "description": "P25 Kilis Reflektoru",
       "dial": {
-        "host": "xlx297.duckdns.org",
+        "host": "dmr.pistar.com.tr",
         "kind": "p25",
-        "port": 41000
+        "port": 41079
       },
-      "id": "297",
+      "id": "28679",
       "license": "CC-BY-4.0",
-      "name": "URF297",
+      "name": "P25 Kilis",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "JA9HYM"
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "P25 Osmaniye Reflektoru",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41080
+      },
+      "id": "28680",
+      "license": "CC-BY-4.0",
+      "name": "P25 Osmaniye",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "dashboard": "http://dmr.pistar.com.tr:28281/",
+      "description": "TurkLINK P25 81 Reflektor Odasi",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "p25",
+        "port": 41081
+      },
+      "id": "28681",
+      "license": "CC-BY-4.0",
+      "name": "P25 Duzce",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "US",
@@ -3130,7 +4151,7 @@
       },
       "id": "31701",
       "license": "CC-BY-4.0",
-      "name": "Starfleet Amateur Radio Group - Trek Talk",
+      "name": "Starfleet Amateur Radio Group - Trek Talk - 31701",
       "network": "p25",
       "source": "dvref",
       "sponsor": "Starfleet Amateur Radio Group"
@@ -4591,21 +5612,6 @@
     },
     {
       "country": "TH",
-      "dashboard": "http://203.159.93.71/",
-      "dial": {
-        "host": "hs9awo.com",
-        "kind": "p25",
-        "port": 41000
-      },
-      "id": "535",
-      "license": "CC-BY-4.0",
-      "name": "URF535",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "HS9AI pattani Thailand"
-    },
-    {
-      "country": "TH",
       "dashboard": "http://synceyote.ddns.net:8086",
       "dial": {
         "host": "synceyote.ddns.net",
@@ -5290,15 +6296,14 @@
     },
     {
       "country": "US",
-      "description": "<p>N1YKT-HUB | Mid South Multimode &mdash; Public URF073 reflector supporting DMR/TGIF, YSF, NXDN, P25, and M17. AllStar node 623123. Module A: TGIF.</p>",
       "dial": {
-        "host": "162.213.130.92",
+        "host": "162.213.130.93",
         "kind": "p25",
         "port": 41000
       },
       "id": "73",
       "license": "CC-BY-4.0",
-      "name": "URF073",
+      "name": "Mid South P25",
       "network": "p25",
       "source": "dvref",
       "sponsor": "MID SOUTH MULTIMODE"
@@ -5496,21 +6501,6 @@
       "name": "JesusSaves",
       "network": "p25",
       "source": "dvref"
-    },
-    {
-      "country": "US",
-      "dashboard": "https://wmrasystem.com/P25Reflector/",
-      "dial": {
-        "host": "wmrasystem.com",
-        "kind": "p25",
-        "port": 41000
-      },
-      "id": "7941",
-      "license": "CC-BY-4.0",
-      "name": "WMRA MULTIMODE NETWORK",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "WMRA"
     },
     {
       "country": "CN",

@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1665,
-  "generated": "2026-11-05",
+  "count": 1666,
+  "generated": "2026-11-06",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -925,22 +925,6 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "K0RAP"
-    },
-    {
-      "country": "ES",
-      "dashboard": "https://sala-andalucia.es/1/",
-      "description": "COSTA-ATLANTIC",
-      "dial": {
-        "host": "sala-andalucia.es",
-        "kind": "ysf",
-        "port": 42399
-      },
-      "id": "00086",
-      "license": "CC-BY-4.0",
-      "name": "ACRAB",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "xreflector"
     },
     {
       "country": "US",
@@ -1882,6 +1866,22 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "N3BBF"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://xlx218.chaverimradio.com",
+      "description": "URF218",
+      "dial": {
+        "host": "xlx218.chaverimradio.com",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00218",
+      "license": "CC-BY-4.0",
+      "name": "URF218",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "Chaverim Radio Club"
     },
     {
       "country": "BH",
@@ -6092,22 +6092,6 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "PennLink Group"
-    },
-    {
-      "country": "US",
-      "dashboard": "https://wmrasystem.com/db/",
-      "description": "MULTIMODE",
-      "dial": {
-        "host": "wmrasystem.com",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "07941",
-      "license": "CC-BY-4.0",
-      "name": "WMRA",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "WMRA"
     },
     {
       "country": "GB",
@@ -11014,10 +10998,10 @@
     },
     {
       "country": "US",
-      "dashboard": "http://24.111.198.192:80",
+      "dashboard": "http://24.111.119.66:80",
       "description": "DX3L Multilink",
       "dial": {
-        "host": "24.111.198.192",
+        "host": "24.111.119.66",
         "kind": "ysf",
         "port": 42000
       },
@@ -14798,6 +14782,22 @@
     },
     {
       "country": "US",
+      "dashboard": "http://ysf.hxo.radio",
+      "description": "BM TG 31325",
+      "dial": {
+        "host": "ysf.hxo.radio",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "31325",
+      "license": "CC-BY-4.0",
+      "name": "HXO Reflector",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "Las Vegas Repeater Association"
+    },
+    {
+      "country": "US",
       "dashboard": "http://n1pce-ysf.ddns.net:8081",
       "description": "Northern-NHASL",
       "dial": {
@@ -17010,19 +17010,19 @@
     },
     {
       "country": "FR",
-      "dashboard": "http://xlx521.f1ptl.net:85",
-      "description": "Serveur XLX521",
+      "dashboard": "http://xlx562.ysf-france.fr",
+      "description": "Serveur XLX562",
       "dial": {
-        "host": "xlx521.f1ptl.net",
+        "host": "xlx562.ysf-france.fr",
         "kind": "ysf",
-        "port": 42521
+        "port": 42000
       },
-      "id": "42521",
+      "id": "42562",
       "license": "CC-BY-4.0",
-      "name": "XLX521",
+      "name": "YSF-XLX562",
       "network": "ysf",
       "source": "dvref",
-      "sponsor": "F1PTL"
+      "sponsor": "F1PTL Bruno"
     },
     {
       "country": "PT",
@@ -21684,7 +21684,7 @@
       "country": "US",
       "description": "Netoholics Net",
       "dial": {
-        "host": "45.76.255.39",
+        "host": "44.30.157.21",
         "kind": "ysf",
         "port": 42002
       },
@@ -25685,6 +25685,22 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "IQ5QD"
+    },
+    {
+      "country": "JP",
+      "dashboard": "https://xlxyai.ja3yai.club/",
+      "description": "URFYAI",
+      "dial": {
+        "host": "xlxyai.ja3yai.club",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "98765",
+      "license": "CC-BY-4.0",
+      "name": "URFYAI",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "JG3HLX"
     },
     {
       "country": "US",
