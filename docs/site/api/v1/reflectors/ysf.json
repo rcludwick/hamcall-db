@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1666,
-  "generated": "2026-11-06",
+  "count": 1661,
+  "generated": "2026-11-07",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1038,22 +1038,6 @@
       "sponsor": "New England Digital Radio"
     },
     {
-      "country": "JP",
-      "dashboard": "http://133.125.58.227/",
-      "description": "URF098",
-      "dial": {
-        "host": "133.125.58.227",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "00098",
-      "license": "CC-BY-4.0",
-      "name": "URF098",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "fukumoto"
-    },
-    {
       "country": "PL",
       "dashboard": "http://93.179.193.199/",
       "description": "XLX003",
@@ -1771,22 +1755,6 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "FreeDMR GREECE"
-    },
-    {
-      "country": "NL",
-      "dashboard": "http://vex-nld.ddns.net",
-      "description": "Dutch VEX YSF",
-      "dial": {
-        "host": "159.173.136.37",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "00204",
-      "license": "CC-BY-4.0",
-      "name": "VEX-YSF204",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "PD2VDY"
     },
     {
       "country": "GB",
@@ -6472,22 +6440,6 @@
       "sponsor": "B. Degen"
     },
     {
-      "country": "JP",
-      "dashboard": "http://xlxa08.duckdns.org/",
-      "description": "Aoba",
-      "dial": {
-        "host": "xlxa08.duckdns.org",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "10008",
-      "license": "CC-BY-4.0",
-      "name": "XLXA08",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "jf1kqi"
-    },
-    {
       "country": "CN",
       "dashboard": "http://www.bh1nyr.net",
       "description": "BM TG46010",
@@ -8762,22 +8714,6 @@
       "source": "dvref"
     },
     {
-      "country": "GR",
-      "dashboard": "http://c4fmteam.ddns.net:1900",
-      "description": "GR-MACED C4FM",
-      "dial": {
-        "host": "79.107.29.98",
-        "kind": "ysf",
-        "port": 42008
-      },
-      "id": "20800",
-      "license": "CC-BY-4.0",
-      "name": "MACEDONIA C4F",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "GREEK C4FM NETWORK / SV9KIH"
-    },
-    {
       "country": "UA",
       "dashboard": "https://ysf25524.uw0wu.com/",
       "description": "DMR TG25524",
@@ -10120,6 +10056,22 @@
     },
     {
       "country": "IT",
+      "dashboard": "http://mp-clustertrapani.ddns.net:8088/",
+      "description": "MP-TRAPANI",
+      "dial": {
+        "host": "mp-clustertrapani.ddns.net",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "22275",
+      "license": "CC-BY-4.0",
+      "name": "TRAPANI-MP",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "IU2PLZ & IT9GAK"
+    },
+    {
+      "country": "IT",
       "dashboard": "http://aritrani.is-very-good.org/ysf/main.php",
       "description": "Trani Conf",
       "dial": {
@@ -10950,22 +10902,6 @@
       "sponsor": "Bishop Auckland Radio Amateurs Club"
     },
     {
-      "country": "GB",
-      "dashboard": "https://england.oz-dmr.network/",
-      "description": "OZ-DMR NETWORK",
-      "dial": {
-        "host": "england.oz-dmr.network",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "23595",
-      "license": "CC-BY-4.0",
-      "name": "OZ-DMR (UK)",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "OZ-DMR NETWORK"
-    },
-    {
       "country": "US",
       "description": "NZ3C Club Link",
       "dial": {
@@ -11527,9 +11463,9 @@
       "country": "PL",
       "description": "YSF Legnica",
       "dial": {
-        "host": "hma0b998d01.sn.mynetname.net",
+        "host": "57.128.208.118",
         "kind": "ysf",
-        "port": 42002
+        "port": 42000
       },
       "id": "26067",
       "license": "CC-BY-4.0",
@@ -16994,21 +16930,6 @@
       "sponsor": "KCWide"
     },
     {
-      "country": "US",
-      "description": "N1YKT YSF HUB",
-      "dial": {
-        "host": "162.213.130.92",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "42450",
-      "license": "CC-BY-4.0",
-      "name": "N1YKT",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "N1YKT"
-    },
-    {
       "country": "FR",
       "dashboard": "http://xlx562.ysf-france.fr",
       "description": "Serveur XLX562",
@@ -21686,7 +21607,7 @@
       "dial": {
         "host": "44.30.157.21",
         "kind": "ysf",
-        "port": 42002
+        "port": 42022
       },
       "id": "67498",
       "license": "CC-BY-4.0",

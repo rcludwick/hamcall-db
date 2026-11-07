@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 456,
-  "generated": "2026-11-06",
+  "count": 454,
+  "generated": "2026-11-07",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1023,22 +1023,6 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "2022_ADN_SYSTEMS_HELLAS_NODE"
-    },
-    {
-      "country": "NL",
-      "dashboard": "http://vex-nld.ddns.net",
-      "description": "<p>204 / P25 NL-Main Reflector</p>",
-      "dial": {
-        "host": "159.173.136.37",
-        "kind": "p25",
-        "port": 41000
-      },
-      "id": "204",
-      "license": "CC-BY-4.0",
-      "name": "VEX-NL-P25",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "PD2VDY"
     },
     {
       "country": "NL",
@@ -3202,7 +3186,7 @@
       },
       "id": "30252",
       "license": "CC-BY-4.0",
-      "name": "VE5SKN SASKWARN Multimode Cloud Server",
+      "name": "Saskwarn_Parkland Radio Hub.",
       "network": "p25",
       "source": "dvref",
       "sponsor": "VE5AAS"
@@ -5992,18 +5976,18 @@
     },
     {
       "country": "US",
-      "description": "<p>Netoholics Network multi-mode reflector supporting DMR, M17, P25, and NXDN.</p>",
+      "description": "<p>Netoholics Network P25 reflector, Talkgroup 6749, connected to AllStarLink node 674982.</p>",
       "dial": {
-        "host": "urf.netoholicsnetwork.net",
+        "host": "44.30.157.21",
         "kind": "p25",
-        "port": 41000
+        "port": 51000
       },
       "id": "6749",
       "license": "CC-BY-4.0",
-      "name": "URFNET",
+      "name": "Netoholics Network",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "Netoholics Network"
+      "sponsor": "KN4EWT / Netoholics Network"
     },
     {
       "country": "US",
@@ -6293,20 +6277,6 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "PU4RON"
-    },
-    {
-      "country": "US",
-      "dial": {
-        "host": "162.213.130.93",
-        "kind": "p25",
-        "port": 41000
-      },
-      "id": "73",
-      "license": "CC-BY-4.0",
-      "name": "Mid South P25",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "MID SOUTH MULTIMODE"
     },
     {
       "country": "US",

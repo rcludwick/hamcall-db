@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 149,
-  "generated": "2026-11-06",
+  "count": 148,
+  "generated": "2026-11-07",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -868,28 +868,6 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "HELLAS Zone Net! By SA7SVR"
-    },
-    {
-      "country": "NL",
-      "dashboard": "http://vex-nld.ddns.net",
-      "description": "<p>VEX-NLD M17-204</p>",
-      "dial": {
-        "callsign": "M17-204",
-        "host": "159.173.136.37",
-        "kind": "m17",
-        "modules": [
-          "A",
-          "B",
-          "C"
-        ],
-        "port": 17000
-      },
-      "id": "M17-204",
-      "license": "CC-BY-4.0",
-      "name": "VEX-NL-M17",
-      "network": "m17",
-      "source": "dvref",
-      "sponsor": "PD2VDY"
     },
     {
       "country": "US",
@@ -3316,7 +3294,7 @@
         "modules": [
           "A"
         ],
-        "port": 17000
+        "port": 27000
       },
       "id": "M17-NET",
       "license": "CC-BY-4.0",

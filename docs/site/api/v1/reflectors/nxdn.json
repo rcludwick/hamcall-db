@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 419,
-  "generated": "2026-11-06",
+  "count": 418,
+  "generated": "2026-11-07",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -635,22 +635,6 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
-    },
-    {
-      "country": "NL",
-      "dashboard": "http://vex-nld.ddns.net",
-      "description": "<p>VEX-NLD NXDN TG 200</p>",
-      "dial": {
-        "host": "159.173.136.37",
-        "kind": "nxdn",
-        "port": 41400
-      },
-      "id": "200",
-      "license": "CC-BY-4.0",
-      "name": "VEX-NL-NXDN",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "PD2VDY"
     },
     {
       "country": "AT",
@@ -5589,18 +5573,18 @@
     },
     {
       "country": "US",
-      "description": "<p>Netoholics Network multi-mode reflector supporting DMR, M17, P25, and NXDN.</p>",
+      "description": "<p>Netoholics Network NXDN reflector, Talkgroup 6749, linked to AllStarLink node 674982.</p>",
       "dial": {
-        "host": "urf.netoholicsnetwork.net",
+        "host": "44.30.157.21",
         "kind": "nxdn",
-        "port": 41400
+        "port": 51400
       },
       "id": "6749",
       "license": "CC-BY-4.0",
-      "name": "URFNET",
+      "name": "Netoholics Network",
       "network": "nxdn",
       "source": "dvref",
-      "sponsor": "Netoholics Network"
+      "sponsor": "KN4EWT / Netoholics Network"
     },
     {
       "country": "NL",

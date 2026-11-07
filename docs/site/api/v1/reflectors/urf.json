@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 141,
-  "generated": "2026-11-06",
+  "count": 139,
+  "generated": "2026-11-07",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -280,20 +280,6 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "New England Digital Radio"
-    },
-    {
-      "country": "JP",
-      "dashboard": "http://133.125.58.227/",
-      "dial": {
-        "host": "133.125.58.227",
-        "kind": "urf"
-      },
-      "id": "098",
-      "license": "CC-BY-4.0",
-      "name": "Aoba",
-      "network": "urf",
-      "source": "dvref",
-      "sponsor": "fukumoto"
     },
     {
       "country": "BR",
@@ -948,7 +934,7 @@
       },
       "id": "307",
       "license": "CC-BY-4.0",
-      "name": "307",
+      "name": "URF307 in Wyoming",
       "network": "urf",
       "source": "dvref",
       "sponsor": "QuadNet"
@@ -1416,7 +1402,7 @@
       },
       "id": "587",
       "license": "CC-BY-4.0",
-      "name": "587",
+      "name": "URF587 in Alabama",
       "network": "urf",
       "source": "dvref",
       "sponsor": "QuadNet"
@@ -2354,20 +2340,6 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "G6PHF"
-    },
-    {
-      "country": "US",
-      "description": "<p>Netoholics Network multi-mode reflector supporting DMR, M17, P25, and NXDN.</p>",
-      "dial": {
-        "host": "urf.netoholicsnetwork.net",
-        "kind": "urf"
-      },
-      "id": "NET",
-      "license": "CC-BY-4.0",
-      "name": "Netoholics Multi-Mode Reflector",
-      "network": "urf",
-      "source": "dvref",
-      "sponsor": "Netoholics Network"
     },
     {
       "country": "US",
