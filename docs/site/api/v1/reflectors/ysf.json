@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1661,
-  "generated": "2026-11-07",
+  "count": 1668,
+  "generated": "2026-11-08",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1757,6 +1757,22 @@
       "sponsor": "FreeDMR GREECE"
     },
     {
+      "country": "NL",
+      "dashboard": "http://vex-nld.ddns.net",
+      "description": "VEX-NLD-YSF204",
+      "dial": {
+        "host": "159.173.136.37",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00204",
+      "license": "CC-BY-4.0",
+      "name": "VEX-YSF204",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "PD2VDY"
+    },
+    {
       "country": "GB",
       "dashboard": "http://dash-xlx207.duckdns.org",
       "description": "XLX207A MODULE",
@@ -2073,10 +2089,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "https://ptt.pistar.com.tr:30286",
+      "dashboard": "https://2861.adn.systems",
       "description": "Turkiye Genel",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "2861.adn.systems",
         "kind": "ysf",
         "port": 42286
       },
@@ -2197,22 +2213,6 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "[email removed]"
-    },
-    {
-      "country": "CA",
-      "dashboard": "http://304.ve5aas.ca",
-      "description": "URF304",
-      "dial": {
-        "host": "304.ve5aas.ca",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "00304",
-      "license": "CC-BY-4.0",
-      "name": "URF304",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "VE5SD"
     },
     {
       "country": "AU",
@@ -4168,7 +4168,7 @@
       "country": "FR",
       "description": "French Riviera",
       "dial": {
-        "host": "rodobk.ddns.net",
+        "host": "french-riviera.ddns.net",
         "kind": "ysf",
         "port": 42000
       },
@@ -4923,6 +4923,36 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "K2LN"
+    },
+    {
+      "country": "TR",
+      "description": "YSF Samsun",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "ysf",
+        "port": 42055
+      },
+      "id": "02855",
+      "license": "CC-BY-4.0",
+      "name": "YSF Samsun",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "YSF Tekirdag",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "ysf",
+        "port": 42059
+      },
+      "id": "02859",
+      "license": "CC-BY-4.0",
+      "name": "YSF Tekirdag",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "US",
@@ -12954,6 +12984,21 @@
     },
     {
       "country": "TR",
+      "description": "Diyarbakir",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "ysf",
+        "port": 42021
+      },
+      "id": "28621",
+      "license": "CC-BY-4.0",
+      "name": "YSF Diyarbakr",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
       "description": "YSF Edirne",
       "dial": {
         "host": "dmr.pistar.com.tr",
@@ -13207,6 +13252,21 @@
       "id": "28638",
       "license": "CC-BY-4.0",
       "name": "YSF Kayseri",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "Kirklareli",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "ysf",
+        "port": 42039
+      },
+      "id": "28639",
+      "license": "CC-BY-4.0",
+      "name": "YSF Kirklarel",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
@@ -13502,10 +13562,10 @@
     },
     {
       "country": "TH",
-      "dashboard": "https://xlx919.freeddns.org",
+      "dashboard": "http://xlx919.freeddns.org",
       "description": "XLX Reflector",
       "dial": {
-        "host": "128.199.235.93",
+        "host": "159.223.67.130",
         "kind": "ysf",
         "port": 42000
       },
@@ -16930,6 +16990,21 @@
       "sponsor": "KCWide"
     },
     {
+      "country": "US",
+      "description": "N1YKT YSF HUB",
+      "dial": {
+        "host": "162.213.130.92",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "42450",
+      "license": "CC-BY-4.0",
+      "name": "N1YKT",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "N1YKT"
+    },
+    {
       "country": "FR",
       "dashboard": "http://xlx562.ysf-france.fr",
       "description": "Serveur XLX562",
@@ -18765,7 +18840,7 @@
     {
       "country": "CA",
       "dashboard": "http://304.ve5aas.ca",
-      "description": "SaskWarn/Parkl",
+      "description": "Saskwarn Parkl",
       "dial": {
         "host": "304.ve5aas.ca",
         "kind": "ysf",
@@ -18775,7 +18850,8 @@
       "license": "CC-BY-4.0",
       "name": "XLX304",
       "network": "ysf",
-      "source": "dvref"
+      "source": "dvref",
+      "sponsor": "VE5AAS - Rob Cates"
     },
     {
       "country": "UY",
@@ -23687,6 +23763,22 @@
       "sponsor": "KC2ABV"
     },
     {
+      "country": "DE",
+      "dashboard": "https://xlx.dn2ane.de/",
+      "description": "XLX 084",
+      "dial": {
+        "host": "xlx.dn2ane.de",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "81925",
+      "license": "CC-BY-4.0",
+      "name": "DN2ANE",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "DM8ANE"
+    },
+    {
       "country": "CA",
       "dashboard": "http://xlx.va2dfk.com",
       "description": "Club VE2MO",
@@ -24673,6 +24765,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "cumbriaCQ.com"
+    },
+    {
+      "country": "FR",
+      "dashboard": "https://ara.ham42.net/",
+      "description": "ARA",
+      "dial": {
+        "host": "ysf.pulsraider.com",
+        "kind": "ysf",
+        "port": 43000
+      },
+      "id": "88889",
+      "license": "CC-BY-4.0",
+      "name": "ARA_TO_YSF",
+      "network": "ysf",
+      "source": "dvref"
     },
     {
       "country": "CL",

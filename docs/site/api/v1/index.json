@@ -1,21 +1,21 @@
 {
   "api_version": "v1",
   "client_refresh_days": 7,
-  "count": 3972,
+  "count": 3985,
   "endpoints": {
     "all": "reflectors.json",
     "network": "reflectors/{network}.json",
     "openapi": "openapi.json"
   },
-  "expires_hint": "2026-11-14",
-  "generated": "2026-11-07",
+  "expires_hint": "2026-11-15",
+  "generated": "2026-11-08",
   "license": "mixed \u2014 see per-row license and NOTICE",
   "license_url": "https://github.com/rcludwick/hamcall-db/blob/main/NOTICE",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
   "networks": {
     "dmr": {
-      "count": 193,
-      "generated": "2026-11-07",
+      "count": 194,
+      "generated": "2026-11-08",
       "license": "CC BY 4.0",
       "source": {
         "name": "DVRef",
@@ -102,13 +102,13 @@
         },
         "adn-united-kingdom": {
           "count": 7,
-          "fetched": "2026-10-09",
+          "fetched": "2026-11-08",
           "generated": "2026-09-09",
           "url": "reflectors/dmr/adn-united-kingdom/talkgroups.json"
         },
         "amcomm": {
           "count": 245,
-          "fetched": "2026-10-09",
+          "fetched": "2026-11-08",
           "generated": "2026-09-10",
           "url": "reflectors/dmr/amcomm/talkgroups.json"
         },
@@ -120,7 +120,7 @@
         },
         "ar-norasingh": {
           "count": 1,
-          "fetched": "2026-10-09",
+          "fetched": "2026-11-08",
           "generated": "2026-09-10",
           "url": "reflectors/dmr/ar-norasingh/talkgroups.json"
         },
@@ -640,6 +640,12 @@
           "generated": "2026-10-01",
           "url": "reflectors/dmr/ve2sus-dmr/talkgroups.json"
         },
+        "vex-nld-dmr": {
+          "count": 1,
+          "fetched": "2026-11-08",
+          "generated": "2026-11-08",
+          "url": "reflectors/dmr/vex-nld-dmr/talkgroups.json"
+        },
         "w0chpradio-network": {
           "count": 1,
           "fetched": "2026-10-31",
@@ -788,8 +794,8 @@
       "url": "reflectors/dmr.json"
     },
     "dstar": {
-      "count": 959,
-      "generated": "2026-11-07",
+      "count": 958,
+      "generated": "2026-11-08",
       "license": "mixed \u2014 see per-row license and NOTICE",
       "source": {
         "name": "XLX registry (LX1IQ) + Pi-Star DExtra hosts + Pi-Star DPlus/DCS names",
@@ -798,8 +804,8 @@
       "url": "reflectors/dstar.json"
     },
     "m17": {
-      "count": 148,
-      "generated": "2026-11-07",
+      "count": 150,
+      "generated": "2026-11-08",
       "license": "CC BY 4.0",
       "source": {
         "name": "DVRef",
@@ -808,8 +814,8 @@
       "url": "reflectors/m17.json"
     },
     "nxdn": {
-      "count": 418,
-      "generated": "2026-11-07",
+      "count": 420,
+      "generated": "2026-11-08",
       "license": "CC BY 4.0",
       "source": {
         "name": "DVRef",
@@ -818,8 +824,8 @@
       "url": "reflectors/nxdn.json"
     },
     "p25": {
-      "count": 454,
-      "generated": "2026-11-07",
+      "count": 457,
+      "generated": "2026-11-08",
       "license": "CC BY 4.0",
       "source": {
         "name": "DVRef",
@@ -828,8 +834,8 @@
       "url": "reflectors/p25.json"
     },
     "urf": {
-      "count": 139,
-      "generated": "2026-11-07",
+      "count": 138,
+      "generated": "2026-11-08",
       "license": "CC BY 4.0",
       "source": {
         "name": "DVRef",
@@ -838,8 +844,8 @@
       "url": "reflectors/urf.json"
     },
     "ysf": {
-      "count": 1661,
-      "generated": "2026-11-07",
+      "count": 1668,
+      "generated": "2026-11-08",
       "license": "CC BY 4.0",
       "source": {
         "name": "DVRef",

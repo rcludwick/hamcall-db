@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 454,
-  "generated": "2026-11-07",
+  "count": 457,
+  "generated": "2026-11-08",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1026,6 +1026,22 @@
     },
     {
       "country": "NL",
+      "dashboard": "http://vex-nld.ddns.net",
+      "description": "<p>VEX-NLD P25</p>",
+      "dial": {
+        "host": "159.173.136.37",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "204",
+      "license": "CC-BY-4.0",
+      "name": "VEX-NLD-P25",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "PD2VDY"
+    },
+    {
+      "country": "NL",
       "dashboard": "https://pd2vdy.ddns.net/",
       "description": "<p>2044 / P25 NL-Oost Reflector</p>",
       "dial": {
@@ -1899,6 +1915,7 @@
     },
     {
       "country": "TR",
+      "dashboard": "https://2861.adn.systems",
       "description": "<p>P25 Turkiye Genel Reflector - YM2KT</p>",
       "dial": {
         "host": "2861.adn.systems",
@@ -3179,6 +3196,7 @@
     {
       "country": "CA",
       "dashboard": "http://304.ve5aas.ca",
+      "description": "<p>Saskwarn/Parkland Radio Hub, Saskatchewan, Canada. Linked amateur radio network supporting AllStar node 512333, BrandMeister DMR TG30252, YSF reflector 51233 (CA-XLX304, module A), D-Star DCS304 module B, P25 TG30252 and NXDN TG30252. Operated by VE5AAS.</p>",
       "dial": {
         "host": "304.ve5aas.ca",
         "kind": "p25",
@@ -3186,10 +3204,10 @@
       },
       "id": "30252",
       "license": "CC-BY-4.0",
-      "name": "Saskwarn_Parkland Radio Hub.",
+      "name": "Saskwarn Parkland Radio Hub",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "VE5AAS"
+      "sponsor": "VE5AAS - Rob Cates"
     },
     {
       "country": "CA",
@@ -3315,6 +3333,21 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "KT4ROY Trojan Amateur Radio Club"
+    },
+    {
+      "country": "US",
+      "description": "<p>Connected to AllStar Node 49050 this IP Network is connected fulltime to AllStar Node 460311, Brandmeister DMR TalkGroup 310311, TGIF DMR TalkGroup 310311, ADN Systems 3102 USA East TalkGroup 310311, DStar XLX-265 Module E, Echolink Node 327778, HamsOverIP PBX Phone Network by dialing 15000 and Amature Wire PBX by dialing 90051</p>",
+      "dial": {
+        "host": "p25.n8ema.com",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "31031",
+      "license": "CC-BY-4.0",
+      "name": "EMA IP NETWORK",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "N8EMA IP Digital Network"
     },
     {
       "country": "US",
@@ -6277,6 +6310,20 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "PU4RON"
+    },
+    {
+      "country": "US",
+      "dial": {
+        "host": "162.213.130.92",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "73",
+      "license": "CC-BY-4.0",
+      "name": "Mid South P25",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "MID SOUTH MULTIMODE"
     },
     {
       "country": "US",

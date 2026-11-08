@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 139,
-  "generated": "2026-11-07",
+  "count": 138,
+  "generated": "2026-11-08",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -888,21 +888,6 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "Colorado Digital"
-    },
-    {
-      "country": "CA",
-      "dashboard": "http://304.ve5aas.ca",
-      "description": "<p>YSF, DMR, soon to be D-Star reflector</p>",
-      "dial": {
-        "host": "304.ve5aas.ca",
-        "kind": "urf"
-      },
-      "id": "304",
-      "license": "CC-BY-4.0",
-      "name": "Multi reflector",
-      "network": "urf",
-      "source": "dvref",
-      "sponsor": "VE5SD"
     },
     {
       "country": "AU",

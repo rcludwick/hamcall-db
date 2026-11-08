@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 418,
-  "generated": "2026-11-07",
+  "count": 420,
+  "generated": "2026-11-08",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -635,6 +635,22 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "NL",
+      "dashboard": "http://vex-nld.ddns.net",
+      "description": "<p>VEX-NLD TG200</p>",
+      "dial": {
+        "host": "159.173.136.37",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "200",
+      "license": "CC-BY-4.0",
+      "name": "VEX-NL-NXDN",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "PD2VDY"
     },
     {
       "country": "AT",
@@ -2334,6 +2350,7 @@
     },
     {
       "country": "TR",
+      "dashboard": "https://2861.adn.systems",
       "description": "<p>NXDN Turkiye Genel Reflector - YM2KG</p>",
       "dial": {
         "host": "2861.adn.systems",
@@ -3647,6 +3664,22 @@
       "sponsor": "S55ML, S56IAR"
     },
     {
+      "country": "CA",
+      "dashboard": "http://304.ve5aas.ca",
+      "description": "<p>Saskwarn/Parkland Radio Hub, Saskatchewan, Canada. Linked amateur radio network supporting AllStar node 512333, BrandMeister DMR TG30252, YSF reflector 51233 (CA-XLX304, module A), D-Star DCS304 module B, P25 TG30252 and NXDN TG30252. Operated by VE5AAS.</p>",
+      "dial": {
+        "host": "304.ve5aas.ca",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "30252",
+      "license": "CC-BY-4.0",
+      "name": "Saskwarn Parkland Radio Hub",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "VE5AAS - Rob Cates"
+    },
+    {
       "country": "US",
       "dashboard": "https://xlx.ara.radio",
       "description": "<p>Digital side of the Appalachian Repeater Association</p>",
@@ -4912,20 +4945,6 @@
       "sponsor": "Tennessee Statewide NXDN (W4YI)"
     },
     {
-      "country": "BD",
-      "dashboard": "http://44.27.133.131/nxdn",
-      "dial": {
-        "host": "44.27.133.131",
-        "kind": "nxdn",
-        "port": 41401
-      },
-      "id": "47070",
-      "license": "CC-BY-4.0",
-      "name": "S21ALT NXDN 47070",
-      "network": "nxdn",
-      "source": "dvref"
-    },
-    {
       "country": "US",
       "dashboard": "https://urf.hamvillage.org",
       "dial": {
@@ -5482,6 +5501,7 @@
     },
     {
       "country": "IT",
+      "dashboard": "http://nxdn.tim.com:57200",
       "dial": {
         "host": "ysf365.mooo.com",
         "kind": "nxdn",
@@ -5629,6 +5649,21 @@
       "id": "711",
       "license": "CC-BY-4.0",
       "name": "NXDN Global by David PA7LIM",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "David PA7LIM"
+    },
+    {
+      "country": "JP",
+      "dashboard": "http://nxdn.xreflector-jp.org",
+      "dial": {
+        "host": "nxdn.xreflector-jp.org",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "712",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Reflector 712",
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "David PA7LIM"

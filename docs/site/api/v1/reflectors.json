@@ -2,19 +2,19 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/\nXLX reflector data from the XLX registry maintained by Luc Engelmann, LX1IQ (http://xlxapi.rlx.lu/).\nStandalone XRF reflector data from the Pi-Star DExtra host file (http://www.pistar.uk/downloads/DExtra_Hosts.txt).\nREF and DCS reflector names from the Pi-Star DPlus and DCS host files (http://www.pistar.uk/downloads/), which compile them from dstargateway.org and xreflector.net DNS.",
   "client_refresh_days": 7,
-  "count": 3972,
-  "generated": "2026-11-07",
+  "count": 3985,
+  "generated": "2026-11-08",
   "license": "mixed \u2014 see per-row license and NOTICE",
   "license_url": "https://github.com/rcludwick/hamcall-db/blob/main/NOTICE",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
   "networks": {
-    "dmr": 193,
-    "dstar": 959,
-    "m17": 148,
-    "nxdn": 418,
-    "p25": 454,
-    "urf": 139,
-    "ysf": 1661
+    "dmr": 194,
+    "dstar": 958,
+    "m17": 150,
+    "nxdn": 420,
+    "p25": 457,
+    "urf": 138,
+    "ysf": 1668
   },
   "reflectors": [
     {
@@ -3756,6 +3756,30 @@
       "talkgroups": "reflectors/dmr/ve2sus-dmr/talkgroups.json"
     },
     {
+      "country": "NL",
+      "dashboard": "http://vex-nld.ddns.net",
+      "description": "<p>VEX-NLD-DMR</p>",
+      "dial": {
+        "host": "159.173.136.37",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "vex-nld-dmr",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/vex-nld-dmr/talkgroups/"
+      },
+      "id": "vex-nld-dmr-server-vex-nld-dmr",
+      "license": "CC-BY-4.0",
+      "name": "VEX-NLD-DMR",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "PD2VDY",
+      "system": "vex-nld-dmr",
+      "talkgroups": "reflectors/dmr/vex-nld-dmr/talkgroups.json"
+    },
+    {
       "country": "US",
       "dashboard": "https://vex.w0chp.radio",
       "dial": {
@@ -6439,7 +6463,7 @@
       "description": "Part of the ARRG.US Array ~ PEANUT on modules B C E ~ https://xlxreflector.org",
       "dial": {
         "callsign": "XRF102",
-        "host": "47.206.136.220",
+        "host": "47.207.125.214",
         "kind": "dextra",
         "port": 30001
       },
@@ -6461,7 +6485,7 @@
       "description": "Manitoulin Amateur Radio Club ~ PEANUT on modules A B ~ https://xlxreflector.org",
       "dial": {
         "callsign": "XRF103",
-        "host": "47.206.136.221",
+        "host": "47.207.125.215",
         "kind": "dextra",
         "port": 30001
       },
@@ -6483,7 +6507,7 @@
       "description": "Stone Mountian, Georgia - https://xlxreflector.org",
       "dial": {
         "callsign": "XRF104",
-        "host": "47.206.136.222",
+        "host": "47.207.125.221",
         "kind": "dextra",
         "port": 30001
       },
@@ -7293,7 +7317,7 @@
       "description": "D-STAR Elite Italian Reflector",
       "dial": {
         "callsign": "XRF143",
-        "host": "79.25.130.97",
+        "host": "87.13.62.237",
         "kind": "dextra",
         "port": 30001
       },
@@ -8541,8 +8565,8 @@
         "DCS208"
       ],
       "country": "France",
-      "dashboard": "http://xlx208.f5kav.fr",
-      "description": "French D-Star XLX Multiprotocol Reflector and Smart Group Server, brought to you by F5KAV",
+      "dashboard": "http://urf208.f5kav.fr",
+      "description": "French Multimode Reflector, brought to you by F5KAV Club",
       "dial": {
         "callsign": "XRF208",
         "host": "213.186.34.50",
@@ -9392,6 +9416,28 @@
     {
       "alias_source": "pistar",
       "aliases": [
+        "XRF249",
+        "REF249",
+        "DCS249"
+      ],
+      "country": "USA",
+      "dashboard": "http://107.128.234.208",
+      "description": "West Georgia Reflector - All Are Welcome",
+      "dial": {
+        "callsign": "XRF249",
+        "host": "209.184.235.51",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLX249",
+      "license": "none-stated",
+      "name": "XLX249",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "alias_source": "pistar",
+      "aliases": [
         "REF250",
         "DCS250"
       ],
@@ -10186,7 +10232,7 @@
       "description": "XLX288 / YSF IT-URF288 #22250",
       "dial": {
         "callsign": "XRF288",
-        "host": "79.47.27.103",
+        "host": "79.27.206.201",
         "kind": "dextra",
         "port": 30001
       },
@@ -11544,7 +11590,7 @@
         "DCS362"
       ],
       "country": "Italy",
-      "dashboard": "http://xls362.duckdns.org",
+      "dashboard": "http://xlx362.duckdns.org",
       "description": "XLX362 Multiprotocol Reflector 32100",
       "dial": {
         "callsign": "XRF362",
@@ -13541,6 +13587,28 @@
     {
       "alias_source": "pistar",
       "aliases": [
+        "XRF473",
+        "REF473",
+        "DCS473"
+      ],
+      "country": "ru",
+      "dashboard": "http://xlx.dmr",
+      "description": "XLX473 Multiprotocol Reflector by AMUR, info: [email removed]",
+      "dial": {
+        "callsign": "XRF473",
+        "host": "87.225.76.19",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLX473",
+      "license": "none-stated",
+      "name": "XLX473",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "alias_source": "pistar",
+      "aliases": [
         "XRF474",
         "REF474",
         "DCS474"
@@ -14555,9 +14623,9 @@
         "REF538",
         "DCS538"
       ],
-      "country": "Osaka Japan",
+      "country": "Japan",
       "dashboard": "http://xrf538.mydns.jp",
-      "description": "Higashiosaka-city Hosted by JG3EBB /information-->http://jg3ebb.mydns.jp",
+      "description": "Higashiosaka Reflector info=jg3ebb.mydns.jp",
       "dial": {
         "callsign": "XRF538",
         "host": "131.129.40.179",
@@ -15788,7 +15856,7 @@
       "description": "Yokohama Kouhoku TEST412B",
       "dial": {
         "callsign": "XRF639",
-        "host": "49.135.24.129",
+        "host": "49.135.36.122",
         "kind": "dextra",
         "port": 30001
       },
@@ -16944,9 +17012,9 @@
         "REF727",
         "DCS727"
       ],
-      "country": "Thailand",
+      "country": "your_country",
       "dashboard": "http://xlx727.gleeze.com",
-      "description": "Transcoding XLX to D*/DMR/YSF/P25 BM bridge",
+      "description": "your_comment",
       "dial": {
         "callsign": "XRF727",
         "host": "143.198.216.15",
@@ -17130,28 +17198,6 @@
       "id": "XLX738",
       "license": "none-stated",
       "name": "XLX738",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "alias_source": "pistar",
-      "aliases": [
-        "XRF740",
-        "REF740",
-        "DCS740"
-      ],
-      "country": "Ecuador",
-      "dashboard": "http://616264.ip.hamvoip.org/urfd",
-      "description": "Amerinet URF740 Universal Reflector",
-      "dial": {
-        "callsign": "XRF740",
-        "host": "192.253.246.5",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLX740",
-      "license": "none-stated",
-      "name": "XLX740",
       "network": "dstar",
       "source": "xlx"
     },
@@ -18079,28 +18125,6 @@
     {
       "alias_source": "pistar",
       "aliases": [
-        "XRF806",
-        "REF806",
-        "DCS806"
-      ],
-      "country": "D-STAR Austria Netz",
-      "dashboard": "http://xlx806.ddns.net/db",
-      "description": "D-STAR Austria Server",
-      "dial": {
-        "callsign": "XRF806",
-        "host": "188.63.22.20",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLX806",
-      "license": "none-stated",
-      "name": "XLX806",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "alias_source": "pistar",
-      "aliases": [
         "XRF807",
         "REF807",
         "DCS807"
@@ -18607,28 +18631,6 @@
     {
       "alias_source": "pistar",
       "aliases": [
-        "XRF835",
-        "REF835",
-        "DCS835"
-      ],
-      "country": "USA",
-      "dashboard": "https://wmrasystem.com/db",
-      "description": "WMRA: REFERENCE DASHBOARD BEFORE CONNECTING TO SYSTEM",
-      "dial": {
-        "callsign": "XRF835",
-        "host": "149.248.4.184",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLX835",
-      "license": "none-stated",
-      "name": "XLX835",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "alias_source": "pistar",
-      "aliases": [
         "XRF836",
         "REF836",
         "DCS836"
@@ -18744,8 +18746,8 @@
         "DCS845"
       ],
       "country": "USA",
-      "dashboard": "https://xlx845.pota.review",
-      "description": "Sponsored by POTA News and Review https://pota.review",
+      "dashboard": "https://xlx845.pota.review/dashboard",
+      "description": "Sponsored by POTA News and Reviews https://pota.review",
       "dial": {
         "callsign": "XRF845",
         "host": "71.174.60.28",
@@ -19286,6 +19288,28 @@
     {
       "alias_source": "pistar",
       "aliases": [
+        "XRF906",
+        "REF906",
+        "DCS906"
+      ],
+      "country": "Germany",
+      "dashboard": "https://xlx.lima07.de",
+      "description": "C4FM / D-STAR / DMR - Kamp-Lintfort, DO6IL",
+      "dial": {
+        "callsign": "XRF906",
+        "host": "81.169.240.11",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLX906",
+      "license": "none-stated",
+      "name": "XLX906",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "alias_source": "pistar",
+      "aliases": [
         "XRF907",
         "REF907",
         "DCS907"
@@ -19536,7 +19560,7 @@
       "description": "ADRThai : Analoge&Digital Radio Thailand",
       "dial": {
         "callsign": "XRF919",
-        "host": "128.199.235.93",
+        "host": "159.223.67.130",
         "kind": "dextra",
         "port": 30001
       },
@@ -21009,7 +21033,7 @@
       "description": "Part of the ARRG.US Array ~ https://xlxreflector.org",
       "dial": {
         "callsign": "XRFARG",
-        "host": "47.206.136.224",
+        "host": "47.207.125.216",
         "kind": "dextra",
         "port": 30001
       },
@@ -21550,6 +21574,28 @@
     {
       "alias_source": "pistar",
       "aliases": [
+        "XRFDEV",
+        "REFDEV",
+        "DCSDEV"
+      ],
+      "country": "United States",
+      "dashboard": "http://home.qthdx.com:8363",
+      "description": "Devanooga Club Repeater",
+      "dial": {
+        "callsign": "XRFDEV",
+        "host": "68.169.171.181",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLXDEV",
+      "license": "none-stated",
+      "name": "XLXDEV",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "alias_source": "pistar",
+      "aliases": [
         "XRFDIG",
         "REFDIG",
         "DCSDIG"
@@ -21565,28 +21611,6 @@
       "id": "XLXDIG",
       "license": "none-stated",
       "name": "XLXDIG",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "alias_source": "pistar",
-      "aliases": [
-        "XRFDLN",
-        "REFDLN",
-        "DCSDLN"
-      ],
-      "country": "Canada",
-      "dashboard": "https://xlx.radiorabbit.ca",
-      "description": "radiorabbit.ca - P25 TG 10369",
-      "dial": {
-        "callsign": "XRFDLN",
-        "host": "158.69.201.52",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLXDLN",
-      "license": "none-stated",
-      "name": "XLXDLN",
       "network": "dstar",
       "source": "xlx"
     },
@@ -24395,7 +24419,7 @@
     {
       "dial": {
         "callsign": "XRF321",
-        "host": "172.67.163.225",
+        "host": "104.21.57.126",
         "kind": "dextra",
         "port": 30001
       },
@@ -24628,24 +24652,6 @@
       "id": "XRF905",
       "license": "none-stated",
       "name": "XRF905",
-      "network": "dstar",
-      "source": "dextra"
-    },
-    {
-      "alias_source": "pistar",
-      "aliases": [
-        "REF906",
-        "DCS906"
-      ],
-      "dial": {
-        "callsign": "XRF906",
-        "host": "81.169.240.11",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XRF906",
-      "license": "none-stated",
-      "name": "XRF906",
       "network": "dstar",
       "source": "dextra"
     },
@@ -25588,6 +25594,28 @@
       "sponsor": "HELLAS Zone Net! By SA7SVR"
     },
     {
+      "country": "NL",
+      "dashboard": "http://vex-nld.ddns.net",
+      "description": "<p>VEX M17 reflector</p>",
+      "dial": {
+        "callsign": "M17-204",
+        "host": "159.173.136.37",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C"
+        ],
+        "port": 17000
+      },
+      "id": "M17-204",
+      "license": "CC-BY-4.0",
+      "name": "VEX-NLD-M17",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "PD2VDY"
+    },
+    {
       "country": "US",
       "dashboard": "https://m17-207.w1bsb.net",
       "description": "<p>A gathering place for M17 users in the Great State of Maine.&nbsp;</p>",
@@ -26432,7 +26460,7 @@
     },
     {
       "country": "TH",
-      "dashboard": "http://m17-727.gleeze.com:3000",
+      "dashboard": "http://xlx727.gleeze.com",
       "dial": {
         "callsign": "M17-727",
         "host": "143.198.216.15",
@@ -26776,6 +26804,25 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "HS0ZOE"
+    },
+    {
+      "country": "TH",
+      "dashboard": "http://xlx919.freeddns.org/",
+      "dial": {
+        "callsign": "M17-919",
+        "host": "159.223.67.130",
+        "kind": "m17",
+        "modules": [
+          "X"
+        ],
+        "port": 17000
+      },
+      "id": "M17-919",
+      "license": "CC-BY-4.0",
+      "name": "M17-919",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "e23jwe"
     },
     {
       "country": "GB",
@@ -29639,6 +29686,22 @@
       "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
+      "country": "NL",
+      "dashboard": "http://vex-nld.ddns.net",
+      "description": "<p>VEX-NLD TG200</p>",
+      "dial": {
+        "host": "159.173.136.37",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "200",
+      "license": "CC-BY-4.0",
+      "name": "VEX-NL-NXDN",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "PD2VDY"
+    },
+    {
       "country": "AT",
       "dashboard": "https://nxdn.oevsv.at/",
       "dial": {
@@ -31336,6 +31399,7 @@
     },
     {
       "country": "TR",
+      "dashboard": "https://2861.adn.systems",
       "description": "<p>NXDN Turkiye Genel Reflector - YM2KG</p>",
       "dial": {
         "host": "2861.adn.systems",
@@ -32649,6 +32713,22 @@
       "sponsor": "S55ML, S56IAR"
     },
     {
+      "country": "CA",
+      "dashboard": "http://304.ve5aas.ca",
+      "description": "<p>Saskwarn/Parkland Radio Hub, Saskatchewan, Canada. Linked amateur radio network supporting AllStar node 512333, BrandMeister DMR TG30252, YSF reflector 51233 (CA-XLX304, module A), D-Star DCS304 module B, P25 TG30252 and NXDN TG30252. Operated by VE5AAS.</p>",
+      "dial": {
+        "host": "304.ve5aas.ca",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "30252",
+      "license": "CC-BY-4.0",
+      "name": "Saskwarn Parkland Radio Hub",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "VE5AAS - Rob Cates"
+    },
+    {
       "country": "US",
       "dashboard": "https://xlx.ara.radio",
       "description": "<p>Digital side of the Appalachian Repeater Association</p>",
@@ -33914,20 +33994,6 @@
       "sponsor": "Tennessee Statewide NXDN (W4YI)"
     },
     {
-      "country": "BD",
-      "dashboard": "http://44.27.133.131/nxdn",
-      "dial": {
-        "host": "44.27.133.131",
-        "kind": "nxdn",
-        "port": 41401
-      },
-      "id": "47070",
-      "license": "CC-BY-4.0",
-      "name": "S21ALT NXDN 47070",
-      "network": "nxdn",
-      "source": "dvref"
-    },
-    {
       "country": "US",
       "dashboard": "https://urf.hamvillage.org",
       "dial": {
@@ -34484,6 +34550,7 @@
     },
     {
       "country": "IT",
+      "dashboard": "http://nxdn.tim.com:57200",
       "dial": {
         "host": "ysf365.mooo.com",
         "kind": "nxdn",
@@ -34631,6 +34698,21 @@
       "id": "711",
       "license": "CC-BY-4.0",
       "name": "NXDN Global by David PA7LIM",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "David PA7LIM"
+    },
+    {
+      "country": "JP",
+      "dashboard": "http://nxdn.xreflector-jp.org",
+      "dial": {
+        "host": "nxdn.xreflector-jp.org",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "712",
+      "license": "CC-BY-4.0",
+      "name": "NXDN Reflector 712",
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "David PA7LIM"
@@ -36391,6 +36473,22 @@
     },
     {
       "country": "NL",
+      "dashboard": "http://vex-nld.ddns.net",
+      "description": "<p>VEX-NLD P25</p>",
+      "dial": {
+        "host": "159.173.136.37",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "204",
+      "license": "CC-BY-4.0",
+      "name": "VEX-NLD-P25",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "PD2VDY"
+    },
+    {
+      "country": "NL",
       "dashboard": "https://pd2vdy.ddns.net/",
       "description": "<p>2044 / P25 NL-Oost Reflector</p>",
       "dial": {
@@ -37264,6 +37362,7 @@
     },
     {
       "country": "TR",
+      "dashboard": "https://2861.adn.systems",
       "description": "<p>P25 Turkiye Genel Reflector - YM2KT</p>",
       "dial": {
         "host": "2861.adn.systems",
@@ -38544,6 +38643,7 @@
     {
       "country": "CA",
       "dashboard": "http://304.ve5aas.ca",
+      "description": "<p>Saskwarn/Parkland Radio Hub, Saskatchewan, Canada. Linked amateur radio network supporting AllStar node 512333, BrandMeister DMR TG30252, YSF reflector 51233 (CA-XLX304, module A), D-Star DCS304 module B, P25 TG30252 and NXDN TG30252. Operated by VE5AAS.</p>",
       "dial": {
         "host": "304.ve5aas.ca",
         "kind": "p25",
@@ -38551,10 +38651,10 @@
       },
       "id": "30252",
       "license": "CC-BY-4.0",
-      "name": "Saskwarn_Parkland Radio Hub.",
+      "name": "Saskwarn Parkland Radio Hub",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "VE5AAS"
+      "sponsor": "VE5AAS - Rob Cates"
     },
     {
       "country": "CA",
@@ -38680,6 +38780,21 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "KT4ROY Trojan Amateur Radio Club"
+    },
+    {
+      "country": "US",
+      "description": "<p>Connected to AllStar Node 49050 this IP Network is connected fulltime to AllStar Node 460311, Brandmeister DMR TalkGroup 310311, TGIF DMR TalkGroup 310311, ADN Systems 3102 USA East TalkGroup 310311, DStar XLX-265 Module E, Echolink Node 327778, HamsOverIP PBX Phone Network by dialing 15000 and Amature Wire PBX by dialing 90051</p>",
+      "dial": {
+        "host": "p25.n8ema.com",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "31031",
+      "license": "CC-BY-4.0",
+      "name": "EMA IP NETWORK",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "N8EMA IP Digital Network"
     },
     {
       "country": "US",
@@ -41645,6 +41760,20 @@
     },
     {
       "country": "US",
+      "dial": {
+        "host": "162.213.130.92",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "73",
+      "license": "CC-BY-4.0",
+      "name": "Mid South P25",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "MID SOUTH MULTIMODE"
+    },
+    {
+      "country": "US",
       "dashboard": "http://p25.octanenetwork.net:4000/",
       "description": "<p>Linked to XLX732 - Module A</p>\r\n<p>&nbsp;</p>",
       "dial": {
@@ -43161,21 +43290,6 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "Colorado Digital"
-    },
-    {
-      "country": "CA",
-      "dashboard": "http://304.ve5aas.ca",
-      "description": "<p>YSF, DMR, soon to be D-Star reflector</p>",
-      "dial": {
-        "host": "304.ve5aas.ca",
-        "kind": "urf"
-      },
-      "id": "304",
-      "license": "CC-BY-4.0",
-      "name": "Multi reflector",
-      "network": "urf",
-      "source": "dvref",
-      "sponsor": "VE5SD"
     },
     {
       "country": "AU",
@@ -46535,6 +46649,22 @@
       "sponsor": "FreeDMR GREECE"
     },
     {
+      "country": "NL",
+      "dashboard": "http://vex-nld.ddns.net",
+      "description": "VEX-NLD-YSF204",
+      "dial": {
+        "host": "159.173.136.37",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00204",
+      "license": "CC-BY-4.0",
+      "name": "VEX-YSF204",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "PD2VDY"
+    },
+    {
       "country": "GB",
       "dashboard": "http://dash-xlx207.duckdns.org",
       "description": "XLX207A MODULE",
@@ -46851,10 +46981,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "https://ptt.pistar.com.tr:30286",
+      "dashboard": "https://2861.adn.systems",
       "description": "Turkiye Genel",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "2861.adn.systems",
         "kind": "ysf",
         "port": 42286
       },
@@ -46975,22 +47105,6 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "[email removed]"
-    },
-    {
-      "country": "CA",
-      "dashboard": "http://304.ve5aas.ca",
-      "description": "URF304",
-      "dial": {
-        "host": "304.ve5aas.ca",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "00304",
-      "license": "CC-BY-4.0",
-      "name": "URF304",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "VE5SD"
     },
     {
       "country": "AU",
@@ -48946,7 +49060,7 @@
       "country": "FR",
       "description": "French Riviera",
       "dial": {
-        "host": "rodobk.ddns.net",
+        "host": "french-riviera.ddns.net",
         "kind": "ysf",
         "port": 42000
       },
@@ -49701,6 +49815,36 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "K2LN"
+    },
+    {
+      "country": "TR",
+      "description": "YSF Samsun",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "ysf",
+        "port": 42055
+      },
+      "id": "02855",
+      "license": "CC-BY-4.0",
+      "name": "YSF Samsun",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "YSF Tekirdag",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "ysf",
+        "port": 42059
+      },
+      "id": "02859",
+      "license": "CC-BY-4.0",
+      "name": "YSF Tekirdag",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "US",
@@ -57732,6 +57876,21 @@
     },
     {
       "country": "TR",
+      "description": "Diyarbakir",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "ysf",
+        "port": 42021
+      },
+      "id": "28621",
+      "license": "CC-BY-4.0",
+      "name": "YSF Diyarbakr",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
       "description": "YSF Edirne",
       "dial": {
         "host": "dmr.pistar.com.tr",
@@ -57985,6 +58144,21 @@
       "id": "28638",
       "license": "CC-BY-4.0",
       "name": "YSF Kayseri",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "TR",
+      "description": "Kirklareli",
+      "dial": {
+        "host": "dmr.pistar.com.tr",
+        "kind": "ysf",
+        "port": 42039
+      },
+      "id": "28639",
+      "license": "CC-BY-4.0",
+      "name": "YSF Kirklarel",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
@@ -58280,10 +58454,10 @@
     },
     {
       "country": "TH",
-      "dashboard": "https://xlx919.freeddns.org",
+      "dashboard": "http://xlx919.freeddns.org",
       "description": "XLX Reflector",
       "dial": {
-        "host": "128.199.235.93",
+        "host": "159.223.67.130",
         "kind": "ysf",
         "port": 42000
       },
@@ -61708,6 +61882,21 @@
       "sponsor": "KCWide"
     },
     {
+      "country": "US",
+      "description": "N1YKT YSF HUB",
+      "dial": {
+        "host": "162.213.130.92",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "42450",
+      "license": "CC-BY-4.0",
+      "name": "N1YKT",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "N1YKT"
+    },
+    {
       "country": "FR",
       "dashboard": "http://xlx562.ysf-france.fr",
       "description": "Serveur XLX562",
@@ -63543,7 +63732,7 @@
     {
       "country": "CA",
       "dashboard": "http://304.ve5aas.ca",
-      "description": "SaskWarn/Parkl",
+      "description": "Saskwarn Parkl",
       "dial": {
         "host": "304.ve5aas.ca",
         "kind": "ysf",
@@ -63553,7 +63742,8 @@
       "license": "CC-BY-4.0",
       "name": "XLX304",
       "network": "ysf",
-      "source": "dvref"
+      "source": "dvref",
+      "sponsor": "VE5AAS - Rob Cates"
     },
     {
       "country": "UY",
@@ -68465,6 +68655,22 @@
       "sponsor": "KC2ABV"
     },
     {
+      "country": "DE",
+      "dashboard": "https://xlx.dn2ane.de/",
+      "description": "XLX 084",
+      "dial": {
+        "host": "xlx.dn2ane.de",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "81925",
+      "license": "CC-BY-4.0",
+      "name": "DN2ANE",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "DM8ANE"
+    },
+    {
       "country": "CA",
       "dashboard": "http://xlx.va2dfk.com",
       "description": "Club VE2MO",
@@ -69451,6 +69657,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "cumbriaCQ.com"
+    },
+    {
+      "country": "FR",
+      "dashboard": "https://ara.ham42.net/",
+      "description": "ARA",
+      "dial": {
+        "host": "ysf.pulsraider.com",
+        "kind": "ysf",
+        "port": 43000
+      },
+      "id": "88889",
+      "license": "CC-BY-4.0",
+      "name": "ARA_TO_YSF",
+      "network": "ysf",
+      "source": "dvref"
     },
     {
       "country": "CL",

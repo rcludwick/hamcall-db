@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 148,
-  "generated": "2026-11-07",
+  "count": 150,
+  "generated": "2026-11-08",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -870,6 +870,28 @@
       "sponsor": "HELLAS Zone Net! By SA7SVR"
     },
     {
+      "country": "NL",
+      "dashboard": "http://vex-nld.ddns.net",
+      "description": "<p>VEX M17 reflector</p>",
+      "dial": {
+        "callsign": "M17-204",
+        "host": "159.173.136.37",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C"
+        ],
+        "port": 17000
+      },
+      "id": "M17-204",
+      "license": "CC-BY-4.0",
+      "name": "VEX-NLD-M17",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "PD2VDY"
+    },
+    {
       "country": "US",
       "dashboard": "https://m17-207.w1bsb.net",
       "description": "<p>A gathering place for M17 users in the Great State of Maine.&nbsp;</p>",
@@ -1714,7 +1736,7 @@
     },
     {
       "country": "TH",
-      "dashboard": "http://m17-727.gleeze.com:3000",
+      "dashboard": "http://xlx727.gleeze.com",
       "dial": {
         "callsign": "M17-727",
         "host": "143.198.216.15",
@@ -2058,6 +2080,25 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "HS0ZOE"
+    },
+    {
+      "country": "TH",
+      "dashboard": "http://xlx919.freeddns.org/",
+      "dial": {
+        "callsign": "M17-919",
+        "host": "159.223.67.130",
+        "kind": "m17",
+        "modules": [
+          "X"
+        ],
+        "port": 17000
+      },
+      "id": "M17-919",
+      "license": "CC-BY-4.0",
+      "name": "M17-919",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "e23jwe"
     },
     {
       "country": "GB",

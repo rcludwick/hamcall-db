@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 193,
-  "generated": "2026-11-07",
+  "count": 194,
+  "generated": "2026-11-08",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -3746,6 +3746,30 @@
       "sponsor": "VE2SUS DMR",
       "system": "ve2sus-dmr",
       "talkgroups": "reflectors/dmr/ve2sus-dmr/talkgroups.json"
+    },
+    {
+      "country": "NL",
+      "dashboard": "http://vex-nld.ddns.net",
+      "description": "<p>VEX-NLD-DMR</p>",
+      "dial": {
+        "host": "159.173.136.37",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "vex-nld-dmr",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/vex-nld-dmr/talkgroups/"
+      },
+      "id": "vex-nld-dmr-server-vex-nld-dmr",
+      "license": "CC-BY-4.0",
+      "name": "VEX-NLD-DMR",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "PD2VDY",
+      "system": "vex-nld-dmr",
+      "talkgroups": "reflectors/dmr/vex-nld-dmr/talkgroups.json"
     },
     {
       "country": "US",
