@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 420,
-  "generated": "2026-11-08",
+  "count": 421,
+  "generated": "2026-11-09",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -4396,6 +4396,22 @@
       "sponsor": "K6HP"
     },
     {
+      "country": "US",
+      "dashboard": "https://link.swlalink.com",
+      "description": "<p>SWLA-LINK NXDN 337</p>",
+      "dial": {
+        "host": "144.202.25.92",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "337",
+      "license": "CC-BY-4.0",
+      "name": "SWLA-LINK",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "SWLA-LINK"
+    },
+    {
       "country": "IT",
       "dashboard": "https://urf.iv3scp.it",
       "dial": {
@@ -5441,7 +5457,7 @@
     },
     {
       "country": "RE",
-      "dashboard": "http://vmi2726828.contaboserver.net:9003",
+      "dashboard": "https://84.247.131.227/",
       "dial": {
         "host": "84.247.131.227",
         "kind": "nxdn",
@@ -5969,6 +5985,7 @@
     },
     {
       "country": "US",
+      "dashboard": "http://innet.tplinkdns.com:8090",
       "dial": {
         "host": "innet.tplinkdns.com",
         "kind": "nxdn",
@@ -5976,7 +5993,7 @@
       },
       "id": "777",
       "license": "CC-BY-4.0",
-      "name": "JesusSaves - Not Linked",
+      "name": "JesusSaves",
       "network": "nxdn",
       "source": "dvref"
     },

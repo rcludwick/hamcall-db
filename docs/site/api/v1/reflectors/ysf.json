@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1668,
-  "generated": "2026-11-08",
+  "count": 1671,
+  "generated": "2026-11-09",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -593,7 +593,8 @@
       "license": "CC-BY-4.0",
       "name": "QSOBOX",
       "network": "ysf",
-      "source": "dvref"
+      "source": "dvref",
+      "sponsor": "OpenRadioLink"
     },
     {
       "country": "ES",
@@ -829,6 +830,22 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "QsoBox"
+    },
+    {
+      "country": "ES",
+      "dashboard": "https://188.213.170.172/",
+      "description": "YSF ANDALUCIA",
+      "dial": {
+        "host": "188.213.170.172",
+        "kind": "ysf",
+        "port": 42007
+      },
+      "id": "00075",
+      "license": "CC-BY-4.0",
+      "name": "ANDALUCIA-QB",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "OpenRadioLink"
     },
     {
       "country": "US",
@@ -2498,6 +2515,22 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "K5WHG"
+    },
+    {
+      "country": "JP",
+      "dashboard": "http://133.125.58.227/",
+      "description": "URF098",
+      "dial": {
+        "host": "133.125.58.227",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00429",
+      "license": "CC-BY-4.0",
+      "name": "URF098",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "JF1KQI"
     },
     {
       "country": "US",
@@ -6639,6 +6672,22 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "SV2SNH"
+    },
+    {
+      "country": "JP",
+      "dashboard": "http://xlx429.duckdns.org/",
+      "description": "Aoba",
+      "dial": {
+        "host": "xlx429.duckdns.org",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "10429",
+      "license": "CC-BY-4.0",
+      "name": "XLX429",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "JF1KQI"
     },
     {
       "country": "US",
@@ -11493,7 +11542,7 @@
       "country": "PL",
       "description": "YSF Legnica",
       "dial": {
-        "host": "57.128.208.118",
+        "host": "ysfreflector.sp6.eu",
         "kind": "ysf",
         "port": 42000
       },
@@ -16500,7 +16549,7 @@
       "country": "IT",
       "description": "C4FM TEAM",
       "dial": {
-        "host": "2.86.36.9",
+        "host": "79.107.25.162",
         "kind": "ysf",
         "port": 42008
       },
@@ -19582,7 +19631,7 @@
     },
     {
       "country": "ES",
-      "dashboard": "http://mallorca.ysf.es/",
+      "dashboard": "https://mallorca.c4fm.es/?tab=heard",
       "description": "Islas Baleares",
       "dial": {
         "host": "57.131.25.19",
@@ -21301,7 +21350,7 @@
     },
     {
       "country": "FR",
-      "dashboard": "http://vmi2726828.contaboserver.net",
+      "dashboard": "https://84.247.131.227/p25/",
       "description": "64701",
       "dial": {
         "host": "84.247.131.227",
