@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "XLX reflector data from the XLX registry maintained by Luc Engelmann, LX1IQ (http://xlxapi.rlx.lu/).\nStandalone XRF reflector data from the Pi-Star DExtra host file (http://www.pistar.uk/downloads/DExtra_Hosts.txt).\nREF and DCS reflector names from the Pi-Star DPlus and DCS host files (http://www.pistar.uk/downloads/), which compile them from dstargateway.org and xreflector.net DNS.",
   "client_refresh_days": 7,
-  "count": 953,
-  "generated": "2026-11-09",
+  "count": 951,
+  "generated": "2026-11-10",
   "license": "mixed \u2014 see per-row license and NOTICE",
   "license_url": "https://github.com/rcludwick/hamcall-db/blob/main/NOTICE",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1079,7 +1079,7 @@
       "description": "sister to REF049",
       "dial": {
         "callsign": "XRF049",
-        "host": "54.237.10.173",
+        "host": "184.195.181.173",
         "kind": "dextra",
         "port": 30001
       },
@@ -5651,28 +5651,6 @@
     {
       "alias_source": "pistar",
       "aliases": [
-        "XRF274",
-        "REF274",
-        "DCS274"
-      ],
-      "country": "Japan",
-      "dashboard": "http://xlx274.duckdns.org/",
-      "description": "Funabashi",
-      "dial": {
-        "callsign": "XRF274",
-        "host": "153.134.137.150",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLX274",
-      "license": "none-stated",
-      "name": "XLX274",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "alias_source": "pistar",
-      "aliases": [
         "XRF275",
         "REF275",
         "DCS275"
@@ -5944,7 +5922,7 @@
       "description": "XLX288 / YSF IT-URF288 #22250",
       "dial": {
         "callsign": "XRF288",
-        "host": "87.21.222.26",
+        "host": "79.37.94.212",
         "kind": "dextra",
         "port": 30001
       },
@@ -8682,6 +8660,28 @@
     {
       "alias_source": "pistar",
       "aliases": [
+        "XRF437",
+        "REF437",
+        "DCS437"
+      ],
+      "country": "USA",
+      "dashboard": "http://109.172.7.162/xlxd",
+      "description": "FIJI_comment",
+      "dial": {
+        "callsign": "XRF437",
+        "host": "109.172.7.162",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLX437",
+      "license": "none-stated",
+      "name": "XLX437",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "alias_source": "pistar",
+      "aliases": [
         "XRF438",
         "REF438",
         "DCS438"
@@ -9275,28 +9275,6 @@
     {
       "alias_source": "pistar",
       "aliases": [
-        "XRF473",
-        "REF473",
-        "DCS473"
-      ],
-      "country": "ru",
-      "dashboard": "http://xlx.dmr",
-      "description": "XLX473 Multiprotocol Reflector by AMUR, info: [email removed]",
-      "dial": {
-        "callsign": "XRF473",
-        "host": "87.225.76.19",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLX473",
-      "license": "none-stated",
-      "name": "XLX473",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "alias_source": "pistar",
-      "aliases": [
         "XRF474",
         "REF474",
         "DCS474"
@@ -9411,9 +9389,9 @@
         "REF479",
         "DCS479"
       ],
-      "country": "USA",
-      "dashboard": "http://n9ink.net/db",
-      "description": "Welcome to Ozark Digital",
+      "country": "United States",
+      "dashboard": "http://imrs.amcomm.network",
+      "description": "AmComm Network IMRS",
       "dial": {
         "callsign": "XRF479",
         "host": "198.58.106.10",
@@ -12609,28 +12587,6 @@
     {
       "alias_source": "pistar",
       "aliases": [
-        "XRF721",
-        "REF721",
-        "DCS721"
-      ],
-      "country": "USA",
-      "dashboard": "http://xlx721.dyndns.org",
-      "description": "KY Digital Voice. DSTAR DCS721A - DMR TG3121232 - Fusion YSF51149 - ASL 68042",
-      "dial": {
-        "callsign": "XRF721",
-        "host": "184.56.185.241",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLX721",
-      "license": "none-stated",
-      "name": "XLX721",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "alias_source": "pistar",
-      "aliases": [
         "XRF722",
         "REF722",
         "DCS722"
@@ -14412,8 +14368,8 @@
         "DCS841"
       ],
       "country": "Korea",
-      "dashboard": "http://dvref.duckdns.org/xlxd/",
-      "description": "Hosted by DS5QDR Heonmin Lee in Gimhae, Korea",
+      "dashboard": "http://ds5qdr-3rd.iptime.org:88/xlxd/",
+      "description": "Hosted by DS5QDR, linked to XLX182",
       "dial": {
         "callsign": "XRF841",
         "host": "158.180.80.27",
@@ -15503,6 +15459,28 @@
     {
       "alias_source": "pistar",
       "aliases": [
+        "XRF931",
+        "REF931",
+        "DCS931"
+      ],
+      "country": "BG",
+      "dashboard": "http://xlx931.lz2rkg.com",
+      "description": "xlx931",
+      "dial": {
+        "callsign": "XRF931",
+        "host": "92.118.153.77",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLX931",
+      "license": "none-stated",
+      "name": "XLX931",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "alias_source": "pistar",
+      "aliases": [
         "XRF932",
         "REF932",
         "DCS932"
@@ -15908,7 +15886,7 @@
       "description": "your_comment",
       "dial": {
         "callsign": "XRF953",
-        "host": "142.167.29.139",
+        "host": "142.162.70.134",
         "kind": "dextra",
         "port": 30001
       },
@@ -16776,28 +16754,6 @@
     {
       "alias_source": "pistar",
       "aliases": [
-        "XRFBFN",
-        "REFBFN",
-        "DCSBFN"
-      ],
-      "country": "United State",
-      "dashboard": "http://xlxbfn.whitehat-security.org",
-      "description": "BFN-3 Multimode Reflector",
-      "dial": {
-        "callsign": "XRFBFN",
-        "host": "204.111.254.236",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLXBFN",
-      "license": "none-stated",
-      "name": "XLXBFN",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "alias_source": "pistar",
-      "aliases": [
         "XRFBMW",
         "REFBMW",
         "DCSBMW"
@@ -16961,7 +16917,7 @@
       "description": "XLXCHA China \u4e2d\u56fd\u53cd\u5c04\u5668 \u9002\u5408\u4e2d\u56fd\u5927\u9646\u5730\u533a\u4f7f\u7528",
       "dial": {
         "callsign": "XRFCHA",
-        "host": "117.25.69.210",
+        "host": "110.90.200.2",
         "kind": "dextra",
         "port": 30001
       },
@@ -18182,28 +18138,6 @@
     {
       "alias_source": "pistar",
       "aliases": [
-        "XRFNGL",
-        "REFNGL",
-        "DCSNGL"
-      ],
-      "country": "EU",
-      "dashboard": "http://xlx.sp9ngl.com",
-      "description": "XLXNGL Multiprotocol Reflector by SP9NGL, info: [email removed]",
-      "dial": {
-        "callsign": "XRFNGL",
-        "host": "83.18.105.193",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLXNGL",
-      "license": "none-stated",
-      "name": "XLXNGL",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "alias_source": "pistar",
-      "aliases": [
         "XRFNLD",
         "REFNLD",
         "DCSNLD"
@@ -18526,6 +18460,28 @@
       "id": "XLXRHR",
       "license": "none-stated",
       "name": "XLXRHR",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "alias_source": "pistar",
+      "aliases": [
+        "XRFRHX",
+        "REFRHX",
+        "DCSRHX"
+      ],
+      "country": "POLAND",
+      "dashboard": "http://xlxrhx.sq9.online",
+      "description": "XLXRHX Multiprotocol Reflector by SQ9RHX",
+      "dial": {
+        "callsign": "XRFRHX",
+        "host": "82.108.131.254",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLXRHX",
+      "license": "none-stated",
+      "name": "XLXRHX",
       "network": "dstar",
       "source": "xlx"
     },
@@ -19762,7 +19718,7 @@
     {
       "dial": {
         "callsign": "XRF014",
-        "host": "172.67.201.108",
+        "host": "104.21.21.239",
         "kind": "dextra",
         "port": 30001
       },

@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 457,
-  "generated": "2026-11-09",
+  "count": 458,
+  "generated": "2026-11-10",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -316,9 +316,9 @@
     },
     {
       "country": "ES",
-      "dashboard": "http://164.132.198.18",
+      "dashboard": "http://aderdigitales.ddns.net/p25",
       "dial": {
-        "host": "164.132.198.18",
+        "host": "62.171.178.202",
         "kind": "p25",
         "port": 41000
       },
@@ -623,7 +623,7 @@
     {
       "country": "US",
       "dashboard": "http://www.sbanetweb.com:8080/dvs3/",
-      "description": "<p><strong>Emergency Radio Long Island </strong>provides a multi-modal hub for both the practice of and the enjoyment in Ham Radio and Emergency Communications.</p>\r\n<p>&nbsp;</p>\r\n<p class=\"MsoNormal\"><span style=\"font-size: 11.0pt;\">With approximately a dozen different nets either locally produced or re-broadcast Ham Radio Operators or supporters can listen (via Broadcasity) or participate.</span></p>\r\n<p>&nbsp;</p>\r\n<p><strong>Nets available on:<br>AllStar 62499 as well as TG 11710 for TGIF, YSF, P25 and NXDN, M17-117,<br>EchoLink KC2NJV-L and HOIP ext 15077, Amateur Wire ext 90006 and HamShack Hotline ext 940064</strong><br><em>Up to date info can be found at&nbsp;<a href=\"http://sbanetweb.com:8080/\">SBANETWEB.com:8080</a></em></p>",
+      "description": "<p><strong>Emergency Radio Long Island </strong>provides a multi-modal hub for both the practice of and the enjoyment in Ham Radio and Emergency Communications.</p>\r\n<p>&nbsp;</p>\r\n<p>With approximately a dozen different nets either locally produced or re-broadcast Ham Radio Operators or supporters can listen (via Broadcasity) or participate.</p>\r\n<p>&nbsp;</p>\r\n<p><strong>Nets available on:<br>AllStar 62499 as well as TG 11710 for TGIF, YSF, P25 and NXDN, M17-117,<br>EchoLink KC2NJV-L and HOIP ext 15077 and Amateur Wire ext 90006&nbsp;<br></strong><br><em>Up to date info can be found at&nbsp;<a href=\"http://sbanetweb.com:8080/\" rel=\"noopener noreferrer nofollow\">SBANETWEB.com:8080</a></em></p>",
       "dial": {
         "host": "96.224.250.24",
         "kind": "p25",
@@ -631,7 +631,7 @@
       },
       "id": "11710",
       "license": "CC-BY-4.0",
-      "name": "11710",
+      "name": "Emergency Radio Long Island",
       "network": "p25",
       "source": "dvref",
       "sponsor": "Emergency Radio Long Island"
@@ -1880,6 +1880,20 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "N4TPN"
+    },
+    {
+      "country": "GB",
+      "dashboard": "http://xlx278.linf.co.uk",
+      "dial": {
+        "host": "44.27.138.44",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "278",
+      "license": "CC-BY-4.0",
+      "name": "XLX278",
+      "network": "p25",
+      "source": "dvref"
     },
     {
       "country": "US",
@@ -5217,6 +5231,7 @@
     {
       "country": "US",
       "dashboard": "https://vex.w0chp.radio",
+      "description": "<p>DMR, YSF, NXDN and P25 modes supported and bridged together (cross-mode).</p>\n<p>YSF Default Module is \"E\" (DMR XLX 493 Module E); the WPSD Chat... bridged with DMR, YSF-00493, YSF-80364 and NXDN/P25 TG 493.</p>\n<p>And all modes are also bridged to DMR SystemX TG 493</p>",
       "dial": {
         "host": "vex.w0chp.radio",
         "kind": "p25",
@@ -5224,7 +5239,7 @@
       },
       "id": "493",
       "license": "CC-BY-4.0",
-      "name": "VEX493",
+      "name": "WPSD-VEX493",
       "network": "p25",
       "source": "dvref",
       "sponsor": "W0CHP"

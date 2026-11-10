@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 150,
-  "generated": "2026-11-09",
+  "generated": "2026-11-10",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -393,7 +393,7 @@
     {
       "country": "US",
       "dashboard": "http://sbanetweb.com:8087",
-      "description": "<p>Point of contact for those users of M17 interested in Emergency Communications</p>",
+      "description": "<p class=\"MsoNormal\"><strong><span style=\"font-size: 11.0pt;\">Emergency Radio Long Island </span></strong><span style=\"font-size: 11.0pt;\">provides a multi-modal hub for both the practice of and the enjoyment in Ham Radio and Emergency Communications.</span></p>\r\n<p class=\"MsoNormal\"><span style=\"font-size: 11.0pt;\">&nbsp;</span></p>\r\n<p class=\"MsoNormal\"><span style=\"font-size: 11.0pt;\">With approximately a dozen different nets either locally produced or re-broadcast Ham Radio Operators or supporters can listen (via Broadcasity) or participate.</span></p>\r\n<p class=\"MsoNormal\"><span style=\"font-size: 11.0pt;\">&nbsp;</span></p>\r\n<p class=\"MsoNormal\"><strong><span style=\"font-size: 11.0pt;\">Nets available on:<br>AllStar 62499 as well as TG 11710 for TGIF, YSF, P25 and NXDN, M17-117,<br>EchoLink KC2NJV-L and HOIP ext 15077 and Amateur Wire ext 90006&nbsp;</span></strong></p>\r\n<p class=\"MsoNormal\"><span style=\"font-size: 11.0pt;\"><br><em>Up to date info can be found at&nbsp;<a href=\"http://sbanetweb.com:8080/\">SBANETWEB.com:8080</a></em></span></p>\r\n<p class=\"MsoNormal\">&nbsp;</p>",
       "dial": {
         "callsign": "M17-117",
         "host": "96.224.250.24",
@@ -405,7 +405,7 @@
       },
       "id": "M17-117",
       "license": "CC-BY-4.0",
-      "name": "M17-117",
+      "name": "Emergency Radio Long Island",
       "network": "m17",
       "source": "dvref",
       "sponsor": "Emergency Radio Long Island"

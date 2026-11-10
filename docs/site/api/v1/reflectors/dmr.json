@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 194,
-  "generated": "2026-11-09",
+  "generated": "2026-11-10",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -3774,6 +3774,7 @@
     {
       "country": "US",
       "dashboard": "https://vex.w0chp.radio",
+      "description": "<p>DMR, YSF, NXDN and P25 modes supported and bridged together (cross-mode).</p>\n<p>YSF Default Module is \"E\" (DMR XLX 493 Module E); the WPSD Chat... bridged with DMR, YSF-00493, YSF-80364 and NXDN/P25 TG 493.</p>\n<p>And all modes are also bridged to DMR SystemX TG 493</p>",
       "dial": {
         "host": "vex.w0chp.radio",
         "kind": "mmdvm",
@@ -3782,8 +3783,8 @@
           "dmr_id",
           "password"
         ],
-        "system": "w0chpradio-network",
-        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/w0chpradio-network/talkgroups/"
+        "system": "wpsd-vex493",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/wpsd-vex493/talkgroups/"
       },
       "id": "w0chpradio-network-server-vex493",
       "license": "CC-BY-4.0",
@@ -3791,8 +3792,8 @@
       "network": "dmr",
       "source": "dvref",
       "sponsor": "W0CHP",
-      "system": "w0chpradio-network",
-      "talkgroups": "reflectors/dmr/w0chpradio-network/talkgroups.json"
+      "system": "wpsd-vex493",
+      "talkgroups": "reflectors/dmr/wpsd-vex493/talkgroups.json"
     },
     {
       "country": "US",

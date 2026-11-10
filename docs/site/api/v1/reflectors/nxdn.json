@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 421,
-  "generated": "2026-11-09",
+  "generated": "2026-11-10",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -23,21 +23,6 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "GR-Kenwood NXDN"
-    },
-    {
-      "country": "GB",
-      "dashboard": "http://maythorn.uk",
-      "dial": {
-        "host": "44.27.138.44",
-        "kind": "nxdn",
-        "port": 41400
-      },
-      "id": "101",
-      "license": "CC-BY-4.0",
-      "name": "XLX278",
-      "network": "nxdn",
-      "source": "dvref",
-      "sponsor": "G1INC"
     },
     {
       "country": "US",
@@ -239,7 +224,7 @@
     {
       "country": "US",
       "dashboard": "http://www.sbanetweb.com:8080/dvs4/",
-      "description": "<p class=\"MsoNormal\"><strong><span style=\"font-size: 11.0pt;\">Emergency Radio Long Island </span></strong><span style=\"font-size: 11.0pt;\">provides a multi-modal hub for both the practice of and the enjoyment in Ham Radio and Emergency Communications.</span></p>\r\n<p class=\"MsoNormal\"><span style=\"font-size: 11.0pt;\">&nbsp;</span></p>\r\n<p class=\"MsoNormal\"><span style=\"font-size: 11.0pt;\">With approximately a dozen different nets either locally produced or re-broadcast Ham Radio Operators or supporters can listen (via Broadcasity) or participate.</span></p>\r\n<p class=\"MsoNormal\"><span style=\"font-size: 11.0pt;\">&nbsp;</span></p>\r\n<p class=\"MsoNormal\"><strong><span style=\"font-size: 11.0pt;\">Nets available on:<br>AllStar 62499 as well as TG 11710 for TGIF, YSF, P25 and NXDN, M17-117,<br>EchoLink KC2NJV-L and HOIP ext 15077, Amateur Wire ext 90006 and HamShack Hotline ext 940064</span></strong><span style=\"font-size: 11.0pt;\"><br><em>Up to date info can be found at&nbsp;<a href=\"http://sbanetweb.com:8080/\">SBANETWEB.com:8080</a></em></span></p>",
+      "description": "<p class=\"MsoNormal\"><strong><span style=\"font-size: 11.0pt;\">Emergency Radio Long Island </span></strong><span style=\"font-size: 11.0pt;\">provides a multi-modal hub for both the practice of and the enjoyment in Ham Radio and Emergency Communications.</span></p>\r\n<p class=\"MsoNormal\"><span style=\"font-size: 11.0pt;\">&nbsp;</span></p>\r\n<p class=\"MsoNormal\"><span style=\"font-size: 11.0pt;\">With approximately a dozen different nets either locally produced or re-broadcast Ham Radio Operators or supporters can listen (via Broadcasity) or participate.</span></p>\r\n<p class=\"MsoNormal\"><span style=\"font-size: 11.0pt;\">&nbsp;</span></p>\r\n<p class=\"MsoNormal\"><strong><span style=\"font-size: 11.0pt;\">Nets available on:<br>AllStar 62499 as well as TG 11710 for TGIF, YSF, P25 and NXDN, M17-117,<br>EchoLink KC2NJV-L and HOIP ext 15077 and Amateur Wire ext 90006&nbsp;</span></strong></p>\r\n<p class=\"MsoNormal\"><span style=\"font-size: 11.0pt;\"><br><em>Up to date info can be found at&nbsp;<a href=\"http://sbanetweb.com:8080/\">SBANETWEB.com:8080</a></em></span></p>",
       "dial": {
         "host": "96.224.250.24",
         "kind": "nxdn",
@@ -2299,6 +2284,21 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "KP4OO"
+    },
+    {
+      "country": "GB",
+      "dashboard": "http://xlx278.linf.co.uk",
+      "dial": {
+        "host": "44.27.138.44",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "278",
+      "license": "CC-BY-4.0",
+      "name": "XLX278",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "G1INC"
     },
     {
       "country": "US",
@@ -4479,7 +4479,7 @@
       "dashboard": "https://nxdn38.kozow.com",
       "description": "<p><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\">Interlink XLX138 Module B&nbsp;</span></span><br><a href=\"https://xlx138.freeddns.org/\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\">https://xlx138.freeddns.org</span></span></a><br><br>Analog Digital Radio Thailand Team</p>",
       "dial": {
-        "host": "128.199.235.93",
+        "host": "159.223.67.130",
         "kind": "nxdn",
         "port": 41400
       },
@@ -4994,7 +4994,7 @@
     {
       "country": "US",
       "dashboard": "https://vex.w0chp.radio",
-      "description": "<p>Bridged with DMR (XLX493 Module E) and YSF00493/YSF80364</p>",
+      "description": "<p>DMR, YSF, NXDN and P25 modes supported and bridged together (cross-mode).</p>\n<p>YSF Default Module is \"E\" (DMR XLX 493 Module E); the WPSD Chat... bridged with DMR, YSF-00493, YSF-80364 and NXDN/P25 TG 493.</p>\n<p>And all modes are also bridged to DMR SystemX TG 493</p>",
       "dial": {
         "host": "vex.w0chp.radio",
         "kind": "nxdn",
@@ -5002,7 +5002,7 @@
       },
       "id": "493",
       "license": "CC-BY-4.0",
-      "name": "WPSD Chat",
+      "name": "WPSD-VEX493",
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "W0CHP"
@@ -5517,7 +5517,6 @@
     },
     {
       "country": "IT",
-      "dashboard": "http://nxdn.tim.com:57200",
       "dial": {
         "host": "ysf365.mooo.com",
         "kind": "nxdn",

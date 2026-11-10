@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 139,
-  "generated": "2026-11-09",
+  "count": 138,
+  "generated": "2026-11-10",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1280,24 +1280,6 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "F1IUQ"
-    },
-    {
-      "country": "US",
-      "dashboard": "https://vex.w0chp.radio",
-      "description": "<p>DMR, YSF and NXDN modes supported. More modes coming...eventually. :)</p>\r\n<p>Module E is the WPSD Chat... bridged with YSF: YSF00493/YSF80364 and NXDN TG493.</p>",
-      "dial": {
-        "host": "urf493.w0chp.radio",
-        "kind": "urf",
-        "modules": [
-          "E"
-        ]
-      },
-      "id": "493",
-      "license": "CC-BY-4.0",
-      "name": "URF493 by W0CHP",
-      "network": "urf",
-      "source": "dvref",
-      "sponsor": "W0CHP"
     },
     {
       "country": "AU",

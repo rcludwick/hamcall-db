@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1671,
-  "generated": "2026-11-09",
+  "count": 1674,
+  "generated": "2026-11-10",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -2706,7 +2706,7 @@
     {
       "country": "US",
       "dashboard": "https://urf493.w0chp.radio",
-      "description": "VEX493",
+      "description": "WPSD-VEX493",
       "dial": {
         "host": "vex.w0chp.radio",
         "kind": "ysf",
@@ -2714,7 +2714,7 @@
       },
       "id": "00493",
       "license": "CC-BY-4.0",
-      "name": "VEX493",
+      "name": "WPSD-VEX493",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "W0CHP"
@@ -9159,6 +9159,22 @@
     },
     {
       "country": "ES",
+      "dashboard": "https://es.xreflector.es/",
+      "description": "C4FM-CARRETERA",
+      "dial": {
+        "host": "es.xreflector.es",
+        "kind": "ysf",
+        "port": 42007
+      },
+      "id": "21419",
+      "license": "CC-BY-4.0",
+      "name": "CANAL-19",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "xreflector.es"
+    },
+    {
+      "country": "ES",
       "dashboard": "http://malaga.c4fm.es/",
       "description": "SALA-MALAGA",
       "dial": {
@@ -10320,6 +10336,22 @@
       "name": "RS Serbia",
       "network": "ysf",
       "source": "dvref"
+    },
+    {
+      "country": "ES",
+      "dashboard": "https://es.xreflector.es",
+      "description": "DR-2X CORDOBA",
+      "dial": {
+        "host": "es.xreflector.es",
+        "kind": "ysf",
+        "port": 42006
+      },
+      "id": "22480",
+      "license": "CC-BY-4.0",
+      "name": "ARCANGEL",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "xreflector.es"
     },
     {
       "country": "HN",
@@ -18639,6 +18671,22 @@
       "sponsor": "KE9CG"
     },
     {
+      "country": "ES",
+      "dashboard": "https://es.xreflector.es",
+      "description": "SEVILLA",
+      "dial": {
+        "host": "es.xreflector.es",
+        "kind": "ysf",
+        "port": 42005
+      },
+      "id": "49711",
+      "license": "CC-BY-4.0",
+      "name": "SEVILLA",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "xreflector.es"
+    },
+    {
       "country": "US",
       "dashboard": "http://192.168.0.101",
       "description": "GAYLORD-MI",
@@ -23627,7 +23675,7 @@
     {
       "country": "US",
       "dashboard": "https://vex.w0chp.radio",
-      "description": "VEX493",
+      "description": "WPSD-VEX493",
       "dial": {
         "host": "vex.w0chp.radio",
         "kind": "ysf",
@@ -23635,7 +23683,7 @@
       },
       "id": "80364",
       "license": "CC-BY-4.0",
-      "name": "VEX493",
+      "name": "WPSD-VEX493",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "W0CHP"
