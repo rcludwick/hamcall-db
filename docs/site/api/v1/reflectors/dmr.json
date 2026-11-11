@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 194,
-  "generated": "2026-11-10",
+  "count": 196,
+  "generated": "2026-11-11",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1826,6 +1826,30 @@
       "dashboard": "http://svham.eu",
       "description": "<p><strong>AETHER HELLAS</strong> is an experimental <strong>Greek</strong> DMR digital voice project.</p>\r\n<p>Initiated and currently operated by a licensed radio amateur,<br>it openly invites fellow system operators to interconnect and collaborate,<br>as well as licensed radio amateurs to connect via hotspots<br>for testing, experimentation and on-air communication.</p>\r\n<h5>What is \"Aether Hellas\"?</h5>\r\n<p>In Greek Mythology,&nbsp;<strong>Aether</strong>&nbsp;was the personification of the upper air breathed by the Gods. In early physics, it was believed to be the medium that fills the universe, allowing waves to propagate through space.<br>For us, <strong>Aether Hellas</strong> represents the \"invisible web\" that connects Greece to the world. It is our digital gateway that transforms the air into communication, bridging the distances between Rhodes, Thessaly, and Central Greece, uniting people and technology under a shared amateur radio vision.</p>\r\n<ul>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><span style=\"color: rgb(22, 145, 121);\"><strong><span class=\"\">Name:</span><span class=\"\">&nbsp;HB_GR_&Alpha;&Epsilon;&Tau;&Eta;&Epsilon;R HELLAS NET</span></strong></span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">ID:</span></strong><span class=\"\">&nbsp;0000</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Address/Host:</span></strong><span class=\"\">&nbsp;</span><a href=\"https://svham.eu/\" target=\"_blank\" rel=\"noopener noreferrer\"><span class=\"\">svham.eu</span></a><span class=\"\">&nbsp;(38.19.202.24)</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Password:</span></strong><span class=\"\">&nbsp;passw0rd</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Port:</span></strong><span class=\"\">&nbsp;53000</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Type:</span></strong><span class=\"\">&nbsp;HBLink</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Description:</span></strong><span class=\"\"> HB_GR_&Alpha;&Epsilon;&Tau;&Eta;&Epsilon;R HELLAS NET HBLINK DMR SERVER</span></p>\r\n</li>\r\n<li style=\"color: rgb(35, 111, 161); font-weight: bold;\"><span style=\"color: rgb(35, 111, 161);\"><strong><span class=\"\">The first independent HBLink DMR Server in Greece &ndash; AETHER HELLAS NET, dedicated to promoting digital voice communication and HBLink technology.</span></strong></span></li>\r\n</ul>\r\n<p>&nbsp;</p>",
       "dial": {
+        "host": "157.173.36.81",
+        "kind": "mmdvm",
+        "port": 53000,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "gr-aether-hellas",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/gr-aether-hellas/talkgroups/"
+      },
+      "id": "gr-aether-hellas-server-hb_gr_aether_hellas",
+      "license": "CC-BY-4.0",
+      "name": "HB_GR_AETHER_HELLAS",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "AETHER HELLAS NET",
+      "system": "gr-aether-hellas",
+      "talkgroups": "reflectors/dmr/gr-aether-hellas/talkgroups.json"
+    },
+    {
+      "country": "GR",
+      "dashboard": "http://svham.eu",
+      "description": "<p><strong>AETHER HELLAS</strong> is an experimental <strong>Greek</strong> DMR digital voice project.</p>\r\n<p>Initiated and currently operated by a licensed radio amateur,<br>it openly invites fellow system operators to interconnect and collaborate,<br>as well as licensed radio amateurs to connect via hotspots<br>for testing, experimentation and on-air communication.</p>\r\n<h5>What is \"Aether Hellas\"?</h5>\r\n<p>In Greek Mythology,&nbsp;<strong>Aether</strong>&nbsp;was the personification of the upper air breathed by the Gods. In early physics, it was believed to be the medium that fills the universe, allowing waves to propagate through space.<br>For us, <strong>Aether Hellas</strong> represents the \"invisible web\" that connects Greece to the world. It is our digital gateway that transforms the air into communication, bridging the distances between Rhodes, Thessaly, and Central Greece, uniting people and technology under a shared amateur radio vision.</p>\r\n<ul>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><span style=\"color: rgb(22, 145, 121);\"><strong><span class=\"\">Name:</span><span class=\"\">&nbsp;HB_GR_&Alpha;&Epsilon;&Tau;&Eta;&Epsilon;R HELLAS NET</span></strong></span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">ID:</span></strong><span class=\"\">&nbsp;0000</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Address/Host:</span></strong><span class=\"\">&nbsp;</span><a href=\"https://svham.eu/\" target=\"_blank\" rel=\"noopener noreferrer\"><span class=\"\">svham.eu</span></a><span class=\"\">&nbsp;(38.19.202.24)</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Password:</span></strong><span class=\"\">&nbsp;passw0rd</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Port:</span></strong><span class=\"\">&nbsp;53000</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Type:</span></strong><span class=\"\">&nbsp;HBLink</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Description:</span></strong><span class=\"\"> HB_GR_&Alpha;&Epsilon;&Tau;&Eta;&Epsilon;R HELLAS NET HBLINK DMR SERVER</span></p>\r\n</li>\r\n<li style=\"color: rgb(35, 111, 161); font-weight: bold;\"><span style=\"color: rgb(35, 111, 161);\"><strong><span class=\"\">The first independent HBLink DMR Server in Greece &ndash; AETHER HELLAS NET, dedicated to promoting digital voice communication and HBLink technology.</span></strong></span></li>\r\n</ul>\r\n<p>&nbsp;</p>",
+      "dial": {
         "host": "svham.eu",
         "kind": "mmdvm",
         "port": 53000,
@@ -2213,6 +2237,29 @@
       "sponsor": "Sezione A.R.I.  di Trani    -   Italy",
       "system": "hb_it_trani_conference",
       "talkgroups": "reflectors/dmr/hb_it_trani_conference/talkgroups.json"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://projectmf.net:8080",
+      "dial": {
+        "host": "projectmf.net",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "hb_k9clf",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/hb_k9clf/talkgroups/"
+      },
+      "id": "hb_k9clf-server-test",
+      "license": "CC-BY-4.0",
+      "name": "TEST",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "K9CLF",
+      "system": "hb_k9clf",
+      "talkgroups": "reflectors/dmr/hb_k9clf/talkgroups.json"
     },
     {
       "country": "MY",

@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 458,
-  "generated": "2026-11-10",
+  "count": 459,
+  "generated": "2026-11-11",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -30,7 +30,7 @@
       "dashboard": "http://svham.eu:89",
       "description": "<h5>What is \"Aether Hellas\"?</h5>\r\n<p>In Greek Mythology,&nbsp;<strong>Aether</strong>&nbsp;was the personification of the upper air breathed by the Gods. In early physics, it was believed to be the medium that fills the universe, allowing waves to propagate through space.<br><br>For us,&nbsp;<strong>Aether Hellas</strong> represents the \"invisible web\" that connects Greece to the world. It is our digital gateway that transforms the air into communication, bridging the distances between Rhodes, Thessaly, and Central Greece, uniting people and technology under a shared amateur radio vision.</p>",
       "dial": {
-        "host": "38.19.202.24",
+        "host": "157.173.36.81",
         "kind": "p25",
         "port": 41000
       },
@@ -3709,6 +3709,20 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "020 Digital Multiprotocol Group"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://xlx.poa.nyc/p25reflector/",
+      "dial": {
+        "host": "xlx.poa.nyc",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "31349",
+      "license": "CC-BY-4.0",
+      "name": "HKC Worldwide",
+      "network": "p25",
+      "source": "dvref"
     },
     {
       "country": "US",

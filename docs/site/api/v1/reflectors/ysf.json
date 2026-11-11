@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1674,
-  "generated": "2026-11-10",
+  "count": 1675,
+  "generated": "2026-11-11",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -424,10 +424,10 @@
     },
     {
       "country": "JP",
-      "dashboard": "http://153.195.218.129/",
+      "dashboard": "http://153.195.252.62/",
       "description": "XLX109F",
       "dial": {
-        "host": "153.195.218.129",
+        "host": "153.195.252.62",
         "kind": "ysf",
         "port": 42000
       },
@@ -834,7 +834,7 @@
     {
       "country": "ES",
       "dashboard": "https://188.213.170.172/",
-      "description": "YSF ANDALUCIA",
+      "description": "YSF QSOBOX",
       "dial": {
         "host": "188.213.170.172",
         "kind": "ysf",
@@ -9319,12 +9319,12 @@
     },
     {
       "country": "ES",
-      "dashboard": "https://sala-andalucia.es/2",
+      "dashboard": "https://es.xreflector.es/",
       "description": "SERRANIA-RONDA",
       "dial": {
-        "host": "sala-andalucia.es",
+        "host": "es.xreflector.es",
         "kind": "ysf",
-        "port": 42352
+        "port": 42008
       },
       "id": "21452",
       "license": "CC-BY-4.0",
@@ -15752,6 +15752,22 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "AA9RA"
+    },
+    {
+      "country": "BG",
+      "dashboard": "http://xlx931.lz2rkg.com",
+      "description": "xlx931 ysf",
+      "dial": {
+        "host": "xlx931.lz2rkg.com",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "33144",
+      "license": "CC-BY-4.0",
+      "name": "XLX931",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "LZ2RKG"
     },
     {
       "country": "MX",
@@ -25345,7 +25361,7 @@
       "dashboard": "https://dvsph.net/ysf",
       "description": "DVSPh",
       "dial": {
-        "host": "c4fm.dvsph.net",
+        "host": "xlx600.dvsph.net",
         "kind": "ysf",
         "port": 42000
       },
@@ -25991,7 +26007,7 @@
       "dial": {
         "host": "fcs002.xreflector.net",
         "kind": "ysf",
-        "port": 42000
+        "port": 42510
       },
       "id": "99902",
       "license": "CC-BY-4.0",
