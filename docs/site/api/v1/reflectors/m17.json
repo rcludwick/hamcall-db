@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 151,
-  "generated": "2026-11-11",
+  "generated": "2026-11-12",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1758,12 +1758,14 @@
     },
     {
       "country": "TH",
-      "dashboard": "http://xlx727.gleeze.com",
+      "dashboard": "https://xlx727.gleeze.com",
       "dial": {
         "callsign": "M17-727",
         "host": "143.198.216.15",
         "kind": "m17",
         "modules": [
+          "B",
+          "C",
           "X"
         ],
         "port": 17000
@@ -2105,13 +2107,29 @@
     },
     {
       "country": "TH",
-      "dashboard": "http://xlx919.freeddns.org/",
+      "dashboard": "https://xlx919.freeddns.org/",
       "dial": {
         "callsign": "M17-919",
         "host": "159.223.67.130",
         "kind": "m17",
         "modules": [
-          "X"
+          "B",
+          "C",
+          "D",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "R",
+          "S",
+          "T",
+          "U",
+          "W",
+          "X",
+          "Y"
         ],
         "port": 17000
       },
@@ -3342,7 +3360,7 @@
       },
       "id": "M17-NCA",
       "license": "CC-BY-4.0",
-      "name": "M17-NCA",
+      "name": "M17 - NorCal",
       "network": "m17",
       "source": "dvref",
       "sponsor": "K6HP"

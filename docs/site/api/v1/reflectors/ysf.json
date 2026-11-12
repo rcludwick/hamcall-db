@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1675,
-  "generated": "2026-11-11",
+  "count": 1681,
+  "generated": "2026-11-12",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -736,6 +736,70 @@
       "source": "dvref"
     },
     {
+      "country": "ES",
+      "dashboard": "http://113.20.8.61/ysf/main.php",
+      "description": "ANDALUCIA",
+      "dial": {
+        "host": "113.20.8.61",
+        "kind": "ysf",
+        "port": 42394
+      },
+      "id": "00063",
+      "license": "CC-BY-4.0",
+      "name": "AL-ANDALUZ",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "RC-VELETA"
+    },
+    {
+      "country": "ES",
+      "dashboard": "https://es.xreflector.es",
+      "description": "ANDALUCIA",
+      "dial": {
+        "host": "es.xreflector.es",
+        "kind": "ysf",
+        "port": 42009
+      },
+      "id": "00065",
+      "license": "CC-BY-4.0",
+      "name": "AL-ANDALUS",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "xreflector"
+    },
+    {
+      "country": "ES",
+      "dashboard": "https://es.xreflector.es",
+      "description": "ANDALUCIA",
+      "dial": {
+        "host": "es.xreflector.es",
+        "kind": "ysf",
+        "port": 42014
+      },
+      "id": "00066",
+      "license": "CC-BY-4.0",
+      "name": "AL-ANDALUS",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "xreflector"
+    },
+    {
+      "country": "ES",
+      "dashboard": "http://113.20.8.61/ysf/main.php",
+      "description": "ANDALUCIA",
+      "dial": {
+        "host": "113.20.8.61",
+        "kind": "ysf",
+        "port": 42396
+      },
+      "id": "00067",
+      "license": "CC-BY-4.0",
+      "name": "AL-ANDALUZ",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "RC-VELETA"
+    },
+    {
       "country": "US",
       "dashboard": "http://44.27.129.166",
       "description": "Link to wires",
@@ -842,7 +906,7 @@
       },
       "id": "00075",
       "license": "CC-BY-4.0",
-      "name": "ANDALUCIA-QB",
+      "name": "Al-Andalus",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "OpenRadioLink"
@@ -4304,10 +4368,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28423",
+      "dashboard": "http://digital.pistar.com.tr:28423",
       "description": "Turk Konferans",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42453
       },
@@ -4639,7 +4703,7 @@
       "country": "TR",
       "description": "Turkiye 1923",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42923
       },
@@ -4961,7 +5025,7 @@
       "country": "TR",
       "description": "YSF Samsun",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42055
       },
@@ -4976,7 +5040,7 @@
       "country": "TR",
       "description": "YSF Tekirdag",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42059
       },
@@ -5735,10 +5799,10 @@
     },
     {
       "country": "AR",
-      "dashboard": "http://ysf.rmdv.org",
+      "dashboard": "https://ysf.rmdv.org",
       "description": "RMDV",
       "dial": {
-        "host": "216.128.169.118",
+        "host": "ysf.rmdv.org",
         "kind": "ysf",
         "port": 42000
       },
@@ -8358,6 +8422,22 @@
     },
     {
       "country": "GR",
+      "dashboard": "https://reflector.freedmr.gr/",
+      "description": "MULTIMODE",
+      "dial": {
+        "host": "reflector.freedmr.gr",
+        "kind": "ysf",
+        "port": 42200
+      },
+      "id": "20200",
+      "license": "CC-BY-4.0",
+      "name": "GR-MULTIMODE",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "FreeDMR Greece"
+    },
+    {
+      "country": "GR",
       "dashboard": "http://51.195.107.129:82",
       "description": "HELLAS-ADNDMR",
       "dial": {
@@ -8374,10 +8454,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://ysfnetgr.ddns.net:85/",
+      "dashboard": "http://192.227.190.153:85",
       "description": "HELLAS-ADNDMR",
       "dial": {
-        "host": "ysfnetgr.ddns.net",
+        "host": "192.227.190.153",
         "kind": "ysf",
         "port": 42002
       },
@@ -8405,10 +8485,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://ysfnetgr.ddns.net:86",
+      "dashboard": "http://192.227.190.153:86",
       "description": "HELLAS-ADNDMR",
       "dial": {
-        "host": "ysfnetgr.ddns.net",
+        "host": "192.227.190.153",
         "kind": "ysf",
         "port": 42003
       },
@@ -8421,10 +8501,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://ysfnetgr.ddns.net:88/",
+      "dashboard": "https://ysf14.sv2hwl.gr/",
       "description": "HELLAS-ADNDMR",
       "dial": {
-        "host": "ysfnetgr.ddns.net",
+        "host": "192.227.190.153",
         "kind": "ysf",
         "port": 42004
       },
@@ -8453,10 +8533,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://ysfnetgr.ddns.net:84/",
+      "dashboard": "https://ysf16.sv2hwl.gr/",
       "description": "HELLAS-ADNDMR",
       "dial": {
-        "host": "ysfnetgr.ddns.net",
+        "host": "192.227.190.153",
         "kind": "ysf",
         "port": 42001
       },
@@ -8501,10 +8581,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://ysfnetgr.ddns.net/",
+      "dashboard": "http://192.227.190.153:81/",
       "description": "HELLAS-ADNDMR",
       "dial": {
-        "host": "ysfnetgr.ddns.net",
+        "host": "192.227.190.153",
         "kind": "ysf",
         "port": 42005
       },
@@ -8533,10 +8613,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://xlx251.ddns.net/",
+      "dashboard": "https://xlx251.sv2hwl.gr/",
       "description": "XLX reflector",
       "dial": {
-        "host": "xlx251.ddns.net",
+        "host": "195.201.35.61",
         "kind": "ysf",
         "port": 42000
       },
@@ -12756,10 +12836,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28401/",
+      "dashboard": "http://digital.pistar.com.tr:28401/",
       "description": "YSF Adana",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42001
       },
@@ -12774,7 +12854,7 @@
       "country": "TR",
       "description": "YSF Adiyaman",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42002
       },
@@ -12787,10 +12867,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28403/",
+      "dashboard": "http://digital.pistar.com.tr:28403/",
       "description": "YSF Afyon",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42003
       },
@@ -12805,7 +12885,7 @@
       "country": "TR",
       "description": "YSF Agri",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42004
       },
@@ -12820,7 +12900,7 @@
       "country": "TR",
       "description": "YSF Amasya",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42005
       },
@@ -12833,10 +12913,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28406/",
+      "dashboard": "http://digital.pistar.com.tr:28406/",
       "description": "YSF Ankara",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42006
       },
@@ -12849,10 +12929,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28407/",
+      "dashboard": "http://digital.pistar.com.tr:28407/",
       "description": "YSF Antalya",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42007
       },
@@ -12867,7 +12947,7 @@
       "country": "TR",
       "description": "YSF Artvin",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42008
       },
@@ -12880,10 +12960,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28409/",
+      "dashboard": "http://digital.pistar.com.tr:28409/",
       "description": "YSF Aydin",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42009
       },
@@ -12896,10 +12976,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28410/",
+      "dashboard": "http://digital.pistar.com.tr:28410/",
       "description": "YSF Balikesir",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42010
       },
@@ -12914,7 +12994,7 @@
       "country": "TR",
       "description": "YSF Bilecik",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42011
       },
@@ -12929,7 +13009,7 @@
       "country": "TR",
       "description": "YSF Bingol",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42012
       },
@@ -12944,7 +13024,7 @@
       "country": "TR",
       "description": "YSF Bitlis",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42013
       },
@@ -12959,7 +13039,7 @@
       "country": "TR",
       "description": "YSF Bolu",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42014
       },
@@ -12974,7 +13054,7 @@
       "country": "TR",
       "description": "YSF Burdur",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42015
       },
@@ -12987,10 +13067,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28416/",
+      "dashboard": "http://digital.pistar.com.tr:28416/",
       "description": "YSF Bursa",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42016
       },
@@ -13003,10 +13083,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28417/",
+      "dashboard": "http://digital.pistar.com.tr:28417/",
       "description": "YSF Canakkale",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42017
       },
@@ -13021,7 +13101,7 @@
       "country": "TR",
       "description": "YSF Cankiri",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42018
       },
@@ -13036,7 +13116,7 @@
       "country": "TR",
       "description": "YSF Corum",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42019
       },
@@ -13049,10 +13129,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28420/",
+      "dashboard": "http://digital.pistar.com.tr:28420/",
       "description": "YSF Denizli",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42020
       },
@@ -13067,7 +13147,7 @@
       "country": "TR",
       "description": "Diyarbakir",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42021
       },
@@ -13082,7 +13162,7 @@
       "country": "TR",
       "description": "YSF Edirne",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42022
       },
@@ -13097,7 +13177,7 @@
       "country": "TR",
       "description": "YSF Elazig",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42023
       },
@@ -13112,7 +13192,7 @@
       "country": "TR",
       "description": "YSF Erzincan",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42024
       },
@@ -13127,7 +13207,7 @@
       "country": "TR",
       "description": "YSF Erzurum",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42025
       },
@@ -13140,10 +13220,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28426/",
+      "dashboard": "http://digital.pistar.com.tr:28426/",
       "description": "YSF Eskisehir",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42026
       },
@@ -13158,7 +13238,7 @@
       "country": "TR",
       "description": "YSF Gaziantep",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42027
       },
@@ -13173,7 +13253,7 @@
       "country": "TR",
       "description": "YSF Giresun",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42028
       },
@@ -13188,7 +13268,7 @@
       "country": "TR",
       "description": "YSF Gumushane",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42029
       },
@@ -13203,7 +13283,7 @@
       "country": "TR",
       "description": "YSF Hakkari",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42030
       },
@@ -13218,7 +13298,7 @@
       "country": "TR",
       "description": "YSF Hatay",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42031
       },
@@ -13233,7 +13313,7 @@
       "country": "TR",
       "description": "YSF Isparta",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42032
       },
@@ -13246,10 +13326,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28433/",
+      "dashboard": "http://digital.pistar.com.tr:28433/",
       "description": "YSF Mersin",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42033
       },
@@ -13262,10 +13342,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28434/",
+      "dashboard": "http://digital.pistar.com.tr:28434/",
       "description": "YSF Istanbul",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42034
       },
@@ -13278,10 +13358,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28435/",
+      "dashboard": "http://digital.pistar.com.tr:28435/",
       "description": "YSF Izmir",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42035
       },
@@ -13296,7 +13376,7 @@
       "country": "TR",
       "description": "YSF Kars",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42036
       },
@@ -13311,7 +13391,7 @@
       "country": "TR",
       "description": "YSF Kastamonu",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42037
       },
@@ -13326,7 +13406,7 @@
       "country": "TR",
       "description": "YSF Kayseri",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42038
       },
@@ -13341,7 +13421,7 @@
       "country": "TR",
       "description": "Kirklareli",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42039
       },
@@ -13356,7 +13436,7 @@
       "country": "TR",
       "description": "YSF Kirsehir",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42040
       },
@@ -13369,10 +13449,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28441/",
+      "dashboard": "http://digital.pistar.com.tr:28441/",
       "description": "YSF Kocaeli",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42041
       },
@@ -13385,10 +13465,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28442/",
+      "dashboard": "http://digital.pistar.com.tr:28442/",
       "description": "YSF Konya",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42042
       },
@@ -13403,7 +13483,7 @@
       "country": "TR",
       "description": "YSF Kutahya",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42043
       },
@@ -13416,10 +13496,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28444/",
+      "dashboard": "http://digital.pistar.com.tr:28444/",
       "description": "YSF Malatya",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42044
       },
@@ -13434,7 +13514,7 @@
       "country": "TR",
       "description": "YSF Manisa",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42045
       },
@@ -13449,7 +13529,7 @@
       "country": "TR",
       "description": "YSF K Maras",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42046
       },
@@ -13464,7 +13544,7 @@
       "country": "TR",
       "description": "YSF Mardin",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42047
       },
@@ -13477,10 +13557,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28448/",
+      "dashboard": "http://digital.pistar.com.tr:28448/",
       "description": "YSF Mugla",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42048
       },
@@ -13495,7 +13575,7 @@
       "country": "TR",
       "description": "YSF Mus",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42049
       },
@@ -13510,7 +13590,7 @@
       "country": "TR",
       "description": "YSF Nevsehir",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42050
       },
@@ -13525,7 +13605,7 @@
       "country": "TR",
       "description": "YSF Nigde",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42051
       },
@@ -13540,7 +13620,7 @@
       "country": "TR",
       "description": "YSF Ordu",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42052
       },
@@ -13555,7 +13635,7 @@
       "country": "TR",
       "description": "YSF Rize",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42053
       },
@@ -13570,7 +13650,7 @@
       "country": "TR",
       "description": "YSF Sakarya",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42054
       },
@@ -13600,7 +13680,7 @@
       "country": "TR",
       "description": "YSF Siirt",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42056
       },
@@ -13615,7 +13695,7 @@
       "country": "TR",
       "description": "YSF Sinop",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42057
       },
@@ -13630,7 +13710,7 @@
       "country": "TR",
       "description": "YSF Sivas",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42058
       },
@@ -13661,7 +13741,7 @@
       "country": "TR",
       "description": "YSF Tokat",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42060
       },
@@ -13676,7 +13756,7 @@
       "country": "TR",
       "description": "YSF Trabzon",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42061
       },
@@ -13691,7 +13771,7 @@
       "country": "TR",
       "description": "YSF Tunceli",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42062
       },
@@ -13706,7 +13786,7 @@
       "country": "TR",
       "description": "YSF Sanliurfa",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42063
       },
@@ -13721,7 +13801,7 @@
       "country": "TR",
       "description": "YSF Usak",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42064
       },
@@ -13736,7 +13816,7 @@
       "country": "TR",
       "description": "YSF Van",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42065
       },
@@ -13751,7 +13831,7 @@
       "country": "TR",
       "description": "YSF Yozgat",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42066
       },
@@ -13766,7 +13846,7 @@
       "country": "TR",
       "description": "YSF Zonguldak",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42067
       },
@@ -13781,7 +13861,7 @@
       "country": "TR",
       "description": "YSF Aksaray",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42068
       },
@@ -13796,7 +13876,7 @@
       "country": "TR",
       "description": "YSF Bayburt",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42069
       },
@@ -13811,7 +13891,7 @@
       "country": "TR",
       "description": "YSF Karaman",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42070
       },
@@ -13826,7 +13906,7 @@
       "country": "TR",
       "description": "YSF Kirikkale",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42071
       },
@@ -13841,7 +13921,7 @@
       "country": "TR",
       "description": "YSF Batman",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42072
       },
@@ -13856,7 +13936,7 @@
       "country": "TR",
       "description": "YSF Sirnak",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42073
       },
@@ -13871,7 +13951,7 @@
       "country": "TR",
       "description": "YSF Bartin",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42074
       },
@@ -13886,7 +13966,7 @@
       "country": "TR",
       "description": "YSF Ardahan",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42075
       },
@@ -13901,7 +13981,7 @@
       "country": "TR",
       "description": "YSF Igdir",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42076
       },
@@ -13932,7 +14012,7 @@
       "country": "TR",
       "description": "YSF Karabuk",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42078
       },
@@ -13947,7 +14027,7 @@
       "country": "TR",
       "description": "YSF Kilis",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42079
       },
@@ -13962,7 +14042,7 @@
       "country": "TR",
       "description": "YSF Osmaniye",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42080
       },
@@ -13975,10 +14055,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28481/",
+      "dashboard": "http://digital.pistar.com.tr:28481/",
       "description": "YSF Duzce",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "ysf",
         "port": 42081
       },
@@ -14918,6 +14998,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "020 Digital Multiprotocol Group"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://xlx.poa.nyc/ysfreflector/",
+      "description": "HKC Worldwide",
+      "dial": {
+        "host": "xlx.poa.nyc",
+        "kind": "ysf",
+        "port": 41500
+      },
+      "id": "31349",
+      "license": "CC-BY-4.0",
+      "name": "HKC IRC",
+      "network": "ysf",
+      "source": "dvref"
     },
     {
       "country": "US",
@@ -18394,7 +18489,8 @@
       "license": "CC-BY-4.0",
       "name": "Hanover YSF",
       "network": "ysf",
-      "source": "dvref"
+      "source": "dvref",
+      "sponsor": "Hanover Virginia Amateur Radio Club"
     },
     {
       "country": "CH",
@@ -21712,10 +21808,10 @@
     },
     {
       "country": "CA",
-      "dashboard": "http://24.202.96.126/index.php",
+      "dashboard": "http://184.161.30.142/index.php",
       "description": "CA VA2RXY",
       "dial": {
-        "host": "24.202.96.126",
+        "host": "184.161.30.142",
         "kind": "ysf",
         "port": 42003
       },

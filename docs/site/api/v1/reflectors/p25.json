@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 459,
-  "generated": "2026-11-11",
+  "count": 460,
+  "generated": "2026-11-12",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -937,7 +937,7 @@
       "country": "TR",
       "description": "Turkiye 1923",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41123
       },
@@ -995,10 +995,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://gr-hellas-adn-p25.ddns.net",
+      "dashboard": "https://gr-hellas-adn-p25.sv2hwl.gr",
       "description": "<p>GR-Hellas-ADN-P25</p>",
       "dial": {
-        "host": "gr-hellas-adn-p25.ddns.net",
+        "host": "gr-hellas-adn-p25.sv2hwl.gr",
         "kind": "p25",
         "port": 41000
       },
@@ -1948,7 +1948,7 @@
       "dashboard": "http://dmr.pistar.com.tr:28201/",
       "description": "<p>P25 Adana Reflector - YM2KT</p>",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41001
       },
@@ -1963,7 +1963,7 @@
       "country": "TR",
       "description": "P25 Adiyaman",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41002
       },
@@ -1978,7 +1978,7 @@
       "country": "TR",
       "description": "<p>P25 Afyon Reflector - YM2KT</p>",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41003
       },
@@ -1993,7 +1993,7 @@
       "country": "TR",
       "description": "P25 Agri Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41004
       },
@@ -2008,7 +2008,7 @@
       "country": "TR",
       "description": "P25 Amasya Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41005
       },
@@ -2021,10 +2021,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28206/",
+      "dashboard": "http://digital.pistar.com.tr:28206/",
       "description": "<p>P25 Ankara Reflector - YM2KT</p>",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41006
       },
@@ -2037,10 +2037,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28207/",
+      "dashboard": "http://digital.pistar.com.tr:28207/",
       "description": "<p>P25 Antalya Reflector - YM2KT</p>",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41007
       },
@@ -2055,7 +2055,7 @@
       "country": "TR",
       "description": "P25 Artvin Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41008
       },
@@ -2068,10 +2068,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28209/",
+      "dashboard": "http://digital.pistar.com.tr:28209/",
       "description": "<p>TurkLINK P25 09 Reflektor Odasi</p>",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41009
       },
@@ -2084,10 +2084,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28210/",
+      "dashboard": "http://digital.pistar.com.tr:28210/",
       "description": "TurkLINK P25 10 Reflektor Odasi",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41010
       },
@@ -2102,7 +2102,7 @@
       "country": "TR",
       "description": "P25 Bilecik Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41011
       },
@@ -2117,7 +2117,7 @@
       "country": "TR",
       "description": "P25 Bingol Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41012
       },
@@ -2132,7 +2132,7 @@
       "country": "TR",
       "description": "P25 Bitlis Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41013
       },
@@ -2147,7 +2147,7 @@
       "country": "TR",
       "description": "P25 Bolu Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41014
       },
@@ -2162,7 +2162,7 @@
       "country": "TR",
       "description": "P25 Burdur Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41015
       },
@@ -2175,10 +2175,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28216/",
+      "dashboard": "http://digital.pistar.com.tr:28216/",
       "description": "TurkLINK P25 16 Reflektor Odasi",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41016
       },
@@ -2191,10 +2191,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28217/",
+      "dashboard": "http://digital.pistar.com.tr:28217/",
       "description": "TurkLINK P25 17 Reflektor Odasi",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41017
       },
@@ -2209,7 +2209,7 @@
       "country": "TR",
       "description": "P25 Cankiri Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41018
       },
@@ -2224,7 +2224,7 @@
       "country": "TR",
       "description": "P25 Corum Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41019
       },
@@ -2237,10 +2237,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28220/",
+      "dashboard": "http://digital.pistar.com.tr:28220/",
       "description": "TurkLINK P25 20 Reflektor Odasi",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41020
       },
@@ -2255,7 +2255,7 @@
       "country": "TR",
       "description": "P25 Diyarbakir Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41021
       },
@@ -2270,7 +2270,7 @@
       "country": "TR",
       "description": "P25 Edirne Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41022
       },
@@ -2285,7 +2285,7 @@
       "country": "TR",
       "description": "P25 Elazig Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41023
       },
@@ -2300,7 +2300,7 @@
       "country": "TR",
       "description": "P25 Erzincan Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41024
       },
@@ -2315,7 +2315,7 @@
       "country": "TR",
       "description": "P25 Erzurum Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41025
       },
@@ -2328,10 +2328,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28226/",
+      "dashboard": "http://digital.pistar.com.tr:28226/",
       "description": "TurkLINK P25 26 Reflektor Odasi",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41026
       },
@@ -2346,7 +2346,7 @@
       "country": "TR",
       "description": "P25 Gaziantep Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41027
       },
@@ -2361,7 +2361,7 @@
       "country": "TR",
       "description": "P25 Giresun Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41028
       },
@@ -2376,7 +2376,7 @@
       "country": "TR",
       "description": "P25 Gumushane Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41029
       },
@@ -2391,7 +2391,7 @@
       "country": "TR",
       "description": "P25 Hakkari Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41030
       },
@@ -2406,7 +2406,7 @@
       "country": "TR",
       "description": "P25 Hatay Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41031
       },
@@ -2421,7 +2421,7 @@
       "country": "TR",
       "description": "P25 Isparta Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41032
       },
@@ -2434,10 +2434,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28233/",
+      "dashboard": "http://digital.pistar.com.tr:28233/",
       "description": "TurkLINK P25 33 Reflektor Odasi",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41033
       },
@@ -2450,10 +2450,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28234/",
+      "dashboard": "http://digital.pistar.com.tr:28234/",
       "description": "<p>P25 Istanbul Reflector - YM2KT</p>",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41034
       },
@@ -2466,10 +2466,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28235/",
+      "dashboard": "http://digital.pistar.com.tr:28235/",
       "description": "<p>P25 Izmir Reflector - YM2KT</p>",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41035
       },
@@ -2484,7 +2484,7 @@
       "country": "TR",
       "description": "P25 Kars Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41036
       },
@@ -2499,7 +2499,7 @@
       "country": "TR",
       "description": "P25 Kastamonu Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41037
       },
@@ -2514,7 +2514,7 @@
       "country": "TR",
       "description": "P25 Kayseri Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41038
       },
@@ -2529,7 +2529,7 @@
       "country": "TR",
       "description": "P25 Kirklareli Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41039
       },
@@ -2544,7 +2544,7 @@
       "country": "TR",
       "description": "P25 Kirsehir Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41040
       },
@@ -2557,10 +2557,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28241/",
+      "dashboard": "http://digital.pistar.com.tr:28241/",
       "description": "TurkLINK P25 41 Reflektor Odasi",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41041
       },
@@ -2573,10 +2573,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28242/",
+      "dashboard": "http://digital.pistar.com.tr:28242/",
       "description": "TurkLINK P25 42 Reflektor Odasi",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41042
       },
@@ -2591,7 +2591,7 @@
       "country": "TR",
       "description": "P25 Kutahya Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41043
       },
@@ -2604,10 +2604,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28244/",
+      "dashboard": "http://digital.pistar.com.tr:28244/",
       "description": "TurkLINK P25 44 Reflektor Odasi",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41044
       },
@@ -2622,7 +2622,7 @@
       "country": "TR",
       "description": "P25 Manisa Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41045
       },
@@ -2637,7 +2637,7 @@
       "country": "TR",
       "description": "P25 Kahramanmaras Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41046
       },
@@ -2652,7 +2652,7 @@
       "country": "TR",
       "description": "P25 Mardin Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41047
       },
@@ -2665,10 +2665,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28248/",
+      "dashboard": "http://digital.pistar.com.tr:28248/",
       "description": "<p>P25 Mugla Reflector - YM2KT</p>",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41048
       },
@@ -2683,7 +2683,7 @@
       "country": "TR",
       "description": "P25 Mus Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41049
       },
@@ -2698,7 +2698,7 @@
       "country": "TR",
       "description": "<p>P25 Nevsehir Reflektoru</p>",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41050
       },
@@ -2713,7 +2713,7 @@
       "country": "TR",
       "description": "P25 Nigde Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41051
       },
@@ -2728,7 +2728,7 @@
       "country": "TR",
       "description": "P25 Ordu Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41052
       },
@@ -2743,7 +2743,7 @@
       "country": "TR",
       "description": "P25 Rize Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41053
       },
@@ -2758,7 +2758,7 @@
       "country": "TR",
       "description": "P25 Sakarya Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41054
       },
@@ -2773,7 +2773,7 @@
       "country": "TR",
       "description": "P25 Samsun Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41055
       },
@@ -2788,7 +2788,7 @@
       "country": "TR",
       "description": "P25 Siirt Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41056
       },
@@ -2803,7 +2803,7 @@
       "country": "TR",
       "description": "P25 Sinop Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41057
       },
@@ -2818,7 +2818,7 @@
       "country": "TR",
       "description": "P25 Sivas Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41058
       },
@@ -2831,10 +2831,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28259/",
+      "dashboard": "http://digital.pistar.com.tr:28259/",
       "description": "TurkLINK P25 59 Reflektor Odasi",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41059
       },
@@ -2849,7 +2849,7 @@
       "country": "TR",
       "description": "P25 Tokat Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41060
       },
@@ -2864,7 +2864,7 @@
       "country": "TR",
       "description": "P25 Trabzon Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41061
       },
@@ -2879,7 +2879,7 @@
       "country": "TR",
       "description": "P25 Tunceli Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41062
       },
@@ -2894,7 +2894,7 @@
       "country": "TR",
       "description": "P25 Sanliurfa Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41063
       },
@@ -2909,7 +2909,7 @@
       "country": "TR",
       "description": "P25 Usak Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41064
       },
@@ -2924,7 +2924,7 @@
       "country": "TR",
       "description": "P25 Van Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41065
       },
@@ -2939,7 +2939,7 @@
       "country": "TR",
       "description": "P25 Yozgat Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41066
       },
@@ -2954,7 +2954,7 @@
       "country": "TR",
       "description": "P25 Zonguldak Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41067
       },
@@ -2969,7 +2969,7 @@
       "country": "TR",
       "description": "P25 Aksaray Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41068
       },
@@ -2984,7 +2984,7 @@
       "country": "TR",
       "description": "P25 Bayburt Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41069
       },
@@ -2999,7 +2999,7 @@
       "country": "TR",
       "description": "P25 Karaman Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41070
       },
@@ -3014,7 +3014,7 @@
       "country": "TR",
       "description": "P25 Kirikkale Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41071
       },
@@ -3029,7 +3029,7 @@
       "country": "TR",
       "description": "<p>P25 Batman Reflektoru</p>",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41072
       },
@@ -3044,7 +3044,7 @@
       "country": "TR",
       "description": "P25 Sirnak Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41073
       },
@@ -3059,7 +3059,7 @@
       "country": "TR",
       "description": "P25 Bartin Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41074
       },
@@ -3074,7 +3074,7 @@
       "country": "TR",
       "description": "P25 Ardahan Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41075
       },
@@ -3089,7 +3089,7 @@
       "country": "TR",
       "description": "P25 Igdir Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41076
       },
@@ -3120,7 +3120,7 @@
       "country": "TR",
       "description": "P25 Karabuk Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41078
       },
@@ -3135,7 +3135,7 @@
       "country": "TR",
       "description": "P25 Kilis Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41079
       },
@@ -3150,7 +3150,7 @@
       "country": "TR",
       "description": "P25 Osmaniye Reflektoru",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41080
       },
@@ -3163,10 +3163,10 @@
     },
     {
       "country": "TR",
-      "dashboard": "http://dmr.pistar.com.tr:28281/",
+      "dashboard": "http://digital.pistar.com.tr:28281/",
       "description": "TurkLINK P25 81 Reflektor Odasi",
       "dial": {
-        "host": "dmr.pistar.com.tr",
+        "host": "digital.pistar.com.tr",
         "kind": "p25",
         "port": 41081
       },
@@ -3720,7 +3720,7 @@
       },
       "id": "31349",
       "license": "CC-BY-4.0",
-      "name": "HKC Worldwide",
+      "name": "HKC IRC",
       "network": "p25",
       "source": "dvref"
     },
@@ -3946,6 +3946,21 @@
       "id": "31495",
       "license": "CC-BY-4.0",
       "name": "Utah DRN 05 Bridge",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Utah Digital Repeater Network"
+    },
+    {
+      "country": "US",
+      "description": "<p>A place for 900 MHz P25 activity</p>",
+      "dial": {
+        "host": "ammermon.lorexddns.net",
+        "kind": "p25",
+        "port": 41004
+      },
+      "id": "31499",
+      "license": "CC-BY-4.0",
+      "name": "Utah 900",
       "network": "p25",
       "source": "dvref",
       "sponsor": "Utah Digital Repeater Network"
@@ -6949,6 +6964,7 @@
     {
       "country": "US",
       "dashboard": "http://grayp25.dyndns.org",
+      "description": "<p>NorCal P-25</p>",
       "dial": {
         "host": "grayp25.dyndns.org",
         "kind": "p25",
