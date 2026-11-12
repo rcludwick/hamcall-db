@@ -720,7 +720,7 @@
       "dashboard": "https://nxdn18.sv2hwl.gr/",
       "description": "<p>GR-Hellas-ADN-NXDN</p>",
       "dial": {
-        "host": "nxdn18.sv2hwl.gr",
+        "host": "192.227.190.153",
         "kind": "nxdn",
         "port": 41400
       },

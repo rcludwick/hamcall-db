@@ -8454,7 +8454,7 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://192.227.190.153:85",
+      "dashboard": "https://ysf11.sv2hwl.gr/",
       "description": "HELLAS-ADNDMR",
       "dial": {
         "host": "192.227.190.153",
@@ -8485,7 +8485,7 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://192.227.190.153:86",
+      "dashboard": "https://ysf13.sv2hwl.gr/",
       "description": "HELLAS-ADNDMR",
       "dial": {
         "host": "192.227.190.153",

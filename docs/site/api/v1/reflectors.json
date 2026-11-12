@@ -18722,8 +18722,8 @@
         "DCS845"
       ],
       "country": "USA",
-      "dashboard": "https://xlx845.pota.review/dashboard",
-      "description": "Sponsored by POTA News and Reviews https://pota.review",
+      "dashboard": "https://xlx845.pota.review",
+      "description": "Sponsored by POTA News and Review https://pota.review",
       "dial": {
         "callsign": "XRF845",
         "host": "71.174.60.28",
@@ -18767,7 +18767,7 @@
       ],
       "country": "Germany",
       "dashboard": "http://xlx850.bm262.de",
-      "description": "MultiMode: BM-TG263<>YSF: DE-Germany<>Wires-X: DL-WIRESX-BM263 <> Tetra",
+      "description": "MultiMode DV: BM-TG263<=>YSF: DE-Germany<=>Wires-X: DL-WIRESX-BM263",
       "dial": {
         "callsign": "XRF850",
         "host": "116.203.56.12",
@@ -24026,7 +24026,7 @@
     {
       "dial": {
         "callsign": "XRF014",
-        "host": "104.21.21.239",
+        "host": "172.67.201.108",
         "kind": "dextra",
         "port": 30001
       },
@@ -24316,7 +24316,7 @@
     {
       "dial": {
         "callsign": "XRF321",
-        "host": "172.67.163.225",
+        "host": "104.21.57.126",
         "kind": "dextra",
         "port": 30001
       },
@@ -29732,7 +29732,7 @@
       "dashboard": "https://nxdn18.sv2hwl.gr/",
       "description": "<p>GR-Hellas-ADN-NXDN</p>",
       "dial": {
-        "host": "nxdn18.sv2hwl.gr",
+        "host": "192.227.190.153",
         "kind": "nxdn",
         "port": 41400
       },
@@ -36436,10 +36436,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "https://gr-hellas-adn-p25.sv2hwl.gr",
+      "dashboard": "https://gr-hellas-adn-p25.sv2hwl.gr/",
       "description": "<p>GR-Hellas-ADN-P25</p>",
       "dial": {
-        "host": "gr-hellas-adn-p25.sv2hwl.gr",
+        "host": "116.203.72.43",
         "kind": "p25",
         "port": 41000
       },
@@ -43060,7 +43060,7 @@
       "dashboard": "https://xlx251.sv2hwl.gr/",
       "description": "<p>2021_ADN_SYSTEMS_GREECE</p>",
       "dial": {
-        "host": "xlx251.sv2hwl.gr",
+        "host": "195.201.35.61",
         "kind": "urf",
         "modules": [
           "B",
@@ -43082,7 +43082,7 @@
       "dashboard": "https://xlx252.sv2hwl.gr/",
       "description": "<p>2021_ADN_SYSTEMS_GREECE</p>",
       "dial": {
-        "host": "xlx252.sv2hwl.gr",
+        "host": "51.195.107.129",
         "kind": "urf"
       },
       "id": "252",
@@ -44546,7 +44546,7 @@
       "dashboard": "https://xlxd51.sv2hwl.gr/",
       "description": "<p>2021_ADN_SYSTEMS_GREECE</p>",
       "dial": {
-        "host": "xlxd51.sv2hwl.gr",
+        "host": "192.227.177.138",
         "kind": "urf"
       },
       "id": "D51",
@@ -53381,7 +53381,7 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://192.227.190.153:85",
+      "dashboard": "https://ysf11.sv2hwl.gr/",
       "description": "HELLAS-ADNDMR",
       "dial": {
         "host": "192.227.190.153",
@@ -53412,7 +53412,7 @@
     },
     {
       "country": "GR",
-      "dashboard": "http://192.227.190.153:86",
+      "dashboard": "https://ysf13.sv2hwl.gr/",
       "description": "HELLAS-ADNDMR",
       "dial": {
         "host": "192.227.190.153",

@@ -619,7 +619,7 @@
       "dashboard": "https://xlx251.sv2hwl.gr/",
       "description": "<p>2021_ADN_SYSTEMS_GREECE</p>",
       "dial": {
-        "host": "xlx251.sv2hwl.gr",
+        "host": "195.201.35.61",
         "kind": "urf",
         "modules": [
           "B",
@@ -641,7 +641,7 @@
       "dashboard": "https://xlx252.sv2hwl.gr/",
       "description": "<p>2021_ADN_SYSTEMS_GREECE</p>",
       "dial": {
-        "host": "xlx252.sv2hwl.gr",
+        "host": "51.195.107.129",
         "kind": "urf"
       },
       "id": "252",
@@ -2105,7 +2105,7 @@
       "dashboard": "https://xlxd51.sv2hwl.gr/",
       "description": "<p>2021_ADN_SYSTEMS_GREECE</p>",
       "dial": {
-        "host": "xlxd51.sv2hwl.gr",
+        "host": "192.227.177.138",
         "kind": "urf"
       },
       "id": "D51",

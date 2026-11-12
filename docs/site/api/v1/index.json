@@ -115,7 +115,7 @@
         },
         "anhui-digital-integrated-emergency-communication": {
           "count": 1,
-          "fetched": "2026-10-14",
+          "fetched": "2026-11-12",
           "generated": "2026-09-15",
           "url": "reflectors/dmr/anhui-digital-integrated-emergency-communication/talkgroups.json"
         },
@@ -235,19 +235,19 @@
         },
         "dx6cn": {
           "count": 2,
-          "fetched": "2026-10-13",
+          "fetched": "2026-11-12",
           "generated": "2026-09-14",
           "url": "reflectors/dmr/dx6cn/talkgroups.json"
         },
         "el-verdadero-radio-aficionado": {
           "count": 1,
-          "fetched": "2026-10-14",
+          "fetched": "2026-11-12",
           "generated": "2026-09-14",
           "url": "reflectors/dmr/el-verdadero-radio-aficionado/talkgroups.json"
         },
         "extended-freedom-network": {
           "count": 3,
-          "fetched": "2026-10-14",
+          "fetched": "2026-11-12",
           "generated": "2026-10-14",
           "url": "reflectors/dmr/extended-freedom-network/talkgroups.json"
         },

@@ -995,10 +995,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "https://gr-hellas-adn-p25.sv2hwl.gr",
+      "dashboard": "https://gr-hellas-adn-p25.sv2hwl.gr/",
       "description": "<p>GR-Hellas-ADN-P25</p>",
       "dial": {
-        "host": "gr-hellas-adn-p25.sv2hwl.gr",
+        "host": "116.203.72.43",
         "kind": "p25",
         "port": 41000
       },
