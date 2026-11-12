@@ -32,6 +32,9 @@ hamcall-db-serve = "hamcall_db.serve:main"
 # CC BY-NC callsign dataset; see hamcall_db/reflectors.py):
 #   uv run hamcall-db-reflectors --out docs/site/api/v1
 hamcall-db-reflectors = "hamcall_db.build_reflectors:main"
+# Write the AllStarLink node directory (allstar.json) for astar:
+#   uv run hamcall-db-allstar --out docs/site/api/v1
+hamcall-db-allstar = "hamcall_db.build_allstar:main"
 
 [project.urls]
 Homepage = "https://github.com/rcludwick/hamcall-db"

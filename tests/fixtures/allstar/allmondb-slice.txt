@@ -1,0 +1,25 @@
+2000|WB6NIL|ASL Public Hub|aws-east2ls-ast0
+29332|WL7LP|Alaska AllStar Hub|North Pole, Alaska
+2001|WB6NIL|ASL Public Hub|aws-east2ls-ast0
+2002|WB6NIL|AllStarLink Parrot|AWS US-EAST-1
+ 02002 |wb6nil|dup|dup
+2003|KM6RPT|448.280-|San Diego County, CA
+2100|N4IRS|Analog Hub|Freedomnet
+27339|W2ECR|East Coast HUB1|Wilmington, NC, USA
+40001|EA8AJC|430.125|Tenerife, Canary Islands
+46588|KX4BY||Auburn, Al
+24102|M0ZAH/R|145.600 -0.6MHz|SCOLE,NORFOLK,UK
+
+2005|K1ABC|one|two|three
+2006
+abc|K1ABC|x|y
+2007|K1ABC|Home node|123 Main Street, Anytown
+2008|K1ABC|Contact ops@example.com|Denver, CO
+2009|K1ABC|Café node|Paris, FR
+2010|K1ABC|Home node|Anytown, IA, 1431 Example St
+2011|K1ABC|Home node|745 Sample Loop
+2012|K1ABC|Home node|12 Example Run
+2013|K1ABC|Home node|500 Example Pike
+2014|K1ABC|Club node|Route 66 Repeater Club, Tulsa, OK
+2015|K1ABC|Home node|Anytown, IA, 50000
+2016|K1ABC|Home node|12 Example Strete, Anytown

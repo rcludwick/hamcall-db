@@ -166,7 +166,10 @@ Upstream sources and their licenses
 5. AllStarLink (node-number directory)
    Coverage: AllStarLink node numbers registered to amateur callsigns
              (one callsign may hold many nodes), from the AllMon node
-             database at http://allmondb.allstarlink.org/.
+             database at http://allmondb.allstarlink.org/, and the AllStar
+             node directory published as api/v1/allstar.json (node number,
+             callsign, description, location; street-address-like locations
+             removed).
    Source:   AllStarLink, Inc. (https://www.allstarlink.org/).
    Terms:    AllStarLink Terms of Use, "Effective Date: 2026-09-22",
              https://www.allstarlink.org/terms/

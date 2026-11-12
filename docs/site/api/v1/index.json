@@ -4,6 +4,7 @@
   "count": 3992,
   "endpoints": {
     "all": "reflectors.json",
+    "allstar": "allstar.json",
     "network": "reflectors/{network}.json",
     "openapi": "openapi.json"
   },

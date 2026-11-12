@@ -1,0 +1,21 @@
+[Unit]
+Description=hamcall-db nightly reflector directory build
+Documentation=https://github.com/rcludwick/hamcall-db
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/opt/hamcall-db/build.sh
+# The build is idempotent and pushes only on a real change, so a slow upstream
+# should be waited out rather than half-completed.
+TimeoutStartSec=30min
+Nice=10
+# The DVRef token lives in /opt/hamcall-db/env (mode 600) and is read by the
+# script, not passed on a command line where it would show up in ps.
+# /root stays read-only, so uv must not use its default /root/.cache/uv —
+# a systemd run has a sandbox an interactive root shell does not, which is
+# exactly why a manual invocation passed and the first timer run did not.
+Environment=UV_CACHE_DIR=/opt/hamcall-db/uv-cache
+ProtectHome=read-only
+PrivateTmp=false

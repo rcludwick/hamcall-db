@@ -1,0 +1,16 @@
+[Unit]
+Description=Nightly hamcall-db reflector directory build
+Documentation=https://github.com/rcludwick/hamcall-db
+
+[Timer]
+# 05:30 UTC. Deliberately BEFORE the old GitHub 06:00 slot so the published
+# data is already fresh at the hour anything downstream expects it.
+OnCalendar=*-*-* 05:30:00 UTC
+# Spread the start so a fleet of these would not hit two volunteer-run
+# upstreams at the same second every night.
+RandomizedDelaySec=20min
+# Catch up after a reboot or an outage rather than silently skipping a day.
+Persistent=true
+
+[Install]
+WantedBy=timers.target

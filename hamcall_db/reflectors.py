@@ -203,6 +203,8 @@ API_BASE_URL = f"https://rcludwick.github.io/hamcall-db/api/{API_VERSION}"
 # OpenAPI paths all read these, so a rename cannot leave one of the three behind.
 MANIFEST_FILE = "index.json"
 ALL_REFLECTORS_FILE = "reflectors.json"
+# Lives here, not in build_allstar, because that module imports this one.
+ALLSTAR_FILE = "allstar.json"
 OPENAPI_FILE = "openapi.json"
 NETWORK_DIR = "reflectors"
 
@@ -818,6 +820,7 @@ def manifest_document(
         ),
         "endpoints": {
             "all": ALL_REFLECTORS_FILE,
+            "allstar": ALLSTAR_FILE,
             "network": f"{NETWORK_DIR}/{{network}}.json",
             "openapi": OPENAPI_FILE,
         },
@@ -1114,6 +1117,22 @@ def openapi_document() -> dict[str, object]:
                     ),
                 }
             },
+            f"/{ALLSTAR_FILE}": {
+                "get": {
+                    "operationId": "getAllStarDirectory",
+                    "summary": "AllStarLink node directory.",
+                    "description": (
+                        "Node number, callsign, description and location for each "
+                        "AllStarLink node. Separate from the reflector files: it has its "
+                        "own `generated` date, and its `license` is `none-stated` because "
+                        "node data is AllStarLink User Content. See `rights` and "
+                        "`attribution`."
+                    ),
+                    "responses": _json_response(
+                        "#/components/schemas/AllStarDirectory", "The node directory."
+                    ),
+                }
+            },
             f"/{NETWORK_DIR}/{{network}}.json": {
                 "get": {
                     "operationId": "getNetworkReflectors",
@@ -1384,6 +1403,60 @@ def openapi_document() -> dict[str, object]:
                         "count",
                         "talkgroups",
                     ],
+                },
+                "AllStarNode": {
+                    "type": "object",
+                    "description": "One AllStarLink node.",
+                    "properties": {
+                        "node": {
+                            "type": "string",
+                            "pattern": "^[0-9]+$",
+                            "description": "The node number, as a string of digits.",
+                            "examples": ["2000"],
+                        },
+                        "callsign": {"type": "string"},
+                        "description": {"type": ["string", "null"]},
+                        "location": {
+                            "type": ["string", "null"],
+                            "description": "Free text; street-address-like values are removed.",
+                        },
+                    },
+                    "required": ["callsign", "description", "location", "node"],
+                },
+                "AllStarDirectory": {
+                    "type": "object",
+                    "properties": {
+                        "api_version": meta["api_version"],
+                        "schema_version": meta["schema_version"],
+                        "generated": meta["generated"],
+                        "client_refresh_days": meta["client_refresh_days"],
+                        "count": meta["count"],
+                        "attribution": {"type": "string"},
+                        "license": {
+                            "type": "string",
+                            "description": "`none-stated`: AllStarLink states no licence.",
+                        },
+                        "license_url": meta["license_url"],
+                        "rights": {"type": "string"},
+                        "modifications": {"type": "string"},
+                        "sources": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {"type": "string"},
+                                    "url": {"type": "string", "format": "uri"},
+                                    "fetched": {"type": "string", "format": "date"},
+                                },
+                                "required": ["name", "url", "fetched"],
+                            },
+                        },
+                        "nodes": {
+                            "type": "array",
+                            "items": {"$ref": "#/components/schemas/AllStarNode"},
+                        },
+                    },
+                    "required": ["schema_version", "generated", "count", "nodes"],
                 },
                 "Source": {
                     "type": "object",

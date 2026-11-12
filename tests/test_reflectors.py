@@ -1417,3 +1417,34 @@ def test_cc_by_licence_file_is_scoped_to_what_is_actually_cc_by() -> None:
     assert "dmr-talkgroups" in text
     assert "dstargateway.org" in text and "xreflector.net" in text
     assert "none-stated" in text
+
+
+def test_manifest_points_at_allstar() -> None:
+    manifest = reflectors.manifest_document(_documents(), generated=NOW.date())
+    assert manifest["endpoints"]["allstar"] == "allstar.json"
+
+
+def test_openapi_describes_allstar() -> None:
+    document = reflectors.openapi_document()
+    assert "/allstar.json" in document["paths"]
+    schemas = document["components"]["schemas"]
+    node = schemas["AllStarNode"]
+    assert node["required"] == ["callsign", "description", "location", "node"]
+    assert node["properties"]["node"]["pattern"] == "^[0-9]+$"
+    assert "AllStarDirectory" in schemas
+
+
+def test_allstar_document_matches_openapi() -> None:
+    from datetime import date
+
+    from hamcall_db.build_allstar import allstar_document
+    from hamcall_db.enrich_allstar import AllStarNode
+
+    schemas = reflectors.openapi_document()["components"]["schemas"]
+    document = allstar_document(
+        [AllStarNode("2000", "W1AW", "a node", "Newington, CT")],
+        today=date(2026, 11, 11),
+        previous=None,
+    )
+    assert set(document) == set(schemas["AllStarDirectory"]["properties"])
+    assert set(document["nodes"][0]) == set(schemas["AllStarNode"]["properties"])

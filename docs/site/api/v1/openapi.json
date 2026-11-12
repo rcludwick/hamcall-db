@@ -1,6 +1,121 @@
 {
   "components": {
     "schemas": {
+      "AllStarDirectory": {
+        "properties": {
+          "api_version": {
+            "const": "v1",
+            "type": "string"
+          },
+          "attribution": {
+            "type": "string"
+          },
+          "client_refresh_days": {
+            "description": "How often a client should re-check. Cache for this long.",
+            "type": "integer"
+          },
+          "count": {
+            "description": "Row count, to detect a truncated fetch.",
+            "type": "integer"
+          },
+          "generated": {
+            "description": "Date of the UPSTREAM data, never of the build \u2014 a rebuild that finds nothing new produces byte-identical files.",
+            "format": "date",
+            "type": "string"
+          },
+          "license": {
+            "description": "`none-stated`: AllStarLink states no licence.",
+            "type": "string"
+          },
+          "license_url": {
+            "format": "uri",
+            "type": "string"
+          },
+          "modifications": {
+            "type": "string"
+          },
+          "nodes": {
+            "items": {
+              "$ref": "#/components/schemas/AllStarNode"
+            },
+            "type": "array"
+          },
+          "rights": {
+            "type": "string"
+          },
+          "schema_version": {
+            "const": 1,
+            "type": "integer"
+          },
+          "sources": {
+            "items": {
+              "properties": {
+                "fetched": {
+                  "format": "date",
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "url": {
+                  "format": "uri",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "url",
+                "fetched"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "schema_version",
+          "generated",
+          "count",
+          "nodes"
+        ],
+        "type": "object"
+      },
+      "AllStarNode": {
+        "description": "One AllStarLink node.",
+        "properties": {
+          "callsign": {
+            "type": "string"
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "location": {
+            "description": "Free text; street-address-like values are removed.",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "node": {
+            "description": "The node number, as a string of digits.",
+            "examples": [
+              "2000"
+            ],
+            "pattern": "^[0-9]+$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "callsign",
+          "description",
+          "location",
+          "node"
+        ],
+        "type": "object"
+      },
       "Dial": {
         "description": "How to connect. `kind` is the discriminator; every variant carries `host`, and every variant but `urf` carries `port`.",
         "discriminator": {
@@ -801,6 +916,25 @@
   },
   "openapi": "3.1.0",
   "paths": {
+    "/allstar.json": {
+      "get": {
+        "description": "Node number, callsign, description and location for each AllStarLink node. Separate from the reflector files: it has its own `generated` date, and its `license` is `none-stated` because node data is AllStarLink User Content. See `rights` and `attribution`.",
+        "operationId": "getAllStarDirectory",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AllStarDirectory"
+                }
+              }
+            },
+            "description": "The node directory."
+          }
+        },
+        "summary": "AllStarLink node directory."
+      }
+    },
     "/index.json": {
       "get": {
         "description": "Fetch this first. It carries every network's row count and `generated` date, so a client can tell whether its cached copy is stale without downloading any of the big files.",

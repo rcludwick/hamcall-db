@@ -7,12 +7,12 @@ Session work goes in the **Claude Code task tracker** (`TaskCreate` / `TaskUpdat
 `completed` when it's done. Anything that outlives the session belongs in this file.
 
 Migrated off the **au** (`au`) tracker on 2026-07-29 — do NOT invoke `au`.
-The 4 open items below each carry their full description and design text
+The 12 open items below each carry their full description and design text
 inline. All 39 issues (35 of them closed) were exported to
 `docs/issues-archive.jsonl`, which is gitignored and local-only; a committed copy of the
 tracker's final state survives in git history at the migration commit.
 
-## Open items (11)
+## Open items (12)
 
 ### hdb-crawl — Private crawler for per-callsign sources, and the Australian name join
 *HIGH · feature · cx:3*
@@ -199,9 +199,14 @@ absent one returns `403 A valid User-Agent header is required`. So the origin is
 being refused, not the credential. The XLX registry (D-Star) is not behind
 Cloudflare and works from Actions.
 
-**Where it lives:** `root@74.208.108.191` —
+**Where it lives:** `root@74.208.108.191`. The source of truth for the scripts
+and unit files is `deploy/vps/` in this repo (see its README); the box copies
+are installed from it. On the box —
 - `/opt/hamcall-db/build.sh` — pull, build, verify, commit-if-changed, push
-- `/opt/hamcall-db/verify.py` — refuses to publish a build missing a network
+- `verify.py` (refuses to publish a build missing a network) and
+  `verify_allstar.py` (checks the AllStar directory) are not installed on the
+  box: `build.sh` runs them from the repo clone, at `deploy/vps/`. Only
+  `build.sh` and the systemd units are copied into place.
 - `/opt/hamcall-db/env` — `DVREF_API_TOKEN`, mode 600
 - `/opt/hamcall-db/repo` — clone, pushing via the `my-vps nightly reflector
   build` deploy key (write, key id 161335913)
@@ -215,6 +220,29 @@ guard and would therefore be published rather than rejected.
 **Open:** ask DVRef to allowlist authenticated requests, which would let this
 move back into Actions and remove a machine from the critical path. A draft
 ticket exists; not sent.
+
+### hdb-allstar-desc — AllStar descriptions are not address-guarded
+*MEDIUM · task · cx:2*
+
+**Why:** the AllStar directory (`api/v1/allstar.json`, public) blanks
+street-address-looking locations, but the spec guards the location only. The
+description field is published as typed, and at least one real description holds
+the street address of a public building. Running `looks_like_street_address` on
+descriptions is too blunt: on the 2026-11-01 node DB it flags about 267
+frequency and tone strings (for example "PL 110.9" read as a house number plus
+"Place").
+
+**Spec:** a narrower description check that tells a street address from radio
+settings (ignore tokens next to MHz, PL, CTCSS, offsets and decimals before
+looking for a house number plus street word), then blank or redact the match
+the way the location guard does, with a count in the drop report.
+
+**Note:** the location guard (`location_has_street_address`) is heuristic too. On top
+of the shared street-word check it blanks any comma part that starts with a 1-4 digit
+house number (optionally a letter, range or "/n") followed by a word, unless the word
+is a radio, battery or distance unit or the number is a band ("2m"); 5+ digit
+postcodes and decimals are spared. It over-blocks some numbered place names
+("29 Palms") and can still miss an address written street-first.
 
 ## Shipped
 

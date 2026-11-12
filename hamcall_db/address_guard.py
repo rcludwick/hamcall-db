@@ -48,7 +48,9 @@ _HOUSE_NUMBER = re.compile(r"^\d+(?:[A-Z]|ST|ND|RD|TH)?(?:-\d+[A-Z]?)?$")
 
 # Street-type words (USPS suffix abbreviations plus Canadian English and French).
 # Deliberately absent: words that also end real place names after a number, such as
-# MILE, HOUSE, RANCH, PALMS, CITY, and TRAIL (Trail, BC).
+# MILE, HOUSE, RANCH, PALMS, and CITY. TRAIL is listed even though Trail, BC exists:
+# the word only counts after a leading house number ("12 Pine Trail"), and the town
+# name never carries one.
 STREET_TYPES: frozenset[str] = frozenset(
     {
         # Not "AV": in Norwegian (and Swedish) "av" means "of", and club names like
@@ -74,19 +76,25 @@ STREET_TYPES: frozenset[str] = frozenset(
         "HIGHWAY",
         "LANE",
         "LN",
+        "LOOP",
         "PARKWAY",
         "PKWY",
+        "PIKE",
         "PL",
         "PLACE",
         "RANG",
         "RD",
         "ROAD",
+        "ROUTE",
         "RTE",
         "RUE",
+        "RUN",
         "ST",
         "STREET",
         "TER",
         "TERRACE",
+        "TRAIL",
+        "TRL",
         "WAY",
     }
 )
@@ -179,6 +187,99 @@ def looks_like_street_address(value: str | None) -> bool:
     if len(words) < 2 or not _HOUSE_NUMBER.match(words[0]):
         return False
     return any(word in STREET_TYPES for word in words[1:])
+
+
+def location_has_street_address(value: str | None) -> bool:
+    """True when a free-text location holds a street address anywhere in it.
+
+    A location such as an AllStar node's often lists town, state and then the street:
+    "Anytown, IA, 1431 Example St". The house number is not at the start of the whole
+    value, so `looks_like_street_address` alone misses it. This checks the whole value
+    and then each comma-separated part on its own.
+
+    Two differences from the per-field backstop, both specific to a free-text location:
+
+    * A part that is only digits is a postcode beside a town ("Anytown, IA, 50000"),
+      not an address, so it is not flagged on its own. (A whole value that is only
+      digits still is.)
+    * "AV" counts as a street-type word after a house number ("12 Example Av"). The
+      shared list leaves it out because Norwegian club names use "av" ("of"); a
+      location is not a club name, and blanking one is the cheap mistake.
+    * A part that starts with a 1-4 digit house number followed by a word is flagged
+      even with no street-type word ("12 Example Strete", "7 Example"), unless the
+      word is a radio or battery unit ("220 MHz", "000 mah"). This over-blocks some
+      numbered place names ("108 Mile Ranch"); the location is only blanked.
+    """
+    if not value:
+        return False
+    if looks_like_street_address(value):
+        return True
+    return any(_part_is_address(part.strip()) for part in value.split(","))
+
+
+def _part_is_address(part: str) -> bool:
+    if not part or _ONLY_DIGITS.match(part):
+        return False
+    if looks_like_street_address(part):
+        return True
+    words = _words(part)
+    if len(words) >= 2 and _HOUSE_NUMBER.match(words[0]) and "AV" in words[1:]:
+        return True
+    return _leads_with_house_number(part)
+
+
+# A location part that starts with a short house number and then a word ("12 Example
+# Strete", "7 Example") is treated as an address even without a street-type word:
+# filers misspell the type or leave it out. 1-4 digits, optionally one letter, a
+# range ("12B", "12-14"), or a sub-number ("99/3", as Thai addresses write it). Five
+# or more digits is a postcode ("75001 Paris"); a number with a decimal point is a
+# frequency ("443.825 Repeater") and never matches, because the token must end in
+# whitespace. A number glued to "m" is a band ("2m Sampleton").
+_LEADING_HOUSE_NUMBER = re.compile(
+    r"^(\d{1,4}(?:[A-Za-z]|-\d{1,4}[A-Za-z]?|/\d{1,4})?)\s+([A-Za-z]+)"
+)
+
+# Words after a number that make it a radio setting, a band, a battery size or a
+# distance ("10 Miles N. of Sampleton", "108 Mile Ranch").
+_UNIT_WORDS = frozenset(
+    {
+        "MHZ",
+        "KHZ",
+        "GHZ",
+        "HZ",
+        "PL",
+        "MAH",
+        "DB",
+        "W",
+        "WATT",
+        "WATTS",
+        "M",
+        "CM",
+        "METER",
+        "METERS",
+        "METRE",
+        "METRES",
+        "CTCSS",
+        "DCS",
+        "MILE",
+        "MILES",
+        "MI",
+        "KM",
+        "KILO",
+        "KILOMETERS",
+        "KILOMETRES",
+    }
+)
+
+
+def _leads_with_house_number(part: str) -> bool:
+    match = _LEADING_HOUSE_NUMBER.match(part)
+    if not match:
+        return False
+    number, word = match.group(1), match.group(2)
+    if number[-1] in "mM":  # a band ("2m Sampleton", "6M FM Hub")
+        return False
+    return word.upper() not in _UNIT_WORDS
 
 
 def warn_scrubbed(source: str, count: int) -> None:

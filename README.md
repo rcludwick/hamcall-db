@@ -44,8 +44,16 @@ because a reflector picker in a client app needs a URL it can fetch without a to
 https://rcludwick.github.io/hamcall-db/api/v1/index.json               service manifest
 https://rcludwick.github.io/hamcall-db/api/v1/reflectors.json          every reflector
 https://rcludwick.github.io/hamcall-db/api/v1/reflectors/<network>.json  one network
+https://rcludwick.github.io/hamcall-db/api/v1/allstar.json             AllStarLink node directory
 https://rcludwick.github.io/hamcall-db/api/v1/openapi.json             the contract
 ```
+
+`allstar.json` is a separate file from the reflectors: one row per AllStarLink node
+(`node`, `callsign`, `description`, `location`), with its own `generated` date. It is
+refreshed nightly. The data is AllStarLink User Content, so its `license` is
+`none-stated` and the attribution is required: *AllStarLink node data courtesy of
+AllStarLink, Inc. (https://www.allstarlink.org/).* Locations that look like street
+addresses and email addresses in free text are removed before publishing.
 
 `reflectors.json` is the endpoint most clients want; the per-network files exist for
 failure isolation, since upstreams fail independently. **[`docs/site/reflectors/api.md`](docs/site/reflectors/api.md)

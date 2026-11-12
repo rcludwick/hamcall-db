@@ -35,14 +35,19 @@ from __future__ import annotations
 import urllib.error
 import urllib.request
 from collections.abc import Callable, Iterable, Iterator
-from dataclasses import replace
+from dataclasses import dataclass, replace
 from datetime import date
 from email.utils import formatdate
 from pathlib import Path
 
+from hamcall_db.address_guard import location_has_street_address
 from hamcall_db.models import Record
+from hamcall_db.reflectors import redact_emails
 
 __all__ = [
+    "AllStarNode",
+    "parse_directory",
+    "parse_directory_report",
     "ALLSTAR_DB_URL",
     "DOWNLOAD_TIMEOUT",
     "download_allstar",
@@ -115,6 +120,65 @@ def download_allstar(
     return dest
 
 
+def _lines(text: str) -> Iterator[list[str]]:
+    """Yield the ``|``-split fields of each non-blank line (line stripped first)."""
+    for line in text.splitlines():
+        line = line.strip()
+        if line:
+            yield line.split(_DELIMITER)
+
+
+@dataclass(frozen=True)
+class AllStarNode:
+    """One published directory row: a node number and its public registration text."""
+
+    node: str
+    callsign: str
+    description: str | None
+    location: str | None
+
+
+def _clean(value: str) -> str | None:
+    """Strip, map empty to None, and redact email addresses."""
+    return redact_emails(value.strip() or None)
+
+
+def parse_directory_report(text: str) -> tuple[list[AllStarNode], dict[str, int]]:
+    """Strictly parse the node DB into directory rows plus a count of what was dropped.
+
+    Unlike `load_allstar`, a line must have exactly four fields and a purely numeric
+    node; a repeated node keeps its first line. Street-address-looking locations are
+    blanked (not dropped) and counted under ``"address"``. Rows come back sorted by
+    node number.
+    """
+    report = {"field_count": 0, "node_number": 0, "duplicate": 0, "address": 0}
+    seen: dict[str, AllStarNode] = {}
+    for fields in _lines(text):
+        if len(fields) != 4:
+            report["field_count"] += 1
+            continue
+        raw_node = fields[_NODE].strip()
+        callsign = fields[_CALLSIGN].strip().upper()
+        if not (raw_node.isascii() and raw_node.isdigit()) or not callsign:
+            report["node_number"] += 1
+            continue
+        node = str(int(raw_node))
+        if node in seen:
+            report["duplicate"] += 1
+            continue
+        location = _clean(fields[3])
+        if location_has_street_address(location):
+            location = None
+            report["address"] += 1
+        seen[node] = AllStarNode(node, callsign, _clean(fields[2]), location)
+    return sorted(seen.values(), key=lambda n: int(n.node)), report
+
+
+def parse_directory(text: str) -> list[AllStarNode]:
+    """Directory rows from `parse_directory_report`, without the drop report."""
+    return parse_directory_report(text)[0]
+
+
 def load_allstar(path: str | Path) -> dict[str, list[int]]:
     """Parse the AllMon node DB into ``callsign (UPPER) -> sorted unique node numbers``.
 
@@ -124,11 +188,7 @@ def load_allstar(path: str | Path) -> dict[str, list[int]]:
     """
     nodes_by_call: dict[str, set[int]] = {}
     text = Path(path).read_text(encoding="utf-8", errors="replace")
-    for line in text.splitlines():
-        line = line.strip()
-        if not line:
-            continue
-        fields = line.split(_DELIMITER)
+    for fields in _lines(text):
         if len(fields) <= _CALLSIGN:
             continue
         callsign = fields[_CALLSIGN].strip().upper()
