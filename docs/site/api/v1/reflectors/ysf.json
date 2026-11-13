@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1681,
-  "generated": "2026-11-12",
+  "count": 1684,
+  "generated": "2026-11-13",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -361,6 +361,22 @@
       "sponsor": "KP3AV.Net"
     },
     {
+      "country": "ES",
+      "dashboard": "https://es.ysf.es/multi/",
+      "description": "ALANDALUS",
+      "dial": {
+        "host": "es.ysf.es",
+        "kind": "ysf",
+        "port": 42005
+      },
+      "id": "00028",
+      "license": "CC-BY-4.0",
+      "name": "ALANDALUS",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "RC-VELETA"
+    },
+    {
       "country": "US",
       "dashboard": "https://ysf.kd2yfy.net",
       "description": "Adirondacks NY",
@@ -598,8 +614,8 @@
     },
     {
       "country": "ES",
-      "dashboard": "http://188.213.170.172/main.php",
-      "description": "Tertulia C4FM",
+      "dashboard": "https://188.213.170.172/",
+      "description": "ANDALUCIA QB",
       "dial": {
         "host": "188.213.170.172",
         "kind": "ysf",
@@ -607,7 +623,7 @@
       },
       "id": "00046",
       "license": "CC-BY-4.0",
-      "name": "TERTULIA",
+      "name": "ALANDALUS",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "QsoBox"
@@ -906,7 +922,7 @@
       },
       "id": "00075",
       "license": "CC-BY-4.0",
-      "name": "Al-Andalus",
+      "name": "ANDALUCIA-QB",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "OpenRadioLink"
@@ -3631,6 +3647,22 @@
       "sponsor": "Covey Hill Amateur Radio Club (VE2CYH)"
     },
     {
+      "country": "IT",
+      "dashboard": "https://xlx775.iz2qcp.it/",
+      "description": "URF775",
+      "dial": {
+        "host": "xlx775.iz2qcp.it",
+        "kind": "ysf",
+        "port": 42001
+      },
+      "id": "00775",
+      "license": "CC-BY-4.0",
+      "name": "URF775",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "IZ2QCP"
+    },
+    {
       "country": "JP",
       "dashboard": "http://xrf776.mydns.jp",
       "description": "Kawaguchi776",
@@ -4367,6 +4399,22 @@
       "sponsor": "XREFLECTOR.ES"
     },
     {
+      "country": "ES",
+      "dashboard": "http://es.ysf.es/multi/",
+      "description": "JAEN",
+      "dial": {
+        "host": "es.ysf.es",
+        "kind": "ysf",
+        "port": 42003
+      },
+      "id": "01423",
+      "license": "CC-BY-4.0",
+      "name": "JAEN",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "xreflector"
+    },
+    {
       "country": "TR",
       "dashboard": "http://digital.pistar.com.tr:28423",
       "description": "Turk Konferans",
@@ -4823,6 +4871,22 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "F5KAV Club"
+    },
+    {
+      "country": "ES",
+      "dashboard": "http://es.ysf.es/multi/",
+      "description": "MADRID",
+      "dial": {
+        "host": "es.ysf.es",
+        "kind": "ysf",
+        "port": 42002
+      },
+      "id": "02148",
+      "license": "CC-BY-4.0",
+      "name": "MADRID",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "xreflector"
     },
     {
       "country": "US",
@@ -8643,20 +8707,6 @@
       "source": "dvref"
     },
     {
-      "country": "IT",
-      "description": "YSF",
-      "dial": {
-        "host": "ysf73.mooo.com",
-        "kind": "ysf",
-        "port": 42002
-      },
-      "id": "20273",
-      "license": "CC-BY-4.0",
-      "name": "YSF-X",
-      "network": "ysf",
-      "source": "dvref"
-    },
-    {
       "country": "GR",
       "dashboard": "https://reflector.freedmr.gr/",
       "description": "GR-KERKYRA-DV",
@@ -9204,6 +9254,22 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "EA2RE"
+    },
+    {
+      "country": "ES",
+      "dashboard": "http://es.ysf.es/multi/",
+      "description": "CORDOBA",
+      "dial": {
+        "host": "es.ysf.es",
+        "kind": "ysf",
+        "port": 42004
+      },
+      "id": "21414",
+      "license": "CC-BY-4.0",
+      "name": "CORDOBA",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "xreflector"
     },
     {
       "country": "ES",
@@ -17197,22 +17263,6 @@
       "sponsor": "N1YKT"
     },
     {
-      "country": "FR",
-      "dashboard": "http://xlx562.ysf-france.fr",
-      "description": "Serveur XLX562",
-      "dial": {
-        "host": "xlx562.ysf-france.fr",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "42562",
-      "license": "CC-BY-4.0",
-      "name": "YSF-XLX562",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "F1PTL Bruno"
-    },
-    {
       "country": "PT",
       "dashboard": "https://xlx268.from-ct.com",
       "description": "XLX268",
@@ -21201,9 +21251,9 @@
       "country": "SI",
       "description": "Slovenia2",
       "dial": {
-        "host": "109.182.208.218",
+        "host": "xlx511.ddns.net",
         "kind": "ysf",
-        "port": 42000
+        "port": 42003
       },
       "id": "62716",
       "license": "CC-BY-4.0",

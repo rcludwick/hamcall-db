@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 138,
-  "generated": "2026-11-12",
+  "generated": "2026-11-13",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -616,10 +616,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "https://xlx251.sv2hwl.gr/",
+      "dashboard": "http://xlx251.sv2hwl.gr/",
       "description": "<p>2021_ADN_SYSTEMS_GREECE</p>",
       "dial": {
-        "host": "195.201.35.61",
+        "host": "xlx251.sv2hwl.gr",
         "kind": "urf",
         "modules": [
           "B",
@@ -638,10 +638,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "https://xlx252.sv2hwl.gr/",
+      "dashboard": "http://xlx252.sv2hwl.gr/",
       "description": "<p>2021_ADN_SYSTEMS_GREECE</p>",
       "dial": {
-        "host": "51.195.107.129",
+        "host": "xlx252.sv2hwl.gr",
         "kind": "urf"
       },
       "id": "252",
@@ -1639,6 +1639,23 @@
       "sponsor": "K6KWB"
     },
     {
+      "country": "IT",
+      "dashboard": "https://xlx775.iz2qcp.it/",
+      "dial": {
+        "host": "xlx775.iz2qcp.it",
+        "kind": "urf",
+        "modules": [
+          "M"
+        ]
+      },
+      "id": "775",
+      "license": "CC-BY-4.0",
+      "name": "Lombardia",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "IZ2QCP"
+    },
+    {
       "country": "AU",
       "dashboard": "https://xlx820.com",
       "description": "<p>AU-Central Qld on YSF, DMR and DSTAR</p>",
@@ -2102,10 +2119,10 @@
     },
     {
       "country": "GR",
-      "dashboard": "https://xlxd51.sv2hwl.gr/",
+      "dashboard": "http://xlxd51.sv2hwl.gr/",
       "description": "<p>2021_ADN_SYSTEMS_GREECE</p>",
       "dial": {
-        "host": "192.227.177.138",
+        "host": "xlxd51.sv2hwl.gr",
         "kind": "urf"
       },
       "id": "D51",
@@ -2290,18 +2307,6 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "N6JET"
-    },
-    {
-      "country": "US",
-      "dial": {
-        "host": "innet.tplinkdns.com",
-        "kind": "urf"
-      },
-      "id": "JSS",
-      "license": "CC-BY-4.0",
-      "name": "JSS",
-      "network": "urf",
-      "source": "dvref"
     },
     {
       "country": "GB",
