@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 1684,
-  "generated": "2026-11-13",
+  "generated": "2026-11-14",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -922,7 +922,7 @@
       },
       "id": "00075",
       "license": "CC-BY-4.0",
-      "name": "ANDALUCIA-QB",
+      "name": "AL-ANDALUS-QB",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "OpenRadioLink"
@@ -6162,6 +6162,7 @@
     },
     {
       "country": "US",
+      "dashboard": "https://innet.tplinkdns.com",
       "description": "HighestPower",
       "dial": {
         "host": "innet.tplinkdns.com",
@@ -8080,6 +8081,7 @@
     },
     {
       "country": "US",
+      "dashboard": "https://innet.tplinkdns.com",
       "description": "NewHampshire",
       "dial": {
         "host": "innet.tplinkdns.com",
@@ -8703,6 +8705,20 @@
       "id": "20255",
       "license": "CC-BY-4.0",
       "name": "K8RON",
+      "network": "ysf",
+      "source": "dvref"
+    },
+    {
+      "country": "IT",
+      "description": "YSF",
+      "dial": {
+        "host": "ysf73.mooo.com",
+        "kind": "ysf",
+        "port": 42002
+      },
+      "id": "20273",
+      "license": "CC-BY-4.0",
+      "name": "YSF-X",
       "network": "ysf",
       "source": "dvref"
     },
@@ -14617,7 +14633,7 @@
       "country": "US",
       "description": "grupo latinos",
       "dial": {
-        "host": "162.35.25.21",
+        "host": "74.50.87.59",
         "kind": "ysf",
         "port": 42000
       },
@@ -15094,21 +15110,6 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "WU3K"
-    },
-    {
-      "country": "US",
-      "description": "K8KHW-YSF",
-      "dial": {
-        "host": "k8khw.ddns.net",
-        "kind": "ysf",
-        "port": 42002
-      },
-      "id": "31358",
-      "license": "CC-BY-4.0",
-      "name": "QSO31358",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "k8khw"
     },
     {
       "country": "US",
@@ -18800,7 +18801,8 @@
       "license": "CC-BY-4.0",
       "name": "Slovenia",
       "network": "ysf",
-      "source": "dvref"
+      "source": "dvref",
+      "sponsor": "S56IAR"
     },
     {
       "country": "SI",
@@ -18814,7 +18816,8 @@
       "license": "CC-BY-4.0",
       "name": "Slovenia3",
       "network": "ysf",
-      "source": "dvref"
+      "source": "dvref",
+      "sponsor": "S56IAR"
     },
     {
       "country": "US",
@@ -21259,7 +21262,8 @@
       "license": "CC-BY-4.0",
       "name": "Slovenia2",
       "network": "ysf",
-      "source": "dvref"
+      "source": "dvref",
+      "sponsor": "S56IAR"
     },
     {
       "country": "IT",
@@ -22197,6 +22201,20 @@
       "name": "QQ-NET",
       "network": "ysf",
       "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dial": {
+        "host": "dvref.novars.space",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "69420",
+      "license": "CC-BY-4.0",
+      "name": "NOVARS Bridge",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "Northwest Ohio VHF Amateur Radio Society"
     },
     {
       "country": "US",
@@ -23427,21 +23445,6 @@
       "name": "CA LA MortDog",
       "network": "ysf",
       "source": "dvref"
-    },
-    {
-      "country": "PL",
-      "dashboard": "http://ysf333.bvc.pl:8088",
-      "dial": {
-        "host": "ysf333.bvc.pl",
-        "kind": "ysf",
-        "port": 42002
-      },
-      "id": "76263",
-      "license": "CC-BY-4.0",
-      "name": "GORLICE",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "SP9WTN"
     },
     {
       "country": "PL",

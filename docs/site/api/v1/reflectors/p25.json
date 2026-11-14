@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 459,
-  "generated": "2026-11-13",
+  "count": 460,
+  "generated": "2026-11-14",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -982,7 +982,7 @@
       "dashboard": "https://202p25.hamzone.org",
       "description": "<p>P25 - TG202&nbsp; HELLAS Zone Net!</p>",
       "dial": {
-        "host": "foxhost.org",
+        "host": "hamzone.org",
         "kind": "p25",
         "port": 41000
       },
@@ -3304,6 +3304,7 @@
     {
       "country": "US",
       "dashboard": "http://nfonorcalp25.dyndns.org",
+      "description": "<p>Northern CA - NorCal P25</p>",
       "dial": {
         "host": "nfonorcalp25.dyndns.org",
         "kind": "p25",
@@ -3311,7 +3312,7 @@
       },
       "id": "30639",
       "license": "CC-BY-4.0",
-      "name": "30639",
+      "name": "NorCal",
       "network": "p25",
       "source": "dvref",
       "sponsor": "K6HP"
@@ -4343,6 +4344,7 @@
     {
       "country": "US",
       "dashboard": "http://cwops.dyndns.org",
+      "description": "<p>CW Ops / CW Academy / CW</p>",
       "dial": {
         "host": "cwops.dyndns.org",
         "kind": "p25",
@@ -4350,7 +4352,7 @@
       },
       "id": "32103",
       "license": "CC-BY-4.0",
-      "name": "32103",
+      "name": "CW Ops - CW Academy - CW",
       "network": "p25",
       "source": "dvref",
       "sponsor": "K6HP"
@@ -4463,6 +4465,7 @@
     {
       "country": "US",
       "dashboard": "http://nettalkp25.dyndns.org",
+      "description": "<p>Net Talk</p>",
       "dial": {
         "host": "nettalkp25.dyndns.org",
         "kind": "p25",
@@ -6551,6 +6554,21 @@
       "sponsor": "W4NOC / KC8PRG"
     },
     {
+      "country": "US",
+      "dashboard": "https://innet.tplinkdns.com",
+      "dial": {
+        "host": "innet.tplinkdns.com",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "7770",
+      "license": "CC-BY-4.0",
+      "name": "JesusSaves",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KC1UJZ"
+    },
+    {
       "country": "CN",
       "dial": {
         "host": "zhongwan.myDS.me",
@@ -6951,7 +6969,7 @@
     {
       "country": "US",
       "dashboard": "http://grayp25.dyndns.org",
-      "description": "<p>NorCal P-25</p>",
+      "description": "<p>NorCal Gray P-25</p>",
       "dial": {
         "host": "grayp25.dyndns.org",
         "kind": "p25",

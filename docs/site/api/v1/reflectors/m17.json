@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 151,
-  "generated": "2026-11-13",
+  "count": 152,
+  "generated": "2026-11-14",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -2652,6 +2652,27 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "HS1AB"
+    },
+    {
+      "country": "US",
+      "description": "<p>M17 Server with connection to&nbsp;AllStar Node 49050 this IP Network is connected fulltime to AllStar Node 460311, Brandmeister DMR TalkGroup 310311, TGIF DMR TalkGroup 310311, ADN Systems 3102 USA East TalkGroup 310311, DStar XLX-265 Module E, Echolink Node 327778, HamsOverIP PBX Phone Network by dialing 15000 and Amature Wire PBX by dialing 90051</p>",
+      "dial": {
+        "callsign": "M17-EMA",
+        "host": "m17.n8ema.com",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C"
+        ],
+        "port": 17000
+      },
+      "id": "M17-EMA",
+      "license": "CC-BY-4.0",
+      "name": "M17-EMA",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "EMA IP NETWORK"
     },
     {
       "country": "US",

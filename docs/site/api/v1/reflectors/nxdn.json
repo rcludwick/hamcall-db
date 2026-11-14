@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 418,
-  "generated": "2026-11-13",
+  "count": 422,
+  "generated": "2026-11-14",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -175,6 +175,21 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "KK6RQ"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://innet.tplinkdns.com",
+      "dial": {
+        "host": "innet.tplinkdns.com",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "11349",
+      "license": "CC-BY-4.0",
+      "name": "JesusSaves",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "KC1UJZ"
     },
     {
       "country": "US",
@@ -644,7 +659,7 @@
       "dashboard": "https://202nxdn.hamzone.org",
       "description": "<p>NXDN - TG202&nbsp; HELLAS Zone Net!</p>",
       "dial": {
-        "host": "foxhost.org",
+        "host": "hamzone.org",
         "kind": "nxdn",
         "port": 41400
       },
@@ -5517,6 +5532,19 @@
       "sponsor": "Murphy Radio Network (MRN)"
     },
     {
+      "country": "IT",
+      "dial": {
+        "host": "ysf73.mooo.com",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "65200",
+      "license": "CC-BY-4.0",
+      "name": "NXDN SERVER",
+      "network": "nxdn",
+      "source": "dvref"
+    },
+    {
       "country": "BE",
       "dashboard": "http://adn2061.be:8091",
       "description": "<p>Http://adn2061.be:8089</p>",
@@ -5969,6 +5997,36 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "K6KWB"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://innet.tplinkdns.com",
+      "dial": {
+        "host": "innet.tplinkdns.com",
+        "kind": "nxdn",
+        "port": 41401
+      },
+      "id": "777",
+      "license": "CC-BY-4.0",
+      "name": "JesusSaves",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "KC1UJZ"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://innet.tplinkdns.com",
+      "dial": {
+        "host": "innet.tplinkdns.com",
+        "kind": "nxdn",
+        "port": 41402
+      },
+      "id": "7770",
+      "license": "CC-BY-4.0",
+      "name": "JesusSaves_Linked",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "KC1UJZ"
     },
     {
       "country": "AT",
