@@ -47,9 +47,10 @@ docs_dir = "docs/site"
 # directory at the repo root.
 site_dir = "docs/.site"
 
-# Two licences, and the distinction is load-bearing rather than decorative —
-# see licensing.md.
-copyright = "Code MIT &copy; 2026 Rob Ludwick &nbsp;·&nbsp; data CC BY-NC 4.0, reflector directory CC BY 4.0"
+# Each published file has its own licence terms, and the distinction is
+# load-bearing rather than decorative; see licensing.md. The AllStar directory
+# states none: AllStarLink states no licence for its node list (NOTICE 5).
+copyright = "Code MIT &copy; 2026 Rob Ludwick &nbsp;·&nbsp; data CC BY-NC 4.0, reflector directory CC BY 4.0, AllStar directory no licence stated (AllStarLink User Content)"
 
 extra_css = ["stylesheets/hamcall-db.css"]
 
@@ -62,6 +63,7 @@ nav = [
     "reflectors/index.md",
     "reflectors/api.md",
   ] },
+  { "AllStar node directory" = "allstar.md" },
   { "Callsign dataset" = "callsigns.md" },
   { "About" = [
     "about/datasets.md",
@@ -150,4 +152,9 @@ toc = { permalink = true }
 emoji_generator = "zensical.extensions.emoji.to_svg"
 emoji_index = "zensical.extensions.emoji.twemoji"
 
+# The mermaid fence is the same one astar's site declares, so a diagram is
+# written the same way on both; hamcall-db.css styles its host.
 [project.markdown_extensions."pymdownx.superfences"]
+custom_fences = [
+  { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" },
+]

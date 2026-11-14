@@ -23,7 +23,8 @@ name: Reflectors
 #
 # WHY NIGHTLY BUT CACHED FOR A WEEK
 # ---------------------------------
-# 06:00 UTC is midnight US Mountain. The published files tell clients
+# The nightly run is on my-vps, not here: deploy/vps/hamcall-db-reflectors.timer
+# fires at 05:30 UTC plus up to 20 min random delay. The published files tell clients
 # `client_refresh_days: 7` — the build is nightly so the data is never more than a
 # day stale, while clients are asked to cache for a week so Pages is not hammered by
 # every install polling daily. Those are two different knobs and both matter.

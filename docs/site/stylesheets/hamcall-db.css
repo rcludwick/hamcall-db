@@ -521,6 +521,31 @@
   color: #ffffff;
 }
 
+/* ------------------------------------------------------------ mermaid --- */
+/* ```mermaid fences (the custom fence in zensical.toml). Diagrams render into a
+ * closed shadow root, so only the host is styleable; the theme colours the
+ * diagram itself from --md-mermaid-* variables it derives from the palette
+ * above. This seats it on the same card surface as code. Same rule as
+ * astar.css.
+ *
+ * The theme fetches mermaid from a CDN at view time. Offline readers see an
+ * empty block; that is upstream behaviour, not a local misconfiguration. */
+.md-typeset .mermaid {
+  border: 1px solid var(--hdb-hairline);
+  border-radius: 0.6rem;
+  background: var(--hdb-surface);
+  padding: 0.6rem 0.4rem;
+}
+
+/* -------------------------------------------------------------- images --- */
+/* An image in a figure (a screenshot or a chart) gets a hairline and the card
+ * radius, so a capture with a background close to the page's still has an
+ * edge. No shadow. Same rule as astar.css, minus its home-page hero. */
+.md-typeset figure img {
+  border: 1px solid var(--hdb-hairline);
+  border-radius: 0.75rem;
+}
+
 /* ---------------------------------------------------------------- misc --- */
 .md-typeset hr {
   border-bottom-color: var(--hdb-hairline);

@@ -7,12 +7,12 @@ Session work goes in the **Claude Code task tracker** (`TaskCreate` / `TaskUpdat
 `completed` when it's done. Anything that outlives the session belongs in this file.
 
 Migrated off the **au** (`au`) tracker on 2026-07-29 — do NOT invoke `au`.
-The 12 open items below each carry their full description and design text
+The 15 open items below each carry their full description and design text
 inline. All 39 issues (35 of them closed) were exported to
 `docs/issues-archive.jsonl`, which is gitignored and local-only; a committed copy of the
 tracker's final state survives in git history at the migration commit.
 
-## Open items (12)
+## Open items (15)
 
 ### hdb-crawl — Private crawler for per-callsign sources, and the Australian name join
 *HIGH · feature · cx:3*
@@ -243,6 +243,45 @@ house number (optionally a letter, range or "/n") followed by a word, unless the
 is a radio, battery or distance unit or the number is a band ("2m"); 5+ digit
 postcodes and decimals are spared. It over-blocks some numbered place names
 ("29 Palms") and can still miss an address written street-first.
+
+### hdb-tg-rotation — DMR talkgroup rotation refreshes ~4 networks a night, not 40
+*MEDIUM · bug · cx:2*
+
+**Why:** the rotation is meant to refetch up to `TALKGROUP_SLICE` (40) talkgroup lists
+a night (`hamcall_db/sources/dvref.py`). In the 2026-11-13 manifest only about four
+networks a night had moved their `fetched` date, so a full pass takes about 30 days,
+not the intended four or five. DVRef has throttled the talkgroup fetches every night
+since at least 2026-11-06.
+
+**Spec:** find where the slice stops (the 60-requests-an-hour budget shared with the
+server fetch, or the throttle response ending the loop early), then either pace the
+requests inside the hour or carry the unfinished networks to the next night. Add a
+count of refetched lists to the build log so a stalled rotation is visible.
+
+### hdb-refl-release — The `latest-reflectors` release is no longer published
+*MEDIUM · bug · cx:2*
+
+**Why:** `latest-reflectors` (Parquet, SQLite, `LICENSE-CC-BY`) was last published on
+2026-08-26. The nightly VPS job runs `hamcall-db-reflectors ... --dist /tmp/hdb-dist`,
+which writes the bulk files, but never publishes a release (`deploy/vps/build.sh`); the
+release job in `.github/workflows/reflectors.yml` runs only on a manual dispatch. The
+site says the files are out of date and points to the JSON.
+
+**Spec:** either publish the release from the VPS after a changed build (a `gh release`
+upload with a token scoped to this repo), or retire the release and say so in README
+and on the site. The DMR talkgroup Parquet listed in `reflectors.yml` was never in it.
+
+### hdb-uke-grid — UKE coordinates do not become grids
+*LOW · bug · cx:1*
+
+**Why:** the `hamcall_db/sources/uke.py` docstring says the club lists' `lat`/`lng`
+become a 4-character grid (`_grid`), but the 2026-11-13 release has no UKE grids:
+grids exist only for FCC, ISED and ACMA rows. Either the merge geocode step overwrites
+importer grids for sources it does not geocode, or the club lists carry no usable
+coordinates.
+
+**Spec:** check a UKE fixture through `parse` and through `merge`, find where the grid
+is lost, and fix it or correct the docstring.
 
 ## Shipped
 

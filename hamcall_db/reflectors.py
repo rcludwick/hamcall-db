@@ -857,7 +857,7 @@ _ENVELOPE_PROPERTIES: dict[str, dict[str, object]] = {
         "type": "array",
         "items": {"type": "string"},
         "description": (
-            "Other names that address THIS reflector — e.g. the XRF-form name an XLX "
+            "Other names that address THIS reflector, e.g. the XRF-form name an XLX "
             "reflector answers to. Searchable, and never a deduplication key: XRF### and "
             "XLX### are different machines that merely share a numbering scheme."
         ),
@@ -880,7 +880,7 @@ _ENVELOPE_PROPERTIES: dict[str, dict[str, object]] = {
         "description": (
             "The licence THIS row is under, derived from `source`. `CC-BY-4.0` for DVRef "
             "rows; `none-stated` for rows from the XLX registry and the Pi-Star host files, "
-            "whose publishers state no licence — those are redistributed as facts and no "
+            "whose publishers state no licence. Those are redistributed as facts and no "
             "rights are granted beyond those the upstream provides. A client that must "
             "redistribute under CC BY should keep only `CC-BY-4.0` rows."
         ),
@@ -900,7 +900,7 @@ _ENVELOPE_PROPERTIES: dict[str, dict[str, object]] = {
         "description": (
             "Which DMR network a server belongs to; DMR only. Present on every "
             '`network: "dmr"` row and absent on every other network. Repeated in '
-            "`dial.system` when the row is dialable — a talkgroup number means nothing "
+            "`dial.system` when the row is dialable. A talkgroup number means nothing "
             "without it, so a row that has no dial still has to carry it."
         ),
         "examples": ["freedmr-network"],
@@ -910,8 +910,8 @@ _ENVELOPE_PROPERTIES: dict[str, dict[str, object]] = {
         "description": (
             "Path of this project's MIRROR of the network's talkgroup list, relative to "
             "the API root; DMR only, and absent until the network has been mirrored. "
-            "`dial.talkgroups_url` remains upstream's canonical list — the mirror is "
-            "refreshed a rotating slice of networks a night and can be a few days "
+            "`dial.talkgroups_url` remains upstream's canonical list. The mirror is "
+            "refreshed a rotating slice of networks a night and can be weeks "
             "behind, so a client that needs the current list should follow "
             "`talkgroups_url` and use this to work without a token."
         ),
@@ -924,7 +924,7 @@ _DIAL_FIELD_PROPERTIES: dict[str, dict[str, object]] = {
         "type": "string",
         "description": (
             "The name the reflector answers to ON THE WIRE, which is not always its "
-            "directory name — XLX836 is dialled as XRF836 in RPT1/RPT2."
+            "directory name: XLX836 is dialled as XRF836 in RPT1/RPT2."
         ),
     },
     "modules": {
@@ -948,7 +948,7 @@ _DIAL_FIELD_PROPERTIES: dict[str, dict[str, object]] = {
     "system": {
         "type": "string",
         "description": (
-            "Which DMR network this server belongs to — a talkgroup number means nothing "
+            "Which DMR network this server belongs to. A talkgroup number means nothing "
             "without it."
         ),
         "examples": ["freedmr-network"],
@@ -956,8 +956,9 @@ _DIAL_FIELD_PROPERTIES: dict[str, dict[str, object]] = {
     "talkgroup": {
         "type": "integer",
         "description": (
-            "Reserved. Absent on every published row today: the directory does not mirror "
-            "talkgroups, and `talkgroups_url` is where they live."
+            "Reserved. Absent on every published row today: no server row names a single "
+            "talkgroup to dial. A network's talkgroup list is mirrored at the row's "
+            "`talkgroups` path, and `talkgroups_url` is upstream's copy."
         ),
     },
     "timeslot": {
@@ -975,7 +976,7 @@ _KIND_DESCRIPTIONS: dict[str, str] = {
     "p25": "P25 reflectors.",
     "urf": "URF reflectors (urfd). Multi-protocol, so upstream publishes no single port.",
     "mmdvm": (
-        "MMDVM/DMR master servers — one row per server, not per network — which need "
+        "MMDVM/DMR master servers (one row per server, not per network), which need "
         "per-user credentials the directory cannot carry."
     ),
 }
@@ -1014,7 +1015,7 @@ def _document_meta_properties() -> dict[str, object]:
             "type": "string",
             "format": "date",
             "description": (
-                "Date of the UPSTREAM data, never of the build — a rebuild that finds "
+                "Date of the UPSTREAM data, never of the build. A rebuild that finds "
                 "nothing new produces byte-identical files."
             ),
         },
@@ -1069,14 +1070,15 @@ def openapi_document() -> dict[str, object]:
             "version": f"{SCHEMA_VERSION}.0.0",
             "summary": "Digital-voice reflector directory as static JSON. No token, no account.",
             "description": (
-                "A directory of digital-voice reflectors — D-Star, M17, YSF, NXDN, P25 and "
-                "URF — rebuilt nightly from upstream and served as static files, so a "
-                "client picking a reflector needs no API key and no rate-limit budget."
+                "A directory of digital-voice reflectors (D-Star, M17, YSF, NXDN, P25 and "
+                "URF) and DMR master servers, rebuilt nightly from upstream and served as "
+                "static files, so a client picking a reflector needs no API key and no "
+                "rate-limit budget."
                 "\n\n"
                 "Every entry is a common envelope plus a discriminated `dial` object. An "
                 "absent `dial` means the entry is listed but not dialable from this data; "
                 "no default address is ever substituted. Unknown `network` or `dial.kind` "
-                "values must be ignored gracefully — that is the extension mechanism, and "
+                "values must be ignored gracefully. That is the extension mechanism, and "
                 "a client must never attempt to connect to a kind it does not understand."
                 "\n\n"
                 f"Rights: {RIGHTS_NOTE} Each row's `license` field says which applies."
@@ -1139,8 +1141,9 @@ def openapi_document() -> dict[str, object]:
                     "summary": "One network's reflectors.",
                     "description": (
                         "Exists for failure isolation: upstreams fail independently, and a "
-                        "D-Star-only client should not re-download 1400 YSF rows to learn "
-                        "that nothing changed."
+                        "D-Star-only client should not re-download every YSF row to learn "
+                        "that nothing changed. Each network's current row count is "
+                        "`networks.<network>.count` in the manifest."
                     ),
                     "parameters": [
                         {
@@ -1165,9 +1168,10 @@ def openapi_document() -> dict[str, object]:
                         "token. Only the networks listed under `networks.dmr.talkgroups` "
                         "in the manifest exist; the rest have not been mirrored yet. "
                         "Talkgroups are refreshed a rotating slice of networks a night "
-                        "(172 networks against an hourly budget of 60 upstream), so a "
-                        "file can be a few days behind. `generated` says when the list "
-                        "last changed and the manifest's `fetched` says when it was last "
+                        "(upstream has more networks than its hourly budget of 60 "
+                        "requests covers), so a file can be days behind. `generated` says "
+                        "when the list last changed and the manifest's `fetched` says when "
+                        "it was last "
                         "confirmed; `dial.talkgroups_url` on the server rows is "
                         "upstream's always-current copy."
                     ),
@@ -1260,7 +1264,7 @@ def openapi_document() -> dict[str, object]:
                                         "description": (
                                             "DMR only: which networks have a mirrored "
                                             "talkgroup list, keyed by network slug. Read "
-                                            "this instead of probing for 404s — a network "
+                                            "this instead of probing for 404s. A network "
                                             "absent here has not been mirrored yet."
                                         ),
                                         "additionalProperties": {
@@ -1284,7 +1288,7 @@ def openapi_document() -> dict[str, object]:
                                                         "fetched from upstream. Lists are "
                                                         "refreshed a rotating slice a "
                                                         "night, so this moves while "
-                                                        "`generated` stands still — the "
+                                                        "`generated` stands still. The "
                                                         "gap is how long the list has been "
                                                         "confirmed unchanged, not how "
                                                         "stale it is."
@@ -1350,7 +1354,7 @@ def openapi_document() -> dict[str, object]:
                     "type": "object",
                     "description": (
                         "One talkgroup within one DMR network. `system` is not repeated "
-                        "per row — it is in the document envelope, and is the same for "
+                        "per row. It is in the document envelope, and is the same for "
                         "every row in the file."
                     ),
                     "properties": {
@@ -1376,7 +1380,7 @@ def openapi_document() -> dict[str, object]:
                             "type": "string",
                             "format": "date",
                             "description": (
-                                "Date this network's talkgroups last CHANGED — the file is "
+                                "Date this network's talkgroups last CHANGED. The file is "
                                 "byte-identical between changes. When it was last fetched "
                                 "is in the manifest, as `networks.dmr.talkgroups.<system>."
                                 "fetched`."

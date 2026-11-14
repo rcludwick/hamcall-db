@@ -1,403 +1,524 @@
-# Reflector directory API — v1 design
+# Reflector API reference
 
-The contract for the static reflector directory hamcall-db publishes. This is the
-document to change when the shape changes; the OpenAPI file is generated to match
-it, and clients (astar's network picker first) are written against it.
+*Last reviewed: 2026-11-13.*
 
-## Why this exists
+This command fetches the URF network file and picks out one reflector:
 
-Digital-voice reflector directories are scattered, each behind a different
-upstream with different terms, uptime and address formats. DVRef covers M17, YSF,
-NXDN, P25, URF and DMR; the XLX registry covers D-Star properly. A client that
-wants a "pick a reflector" list should not have to speak six upstreams, hold an
-API token, or re-derive per-network naming rules.
-
-So hamcall-db does that once and publishes files. **No token, no account, no rate
-limit — it is JSON on a CDN.**
-
-## Paths
-
+```bash
+curl -s https://rcludwick.github.io/hamcall-db/api/v1/reflectors/urf.json \
+  | jq '.reflectors[] | select(.id == "007")'
 ```
-/api/v1/index.json                            service manifest: what exists, how fresh
-/api/v1/reflectors.json                       every reflector, one file
-/api/v1/reflectors/{network}.json             one network
-/api/v1/reflectors/dmr/{system}/talkgroups.json   one DMR network's talkgroups
-/api/v1/openapi.json                          this contract, machine-readable
-```
-
-`/api/v1/reflectors.json` is the endpoint most clients want. The per-network
-files exist for **failure isolation**: upstreams fail independently, and a client
-that only does D-Star should not re-download 1400 YSF rows to find out nothing
-changed.
-
-!!! note "Why `.json` and not a bare `/api/v1/reflectors`"
-
-    These are static files on GitHub Pages. An extensionless path is not served
-    with a JSON content type, and a directory does not fall back to `index.json`
-    the way it does to `index.html`. The `.json` suffix is what makes the URL
-    work and self-describe; treat `/api/v1/reflectors` as the resource and
-    `.json` as its representation.
-
-## The entry shape
-
-Every entry is a **common envelope** plus a **discriminated `dial` object**. The
-envelope is what you search and display; `dial` is what you connect with, and it
-differs per protocol because the protocols genuinely differ.
 
 ```json
 {
-  "network": "dstar",
-  "id": "XLX836",
-  "name": "XLX836",
-  "aliases": ["XRF836", "REF836", "DCS836"],
-  "description": "Welcome",
-  "country": "US",
-  "sponsor": "N7MKY",
-  "dashboard": "http://xlx.n7mky.com",
-  "source": "xlx",
-  "license": "none-stated",
-  "alias_source": "pistar",
+  "country": "ES",
+  "dashboard": "https://ea8ee.c4fm.es/ref/",
   "dial": {
-    "kind": "dextra",
-    "host": "45.56.69.219",
-    "port": 30001,
-    "callsign": "XRF836",
-    "modules": ["A", "B", "C"]
-  }
+    "host": "ea8ee.c4fm.es",
+    "kind": "urf",
+    "modules": ["A", "B", "C", "D", "E"]
+  },
+  "id": "007",
+  "license": "CC-BY-4.0",
+  "name": "XRF007 D-STAR SPAIN",
+  "network": "urf",
+  "source": "dvref",
+  "sponsor": "xreflector.es"
 }
 ```
 
-### Envelope fields
+This page is the field-by-field reference for programs that read those files.
+The [overview page](index.md) explains where the rows come from and how they
+are refreshed. The machine-readable contract is
+[`openapi.json`](https://rcludwick.github.io/hamcall-db/api/v1/openapi.json),
+which the build generates from the same tables it uses to write the files
+(`openapi_document()` in `hamcall_db/reflectors.py`). Where this page and
+`openapi.json` disagree, `openapi.json` is right.
 
-| Field | Required | Meaning |
-|---|:--:|---|
-| `network` | yes | `dstar` \| `m17` \| `ysf` \| `nxdn` \| `p25` \| `urf` \| `dmr` \| … |
-| `id` | yes | Stable within `network`. `network` + `id` is the primary key and the thing a client stores as a favourite. |
-| `name` | yes | Display name. Falls back to `id` when upstream has none. |
-| `aliases` | no | Other names this reflector is known by. Searchable. See "Aliases" below. |
-| `description` | no | Free text from upstream. |
-| `country` | no | ISO-ish country code or name, verbatim from upstream. |
-| `sponsor` | no | Who runs it. |
-| `dashboard` | no | Web dashboard URL. |
-| `source` | yes | Which importer produced the row (`xlx`, `dextra`, `dvref`, …). Provenance, for debugging a wrong entry. |
-| `license` | yes | The licence this row is under, derived from `source`: `CC-BY-4.0` for `dvref` rows, `none-stated` for `xlx` and `dextra` rows, whose publishers state no licence. See "Licence". |
-| `alias_source` | no | Where the REF/DCS names in `aliases` came from, when any did: `pistar` (the Pi-Star DPlus and DCS host files). |
-| `system` | no | Which DMR network a server belongs to; **DMR only**. Present on every `dmr` row, absent on every other network. Repeated in `dial.system`. |
-| `talkgroups` | no | Path of **our mirror** of that network's talkgroup list, relative to the API root; **DMR only**, and absent until the network has been mirrored. Not the same thing as `dial.talkgroups_url` — see "DMR talkgroups". |
-| `dial` | no | How to connect. **Absent means listed-but-not-dialable** — see below. |
+## The files
 
-### `dial` variants
+All paths are relative to the base URL
+`https://rcludwick.github.io/hamcall-db/api/v1/`. They are static files on
+GitHub Pages: no token, no account, and no query parameters. These are the
+paths `openapi.json` declares, with sizes on 2026-11-13:
 
-`dial.kind` is the discriminator. Every variant carries `host`, and every variant but
-`urf` carries `port`.
+| Path | What it holds | Size |
+|---|---|--:|
+| `index.json` | The manifest: what exists and how fresh it is | 28,371 B |
+| `reflectors.json` | Every reflector on every network, 3,996 rows | 1,836,386 B |
+| `reflectors/{network}.json` | One network's reflectors; `{network}` is `dmr`, `dstar`, `m17`, `nxdn`, `p25`, `urf` or `ysf` | 64,551 B for `urf` |
+| `reflectors/dmr/{system}/talkgroups.json` | One DMR network's talkgroups | 2,020 B for `systemx` |
+| `openapi.json` | The contract (OpenAPI 3.1) | 35,968 B |
 
-| `kind` | Networks | Extra fields |
-|---|---|---|
-| `dextra` | dstar | `callsign` (the `XRF…` name sent in RPT1/RPT2), `modules` |
-| `m17` | m17 | `callsign` (`M17-xxx`), `modules` |
-| `ysf` | ysf | — |
-| `nxdn`, `p25` | nxdn, p25 | — |
-| `urf` | urf | `modules` |
-| `mmdvm` | dmr | `system`, `requires`, `talkgroups_url`, `talkgroup`, `timeslot` |
+A sixth path, `allstar.json`, holds the AllStarLink node directory. It has its
+own `generated` date, licence and schema (`AllStarDirectory` in
+`openapi.json`) and is covered on its own page,
+[AllStar node directory](../allstar.md).
 
-`requires` lists what the **operator** must supply and the directory therefore
-cannot: `["dmr_id", "password"]`. This is how DMR fits without the schema
-pretending a public file can carry a per-user credential. A client seeing
-`requires` should prompt rather than attempt a connect.
+The per-network files exist so that one failing upstream does not cost a client
+the whole directory, and so that a client interested in one network downloads
+only that network.
 
-### DMR
+The `.json` suffix is part of every URL. GitHub Pages answers the extensionless
+`/api/v1/reflectors` with a redirect to `/api/v1/reflectors/`, which is a 404
+(checked with `curl -sI` on 2026-11-13). A path that is not published, such as
+a network or talkgroup file that does not exist, is also a 404.
 
-**A DMR row is one master SERVER, not one network.** Upstream lists networks, each
-holding zero or more servers; a network is an organisation, and what you actually
-point a hotspot at is a server with a host and a port. So the server is the row, its
-`id` is the server's slug, and a network with no servers publishes nothing.
+## The manifest: `index.json`
 
-**`system` is load-bearing.** It names the DMR network the server belongs to
-(`freedmr-network`, `systemx`, …), and without it the rest is not enough to talk to
-anybody: a talkgroup number is only defined *within* one network, so TG 235 on one
-system is not TG 235 on another. Treat `system` as part of the answer to "what did I
-just connect to", not as a label.
-
-It is published **twice**, on purpose: in the envelope on every `dmr` row, and again in
-`dial.system` when the row is dialable. The dial copy keeps a dial object
-self-contained for a client that switches on `kind` and reads nothing else; the envelope
-copy is the one that survives on a server with no dial at all (see below). They always
-agree.
-
-**Talkgroups are both linked and mirrored.** `dial.talkgroups_url` points at DVRef's
-own list for that network — canonical, always current, and needing a token or their
-anonymous tier. The envelope's `talkgroups` points at *our* copy of the same list,
-served without a token, and is present only for the networks that have been mirrored.
-Prefer the mirror when you have no token; follow `talkgroups_url` when you need the list
-to be current to the minute. See "DMR talkgroups" below.
-
-**`talkgroup` and `timeslot` are reserved.** They are in the contract and absent from
-every published row today: a mirrored talkgroup list is its own file, not a column on a
-server row, and these two would say which single talkgroup a row is pinned to — which
-nothing upstream publishes. They stay declared so such a row could be added without a
-version bump; a client can only ignore-what-it-does-not-know if the field was declared.
-`timeslot` is `1` or `2`, and only means anything alongside a `talkgroup`.
-
-**Servers with no usable address are listed without a `dial`.** Upstream's `dns` column
-is free text and is not always a host — several entries carry a dashboard URL
-(`https://apollo.dmr.uk.pe/dashboard/`) or a host with a path. Anything that is not a
-bare hostname or IP literal is refused, the numeric address is used instead, and if
-there is none the row is published with no `dial` at all rather than an address a client
-cannot resolve. Such a row still carries `system`, `name`, `sponsor`, `country` and
-`dashboard` — it is a place you can identify and read about, just not one this data can
-dial. `requires` and `talkgroups_url` are dial-only, because they are instructions for
-making a connection this row does not offer.
-
-**Descriptions are upstream HTML**, as for every DVRef network — they arrive as written
-on the network's own dashboard, tags, entities and all, with only email addresses
-removed.
-
-### DMR talkgroups
-
-A DMR master tells you where to connect; a **talkgroup** is what you actually talk on
-once you are there. Numbers are only defined *within* one network — TG 235 on SystemX
-and TG 235 on FreeDMR are different conversations — so the mirror is per network, keyed
-by the same `system` slug the server rows carry.
-
-```
-GET /api/v1/reflectors/dmr/systemx/talkgroups.json
-```
+The manifest is the small file a client fetches on every routine check. Here
+it is with `networks` cut down to two of its seven entries and DMR's
+`talkgroups` map cut down to one of its 130:
 
 ```json
 {
-  "schema_version": 1,
   "api_version": "v1",
-  "network": "dmr",
-  "system": "systemx",
-  "generated": "2026-09-07",
   "client_refresh_days": 7,
+  "count": 3996,
+  "endpoints": {
+    "all": "reflectors.json",
+    "allstar": "allstar.json",
+    "network": "reflectors/{network}.json",
+    "openapi": "openapi.json"
+  },
+  "expires_hint": "2026-11-20",
+  "generated": "2026-11-13",
+  "license": "mixed \u2014 see per-row license and NOTICE",
+  "license_url": "https://github.com/rcludwick/hamcall-db/blob/main/NOTICE",
+  "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
+  "networks": {
+    "dmr": {
+      "count": 195,
+      "generated": "2026-11-13",
+      "license": "CC BY 4.0",
+      "source": {"name": "DVRef", "url": "https://dvref.com/api/v2/"},
+      "talkgroups": {
+        "systemx": {
+          "count": 21,
+          "fetched": "2026-10-29",
+          "generated": "2026-09-29",
+          "url": "reflectors/dmr/systemx/talkgroups.json"
+        }
+      },
+      "url": "reflectors/dmr.json"
+    },
+    "urf": {
+      "count": 138,
+      "generated": "2026-11-13",
+      "license": "CC BY 4.0",
+      "source": {"name": "DVRef", "url": "https://dvref.com/api/v2/"},
+      "url": "reflectors/urf.json"
+    }
+  },
+  "rights": "hamcall-db's own contributions (schema, selection, derived fields) and all DVRef-sourced rows are CC BY 4.0. Rows from the XLX registry and Pi-Star host files are factual listings whose publishers state no licence; they are redistributed as facts and no rights are granted beyond those the upstream provides.",
+  "schema_version": 1
+}
+```
+
+The live file spells the dash in the `license` value as a literal character;
+`\u2014` is the same string in JSON escape form. Keys are sorted in every
+data file (`hamcall_db/reflectors.py`).
+
+| Field | Meaning |
+|---|---|
+| `schema_version` | Always `1` in v1. Required. |
+| `api_version` | Always `"v1"`. |
+| `generated` | The newest `generated` date among the network files. Required. The talkgroup files do not move it. |
+| `client_refresh_days` | How many days a client should wait between checks: `7`. |
+| `expires_hint` | `generated` plus `client_refresh_days` (`hamcall_db/reflectors.py`). |
+| `count` | Total rows across all networks. |
+| `license` | `"CC BY 4.0"` if every row in the directory is CC BY, otherwise the mixed label shown above. |
+| `license_url` | The CC BY 4.0 deed for a CC BY file, NOTICE for a mixed one. |
+| `rights` | Present on mixed files only: what is and is not licensed, in words. |
+| `modifications` | What hamcall-db changed, as CC BY 4.0 requires. |
+| `endpoints` | Paths of the other files, relative to `index.json`. Keys: `all`, `allstar`, `network`, `openapi`. |
+| `networks` | One object per network, keyed by network name. Required. |
+
+Each object in `networks` has:
+
+| Field | Meaning |
+|---|---|
+| `url` | Path of that network's file. Required. |
+| `count` | Rows in that file. Required. |
+| `generated` | That file's `generated` date. Required. |
+| `source` | The upstream, as `name` and `url`. |
+| `license` | That file's `license` label, so a client can see which files are plain CC BY without downloading them. |
+| `talkgroups` | DMR only: the talkgroup mirror map, described under [DMR talkgroup files](#dmr-talkgroup-files). |
+
+## Reflector files: `reflectors.json` and `reflectors/{network}.json`
+
+Both kinds of file wrap a list of entries in the same envelope. Here is the
+start of `reflectors/urf.json`, with `reflectors` cut to its first row:
+
+```json
+{
+  "api_version": "v1",
+  "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
+  "client_refresh_days": 7,
+  "count": 138,
+  "generated": "2026-11-13",
   "license": "CC BY 4.0",
-  "attribution": "Reflector data provided by DVRef — https://dvref.com/",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
+  "network": "urf",
+  "reflectors": [
+    {
+      "country": "ES",
+      "dashboard": "http://ycs722.xreflector.net/ref/",
+      "dial": {"host": "ycs722.xreflector.net", "kind": "urf"},
+      "id": "000",
+      "license": "CC-BY-4.0",
+      "name": "XRF00",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "xreflector"
+    }
+  ],
+  "schema_version": 1,
+  "source": {"name": "DVRef", "url": "https://dvref.com/api/v2/"}
+}
+```
+
+Both files carry `schema_version`, `api_version`, `generated`,
+`client_refresh_days`, `license`, `license_url`, `modifications`,
+`attribution`, `count` and `reflectors`, plus `rights` when the file is mixed.
+Then they differ:
+
+- A network file adds `network` (its name) and `source` (its upstream, as
+  `name` and `url`).
+- `reflectors.json` adds `networks`, a map from network name to row count, and
+  `sources`, a list of upstreams, each with `name` and `url`. Its
+  `attribution` is four lines separated by `\n`, one per upstream.
+
+`reflectors` is sorted by `id` in a network file. `count` always equals the
+length of `reflectors`. The schemas are `ReflectorCollection` and
+`NetworkCollection` in `openapi.json`. Of the envelope fields, the schemas
+require `schema_version`, `generated`, `count` and `reflectors` in both kinds
+of file, and `network` in a network file; the build writes the rest too.
+
+## One entry
+
+An entry has two parts. The outer fields describe the reflector, for searching
+and display. The `dial` object says how to connect. Empty values are left out,
+never written as `null` (`entry_json` in `hamcall_db/reflectors.py`), so read a
+missing key as "unset".
+
+| Field | Required | Meaning | Rows carrying it, of 3,996 |
+|---|:--:|---|--:|
+| `network` | yes | `dmr`, `dstar`, `m17`, `nxdn`, `p25`, `urf` or `ysf` | 3,996 |
+| `id` | yes | Stable within `network`. `network` plus `id` is the key a client stores as a favourite. | 3,996 |
+| `name` | yes | Display name. When upstream has none, it is the `id`. | 3,996 |
+| `source` | yes | The importer that produced the row: `dvref`, `xlx` or `dextra`. | 3,996 |
+| `license` | yes | This row's licence: `CC-BY-4.0` or `none-stated`. See [Licence fields](#licence-fields). | 3,996 |
+| `aliases` | no | Other names that address this same reflector. See [Aliases](#aliases). | 897 |
+| `alias_source` | no | `pistar` when some of the `aliases` came from the Pi-Star DPlus and DCS host files. | 887 |
+| `description` | no | Free text from upstream. DVRef descriptions are HTML. | 3,352 |
+| `country` | no | Country as upstream wrote it: a code such as `ES` on some rows, a name such as `Brazil` on others. | 3,943 |
+| `sponsor` | no | Who runs it, in upstream's words. | 2,658 |
+| `dashboard` | no | URL of the reflector's web dashboard. | 3,321 |
+| `system` | no | DMR only, and on every DMR row: the DMR network the server belongs to. | 195 |
+| `talkgroups` | no | DMR only: path of the mirrored talkgroup file, relative to the API root. | 195 |
+| `dial` | no | How to connect. Absent means the entry is listed but cannot be dialled from this data. | 3,966 |
+
+## The `dial` object
+
+`dial.kind` says which protocol the entry speaks, and it decides which other
+keys `dial` holds. Every kind has `host` (a hostname or IP address, as upstream
+gave it). Every kind except `urf` also has `port`. The variants are the
+`Dial*` schemas in `openapi.json`; the counts are from `reflectors.json` on
+2026-11-13.
+
+| `dial.kind` | `network` | Keys beyond `kind`, `host`, `port` | Rows |
+|---|---|---|--:|
+| `dextra` | `dstar` | `callsign`, `modules` | 951 |
+| `m17` | `m17` | `callsign`, `modules` | 151 |
+| `ysf` | `ysf` | none | 1,684 |
+| `nxdn` | `nxdn` | none | 418 |
+| `p25` | `p25` | none | 459 |
+| `urf` | `urf` | `modules`; `port` is optional | 138 |
+| `mmdvm` | `dmr` | `system`, `requires`, `talkgroups_url`, `talkgroup`, `timeslot` | 165 |
+
+What the extra keys mean:
+
+- `callsign` is the name the reflector answers to on the wire. It is not
+  always the directory name: `XLX000` is dialled as `XRF000`, the name a D-Star
+  radio sends in its RPT1 and RPT2 header fields.
+- `modules` lists the module letters, `A` to `Z`. A module is one room inside
+  a reflector, carrying its own conversation. All 151 M17 rows carry
+  `modules`; 89 of the 138 URF rows do; no D-Star row does.
+- `system`, `requires`, `talkgroups_url`, `talkgroup` and `timeslot` are
+  described under [DMR servers](#dmr-servers).
+
+The other five kinds look like this, copied from `reflectors.json`:
+
+```json
+{"callsign": "XRF000", "host": "201.62.48.60", "kind": "dextra", "port": 30001}
+{"callsign": "M17-002", "host": "urf001.cumbriacq.com", "kind": "m17", "modules": ["A"], "port": 17000}
+{"host": "hellaszone.com", "kind": "ysf", "port": 42000}
+{"host": "79.129.234.51", "kind": "nxdn", "port": 41400}
+{"host": "192.241.160.183", "kind": "p25", "port": 41001}
+```
+
+Two values are derived by hamcall-db rather than read from upstream. Every
+D-Star `port` is 30001, DExtra's fixed port, because neither D-Star upstream
+publishes one (`hamcall_db/sources/xlx.py`, `hamcall_db/sources/dextra.py`).
+The `callsign` of an XLX entry is its XRF-form name.
+
+The build writes no `dial` when an entry has no host, or when it has no port
+and its kind needs one (`_dial_json` in `hamcall_db/reflectors.py`). It never
+fills in a guessed port. URF is the exception: DVRef publishes no port for URF
+reflectors, and a URF reflector (the `urfd` server) listens for several
+protocols, each on its own port, so there is no single port to give. A URF
+`dial` therefore carries `host` alone, plus `modules` where known. On
+2026-11-13, the 30 entries without a `dial` were all DMR.
+
+## DMR servers
+
+A DMR entry is one master server: the machine a hotspot connects to. DVRef
+lists DMR networks, each with zero or more servers, and the build publishes
+one row per server. Its `id` is DVRef's identifier (slug) for the server
+(`hamcall_db/sources/dvref.py`). Here is one, from `reflectors.json`:
+
+```json
+{
+  "country": "ES",
+  "dashboard": "http://radiodigitalspain.ddns.net/dashboard",
+  "dial": {
+    "host": "radiodigitalspain.ddns.net",
+    "kind": "mmdvm",
+    "port": 62031,
+    "requires": ["dmr_id", "password"],
+    "system": "01hamradiodx",
+    "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/01hamradiodx/talkgroups/"
+  },
+  "id": "01hamradiodx-server-01hamradiodx",
+  "license": "CC-BY-4.0",
+  "name": "01HAMRADIODX",
+  "network": "dmr",
+  "source": "dvref",
+  "sponsor": "01HAMRADIODX",
+  "system": "01hamradiodx",
+  "talkgroups": "reflectors/dmr/01hamradiodx/talkgroups.json"
+}
+```
+
+- `system` names the DMR network. A talkgroup number only means something
+  inside one network, so a client needs `system` to know what it is connected
+  to. It appears twice: on every DMR row, and inside `dial` when the row has
+  one, so that a client reading only `dial` still has it. The two always
+  match. The 195 rows on 2026-11-13 belonged to 121 networks.
+- `requires` lists what the operator must supply and the directory cannot:
+  `["dmr_id", "password"]` on every live row. A client that sees `requires`
+  should prompt for those values rather than try to connect without them.
+- `talkgroups_url` is DVRef's own talkgroup list for the network. DVRef's API
+  asks for an account token (NOTICE source 11).
+- `talkgroups`, outside `dial`, is the path of hamcall-db's copy of that list,
+  which needs no token. See the next section.
+- `talkgroup` and `timeslot` are reserved. They would pin a row to one
+  talkgroup on one timeslot (`1` or `2`), and no published row carries them.
+  They are declared so that such rows could be added later without a version
+  change.
+
+DVRef's address field for a DMR server is free text, and some entries hold a
+dashboard URL instead of a hostname. The build keeps a value only if it is a
+bare hostname or IP address; otherwise it uses the server's numeric address,
+and if there is none the row gets no `dial` (`_host` in
+`hamcall_db/sources/dvref.py`). Such a row still has its `system`, `name`,
+`country`, `sponsor`, `dashboard` and `talkgroups`. `requires` and
+`talkgroups_url` live only inside `dial`, so they go with it.
+
+## DMR talkgroup files
+
+A **talkgroup** is a numbered channel inside one DMR network. Each network's
+list is published as `reflectors/dmr/{system}/talkgroups.json`. This is the
+SystemX file, with `talkgroups` cut to three of its 21 rows:
+
+```json
+{
+  "api_version": "v1",
+  "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
+  "client_refresh_days": 7,
+  "count": 21,
+  "generated": "2026-09-29",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
+  "network": "dmr",
+  "schema_version": 1,
   "source": {
     "name": "DVRef",
     "url": "https://dvref.com/api/v2/dmr/networks/systemx/talkgroups/"
   },
-  "count": 21,
+  "system": "systemx",
   "talkgroups": [
-    { "tg": 69, "name": "CQ North West UK" },
-    { "tg": 235, "name": "235 Alive" }
+    {"name": "CQ North West UK", "tg": 69},
+    {"name": "Chat 1", "tg": 80},
+    {"name": "235 Alive", "tg": 235}
   ]
 }
 ```
 
-Rows are sorted by `tg` and carry nothing else: `system` and the date are the same for
-every row in the file, so they live in the envelope rather than being repeated. `name`
-is omitted when upstream has none.
+Each row has `tg`, the talkgroup number, and `name` when upstream gives one.
+Rows are sorted by `tg`. The envelope is the reflector envelope with
+`network` always `dmr` and `system` added; the schema is `TalkgroupCollection`,
+which requires `schema_version`, `network`, `system`, `generated`, `count` and
+`talkgroups`.
 
-**Discover them from the manifest, do not probe for them.** Only some networks have a
-mirror, and `index.json` says which:
+Find the files through the manifest rather than by building URLs.
+`networks.dmr.talkgroups` maps each mirrored network to its `url`, `count`,
+`generated` and `fetched`, all four required, and a DMR row's own `talkgroups` field holds the
+same path. A network missing from the map has no file. On 2026-11-13 the map
+listed 130 networks, 101 of them with at least one talkgroup and 1,837
+talkgroups in total.
 
-```json
-"networks": {
-  "dmr": {
-    "url": "reflectors/dmr.json",
-    "count": 249,
-    "generated": "2026-09-07",
-    "talkgroups": {
-      "systemx": {
-        "url": "reflectors/dmr/systemx/talkgroups.json",
-        "count": 21,
-        "generated": "2026-09-07",
-        "fetched": "2026-09-12"
-      }
-    }
-  }
-}
-```
-
-A network absent from that map has no mirrored list — fetch `dial.talkgroups_url`
-instead, or show none. Every `dmr` server row for a mirrored network also carries the
-same path in its envelope `talkgroups` field, so a client that has a row in hand never
-has to assemble a URL.
-
-#### Freshness: two dates, and why they differ
-
-**This is a rotating mirror, and it is the one endpoint here that is deliberately
-behind.** Talkgroups live behind a *per-network* upstream endpoint, and there are 172
-networks (111 with servers) against an authenticated budget of **60 requests an hour per
-account** — shared with the six requests the rest of the nightly build already spends.
-A nightly sweep does not fit and would throttle the whole directory.
-
-So each night the build refetches the **40** networks fetched longest ago, and every
-other network republishes the list it already had. Every network comes round roughly
-**every three nights**, and a newly listed one gets its talkgroups on its first or
-second night.
-
-That gives a client two dates, and they answer different questions:
-
-| Date | Where | Means |
-|---|---|---|
-| `generated` | the talkgroup file | When this network's talkgroups last **changed**. |
-| `fetched` | `index.json`, in the `talkgroups` map | When they were last **confirmed** against upstream. |
-
-The gap between them is how long the list has been *known unchanged* — not how stale it
-is. A `generated` of three months ago and a `fetched` of last night means a settled
-network, not a neglected file.
-
-Splitting them is what keeps the files stable: a refetch that finds the same rows leaves
-the file byte-identical and only moves `fetched` in the manifest, so a night that
-changes nothing produces no diff in any of the 111 mirrors. (Putting the fetch date in
-each file instead would rewrite forty of them a night to say that nothing happened.)
-
-The rest of the rules follow from the budget:
-
-* a network is not refetched at all within two days of its last fetch, so a rebuild on
-  the same day spends no requests and changes nothing;
-* if upstream throttles the build, the slice stops for the night, every list keeps its
-  previous copy, and no `fetched` date moves — so the networks that missed their turn
-  are first in line tomorrow. The reflector directories are fetched first, so talkgroups
-  can never starve them;
-* a network that answers with an empty list where it previously had rows keeps its
-  previous file, and is retried the next night rather than waiting out the rotation.
-
-A talkgroup list changes far more slowly than this window, so a few days behind is not a
-practical problem. But if you need the current list to the minute — a client that is
-about to key up on a talkgroup a sysop added this morning — follow `talkgroups_url` to
-DVRef, which is exactly why that field stays on every row.
-
-**Licence: CC BY 4.0**, because every talkgroup list comes from DVRef. The talkgroup files carry
-`license`, `attribution` and `modifications` inline like every other file, and
-attribution is required if you redistribute them.
-
-**`urf` is the one variant without a required `port`.** Upstream publishes none for any
-of the 89 URF reflectors, and a urfd speaks several protocols at once, so there is no
-single port to supply — inventing one would contradict rule 4 below. Dropping `dial`
-from those entries instead would throw away the host as well, which helps nobody, so the
-URF variant carries `host` (plus `modules`) and no port. Every other variant requires a
-port and an entry that lacks one is emitted without a `dial` at all.
-
-## Extensibility rules
-
-These are the rules that let this grow to new services without breaking clients.
-
-1. **Unknown `network` or `dial.kind` must be ignored gracefully.** A client may
-   display such an entry, but must never attempt to connect to one. This is the
-   whole extension mechanism: a new service ships as a new `kind`, and old
-   clients degrade to "listed, not offered" instead of breaking.
-2. **Adding a network, a `dial.kind`, or a field is not a version bump.** Older
-   readers ignore what they do not recognise; newer readers treat absent as unset.
-3. **A bump is for meaning changing** — a field renamed, a unit changed, a type
-   swapped, a value re-interpreted. A bump moves the path (`/api/v2/…`) and the
-   old path keeps serving until clients migrate.
-4. **`dial` absent means not dialable from this data.** Do not invent a default
-   port to fill the gap; an entry you cannot address is better shown greyed than
-   dialled wrongly.
-
-## Aliases, and why they are not cosmetic
-
-The same reflector is known by different names on different networks, and
-worse, **the same name can mean different machines**.
-
-An XLX reflector listed as `XLX836` answers to `XRF836` on the DExtra wire — so
-`XRF836` is a genuine alias, and a user typing either should find it.
-
-But standalone XRF reflectors — the original xrefl.net DExtra network — are
-*different machines* that share the numbering. Measured 2026-08-26, 13 of 14
-sampled `XRF###`/`XLX###` pairs resolved to entirely different servers:
-`XRF002` is `xrf002.dstar.club`, while `XLX002` is a host in China.
-
-So: entries are **never** deduplicated across that boundary, and `aliases` holds
-only names that genuinely address *this* entry. Collapsing them would send an
-operator to a reflector on another continent.
-
-### Three protocols, three names
-
-D-Star has three linking protocols — DPlus (`REF`), DExtra (`XRF`) and DCS
-(`DCS`) — and an XLX reflector answers on all three. So `XLX836` carries
-`XRF836`, `REF836` **and** `DCS836`, all naming one machine at one address.
-Those names are searchable and resolvable; they are not a claim that the
-reflector must be reached over that protocol. The `dial` object still says how
-to connect, and for D-Star it always says `dextra`.
-
-Aliases are attached by **address**, never by number. `REF836` and `XRF836` are
-both `45.56.69.219`; `REF001` is `104.237.157.7` while `XRF001` is
-`217.154.120.107` — unrelated machines that happen to share a number.
-
-### An alias is never another entry's `id`
-
-**A name resolves to exactly one entry.** If a string is an alias of one row and
-the `id` of another, a client that indexes both resolves it to whichever it saw
-first — silently, and differently depending on row order. So the publisher drops
-the alias and keeps the id.
-
-This is not hypothetical: 44 D-Star names collided this way until 2026-08-28.
-`XLX002` carried the alias `XRF002` (its DExtra callsign) while a standalone
-`XRF002` existed as its own entry — the first in China, the second in the US.
-Clients resolving `XRF002` reached the wrong one.
-
-The dropped alias costs nothing. The row is still found by its own `id`, and the
-wire callsign lives in `dial.callsign`, which is untouched — so a client
-dialling `XLX002` still sends `XRF002` in the RPT1/RPT2 header, which is what
-that field is for. **Do not reconstruct aliases from `dial.callsign`**; that
-would put the collision straight back.
-
-## Search
-
-Clients search locally — the whole set is a few hundred KB gzipped, and a static
-file cannot offer a query parameter. Index these fields:
-
-`id`, `name`, `aliases`, `description`, `country`, `sponsor`
-
-Match case-insensitively and on substrings; `XLX8`, `836`, and `n7mky` should all
-find the example above. Filter by `network` before text where the UI has a
-network already selected.
-
-## Freshness
+A talkgroup list has two dates, and they answer different questions:
 
 | Field | Where | Meaning |
 |---|---|---|
-| `generated` | every file | The date of the **upstream data**, not of the build. |
-| `client_refresh_days` | every file | How often a client should re-check. Currently **7**. |
-| `count` | every file | Row count, so a client can sanity-check a truncated fetch. |
+| `generated` | the talkgroup file, and the manifest map | When this list last changed. |
+| `fetched` | the manifest map only | When the build last confirmed the list against DVRef. |
 
-`generated` is content-derived on purpose: the job rebuilds nightly, but a night
-that finds nothing new produces byte-identical files. A client comparing
-`generated` therefore sees movement only when the data actually moved.
+SystemX above was last confirmed on 2026-10-29, and its list had not changed
+since 2026-09-29. A refetch that finds the same list leaves the file
+byte-identical and moves only `fetched` in the manifest.
 
-A **DMR talkgroup file** follows the same rule and adds a second date beside it: its
-`generated` is when that network's talkgroups last changed, and the manifest's `fetched`
-is when they were last confirmed — see "DMR talkgroups". The manifest's own top-level
-`generated` deliberately ignores both: a rotation must not tell every client that the
-directory changed on a night when no reflector did.
+The lists are refreshed in rotation, because DVRef allows 60 requests an hour
+per account and there is one request per network. Each night the build
+refetches the networks fetched longest ago, up to 40 of them, and skips any
+fetched in the last two days (`TALKGROUP_SLICE` and `TALKGROUP_MIN_AGE_DAYS` in
+`hamcall_db/sources/dvref.py`). In practice the rotation is slower than that
+cap. In the 2026-11-13 manifest, about four networks a night had moved their
+`fetched` date, and the oldest `fetched` among networks with servers was
+2026-10-15. Nine files belong to networks that have no servers listed today;
+their `fetched` dates go back to 2026-09-07. If a client needs a list that is
+current today, it should fetch `dial.talkgroups_url` from DVRef.
 
-**Cache for a week.** Reflector addresses change on a scale of weeks. Polling
-harder costs bandwidth and buys nothing, and there is no SLA here to lean on.
+## Aliases
 
-## Licence
+`aliases` holds other names that reach this same reflector, so that a user
+who types any of them finds it. The rules that decide what goes in:
 
-The licence is **per row**, because only one upstream licenses its data:
-
-* rows with `source: "dvref"`, and hamcall-db's own contributions (schema,
-  selection, derived fields), are **CC BY 4.0**: attribution required,
-  commercial use permitted, and you must indicate modification. These rows say
-  `"license": "CC-BY-4.0"`.
-* rows with `source: "xlx"` (the XLX registry) or `source: "dextra"` (the Pi-Star
-  DExtra host file) say `"license": "none-stated"`. Those publishers state no
-  licence; the rows are redistributed as facts, and no rights are granted beyond
-  those the upstream provides. REF/DCS names in `aliases` come from the Pi-Star
-  DPlus and DCS host files, also unlicensed, and the row marks them with
+- An XLX reflector answers on three D-Star linking protocols: DExtra (`XRF`
+  names), DPlus (`REF`) and DCS (`DCS`). Its XRF-form name is an alias. So is
+  any REF or DCS name whose Pi-Star host file entry has the same address as the
+  reflector. REF and DCS names are matched by address, never by number
+  (`hamcall_db/reflectors.py`), and they are why a row carries
   `alias_source: "pistar"`.
+- An alias never equals another entry's `id`. A name has to lead to one
+  entry, so when the two clash the alias is dropped and the `id` stays
+  (`drop_shadowing_aliases` in `hamcall_db/reflectors.py`).
 
-A file's top-level `license` is `"CC BY 4.0"` when every row in it is CC BY, and
-`"mixed — see per-row license and NOTICE"` otherwise (`dstar.json`,
-`reflectors.json`, `index.json`), in which case it also carries a `rights` note.
-The manifest repeats each network file's label under `networks.<name>.license`.
-Every file carries `attribution` and `modifications` inline so the terms cannot
-get separated from the data. See `LICENSE-CC-BY`.
+The second rule matters because XLX and standalone XRF reflectors share
+numbers but not machines. On 2026-11-13, `XLX002` was at `223.95.197.217`, and
+the standalone entry `XRF002` was at `52.36.45.107`. `XLX002` answers to
+`XRF002` on the wire, so its `dial.callsign` is `"XRF002"`, but its row has no
+`aliases`: the alias was dropped because `XRF002` is another entry's `id`. A
+client should not rebuild aliases from `dial.callsign`, since doing so would
+send a user who typed `XRF002` to the wrong server.
 
-One of those modifications is substantive: **email addresses are stripped from the
-free-text fields** (`name`, `sponsor`, `description`) and replaced with
-`[email removed]`. These files are bulk-downloadable JSON on a CDN, which turns a
-sysop's address written into a reflector blurb into a harvestable list — a different
-exposure from the same text rendered on a dashboard page. It is the same reasoning that
-truncates person grids to four characters and keeps street addresses out of the callsign
-dataset entirely.
+## Searching
 
-None of this is the CC BY-NC licence on hamcall-db's callsign dataset. Merging
-the DVRef rows into it would impose a non-commercial restriction that CC BY 4.0
-grants away, which the licence forbids. Keep them apart.
+The files offer no query parameters, so a client searches its own copy. These
+fields are the ones worth indexing: `id`, `name`, `aliases`, `description`,
+`country` and `sponsor`. A case-insensitive substring match works well:
+`XLX0`, `000` and `brazil` all find `XLX000` on the [overview page](index.md#one-entry).
+Filter by `network` first when the user has already picked one.
+
+Three things to know about the text:
+
+- DVRef descriptions arrive as HTML, tags and entities included. The P25
+  entry `100` has the description
+  `<p>Motorola Alumni, system installers, and tech talk.</p>` followed by more
+  paragraphs. Strip or sanitise the HTML before indexing or displaying it.
+- Email addresses in `name`, `sponsor` and `description` are replaced with
+  `[email removed]` (`EMAIL_PLACEHOLDER` in `hamcall_db/reflectors.py`), and
+  so are those in talkgroup names. On 2026-11-13, 72 entries contained that
+  placeholder.
+- `country` is not normalised. Match it as text.
+
+## Caching and freshness
+
+The files change at most once a night. A nightly build commits new files only
+when their content changed, and the site redeploys after each commit (see the
+[overview page](index.md#how-the-directory-is-refreshed)).
+
+GitHub Pages sends these headers on every file (checked with `curl -sI` on
+2026-11-13):
+
+| Header | Value for `index.json` | Meaning for a client |
+|---|---|---|
+| `Cache-Control` | `max-age=600` | Caches between the client and Pages may hold the file for 10 minutes. |
+| `ETag` | `"6af6a0b2-6ed3"` | Send it back as `If-None-Match`; an unchanged file returns `304 Not Modified` with no body. |
+| `Last-Modified` | `Fri, 13 Nov 2026 05:31:30 GMT` | Works the same way as `If-Modified-Since`. |
+| `Access-Control-Allow-Origin` | `*` | A browser page on any site may fetch the files. |
+
+Both conditional requests returned `304` on 2026-11-13. Pages also compresses
+the files when asked with `Accept-Encoding: gzip`: `reflectors.json` went over
+the wire as 239,215 bytes instead of 1,836,386. A compressed response carries
+a weak ETag, `W/"6af6a0b2-6ed3"`, which is still accepted in `If-None-Match`.
+
+The `ETag` and `Last-Modified` change more often than the data. On
+2026-11-13 every file had the same `Last-Modified`, and each `ETag` was that
+time in hexadecimal (`6af6a0b2` is 05:31:30 UTC) followed by the file size.
+So both move whenever the site is redeployed, including deploys that change
+only these documentation pages (`.github/workflows/pages.yml`). A `200` after
+a changed ETag means "check the content", not "the data changed". Compare
+`generated` and `count` to find out.
+
+A client that follows these steps fetches as little as possible:
+
+1. Every `client_refresh_days` days (7), fetch `index.json`, sending the
+   `ETag` you stored last time in `If-None-Match`. On `304`, you are done.
+2. Compare each `networks.<name>.generated` and `count` with the values you
+   cached. Download only the network files where either moved.
+3. Check each downloaded file: its `count` should equal the length of its
+   `reflectors` list. If it does not, the download was cut short; keep the old
+   copy.
+4. For DMR talkgroup lists, compare `networks.dmr.talkgroups.<system>.generated`
+   with your copy, and download only those that moved.
+
+To tell whether the directory itself has gone stale, compare `expires_hint`
+with today's date. `expires_hint` is the newest network `generated` plus seven
+days, so a date in the past means no network's data has moved for a week.
+On 2026-11-13 every network's `generated` was 2026-11-13. A single network
+with an older `generated` than the rest means the build kept that network's
+previous file: its upstream failed, or the new data shrank too far to trust
+(`SHRINK_GUARD` in `hamcall_db/build_reflectors.py`). The old file is still
+the best data available, so keep using it.
+
+## Compatibility rules
+
+These rules let new networks and protocols appear without breaking existing
+clients:
+
+1. **Ignore what you do not recognise.** A client may show an entry whose
+   `network` or `dial.kind` it does not know, but must never try to connect to
+   it. Unknown keys should be ignored.
+2. **Additions do not change the version.** A new network, a new `dial.kind`
+   or a new field is added under `/api/v1/`. Older clients ignore it, and newer
+   clients treat a missing key as unset.
+3. **A change of meaning does.** Renaming a field, changing its type or unit,
+   or reinterpreting a value would be published under a new path, `/api/v2/`,
+   with `/api/v1/` kept serving until clients move. `schema_version` and
+   `api_version` identify the version a file belongs to.
+4. **No `dial` means not dialable.** Do not invent a port or address to fill
+   the gap. Show the entry as listed but unavailable.
+
+## Licence fields
+
+Each row's `license` says which licence it is under: `CC-BY-4.0` for rows from
+DVRef (`source: "dvref"`), and `none-stated` for rows from the XLX registry
+and the Pi-Star DExtra host file (`xlx`, `dextra`), whose publishers state no
+licence (`SOURCE_LICENSES` in `hamcall_db/reflectors.py`). On 2026-11-13 that
+was 3,045 and 951 rows.
+
+A file's own `license` is `"CC BY 4.0"` when every row in it is CC BY.
+Otherwise it is the mixed label and the file adds `rights`. On 2026-11-13,
+`dstar.json`, `reflectors.json` and `index.json` were mixed and the other
+network files and the talkgroup files were CC BY 4.0. Every data file carries
+`attribution` and `modifications` so the terms stay with the data; the manifest
+carries `modifications` and `rights` but not `attribution`.
+
+What the two licences allow, and what to credit when you republish, are on the
+[overview page](index.md#licence) and the
+[licensing page](../about/licensing.md#what-to-credit).

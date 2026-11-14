@@ -1,95 +1,88 @@
 # hamcall-db
 
-Openly-licensed amateur radio reference data, rebuilt from upstream sources and
-published as files you can fetch — not APIs you have to register for.
+*Last reviewed: 2026-11-13. Counts on this page were read from the published
+files on that date.*
 
-Two datasets, deliberately kept apart because they carry different licences:
+hamcall-db collects amateur radio reference data from national regulators and
+network directories, rebuilds it on a schedule, and publishes the result as
+three sets of files. Each one is a file you download, with no account and no
+API key. The build code is in the
+[repository](https://github.com/rcludwick/hamcall-db) under the
+[MIT licence](https://github.com/rcludwick/hamcall-db/blob/main/LICENSE).
 
 <div class="grid cards" markdown>
 
--   :material-radio-tower: **[Reflector directory](reflectors/index.md)**
-
-    Digital-voice reflectors for D-Star, M17, YSF, NXDN, P25 and URF, served as
-    **static JSON**. No API key, no account, no rate limit.
-
-    **CC BY 4.0** for DVRef rows (commercial use permitted); XLX and Pi-Star
-    rows carry no stated licence. Each row says which in its `license` field.
-
 -   :material-card-account-details: **[Callsign dataset](callsigns.md)**
 
-    Normalized licensee records from national regulators, plus POTA parks,
-    published as Parquet and SQLite through GitHub Releases.
+    One row per callsign, read from nine national licence registers:
+    1,075,947 rows in `hamcall-db-2026-11-13.parquet`. It is for logging and
+    other ham-radio software that needs the name, town or grid square behind a
+    callsign. Published nightly as Parquet and SQLite files on the
+    [`latest`](https://github.com/rcludwick/hamcall-db/releases/tag/latest)
+    GitHub release (`.github/workflows/release.yml`).
 
-    **CC BY-NC 4.0** — non-commercial.
+    **Licence:** CC BY-NC 4.0, non-commercial use only
+    ([licensing](about/licensing.md#the-callsign-dataset-is-cc-by-nc-40)).
+
+-   :material-radio-tower: **[Reflector directory](reflectors/index.md)**
+
+    3,996 digital-voice reflectors across seven networks (D-Star, DMR, M17,
+    YSF, NXDN, P25 and URF), from the live `index.json` on 2026-11-13. It is
+    for radio, hotspot and app software that offers a list of reflectors to
+    connect to. Static JSON on this site at
+    [`api/v1/reflectors.json`](https://rcludwick.github.io/hamcall-db/api/v1/reflectors.json),
+    refreshed nightly.
+
+    **Licence:** CC BY 4.0 for DVRef rows, commercial use allowed. XLX and
+    Pi-Star rows state no licence and are labelled `none-stated`. Each row's
+    `license` field says which
+    ([licensing](about/licensing.md#the-reflector-directory-is-cc-by-40-row-by-row)).
+
+-   :material-access-point-network: **[AllStar node directory](allstar.md)**
+
+    AllStarLink's public node list: 41,616 nodes on 2026-11-13, each with its
+    node number, owner's callsign, description and location. It is for
+    software that needs to know whose node a number belongs to. Static JSON
+    on this site at
+    [`api/v1/allstar.json`](https://rcludwick.github.io/hamcall-db/api/v1/allstar.json),
+    refreshed nightly with the reflectors (`deploy/vps/build.sh`).
+
+    **Licence:** none stated by AllStarLink, labelled `none-stated`;
+    attribution required
+    ([licensing](about/licensing.md#the-allstar-directory-states-no-licence)).
 
 </div>
 
-## The reflector API at a glance
+## Where to read more
 
-```bash
-curl -s https://rcludwick.github.io/hamcall-db/api/v1/reflectors.json
-```
+- [Reflector API reference](reflectors/api.md): every field in the reflector
+  JSON files, and how often to fetch them.
+- [Published files](about/datasets.md): each file, its columns (the AllStar
+  node fields included), and what was removed for privacy.
+- [Where the data comes from](about/sources.md): every upstream source, with
+  its NOTICE number.
+- [Licensing](about/licensing.md): what each licence lets you do, and the
+  credit lines you must reproduce.
 
-<div class="scroll" markdown>
-<table id="networks">
-  <thead>
-    <tr><th>Network</th><th>Endpoint</th><th style="text-align:right">Reflectors</th><th>Updated</th></tr>
-  </thead>
-  <tbody id="network-rows">
-    <tr><td colspan="4">Loading from <code>api/v1/index.json</code>…</td></tr>
-  </tbody>
-</table>
-</div>
+## What the files leave out
 
-Full documentation: **[Reflector directory](reflectors/index.md)** for what it is
-and how to use it, **[API reference](reflectors/api.md)** for the contract.
+- **Street addresses.** The callsign dataset has no street column. Six
+  importers (FCC, ISED, ACMA, Nkom, BNetzA and UKE) read the street only to
+  check that no published field copies it, then discard it. For every source,
+  the merge step blanks a name or town that has the shape of a street address
+  (`hamcall_db/address_guard.py`,
+  [details](about/datasets.md#no-street-addresses)).
+- **Precise locations.** Grid squares stop at 4 characters, such as `DN13`,
+  which places a licensee in a region but not at a house
+  (`hamcall_db/geocode.py`).
+- **Email addresses.** They are removed from the free text of reflector and
+  AllStar entries and replaced with `[email removed]`
+  ([changes made](about/licensing.md#modifications)).
+- **AllStar locations that look like street addresses.** These are blanked.
+  AllStar descriptions are published as their owners typed them, minus email
+  addresses (`hamcall_db/enrich_allstar.py`).
+- **Restricted sources.** ARRL LoTW, SOTA and NMHH Hungary are excluded from
+  every release (NOTICE 9, 10 and 21).
 
-## Why files instead of an API
-
-Reflector directories are scattered across upstreams with different terms,
-uptime and address formats. A client that wants a "pick a reflector" list should
-not have to speak six of them, hold an API token, or re-derive per-network
-naming rules.
-
-hamcall-db does that once, on a schedule, and publishes the result. What you
-fetch is a file on a CDN — which means it works offline once cached, cannot rate-limit
-you, and needs no credential to read.
-
-## What is not here
-
-* **No street addresses.** Ever, in any published artifact. They are used at
-  build time for geocoding and then discarded.
-* **Person grids are truncated to 4 characters.** Enough to place someone in a
-  region, not enough to place them at a house.
-* **No email addresses in the reflector directory.** Sysops write them into
-  their own reflector blurbs upstream; republishing those as bulk machine-readable
-  JSON would turn them into a harvestable list, so they are removed. See
-  [Licensing](about/licensing.md#modifications).
-
-<script>
-// Fill the network table from the live manifest, so the numbers on this page
-// can never disagree with the files they describe.
-(function () {
-  var body = document.getElementById("network-rows");
-  if (!body) return;
-  var LABELS = { dstar: "D-Star", m17: "M17", ysf: "YSF (Fusion)", nxdn: "NXDN", p25: "P25", urf: "URF" };
-  fetch("api/v1/index.json", { cache: "no-cache" })
-    .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
-    .then(function (m) {
-      var names = Object.keys(m.networks || {}).sort();
-      if (!names.length) throw new Error("no networks in manifest");
-      body.innerHTML = names.map(function (n) {
-        var net = m.networks[n], href = "api/v1/" + net.url;
-        return "<tr><td>" + (LABELS[n] || n) + "</td>"
-          + '<td><a href="' + href + '"><code>' + href + "</code></a></td>"
-          + '<td style="text-align:right">' + Number(net.count).toLocaleString() + "</td>"
-          + "<td>" + net.generated + "</td></tr>";
-      }).join("");
-    })
-    .catch(function (e) {
-      body.innerHTML = '<tr><td colspan="4">Could not load '
-        + '<a href="api/v1/index.json"><code>api/v1/index.json</code></a> ('
-        + String(e.message || e) + ").</td></tr>";
-    });
-})();
-</script>
+The full rules, register by register, are on the
+[published files page](about/datasets.md#what-was-removed-for-privacy).

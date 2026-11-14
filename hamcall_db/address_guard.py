@@ -207,8 +207,9 @@ def location_has_street_address(value: str | None) -> bool:
       location is not a club name, and blanking one is the cheap mistake.
     * A part that starts with a 1-4 digit house number followed by a word is flagged
       even with no street-type word ("12 Example Strete", "7 Example"), unless the
-      word is a radio or battery unit ("220 MHz", "000 mah"). This over-blocks some
-      numbered place names ("108 Mile Ranch"); the location is only blanked.
+      word is a radio, battery or distance unit ("220 MHz", "000 mah", "108 Mile
+      Ranch"). This over-blocks some numbered place names ("29 Palms, CA"); the
+      location is only blanked.
     """
     if not value:
         return False
