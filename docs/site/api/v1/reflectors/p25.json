@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 460,
-  "generated": "2026-11-14",
+  "count": 461,
+  "generated": "2026-11-15",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1704,10 +1704,10 @@
     },
     {
       "country": "RU",
-      "dashboard": "http://kavkaz.qrz.ru/p25/index.php",
+      "dashboard": "http://89.221.227.9/p25/index.php",
       "description": "<p>P25 reflector from N.Caucasus</p>",
       "dial": {
-        "host": "37.18.35.2",
+        "host": "89.221.227.9",
         "kind": "p25",
         "port": 41000
       },
@@ -6114,6 +6114,19 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "VA3ODC - Ontario Digital Club"
+    },
+    {
+      "country": "US",
+      "dial": {
+        "host": "qq-net.kf8car.ampr.org",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "693",
+      "license": "CC-BY-4.0",
+      "name": "QQ-NET",
+      "network": "p25",
+      "source": "dvref"
     },
     {
       "country": "US",

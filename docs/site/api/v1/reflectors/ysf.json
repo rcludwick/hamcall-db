@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1684,
-  "generated": "2026-11-14",
+  "count": 1689,
+  "generated": "2026-11-15",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1391,7 +1391,7 @@
       "dashboard": "http://xlx.kd9fuw.com",
       "description": "CenWis XLX131",
       "dial": {
-        "host": "ysf.kd9fuw.com",
+        "host": "xlx.kd9fuw.com",
         "kind": "ysf",
         "port": 42000
       },
@@ -2342,6 +2342,54 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "KE4TZN"
+    },
+    {
+      "country": "ES",
+      "dashboard": "https://sala-andalucia.es/anda",
+      "description": "ANDALUCIA REF",
+      "dial": {
+        "host": "sala-andalucia.es",
+        "kind": "ysf",
+        "port": 54208
+      },
+      "id": "00310",
+      "license": "CC-BY-4.0",
+      "name": "HUELVA",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "xreflector"
+    },
+    {
+      "country": "ES",
+      "dashboard": "https://sala-andalucia.es/anda",
+      "description": "ANDALUCIA REF",
+      "dial": {
+        "host": "sala-andalucia.es",
+        "kind": "ysf",
+        "port": 54207
+      },
+      "id": "00311",
+      "license": "CC-BY-4.0",
+      "name": "CADIZ",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "xreflector"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://3.21.215.45/",
+      "description": "QuadNet Fusion",
+      "dial": {
+        "host": "3.21.215.45",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00320",
+      "license": "CC-BY-4.0",
+      "name": "QNET",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "W3XPT"
     },
     {
       "country": "US",
@@ -4400,12 +4448,12 @@
     },
     {
       "country": "ES",
-      "dashboard": "http://es.ysf.es/multi/",
-      "description": "JAEN",
+      "dashboard": "https://sala-andalucia.es/anda",
+      "description": "ANDALUCIA REF",
       "dial": {
-        "host": "es.ysf.es",
+        "host": "sala-andalucia.es",
         "kind": "ysf",
-        "port": 42003
+        "port": 54202
       },
       "id": "01423",
       "license": "CC-BY-4.0",
@@ -6723,22 +6771,6 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "DVSwitch"
-    },
-    {
-      "country": "GR",
-      "dashboard": "http://svham.eu:83",
-      "description": "AETHER-CQ-ECHO",
-      "dial": {
-        "host": "svham.eu",
-        "kind": "ysf",
-        "port": 42012
-      },
-      "id": "10202",
-      "license": "CC-BY-4.0",
-      "name": "AETHER-ECHO",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "AETHER HELLAS NET! By SV4JYD"
     },
     {
       "country": "IT",
@@ -9117,7 +9149,7 @@
       "dashboard": "https://ysfbrazilx.com",
       "description": "Wires-X  Link",
       "dial": {
-        "host": "180.199.10.191",
+        "host": "180.199.26.244",
         "kind": "ysf",
         "port": 42395
       },
@@ -9273,12 +9305,12 @@
     },
     {
       "country": "ES",
-      "dashboard": "http://es.ysf.es/multi/",
-      "description": "CORDOBA",
+      "dashboard": "https://sala-andalucia.es/anda",
+      "description": "ANDALUCIA",
       "dial": {
-        "host": "es.ysf.es",
+        "host": "sala-andalucia.es",
         "kind": "ysf",
-        "port": 42004
+        "port": 54203
       },
       "id": "21414",
       "license": "CC-BY-4.0",
@@ -9305,16 +9337,16 @@
     },
     {
       "country": "ES",
-      "dashboard": "https://ysf.ysf.es",
-      "description": "TG-21418",
+      "dashboard": "https://sala-andalucia.es/anda",
+      "description": "ANDALUCIA REF",
       "dial": {
-        "host": "113.20.8.61",
+        "host": "sala-andalucia.es",
         "kind": "ysf",
-        "port": 42018
+        "port": 54209
       },
       "id": "21418",
       "license": "CC-BY-4.0",
-      "name": "Granada",
+      "name": "GRANADA",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "xreflector.es"
@@ -15088,7 +15120,7 @@
       "dial": {
         "host": "xlx.poa.nyc",
         "kind": "ysf",
-        "port": 41500
+        "port": 41501
       },
       "id": "31349",
       "license": "CC-BY-4.0",
@@ -15110,6 +15142,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "WU3K"
+    },
+    {
+      "country": "US",
+      "description": "K8KHW-YSF",
+      "dial": {
+        "host": "k8khw.ddns.net",
+        "kind": "ysf",
+        "port": 42002
+      },
+      "id": "31358",
+      "license": "CC-BY-4.0",
+      "name": "QSO31358",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "k8khw"
     },
     {
       "country": "US",
@@ -17264,6 +17311,22 @@
       "sponsor": "N1YKT"
     },
     {
+      "country": "FR",
+      "dashboard": "http://xlx.f1ptl.net:81/",
+      "description": "Serveur XLX310",
+      "dial": {
+        "host": "xlx.f1ptl.net",
+        "kind": "ysf",
+        "port": 42087
+      },
+      "id": "42456",
+      "license": "CC-BY-4.0",
+      "name": "YSF-XLX310",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "F1PTL"
+    },
+    {
       "country": "PT",
       "dashboard": "https://xlx268.from-ct.com",
       "description": "XLX268",
@@ -18837,12 +18900,12 @@
     },
     {
       "country": "ES",
-      "dashboard": "https://es.xreflector.es",
-      "description": "SEVILLA",
+      "dashboard": "https://sala-andalucia.es/anda",
+      "description": "ANDALUCIA REF",
       "dial": {
-        "host": "es.xreflector.es",
+        "host": "sala-andalucia.es",
         "kind": "ysf",
-        "port": 42005
+        "port": 54206
       },
       "id": "49711",
       "license": "CC-BY-4.0",
@@ -25502,6 +25565,20 @@
       "id": "93032",
       "license": "CC-BY-4.0",
       "name": "LatinMontreal",
+      "network": "ysf",
+      "source": "dvref"
+    },
+    {
+      "country": "US",
+      "description": "Cigar Lounge",
+      "dial": {
+        "host": "156.146.188.88",
+        "kind": "ysf",
+        "port": 42050
+      },
+      "id": "93180",
+      "license": "CC-BY-4.0",
+      "name": "KC5CPO-603180",
       "network": "ysf",
       "source": "dvref"
     },

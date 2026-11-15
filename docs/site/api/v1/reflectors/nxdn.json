@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 422,
-  "generated": "2026-11-14",
+  "count": 423,
+  "generated": "2026-11-15",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -332,7 +332,7 @@
     {
       "country": "US",
       "dashboard": "http://nxdn.kd9fuw.com:4000",
-      "description": "<p>Central Wisconsin Digital Network</p>\r\n<p>Currently unlinked from the rest of the network</p>\r\n<p>https://discord.kd9fuw.com/</p>\r\n<p>Email me if you have any questions - [email removed]</p>\r\n<p>&nbsp;</p>",
+      "description": "<table class=\"table is-fullwidth\" style=\"width: 74.6491%;\">\r\n<tbody>\r\n<tr>\r\n<td style=\"width: 99.8894%;\" colspan=\"2\">\r\n<p>Central Wisconsin Digital Network - Calling talkgroup</p>\r\n<p>Linked to XLX131 Module A</p>\r\n<p>Email me if you have any questions - [email removed]</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>",
       "dial": {
         "host": "nxdn.kd9fuw.com",
         "kind": "nxdn",
@@ -2000,10 +2000,10 @@
     },
     {
       "country": "RU",
-      "dashboard": "http://37.18.35.2/nxdn/index.php",
+      "dashboard": "http://89.221.227.9/nxdn/index.php",
       "description": "<p>NXDN Reflector from Northern Caucasus</p>",
       "dial": {
-        "host": "37.18.35.2",
+        "host": "89.221.227.9",
         "kind": "nxdn",
         "port": 41400
       },
@@ -5636,6 +5636,19 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "KN4EWT / Netoholics Network"
+    },
+    {
+      "country": "US",
+      "dial": {
+        "host": "qq-net.kf8car.ampr.org",
+        "kind": "nxdn",
+        "port": 41040
+      },
+      "id": "693",
+      "license": "CC-BY-4.0",
+      "name": "QQ-NET",
+      "network": "nxdn",
+      "source": "dvref"
     },
     {
       "country": "NL",
