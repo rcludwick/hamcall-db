@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 138,
-  "generated": "2026-11-15",
+  "count": 139,
+  "generated": "2026-11-16",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -647,6 +647,21 @@
       "id": "252",
       "license": "CC-BY-4.0",
       "name": "Multi-XLX252-ADN.Systems.Greece",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "2021_ADN_SYSTEMS_GREECE"
+    },
+    {
+      "country": "GR",
+      "dashboard": "http://141.227.150.176/",
+      "description": "<p>2021_ADN_SYSTEMS_GREECE</p>",
+      "dial": {
+        "host": "141.227.150.176",
+        "kind": "urf"
+      },
+      "id": "253",
+      "license": "CC-BY-4.0",
+      "name": "Multi-XLX253-ADN.Systems.Greece",
       "network": "urf",
       "source": "dvref",
       "sponsor": "2021_ADN_SYSTEMS_GREECE"

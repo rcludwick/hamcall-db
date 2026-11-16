@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1689,
-  "generated": "2026-11-15",
+  "count": 1690,
+  "generated": "2026-11-16",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -677,12 +677,12 @@
     },
     {
       "country": "PL",
-      "dashboard": "http://xlx054.ddns.net/db/",
+      "dashboard": "http://kurpie.ddns.net/db3/",
       "description": "XLX054",
       "dial": {
-        "host": "xlx054.ddns.net",
+        "host": "51.83.186.28",
         "kind": "ysf",
-        "port": 42004
+        "port": 42054
       },
       "id": "00054",
       "license": "CC-BY-4.0",
@@ -10865,7 +10865,7 @@
       "country": "DE",
       "description": "DA1SR",
       "dial": {
-        "host": "93.244.37.83",
+        "host": "217.154.210.18",
         "kind": "ysf",
         "port": 42000
       },
@@ -15723,7 +15723,7 @@
       },
       "id": "32100",
       "license": "CC-BY-4.0",
-      "name": "IT-IU3GMR-BL",
+      "name": "IU3GMR-BL",
       "network": "ysf",
       "source": "dvref"
     },
@@ -18330,6 +18330,22 @@
     },
     {
       "country": "US",
+      "dashboard": "http://45.76.255.163",
+      "description": "GA TX HAMS",
+      "dial": {
+        "host": "45.76.255.163",
+        "kind": "ysf",
+        "port": 42099
+      },
+      "id": "46239",
+      "license": "CC-BY-4.0",
+      "name": "GEOTXHAMS",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "N5JMD"
+    },
+    {
+      "country": "US",
       "dashboard": "http://ysfcwops.dyndns.org",
       "description": "CW-OPS YSF",
       "dial": {
@@ -18929,6 +18945,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "W1WRS"
+    },
+    {
+      "country": "US",
+      "description": "KQ4YPX Amateur",
+      "dial": {
+        "host": "kq4ypx-xlx.tplinkdns.com",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "49790",
+      "license": "CC-BY-4.0",
+      "name": "XLXYPX",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "KQ4YPX"
     },
     {
       "country": "US",
@@ -23481,7 +23512,7 @@
     },
     {
       "country": "TH",
-      "dashboard": "https://ysf43546.freeddns.org/",
+      "dashboard": "https://ysf76217.freeddns.org/",
       "description": "XLX138 B",
       "dial": {
         "host": "103.195.7.20",
@@ -23915,21 +23946,6 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "W0CHP"
-    },
-    {
-      "country": "IT",
-      "dashboard": "http://iq3ucy-ysf.duckdns.org",
-      "description": "IT IQ3UCY-BL",
-      "dial": {
-        "host": "tpysf.myqnapcloud.com",
-        "kind": "ysf",
-        "port": 43000
-      },
-      "id": "80787",
-      "license": "CC-BY-4.0",
-      "name": "ARI-BELLUNO",
-      "network": "ysf",
-      "source": "dvref"
     },
     {
       "country": "US",
