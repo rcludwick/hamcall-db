@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 462,
-  "generated": "2026-11-16",
+  "count": 464,
+  "generated": "2026-11-17",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -825,7 +825,7 @@
     },
     {
       "country": "GB",
-      "dashboard": "http://linf.co.uk",
+      "dashboard": "http://urf276.linf.co.uk",
       "dial": {
         "host": "44.27.138.102",
         "kind": "p25",
@@ -982,7 +982,7 @@
       "dashboard": "https://202p25.hamzone.org",
       "description": "<p>P25 - TG202&nbsp; HELLAS Zone Net!</p>",
       "dial": {
-        "host": "hamzone.org",
+        "host": "46.59.68.211",
         "kind": "p25",
         "port": 41000
       },
@@ -5873,6 +5873,22 @@
     },
     {
       "country": "US",
+      "dashboard": "https://cluster.nc4es.org/p25-clients",
+      "description": "<p>NC4ES Workgroup Cluster Radio System:</p>\r\n<p>Our mission is to ensure the delivery of healthcare services that protect the health and well-being of the residents and guests of North Carolina before, during, and after events that may overwhelm the healthcare system.</p>",
+      "dial": {
+        "host": "cluster.nc4es.org",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "62437",
+      "license": "CC-BY-4.0",
+      "name": "NC4ES",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "NC4ES"
+    },
+    {
+      "country": "US",
       "dashboard": "http://urf045.pennlinkgroup.com:8082/urfd/",
       "description": "<p>This Reflector offers a connection to Brandmeister DMR on Module A. &nbsp;For more information see https://info.pennlinkgroup.com</p>",
       "dial": {
@@ -6977,6 +6993,20 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "mb6ds"
+    },
+    {
+      "country": "US",
+      "dial": {
+        "host": "p25.ke6upi.com",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "951",
+      "license": "CC-BY-4.0",
+      "name": "IEARG KE6UPI",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "IEARG KE6UPI"
     },
     {
       "country": "AU",

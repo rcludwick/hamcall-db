@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1690,
-  "generated": "2026-11-16",
+  "count": 1692,
+  "generated": "2026-11-17",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1022,6 +1022,22 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "K0RAP"
+    },
+    {
+      "country": "ES",
+      "dashboard": "https://acracb.c4fm.es/",
+      "description": "COSTA-ATLANTIC",
+      "dial": {
+        "host": "sala-andalucia.es",
+        "kind": "ysf",
+        "port": 42399
+      },
+      "id": "00086",
+      "license": "CC-BY-4.0",
+      "name": "ACRAB",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "xreflector"
     },
     {
       "country": "US",
@@ -4528,7 +4544,7 @@
     },
     {
       "country": "GB",
-      "dashboard": "http://linf.co.uk",
+      "dashboard": "http://urf276.linf.co.uk",
       "description": "URF276",
       "dial": {
         "host": "44.27.138.102",
@@ -4559,7 +4575,7 @@
     },
     {
       "country": "GB",
-      "dashboard": "http://maythorn.uk",
+      "dashboard": "http://xlx278.linf.co.uk",
       "description": "XLX Reflector",
       "dial": {
         "host": "44.27.138.44",
@@ -4575,10 +4591,10 @@
     },
     {
       "country": "GB",
-      "dashboard": "http://xlx.jl-networking.co.uk",
+      "dashboard": "http://xlx.279.linf.co.uk",
       "description": "WRC Reflector",
       "dial": {
-        "host": "212.71.250.63",
+        "host": "44.27.138.145",
         "kind": "ysf",
         "port": 42000
       },
@@ -6825,7 +6841,7 @@
       "dial": {
         "host": "xlx365.ddns.net",
         "kind": "ysf",
-        "port": 42000
+        "port": 42005
       },
       "id": "10365",
       "license": "CC-BY-4.0",
@@ -16059,6 +16075,7 @@
     },
     {
       "country": "DE",
+      "dashboard": "https://reflector.teuto-n02.de/",
       "description": "DARC OV Teuto",
       "dial": {
         "host": "195.90.222.217",
@@ -21327,6 +21344,22 @@
       "name": "CRHRC2-TX",
       "network": "ysf",
       "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://cluster.nc4es.org/ysf-clients",
+      "description": "NC4ES",
+      "dial": {
+        "host": "cluster.nc4es.org",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "62437",
+      "license": "CC-BY-4.0",
+      "name": "NC4ES",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "NC4ES"
     },
     {
       "country": "US",

@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 154,
-  "generated": "2026-11-16",
+  "count": 155,
+  "generated": "2026-11-17",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -2673,7 +2673,7 @@
       "description": "<p>An M17 digital voice reflector based on the lightweight C++ DVS-Reflectors codebase. It supports modules A&ndash;Z with native hub-and-spoke edge linking, hot-reloadable allow/block lists, abuse mitigations, and real-time MQTT telemetry reporting to a live web dashboard.</p>",
       "dial": {
         "callsign": "M17-DVS",
-        "host": "150.136.69.97",
+        "host": "44.15.64.11",
         "kind": "m17",
         "modules": [
           "A",
@@ -3946,7 +3946,7 @@
     {
       "country": "US",
       "dashboard": "https://norcal-link.org",
-      "description": "<p>DescriptionA=All Modes<br>DescriptionD=DMR Chat<br>DescriptionE=Echo<br>DescriptionM=M17 Chat<br>DescriptionS=DStar Chat<br>DescriptionZ=Temp Meeting</p>",
+      "description": "<p>DescriptionA=All Modes<br>DescriptionD=DMR Chat<br>DescriptionE=Echo</p>\r\n<p>DescriptionL=Link<br>DescriptionM=M17 Chat<br>DescriptionS=DStar Chat<br>DescriptionZ=Temp Meeting</p>",
       "dial": {
         "callsign": "M17-SFO",
         "host": "norcal-link.org",
@@ -3956,6 +3956,7 @@
           "B",
           "D",
           "E",
+          "L",
           "M",
           "S",
           "Z"
@@ -4158,6 +4159,51 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "HS5TQA"
+    },
+    {
+      "country": "TW",
+      "dashboard": "http://m17tw.djspot.net:8080/",
+      "description": "<p>Taiwan M17 reflector operated by BV5DJ.</p>",
+      "dial": {
+        "callsign": "M17-TWN",
+        "host": "m17tw.djspot.net",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-TWN",
+      "license": "CC-BY-4.0",
+      "name": "M17-TWN",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "BV5DJ"
     },
     {
       "country": "UY",
