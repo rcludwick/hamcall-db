@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 464,
-  "generated": "2026-11-17",
+  "count": 466,
+  "generated": "2026-11-18",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -105,10 +105,10 @@
     },
     {
       "country": "US",
-      "dashboard": "https://dvswitch.org/Modern/?conf=P25_NA_Reflector",
+      "dashboard": "https://dvsreflector.dvswitch.org/dvs/index.php?conf=P25_NA",
       "description": "<p>P25 North America</p>",
       "dial": {
-        "host": "44.15.64.51",
+        "host": "44.15.64.11",
         "kind": "p25",
         "port": 41000
       },
@@ -121,10 +121,10 @@
     },
     {
       "country": "US",
-      "dashboard": "https://dvswitch.org/Modern/?conf=P25_TAC1_Reflector",
+      "dashboard": "https://dvsreflector.dvswitch.org/dvs/index.php?conf=P25_TAC1",
       "description": "<p>P25 NA TAC 1</p>",
       "dial": {
-        "host": "44.15.64.51",
+        "host": "44.15.64.11",
         "kind": "p25",
         "port": 41010
       },
@@ -1505,6 +1505,21 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "HB9FEF"
+    },
+    {
+      "country": "CZ",
+      "dashboard": "http://80.211.223.145:4001",
+      "dial": {
+        "host": "80.211.223.145",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "230",
+      "license": "CC-BY-4.0",
+      "name": "CZ P25",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "OK1IGO"
     },
     {
       "country": "AT",
@@ -4141,9 +4156,9 @@
     },
     {
       "country": "US",
-      "dashboard": "https://dvswitch.org/Modern/?conf=P25_DVSwitch",
+      "dashboard": "https://dvsreflector.dvswitch.org/dvs/index.php?conf=P25_DVSwitch",
       "dial": {
-        "host": "p25.dvswitch.org",
+        "host": "44.15.64.11",
         "kind": "p25",
         "port": 43166
       },
@@ -5808,6 +5823,21 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "MCRC"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://digital.wc8mi.net",
+      "dial": {
+        "host": "digital.wc8mi.net",
+        "kind": "p25",
+        "port": 41020
+      },
+      "id": "60606",
+      "license": "CC-BY-4.0",
+      "name": "W8VD",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "W8VD"
     },
     {
       "country": "US",

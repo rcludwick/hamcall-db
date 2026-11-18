@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 155,
-  "generated": "2026-11-17",
+  "generated": "2026-11-18",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -2407,6 +2407,51 @@
       "sponsor": "UBA-LGE"
     },
     {
+      "country": "US",
+      "dashboard": "https://dvswitch.n7mky.com",
+      "description": "<p>Welcome to the N7MKY M17 Connector!</p>",
+      "dial": {
+        "callsign": "M17-BOI",
+        "host": "dvswitch.n7mky.com",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-BOI",
+      "license": "CC-BY-4.0",
+      "name": "N7MKY M17 Connection",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "N7MKY David Hunter"
+    },
+    {
       "country": "IT",
       "dashboard": "http://mp-bat.duckdns.org:3000/",
       "description": "<p>Reflector connesso al network Multiprotocollo IT-C4FM_BAT , sysop IZ7EXI</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
@@ -2669,7 +2714,7 @@
     },
     {
       "country": "US",
-      "dashboard": "https://dvsreflector.dvswitch.org",
+      "dashboard": "https://dvsreflector.dvswitch.org/dvs/index.php?conf=M17",
       "description": "<p>An M17 digital voice reflector based on the lightweight C++ DVS-Reflectors codebase. It supports modules A&ndash;Z with native hub-and-spoke edge linking, hot-reloadable allow/block lists, abuse mitigations, and real-time MQTT telemetry reporting to a live web dashboard.</p>",
       "dial": {
         "callsign": "M17-DVS",
@@ -4337,15 +4382,15 @@
     },
     {
       "country": "US",
-      "dashboard": "https://digital.wc8mi.net",
+      "dashboard": "https://allstar.wc8mi.net/reflector/wc8mi",
       "dial": {
         "callsign": "M17-WHO",
-        "host": "digital.wc8mi.net",
+        "host": "allstar.wc8mi.net",
         "kind": "m17",
         "modules": [
-          "A"
+          "W"
         ],
-        "port": 17001
+        "port": 17020
       },
       "id": "M17-WHO",
       "license": "CC-BY-4.0",
@@ -4372,25 +4417,6 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "KE7WIL"
-    },
-    {
-      "country": "US",
-      "dashboard": "https://digital.wc8mi.net",
-      "dial": {
-        "callsign": "M17-WVD",
-        "host": "digital.wc8mi.net",
-        "kind": "m17",
-        "modules": [
-          "A"
-        ],
-        "port": 17002
-      },
-      "id": "M17-WVD",
-      "license": "CC-BY-4.0",
-      "name": "W8VD New Haven, MI",
-      "network": "m17",
-      "source": "dvref",
-      "sponsor": "W8VD"
     },
     {
       "country": "AT",

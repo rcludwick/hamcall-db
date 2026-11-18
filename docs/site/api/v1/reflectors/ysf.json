@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1692,
-  "generated": "2026-11-17",
+  "count": 1694,
+  "generated": "2026-11-18",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -627,6 +627,22 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "QsoBox"
+    },
+    {
+      "country": "ES",
+      "dashboard": "http://66.154.118.74/",
+      "description": "ANDALUCIA",
+      "dial": {
+        "host": "66.154.118.74",
+        "kind": "ysf",
+        "port": 42002
+      },
+      "id": "00047",
+      "license": "CC-BY-4.0",
+      "name": "ALANDALUS",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "RADIOINFO"
     },
     {
       "country": "US",
@@ -6774,10 +6790,10 @@
     },
     {
       "country": "US",
-      "dashboard": "https://dvswitch.org/Modern/?conf=YSF_NA_Reflector",
+      "dashboard": "https://dvsreflector.dvswitch.org/dvs/index.php?conf=YSF_NA",
       "description": "North America",
       "dial": {
-        "host": "44.15.64.51",
+        "host": "44.15.64.11",
         "kind": "ysf",
         "port": 42000
       },
@@ -11221,6 +11237,22 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "Bishop Auckland Radio Amateurs Club"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://england.oz-dmr.network/",
+      "description": "OZ-DMR",
+      "dial": {
+        "host": "england.oz-dmr.network",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "23595",
+      "license": "CC-BY-4.0",
+      "name": "OZ-DMR",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "OZ-DMR NETWORK"
     },
     {
       "country": "US",
@@ -16747,7 +16779,7 @@
       "dashboard": "http://fortiga.ddns.net:42180",
       "description": "SCANIA TEAM",
       "dial": {
-        "host": "94.65.38.219",
+        "host": "79.131.80.146",
         "kind": "ysf",
         "port": 42007
       },
@@ -21055,7 +21087,7 @@
       "dial": {
         "host": "digital.wc8mi.net",
         "kind": "ysf",
-        "port": 42002
+        "port": 42020
       },
       "id": "60606",
       "license": "CC-BY-4.0",

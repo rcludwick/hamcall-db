@@ -2,19 +2,19 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/\nXLX reflector data from the XLX registry maintained by Luc Engelmann, LX1IQ (http://xlxapi.rlx.lu/).\nStandalone XRF reflector data from the Pi-Star DExtra host file (http://www.pistar.uk/downloads/DExtra_Hosts.txt).\nREF and DCS reflector names from the Pi-Star DPlus and DCS host files (http://www.pistar.uk/downloads/), which compile them from dstargateway.org and xreflector.net DNS.",
   "client_refresh_days": 7,
-  "count": 4021,
-  "generated": "2026-11-17",
+  "count": 4024,
+  "generated": "2026-11-18",
   "license": "mixed \u2014 see per-row license and NOTICE",
   "license_url": "https://github.com/rcludwick/hamcall-db/blob/main/NOTICE",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
   "networks": {
-    "dmr": 195,
-    "dstar": 953,
+    "dmr": 191,
+    "dstar": 955,
     "m17": 155,
-    "nxdn": 423,
-    "p25": 464,
+    "nxdn": 424,
+    "p25": 466,
     "urf": 139,
-    "ysf": 1692
+    "ysf": 1694
   },
   "reflectors": [
     {
@@ -1734,150 +1734,6 @@
       "talkgroups": "reflectors/dmr/funknetz-celle/talkgroups.json"
     },
     {
-      "country": "GR",
-      "dashboard": "http://svham.eu",
-      "description": "<p><strong>AETHER HELLAS</strong> is an experimental <strong>Greek</strong> DMR digital voice project.</p>\r\n<p>Initiated and currently operated by a licensed radio amateur,<br>it openly invites fellow system operators to interconnect and collaborate,<br>as well as licensed radio amateurs to connect via hotspots<br>for testing, experimentation and on-air communication.</p>\r\n<h5>What is \"Aether Hellas\"?</h5>\r\n<p>In Greek Mythology,&nbsp;<strong>Aether</strong>&nbsp;was the personification of the upper air breathed by the Gods. In early physics, it was believed to be the medium that fills the universe, allowing waves to propagate through space.<br>For us, <strong>Aether Hellas</strong> represents the \"invisible web\" that connects Greece to the world. It is our digital gateway that transforms the air into communication, bridging the distances between Rhodes, Thessaly, and Central Greece, uniting people and technology under a shared amateur radio vision.</p>\r\n<ul>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><span style=\"color: rgb(22, 145, 121);\"><strong><span class=\"\">Name:</span><span class=\"\">&nbsp;HB_GR_&Alpha;&Epsilon;&Tau;&Eta;&Epsilon;R HELLAS NET</span></strong></span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">ID:</span></strong><span class=\"\">&nbsp;0000</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Address/Host:</span></strong><span class=\"\">&nbsp;</span><a href=\"https://svham.eu/\" target=\"_blank\" rel=\"noopener noreferrer\"><span class=\"\">svham.eu</span></a><span class=\"\">&nbsp;(38.19.202.24)</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Password:</span></strong><span class=\"\">&nbsp;passw0rd</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Port:</span></strong><span class=\"\">&nbsp;53000</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Type:</span></strong><span class=\"\">&nbsp;HBLink</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Description:</span></strong><span class=\"\"> HB_GR_&Alpha;&Epsilon;&Tau;&Eta;&Epsilon;R HELLAS NET HBLINK DMR SERVER</span></p>\r\n</li>\r\n<li style=\"color: rgb(35, 111, 161); font-weight: bold;\"><span style=\"color: rgb(35, 111, 161);\"><strong><span class=\"\">The first independent HBLink DMR Server in Greece &ndash; AETHER HELLAS NET, dedicated to promoting digital voice communication and HBLink technology.</span></strong></span></li>\r\n</ul>\r\n<p>&nbsp;</p>",
-      "dial": {
-        "host": "svham.eu",
-        "kind": "mmdvm",
-        "port": 42012,
-        "requires": [
-          "dmr_id",
-          "password"
-        ],
-        "system": "gr-aether-hellas",
-        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/gr-aether-hellas/talkgroups/"
-      },
-      "id": "gr-aether-hellas-server-c4fm-ysf-parrot-echo-voice-test-aether-hellas",
-      "license": "CC-BY-4.0",
-      "name": "C4FM YSF PARROT ECHO VOICE TEST AETHER HELLAS",
-      "network": "dmr",
-      "source": "dvref",
-      "sponsor": "AETHER HELLAS NET",
-      "system": "gr-aether-hellas",
-      "talkgroups": "reflectors/dmr/gr-aether-hellas/talkgroups.json"
-    },
-    {
-      "country": "GR",
-      "dashboard": "http://svham.eu",
-      "description": "<p><strong>AETHER HELLAS</strong> is an experimental <strong>Greek</strong> DMR digital voice project.</p>\r\n<p>Initiated and currently operated by a licensed radio amateur,<br>it openly invites fellow system operators to interconnect and collaborate,<br>as well as licensed radio amateurs to connect via hotspots<br>for testing, experimentation and on-air communication.</p>\r\n<h5>What is \"Aether Hellas\"?</h5>\r\n<p>In Greek Mythology,&nbsp;<strong>Aether</strong>&nbsp;was the personification of the upper air breathed by the Gods. In early physics, it was believed to be the medium that fills the universe, allowing waves to propagate through space.<br>For us, <strong>Aether Hellas</strong> represents the \"invisible web\" that connects Greece to the world. It is our digital gateway that transforms the air into communication, bridging the distances between Rhodes, Thessaly, and Central Greece, uniting people and technology under a shared amateur radio vision.</p>\r\n<ul>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><span style=\"color: rgb(22, 145, 121);\"><strong><span class=\"\">Name:</span><span class=\"\">&nbsp;HB_GR_&Alpha;&Epsilon;&Tau;&Eta;&Epsilon;R HELLAS NET</span></strong></span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">ID:</span></strong><span class=\"\">&nbsp;0000</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Address/Host:</span></strong><span class=\"\">&nbsp;</span><a href=\"https://svham.eu/\" target=\"_blank\" rel=\"noopener noreferrer\"><span class=\"\">svham.eu</span></a><span class=\"\">&nbsp;(38.19.202.24)</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Password:</span></strong><span class=\"\">&nbsp;passw0rd</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Port:</span></strong><span class=\"\">&nbsp;53000</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Type:</span></strong><span class=\"\">&nbsp;HBLink</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Description:</span></strong><span class=\"\"> HB_GR_&Alpha;&Epsilon;&Tau;&Eta;&Epsilon;R HELLAS NET HBLINK DMR SERVER</span></p>\r\n</li>\r\n<li style=\"color: rgb(35, 111, 161); font-weight: bold;\"><span style=\"color: rgb(35, 111, 161);\"><strong><span class=\"\">The first independent HBLink DMR Server in Greece &ndash; AETHER HELLAS NET, dedicated to promoting digital voice communication and HBLink technology.</span></strong></span></li>\r\n</ul>\r\n<p>&nbsp;</p>",
-      "dial": {
-        "host": "digital-voice.sv2snh.gr",
-        "kind": "mmdvm",
-        "port": 62031,
-        "requires": [
-          "dmr_id",
-          "password"
-        ],
-        "system": "gr-aether-hellas",
-        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/gr-aether-hellas/talkgroups/"
-      },
-      "id": "gr-aether-hellas-server-digital-voice-greece",
-      "license": "CC-BY-4.0",
-      "name": "Digital Voice GREECE",
-      "network": "dmr",
-      "source": "dvref",
-      "sponsor": "AETHER HELLAS NET",
-      "system": "gr-aether-hellas",
-      "talkgroups": "reflectors/dmr/gr-aether-hellas/talkgroups.json"
-    },
-    {
-      "country": "GR",
-      "dashboard": "http://svham.eu",
-      "description": "<p><strong>AETHER HELLAS</strong> is an experimental <strong>Greek</strong> DMR digital voice project.</p>\r\n<p>Initiated and currently operated by a licensed radio amateur,<br>it openly invites fellow system operators to interconnect and collaborate,<br>as well as licensed radio amateurs to connect via hotspots<br>for testing, experimentation and on-air communication.</p>\r\n<h5>What is \"Aether Hellas\"?</h5>\r\n<p>In Greek Mythology,&nbsp;<strong>Aether</strong>&nbsp;was the personification of the upper air breathed by the Gods. In early physics, it was believed to be the medium that fills the universe, allowing waves to propagate through space.<br>For us, <strong>Aether Hellas</strong> represents the \"invisible web\" that connects Greece to the world. It is our digital gateway that transforms the air into communication, bridging the distances between Rhodes, Thessaly, and Central Greece, uniting people and technology under a shared amateur radio vision.</p>\r\n<ul>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><span style=\"color: rgb(22, 145, 121);\"><strong><span class=\"\">Name:</span><span class=\"\">&nbsp;HB_GR_&Alpha;&Epsilon;&Tau;&Eta;&Epsilon;R HELLAS NET</span></strong></span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">ID:</span></strong><span class=\"\">&nbsp;0000</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Address/Host:</span></strong><span class=\"\">&nbsp;</span><a href=\"https://svham.eu/\" target=\"_blank\" rel=\"noopener noreferrer\"><span class=\"\">svham.eu</span></a><span class=\"\">&nbsp;(38.19.202.24)</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Password:</span></strong><span class=\"\">&nbsp;passw0rd</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Port:</span></strong><span class=\"\">&nbsp;53000</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Type:</span></strong><span class=\"\">&nbsp;HBLink</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Description:</span></strong><span class=\"\"> HB_GR_&Alpha;&Epsilon;&Tau;&Eta;&Epsilon;R HELLAS NET HBLINK DMR SERVER</span></p>\r\n</li>\r\n<li style=\"color: rgb(35, 111, 161); font-weight: bold;\"><span style=\"color: rgb(35, 111, 161);\"><strong><span class=\"\">The first independent HBLink DMR Server in Greece &ndash; AETHER HELLAS NET, dedicated to promoting digital voice communication and HBLink technology.</span></strong></span></li>\r\n</ul>\r\n<p>&nbsp;</p>",
-      "dial": {
-        "host": "svham.eu",
-        "kind": "mmdvm",
-        "port": 42000,
-        "requires": [
-          "dmr_id",
-          "password"
-        ],
-        "system": "gr-aether-hellas",
-        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/gr-aether-hellas/talkgroups/"
-      },
-      "id": "gr-aether-hellas-server-gr-aether-c4fm",
-      "license": "CC-BY-4.0",
-      "name": "GR-AETHER-C4FM",
-      "network": "dmr",
-      "source": "dvref",
-      "sponsor": "AETHER HELLAS NET",
-      "system": "gr-aether-hellas",
-      "talkgroups": "reflectors/dmr/gr-aether-hellas/talkgroups.json"
-    },
-    {
-      "country": "GR",
-      "dashboard": "http://svham.eu",
-      "description": "<p><strong>AETHER HELLAS</strong> is an experimental <strong>Greek</strong> DMR digital voice project.</p>\r\n<p>Initiated and currently operated by a licensed radio amateur,<br>it openly invites fellow system operators to interconnect and collaborate,<br>as well as licensed radio amateurs to connect via hotspots<br>for testing, experimentation and on-air communication.</p>\r\n<h5>What is \"Aether Hellas\"?</h5>\r\n<p>In Greek Mythology,&nbsp;<strong>Aether</strong>&nbsp;was the personification of the upper air breathed by the Gods. In early physics, it was believed to be the medium that fills the universe, allowing waves to propagate through space.<br>For us, <strong>Aether Hellas</strong> represents the \"invisible web\" that connects Greece to the world. It is our digital gateway that transforms the air into communication, bridging the distances between Rhodes, Thessaly, and Central Greece, uniting people and technology under a shared amateur radio vision.</p>\r\n<ul>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><span style=\"color: rgb(22, 145, 121);\"><strong><span class=\"\">Name:</span><span class=\"\">&nbsp;HB_GR_&Alpha;&Epsilon;&Tau;&Eta;&Epsilon;R HELLAS NET</span></strong></span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">ID:</span></strong><span class=\"\">&nbsp;0000</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Address/Host:</span></strong><span class=\"\">&nbsp;</span><a href=\"https://svham.eu/\" target=\"_blank\" rel=\"noopener noreferrer\"><span class=\"\">svham.eu</span></a><span class=\"\">&nbsp;(38.19.202.24)</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Password:</span></strong><span class=\"\">&nbsp;passw0rd</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Port:</span></strong><span class=\"\">&nbsp;53000</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Type:</span></strong><span class=\"\">&nbsp;HBLink</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Description:</span></strong><span class=\"\"> HB_GR_&Alpha;&Epsilon;&Tau;&Eta;&Epsilon;R HELLAS NET HBLINK DMR SERVER</span></p>\r\n</li>\r\n<li style=\"color: rgb(35, 111, 161); font-weight: bold;\"><span style=\"color: rgb(35, 111, 161);\"><strong><span class=\"\">The first independent HBLink DMR Server in Greece &ndash; AETHER HELLAS NET, dedicated to promoting digital voice communication and HBLink technology.</span></strong></span></li>\r\n</ul>\r\n<p>&nbsp;</p>",
-      "dial": {
-        "host": "157.173.36.81",
-        "kind": "mmdvm",
-        "port": 53000,
-        "requires": [
-          "dmr_id",
-          "password"
-        ],
-        "system": "gr-aether-hellas",
-        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/gr-aether-hellas/talkgroups/"
-      },
-      "id": "gr-aether-hellas-server-hb_gr_aether_hellas",
-      "license": "CC-BY-4.0",
-      "name": "HB_GR_AETHER_HELLAS",
-      "network": "dmr",
-      "source": "dvref",
-      "sponsor": "AETHER HELLAS NET",
-      "system": "gr-aether-hellas",
-      "talkgroups": "reflectors/dmr/gr-aether-hellas/talkgroups.json"
-    },
-    {
-      "country": "GR",
-      "dashboard": "http://svham.eu",
-      "description": "<p><strong>AETHER HELLAS</strong> is an experimental <strong>Greek</strong> DMR digital voice project.</p>\r\n<p>Initiated and currently operated by a licensed radio amateur,<br>it openly invites fellow system operators to interconnect and collaborate,<br>as well as licensed radio amateurs to connect via hotspots<br>for testing, experimentation and on-air communication.</p>\r\n<h5>What is \"Aether Hellas\"?</h5>\r\n<p>In Greek Mythology,&nbsp;<strong>Aether</strong>&nbsp;was the personification of the upper air breathed by the Gods. In early physics, it was believed to be the medium that fills the universe, allowing waves to propagate through space.<br>For us, <strong>Aether Hellas</strong> represents the \"invisible web\" that connects Greece to the world. It is our digital gateway that transforms the air into communication, bridging the distances between Rhodes, Thessaly, and Central Greece, uniting people and technology under a shared amateur radio vision.</p>\r\n<ul>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><span style=\"color: rgb(22, 145, 121);\"><strong><span class=\"\">Name:</span><span class=\"\">&nbsp;HB_GR_&Alpha;&Epsilon;&Tau;&Eta;&Epsilon;R HELLAS NET</span></strong></span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">ID:</span></strong><span class=\"\">&nbsp;0000</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Address/Host:</span></strong><span class=\"\">&nbsp;</span><a href=\"https://svham.eu/\" target=\"_blank\" rel=\"noopener noreferrer\"><span class=\"\">svham.eu</span></a><span class=\"\">&nbsp;(38.19.202.24)</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Password:</span></strong><span class=\"\">&nbsp;passw0rd</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Port:</span></strong><span class=\"\">&nbsp;53000</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Type:</span></strong><span class=\"\">&nbsp;HBLink</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Description:</span></strong><span class=\"\"> HB_GR_&Alpha;&Epsilon;&Tau;&Eta;&Epsilon;R HELLAS NET HBLINK DMR SERVER</span></p>\r\n</li>\r\n<li style=\"color: rgb(35, 111, 161); font-weight: bold;\"><span style=\"color: rgb(35, 111, 161);\"><strong><span class=\"\">The first independent HBLink DMR Server in Greece &ndash; AETHER HELLAS NET, dedicated to promoting digital voice communication and HBLink technology.</span></strong></span></li>\r\n</ul>\r\n<p>&nbsp;</p>",
-      "dial": {
-        "host": "svham.eu",
-        "kind": "mmdvm",
-        "port": 53000,
-        "requires": [
-          "dmr_id",
-          "password"
-        ],
-        "system": "gr-aether-hellas",
-        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/gr-aether-hellas/talkgroups/"
-      },
-      "id": "gr-aether-hellas-server-hblink-aether-hellas",
-      "license": "CC-BY-4.0",
-      "name": "HBLINK AETHER HELLAS",
-      "network": "dmr",
-      "source": "dvref",
-      "sponsor": "AETHER HELLAS NET",
-      "system": "gr-aether-hellas",
-      "talkgroups": "reflectors/dmr/gr-aether-hellas/talkgroups.json"
-    },
-    {
-      "country": "GR",
-      "dashboard": "http://svham.eu",
-      "description": "<p><strong>AETHER HELLAS</strong> is an experimental <strong>Greek</strong> DMR digital voice project.</p>\r\n<p>Initiated and currently operated by a licensed radio amateur,<br>it openly invites fellow system operators to interconnect and collaborate,<br>as well as licensed radio amateurs to connect via hotspots<br>for testing, experimentation and on-air communication.</p>\r\n<h5>What is \"Aether Hellas\"?</h5>\r\n<p>In Greek Mythology,&nbsp;<strong>Aether</strong>&nbsp;was the personification of the upper air breathed by the Gods. In early physics, it was believed to be the medium that fills the universe, allowing waves to propagate through space.<br>For us, <strong>Aether Hellas</strong> represents the \"invisible web\" that connects Greece to the world. It is our digital gateway that transforms the air into communication, bridging the distances between Rhodes, Thessaly, and Central Greece, uniting people and technology under a shared amateur radio vision.</p>\r\n<ul>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><span style=\"color: rgb(22, 145, 121);\"><strong><span class=\"\">Name:</span><span class=\"\">&nbsp;HB_GR_&Alpha;&Epsilon;&Tau;&Eta;&Epsilon;R HELLAS NET</span></strong></span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">ID:</span></strong><span class=\"\">&nbsp;0000</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Address/Host:</span></strong><span class=\"\">&nbsp;</span><a href=\"https://svham.eu/\" target=\"_blank\" rel=\"noopener noreferrer\"><span class=\"\">svham.eu</span></a><span class=\"\">&nbsp;(38.19.202.24)</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Password:</span></strong><span class=\"\">&nbsp;passw0rd</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Port:</span></strong><span class=\"\">&nbsp;53000</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Type:</span></strong><span class=\"\">&nbsp;HBLink</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Description:</span></strong><span class=\"\"> HB_GR_&Alpha;&Epsilon;&Tau;&Eta;&Epsilon;R HELLAS NET HBLINK DMR SERVER</span></p>\r\n</li>\r\n<li style=\"color: rgb(35, 111, 161); font-weight: bold;\"><span style=\"color: rgb(35, 111, 161);\"><strong><span class=\"\">The first independent HBLink DMR Server in Greece &ndash; AETHER HELLAS NET, dedicated to promoting digital voice communication and HBLink technology.</span></strong></span></li>\r\n</ul>\r\n<p>&nbsp;</p>",
-      "dial": {
-        "host": "svham.eu",
-        "kind": "mmdvm",
-        "port": 41000,
-        "requires": [
-          "dmr_id",
-          "password"
-        ],
-        "system": "gr-aether-hellas",
-        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/gr-aether-hellas/talkgroups/"
-      },
-      "id": "gr-aether-hellas-server-p25-aether-hellas",
-      "license": "CC-BY-4.0",
-      "name": "P25 AETHER HELLAS",
-      "network": "dmr",
-      "source": "dvref",
-      "sponsor": "AETHER HELLAS NET",
-      "system": "gr-aether-hellas",
-      "talkgroups": "reflectors/dmr/gr-aether-hellas/talkgroups.json"
-    },
-    {
       "country": "US",
       "dashboard": "http://3101.hamunited.com",
       "description": "<p>Ham United 3101 DMR Network</p>",
@@ -2129,9 +1985,9 @@
     },
     {
       "country": "FR",
-      "dashboard": "http://hblink.f1ptl.net:8080/",
+      "dashboard": "https://hb4.f1ptl.net",
       "dial": {
-        "host": "hblink.f1ptl.net",
+        "host": "hb4.f1ptl.net",
         "kind": "mmdvm",
         "port": 62031,
         "requires": [
@@ -2149,6 +2005,30 @@
       "sponsor": "F1PTL Bruno",
       "system": "hb_fr_hblink4",
       "talkgroups": "reflectors/dmr/hb_fr_hblink4/talkgroups.json"
+    },
+    {
+      "country": "GR",
+      "dashboard": "http://svham.eu",
+      "description": "<p><strong>AETHER HELLAS</strong> is an experimental <strong>Greek</strong> DMR digital voice project.</p>\r\n<p>Initiated and currently operated by a licensed radio amateur,<br>it openly invites fellow system operators to interconnect and collaborate,<br>as well as licensed radio amateurs to connect via hotspots<br>for testing, experimentation and on-air communication.</p>\r\n<h5>What is \"Aether Hellas\"?</h5>\r\n<p>In Greek Mythology,&nbsp;<strong>Aether</strong>&nbsp;was the personification of the upper air breathed by the Gods. In early physics, it was believed to be the medium that fills the universe, allowing waves to propagate through space.<br>For us, <strong>Aether Hellas</strong> represents the \"invisible web\" that connects Greece to the world. It is our digital gateway that transforms the air into communication, bridging the distances between Rhodes, Thessaly, and Central Greece, uniting people and technology under a shared amateur radio vision.</p>\r\n<ul>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Name:</span><span class=\"\">&nbsp;HB_GR_&Alpha;&Epsilon;&Tau;&Eta;&Epsilon;R HELLAS NET</span></strong></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">ID:</span></strong><span class=\"\">&nbsp;0000</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Address/Host:</span></strong><span class=\"\">&nbsp;</span><a href=\"https://svham.eu/\" target=\"_blank\" rel=\"noopener noreferrer\"><span class=\"\">svham.eu</span></a><span class=\"\"> (157.173.36.81)</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Password:</span></strong><span class=\"\">&nbsp;passw0rd</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Port:</span></strong><span class=\"\">&nbsp;53000</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Type:</span></strong><span class=\"\">&nbsp;HBLink</span></p>\r\n</li>\r\n<li>\r\n<p class=\"ds-markdown-paragraph\"><strong><span class=\"\">Description:</span></strong><span class=\"\"> HB_GR_&Alpha;&Epsilon;&Tau;&Eta;&Epsilon;R HELLAS NET HBLINK DMR SERVER</span></p>\r\n</li>\r\n<li><strong><span class=\"\">The first independent HBLink DMR Server in Greece &ndash; AETHER HELLAS NET, dedicated to promoting digital voice communication and HBLink technology.</span></strong></li>\r\n</ul>\r\n<p>&nbsp;</p>",
+      "dial": {
+        "host": "157.173.36.81",
+        "kind": "mmdvm",
+        "port": 53000,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "hb_gr_aether_hellas_net",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/hb_gr_aether_hellas_net/talkgroups/"
+      },
+      "id": "hb_gr_aether_hellas_net-server-hb_gr_aether_hellas",
+      "license": "CC-BY-4.0",
+      "name": "HB_GR_AETHER_HELLAS",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "AETHER HELLAS NET By SV4JYD",
+      "system": "hb_gr_aether_hellas_net",
+      "talkgroups": "reflectors/dmr/hb_gr_aether_hellas_net/talkgroups.json"
     },
     {
       "country": "IT",
@@ -3293,6 +3173,30 @@
       "sponsor": "MNRADIO.NET",
       "system": "mntrbo",
       "talkgroups": "reflectors/dmr/mntrbo/talkgroups.json"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://cluster.nc4es.org",
+      "description": "<p>NC4ES Workgroup Cluster Radio System:</p>\r\n<p>Our mission is to ensure the delivery of healthcare services that protect the health and well-being of the residents and guests of North Carolina before, during, and after events that may overwhelm the healthcare system.</p>",
+      "dial": {
+        "host": "cluster.nc4es.org",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "nc4es-cluster",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/nc4es-cluster/talkgroups/"
+      },
+      "id": "nc4es-cluster-server-nc4es-public",
+      "license": "CC-BY-4.0",
+      "name": "NC4ES Public",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "NC4ES",
+      "system": "nc4es-cluster",
+      "talkgroups": "reflectors/dmr/nc4es-cluster/talkgroups.json"
     },
     {
       "country": "US",
@@ -7638,6 +7542,28 @@
     {
       "alias_source": "pistar",
       "aliases": [
+        "XRF160",
+        "REF160",
+        "DCS160"
+      ],
+      "country": "Japan",
+      "dashboard": "http://xrf160.xreflector-jp.org/",
+      "description": "Hosted by JF6ROW in Fukuoka-City, Fukuoka-Pref.",
+      "dial": {
+        "callsign": "XRF160",
+        "host": "150.66.4.40",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLX160",
+      "license": "none-stated",
+      "name": "XLX160",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "alias_source": "pistar",
+      "aliases": [
         "XRF161",
         "REF161",
         "DCS161"
@@ -7654,6 +7580,28 @@
       "id": "XLX161",
       "license": "none-stated",
       "name": "XLX161",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "alias_source": "pistar",
+      "aliases": [
+        "XRF162",
+        "REF162",
+        "DCS162"
+      ],
+      "country": "Thailand",
+      "dashboard": "http://44.32.81.27",
+      "description": "Digital ham Thai",
+      "dial": {
+        "callsign": "XRF162",
+        "host": "27.130.229.203",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLX162",
+      "license": "none-stated",
+      "name": "XLX162",
       "network": "dstar",
       "source": "xlx"
     },
@@ -7808,6 +7756,28 @@
       "id": "XLX170",
       "license": "none-stated",
       "name": "XLX170",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "alias_source": "pistar",
+      "aliases": [
+        "XRF171",
+        "REF171",
+        "DCS171"
+      ],
+      "country": "Russia",
+      "dashboard": "http://xlx.r3pij.ru",
+      "description": "Tula",
+      "dial": {
+        "callsign": "XRF171",
+        "host": "31.128.44.121",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLX171",
+      "license": "none-stated",
+      "name": "XLX171",
       "network": "dstar",
       "source": "xlx"
     },
@@ -9338,7 +9308,7 @@
       "description": "Hitachi Digipeater (DMR-SFR)",
       "dial": {
         "callsign": "XRF245",
-        "host": "153.210.243.201",
+        "host": "153.217.166.74",
         "kind": "dextra",
         "port": 30001
       },
@@ -10234,7 +10204,7 @@
       "description": "XLX288 / YSF IT-URF288 #22250",
       "dial": {
         "callsign": "XRF288",
-        "host": "79.47.85.196",
+        "host": "79.42.19.163",
         "kind": "dextra",
         "port": 30001
       },
@@ -10823,11 +10793,11 @@
         "DCS321"
       ],
       "country": "Italy",
-      "dashboard": "https://xlxd.net.drc.bz",
+      "dashboard": "http://xlxd.net.drc.bz",
       "description": "Dolomites Radio Club - HAMNET ONLY",
       "dial": {
         "callsign": "XRF321",
-        "host": "44.169.1.30",
+        "host": "185.144.73.93",
         "kind": "dextra",
         "port": 30001
       },
@@ -11603,28 +11573,6 @@
       "id": "XLX365",
       "license": "none-stated",
       "name": "XLX365",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "alias_source": "pistar",
-      "aliases": [
-        "XRF366",
-        "REF366",
-        "DCS366"
-      ],
-      "country": "Canada",
-      "dashboard": "http://366.duckdns.org",
-      "description": "XLX366 Multiprotocol Reflector by VA3GMZ, info: [email removed]",
-      "dial": {
-        "callsign": "XRF366",
-        "host": "99.228.173.254",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLX366",
-      "license": "none-stated",
-      "name": "XLX366",
       "network": "dstar",
       "source": "xlx"
     },
@@ -13521,6 +13469,28 @@
     {
       "alias_source": "pistar",
       "aliases": [
+        "XRF463",
+        "REF463",
+        "DCS463"
+      ],
+      "country": "Czech Republic",
+      "dashboard": "http://78.108.110.37/xlx/",
+      "description": "XLX463 Kaznejov - OK1AXC",
+      "dial": {
+        "callsign": "XRF463",
+        "host": "78.108.110.37",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLX463",
+      "license": "none-stated",
+      "name": "XLX463",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "alias_source": "pistar",
+      "aliases": [
         "XRF467",
         "REF467",
         "DCS467"
@@ -14626,8 +14596,8 @@
         "DCS545"
       ],
       "country": "USA",
-      "dashboard": "http://xlx545.pennlinkgroup.com/xlx/",
-      "description": "info.pennlinkgroup.com - G3 Terminal Services - DSTAR/DMR/Fusion/P25/NXDN (module B)",
+      "dashboard": "http://xlx545.pennlinkgroup.com/xlxd/",
+      "description": "info.pennlinkgroup.com - G3 Terminal Serices - DMR/DSTAR/Fusion/P25/NXDN - Module B",
       "dial": {
         "callsign": "XRF545",
         "host": "3.215.215.169",
@@ -14866,7 +14836,7 @@
       ],
       "country": "France",
       "dashboard": "http://xlx562.ysf-france.fr",
-      "description": "XLX562 Multiprotocol Reflector by F1PTL, info: [email removed]",
+      "description": "Serveur XLX Test",
       "dial": {
         "callsign": "XRF562",
         "host": "87.106.212.215",
@@ -15359,28 +15329,6 @@
       "id": "XLX601",
       "license": "none-stated",
       "name": "XLX601",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "alias_source": "pistar",
-      "aliases": [
-        "XRF602",
-        "REF602",
-        "DCS602"
-      ],
-      "country": "France",
-      "dashboard": "http://xlx602.f5dan.fr:85",
-      "description": "Serveur XLX/C4FM",
-      "dial": {
-        "callsign": "XRF602",
-        "host": "82.64.201.234",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLX602",
-      "license": "none-stated",
-      "name": "XLX602",
       "network": "dstar",
       "source": "xlx"
     },
@@ -16430,7 +16378,7 @@
       "description": "ICOM Terminal Mode, MMDVM D-STAR Mode and MMDVM DMR Mode sure",
       "dial": {
         "callsign": "XRF697",
-        "host": "112.120.208.232",
+        "host": "116.48.97.59",
         "kind": "dextra",
         "port": 30001
       },
@@ -18749,7 +18697,7 @@
       ],
       "country": "Germany",
       "dashboard": "http://xlx850.bm262.de",
-      "description": "MultiMode DV: BM-TG263<=>YSF: DE-Germany<=>Wires-X: DL-WIRESX-BM263",
+      "description": "MultiMode: BM-TG263<>YSF: DE-Germany<>Wires-X: DL-WIRESX-BM263 <> Tetra",
       "dial": {
         "callsign": "XRF850",
         "host": "116.203.56.12",
@@ -18935,27 +18883,6 @@
       "id": "XLX878",
       "license": "none-stated",
       "name": "XLX878",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "alias_source": "pistar",
-      "aliases": [
-        "REF880",
-        "DCS880"
-      ],
-      "country": "Belgium",
-      "dashboard": "http://dashboard.on6uhf.com/xlx880/",
-      "description": "XLXBEL XLX880 - Sysop ON6UHF, JO11iC Oostduinkerke",
-      "dial": {
-        "callsign": "XRF880",
-        "host": "81.83.4.238",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLX880",
-      "license": "none-stated",
-      "name": "XLX880",
       "network": "dstar",
       "source": "xlx"
     },
@@ -20320,6 +20247,28 @@
     {
       "alias_source": "pistar",
       "aliases": [
+        "XRF966",
+        "REF966",
+        "DCS966"
+      ],
+      "country": "China",
+      "dashboard": "http://xlx966.i234.me:1509",
+      "description": "XLX966 for BG5CIA TEST ONLY",
+      "dial": {
+        "callsign": "XRF966",
+        "host": "125.123.141.207",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLX966",
+      "license": "none-stated",
+      "name": "XLX966",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "alias_source": "pistar",
+      "aliases": [
         "XRF969",
         "REF969",
         "DCS969"
@@ -20987,7 +20936,7 @@
       "description": "XLX Transcode",
       "dial": {
         "callsign": "XRFBAS",
-        "host": "79.53.21.111",
+        "host": "79.55.118.39",
         "kind": "dextra",
         "port": 30001
       },
@@ -21631,28 +21580,6 @@
       "id": "XLXEST",
       "license": "none-stated",
       "name": "XLXEST",
-      "network": "dstar",
-      "source": "xlx"
-    },
-    {
-      "alias_source": "pistar",
-      "aliases": [
-        "XRFEUS",
-        "REFEUS",
-        "DCSEUS"
-      ],
-      "country": "Basque Country",
-      "dashboard": "https://eus.ham-radio-op.net",
-      "description": "R2 Vitoria-Gasteiz Multiprotocol",
-      "dial": {
-        "callsign": "XRFEUS",
-        "host": "88.9.253.29",
-        "kind": "dextra",
-        "port": 30001
-      },
-      "id": "XLXEUS",
-      "license": "none-stated",
-      "name": "XLXEUS",
       "network": "dstar",
       "source": "xlx"
     },
@@ -23086,6 +23013,28 @@
     {
       "alias_source": "pistar",
       "aliases": [
+        "XRFTUR",
+        "REFTUR",
+        "DCSTUR"
+      ],
+      "country": "T\u00fcrkiye",
+      "dashboard": "https://2861.adn.systems:28586",
+      "description": "T\u00fcrkiye MultiMode XLX Reflector",
+      "dial": {
+        "callsign": "XRFTUR",
+        "host": "31.57.33.9",
+        "kind": "dextra",
+        "port": 30001
+      },
+      "id": "XLXTUR",
+      "license": "none-stated",
+      "name": "XLXTUR",
+      "network": "dstar",
+      "source": "xlx"
+    },
+    {
+      "alias_source": "pistar",
+      "aliases": [
         "XRFTYL",
         "REFTYL",
         "DCSTYL"
@@ -23139,7 +23088,7 @@
       "description": "UDON Ken Reflector",
       "dial": {
         "callsign": "XRFUDN",
-        "host": "123.230.36.85",
+        "host": "219.124.188.90",
         "kind": "dextra",
         "port": 30001
       },
@@ -24285,7 +24234,7 @@
     {
       "dial": {
         "callsign": "XRF321",
-        "host": "172.67.163.225",
+        "host": "104.21.57.126",
         "kind": "dextra",
         "port": 30001
       },
@@ -27023,6 +26972,51 @@
       "sponsor": "UBA-LGE"
     },
     {
+      "country": "US",
+      "dashboard": "https://dvswitch.n7mky.com",
+      "description": "<p>Welcome to the N7MKY M17 Connector!</p>",
+      "dial": {
+        "callsign": "M17-BOI",
+        "host": "dvswitch.n7mky.com",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-BOI",
+      "license": "CC-BY-4.0",
+      "name": "N7MKY M17 Connection",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "N7MKY David Hunter"
+    },
+    {
       "country": "IT",
       "dashboard": "http://mp-bat.duckdns.org:3000/",
       "description": "<p>Reflector connesso al network Multiprotocollo IT-C4FM_BAT , sysop IZ7EXI</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
@@ -27285,7 +27279,7 @@
     },
     {
       "country": "US",
-      "dashboard": "https://dvsreflector.dvswitch.org",
+      "dashboard": "https://dvsreflector.dvswitch.org/dvs/index.php?conf=M17",
       "description": "<p>An M17 digital voice reflector based on the lightweight C++ DVS-Reflectors codebase. It supports modules A&ndash;Z with native hub-and-spoke edge linking, hot-reloadable allow/block lists, abuse mitigations, and real-time MQTT telemetry reporting to a live web dashboard.</p>",
       "dial": {
         "callsign": "M17-DVS",
@@ -28953,15 +28947,15 @@
     },
     {
       "country": "US",
-      "dashboard": "https://digital.wc8mi.net",
+      "dashboard": "https://allstar.wc8mi.net/reflector/wc8mi",
       "dial": {
         "callsign": "M17-WHO",
-        "host": "digital.wc8mi.net",
+        "host": "allstar.wc8mi.net",
         "kind": "m17",
         "modules": [
-          "A"
+          "W"
         ],
-        "port": 17001
+        "port": 17020
       },
       "id": "M17-WHO",
       "license": "CC-BY-4.0",
@@ -28988,25 +28982,6 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "KE7WIL"
-    },
-    {
-      "country": "US",
-      "dashboard": "https://digital.wc8mi.net",
-      "dial": {
-        "callsign": "M17-WVD",
-        "host": "digital.wc8mi.net",
-        "kind": "m17",
-        "modules": [
-          "A"
-        ],
-        "port": 17002
-      },
-      "id": "M17-WVD",
-      "license": "CC-BY-4.0",
-      "name": "W8VD New Haven, MI",
-      "network": "m17",
-      "source": "dvref",
-      "sponsor": "W8VD"
     },
     {
       "country": "AT",
@@ -29136,10 +29111,10 @@
     },
     {
       "country": "US",
-      "dashboard": "https://dvswitch.org/Modern/?conf=NXDN_NA_Reflector",
+      "dashboard": "https://dvsreflector.dvswitch.org/dvs/index.php?conf=NXDN_NA",
       "description": "<p>NXDN North America</p>",
       "dial": {
-        "host": "44.15.64.51",
+        "host": "44.15.64.11",
         "kind": "nxdn",
         "port": 42400
       },
@@ -33429,6 +33404,21 @@
       "sponsor": "DVMIS Multimode ILS (K8JTK.org)"
     },
     {
+      "country": "US",
+      "description": "<p>QuadNet NXDN Reflector Bridged to QuadNet Array TG-320</p>",
+      "dial": {
+        "host": "3.21.215.45",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "320",
+      "license": "CC-BY-4.0",
+      "name": "QuadNet NXDN Reflector",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "Mike-W3XPT / Will W4WWM"
+    },
+    {
       "country": "IT",
       "dashboard": "https://nxdn-gmr.duckdns.org/",
       "dial": {
@@ -35256,10 +35246,10 @@
     },
     {
       "country": "US",
-      "dashboard": "http://urfd.dvswitch.org/urf/",
+      "dashboard": "https://dvsreflector.dvswitch.org/dvs/index.php?conf=NXDN_902",
       "description": "<p>https://groups.io/g/AR902MHz/</p>",
       "dial": {
-        "host": "45.42.215.8",
+        "host": "44.15.64.11",
         "kind": "nxdn",
         "port": 41902
       },
@@ -35661,10 +35651,10 @@
     },
     {
       "country": "US",
-      "dashboard": "https://dvswitch.org/Modern/?conf=P25_NA_Reflector",
+      "dashboard": "https://dvsreflector.dvswitch.org/dvs/index.php?conf=P25_NA",
       "description": "<p>P25 North America</p>",
       "dial": {
-        "host": "44.15.64.51",
+        "host": "44.15.64.11",
         "kind": "p25",
         "port": 41000
       },
@@ -35677,10 +35667,10 @@
     },
     {
       "country": "US",
-      "dashboard": "https://dvswitch.org/Modern/?conf=P25_TAC1_Reflector",
+      "dashboard": "https://dvsreflector.dvswitch.org/dvs/index.php?conf=P25_TAC1",
       "description": "<p>P25 NA TAC 1</p>",
       "dial": {
-        "host": "44.15.64.51",
+        "host": "44.15.64.11",
         "kind": "p25",
         "port": 41010
       },
@@ -37061,6 +37051,21 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "HB9FEF"
+    },
+    {
+      "country": "CZ",
+      "dashboard": "http://80.211.223.145:4001",
+      "dial": {
+        "host": "80.211.223.145",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "230",
+      "license": "CC-BY-4.0",
+      "name": "CZ P25",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "OK1IGO"
     },
     {
       "country": "AT",
@@ -39697,9 +39702,9 @@
     },
     {
       "country": "US",
-      "dashboard": "https://dvswitch.org/Modern/?conf=P25_DVSwitch",
+      "dashboard": "https://dvsreflector.dvswitch.org/dvs/index.php?conf=P25_DVSwitch",
       "dial": {
-        "host": "p25.dvswitch.org",
+        "host": "44.15.64.11",
         "kind": "p25",
         "port": 43166
       },
@@ -41364,6 +41369,21 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "MCRC"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://digital.wc8mi.net",
+      "dial": {
+        "host": "digital.wc8mi.net",
+        "kind": "p25",
+        "port": 41020
+      },
+      "id": "60606",
+      "license": "CC-BY-4.0",
+      "name": "W8VD",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "W8VD"
     },
     {
       "country": "US",
@@ -45752,6 +45772,22 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "QsoBox"
+    },
+    {
+      "country": "ES",
+      "dashboard": "http://66.154.118.74/",
+      "description": "ANDALUCIA",
+      "dial": {
+        "host": "66.154.118.74",
+        "kind": "ysf",
+        "port": 42002
+      },
+      "id": "00047",
+      "license": "CC-BY-4.0",
+      "name": "ALANDALUS",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "RADIOINFO"
     },
     {
       "country": "US",
@@ -51899,10 +51935,10 @@
     },
     {
       "country": "US",
-      "dashboard": "https://dvswitch.org/Modern/?conf=YSF_NA_Reflector",
+      "dashboard": "https://dvsreflector.dvswitch.org/dvs/index.php?conf=YSF_NA",
       "description": "North America",
       "dial": {
-        "host": "44.15.64.51",
+        "host": "44.15.64.11",
         "kind": "ysf",
         "port": 42000
       },
@@ -56346,6 +56382,22 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "Bishop Auckland Radio Amateurs Club"
+    },
+    {
+      "country": "GB",
+      "dashboard": "https://england.oz-dmr.network/",
+      "description": "OZ-DMR",
+      "dial": {
+        "host": "england.oz-dmr.network",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "23595",
+      "license": "CC-BY-4.0",
+      "name": "OZ-DMR",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "OZ-DMR NETWORK"
     },
     {
       "country": "US",
@@ -61872,7 +61924,7 @@
       "dashboard": "http://fortiga.ddns.net:42180",
       "description": "SCANIA TEAM",
       "dial": {
-        "host": "94.65.38.219",
+        "host": "79.131.80.146",
         "kind": "ysf",
         "port": 42007
       },
@@ -66180,7 +66232,7 @@
       "dial": {
         "host": "digital.wc8mi.net",
         "kind": "ysf",
-        "port": 42002
+        "port": 42020
       },
       "id": "60606",
       "license": "CC-BY-4.0",

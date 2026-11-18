@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 423,
-  "generated": "2026-11-17",
+  "count": 424,
+  "generated": "2026-11-18",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -26,10 +26,10 @@
     },
     {
       "country": "US",
-      "dashboard": "https://dvswitch.org/Modern/?conf=NXDN_NA_Reflector",
+      "dashboard": "https://dvsreflector.dvswitch.org/dvs/index.php?conf=NXDN_NA",
       "description": "<p>NXDN North America</p>",
       "dial": {
-        "host": "44.15.64.51",
+        "host": "44.15.64.11",
         "kind": "nxdn",
         "port": 42400
       },
@@ -4319,6 +4319,21 @@
       "sponsor": "DVMIS Multimode ILS (K8JTK.org)"
     },
     {
+      "country": "US",
+      "description": "<p>QuadNet NXDN Reflector Bridged to QuadNet Array TG-320</p>",
+      "dial": {
+        "host": "3.21.215.45",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "320",
+      "license": "CC-BY-4.0",
+      "name": "QuadNet NXDN Reflector",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "Mike-W3XPT / Will W4WWM"
+    },
+    {
       "country": "IT",
       "dashboard": "https://nxdn-gmr.duckdns.org/",
       "dial": {
@@ -6146,10 +6161,10 @@
     },
     {
       "country": "US",
-      "dashboard": "http://urfd.dvswitch.org/urf/",
+      "dashboard": "https://dvsreflector.dvswitch.org/dvs/index.php?conf=NXDN_902",
       "description": "<p>https://groups.io/g/AR902MHz/</p>",
       "dial": {
-        "host": "45.42.215.8",
+        "host": "44.15.64.11",
         "kind": "nxdn",
         "port": 41902
       },
