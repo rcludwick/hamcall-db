@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 155,
-  "generated": "2026-11-18",
+  "count": 156,
+  "generated": "2026-11-19",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -2361,6 +2361,26 @@
       "sponsor": "IW1ELO"
     },
     {
+      "country": "US",
+      "dashboard": "https://dashboard.allianceamateur.org",
+      "description": "<p>&ldquo;M17 module of the XLXALL multi-mode reflector, run by the Alliance Amateur Radio Network (KE9EZI). Newcomer-friendly. M17 only on module M.&rdquo;</p>",
+      "dial": {
+        "callsign": "M17-ALL",
+        "host": "44.27.143.69",
+        "kind": "m17",
+        "modules": [
+          "M"
+        ],
+        "port": 17000
+      },
+      "id": "M17-ALL",
+      "license": "CC-BY-4.0",
+      "name": "XLXALL Module M (AARN)",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "Alliance Amateur Radio Network"
+    },
+    {
       "country": "IT",
       "dashboard": "http://aritrani.does-it.net/mref/index.php",
       "description": "<p>Reflector&nbsp; M17&nbsp; per&nbsp; \"Trani Conference\" sul modulo E<br>M17-718&nbsp; sul modulo&nbsp; B<br>M17-ITA&nbsp; &nbsp;sul modulo&nbsp; C</p>",
@@ -4401,7 +4421,7 @@
     },
     {
       "country": "US",
-      "description": "<p>Personal M17 reflector hosted by KE7WIL. Module A is available to licensed amateur radio operators who deliberately connect. This reflector is not interconnected with other reflectors.</p>",
+      "description": "<p>KE7WIL M17-WIL Module A bridged to AllStarLink node 641890.</p>",
       "dial": {
         "callsign": "M17-WIL",
         "host": "node64189.ddns.net",
@@ -4413,7 +4433,7 @@
       },
       "id": "M17-WIL",
       "license": "CC-BY-4.0",
-      "name": "KE7WIL Personal M17 Reflector",
+      "name": "KE7WIL M17-WIL Module A Reflector",
       "network": "m17",
       "source": "dvref",
       "sponsor": "KE7WIL"

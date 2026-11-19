@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 466,
-  "generated": "2026-11-18",
+  "count": 470,
+  "generated": "2026-11-19",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -963,6 +963,21 @@
       "sponsor": "KC3KMV - Alltune2"
     },
     {
+      "country": "SV",
+      "dashboard": "http://182.255.89.243:82",
+      "description": "<p>YS1AHL P25 REFLECTOR</p>",
+      "dial": {
+        "host": "182.255.89.243",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "19650",
+      "license": "CC-BY-4.0",
+      "name": "YS1AHL P25 REFLECTOR",
+      "network": "p25",
+      "source": "dvref"
+    },
+    {
       "country": "BR",
       "description": "<p>BRASIL EMERG&Ecirc;NCIA</p>\r\n<p>Defesa Civil do Brasil</p>",
       "dial": {
@@ -1520,6 +1535,22 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "OK1IGO"
+    },
+    {
+      "country": "CZ",
+      "dashboard": "http://185.33.145.102/",
+      "description": "<p>Multimode reflector by OK2USB. Module B: all modes, transcoded (D-Star, DMR, YSF, NXDN, P25, M17). Module D: D-Star. Module M: DMR TG 4013 + YSF DG-ID 22. Module Z: echo test.</p>",
+      "dial": {
+        "host": "185.33.145.102",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "2302",
+      "license": "CC-BY-4.0",
+      "name": "URFCZ1",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "OK2USB"
     },
     {
       "country": "AT",
@@ -4358,6 +4389,22 @@
     },
     {
       "country": "US",
+      "dashboard": "http://3.21.215.45:8082/",
+      "description": "<p>QuadNet P25 Reflector</p>",
+      "dial": {
+        "host": "3.21.215.45",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "320",
+      "license": "CC-BY-4.0",
+      "name": "QuadNet P25 Reflector",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Mike-W3XPT / Will-W4WWM"
+    },
+    {
+      "country": "US",
       "dashboard": "http://cwops.dyndns.org",
       "description": "<p>CW Ops / CW Academy / CW</p>",
       "dial": {
@@ -5856,6 +5903,19 @@
       "sponsor": "N2MRH and the FB DMR TEAM"
     },
     {
+      "country": "GB",
+      "dial": {
+        "host": "oarc-bridge.2e0sip.compute.oarc.uk",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "6101",
+      "license": "CC-BY-4.0",
+      "name": "EMF Bridge",
+      "network": "p25",
+      "source": "dvref"
+    },
+    {
       "country": "US",
       "dial": {
         "host": "73.2.133.99",
@@ -5951,7 +6011,7 @@
     },
     {
       "country": "US",
-      "description": "<p>URF-WIL is a multi-mode amateur-radio reflector supporting DMR/P25/NXDN/M17 with transcoding.</p>\r\n<p>The reflector is part of KE7WIL virtual AllStarLink node hub 641890.</p>",
+      "description": "<p>KE7WIL P25 Reflector 64189 bridged to AllStarLink node 641890.</p>",
       "dial": {
         "host": "node64189.ddns.net",
         "kind": "p25",
@@ -5959,7 +6019,7 @@
       },
       "id": "64189",
       "license": "CC-BY-4.0",
-      "name": "URFWIL",
+      "name": "KE7WIL P25 TG 64189",
       "network": "p25",
       "source": "dvref",
       "sponsor": "KE7WIL"

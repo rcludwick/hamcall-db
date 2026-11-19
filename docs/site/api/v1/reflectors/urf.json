@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 139,
-  "generated": "2026-11-18",
+  "generated": "2026-11-19",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -989,7 +989,6 @@
         "host": "67.224.140.59",
         "kind": "urf",
         "modules": [
-          "B",
           "C"
         ]
       },
@@ -2103,6 +2102,24 @@
     },
     {
       "country": "CZ",
+      "dashboard": "http://185.33.145.102/",
+      "description": "<p>Multimode reflector by OK2USB. Module B: all modes, transcoded (D-Star, DMR, YSF, NXDN, P25, M17). Module D: D-Star. Module M: DMR TG 4013 + YSF DG-ID 22. Module Z: echo test.</p>",
+      "dial": {
+        "host": "185.33.145.102",
+        "kind": "urf",
+        "modules": [
+          "B"
+        ]
+      },
+      "id": "CZ1",
+      "license": "CC-BY-4.0",
+      "name": "URFCZ1 CZ Multimode",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "OK2USB"
+    },
+    {
+      "country": "CZ",
       "dashboard": "http://128.0.182.6",
       "description": "<p>XLXD - Multi-Mode-Reflector</p>",
       "dial": {
@@ -2462,23 +2479,6 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "SQ5AC"
-    },
-    {
-      "country": "US",
-      "description": "<p>URF-WIL is a multi-mode amateur-radio reflector supporting DMR/P25/NXDN/M17 with transcoding.</p>\r\n<p>The reflector is part of KE7WIL virtual AllStarLink node hub 641890.</p>",
-      "dial": {
-        "host": "node64189.ddns.net",
-        "kind": "urf",
-        "modules": [
-          "A"
-        ]
-      },
-      "id": "WIL",
-      "license": "CC-BY-4.0",
-      "name": "URFWIL Multi-Mode Reflector",
-      "network": "urf",
-      "source": "dvref",
-      "sponsor": "KE7WIL"
     },
     {
       "country": "JP",

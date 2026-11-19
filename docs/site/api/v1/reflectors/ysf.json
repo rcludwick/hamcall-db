@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1694,
-  "generated": "2026-11-18",
+  "count": 1696,
+  "generated": "2026-11-19",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1471,7 +1471,7 @@
       "dashboard": "https://xlx.hopto.org",
       "description": "XLX135",
       "dial": {
-        "host": "45.92.44.246",
+        "host": "83.217.175.113",
         "kind": "ysf",
         "port": 42000
       },
@@ -8413,10 +8413,10 @@
     },
     {
       "country": "SV",
-      "dashboard": "http://72.18.83.92:82",
+      "dashboard": "http://182.255.89.243:81",
       "description": "YSF-YS1AHL",
       "dial": {
-        "host": "72.18.83.92",
+        "host": "182.255.89.243",
         "kind": "ysf",
         "port": 42000
       },
@@ -10780,6 +10780,22 @@
       "name": "RAGUSA",
       "network": "ysf",
       "source": "dvref"
+    },
+    {
+      "country": "CZ",
+      "dashboard": "http://185.33.145.102/",
+      "description": "URFCZ1",
+      "dial": {
+        "host": "185.33.145.102",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "23002",
+      "license": "CC-BY-4.0",
+      "name": "URFCZ1",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "OK2USB"
     },
     {
       "country": "US",
@@ -21739,12 +21755,12 @@
     },
     {
       "country": "DE",
-      "dashboard": "http://germering.dnsuser.de:8000/RAMSES.html",
+      "dashboard": "http://87.106.79.174:8080/",
       "description": "King",
       "dial": {
-        "host": "germering.dnsuser.de",
+        "host": "87.106.79.174",
         "kind": "ysf",
-        "port": 42001
+        "port": 42000
       },
       "id": "65075",
       "license": "CC-BY-4.0",
@@ -22018,6 +22034,22 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "ve1mik"
+    },
+    {
+      "country": "CA",
+      "dashboard": "http://74.208.182.184",
+      "description": "Reseau QC-NB",
+      "dial": {
+        "host": "74.208.182.184",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "66671",
+      "license": "CC-BY-4.0",
+      "name": "VA2MK",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "VA2MK"
     },
     {
       "country": "CA",
@@ -22349,6 +22381,7 @@
     },
     {
       "country": "US",
+      "dashboard": "https://qq-net.kf8car.ampr.org",
       "description": "YSF 69300",
       "dial": {
         "host": "44.27.131.126",
