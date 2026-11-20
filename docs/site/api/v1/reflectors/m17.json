@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 156,
-  "generated": "2026-11-19",
+  "generated": "2026-11-20",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1073,7 +1073,7 @@
     {
       "country": "US",
       "dashboard": "http://xlx217.dynamic-dns.net",
-      "description": "<p>XLX217 Experimental RasPi4 Reflector</p>",
+      "description": "<p>Minimalist multimode XLX reflector supporting D-STAR, DMR, M17, and YSF. No transcoding.&nbsp;</p>",
       "dial": {
         "callsign": "M17-217",
         "host": "xlx217.dynamic-dns.net",
@@ -1085,7 +1085,7 @@
       },
       "id": "M17-217",
       "license": "CC-BY-4.0",
-      "name": "M17-217 Experimental RasPi4 Reflector",
+      "name": "M17-217 Minimalist RasPi4 Reflector",
       "network": "m17",
       "source": "dvref",
       "sponsor": "N3BBF"

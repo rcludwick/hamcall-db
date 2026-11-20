@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 191,
-  "generated": "2026-11-19",
+  "generated": "2026-11-20",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1931,6 +1931,7 @@
     {
       "country": "CN",
       "dashboard": "https://hamclub.net/dv/",
+      "description": "<p>A handmade MMDVM HB server with interconnection to BM network and private nodes.&nbsp;</p>",
       "dial": {
         "host": "47.104.177.248",
         "kind": "mmdvm",
@@ -1947,7 +1948,7 @@
       "name": "CN01",
       "network": "dmr",
       "source": "dvref",
-      "sponsor": "HAMClub.net",
+      "sponsor": "DRCC Team / HAMClub.net",
       "system": "hb_cn_ham-club",
       "talkgroups": "reflectors/dmr/hb_cn_ham-club/talkgroups.json"
     },

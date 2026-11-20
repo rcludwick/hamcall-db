@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "AllStarLink node data courtesy of AllStarLink, Inc. (https://www.allstarlink.org/).",
   "client_refresh_days": 7,
-  "count": 41902,
-  "generated": "2026-11-19",
+  "count": 41946,
+  "generated": "2026-11-20",
   "license": "none-stated",
   "license_url": "https://github.com/rcludwick/hamcall-db/blob/main/NOTICE",
   "modifications": "Reformatted from AllStarLink's pipe-separated node list. Malformed lines dropped; locations that look like street addresses removed; email addresses removed from free text.",
@@ -1054,7 +1054,7 @@
     },
     {
       "callsign": "N6KNE",
-      "description": "N-America-Watch",
+      "description": null,
       "location": "N and S America",
       "node": "2224"
     },
@@ -12147,6 +12147,12 @@
       "node": "40797"
     },
     {
+      "callsign": "WA1JQC",
+      "description": null,
+      "location": "Powhatan, VA",
+      "node": "40799"
+    },
+    {
       "callsign": "KK6DOQ",
       "description": null,
       "location": "San Leandro, CA",
@@ -12241,6 +12247,12 @@
       "description": null,
       "location": "Jerusalem",
       "node": "40825"
+    },
+    {
+      "callsign": "KQ4LTY",
+      "description": null,
+      "location": "KISSIMMEE, FLORIDA",
+      "node": "40826"
     },
     {
       "callsign": "2E0EVP",
@@ -13219,6 +13231,12 @@
       "description": "442.600+",
       "location": "Oak Island, NC",
       "node": "41109"
+    },
+    {
+      "callsign": "E26CTD",
+      "description": null,
+      "location": "Providence Ratchaburi, TH",
+      "node": "41114"
     },
     {
       "callsign": "AB5JK",
@@ -16660,8 +16678,14 @@
     },
     {
       "callsign": "4X5EW",
+      "description": "438.550",
+      "location": "KIRYAT GAT",
+      "node": "42187"
+    },
+    {
+      "callsign": "4X5EW",
       "description": "432.550",
-      "location": "kityat gat",
+      "location": "KIRYAT GAT",
       "node": "42188"
     },
     {
@@ -18335,7 +18359,7 @@
     {
       "callsign": "WX1NH",
       "description": "446.425-",
-      "location": "Acworth, NH",
+      "location": "Claremont, NH",
       "node": "42700"
     },
     {
@@ -21681,12 +21705,6 @@
       "node": "43784"
     },
     {
-      "callsign": "KD2OJQ",
-      "description": null,
-      "location": "Manchester,N.J.",
-      "node": "43785"
-    },
-    {
       "callsign": "S21SES",
       "description": "435.500",
       "location": "netrakona bangladesh",
@@ -24700,7 +24718,7 @@
     },
     {
       "callsign": "S21ABK",
-      "description": "145.500",
+      "description": "433.500",
       "location": "Tongi, Gazipur",
       "node": "44869"
     },
@@ -25155,6 +25173,12 @@
       "node": "45044"
     },
     {
+      "callsign": "KJ5FA",
+      "description": "443.825",
+      "location": "Benton, AR",
+      "node": "45045"
+    },
+    {
       "callsign": "KD2MDT",
       "description": null,
       "location": "New York",
@@ -25168,7 +25192,7 @@
     },
     {
       "callsign": "KQ1USA",
-      "description": "Hub",
+      "description": "439.000",
       "location": "Wetumpka, AL",
       "node": "45050"
     },
@@ -27339,6 +27363,12 @@
       "node": "45713"
     },
     {
+      "callsign": "G6PZ",
+      "description": null,
+      "location": "Sutton Mallet",
+      "node": "45716"
+    },
+    {
       "callsign": "K6SPL",
       "description": null,
       "location": "CARSON CITY, NEVADA",
@@ -27778,7 +27808,7 @@
     },
     {
       "callsign": "K6VP",
-      "description": "SHARI Pi3U @ 432.355",
+      "description": "SHARI Pi4U @ 432.355",
       "location": "San Jose, CA",
       "node": "45853"
     },
@@ -36895,6 +36925,12 @@
       "description": null,
       "location": "hatfield, pa",
       "node": "48638"
+    },
+    {
+      "callsign": "PD0GHR",
+      "description": null,
+      "location": "Norway",
+      "node": "48641"
     },
     {
       "callsign": "M7LVF",
@@ -49869,6 +49905,12 @@
       "node": "52925"
     },
     {
+      "callsign": "JG2FFB",
+      "description": "Mobile",
+      "location": "Motosu_gun Gifu Japan",
+      "node": "52926"
+    },
+    {
       "callsign": "KG9NI",
       "description": null,
       "location": "Stoughton, WI",
@@ -51943,12 +51985,6 @@
       "description": null,
       "location": "Nasushiobara-city,Tochigi-pref",
       "node": "53639"
-    },
-    {
-      "callsign": "MW3VJN",
-      "description": null,
-      "location": "Newcastle Emlyn West Wales",
-      "node": "53641"
     },
     {
       "callsign": "AD8GP",
@@ -55102,7 +55138,7 @@
     },
     {
       "callsign": "W7ACC",
-      "description": null,
+      "description": "430.275",
       "location": "Kent/WA",
       "node": "54760"
     },
@@ -56929,6 +56965,12 @@
       "description": null,
       "location": "LOS ANGELES",
       "node": "55360"
+    },
+    {
+      "callsign": "4X5JK",
+      "description": null,
+      "location": "Yavne",
+      "node": "55362"
     },
     {
       "callsign": "WB6JWB",
@@ -59277,6 +59319,12 @@
       "node": "56122"
     },
     {
+      "callsign": "K8ELI",
+      "description": null,
+      "location": "Adrian, Michigan",
+      "node": "56123"
+    },
+    {
       "callsign": "N7JRJ",
       "description": null,
       "location": "Issaquah, WA",
@@ -60607,6 +60655,12 @@
       "description": "145.7875 MHz",
       "location": "PTN",
       "node": "56611"
+    },
+    {
+      "callsign": "9W2EYX",
+      "description": null,
+      "location": "Muar, Johor, Malaysia",
+      "node": "56613"
     },
     {
       "callsign": "W4EDF",
@@ -68547,12 +68601,6 @@
       "node": "59399"
     },
     {
-      "callsign": "HS1KMZ",
-      "description": null,
-      "location": "Muang Suphanburi, Thailand",
-      "node": "59401"
-    },
-    {
       "callsign": "AD5IA",
       "description": "441 MHz",
       "location": "San Jose, CA",
@@ -68907,8 +68955,8 @@
       "node": "59520"
     },
     {
-      "callsign": "KJ6DZB",
-      "description": "441",
+      "callsign": "WA6ZTY",
+      "description": "442.275",
       "location": "Berkeley CA USA",
       "node": "59521"
     },
@@ -69607,12 +69655,6 @@
       "description": "ASL POC",
       "location": "Mueang",
       "node": "59734"
-    },
-    {
-      "callsign": "AI7OK",
-      "description": null,
-      "location": "Las Vegas , NV",
-      "node": "59736"
     },
     {
       "callsign": "W8DMT",
@@ -74164,7 +74206,7 @@
     },
     {
       "callsign": "MB7IHE",
-      "description": "145.225 MHz",
+      "description": "145.2125 MHz",
       "location": "Hertford",
       "node": "61153"
     },
@@ -82005,6 +82047,12 @@
       "node": "63207"
     },
     {
+      "callsign": "G7UXW",
+      "description": null,
+      "location": "Northwich Cheshire UK",
+      "node": "63208"
+    },
+    {
       "callsign": "VE1JPR",
       "description": "446.125",
       "location": "Moncton NB",
@@ -88516,7 +88564,7 @@
     },
     {
       "callsign": "K8DLD",
-      "description": "145.600",
+      "description": "445.000",
       "location": "Hart Michigan",
       "node": "64833"
     },
@@ -96341,7 +96389,7 @@
     {
       "callsign": "K4GDS",
       "description": "445.800 Simplex",
-      "location": "Orlando, Fl",
+      "location": "Haines City, Fl",
       "node": "66762"
     },
     {
@@ -96955,6 +97003,12 @@
       "description": null,
       "location": "Grandville, MI",
       "node": "66914"
+    },
+    {
+      "callsign": "IU6MZU",
+      "description": null,
+      "location": "Petriano Pu",
+      "node": "66915"
     },
     {
       "callsign": "AK4EC",
@@ -97977,6 +98031,12 @@
       "node": "67158"
     },
     {
+      "callsign": "E25QAH",
+      "description": null,
+      "location": "NIKHOM RAYONG",
+      "node": "67160"
+    },
+    {
       "callsign": "YM6KV-R",
       "description": null,
       "location": "Cankiri",
@@ -98041,6 +98101,12 @@
       "description": null,
       "location": "Greensboro, North Carolina",
       "node": "67172"
+    },
+    {
+      "callsign": "E25QAH",
+      "description": "145.7375",
+      "location": "NIKHOM RAYONG",
+      "node": "67173"
     },
     {
       "callsign": "M0IOV",
@@ -98305,6 +98371,12 @@
       "description": null,
       "location": "El Puerto de Santa Maria",
       "node": "67241"
+    },
+    {
+      "callsign": "N5RV",
+      "description": null,
+      "location": "Virtual",
+      "node": "67243"
     },
     {
       "callsign": "KJ4GVO",
@@ -100336,7 +100408,7 @@
     },
     {
       "callsign": "W6RLH",
-      "description": "QsoOne AndroidPh.S25",
+      "description": "QsoOne SonimXP8",
       "location": "CaGayAnVaLLeyPHILIPPINES",
       "node": "67704"
     },
@@ -103300,7 +103372,7 @@
     },
     {
       "callsign": "YD2CFW",
-      "description": "435.000",
+      "description": "432.150",
       "location": "Colomadu, KRA",
       "node": "68429"
     },
@@ -106497,12 +106569,6 @@
       "node": "69262"
     },
     {
-      "callsign": "E26DRR",
-      "description": null,
-      "location": "U-Thong,Suphanburi,Thailand",
-      "node": "69263"
-    },
-    {
       "callsign": "M0OOW",
       "description": "434.51250",
       "location": "York",
@@ -106783,6 +106849,12 @@
       "description": null,
       "location": "YORKSHIRE NET UK",
       "node": "69372"
+    },
+    {
+      "callsign": "4X4FD",
+      "description": null,
+      "location": "Beer Sheva, Israel",
+      "node": "69374"
     },
     {
       "callsign": "E25WEW",
@@ -107143,6 +107215,12 @@
       "description": "439.000 PL67",
       "location": "Bethlehem, PA",
       "node": "69539"
+    },
+    {
+      "callsign": "E26EBZ",
+      "description": null,
+      "location": "Prachinburi Thailand",
+      "node": "69544"
     },
     {
       "callsign": "W1ATB",
@@ -111369,6 +111447,12 @@
       "node": "400058"
     },
     {
+      "callsign": "W4HOO",
+      "description": "Debian 13",
+      "location": "Richmond/VA/USA",
+      "node": "400059"
+    },
+    {
       "callsign": "HS6NDK",
       "description": null,
       "location": "HSDXA HS-ASL HUB",
@@ -113355,6 +113439,12 @@
       "node": "405512"
     },
     {
+      "callsign": "K3ON",
+      "description": "NONE",
+      "location": "Wellsboro",
+      "node": "405513"
+    },
+    {
       "callsign": "KJ5NRW",
       "description": null,
       "location": "Canyon Lake, TX",
@@ -114681,33 +114771,33 @@
       "node": "413494"
     },
     {
-      "callsign": "KE0YBQ",
+      "callsign": "KC0SWG",
       "description": null,
-      "location": "Auburn, NE",
+      "location": "Nebraska",
       "node": "413495"
     },
     {
-      "callsign": "KE0YBQ",
+      "callsign": "KC0SWG",
       "description": null,
-      "location": "Auburn, NE",
+      "location": "Nebraska",
       "node": "413496"
     },
     {
-      "callsign": "KE0YBQ",
+      "callsign": "KC0SWG",
       "description": null,
-      "location": "Auburn, NE",
+      "location": "Nebraska",
       "node": "413497"
     },
     {
-      "callsign": "KE0YBQ",
+      "callsign": "KC0SWG",
       "description": null,
-      "location": "Auburn, NE",
+      "location": "Nebraska",
       "node": "413498"
     },
     {
-      "callsign": "KE0YBQ",
+      "callsign": "KC0SWG",
       "description": null,
-      "location": "Auburn, NE",
+      "location": "Nebraska",
       "node": "413499"
     },
     {
@@ -117139,6 +117229,18 @@
       "description": "147.090",
       "location": "Millbrook ,Ont",
       "node": "424648"
+    },
+    {
+      "callsign": "9W2BPJ",
+      "description": null,
+      "location": "Malaysia",
+      "node": "424700"
+    },
+    {
+      "callsign": "9W2BPJ",
+      "description": null,
+      "location": "Malaysia",
+      "node": "424701"
     },
     {
       "callsign": "VA3WM",
@@ -120465,6 +120567,42 @@
       "node": "440337"
     },
     {
+      "callsign": "DU2RD",
+      "description": "Qso One Android S.25",
+      "location": "CagayanValley,Philippines",
+      "node": "440530"
+    },
+    {
+      "callsign": "DU2RD",
+      "description": "Qso One Android S.25",
+      "location": "CaliforniaValleyAmateurRC",
+      "node": "440531"
+    },
+    {
+      "callsign": "DU2RD",
+      "description": "Qso One Android S.25",
+      "location": "CagayanValley,Philippines",
+      "node": "440532"
+    },
+    {
+      "callsign": "DU2RD",
+      "description": "Qso One Android S.25",
+      "location": "CaliforniaValleyAmateurRC",
+      "node": "440533"
+    },
+    {
+      "callsign": "DU2RD",
+      "description": "Qso One Android S.25",
+      "location": "CagayanValley,Philippines",
+      "node": "440534"
+    },
+    {
+      "callsign": "DU2RD",
+      "description": "Qso One Android S.25",
+      "location": "CaliforniaValleyAmateurRC",
+      "node": "440535"
+    },
+    {
       "callsign": "2E0XVX",
       "description": "438:200",
       "location": "Desborough, England",
@@ -121297,6 +121435,12 @@
       "description": null,
       "location": "Muang Nakhon Si Thammarat",
       "node": "445323"
+    },
+    {
+      "callsign": "E26CPR",
+      "description": null,
+      "location": "Muang Nakhon Si Thammarat",
+      "node": "445324"
     },
     {
       "callsign": "K6GRL",
@@ -123305,7 +123449,7 @@
     {
       "callsign": "N3XA",
       "description": "Test Node",
-      "location": "Test Node",
+      "location": "Office",
       "node": "453544"
     },
     {
@@ -132285,6 +132429,12 @@
       "node": "484731"
     },
     {
+      "callsign": "VK5BOR",
+      "description": null,
+      "location": "Australia",
+      "node": "484732"
+    },
+    {
       "callsign": "KD3CTC",
       "description": null,
       "location": "West Chester, PA",
@@ -132655,6 +132805,36 @@
       "description": null,
       "location": "QSO One - Mobile",
       "node": "486491"
+    },
+    {
+      "callsign": "W6SWC",
+      "description": null,
+      "location": "QSO One - Mobile",
+      "node": "486492"
+    },
+    {
+      "callsign": "W6SWC",
+      "description": null,
+      "location": "QSO One - Brooksville",
+      "node": "486493"
+    },
+    {
+      "callsign": "W6SWC",
+      "description": null,
+      "location": "QSO One - Brooksville",
+      "node": "486494"
+    },
+    {
+      "callsign": "W6SWC",
+      "description": null,
+      "location": "Brooksville, Florida",
+      "node": "486495"
+    },
+    {
+      "callsign": "W6SWC",
+      "description": null,
+      "location": "Brooksville, Florida",
+      "node": "486496"
     },
     {
       "callsign": "DVS BRIDGE",
@@ -137632,7 +137812,7 @@
     },
     {
       "callsign": "KG4NWE",
-      "description": "147.225",
+      "description": "147.105",
       "location": "Chester SC",
       "node": "502240"
     },
@@ -137641,6 +137821,12 @@
       "description": "MyPhone",
       "location": "Chester SC",
       "node": "502241"
+    },
+    {
+      "callsign": "KG4NWE",
+      "description": "147.105 HUB",
+      "location": "Chester SC",
+      "node": "502242"
     },
     {
       "callsign": "N2KEJ",
@@ -143194,7 +143380,7 @@
     },
     {
       "callsign": "N0AD",
-      "description": "AllStar to DMR bridg",
+      "description": "AllStar to XLX720",
       "location": "Centennial Co",
       "node": "511111"
     },
@@ -153855,18 +154041,6 @@
       "node": "529221"
     },
     {
-      "callsign": "JG2FFB",
-      "description": "Mobile",
-      "location": "Motosu_gun Gifu Japan",
-      "node": "529260"
-    },
-    {
-      "callsign": "JG2FFB",
-      "description": "Mobile",
-      "location": "Motosu_gun Gifu Japan",
-      "node": "529261"
-    },
-    {
       "callsign": "N5ZR",
       "description": "VHF SHARI PIHAT",
       "location": "Somewhere, TX",
@@ -154360,7 +154534,7 @@
     },
     {
       "callsign": "KJ6DZB",
-      "description": null,
+      "description": "441",
       "location": "Berkeley CA USA",
       "node": "529991"
     },
@@ -158895,6 +159069,18 @@
       "node": "536375"
     },
     {
+      "callsign": "M3VJN",
+      "description": null,
+      "location": "Newcastle Emlyn West Wales",
+      "node": "536410"
+    },
+    {
+      "callsign": "M3WAR",
+      "description": null,
+      "location": "Newcastle Emlyn West Wales",
+      "node": "536411"
+    },
+    {
       "callsign": "VU2MMP",
       "description": null,
       "location": "Patna",
@@ -161321,7 +161507,7 @@
     {
       "callsign": "KD2WLL",
       "description": null,
-      "location": "Mt. Sinai NY",
+      "location": "Portabilly,NY",
       "node": "540602"
     },
     {
@@ -177831,6 +178017,12 @@
       "node": "566415"
     },
     {
+      "callsign": "WP3D",
+      "description": null,
+      "location": null,
+      "node": "566416"
+    },
+    {
       "callsign": "KD8SLG",
       "description": null,
       "location": "Orrville, Ohio",
@@ -185818,7 +186010,7 @@
     },
     {
       "callsign": "KC0JC",
-      "description": "Semi-Radioless-Node",
+      "description": "Studio Shack",
       "location": "Harrisonville, MO",
       "node": "578254"
     },
@@ -194565,6 +194757,12 @@
       "node": "592713"
     },
     {
+      "callsign": "W3ICQ",
+      "description": "OrangePi-Zero-3W",
+      "location": "Leesburg FL",
+      "node": "592714"
+    },
+    {
       "callsign": "IV3OEP",
       "description": null,
       "location": "Montereale Valcellina / PN",
@@ -195655,6 +195853,36 @@
       "description": null,
       "location": "Sariaya, Quezon Province PH",
       "node": "593906"
+    },
+    {
+      "callsign": "HS1KMZ",
+      "description": null,
+      "location": "Muang Suphanburi, Thailand",
+      "node": "594010"
+    },
+    {
+      "callsign": "HS1KMZ",
+      "description": null,
+      "location": "Muang Suphanburi, Thailand",
+      "node": "594011"
+    },
+    {
+      "callsign": "HS1KMZ",
+      "description": null,
+      "location": "Muang Suphanburi, Thailand",
+      "node": "594012"
+    },
+    {
+      "callsign": "HS1KMZ",
+      "description": null,
+      "location": "Muang Suphanburi, Thailand",
+      "node": "594013"
+    },
+    {
+      "callsign": "HS1KMZ",
+      "description": null,
+      "location": "Muang Suphanburi, Thailand",
+      "node": "594014"
     },
     {
       "callsign": "DU9BG",
@@ -197679,6 +197907,18 @@
       "node": "597303"
     },
     {
+      "callsign": "AI7OK",
+      "description": null,
+      "location": "Las Vegas , NV",
+      "node": "597360"
+    },
+    {
+      "callsign": "AI7OK",
+      "description": null,
+      "location": "Las Vegas , NV",
+      "node": "597361"
+    },
+    {
       "callsign": "DU3JP",
       "description": null,
       "location": "Zambales, Philippines",
@@ -198069,7 +198309,7 @@
       "node": "597860"
     },
     {
-      "callsign": "K1MOQ",
+      "callsign": "N1CIV",
       "description": "146.97-",
       "location": "Tunbridge, VT",
       "node": "597861"
@@ -199091,43 +199331,43 @@
     {
       "callsign": "VK5VK",
       "description": null,
-      "location": "Barmah, Nth Victoria, Portable",
+      "location": "Portable",
       "node": "598882"
     },
     {
       "callsign": "VK5VK",
       "description": null,
-      "location": "Barmah, Nth Victoria, Portable",
+      "location": "Portable",
       "node": "598883"
     },
     {
       "callsign": "VK5VK",
       "description": null,
-      "location": "Barmah, Nth Victoria, Portable",
+      "location": "Portable",
       "node": "598884"
     },
     {
       "callsign": "VK5VK",
       "description": null,
-      "location": "Barmah, Nth Victoria, Portable",
+      "location": "Portable",
       "node": "598885"
     },
     {
       "callsign": "VK5VK",
       "description": null,
-      "location": "Barmah, Nth Victoria, Portable",
+      "location": "Portable",
       "node": "598886"
     },
     {
       "callsign": "VK5VK",
       "description": null,
-      "location": "Barmah, Nth Victoria, Portable",
+      "location": "Portable",
       "node": "598887"
     },
     {
       "callsign": "VK5VK",
       "description": "439.125 91.5",
-      "location": "Barmah, Nth Victoria, Portable",
+      "location": "Portable",
       "node": "598888"
     },
     {
@@ -206878,13 +207118,13 @@
     },
     {
       "callsign": "N5MXI",
-      "description": "WLAN IP",
+      "description": "deskPC",
       "location": "Corpus Christi, TX USA",
       "node": "611662"
     },
     {
       "callsign": "N5MXI",
-      "description": "WLAN IP",
+      "description": "android",
       "location": "Texas, USA",
       "node": "611663"
     },
@@ -206896,9 +207136,27 @@
     },
     {
       "callsign": "N5MXI",
-      "description": "433.500",
+      "description": "iPhone",
       "location": "Texas, USA",
       "node": "611665"
+    },
+    {
+      "callsign": "N5MXI",
+      "description": "433.500",
+      "location": "Corpus Christi, TX",
+      "node": "611666"
+    },
+    {
+      "callsign": "N5MXI",
+      "description": "RFinder",
+      "location": "Corpus Christi, TX",
+      "node": "611667"
+    },
+    {
+      "callsign": "N5MXI",
+      "description": "cloud",
+      "location": "cloud",
+      "node": "611668"
     },
     {
       "callsign": "KE9ADT",
@@ -209579,7 +209837,7 @@
     {
       "callsign": "E25EY",
       "description": null,
-      "location": "User Node : HS4OJL",
+      "location": "145.7375 Mhz Phonsai RoiEt",
       "node": "615831"
     },
     {
@@ -211821,7 +212079,7 @@
       "node": "619945"
     },
     {
-      "callsign": "DW8WRS",
+      "callsign": "DY8WWD",
       "description": "144.930",
       "location": "CLOUD SERVER",
       "node": "619946"
@@ -219585,18 +219843,6 @@
       "node": "632041"
     },
     {
-      "callsign": "G7UXW",
-      "description": null,
-      "location": "Northwich Cheshire UK",
-      "node": "632080"
-    },
-    {
-      "callsign": "G7UXW",
-      "description": null,
-      "location": "Northwich UK",
-      "node": "632081"
-    },
-    {
       "callsign": "WRYS609",
       "description": "462.650",
       "location": "Miami Lakes/Fl",
@@ -222529,6 +222775,18 @@
       "description": null,
       "location": "Traverse City, MI",
       "node": "637354"
+    },
+    {
+      "callsign": "KD8BOQ",
+      "description": null,
+      "location": "Traverse City, MI",
+      "node": "637355"
+    },
+    {
+      "callsign": "KD8BOQ",
+      "description": null,
+      "location": "Traverse City, MI",
+      "node": "637356"
     },
     {
       "callsign": "VE2WP",
@@ -228875,13 +229133,13 @@
     {
       "callsign": "K4GDS",
       "description": "445.800 Simplex",
-      "location": "Orlando, Fl",
+      "location": "Haines City, Fl",
       "node": "648770"
     },
     {
       "callsign": "K4GDS",
       "description": "(M1KE)",
-      "location": "Orlando, Fl",
+      "location": "Haines City, Fl",
       "node": "648771"
     },
     {
@@ -229042,7 +229300,7 @@
     },
     {
       "callsign": "VK3HOR",
-      "description": "IPSC3 test (POC)",
+      "description": "IP (test)",
       "location": "Australia",
       "node": "649053"
     },
@@ -231913,18 +232171,6 @@
       "description": "438.800Simplex",
       "location": "Slidel, LA",
       "node": "653881"
-    },
-    {
-      "callsign": "KD2OJQ",
-      "description": "Tx 445.000 Rx 440.00",
-      "location": "Manchester,N.J.",
-      "node": "653890"
-    },
-    {
-      "callsign": "KD2OJQ",
-      "description": "Tx 445.000 Rx 440.00",
-      "location": "Manchester,N.J.",
-      "node": "653891"
     },
     {
       "callsign": "KB5WYJ",
@@ -240931,18 +241177,6 @@
       "description": "Radio-less Node",
       "location": "Cibolo, Texas",
       "node": "671682"
-    },
-    {
-      "callsign": "E25QAH",
-      "description": null,
-      "location": "NIKHOM RAYONG",
-      "node": "671730"
-    },
-    {
-      "callsign": "E25QAH",
-      "description": null,
-      "location": "NIKHOM RAYONG",
-      "node": "671731"
     },
     {
       "callsign": "ZL3TKZ",
@@ -250281,6 +250515,36 @@
       "node": "692274"
     },
     {
+      "callsign": "E26DRR",
+      "description": null,
+      "location": "U-Thong,Suphanburi,Thailand",
+      "node": "692630"
+    },
+    {
+      "callsign": "E26DRR",
+      "description": null,
+      "location": "U-Thong,Suphanburi,Thailand",
+      "node": "692631"
+    },
+    {
+      "callsign": "E26DRR",
+      "description": null,
+      "location": "U-Thong,Suphanburi,Thailand",
+      "node": "692632"
+    },
+    {
+      "callsign": "E26DRR",
+      "description": null,
+      "location": "U-Thong,Suphanburi,Thailand",
+      "node": "692633"
+    },
+    {
+      "callsign": "E26DRR",
+      "description": null,
+      "location": "U-Thong,Suphanburi,Thailand",
+      "node": "692634"
+    },
+    {
       "callsign": "VK2FJ",
       "description": null,
       "location": "Ashtonfield NSW Australia",
@@ -251425,7 +251689,7 @@
   "schema_version": 1,
   "sources": [
     {
-      "fetched": "2026-11-19",
+      "fetched": "2026-11-20",
       "name": "allstarlink",
       "url": "http://allmondb.allstarlink.org/"
     }

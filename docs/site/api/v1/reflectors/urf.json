@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 139,
-  "generated": "2026-11-19",
+  "count": 140,
+  "generated": "2026-11-20",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -227,7 +227,7 @@
       },
       "id": "076",
       "license": "CC-BY-4.0",
-      "name": "XLX076 AETHER HELLAS NET",
+      "name": "XLXAHN AETHER HELLAS NET",
       "network": "urf",
       "source": "dvref",
       "sponsor": "AETHER HELLAS NET"
@@ -394,6 +394,24 @@
       "sponsor": "DK8RG"
     },
     {
+      "country": "CZ",
+      "dashboard": "http://185.33.145.102/",
+      "description": "<p>Multimode reflector by OK2USB. Module B: all modes, transcoded (D-Star, DMR, YSF, NXDN, P25, M17). Module D: D-Star. Module M: DMR TG 4013 + YSF DG-ID 22. Module Z: echo test.</p>",
+      "dial": {
+        "host": "185.33.145.102",
+        "kind": "urf",
+        "modules": [
+          "B"
+        ]
+      },
+      "id": "144",
+      "license": "CC-BY-4.0",
+      "name": "URF144 CZ Multimode",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "OK2USB"
+    },
+    {
       "country": "TH",
       "dashboard": "http://44.32.81.27",
       "dial": {
@@ -521,7 +539,7 @@
     {
       "country": "US",
       "dashboard": "https://xlx217.dynamic-dns.net",
-      "description": "<p>Testbed for experimentation and host for Chaverim TAC2.</p>",
+      "description": "<p>Minimalist multimode XLX reflector supporting D-STAR, DMR, M17, and YSF. No transcoding.&nbsp;</p>",
       "dial": {
         "host": "xlx217.dynamic-dns.net",
         "kind": "urf",
@@ -536,7 +554,7 @@
       },
       "id": "217",
       "license": "CC-BY-4.0",
-      "name": "Experimental RasPi4 Reflector",
+      "name": "Minimalist RasPi4 Reflector",
       "network": "urf",
       "source": "dvref",
       "sponsor": "N3BBF"
@@ -2102,24 +2120,6 @@
     },
     {
       "country": "CZ",
-      "dashboard": "http://185.33.145.102/",
-      "description": "<p>Multimode reflector by OK2USB. Module B: all modes, transcoded (D-Star, DMR, YSF, NXDN, P25, M17). Module D: D-Star. Module M: DMR TG 4013 + YSF DG-ID 22. Module Z: echo test.</p>",
-      "dial": {
-        "host": "185.33.145.102",
-        "kind": "urf",
-        "modules": [
-          "B"
-        ]
-      },
-      "id": "CZ1",
-      "license": "CC-BY-4.0",
-      "name": "URFCZ1 CZ Multimode",
-      "network": "urf",
-      "source": "dvref",
-      "sponsor": "OK2USB"
-    },
-    {
-      "country": "CZ",
       "dashboard": "http://128.0.182.6",
       "description": "<p>XLXD - Multi-Mode-Reflector</p>",
       "dial": {
@@ -2431,6 +2431,20 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "RA1AO"
+    },
+    {
+      "country": "TR",
+      "dashboard": "https://dvs.pistar.com.tr/",
+      "dial": {
+        "host": "141.144.206.211",
+        "kind": "urf"
+      },
+      "id": "TRK",
+      "license": "CC-BY-4.0",
+      "name": "XLXTRK Multimode POC",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "UY",

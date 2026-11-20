@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1696,
-  "generated": "2026-11-19",
+  "count": 1699,
+  "generated": "2026-11-20",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -6805,6 +6805,22 @@
       "sponsor": "DVSwitch"
     },
     {
+      "country": "GR",
+      "dashboard": "http://svham.eu:83",
+      "description": "AETHER-CQ-ECHO",
+      "dial": {
+        "host": "157.173.36.81",
+        "kind": "ysf",
+        "port": 42012
+      },
+      "id": "10202",
+      "license": "CC-BY-4.0",
+      "name": "AETHER-ECHO",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "AETHER HELLAS NET! By SV4JYD"
+    },
+    {
       "country": "IT",
       "dashboard": "http://italynet.duckdns.org/main.php",
       "description": "Bridge to ADN",
@@ -7834,7 +7850,7 @@
       "dashboard": "https://ve2nir.ca",
       "description": "Marieville, QC",
       "dial": {
-        "host": "ve2nir.fortiddns.com",
+        "host": "158.69.208.13",
         "kind": "ysf",
         "port": 42000
       },
@@ -10784,7 +10800,7 @@
     {
       "country": "CZ",
       "dashboard": "http://185.33.145.102/",
-      "description": "URFCZ1",
+      "description": "URF144",
       "dial": {
         "host": "185.33.145.102",
         "kind": "ysf",
@@ -10792,7 +10808,7 @@
       },
       "id": "23002",
       "license": "CC-BY-4.0",
-      "name": "URFCZ1",
+      "name": "URF144",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "OK2USB"
@@ -12671,6 +12687,22 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "KI7RID"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://innet.tplinkdns.com",
+      "description": "Audio Testing",
+      "dial": {
+        "host": "innet.tplinkdns.com",
+        "kind": "ysf",
+        "port": 42002
+      },
+      "id": "27772",
+      "license": "CC-BY-4.0",
+      "name": "JSS-Parrot",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "kc1ujz"
     },
     {
       "country": "GB",
@@ -15054,6 +15086,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "K0MGS"
+    },
+    {
+      "country": "US",
+      "description": "SWMO Skywarn",
+      "dial": {
+        "host": "159.65.225.188",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "31297",
+      "license": "CC-BY-4.0",
+      "name": "SWMO Skywarn",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "KE0JGH"
     },
     {
       "country": "CZ",

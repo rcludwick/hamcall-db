@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 426,
-  "generated": "2026-11-19",
+  "count": 429,
+  "generated": "2026-11-20",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -422,6 +422,21 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "NXDN SPAIN"
+    },
+    {
+      "country": "TR",
+      "dashboard": "https://dvs.pistar.com.tr/",
+      "dial": {
+        "host": "141.144.206.211",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "1453",
+      "license": "CC-BY-4.0",
+      "name": "URFTRK",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
       "country": "TH",
@@ -1706,7 +1721,7 @@
       },
       "id": "2302",
       "license": "CC-BY-4.0",
-      "name": "URFCZ1",
+      "name": "URF144",
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "OK2USB"
@@ -3987,6 +4002,20 @@
     },
     {
       "country": "US",
+      "dial": {
+        "host": "159.65.225.188",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "31297",
+      "license": "CC-BY-4.0",
+      "name": "SWMO Skywarn",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "KE0JGH"
+    },
+    {
+      "country": "US",
       "dashboard": "https://kansascitywide.com",
       "dial": {
         "host": "172.236.106.61",
@@ -6099,6 +6128,21 @@
       "name": "XLX-801",
       "network": "nxdn",
       "source": "dvref"
+    },
+    {
+      "country": "US",
+      "description": "<p>W4END multimode bridge - linked to TGIF TG 35749, AllStar 481550 and NXDN/P25 805</p>",
+      "dial": {
+        "host": "173.17.194.7",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "805",
+      "license": "CC-BY-4.0",
+      "name": "W4END 805",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "W4END"
     },
     {
       "country": "US",
