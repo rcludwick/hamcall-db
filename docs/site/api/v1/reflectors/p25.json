@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 475,
-  "generated": "2026-11-20",
+  "count": 477,
+  "generated": "2026-11-21",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1614,6 +1614,22 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "OK2USB"
+    },
+    {
+      "country": "CZ",
+      "dashboard": "http://128.0.182.6",
+      "description": "<p>XLXD - Multi-Mode-Reflector</p>",
+      "dial": {
+        "host": "128.0.182.6",
+        "kind": "p25",
+        "port": 41002
+      },
+      "id": "2304",
+      "license": "CC-BY-4.0",
+      "name": "URFCZS",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "OK1IGO"
     },
     {
       "country": "AT",
@@ -3682,6 +3698,21 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "ILLINOIS LINK"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://urfd.n9ald.radio",
+      "description": "<p>Testing and Development</p>",
+      "dial": {
+        "host": "urfd.n9ald.radio",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "3118",
+      "license": "CC-BY-4.0",
+      "name": "URF616",
+      "network": "p25",
+      "source": "dvref"
     },
     {
       "country": "US",
@@ -6103,7 +6134,7 @@
     },
     {
       "country": "RE",
-      "dashboard": "http://vmi2726828.contaboserver.net:9002",
+      "dashboard": "https://84.247.131.227/p25/",
       "dial": {
         "host": "84.247.131.227",
         "kind": "p25",

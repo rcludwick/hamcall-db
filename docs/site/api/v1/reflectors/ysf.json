@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1699,
-  "generated": "2026-11-20",
+  "count": 1701,
+  "generated": "2026-11-21",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -330,10 +330,10 @@
     },
     {
       "country": "GB",
-      "dashboard": "https://ysf1.yorkshire.network",
+      "dashboard": "https://dashboard.m0xyn.radio",
       "description": "YorkshireNet",
       "dial": {
-        "host": "ysf01.yorkshire.network",
+        "host": "ysf.m0xyn.radio",
         "kind": "ysf",
         "port": 42005
       },
@@ -3805,6 +3805,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "Keith \"K4QXN\""
+    },
+    {
+      "country": "US",
+      "description": "W4END Bridge",
+      "dial": {
+        "host": "173.17.194.7",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00805",
+      "license": "CC-BY-4.0",
+      "name": "W4END 805",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "W4END"
     },
     {
       "country": "US",
@@ -9197,7 +9212,7 @@
       "dashboard": "https://ysfbrazilx.com",
       "description": "Wires-X  Link",
       "dial": {
-        "host": "180.199.26.244",
+        "host": "180.199.49.153",
         "kind": "ysf",
         "port": 42395
       },
@@ -19750,22 +19765,6 @@
       "sponsor": "DV1ZEJ"
     },
     {
-      "country": "GB",
-      "dashboard": "http://192.168.1.230",
-      "description": "GB-H1L8RE",
-      "dial": {
-        "host": "h1l8re.ddns.net",
-        "kind": "ysf",
-        "port": 42002
-      },
-      "id": "51866",
-      "license": "CC-BY-4.0",
-      "name": "H1L8RE",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "G7NIR"
-    },
-    {
       "country": "PH",
       "dashboard": "https://www.na7lv.net",
       "description": "NA7LV",
@@ -20406,7 +20405,7 @@
       },
       "id": "55697",
       "license": "CC-BY-4.0",
-      "name": "XLX171",
+      "name": "XLXREF",
       "network": "ysf",
       "source": "dvref"
     },
@@ -21786,7 +21785,7 @@
     },
     {
       "country": "FR",
-      "dashboard": "https://84.247.131.227/p25/",
+      "dashboard": "http://84.247.131.227:38471/main.php",
       "description": "64701",
       "dial": {
         "host": "84.247.131.227",
@@ -21994,13 +21993,13 @@
       "dashboard": "https://xlx818.hamnew.com/",
       "description": "XLX reflector",
       "dial": {
-        "host": "188.166.226.76",
+        "host": "152.42.160.206",
         "kind": "ysf",
-        "port": 42005
+        "port": 42000
       },
       "id": "66546",
       "license": "CC-BY-4.0",
-      "name": "XLX818",
+      "name": "XLX818 XNexus",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "E21NZC"
@@ -23686,6 +23685,21 @@
       "source": "dvref"
     },
     {
+      "country": "CA",
+      "dashboard": "https://hotspot-01.ve2zxo.com",
+      "description": "VA2ZXO Room",
+      "dial": {
+        "host": "hotspot-01.ve2zxo.com",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "76715",
+      "license": "CC-BY-4.0",
+      "name": "VA2ZXO",
+      "network": "ysf",
+      "source": "dvref"
+    },
+    {
       "country": "PL",
       "dashboard": "https://xlx.smslowianin.pl",
       "description": "UZNAM",
@@ -25179,7 +25193,7 @@
       "dashboard": "https://ysf818.hamnew.com",
       "description": "YSF818 Reflect",
       "dial": {
-        "host": "188.166.226.76",
+        "host": "152.42.160.206",
         "kind": "ysf",
         "port": 42001
       },
@@ -25713,6 +25727,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "SkyHubLink System"
+    },
+    {
+      "country": "US",
+      "description": "W4END",
+      "dial": {
+        "host": "173.17.194.7",
+        "kind": "ysf",
+        "port": 42001
+      },
+      "id": "92805",
+      "license": "CC-BY-4.0",
+      "name": "W4END 92805",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "W4END"
     },
     {
       "country": "CA",

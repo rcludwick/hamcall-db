@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 156,
-  "generated": "2026-11-20",
+  "generated": "2026-11-21",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1907,15 +1907,20 @@
     },
     {
       "country": "TH",
-      "dashboard": "http://m17.hamnew.com:3000",
+      "dashboard": "https://m17.hamnew.com",
       "dial": {
         "callsign": "M17-818",
-        "host": "188.166.226.76",
+        "host": "152.42.160.206",
         "kind": "m17",
         "modules": [
+          "B",
+          "C",
           "D",
+          "J",
           "L",
-          "X"
+          "U",
+          "X",
+          "Y"
         ],
         "port": 17000
       },
@@ -3945,7 +3950,7 @@
     },
     {
       "country": "US",
-      "dashboard": "https://selink.lmarc.net/m17dash",
+      "dashboard": "https://m17.lmarc.net/m17dash",
       "description": "<p>Lookout Mountain Amateur Radio Community and the SouthEast Link Bridge Systems - https://lmarc.net</p>",
       "dial": {
         "callsign": "M17-SEL",
