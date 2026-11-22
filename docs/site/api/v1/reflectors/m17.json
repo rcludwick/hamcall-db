@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 156,
-  "generated": "2026-11-21",
+  "count": 158,
+  "generated": "2026-11-22",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1185,6 +1185,50 @@
       "source": "dvref"
     },
     {
+      "country": "GB",
+      "dashboard": "https://xlx.oz-dmr.network/",
+      "dial": {
+        "callsign": "M17-247",
+        "host": "xlx.oz-dmr.network",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-247",
+      "license": "CC-BY-4.0",
+      "name": "OZ-DMR Network",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "OZ-DMR Network"
+    },
+    {
       "country": "LU",
       "dashboard": "https://xlx270.epf.lu",
       "dial": {
@@ -1401,7 +1445,7 @@
       "country": "CA",
       "dial": {
         "callsign": "M17-427",
-        "host": "15.157.128.240",
+        "host": "74.208.73.126",
         "kind": "m17",
         "modules": [
           "A",
@@ -1513,6 +1557,26 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "VK5ZSH"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://vex.w0chp.radio",
+      "description": "<p>WPSD/W0CHP VEX493</p>",
+      "dial": {
+        "callsign": "M17-493",
+        "host": "vex.w0chp.radio",
+        "kind": "m17",
+        "modules": [
+          "E"
+        ],
+        "port": 17000
+      },
+      "id": "M17-493",
+      "license": "CC-BY-4.0",
+      "name": "WPSD-VEX493",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "W0CHP"
     },
     {
       "country": "MY",
@@ -2105,10 +2169,11 @@
     },
     {
       "country": "TH",
-      "dashboard": "http://911m17.freeddns.org:3000",
+      "dashboard": "http://xlx911.mywire.org",
+      "description": "<p>E20AE Clubstation</p>",
       "dial": {
         "callsign": "M17-911",
-        "host": "128.199.239.91",
+        "host": "159.223.57.61",
         "kind": "m17",
         "modules": [
           "X"

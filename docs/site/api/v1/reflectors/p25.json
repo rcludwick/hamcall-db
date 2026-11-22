@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 477,
-  "generated": "2026-11-21",
+  "count": 476,
+  "generated": "2026-11-22",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -3702,7 +3702,7 @@
     {
       "country": "US",
       "dashboard": "https://urfd.n9ald.radio",
-      "description": "<p>Testing and Development</p>",
+      "description": "<p>Testing&nbsp;</p>",
       "dial": {
         "host": "urfd.n9ald.radio",
         "kind": "p25",
@@ -4927,7 +4927,7 @@
       "country": "CA",
       "dashboard": "https://xlx427.repeatme.ca",
       "dial": {
-        "host": "15.157.128.240",
+        "host": "74.208.73.126",
         "kind": "p25",
         "port": 41401
       },
@@ -5633,20 +5633,6 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "LIVINGSTON AMATEUR RADIO KLUB"
-    },
-    {
-      "country": "ID",
-      "dial": {
-        "host": "45.198.151.5",
-        "kind": "p25",
-        "port": 41005
-      },
-      "id": "51000",
-      "license": "CC-BY-4.0",
-      "name": "Indonesia P25 Talkgroup 51000",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "YD1DGI P25 Reflector 51000"
     },
     {
       "country": "ID",
@@ -6375,8 +6361,8 @@
     },
     {
       "country": "US",
-      "dashboard": "http://p25.k1xjm.net/p25dashboard/",
-      "description": "<p>Boston 7000 P25 Reflector</p>",
+      "dashboard": "https://7000.k1xjm.net",
+      "description": "<p>Boston 700 P25 Reflector</p>",
       "dial": {
         "host": "p25.k1xjm.net",
         "kind": "p25",
@@ -6384,7 +6370,7 @@
       },
       "id": "7000",
       "license": "CC-BY-4.0",
-      "name": "Boston 7000 P25 Reflector",
+      "name": "Boston 700 P25 Reflector",
       "network": "p25",
       "source": "dvref",
       "sponsor": "K1XJM"

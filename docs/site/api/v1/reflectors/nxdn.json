@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 430,
-  "generated": "2026-11-21",
+  "count": 431,
+  "generated": "2026-11-22",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -888,7 +888,7 @@
     },
     {
       "country": "BE",
-      "dashboard": "http://213.219.147.227:61563/NXDNReflector-Dashboard2/index.php",
+      "dashboard": "http://213.219.147.227:62536/NXDNReflector-Dashboard2/index.php",
       "dial": {
         "host": "213.219.147.227",
         "kind": "nxdn",
@@ -3913,6 +3913,21 @@
     },
     {
       "country": "US",
+      "dashboard": "https://urfd.n9ald.radio",
+      "description": "<p>Testing&nbsp;</p>",
+      "dial": {
+        "host": "urfd.n9ald.radio",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "3118",
+      "license": "CC-BY-4.0",
+      "name": "URF616",
+      "network": "nxdn",
+      "source": "dvref"
+    },
+    {
+      "country": "US",
       "dashboard": "http://xlx.w9winxlx.us//",
       "description": "<p>Part of the W9WIN Linked Digital Repeater System and The Southern Indiana Network</p>",
       "dial": {
@@ -4749,7 +4764,7 @@
       "country": "CA",
       "dashboard": "https://xlx427.repeatme.ca",
       "dial": {
-        "host": "15.157.128.240",
+        "host": "74.208.73.126",
         "kind": "nxdn",
         "port": 41400
       },

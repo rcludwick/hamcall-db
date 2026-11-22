@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1701,
-  "generated": "2026-11-21",
+  "count": 1703,
+  "generated": "2026-11-22",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -2122,22 +2122,6 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "JS1YTG"
-    },
-    {
-      "country": "GB",
-      "dashboard": "https://xlx.oz-dmr.network/",
-      "description": "URF247",
-      "dial": {
-        "host": "xlx.oz-dmr.network",
-        "kind": "ysf",
-        "port": 42099
-      },
-      "id": "00247",
-      "license": "CC-BY-4.0",
-      "name": "URF247",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "OZ-DMR NETWORK"
     },
     {
       "country": "GB",
@@ -4999,6 +4983,22 @@
       "sponsor": "KD7ZLJ"
     },
     {
+      "country": "CZ",
+      "dashboard": "http://128.0.182.6",
+      "description": "URFCZS",
+      "dial": {
+        "host": "128.0.182.6",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "02304",
+      "license": "CC-BY-4.0",
+      "name": "URFCZS",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "OK1IGO"
+    },
+    {
       "country": "AR",
       "dashboard": "https://c4fm.com.ar/nuevo/index.php",
       "description": "Encuentro",
@@ -5661,6 +5661,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "GetOnAir Radio Club G6GOA"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://urfd.n9ald.radio",
+      "description": "URF616",
+      "dial": {
+        "host": "urfd.n9ald.radio",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "06000",
+      "license": "CC-BY-4.0",
+      "name": "URF616",
+      "network": "ysf",
+      "source": "dvref"
     },
     {
       "country": "US",
@@ -22583,10 +22598,10 @@
     },
     {
       "country": "GB",
-      "dashboard": "https://ysf2.yorkshire.network",
+      "dashboard": "https://dashboard.m0xyn.radio",
       "description": "Yorkshire Net",
       "dial": {
-        "host": "ysf02.yorkshire.network",
+        "host": "ysf.m0xyn.radio",
         "kind": "ysf",
         "port": 42002
       },
@@ -22599,12 +22614,12 @@
     },
     {
       "country": "GB",
-      "dashboard": "https://earsradio.yorkshire.network",
+      "dashboard": "https://dashboard.m0xyn.radio",
       "description": "Ears Radio",
       "dial": {
-        "host": "ears.yorkshire.network",
+        "host": "ysf.m0xyn.radio",
         "kind": "ysf",
-        "port": 42000
+        "port": 42010
       },
       "id": "71053",
       "license": "CC-BY-4.0",
@@ -24771,6 +24786,22 @@
       "source": "dvref"
     },
     {
+      "country": "DE",
+      "dashboard": "https://manfred-lichtenstern.de",
+      "description": "XLX 063",
+      "dial": {
+        "host": "manfred-lichtenstern.de",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "85235",
+      "license": "CC-BY-4.0",
+      "name": "XLX063",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "Manfred Lichtenstern"
+    },
+    {
       "country": "UA",
       "dashboard": "https://ysf25516.uw0wu.com/",
       "description": "DMR TG25516",
@@ -25883,10 +25914,10 @@
     },
     {
       "country": "TH",
-      "dashboard": "http://xlx911.partweb.com",
+      "dashboard": "http://xlx911.mywire.org",
       "description": "<p>XNexus</p>",
       "dial": {
-        "host": "128.199.239.91",
+        "host": "159.223.57.61",
         "kind": "ysf",
         "port": 42000
       },
@@ -25899,12 +25930,12 @@
     },
     {
       "country": "TH",
-      "dashboard": "http://xlx911d.freeddns.org",
+      "dashboard": "http://xlx911.mywire.org",
       "description": "<p>Bridge to DSTAR (REF911D) - DMR (TG52007) - YSF (93918)</p>",
       "dial": {
-        "host": "128.199.239.91",
+        "host": "159.223.57.61",
         "kind": "ysf",
-        "port": 42013
+        "port": 42001
       },
       "id": "93918",
       "license": "CC-BY-4.0",
