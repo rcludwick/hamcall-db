@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 142,
-  "generated": "2026-11-22",
+  "count": 143,
+  "generated": "2026-11-23",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1000,6 +1000,23 @@
       "sponsor": "KQ4HPI"
     },
     {
+      "country": "US",
+      "dashboard": "http://urf327.from-ak.com",
+      "dial": {
+        "host": "64.177.61.233",
+        "kind": "urf",
+        "modules": [
+          "A"
+        ]
+      },
+      "id": "327",
+      "license": "CC-BY-4.0",
+      "name": "URF327",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "KL7ET"
+    },
+    {
       "country": "PR",
       "dashboard": "http://wp4nnz.ddns.net/index.php",
       "description": "<p>dstar coamo</p>",
@@ -1478,7 +1495,11 @@
         "host": "urfd.n9ald.radio",
         "kind": "urf",
         "modules": [
-          "A"
+          "A",
+          "D",
+          "M",
+          "S",
+          "Z"
         ]
       },
       "id": "616",
@@ -2153,7 +2174,7 @@
     {
       "country": "CZ",
       "dashboard": "http://128.0.182.6",
-      "description": "<p>XLXD - Multi-Mode-Reflector</p>",
+      "description": "<p>Hobby Test</p>",
       "dial": {
         "host": "128.0.182.6",
         "kind": "urf",

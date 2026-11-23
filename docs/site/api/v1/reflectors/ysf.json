@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1703,
-  "generated": "2026-11-22",
+  "count": 1712,
+  "generated": "2026-11-23",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -2422,6 +2422,22 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "Grupong Magellan"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://urf327.from-ak.com",
+      "description": "URF327",
+      "dial": {
+        "host": "64.177.61.233",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00327",
+      "license": "CC-BY-4.0",
+      "name": "URF327",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "KL7ET"
     },
     {
       "country": "US",
@@ -7860,6 +7876,22 @@
       "sponsor": "Cross Counties Amateur Radio Club"
     },
     {
+      "country": "CA",
+      "dashboard": "https://xlx640.ve5aas.ca",
+      "description": "SaDARA XLX640",
+      "dial": {
+        "host": "radio640.ve5aas.ca",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "14640",
+      "license": "CC-BY-4.0",
+      "name": "SaDARA XLX640",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "SaDARA"
+    },
+    {
       "country": "GB",
       "dashboard": "http://ysf.dvsph.uk",
       "description": "DVSPh Multi",
@@ -11034,6 +11066,38 @@
       "sponsor": "xreflector.es"
     },
     {
+      "country": "MX",
+      "dashboard": "http://ragacosta.ddns.net:81",
+      "description": "Bridge XE1RAG",
+      "dial": {
+        "host": "ragacosta.ddns.net",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "23438",
+      "license": "CC-BY-4.0",
+      "name": "Bridge XE1RAG",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "XE1RAG"
+    },
+    {
+      "country": "MX",
+      "dashboard": "http://nodo669600.ddns.net:81",
+      "description": "RC SATELITE",
+      "dial": {
+        "host": "nodo669600.ddns.net",
+        "kind": "ysf",
+        "port": 42002
+      },
+      "id": "23439",
+      "license": "CC-BY-4.0",
+      "name": "XE1RCS YSF DM",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "Radio Club Satelite Mexico"
+    },
+    {
       "country": "GB",
       "dashboard": "https://ysf.cqnorth.org.uk",
       "description": "CQ-North",
@@ -11888,6 +11952,22 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "SP6AW"
+    },
+    {
+      "country": "PL",
+      "dashboard": "http://s1.d4a.uk:89/",
+      "description": "HUBlink Polska",
+      "dial": {
+        "host": "51.195.139.65",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "26100",
+      "license": "CC-BY-4.0",
+      "name": "HUBlink",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "M0IQF"
     },
     {
       "country": "TW",
@@ -16511,20 +16591,6 @@
     },
     {
       "country": "US",
-      "description": "RPT 147.240",
-      "dial": {
-        "host": "k9ruf.duckdns.org",
-        "kind": "ysf",
-        "port": 42002
-      },
-      "id": "36633",
-      "license": "CC-BY-4.0",
-      "name": "K9RUF Repeatr",
-      "network": "ysf",
-      "source": "dvref"
-    },
-    {
-      "country": "US",
       "dashboard": "https://reflector.kb2idx.com",
       "description": "Dr.Parrots",
       "dial": {
@@ -19780,6 +19846,22 @@
       "sponsor": "DV1ZEJ"
     },
     {
+      "country": "GB",
+      "dashboard": "http://192.168.1.230",
+      "description": "GB-H1L8RE",
+      "dial": {
+        "host": "h1l8re.ddns.net",
+        "kind": "ysf",
+        "port": 42002
+      },
+      "id": "51866",
+      "license": "CC-BY-4.0",
+      "name": "H1L8RE",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "G7NIR"
+    },
+    {
       "country": "PH",
       "dashboard": "https://www.na7lv.net",
       "description": "NA7LV",
@@ -22565,22 +22647,6 @@
       "sponsor": "Who Cares Amateur Radio Group (WC8MI)"
     },
     {
-      "country": "US",
-      "dashboard": "https://ysflurker.wc8mi.net",
-      "description": "YSF Lurker",
-      "dial": {
-        "host": "ysflurker.wc8mi.net",
-        "kind": "ysf",
-        "port": 42099
-      },
-      "id": "70778",
-      "license": "CC-BY-4.0",
-      "name": "WC8MI-LURK",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "WC8MI and KF8S"
-    },
-    {
       "country": "UA",
       "dashboard": "https://ysf25525.uw0wu.com/",
       "description": "DMR TG25525",
@@ -24056,6 +24122,86 @@
       "name": "AVK",
       "network": "ysf",
       "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://qrv001.ref.qrvnet.com",
+      "description": "Wordwide - NY",
+      "dial": {
+        "host": "qrv001.ref.qrvnet.com",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "80001",
+      "license": "CC-BY-4.0",
+      "name": "QRV001",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "QRV"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://qrv002.ref.qrvnet.com",
+      "description": "South Central",
+      "dial": {
+        "host": "qrv002.ref.qrvnet.com",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "80002",
+      "license": "CC-BY-4.0",
+      "name": "QRV002",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "QRV"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://qrv003.ref.qrvnet.com",
+      "description": "PNW",
+      "dial": {
+        "host": "qrv003.ref.qrvnet.com",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "80003",
+      "license": "CC-BY-4.0",
+      "name": "QRV003",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "QRV"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://qrv004.ref.qrvnet.com",
+      "description": "Midwest",
+      "dial": {
+        "host": "qrv004.ref.qrvnet.com",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "80004",
+      "license": "CC-BY-4.0",
+      "name": "QRV004",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "QRV"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://qrv005.ref.qrvnet.com",
+      "description": "Southeast",
+      "dial": {
+        "host": "qrv005.ref.qrvnet.com",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "80005",
+      "license": "CC-BY-4.0",
+      "name": "QRV005",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "QRV"
     },
     {
       "country": "CL",

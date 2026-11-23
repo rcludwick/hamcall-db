@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 431,
-  "generated": "2026-11-22",
+  "count": 435,
+  "generated": "2026-11-23",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -437,6 +437,22 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
+    },
+    {
+      "country": "CA",
+      "dashboard": "https://xlx640.ve5aas.ca",
+      "description": "<div>\r\n<div>\r\n<p>SaDARA (Saskatchewan Digital Amateur Radio Association) NXDN Talkgroup 14640, hosted on the XLX640 multimode digital voice reflector in Saskatchewan, Canada.</p>\r\n<p>XLX640 module B provides interconnection with DMR, P25, YSF and D-STAR.</p>\r\n<p>NXDN server: radio640.ve5aas.ca</p>\r\n<p>UDP port: 41400</p>\r\n<p>Dashboard: <a href=\"https://xlx640.ve5aas.ca?utm_source=chatgpt.com\">https://xlx640.ve5aas.ca</a></p>\r\n</div>\r\n</div>",
+      "dial": {
+        "host": "radio640.ve5aas.ca",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "14640",
+      "license": "CC-BY-4.0",
+      "name": "SaDARA XLX640",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "SaDARA"
     },
     {
       "country": "TH",
@@ -1698,6 +1714,7 @@
     {
       "country": "CZ",
       "dashboard": "http://nxdn.praha8-bohnice.eu:4000",
+      "description": "<p>Hobby Test</p>",
       "dial": {
         "host": "80.211.223.145",
         "kind": "nxdn",
@@ -1729,7 +1746,7 @@
     {
       "country": "CZ",
       "dashboard": "http://128.0.182.6",
-      "description": "<p>XLXD - Multi-Mode-Reflector</p>",
+      "description": "<p>Hobby Test</p>",
       "dial": {
         "host": "128.0.182.6",
         "kind": "nxdn",
@@ -2292,8 +2309,9 @@
     },
     {
       "country": "DE",
+      "dashboard": "https://ramses-system.de/nxdn/",
       "dial": {
-        "host": "germering.dnsuser.de",
+        "host": "87.106.79.174",
         "kind": "nxdn",
         "port": 41400
       },
@@ -4472,6 +4490,21 @@
     },
     {
       "country": "US",
+      "dashboard": "http://urf327.from-ak.com",
+      "dial": {
+        "host": "64.177.61.233",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "327",
+      "license": "CC-BY-4.0",
+      "name": "URF327",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "KL7ET"
+    },
+    {
+      "country": "US",
       "dashboard": "http://44.27.139.150:4000",
       "dial": {
         "host": "44.27.139.150",
@@ -5497,6 +5530,36 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "[email removed]"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://digital.wc8mi.net",
+      "dial": {
+        "host": "digital.wc8mi.net",
+        "kind": "nxdn",
+        "port": 41420
+      },
+      "id": "60606",
+      "license": "CC-BY-4.0",
+      "name": "US-W8VD",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "W8VD"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://digital.wc8mi.net",
+      "dial": {
+        "host": "digital.wc8mi.net",
+        "kind": "nxdn",
+        "port": 41401
+      },
+      "id": "60777",
+      "license": "CC-BY-4.0",
+      "name": "US-WHOCARES",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "Who Cares ARG"
     },
     {
       "country": "US",

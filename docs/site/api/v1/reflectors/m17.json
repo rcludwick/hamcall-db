@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 158,
-  "generated": "2026-11-22",
+  "generated": "2026-11-23",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1162,6 +1162,7 @@
     {
       "country": "CZ",
       "dashboard": "http://185.28.100.46:4000",
+      "description": "<p>Hobby Test</p>",
       "dial": {
         "callsign": "M17-230",
         "host": "185.28.100.46",
@@ -1860,6 +1861,50 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "PD3RFR"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://ysf.alert-alabama.org/m17-701/",
+      "dial": {
+        "callsign": "M17-701",
+        "host": "ysf.alert-alabama.org",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "port": 17000
+      },
+      "id": "M17-701",
+      "license": "CC-BY-4.0",
+      "name": "KV4S",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "KV4S"
     },
     {
       "country": "IT",
@@ -4478,7 +4523,9 @@
         "host": "allstar.wc8mi.net",
         "kind": "m17",
         "modules": [
-          "W"
+          "A",
+          "W",
+          "Z"
         ],
         "port": 17020
       },
@@ -4599,25 +4646,6 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "2E0LXY"
-    },
-    {
-      "country": "US",
-      "dashboard": "https://digital.wc8mi.net",
-      "dial": {
-        "callsign": "M17-ZOM",
-        "host": "digital.wc8mi.net",
-        "kind": "m17",
-        "modules": [
-          "A"
-        ],
-        "port": 17003
-      },
-      "id": "M17-ZOM",
-      "license": "CC-BY-4.0",
-      "name": "Zombie Alert - Metro Detroit MI",
-      "network": "m17",
-      "source": "dvref",
-      "sponsor": "AA8GK N8ZA W8SOX"
     }
   ],
   "schema_version": 1,

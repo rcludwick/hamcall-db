@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 476,
-  "generated": "2026-11-22",
+  "count": 481,
+  "generated": "2026-11-23",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -824,6 +824,22 @@
       "sponsor": "T\u00fcrk Amat\u00f6r Dijital A\u011f\u0131"
     },
     {
+      "country": "CA",
+      "dashboard": "https://xlx640.ve5aas.ca",
+      "description": "<p>SaDARA P25 Talkgroup 14640, hosted on the XLX640 multimode digital voice reflector in Saskatchewan, Canada.</p>\r\n<p>XLX640 module B provides interconnection with DMR, NXDN, YSF and D-STAR.</p>\r\n<p>P25 server: radio640.ve5aas.ca<br>UDP port: 41000<br>Dashboard: https://xlx640.ve5aas.ca</p>",
+      "dial": {
+        "host": "radio640.ve5aas.ca",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "14640",
+      "license": "CC-BY-4.0",
+      "name": "SaDARA XLX640",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "SaDARA"
+    },
+    {
       "country": "US",
       "description": "<p>This is an installation of DVSwitch and P25Reflector. It links to Allstar Node 483561, which is connected to 483560 on our local 146.790 repeater. This bridge is meant to open a new avenue to our local repeater for remote users.&nbsp;</p>\r\n<p>The 146.790 repeater is located in Greenville, Ohio, and is sponsored by the Treaty City Amateur Radio Association, W8UMD. Adam, W8FLH is our repeater trustee.</p>\r\n<p>Our local Darke County ARES net meets every Monday evening at 7:00 PM ET on 146.790. Feel free to join us! For more info, see http://w8flh.net</p>",
       "dial": {
@@ -1587,6 +1603,7 @@
     {
       "country": "CZ",
       "dashboard": "http://80.211.223.145:4001",
+      "description": "<p>Hobby Test</p>",
       "dial": {
         "host": "80.211.223.145",
         "kind": "p25",
@@ -1618,7 +1635,7 @@
     {
       "country": "CZ",
       "dashboard": "http://128.0.182.6",
-      "description": "<p>XLXD - Multi-Mode-Reflector</p>",
+      "description": "<p>Hobby Test</p>",
       "dial": {
         "host": "128.0.182.6",
         "kind": "p25",
@@ -1782,6 +1799,20 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "YL3IM"
+    },
+    {
+      "country": "RU",
+      "dial": {
+        "host": "5.189.58.179",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "25096",
+      "license": "CC-BY-4.0",
+      "name": "Ekaterinburg",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "R8CFY"
     },
     {
       "country": "UA",
@@ -4327,6 +4358,22 @@
     },
     {
       "country": "US",
+      "dashboard": "https://reflector.w4cvr.dev/dashboard/",
+      "description": "<p>p25 input for catawba valley reflector system.&nbsp;</p>",
+      "dial": {
+        "host": "155.138.229.19",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "31678",
+      "license": "CC-BY-4.0",
+      "name": "Catawba Valley Reflector",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "W4CVR"
+    },
+    {
+      "country": "US",
       "dashboard": "http://TriStateDMR.org",
       "description": "<p><strong><span style=\"text-decoration: underline;\">TriStateDMR.org Multimode (IL, IN, WI)</span></strong></p>\r\n<p>DMR+ REF 4641</p>\r\n<p>AmComm/TGIF TG 31691</p>\r\n<p>DStar REF312B/DCS312B</p>\r\n<p>NXDN 31691</p>\r\n<p>P25 31691</p>\r\n<p>Fusion WiresX 40911 and YSF 31691</p>\r\n<p>Allstar 45417</p>\r\n<p>Echolink 7641</p>",
       "dial": {
@@ -4542,6 +4589,21 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "KQ4HPI"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://urf327.from-ak.com",
+      "dial": {
+        "host": "64.177.61.233",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "327",
+      "license": "CC-BY-4.0",
+      "name": "URF327",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KL7ET"
     },
     {
       "country": "US",
@@ -5968,6 +6030,21 @@
     },
     {
       "country": "US",
+      "dashboard": "https://digital.wc8mi.net",
+      "dial": {
+        "host": "digital.wc8mi.net",
+        "kind": "p25",
+        "port": 41001
+      },
+      "id": "60777",
+      "license": "CC-BY-4.0",
+      "name": "US-WHOCARES",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Who Cares ARG"
+    },
+    {
+      "country": "US",
       "dashboard": "http://67.205.135.215:4000",
       "description": "<p><strong>WORLD WIDE MULTIMODE&nbsp; THIS REFLECTOR CROSS MODES TO TG 310 ON THE FB DMR SERVER AS WELL AS WIRESX REFLECTOR YSF08005 CREATING A MULTIMODE CONNECTION TO THE WORLD.</strong></p>",
       "dial": {
@@ -7182,16 +7259,16 @@
     {
       "country": "US",
       "dial": {
-        "host": "p25.ke6upi.com",
+        "host": "72.134.238.36",
         "kind": "p25",
         "port": 41000
       },
-      "id": "951",
+      "id": "9510",
       "license": "CC-BY-4.0",
-      "name": "IEARG KE6UPI",
+      "name": "IEARG",
       "network": "p25",
       "source": "dvref",
-      "sponsor": "IEARG KE6UPI"
+      "sponsor": "KE6UPI"
     },
     {
       "country": "AU",
