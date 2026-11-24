@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 158,
-  "generated": "2026-11-23",
+  "count": 160,
+  "generated": "2026-11-24",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1161,11 +1161,11 @@
     },
     {
       "country": "CZ",
-      "dashboard": "http://185.28.100.46:4000",
+      "dashboard": "http://80.211.223.145:4002/",
       "description": "<p>Hobby Test</p>",
       "dial": {
         "callsign": "M17-230",
-        "host": "185.28.100.46",
+        "host": "80.211.223.145",
         "kind": "m17",
         "modules": [
           "A",
@@ -1350,6 +1350,25 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "WX9KVH"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://urf327.from-ak.com",
+      "dial": {
+        "callsign": "M17-327",
+        "host": "urf327.from-ak.com",
+        "kind": "m17",
+        "modules": [
+          "A"
+        ],
+        "port": 17000
+      },
+      "id": "M17-327",
+      "license": "CC-BY-4.0",
+      "name": "URF327",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "KL7ET"
     },
     {
       "country": "US",
@@ -1729,6 +1748,26 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "KQ4TNV"
+    },
+    {
+      "country": "LT",
+      "dashboard": "https://xlx.qsl.lt/",
+      "description": "<p>XLX642 multiprotocol reflector, module A: M17 / D-Star / DMR / YSF / NXDN / P25, linked to BM TG 24601</p>",
+      "dial": {
+        "callsign": "M17-642",
+        "host": "xlx.qsl.lt",
+        "kind": "m17",
+        "modules": [
+          "A"
+        ],
+        "port": 17000
+      },
+      "id": "M17-642",
+      "license": "CC-BY-4.0",
+      "name": "XLX642 M17 Reflector",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "LY3PH"
     },
     {
       "country": "TH",

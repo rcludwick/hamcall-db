@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 481,
-  "generated": "2026-11-23",
+  "generated": "2026-11-24",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1633,22 +1633,6 @@
       "sponsor": "OK2USB"
     },
     {
-      "country": "CZ",
-      "dashboard": "http://128.0.182.6",
-      "description": "<p>Hobby Test</p>",
-      "dial": {
-        "host": "128.0.182.6",
-        "kind": "p25",
-        "port": 41002
-      },
-      "id": "2304",
-      "license": "CC-BY-4.0",
-      "name": "URFCZS",
-      "network": "p25",
-      "source": "dvref",
-      "sponsor": "OK1IGO"
-    },
-    {
       "country": "AT",
       "dashboard": "http://oe9xvi.dyndns.org:46195/",
       "dial": {
@@ -1802,6 +1786,7 @@
     },
     {
       "country": "RU",
+      "dashboard": "http://5.189.58.179:8090",
       "dial": {
         "host": "5.189.58.179",
         "kind": "p25",
@@ -1887,6 +1872,20 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "rn6ljt"
+    },
+    {
+      "country": "RU",
+      "dial": {
+        "host": "UA3LTS.ddns.net",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "2567",
+      "license": "CC-BY-4.0",
+      "name": "Smolensk Obl. P25 Reflector",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "UA3LTS"
     },
     {
       "country": "BY",
@@ -3725,7 +3724,7 @@
       },
       "id": "31171",
       "license": "CC-BY-4.0",
-      "name": "31171",
+      "name": "ILLINOIS LINK",
       "network": "p25",
       "source": "dvref",
       "sponsor": "ILLINOIS LINK"

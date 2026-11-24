@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 143,
-  "generated": "2026-11-23",
+  "count": 142,
+  "generated": "2026-11-24",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1715,6 +1715,7 @@
         "host": "xlx775.iz2qcp.it",
         "kind": "urf",
         "modules": [
+          "D",
           "M"
         ]
       },
@@ -2170,37 +2171,6 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "CNP"
-    },
-    {
-      "country": "CZ",
-      "dashboard": "http://128.0.182.6",
-      "description": "<p>Hobby Test</p>",
-      "dial": {
-        "host": "128.0.182.6",
-        "kind": "urf",
-        "modules": [
-          "A",
-          "B",
-          "C",
-          "D",
-          "E",
-          "F",
-          "G",
-          "H",
-          "I",
-          "J",
-          "K",
-          "L",
-          "M",
-          "N"
-        ]
-      },
-      "id": "CZS",
-      "license": "CC-BY-4.0",
-      "name": "Czech XLX Reflector",
-      "network": "urf",
-      "source": "dvref",
-      "sponsor": "OK1IGO"
     },
     {
       "country": "GR",

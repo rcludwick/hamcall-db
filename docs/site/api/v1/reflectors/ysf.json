@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1712,
-  "generated": "2026-11-23",
+  "count": 1714,
+  "generated": "2026-11-24",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1231,12 +1231,12 @@
     },
     {
       "country": "AR",
-      "dashboard": "https://c4fm.ar",
+      "dashboard": "https://ysf.argentinanetwork.ar",
       "description": "C4FM AR",
       "dial": {
         "host": "c4fm.ar",
         "kind": "ysf",
-        "port": 42000
+        "port": 42100
       },
       "id": "00110",
       "license": "CC-BY-4.0",
@@ -2628,6 +2628,22 @@
       "name": "XLX409",
       "network": "ysf",
       "source": "dvref"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://socaldigitalk.com/",
+      "description": "SoCal Digitalk",
+      "dial": {
+        "host": "socaldigitalk.com",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00411",
+      "license": "CC-BY-4.0",
+      "name": "XLX411",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "Southern California Digital Talk"
     },
     {
       "country": "US",
@@ -4997,22 +5013,6 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "KD7ZLJ"
-    },
-    {
-      "country": "CZ",
-      "dashboard": "http://128.0.182.6",
-      "description": "URFCZS",
-      "dial": {
-        "host": "128.0.182.6",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "02304",
-      "license": "CC-BY-4.0",
-      "name": "URFCZS",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "OK1IGO"
     },
     {
       "country": "AR",
@@ -20019,22 +20019,6 @@
       "sponsor": "Mirek OK1JMB"
     },
     {
-      "country": "CZ",
-      "dashboard": "http://194.182.85.175:4000",
-      "description": "CZ-Litomericko",
-      "dial": {
-        "host": "194.182.85.175",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "52693",
-      "license": "CC-BY-4.0",
-      "name": "YSF-Doksany",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "OK1IGO"
-    },
-    {
       "country": "GB",
       "dashboard": "http://212.237.34.32/ysf/",
       "description": "DvMega YSF Ref",
@@ -24126,7 +24110,7 @@
     {
       "country": "US",
       "dashboard": "http://qrv001.ref.qrvnet.com",
-      "description": "Wordwide - NY",
+      "description": "Worldwide / NE",
       "dial": {
         "host": "qrv001.ref.qrvnet.com",
         "kind": "ysf",
@@ -24199,6 +24183,70 @@
       "id": "80005",
       "license": "CC-BY-4.0",
       "name": "QRV005",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "QRV"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://qrv006.ref.qrvnet.com",
+      "description": "Mountain West",
+      "dial": {
+        "host": "qrv006.ref.qrvnet.com",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "80006",
+      "license": "CC-BY-4.0",
+      "name": "QRV006",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "QRV"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://qrv007.ref.qrvnet.com",
+      "description": "Southern Calif",
+      "dial": {
+        "host": "qrv007.ref.qrvnet.com",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "80007",
+      "license": "CC-BY-4.0",
+      "name": "QRV007",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "QRV"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://qrv008.ref.qrvnet.com",
+      "description": "Florida",
+      "dial": {
+        "host": "qrv008.ref.qrvnet.com",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "80008",
+      "license": "CC-BY-4.0",
+      "name": "QRV008",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "QRV"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://qrv011.ref.qrvnet.com",
+      "description": "California",
+      "dial": {
+        "host": "qrv011.ref.qrvnet.com",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "80009",
+      "license": "CC-BY-4.0",
+      "name": "QRV011",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "QRV"
@@ -25904,21 +25952,6 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "SkyHubLink System"
-    },
-    {
-      "country": "US",
-      "description": "W4END",
-      "dial": {
-        "host": "173.17.194.7",
-        "kind": "ysf",
-        "port": 42001
-      },
-      "id": "92805",
-      "license": "CC-BY-4.0",
-      "name": "W4END 92805",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "W4END"
     },
     {
       "country": "CA",
