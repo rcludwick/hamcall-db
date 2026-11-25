@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1145,
-  "generated": "2026-10-26",
+  "count": 1172,
+  "generated": "2026-11-25",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -64,6 +64,10 @@
       "tg": 39
     },
     {
+      "name": "UK-POC RADIO",
+      "tg": 44
+    },
+    {
       "name": "Chat",
       "tg": 53
     },
@@ -88,6 +92,10 @@
       "tg": 91
     },
     {
+      "name": "Aviation Spotting",
+      "tg": 100
+    },
+    {
       "name": "TAC English",
       "tg": 113
     },
@@ -110,6 +118,10 @@
     {
       "name": "Belgium-National",
       "tg": 206
+    },
+    {
+      "name": "France",
+      "tg": 208
     },
     {
       "name": "Monaco",
@@ -140,8 +152,16 @@
       "tg": 220
     },
     {
+      "name": "Kosovo",
+      "tg": 221
+    },
+    {
       "name": "Italy",
       "tg": 222
+    },
+    {
+      "name": "Vatican City",
+      "tg": 225
     },
     {
       "name": "Romania National",
@@ -162,6 +182,10 @@
     {
       "name": "Austria",
       "tg": 232
+    },
+    {
+      "name": "United Kingdom",
+      "tg": 234
     },
     {
       "name": "235",
@@ -276,6 +300,14 @@
       "tg": 288
     },
     {
+      "name": "Abkhazia",
+      "tg": 289
+    },
+    {
+      "name": "Greenland",
+      "tg": 290
+    },
+    {
       "name": "San Marino",
       "tg": 292
     },
@@ -298,6 +330,10 @@
     {
       "name": "Canada Wide",
       "tg": 302
+    },
+    {
+      "name": "Saint Pierre and Miquelon",
+      "tg": 308
     },
     {
       "name": "United States of America",
@@ -376,6 +412,10 @@
       "tg": 338
     },
     {
+      "name": "Guadeloupe",
+      "tg": 340
+    },
+    {
       "name": "Barbados",
       "tg": 342
     },
@@ -414,6 +454,10 @@
     {
       "name": "Saint Vincent and the Grenadines",
       "tg": 360
+    },
+    {
+      "name": "Cura\u00e7ao / Sint Maarten / Caribbean Netherlands",
+      "tg": 362
     },
     {
       "name": "Aruba",
@@ -464,6 +508,10 @@
       "tg": 401
     },
     {
+      "name": "Bhutan",
+      "tg": 402
+    },
+    {
       "name": "India",
       "tg": 404
     },
@@ -508,6 +556,10 @@
       "tg": 420
     },
     {
+      "name": "Yemen",
+      "tg": 421
+    },
+    {
       "name": "Oman",
       "tg": 422
     },
@@ -534,6 +586,10 @@
     {
       "name": "Nepal",
       "tg": 429
+    },
+    {
+      "name": "Iran",
+      "tg": 430
     },
     {
       "name": "Iran",
@@ -684,6 +740,14 @@
       "tg": 545
     },
     {
+      "name": "New Caledonia",
+      "tg": 546
+    },
+    {
+      "name": "French Polynesia",
+      "tg": 547
+    },
+    {
       "name": "Cook Islands",
       "tg": 548
     },
@@ -746,6 +810,10 @@
     {
       "name": "Guinea",
       "tg": 611
+    },
+    {
+      "name": "C\u00f4te d'Ivoire",
+      "tg": 612
     },
     {
       "name": "Burkina Faso",
@@ -864,12 +932,20 @@
       "tg": 643
     },
     {
+      "name": "Zambia",
+      "tg": 645
+    },
+    {
       "name": "Madagascar",
       "tg": 646
     },
     {
       "name": "Reunion",
       "tg": 647
+    },
+    {
+      "name": "Zimbabwe",
+      "tg": 648
     },
     {
       "name": "Namibia",
@@ -1082,6 +1158,10 @@
     {
       "name": "Crete DV - YSF 02029",
       "tg": 2029
+    },
+    {
+      "name": "YSF Alabama Link",
+      "tg": 2034
     },
     {
       "name": "Belgium-North",
@@ -2316,6 +2396,10 @@
       "tg": 14054
     },
     {
+      "name": "AETHER HELLAS NET",
+      "tg": 20200
+    },
+    {
       "name": "Hotspot & Repeater Testing",
       "tg": 20210
     },
@@ -3476,6 +3560,10 @@
       "tg": 31551
     },
     {
+      "name": "W9IKU Network",
+      "tg": 31552
+    },
+    {
       "name": "Wisconsin-DMR",
       "tg": 31555
     },
@@ -3728,6 +3816,10 @@
       "tg": 46600
     },
     {
+      "name": "The Good Time Guys",
+      "tg": 47502
+    },
+    {
       "name": "Boredom Breaker Net",
       "tg": 49562
     },
@@ -3736,8 +3828,16 @@
       "tg": 50210
     },
     {
+      "name": "Australia - Nets",
+      "tg": 50500
+    },
+    {
       "name": "VK-OzHUB",
       "tg": 50524
+    },
+    {
+      "name": "P25 50525",
+      "tg": 50525
     },
     {
       "name": "ANZEL",
@@ -4404,6 +4504,10 @@
       "tg": 310096
     },
     {
+      "name": "W4NQ Troy, AL",
+      "tg": 310108
+    },
+    {
       "name": "North Alabama Digital Group",
       "tg": 310122
     },
@@ -4430,6 +4534,10 @@
     {
       "name": "The DarkSiders",
       "tg": 311293
+    },
+    {
+      "name": "Somo's Latinos USA",
+      "tg": 311311
     },
     {
       "name": "WNY-DIGITAL.network (TAC7)",

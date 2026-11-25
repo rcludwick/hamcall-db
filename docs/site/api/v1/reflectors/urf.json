@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 142,
-  "generated": "2026-11-24",
+  "count": 141,
+  "generated": "2026-11-25",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -538,29 +538,6 @@
     },
     {
       "country": "US",
-      "dashboard": "https://xlx217.dynamic-dns.net",
-      "description": "<p>Minimalist multimode XLX reflector supporting D-STAR, DMR, M17, and YSF. No transcoding.&nbsp;</p>",
-      "dial": {
-        "host": "xlx217.dynamic-dns.net",
-        "kind": "urf",
-        "modules": [
-          "A",
-          "B",
-          "C",
-          "D",
-          "E",
-          "F"
-        ]
-      },
-      "id": "217",
-      "license": "CC-BY-4.0",
-      "name": "Minimalist RasPi4 Reflector",
-      "network": "urf",
-      "source": "dvref",
-      "sponsor": "N3BBF"
-    },
-    {
-      "country": "US",
       "dashboard": "https://xlx218.chaverimradio.com",
       "description": "<p>Multiprotocol reflector sponsored by the Chaverim Radio Club. Currently supported modes are:</p>\r\n<p>&nbsp;</p>\r\n<p>- Module A: D-STAR, DMR, M17, and YSF<br>- Module B: D-STAR<br>- Module C: DMR and YSF<br>- Module D: M17<br>- Module E: Echo</p>\r\n<p>&nbsp;</p>\r\n<p>Module A linked to Brandmeister TG 3213520</p>\r\n<p>Module A linked to P25 reflector 42555</p>\r\n<p>&nbsp;</p>\r\n<p>Weekly Nets</p>\r\n<p>- Chaverim Worldwide, Sundays at 2000 UTC, Module A<br>- Chaverim of North America, Thursdays at 9:00 PM Eastern, Module A</p>",
       "dial": {
@@ -1021,7 +998,7 @@
       "dashboard": "http://wp4nnz.ddns.net/index.php",
       "description": "<p>dstar coamo</p>",
       "dial": {
-        "host": "67.224.140.59",
+        "host": "64.237.221.215",
         "kind": "urf",
         "modules": [
           "C"

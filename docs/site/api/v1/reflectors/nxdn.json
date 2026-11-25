@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 434,
-  "generated": "2026-11-24",
+  "count": 437,
+  "generated": "2026-11-25",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1485,6 +1485,21 @@
       "source": "dvref"
     },
     {
+      "country": "IT",
+      "dashboard": "http://22367.ddns.net",
+      "dial": {
+        "host": "22367.ddns.net",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "22367",
+      "license": "CC-BY-4.0",
+      "name": "Ham Network",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "By IK2UCJ & IZ3VDA"
+    },
+    {
       "country": "ES",
       "dashboard": "http://nxdn.c4fm.es/nxdn224",
       "dial": {
@@ -1498,6 +1513,22 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "xreflector.es"
+    },
+    {
+      "country": "IT",
+      "dashboard": "http://www.ysf22222.it/",
+      "description": "<p>YSF #22222<br>D-Star XLXEMO<br>C4FM IR4UA-ROOM<br>DMR TG 222456 @BM<br>SVXLINK IR4UAV-L</p>",
+      "dial": {
+        "host": "217.160.38.80",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "22456",
+      "license": "CC-BY-4.0",
+      "name": "Emilia Ovest Network",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "Emilia Ovest Multiprotocol Team"
     },
     {
       "country": "RO",
@@ -5937,6 +5968,21 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "LW2HAH - Bell Ville"
+    },
+    {
+      "country": "AR",
+      "dashboard": "http://nxdn.argentinanetwork.ar",
+      "dial": {
+        "host": "64.176.17.106",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "7223",
+      "license": "CC-BY-4.0",
+      "name": "ARG-NETWORK - LINK BM TG 7223",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "LW6EMN"
     },
     {
       "country": "AR",

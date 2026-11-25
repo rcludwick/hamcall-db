@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 481,
-  "generated": "2026-11-24",
+  "count": 483,
+  "generated": "2026-11-25",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -5016,6 +5016,21 @@
       "sponsor": "Lookout Mountain Amateur Radio Community"
     },
     {
+      "country": "US",
+      "description": "Ohio multimode hub - P25 transcoded to DMR, YSF and AllStar on urfd URF425 module A.",
+      "dial": {
+        "host": "p25.ohio-radio.com",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "43701",
+      "license": "CC-BY-4.0",
+      "name": "Ohio Multimode P25",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KD8MST"
+    },
+    {
       "country": "KZ",
       "dashboard": "http://un1eak.svx03.kz:998/index.php",
       "dial": {
@@ -5508,6 +5523,22 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "Malaysia-NET Digital P25 Room"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://137.220.63.74/p25/",
+      "description": "<p><em>This reflector is connected to an allstar network and tgif network. Connections can be changed via the dashboard.</em></p>",
+      "dial": {
+        "host": "137.220.63.74",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "50224",
+      "license": "CC-BY-4.0",
+      "name": "KG4NWE HUB",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "KG4NWE - Ross"
     },
     {
       "country": "MY",

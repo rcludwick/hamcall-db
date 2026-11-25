@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1714,
-  "generated": "2026-11-24",
+  "count": 1716,
+  "generated": "2026-11-25",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1963,22 +1963,6 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "xreflector.es"
-    },
-    {
-      "country": "US",
-      "dashboard": "https://xlx217.dynamic-dns.net",
-      "description": "URF217",
-      "dial": {
-        "host": "xlx217.dynamic-dns.net",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "00217",
-      "license": "CC-BY-4.0",
-      "name": "URF217",
-      "network": "ysf",
-      "source": "dvref",
-      "sponsor": "N3BBF"
     },
     {
       "country": "US",
@@ -8179,7 +8163,7 @@
       "dashboard": "https://xlx427.repeatme.ca",
       "description": "TEST & Develop",
       "dial": {
-        "host": "15.157.128.240",
+        "host": "74.208.73.126",
         "kind": "ysf",
         "port": 42000
       },
@@ -8188,7 +8172,7 @@
       "name": "XLX427",
       "network": "ysf",
       "source": "dvref",
-      "sponsor": "FREE STAR* / VA3UV"
+      "sponsor": "VA3UV"
     },
     {
       "country": "DE",
@@ -13062,6 +13046,20 @@
       "source": "dvref"
     },
     {
+      "country": "GR",
+      "description": "GREECE SV1HAB",
+      "dial": {
+        "host": "ysf.ham-radio-op.net",
+        "kind": "ysf",
+        "port": 42002
+      },
+      "id": "28468",
+      "license": "CC-BY-4.0",
+      "name": "GR SVQSO468",
+      "network": "ysf",
+      "source": "dvref"
+    },
+    {
       "country": "BG",
       "dashboard": "https://ysf.malinovi.com",
       "description": "Bulgaria_YSF",
@@ -16157,7 +16155,7 @@
       "dashboard": "http://wp4nnz.ddns.net/index.php",
       "description": "Coamo WP4NNZ",
       "dial": {
-        "host": "67.224.140.59",
+        "host": "64.237.221.215",
         "kind": "ysf",
         "port": 42002
       },
@@ -17026,6 +17024,20 @@
       "sponsor": "C4FM-TEAM"
     },
     {
+      "country": "DE",
+      "description": "HAMster Talk",
+      "dial": {
+        "host": "217.154.206.224",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "40669",
+      "license": "CC-BY-4.0",
+      "name": "HAMster_talk",
+      "network": "ysf",
+      "source": "dvref"
+    },
+    {
       "country": "GB",
       "dashboard": "http://g7pxm.ddns.net:85/",
       "description": "dartford uk",
@@ -17847,7 +17859,7 @@
       "country": "US",
       "description": "OH-KD8USF",
       "dial": {
-        "host": "kd8mst.org",
+        "host": "ysf.ohio-radio.com",
         "kind": "ysf",
         "port": 42000
       },
@@ -19279,6 +19291,20 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "ANZEL"
+    },
+    {
+      "country": "US",
+      "dial": {
+        "host": "64.239.232.153",
+        "kind": "ysf",
+        "port": 42005
+      },
+      "id": "50583",
+      "license": "CC-BY-4.0",
+      "name": "W7BPS",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "Bridgeport School Radio Club"
     },
     {
       "country": "US",
@@ -24950,10 +24976,9 @@
     },
     {
       "country": "US",
-      "dashboard": "http://xlx-host.top/",
-      "description": "XLX858",
+      "description": "Wires-X 85008",
       "dial": {
-        "host": "xlx-host.top",
+        "host": "asl3-vm1.top",
         "kind": "ysf",
         "port": 42000
       },
