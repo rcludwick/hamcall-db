@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 191,
-  "generated": "2026-11-25",
+  "count": 192,
+  "generated": "2026-11-26",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -3556,6 +3556,30 @@
       "sponsor": "Mimmo",
       "system": "tg22267",
       "talkgroups": "reflectors/dmr/tg22267/talkgroups.json"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://thedive155.com/index.php",
+      "description": "<p>The Dive 155 Multimode YSF 00155 = D-Star DCS 155A = DMR XLX 155A = TGIF 9155 = BM 314137 = M17 155</p>",
+      "dial": {
+        "host": "66.41.213.79",
+        "kind": "mmdvm",
+        "port": 8876,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "the-dive-155",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/the-dive-155/talkgroups/"
+      },
+      "id": "the-dive-155-server-the-dive-155",
+      "license": "CC-BY-4.0",
+      "name": "The Dive 155",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "NC1D",
+      "system": "the-dive-155",
+      "talkgroups": "reflectors/dmr/the-dive-155/talkgroups.json"
     },
     {
       "country": "TR",

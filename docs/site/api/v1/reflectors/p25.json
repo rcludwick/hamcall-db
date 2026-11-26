@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 483,
-  "generated": "2026-11-25",
+  "count": 486,
+  "generated": "2026-11-26",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -551,7 +551,7 @@
       "dial": {
         "host": "75.145.198.42",
         "kind": "p25",
-        "port": 41000
+        "port": 41001
       },
       "id": "10901",
       "license": "CC-BY-4.0",
@@ -1304,6 +1304,22 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "xreflector"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://xlx217.dynamic-dns.net",
+      "description": "<p>Minimalist multimode XLX reflector supporting D-STAR, DMR, M17, NXDN, P25, and YSF.</p>\r\n<p style=\"padding-left: 40px;\">Module A has full transcoding</p>\r\n<p style=\"padding-left: 40px;\">All other modules are mode specific</p>",
+      "dial": {
+        "host": "xlx217.dynamic-dns.net",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "217",
+      "license": "CC-BY-4.0",
+      "name": "URF217",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "N3BBF"
     },
     {
       "country": "US",
@@ -5001,6 +5017,21 @@
     },
     {
       "country": "US",
+      "dashboard": "https://44.30.10.54/rooms/#p25",
+      "dial": {
+        "host": "44.30.10.54",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "42707",
+      "license": "CC-BY-4.0",
+      "name": "Everything Net",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "WB9CSP - Everything Net"
+    },
+    {
+      "country": "US",
       "dashboard": "https://p25.lmarc.net/p25dash/index.php",
       "description": "<p>SouthEast Link Bridge System - https://lmarc.net</p>",
       "dial": {
@@ -5017,7 +5048,7 @@
     },
     {
       "country": "US",
-      "description": "Ohio multimode hub - P25 transcoded to DMR, YSF and AllStar on urfd URF425 module A.",
+      "description": "Ohio multimode hub - P25 transcoded to DMR, YSF and AllStar on urfd URF424 module A.",
       "dial": {
         "host": "p25.ohio-radio.com",
         "kind": "p25",
@@ -7035,6 +7066,20 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "NEAR900 New England Amateur Radio 900 MHz Network"
+    },
+    {
+      "country": "US",
+      "dial": {
+        "host": "74.196.158.133",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "9050",
+      "license": "CC-BY-4.0",
+      "name": "W2ECR - East Coast Reflector",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "W2ECR"
     },
     {
       "country": "TH",

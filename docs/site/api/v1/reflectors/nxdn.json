@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 437,
-  "generated": "2026-11-25",
+  "count": 438,
+  "generated": "2026-11-26",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1101,6 +1101,22 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "RC VELETA"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://xlx217.dynamic-dns.net",
+      "description": "<p>Minimalist multimode XLX reflector supporting D-STAR, DMR, M17, NXDN, P25, and YSF.</p>\r\n<p style=\"padding-left: 40px;\">Module A has full transcoding</p>\r\n<p style=\"padding-left: 40px;\">All other modules are mode specific</p>",
+      "dial": {
+        "host": "xlx217.dynamic-dns.net",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "217",
+      "license": "CC-BY-4.0",
+      "name": "URF217",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "N3BBF"
     },
     {
       "country": "US",

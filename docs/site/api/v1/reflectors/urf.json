@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 141,
-  "generated": "2026-11-25",
+  "count": 144,
+  "generated": "2026-11-26",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -412,6 +412,24 @@
       "sponsor": "OK2USB"
     },
     {
+      "country": "US",
+      "dashboard": "https://thedive155.com/index.php",
+      "description": "<p>The Dive 155 Multimode YSF 00155 = D-Star DCS 155A = DMR XLX 155A = TGIF 9155 = BM 314137 = M17 155</p>",
+      "dial": {
+        "host": "thedive155.com",
+        "kind": "urf",
+        "modules": [
+          "A"
+        ]
+      },
+      "id": "155",
+      "license": "CC-BY-4.0",
+      "name": "TheDive 155",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "NC1D"
+    },
+    {
       "country": "TH",
       "dashboard": "http://44.32.81.27",
       "dial": {
@@ -535,6 +553,30 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "xreflector.es"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://xlx217.dynamic-dns.net",
+      "description": "<p>Minimalist multimode XLX reflector supporting D-STAR, DMR, M17, NXDN, P25, and YSF.</p>\r\n<p style=\"padding-left: 40px;\">Module A has full transcoding</p>\r\n<p style=\"padding-left: 40px;\">All other modules are mode specific</p>",
+      "dial": {
+        "host": "xlx217.dynamic-dns.net",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "D",
+          "M",
+          "N",
+          "P",
+          "S",
+          "Z"
+        ]
+      },
+      "id": "217",
+      "license": "CC-BY-4.0",
+      "name": "Minimalist RasPi4 Reflector",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "N3BBF"
     },
     {
       "country": "US",
@@ -1970,6 +2012,28 @@
       "network": "urf",
       "source": "dvref",
       "sponsor": "K6HP"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://urf.k0cks.com",
+      "description": "<p>RRARC K0CKS Reflector</p>",
+      "dial": {
+        "host": "urf.k0cks.com",
+        "kind": "urf",
+        "modules": [
+          "A",
+          "D",
+          "M",
+          "S",
+          "Z"
+        ]
+      },
+      "id": "969",
+      "license": "CC-BY-4.0",
+      "name": "969",
+      "network": "urf",
+      "source": "dvref",
+      "sponsor": "K0CKS / RRARC"
     },
     {
       "country": "US",

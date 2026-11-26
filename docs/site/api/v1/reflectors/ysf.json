@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1716,
-  "generated": "2026-11-25",
+  "count": 1722,
+  "generated": "2026-11-26",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1231,12 +1231,12 @@
     },
     {
       "country": "AR",
-      "dashboard": "https://ysf.argentinanetwork.ar",
+      "dashboard": "https://c4fm.ar",
       "description": "C4FM AR",
       "dial": {
         "host": "c4fm.ar",
         "kind": "ysf",
-        "port": 42100
+        "port": 42020
       },
       "id": "00110",
       "license": "CC-BY-4.0",
@@ -1963,6 +1963,22 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "xreflector.es"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://xlx217.dynamic-dns.net",
+      "description": "URF217",
+      "dial": {
+        "host": "xlx217.dynamic-dns.net",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00217",
+      "license": "CC-BY-4.0",
+      "name": "URF217",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "N3BBF"
     },
     {
       "country": "US",
@@ -3352,6 +3368,22 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "N2FED Multi-Mode Repeater System"
+    },
+    {
+      "country": "ZA",
+      "dashboard": "https://xlx655.ddns.net",
+      "description": "XLX655",
+      "dial": {
+        "host": "xlx655.ddns.net",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00655",
+      "license": "CC-BY-4.0",
+      "name": "XLX655",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "ZS6JPL"
     },
     {
       "country": "ES",
@@ -15410,6 +15442,21 @@
     },
     {
       "country": "US",
+      "dashboard": "http://wx4ala.com",
+      "description": "WX4ALA YSF",
+      "dial": {
+        "host": "ysf.wx4ala.com",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "31385",
+      "license": "CC-BY-4.0",
+      "name": "WX4ALA",
+      "network": "ysf",
+      "source": "dvref"
+    },
+    {
+      "country": "US",
       "description": "CLE WX",
       "dial": {
         "host": "64.176.222.98",
@@ -17545,6 +17592,22 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "F1PTL"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://44.30.10.54/rooms/#ysf",
+      "description": "Everything Net",
+      "dial": {
+        "host": "44.30.10.54",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "42707",
+      "license": "CC-BY-4.0",
+      "name": "EverythingNet",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "WB9CSP"
     },
     {
       "country": "PT",
@@ -22625,6 +22688,22 @@
       "sponsor": "NA9X"
     },
     {
+      "country": "US",
+      "dashboard": "http://urf.k0cks.com",
+      "description": "URF969",
+      "dial": {
+        "host": "urf.k0cks.com",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "69969",
+      "license": "CC-BY-4.0",
+      "name": "URF969",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "K0CKS / RRARC"
+    },
+    {
       "country": "HN",
       "dashboard": "http://ycs701.xreflector.net/ycs",
       "description": "(YCS701)",
@@ -23185,7 +23264,7 @@
       },
       "id": "73237",
       "license": "CC-BY-4.0",
-      "name": "HUBNETREM52HZ",
+      "name": "REM52HZ",
       "network": "ysf",
       "source": "dvref",
       "sponsor": "HJ3REM"
@@ -25145,6 +25224,21 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "M0XDR"
+    },
+    {
+      "country": "US",
+      "description": "W4KEV link",
+      "dial": {
+        "host": "96.30.206.220",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "86591",
+      "license": "CC-BY-4.0",
+      "name": "KO4WIL-LINK",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "KO4WIL"
     },
     {
       "country": "GB",
