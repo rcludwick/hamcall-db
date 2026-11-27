@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 486,
-  "generated": "2026-11-26",
+  "count": 487,
+  "generated": "2026-11-27",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -3748,7 +3748,6 @@
     {
       "country": "US",
       "dashboard": "https://urfd.n9ald.radio",
-      "description": "<p>Testing&nbsp;</p>",
       "dial": {
         "host": "urfd.n9ald.radio",
         "kind": "p25",
@@ -3756,7 +3755,7 @@
       },
       "id": "3118",
       "license": "CC-BY-4.0",
-      "name": "URF616",
+      "name": "URFALD",
       "network": "p25",
       "source": "dvref"
     },
@@ -5829,6 +5828,22 @@
       "network": "p25",
       "source": "dvref",
       "sponsor": "RadioSC"
+    },
+    {
+      "country": "TH",
+      "dashboard": "https://e2hub.vra.or.th/",
+      "description": "<p>Thailand P25 talkgroup 52012 operated by the Volunteer Radio Association (VRA), sysop E25FGL. It is peered into XLXE2H module B, so P25 users can talk with D-STAR, DMR, YSF, M17 and NXDN TG 52012 users.</p>",
+      "dial": {
+        "host": "e2hub.vra.or.th",
+        "kind": "p25",
+        "port": 41000
+      },
+      "id": "52012",
+      "license": "CC-BY-4.0",
+      "name": "E2HUB Thailand - VRA",
+      "network": "p25",
+      "source": "dvref",
+      "sponsor": "Volunteer Radio Association (VRA)"
     },
     {
       "country": "TH",

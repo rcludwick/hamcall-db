@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 1722,
-  "generated": "2026-11-26",
+  "count": 1725,
+  "generated": "2026-11-27",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1694,6 +1694,22 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "JQ1ZVS"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://xlx159.whiskey7.site",
+      "description": "Wheels N Keels",
+      "dial": {
+        "host": "69.84.242.182",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "00159",
+      "license": "CC-BY-4.0",
+      "name": "XLX159",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "W7BR"
     },
     {
       "country": "RU",
@@ -4623,10 +4639,10 @@
     },
     {
       "country": "GB",
-      "dashboard": "http://xlx.lancs.fm/",
+      "dashboard": "http://xlxlancs.uk/",
       "description": "LancsReflector",
       "dial": {
-        "host": "xlx.lancs.fm",
+        "host": "xlxlancs.uk",
         "kind": "ysf",
         "port": 42000
       },
@@ -5693,21 +5709,6 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "GetOnAir Radio Club G6GOA"
-    },
-    {
-      "country": "US",
-      "dashboard": "https://urfd.n9ald.radio",
-      "description": "URF616",
-      "dial": {
-        "host": "urfd.n9ald.radio",
-        "kind": "ysf",
-        "port": 42000
-      },
-      "id": "06000",
-      "license": "CC-BY-4.0",
-      "name": "URF616",
-      "network": "ysf",
-      "source": "dvref"
     },
     {
       "country": "US",
@@ -11272,6 +11273,21 @@
     },
     {
       "country": "GB",
+      "dashboard": "http://ysf23522.dyndns.org:80",
+      "description": "Raynet Lancs",
+      "dial": {
+        "host": "ysf23522.dyndns.org",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "23522",
+      "license": "CC-BY-4.0",
+      "name": "Raynet Lancs",
+      "network": "ysf",
+      "source": "dvref"
+    },
+    {
+      "country": "GB",
       "dashboard": "https://ysf.m0xfn.radio",
       "description": "XFreedom",
       "dial": {
@@ -12861,6 +12877,22 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "R2AWN"
+    },
+    {
+      "country": "TH",
+      "dashboard": "https://e2hub.vra.or.th/new-xlxd/",
+      "description": "E2HUB Thailand",
+      "dial": {
+        "host": "209.15.117.65",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "27863",
+      "license": "CC-BY-4.0",
+      "name": "XLXE2H",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "Volunteer Radio Association (VRA)"
     },
     {
       "country": "CY",
@@ -24137,6 +24169,22 @@
       "network": "ysf",
       "source": "dvref",
       "sponsor": "E23JWE"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://pankoe.no-ip.biz",
+      "description": "XLX401",
+      "dial": {
+        "host": "pankoe.no-ip.biz",
+        "kind": "ysf",
+        "port": 42000
+      },
+      "id": "79401",
+      "license": "CC-BY-4.0",
+      "name": "XLX401",
+      "network": "ysf",
+      "source": "dvref",
+      "sponsor": "n3vjm"
     },
     {
       "country": "US",

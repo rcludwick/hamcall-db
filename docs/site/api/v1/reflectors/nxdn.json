@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 438,
-  "generated": "2026-11-26",
+  "count": 441,
+  "generated": "2026-11-27",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1407,6 +1407,22 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "IT-MULTIPROTOCOL-NETWORK"
+    },
+    {
+      "country": "IT",
+      "dashboard": "https://ysf.iq5qd.it/allmon3/",
+      "description": "<p>Reflector NXDN NetRadioStar di IZ5IIN (Santa Maria a Monte, Toscana). Collegato all'app web NetRadioStar: ogni utente trasmette con il proprio nominativo e ID NXDN. Benvenuti radio e hotspot!</p>",
+      "dial": {
+        "host": "ysf.iq5qd.it",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "22253",
+      "license": "CC-BY-4.0",
+      "name": "NetRadioStar",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "IZ5IIN"
     },
     {
       "country": "IT",
@@ -3948,7 +3964,6 @@
     {
       "country": "US",
       "dashboard": "https://urfd.n9ald.radio",
-      "description": "<p>Testing&nbsp;</p>",
       "dial": {
         "host": "urfd.n9ald.radio",
         "kind": "nxdn",
@@ -3956,7 +3971,7 @@
       },
       "id": "3118",
       "license": "CC-BY-4.0",
-      "name": "URF616",
+      "name": "URFALD",
       "network": "nxdn",
       "source": "dvref"
     },
@@ -4661,20 +4676,6 @@
       "sponsor": "KB2IDX"
     },
     {
-      "country": "US",
-      "dashboard": "http://status.kf0lpt.com:8087",
-      "dial": {
-        "host": "status.kf0lpt.com",
-        "kind": "nxdn",
-        "port": 41400
-      },
-      "id": "372",
-      "license": "CC-BY-4.0",
-      "name": "Octane NXDN",
-      "network": "nxdn",
-      "source": "dvref"
-    },
-    {
       "country": "TH",
       "dashboard": "https://nxdn38.kozow.com",
       "description": "<p><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\">Interlink XLX138 Module B&nbsp;</span></span><br><a href=\"https://xlx138.freeddns.org/\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\">https://xlx138.freeddns.org</span></span></a><br><br>Analog Digital Radio Thailand Team</p>",
@@ -5118,6 +5119,22 @@
       "source": "dvref"
     },
     {
+      "country": "US",
+      "dashboard": "https://nxdn.altbs.net",
+      "description": "<p>Northern Indiana Hams United &mdash; An open NXDN amateur radio reflector operated by the ALTBS Digital Voice Network. All licensed amateur radio operators are welcome.</p>",
+      "dial": {
+        "host": "nxdn.altbs.net",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "46540",
+      "license": "CC-BY-4.0",
+      "name": "Northern Indiana Hams United",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "Northern Indiana Hams United - KE9DBE"
+    },
+    {
       "country": "TW",
       "dial": {
         "host": "stayalone.idv.hk",
@@ -5408,6 +5425,22 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "RadioSC"
+    },
+    {
+      "country": "TH",
+      "dashboard": "https://e2hub.vra.or.th/",
+      "description": "<p>Thailand NXDN talkgroup 52012 operated by the Volunteer Radio Association (VRA), sysop E25FGL. It is peered into XLXE2H module B, so NXDN users can talk with D-STAR, DMR, YSF, M17 and P25 TG 52012 users.</p>",
+      "dial": {
+        "host": "e2hub.vra.or.th",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "52012",
+      "license": "CC-BY-4.0",
+      "name": "E2HUB Thailand - VRA",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "Volunteer Radio Association (VRA)"
     },
     {
       "country": "TH",
@@ -6103,6 +6136,21 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "HJ3JCG"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://status.kf0lpt.com:8087",
+      "dial": {
+        "host": "status.kf0lpt.com",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "7320",
+      "license": "CC-BY-4.0",
+      "name": "Octane Network NXDN",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "KF0LPT"
     },
     {
       "country": "VE",

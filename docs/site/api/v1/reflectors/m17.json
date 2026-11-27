@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 160,
-  "generated": "2026-11-26",
+  "count": 163,
+  "generated": "2026-11-27",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -163,10 +163,10 @@
     },
     {
       "country": "US",
-      "dashboard": "https://m17-020.k2ie.net",
+      "dashboard": "https://xlx020.k2ie.net",
       "dial": {
         "callsign": "M17-020",
-        "host": "m17-020.k2ie.net",
+        "host": "xlx020.k2ie.net",
         "kind": "m17",
         "modules": [
           "A",
@@ -630,6 +630,26 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "HS3TDI"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://thedive155.com/index.php",
+      "description": "<p>The Dive 155 Multimode YSF 00155 = D-Star DCS 155A = DMR XLX 155A = TGIF 9155 = BM 314137 = M17 155</p>",
+      "dial": {
+        "callsign": "M17-155",
+        "host": "66.41.213.79",
+        "kind": "m17",
+        "modules": [
+          "A"
+        ],
+        "port": 17000
+      },
+      "id": "M17-155",
+      "license": "CC-BY-4.0",
+      "name": "TheDive 155",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "NC1D"
     },
     {
       "country": "TH",
@@ -1708,6 +1728,28 @@
       "sponsor": "RadioSC"
     },
     {
+      "country": "GB",
+      "dashboard": "http://xlxlancs.uk/",
+      "description": "<p><strong>Lancashire Reflector</strong></p>",
+      "dial": {
+        "callsign": "M17-524",
+        "host": "xlxlancs.uk",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "port": 17000
+      },
+      "id": "M17-524",
+      "license": "CC-BY-4.0",
+      "name": "Lancashire Reflector",
+      "network": "m17",
+      "source": "dvref"
+    },
+    {
       "country": "US",
       "dashboard": "http://m17.ne5ie.com",
       "dial": {
@@ -2030,6 +2072,28 @@
       "network": "m17",
       "source": "dvref",
       "sponsor": "RAAG"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://innet.tplinkdns.com",
+      "dial": {
+        "callsign": "M17-777",
+        "host": "innet.tplinkdns.com",
+        "kind": "m17",
+        "modules": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "port": 17000
+      },
+      "id": "M17-777",
+      "license": "CC-BY-4.0",
+      "name": "JesusSaves",
+      "network": "m17",
+      "source": "dvref",
+      "sponsor": "kc1ujz"
     },
     {
       "country": "US",
