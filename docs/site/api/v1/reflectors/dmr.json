@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 192,
-  "generated": "2026-11-27",
+  "count": 193,
+  "generated": "2026-11-28",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -1868,6 +1868,30 @@
       "sponsor": "Ham United",
       "system": "ham-united-motorola",
       "talkgroups": "reflectors/dmr/ham-united-motorola/talkgroups.json"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://minnesota.hamradiolink.net",
+      "description": "<p>I am building a new Network that can handle many modes.&nbsp; It is currently in its beta phase and being tested.&nbsp; Feel free to make an account and test it out.&nbsp; Please let me know if you would like any changes or bugs you may find.&nbsp;&nbsp;</p>",
+      "dial": {
+        "host": "minnesota.hamradiolink.net",
+        "kind": "mmdvm",
+        "port": 62031,
+        "requires": [
+          "dmr_id",
+          "password"
+        ],
+        "system": "hamradiolink",
+        "talkgroups_url": "https://dvref.com/api/v2/dmr/networks/hamradiolink/talkgroups/"
+      },
+      "id": "hamradiolink-server-minnesota-hamradiolink",
+      "license": "CC-BY-4.0",
+      "name": "Minnesota HamRadioLink",
+      "network": "dmr",
+      "source": "dvref",
+      "sponsor": "HamRadioLink",
+      "system": "hamradiolink",
+      "talkgroups": "reflectors/dmr/hamradiolink/talkgroups.json"
     },
     {
       "country": "IT",

@@ -2,8 +2,8 @@
   "api_version": "v1",
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
-  "count": 441,
-  "generated": "2026-11-27",
+  "count": 445,
+  "generated": "2026-11-28",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -23,6 +23,21 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "GR-Kenwood NXDN"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://urf.kr9rk.com",
+      "dial": {
+        "host": "urf.kr9rk.com",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "10104",
+      "license": "CC-BY-4.0",
+      "name": "URF104",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "KR9RK / Lakeshore Radio Association"
     },
     {
       "country": "US",
@@ -145,6 +160,22 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "CQ-UK WORLDWIDE"
+    },
+    {
+      "country": "US",
+      "dashboard": "http://urf.k0cks.com",
+      "description": "<p>RRARC K0CKS Reflector</p>",
+      "dial": {
+        "host": "urf.k0cks.com",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "10969",
+      "license": "CC-BY-4.0",
+      "name": "URF969",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "K0CKS / RRARC"
     },
     {
       "country": "US",
@@ -904,7 +935,7 @@
     },
     {
       "country": "BE",
-      "dashboard": "http://213.219.147.227:62536/NXDNReflector-Dashboard2/index.php",
+      "dashboard": "http://213.219.147.227:61309/NXDNReflector-Dashboard2/index.php",
       "dial": {
         "host": "213.219.147.227",
         "kind": "nxdn",
@@ -3964,6 +3995,7 @@
     {
       "country": "US",
       "dashboard": "https://urfd.n9ald.radio",
+      "description": "<p>Under final development and testing.&nbsp; Nov 27 2026 ~ ALD</p>",
       "dial": {
         "host": "urfd.n9ald.radio",
         "kind": "nxdn",
@@ -3973,7 +4005,8 @@
       "license": "CC-BY-4.0",
       "name": "URFALD",
       "network": "nxdn",
-      "source": "dvref"
+      "source": "dvref",
+      "sponsor": "Indianapolis Carmel Experimenters"
     },
     {
       "country": "US",
@@ -3990,6 +4023,22 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "Southern Indiana Network"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://minnesota.hamradiolink.net/urfd/",
+      "description": "<p>I am building a server that can connect many modes.&nbsp; It is currently in beta and being tested.&nbsp; Feel free to test it out and let me know what issues you find so I can fix them.</p>",
+      "dial": {
+        "host": "minnesota.hamradiolink.net",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "312",
+      "license": "CC-BY-4.0",
+      "name": "URF312",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "Hamradiolink Network"
     },
     {
       "country": "US",
@@ -5655,6 +5704,21 @@
       "network": "nxdn",
       "source": "dvref",
       "sponsor": "KC3YGF"
+    },
+    {
+      "country": "US",
+      "dashboard": "https://cluster.nc4es.org",
+      "dial": {
+        "host": "cluster.nc4es.org",
+        "kind": "nxdn",
+        "port": 41400
+      },
+      "id": "62437",
+      "license": "CC-BY-4.0",
+      "name": "NC4ES Cluster",
+      "network": "nxdn",
+      "source": "dvref",
+      "sponsor": "NC4ES"
     },
     {
       "country": "US",

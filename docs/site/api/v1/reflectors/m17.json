@@ -3,7 +3,7 @@
   "attribution": "Reflector data provided by DVRef \u2014 https://dvref.com/",
   "client_refresh_days": 7,
   "count": 163,
-  "generated": "2026-11-27",
+  "generated": "2026-11-28",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
@@ -634,7 +634,7 @@
     {
       "country": "US",
       "dashboard": "https://thedive155.com/index.php",
-      "description": "<p>The Dive 155 Multimode YSF 00155 = D-Star DCS 155A = DMR XLX 155A = TGIF 9155 = BM 314137 = M17 155</p>",
+      "description": "<p>The Dive 155 Multimode YSF 00155 = D-Star DCS 155A = DMR XLX 155A = TGIF 9155 = BM 314137 = M17 155A</p>",
       "dial": {
         "callsign": "M17-155",
         "host": "66.41.213.79",
@@ -4005,7 +4005,7 @@
       "description": "<p>M17 Reflector sponsored by N6PPP for the Frederick Amateur Radio Club</p>",
       "dial": {
         "callsign": "M17-PPP",
-        "host": "69.251.56.54",
+        "host": "73.173.99.23",
         "kind": "m17",
         "modules": [
           "A",

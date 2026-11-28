@@ -1,22 +1,22 @@
 {
   "api_version": "v1",
   "client_refresh_days": 7,
-  "count": 4116,
+  "count": 4131,
   "endpoints": {
     "all": "reflectors.json",
     "allstar": "allstar.json",
     "network": "reflectors/{network}.json",
     "openapi": "openapi.json"
   },
-  "expires_hint": "2026-12-04",
-  "generated": "2026-11-27",
+  "expires_hint": "2026-12-05",
+  "generated": "2026-11-28",
   "license": "mixed \u2014 see per-row license and NOTICE",
   "license_url": "https://github.com/rcludwick/hamcall-db/blob/main/NOTICE",
   "modifications": "Reformatted from the upstream source into hamcall-db's common reflector JSON schema. Field names and structure differ from upstream. Email addresses have been removed from the free-text fields (name, sponsor, description) and replaced with '[email removed]'; values are otherwise unmodified.",
   "networks": {
     "dmr": {
-      "count": 192,
-      "generated": "2026-11-27",
+      "count": 193,
+      "generated": "2026-11-28",
       "license": "CC BY 4.0",
       "source": {
         "name": "DVRef",
@@ -347,6 +347,12 @@
           "generated": "2026-09-19",
           "url": "reflectors/dmr/ham-united-motorola/talkgroups.json"
         },
+        "hamradiolink": {
+          "count": 3,
+          "fetched": "2026-11-28",
+          "generated": "2026-11-28",
+          "url": "reflectors/dmr/hamradiolink/talkgroups.json"
+        },
         "hamthings": {
           "count": 0,
           "fetched": "2026-11-16",
@@ -595,19 +601,19 @@
         },
         "radio-makuto-espana": {
           "count": 1,
-          "fetched": "2026-10-29",
+          "fetched": "2026-11-28",
           "generated": "2026-09-28",
           "url": "reflectors/dmr/radio-makuto-espana/talkgroups.json"
         },
         "scotland": {
           "count": 1,
-          "fetched": "2026-10-29",
+          "fetched": "2026-11-28",
           "generated": "2026-09-29",
           "url": "reflectors/dmr/scotland/talkgroups.json"
         },
         "southern-indiana-link": {
           "count": 1,
-          "fetched": "2026-10-29",
+          "fetched": "2026-11-28",
           "generated": "2026-09-29",
           "url": "reflectors/dmr/southern-indiana-link/talkgroups.json"
         },
@@ -825,8 +831,8 @@
       "url": "reflectors/dmr.json"
     },
     "dstar": {
-      "count": 965,
-      "generated": "2026-11-27",
+      "count": 966,
+      "generated": "2026-11-28",
       "license": "mixed \u2014 see per-row license and NOTICE",
       "source": {
         "name": "XLX registry (LX1IQ) + Pi-Star DExtra hosts + Pi-Star DPlus/DCS names",
@@ -836,7 +842,7 @@
     },
     "m17": {
       "count": 163,
-      "generated": "2026-11-27",
+      "generated": "2026-11-28",
       "license": "CC BY 4.0",
       "source": {
         "name": "DVRef",
@@ -845,8 +851,8 @@
       "url": "reflectors/m17.json"
     },
     "nxdn": {
-      "count": 441,
-      "generated": "2026-11-27",
+      "count": 445,
+      "generated": "2026-11-28",
       "license": "CC BY 4.0",
       "source": {
         "name": "DVRef",
@@ -855,8 +861,8 @@
       "url": "reflectors/nxdn.json"
     },
     "p25": {
-      "count": 487,
-      "generated": "2026-11-27",
+      "count": 491,
+      "generated": "2026-11-28",
       "license": "CC BY 4.0",
       "source": {
         "name": "DVRef",
@@ -865,8 +871,8 @@
       "url": "reflectors/p25.json"
     },
     "urf": {
-      "count": 143,
-      "generated": "2026-11-27",
+      "count": 145,
+      "generated": "2026-11-28",
       "license": "CC BY 4.0",
       "source": {
         "name": "DVRef",
@@ -875,8 +881,8 @@
       "url": "reflectors/urf.json"
     },
     "ysf": {
-      "count": 1725,
-      "generated": "2026-11-27",
+      "count": 1728,
+      "generated": "2026-11-28",
       "license": "CC BY 4.0",
       "source": {
         "name": "DVRef",
